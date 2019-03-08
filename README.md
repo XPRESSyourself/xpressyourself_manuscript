@@ -1,1 +1,1 @@
-# xpressyourself_manuscript
+# LaTeX manuscript files for XPRESSyourself
