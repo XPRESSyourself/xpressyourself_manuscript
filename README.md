@@ -14,6 +14,7 @@ With the advent of high-throughput sequencing platforms, expression profiling is
 ### Need for automation
   - "... there is an exponentially increasing amount of functional genomics data… transcriptomics data volume has a doubling rate of 7 months, and high-throughput workflows for proteomics and metabolomics are becoming increasingly available. Furthermore, the miniaturization of these techniques and the progressive automation of laboratory work through microfluidics chips promises a future where data analysis will be the bottleneck in biological research." (Costello & Martin, NPJ Systems Biology and Applications, 2018)
   - "Unprecedented advances have been made in the speed and throughput of next generation sequencing (NGS) platforms over the last decade. This progress has imposed increasingly high demands on the bioinformatics tools necessary for analysis of the data generated, which has grown exponentially. Although hundreds of thousands of samples have been sequenced, our ability to find, associate, and implicate genetic variants and candidate disease genes far outstrips our ability to understand them. Many researchers are comfortable with NGS technology, but encounter difficulties with the bioinformatics portion of their workflow, rendering NGS a less attractive option as their primary sequencing platform. However, once clear bioinformatics procedures are established and optimized this bottleneck can be removed, resulting in smooth and routine data interpretation processes and expedited research discoveries." (Funari and Canosa, Science Webinar Summary, 2014)
+  - scRNAseq large datasets, need faster methods
 
 ### Need for additional tools (ie. ribosome profiling)
   - No standardized software for the following:
@@ -89,6 +90,7 @@ With the advent of high-throughput sequencing platforms, expression profiling is
       - 2D or 3D
       - Plot confidence intervals
       - Interactive optional
+  - Parallelize dataframe computation
 
 ### Speed and Cost
   - <b>Figure 3</b>: Cost and speed breakdown
@@ -97,7 +99,8 @@ With the advent of high-throughput sequencing platforms, expression profiling is
 
 
 # Potential Biological Insights Section
-
+  - Run several GEO datasets through pipeline and analysis and pull out some novel insight off topic from original papers
+    - Find datasets that could complement each other and parallel process
 
 
 # Methods
@@ -111,3 +114,15 @@ With the advent of high-throughput sequencing platforms, expression profiling is
   - Confidence intervals
   - Collapser
   - Normalization
+
+
+
+# Validation
+- Build up test coverage
+- Have testers run pipeline and analysis notebook and critique documentation
+  - XPRESStools
+    - Alex Bott
+    - Yeyun Ouyang
+  - XPRESSpipe
+    - Jeff Morgan (riboseq)
+    - Mark Wadsworth (PE RNAseq)
