@@ -1,28 +1,13 @@
+% Modified from AAAS Science LATEX template
 % Use only LaTeX2e, calling the article.cls class and 12-point type.
 
-\documentclass[12pt]{article}
-
-% Users of the {thebibliography} environment or BibTeX should use the
-% scicite.sty package, downloadable from *Science* at
-% www.sciencemag.org/about/authors/prep/TeX_help/ .
-% This package should properly format in-text
-% reference calls and reference-list numbers.
+\documentclass[11pt]{article}
 
 \usepackage{scicite}
 
-% Use times if you have the font installed; otherwise, comment out the
-% following line.
+\usepackage{helvet}
 
-\usepackage{times}
-
-% The preamble here sets up a lot of new/revised commands and
-% environments.  It's annoying, but please do *not* try to strip these
-% out into a separate .sty file (which could lead to the loss of some
-% information when we convert the file to other formats).  Instead, keep
-% them in the preamble of your main LaTeX source file.
-
-
-% The following parameters seem to provide a reasonable page setup.
+% Page setup
 
 \topmargin 0.0cm
 \oddsidemargin 0.2cm
@@ -30,65 +15,35 @@
 \textheight 21cm
 \footskip 1.0cm
 
-
-%The next command sets up an environment for the abstract to your paper.
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+% Abstract environment
 
 \newenvironment{sciabstract}{%
 \begin{quote} \bf}
 {\end{quote}}
 
+% Paper title
 
-% If your reference list includes text notes as well as references,
-% include the following line; otherwise, comment it out.
-
-\renewcommand\refname{References and Notes}
-
-% The following lines set up an environment for the last note in the
-% reference list, which commonly includes acknowledgments of funding,
-% help, etc.  It's intended for users of BibTeX or the {thebibliography}
-% environment.  Users who are hand-coding their references at the end
-% using a list environment such as {enumerate} can simply add another
-% item at the end, and it will be numbered automatically.
-
-\newcounter{lastnote}
-\newenvironment{scilastnote}{%
-\setcounter{lastnote}{\value{enumiv}}%
-\addtocounter{lastnote}{+1}%
-\begin{list}%
-{\arabic{lastnote}.}
-{\setlength{\leftmargin}{.22in}}
-{\setlength{\labelsep}{.5em}}}
-{\end{list}}
+\title{
+XPRESSyourself: Automating and Democratizing High-Throughput Sequencing
+}
 
 
-% Include your paper's title here
-
-\title{XPRESSyourself: Democratizing High-Throughput Genomics}
-
-
-% Place the author information here.  Please hand-code the contact
-% information and notecalls; do *not* use \footnote commands.  Let the
-% author contact information appear immediately below the author names
-% as shown.  We would also prefer that you don't change the type-size
-% settings shown here.
+% Author info
 
 \author
-  \parbox{\linewidth}{\centering
-    {Jordan A. Berg,$^{1}$
-    Jonathan R. Belyeu,$^{2,3}$
-    Alex J. Bott,$^{1}$
-    Jason Gertz,$^{4}
-    Michael T. Howard,$^{2},
-    Aaron R Quinlan,$^{2,3,5}$
-    Jared P. Rutter$^{1,6\ast}$\\
+{
+Jordan A. Berg,$^{1}$ Jonathan R. Belyeu,$^{2}$ Alex J. Bott,$^{1}$ Jeffrey T. Morgan,$^{1}$ Yeyun Ouyang,$^{1}$\\
+Jason Gertz,$^{3}$ Michael T. Howard,$^{2}$ Aaron R. Quinlan,$^{2,4,5}$ Jared P. Rutter$^{1,6\ast}$\\
 \\
-\normalsize{$^{1}$Department of Biochemistry, School of Medicine, University of Utah, Salt Lake City, UT, USA}\\
-\normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA}\\
-\normalsize{$^{3}$USTAR Center for Genetic Discovery, University of Utah, Salt Lake City, UT, USA}\\
-\normalsize{$^{4}$Department of Oncological Sciences, University of Utah, Salt Lake City, UT, USA}\\
-\normalsize{$^{5}$Department of Biomedical Informatics, University of Utah, Salt Lake City, UT, USA}\\
-\normalsize{$^{6}$Howard Hughes Medical Institute, University of Utah, Salt Lake City, UT, USA}\\
-\normalsize{$^\ast$To whom correspondence should be addressed; E-mail:  rutter@biochem.utah.edu.}\\
+\normalsize{$^{1}$Department of Biochemistry, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{3}$Department of Oncological Sciences, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{4}$USTAR Center for Genetic Discovery, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{5}$Department of Biomedical Informatics, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{6}$Howard Hughes Medical Institute, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail: rutter@biochem.utah.edu.}
 }
 
 % Include the date command, but leave its argument blank.
@@ -104,11 +59,9 @@
 \begin{document}
 
 % Double-space the manuscript.
-
 \baselineskip24pt
 
 % Make the title.
-
 \maketitle
 
 
@@ -116,229 +69,98 @@
 % Place your abstract within the special {sciabstract} environment.
 
 \begin{sciabstract}
-
+  With the advent of high-throughput sequencing platforms, expression profiling is becoming common-place in medical research. However, for the general user, often someone who ends up outsourcing their bioinformatics, a computational overhead exists. The XPRESSyourself suite aims to remove these barriers and create a tools to help standardize and increase throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end and paired-end RNAseq, as well as ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or public microarray and RNAseq datasets. This software suite is designed where features can easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment. Currently, this package offers several new tools for ribosome profiling and general RNA-seq.
+  \newline\\
+  \normalfont XPRESSyourself is freely available on GitHub: https://github.com/XPRESSyourself\\
 \end{sciabstract}
 
 
+\section{Introduction}
 
-% In setting up this template for *Science* papers, we've used both
-% the \section* command and the \paragraph* command for topical
-% divisions.  Which you use will of course depend on the type of paper
-% you're writing.  Review Articles tend to have displayed headings, for
-% which \section* is more appropriate; Research Articles, when they have
-% formal topical divisions at all, tend to signal them with bold text
-% that runs into the paragraph, for which \paragraph* is the right
-% choice.  Either way, use the asterisk (*) modifier, as shown, to
-% suppress numbering.
+High-throughput profiling of gene expression data has revolutionized biomedical, industrial and basic science research. Within the last two decades, RNA-seq as found itself the forerunner technology for highest quality expression profiling, as it can measure relative transcript abundance, differential splice variants, sequence polymorphisms, and more. This technology has also been adopted to create technologies such as single-cell RNA-seq, capable of assaying the transcriptional profile cell by cell; and ribosome profiling, which measures ribosome occupancy and translation efficiency.
 
-\section*{Introduction}
+While vast strides have been made to these technologies, various bottlenecks still exist. For example, while more and more researchers are becoming accustomed to these technologies, learning the bioinformatics portion of sequencing possesses its own learning curve and often efficiency is lacking in how sequencing reads are processed and analyzed. Also for these users, they may not be aware of which tools are accepted as the standard in the field or which analyses they should be perform. They may also lack the experience to process their sequencing libraries rapidly or may not know all the in-between steps that are not always explicitely stated in protocols.
 
-In this file, we present some tips and sample mark-up to assure your
-\LaTeX\ file of the smoothest possible journey from review manuscript
-to published {\it Science\/} paper.  We focus here particularly on
-issues related to style files, citation, and math, tables, and
-figures, as those tend to be the biggest sticking points.  Please use
-the source file for this document, \texttt{scifile.tex}, as a template
-for your manuscript, cutting and pasting your content into the file at
-the appropriate places.
+While several pipelines have emerged over the last several years that have been built to tackle various aspects of these bottlenecks, most are not widely used or usable by the average wet-bench researcher. Some are difficult to install or use, often they break easily or do not perform well. Rarely do these tools offer anything new to help overcome emerging challenges in the field.
 
-{\it Science\/}'s publication workflow relies on Microsoft Word.  To
-translate \LaTeX\ files into Word, we use an intermediate MS-DOS
-routine \cite{tth} that converts the \TeX\ source into HTML\@.  The
-routine is generally robust, but it works best if the source document
-is clean \LaTeX\ without a significant freight of local macros or
-\texttt{.sty} files.  Use of the source file \texttt{scifile.tex} as a
-template, and calling {\it only\/} the \texttt{.sty} and \texttt{.bst}
-files specifically mentioned here, will generate a manuscript that
-should be eminently reviewable, and yet will allow your paper to
-proceed quickly into our production flow upon acceptance \cite{use2e}.
-
-
-\section*{Formatting Citations}
-
-Citations can be handled in one of three ways.  The most
-straightforward (albeit labor-intensive) would be to hardwire your
-citations into your \LaTeX\ source, as you would if you were using an
-ordinary word processor.  Thus, your code might look something like
-this:
-
-
-\begin{quote}
-\begin{verbatim}
-However, this record of the solar nebula may have been
-partly erased by the complex history of the meteorite
-parent bodies, which includes collision-induced shock,
-thermal metamorphism, and aqueous alteration
-({\it 1, 2, 5--7\/}).
-\end{verbatim}
-\end{quote}
-
-
-\noindent Compiled, the last two lines of the code above, of course, would give notecalls in {\it Science\/} style:
-
-\begin{quote}
-\ldots thermal metamorphism, and aqueous alteration ({\it 1, 2, 5--7\/}).
-\end{quote}
-
-Under the same logic, the author could set up his or her reference list as a simple enumeration,
-
-\begin{quote}
-\begin{verbatim}
-{\bf References and Notes}
+In response to these issues surrounding the automation and democratization of sequencing technology, we created the XPRESSyourself bioinformatics suite for processing and analyzing high-throughput expression data. In creating this tool, we focused on five aspects in order to create an easy, reliable tool where large barriers-to-entry would be elimiated. These were create a tool that was useful, usable, reliable, efficient, and flexible.
 
 \begin{enumerate}
-\item G. Gamow, {\it The Constitution of Atomic Nuclei
-and Radioactivity\/} (Oxford Univ. Press, New York, 1931).
-\item W. Heisenberg and W. Pauli, {\it Zeitschr.\ f.\
-Physik\/} {\bf 56}, 1 (1929).
-\end{enumerate}
-\end{verbatim}
-\end{quote}
+  \item We wanted the software we created to be useful for a broad audience, where the bulk of processing and analysis desired by a general user would be covered. We wanted to use pre-existing tools that were fast and accurate. We also wanted to provide additional, new tools that would be of use to the general RNA-seq community, which will be discussed in more detail later.
 
-\noindent yielding
+  \item We wanted to create a software package that was easy to use. To do so, we made the tools installable by a single command in the command line interface (CLI) using the Conda and PyPi package managers. We also included thorough external documentation hosted on readthedocs that outlines use and considerations for each tool, as well as provides several examples of how to use each tool. Internally in the CLI-packages, summary documentation has been included by way of the help interface. Jupyter notebooks are also created and installed with the software that provide example analyses that can be easily modified and run.
 
-\begin{quote}
-{\bf References and Notes}
+  \item To create a reliable pipeline and analysis package, we use the most current state-of-the-art software tools that have undergone robust benchmarking. We utilize a two-pass RNA-seq alignment process to provide the best coverage around splice sites. We also built the RNA-seq pipeline according to The Cancer Genome Atlas (TCGA) standards. While this technology will no doubt improve over the years, the software is structures in a way for easy modification for addition of tools or substitution of software.
 
-\begin{enumerate}
-\item G. Gamow, {\it The Constitution of Atomic Nuclei and
-Radioactivity\/} (Oxford Univ. Press, New York, 1931).
-\item W. Heisenberg and W. Pauli, {\it Zeitschr.\ f.\ Physik} {\bf 56},
-1 (1929).
-\end{enumerate}
-\end{quote}
+  \item In order to make the most efficient package possible, by default XPRESSyourself optimizes use of computing cores to ensure all available are utilized when possible. Additionally, for analysis tools processing large files, we utilize a data matrix chunking method, where a dataset is portioned off into a number equal to the number of cores available, and processes each parallely before rejoining the data chunks.
 
-That's not a solution that's likely to appeal to everyone, however ---
-especially not to users of B{\small{IB}}\TeX\ \cite{inclme}.  If you
-are a B{\small{IB}}\TeX\ user, we suggest that you use the
-\texttt{Science.bst} bibliography style file and the
-\texttt{scicite.sty} package, both of which we are downloadable from our author help site
-(http://www.sciencemag.org/about/authors/prep/TeX\_help/).  You can also
-generate your reference lists by using the list environment
-\texttt{\{thebibliography\}} at the end of your source document; here
-again, you may find the \texttt{scicite.sty} file useful.
-
-Whether you use B{\small{IB}}\TeX\ or \texttt{\{thebibliography\}}, be
-very careful about how you set up your in-text reference calls and
-notecalls.  In particular, observe the following requirements:
-
-\begin{enumerate}
-\item Please follow the style for references outlined at our author
-  help site and embodied in recent issues of {\it Science}.  Each
-  citation number should refer to a single reference; please do not
-  concatenate several references under a single number.
-\item Please cite your references and notes in text {\it only\/} using
-  the standard \LaTeX\ \verb+\cite+ command, not another command
-  driven by outside macros.
-\item Please separate multiple citations within a single \verb+\cite+
-  command using commas only; there should be {\it no space\/}
-  between reference keynames.  That is, if you are citing two
-  papers whose bibliography keys are \texttt{keyname1} and
-  \texttt{keyname2}, the in-text cite should read
-  \verb+\cite{keyname1,keyname2}+, {\it not\/}
-  \verb+\cite{keyname1, keyname2}+.
+  \item Flexibility is paramount in creating a tool that can be widely used and built upon. The general structure of  the software was designed to make it easy to add or remove features. We envision as this suite of tools is more widely adopted by the RNAseq community, modules will be added to handle other sequencing platforms, such as genome sequencing, CHIPseq, and so on.
 \end{enumerate}
 
-\noindent Failure to follow these guidelines could lead
-to the omission of the references in an accepted paper when the source
-file is translated to Word via HTML.
-
-\section*{Handling Math, Tables, and Figures}
-
-Following are a few things to keep in mind in coding equations,
-tables, and figures for submission to {\it Science}.
-
-\paragraph*{In-line math.}  The utility that we use for converting
-from \LaTeX\ to HTML handles in-line math relatively well.  It is best
-to avoid using built-up fractions in in-line equations, and going for
-the more boring ``slash'' presentation whenever possible --- that is,
-for \verb+$a/b$+ (which comes out as $a/b$) rather than
-\verb+$\frac{a}{b}$+ (which compiles as $\frac{a}{b}$).  Likewise,
-HTML isn't tooled to handle certain overaccented special characters
-in-line; for $\hat{\alpha}$ (coded \verb+$\hat{\alpha}$+), for
-example, the HTML translation code will return [\^{}$(\alpha)$].
-Don't drive yourself crazy --- but if it's possible to avoid such
-constructs, please do so.  Please do not code arrays or matrices as
-in-line math; display them instead.  And please keep your coding as
-\TeX-y as possible --- avoid using specialized math macro packages
-like \texttt{amstex.sty}.
-
-\paragraph*{Displayed math.} Our HTML converter sets up \TeX\
-displayed equations using nested HTML tables.  That works well for an
-HTML presentation, but Word chokes when it comes across a nested
-table in an HTML file.  We surmount that problem by simply cutting the
-displayed equations out of the HTML before it's imported into Word,
-and then replacing them in the Word document using either images or
-equations generated by a Word equation editor.  Strictly speaking,
-this procedure doesn't bear on how you should prepare your manuscript
---- although, for reasons best consigned to a note \cite{nattex}, we'd
-prefer that you use native \TeX\ commands within displayed-math
-environments, rather than \LaTeX\ sub-environments.
-
-\paragraph*{Tables.}  The HTML converter that we use seems to handle
-reasonably well simple tables generated using the \LaTeX\
-\texttt{\{tabular\}} environment.  For very complicated tables, you
-may want to consider generating them in a word processing program and
-including them as a separate file.
-
-\paragraph*{Figures.}  Figure callouts within the text should not be
-in the form of \LaTeX\ references, but should simply be typed in ---
-that is, \verb+(Fig. 1)+ rather than \verb+\ref{fig1}+.  For the
-figures themselves, treatment can differ depending on whether the
-manuscript is an initial submission or a final revision for acceptance
-and publication.  For an initial submission and review copy, you can
-use the \LaTeX\ \verb+{figure}+ environment and the
-\verb+\includegraphics+ command to include your PostScript figures at
-the end of the compiled PostScript file.  For the final revision,
-however, the \verb+{figure}+ environment should {\it not\/} be used;
-instead, the figure captions themselves should be typed in as regular
-text at the end of the source file (an example is included here), and
-the figures should be uploaded separately according to the Art
-Department's instructions.
+With XPRESStools, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads, and tools to perform the bulk of sequence analysis with enough flexibility to generate professional, figure-worthy images.
 
 
-\section*{What to Send In}
+\section{Materials and Methods}
 
-What you should send to {\it Science\/} will depend on the stage your manuscript is in:
+\subsection{XPRESSpipe}
 
-\begin{itemize}
-\item {\bf Important:} If you're sending in the initial submission of
-  your manuscript (that is, the copy for evaluation and peer review),
-  please send in {\it only\/} a PostScript or PDF version of the
-  compiled file (including figures).  Please do not send in the \TeX\
-  source, \texttt{.sty}, \texttt{.bbl}, or other associated files with
-  your initial submission.  (For more information, please see the
-  instructions at our Web submission site,
-  http://www.submit2science.org/ .)
-\item When the time comes for you to send in your revised final
-  manuscript (i.e., after peer review), we require that you include
-  all source files and generated files in your upload.  Thus, if the
-  name of your main source document is \texttt{ltxfile.tex}, you
-  need to include:
-\begin{itemize}
-\item \texttt{ltxfile.tex}.
-\item \texttt{ltxfile.aux}, the auxilliary file generated by the
-  compilation.
-\item A PostScript file (compiled using \texttt{dvips} or some other
-  driver) of the \texttt{.dvi} file generated from
-  \texttt{ltxfile.tex}, or a PDF file distilled from that
-  PostScript.  You do not need to include the actual \texttt{.dvi}
-  file in your upload.
-\item From B{\small{IB}}\TeX\ users, your bibliography (\texttt{.bib})
-  file, {\it and\/} the generated file \texttt{ltxfile.bbl} created
-  when you run B{\small{IB}}\TeX.
-\item Any additional \texttt{.sty} and \texttt{.bst} files called by
-  the source code (though, for reasons noted earlier, we {\it
-    strongly\/} discourage the use of such files beyond those
-  mentioned in this document).
-\end{itemize}
-\end{itemize}
+\subsubsection{Installation}
 
-% Your references go at the end of the main text, and before the
-% figures.  For this document we've used BibTeX, the .bib file
-% scibib.bib, and the .bst file Science.bst.  The package scicite.sty
-% was included to format the reference numbers according to *Science*
-% style.
+\subsubsection{Inputs}
+
+\subsubsection{Reference Curation}
+Reference curation
+  new tools
+  minimal user input
+  flexible enough to easily add features if user desires
+
+\subsubsection{Read Processing}
+pipeline
+  run singly or all together
+  normalization / batch effect
+
+\subsubsection{Outputs}
+output
+  minimal but enough to get clear picture
+  optional outputs
+
+\subsubsection{Quality Control}
+quality control
+  read distribution
+  meta-gene
+  periodicity
+
+\subsubsection{Analyses}
+prober
+Deseq
+
+\subsection{XPRESStools}
+
+\subsubsection{Getting Data}
+
+\subsubsection{Normalizing and Formatting Data}
+
+\subsubsection{Analyzing Data}
+
+\subsection{Unit Testing and Code Coverage}
+New tools will require new tests to maintain code Coverage
+
+\subsection{Availability}
+Open source community
+GitHub
+Version Control
+Singularity
+
+
+\section*{Results and Discussion}
+
+\subsection{Benchmarking}
+
+\subsection{Example Data Walkthrough}
+
+\subsection{Cost Analysis}
+
+\subsection{Summary}
 
 
 \bibliography{scibib}
@@ -346,47 +168,39 @@ What you should send to {\it Science\/} will depend on the stage your manuscript
 \bibliographystyle{Science}
 
 
-
-% Following is a new environment, {scilastnote}, that's defined in the
-% preamble and that allows authors to add a reference at the end of the
-% list that's not signaled in the text; such references are used in
-% *Science* for acknowledgments of funding, help, etc.
-
-\begin{scilastnote}
-\item We've included in the template file \texttt{scifile.tex} a new
-environment, \texttt{\{scilastnote\}}, that generates a numbered final
-citation without a corresponding signal in the text.  This environment
-can be used to generate a final numbered reference containing
-acknowledgments, sources of funding, and the like, per {\it Science\/}
-style.
-\end{scilastnote}
+\section*{Acknowledgments}
+J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher.
 
 
-
-
-% For your review copy (i.e., the file you initially send in for
-% evaluation), you can use the {figure} environment and the
-% \includegraphics command to stream your figures into the text, placing
-% all figures at the end.  For the final, revised manuscript for
-% acceptance and production, however, PostScript or other graphics
-% should not be streamed into your compliled file.  Instead, set
-% captions as simple paragraphs (with a \noindent tag), setting them
-% off from the rest of the text with a \clearpage as shown  below, and
-% submit figures as separate files according to the Art Department's
-% instructions.
-
-
-\clearpage
-
-\noindent {\bf Fig. 1.} Please do not use figure environments to set
-up your figures in the final (post-peer-review) draft, do not include graphics in your
-source code, and do not cite figures in the text using \LaTeX\
-\verb+\ref+ commands.  Instead, simply refer to the figure numbers in
-the text per {\it Science\/} style, and include the list of captions at
-the end of the document, coded as ordinary paragraphs as shown in the
-\texttt{scifile.tex} template file.  Your actual figure files should
-be submitted separately.
-
-
+\section*{Contributions}
+\begin{tabular}{ l l }
+ Conceptualization & J.A.B. \\
+ \hline
+ Supervision & M.T.H., J.G., A.R.Q., J.P.R. \\
+ \hline
+ Project Administration & J.A.B. \\
+ \hline
+ Investigation & J.A.B. \\
+ \hline
+ Formal Analysis & J.A.B. \\
+ \hline
+ Software & J.A.B. \\
+ \hline
+ Methodology & J.A.B. \\
+ \hline
+ Validation & J.A.B., A.J.B. Y.O. \\
+ \hline
+ Data Curation & J.A.B. \\
+ \hline
+ Resources & J.A.B., J.P.R. \\
+ \hline
+ Funding Acquisition & J.A.B., J.P.R. \\
+ \hline
+ Writing - Original Draft & J.A.B. \\
+ \hline
+ Writing - Review \& Editing & J.A.B., M.T.H., J.G., A.R.Q., J.P.R. \\
+ \hline
+ Visualization & J.A.B.
+\end{tabular}
 
 \end{document}

@@ -1,15 +1,16 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  8 MAR 2019 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 MAR 2019 22:35
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**scifile.tex
-(./scifile.tex
+**xpressyourself.tex
+(./xpressyourself.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -26,677 +27,136 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 LaTeX Info: Redefining \cite on input line 160.
 LaTeX Info: Redefining \nocite on input line 227.
 Package: scicite 2003/11/04  v 4.01
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
-Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
-\c@lastnote=\count88
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(./xpressyourself.aux)
+\openout1 = `xpressyourself.aux'.
 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.76   \parbox{\linewidth}
-                          {\centering
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.76   \parbox{\linewidth}
-                          {\centering
-? 
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 
-! LaTeX Error: Missing \begin{document}.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: legalpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
+* v-part:(T,H,B)=(36.135pt, 939.51001pt, 36.135pt)
+* \paperwidth=614.295pt
+* \paperheight=1011.78pt
+* \textwidth=542.02501pt
+* \textheight=939.51001pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
+* \topmargin=-73.135pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=28.45274pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.77     {J
-           ordan A. Berg,$^{1}$
-? 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 77.
+(Font)              <12> on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 77.
+(Font)              <8> on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 77.
-! Missing $ inserted.
-<inserted text> 
-                $
-l.81     Michael T. Howard,$^
-                             {2},
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.82     Aaron R Quinlan,$^
-                           {2,3,5}$
-? 
+(Font)              <6> on input line 65.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 65.
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.84 \\
-       
-? 
+ []
 
-! LaTeX Error: Missing \begin{document}.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.85 \normalsize{$
-                  ^{1}$Department of Biochemistry, School of Medicine, Unive...
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
 
-? 
+ []
 
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.86 \normalsize{$
-                  ^{2}$Department of Human Genetics, University of Utah, Sal...
-
-? 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87 \normalsize{$
-                  ^{3}$USTAR Center for Genetic Discovery, University of Uta...
-
-? 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.88 \normalsize{$
-                  ^{4}$Department of Oncological Sciences, University of Uta...
-
-? 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.89 \normalsize{$
-                  ^{5}$Department of Biomedical Informatics, University of U...
-
-? 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.90 \normalsize{$
-                  ^{6}$Howard Hughes Medical Institute, University of Utah, ...
-
-? 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.91 \normalsize{$
-                  ^\ast$To whom correspondence should be addressed; E-mail: ...
-
-? 
-(./scifile.aux)
-\openout1 = `scifile.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 104.
-
- (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) [1
+[1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 112.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 112.
+[2] (./xpressyourself.bbl
 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-? 
-! Emergency stop.
-<to be read again> 
-                   \relax 
-l.112 \maketitle
-                
-End of file on the terminal!
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
- 
+) [3] [4] (./xpressyourself.aux) ) 
 Here is how much of TeX's memory you used:
- 345 strings out of 492649
- 3966 string characters out of 6129622
- 61782 words of memory out of 5000000
- 4296 multiletter control sequences out of 15000+600000
- 9888 words of font info for 30 fonts, out of 8000000 for 9000
+ 841 strings out of 492649
+ 11465 string characters out of 6129622
+ 81002 words of memory out of 5000000
+ 4769 multiletter control sequences out of 15000+600000
+ 8811 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,6n,88p,141b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 24i,8n,32p,1128b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb>
+Output written on xpressyourself.pdf (4 pages, 118809 bytes).
+PDF statistics:
+ 49 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
