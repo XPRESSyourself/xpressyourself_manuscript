@@ -4,12 +4,13 @@
 \documentclass[11pt, a4paper, oneside]{article}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage{float}
+
 \usepackage{graphicx}
 
-\usepackage{scicite}
+\usepackage{caption}
+\captionsetup{font=small}
 
-\usepackage{helvet}
+\usepackage{scicite}
 
 % Page setup
 
@@ -128,7 +129,7 @@ In response to these issues surrounding the automation and democratization of se
 
   \item In order to make the most efficient package possible, by default XPRESSyourself optimizes use of computing cores to ensure all available are utilized when possible. Additionally, for analysis tools processing large files, we utilize a data matrix chunking method, where a dataset is portioned off into a number equal to the number of cores available, and processes each parallely before rejoining the data chunks.
 
-  \item Flexibility is paramount in creating a tool that can be widely used and built upon. The general structure of  the software was designed to make it easy to add or remove features. We envision as this suite of tools is more widely adopted by the RNAseq community, modules will be added to handle other sequencing platforms, such as genome sequencing, CHIPseq, and so on.
+  \item Flexibility is paramount in creating a tool that can be widely used and built upon. The general structure of the software was designed to make it easy to add or remove features. We envision as this suite of tools is more widely adopted by the RNAseq community, modules will be added to handle other sequencing platforms, such as genome sequencing, CHIPseq, and so on.
 \end{enumerate}
 
 With XPRESSyourself, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads, and tools to perform the bulk of sequence analysis with enough flexibility to generate professional, figure-worthy images.
@@ -136,17 +137,59 @@ With XPRESSyourself, the user is provided with a complete suite of software to h
 \section{Materials and Methods}
 
 \subsection{XPRESSpipe}
+XPRESSpipe pipelines for single-end RNA-seq, paired-end RNA-seq, and ribosome profiling offer a handful of tunable parameters to the user, while keeping most hidden to maintain TCGA alignment standards. In the future it is feasible that additional tunable parameters will be added. Table \ref{Tab:xpresspipe} outlines these parameters.
+
+\captionof{table}{Summary of XPRESSpipe pipeline arguments.\label{Tab:xpresspipe}}
+\begin{tabular}{p{5cm}p{13cm}}
+ \textbf{Arguments} & \textbf{Description} \\
+ \hline
+ \textbf{Required} & \\
+ \hline
+ -i, --input & Path to input directory \\
+ \hline
+ -o, --output & Path to output directory \\
+ \hline
+ -r, --reference & Path to parent organism reference directory \\
+ \hline
+ -t, --reference\_type & GTF, refFlat, etc. type (i.e. ``DEFAULT", ``CODING", ``CODING\_TRUNCATED") \\
+ \hline
+ -e, --experiment & Experiment name \\
+ \hline
+ \textbf{Optional} & \\
+ \hline
+ -a, --adaptors & Specify adaptor as string (only one allowed) -- if ``None" is provided, software will attempt to auto-detect adaptors -- if ``POLYX" is provided as a single string in the list, polyX adaptors will be trimmed \\
+ \hline
+ -q, --quality & PHRED read quality threshold (default: 28) \\
+ \hline
+ --min\_length & Minimum read length threshold to keep for reads (default: 18) \\
+ \hline
+ --output\_bed & Include option to output BED files for each aligned file \\
+ \hline
+ --output\_bigwig & Include flag to output bigwig files for each aligned file \\
+ \hline
+ --method & Normalization method to perform (options: ``RPM", ``RPKM", ``FPKM", ``LOG") \\
+ \hline
+ --batch & Include path and filename of dataframe with batch normalization parameters \\
+ \hline
+ --sjdbOverhang & Sequencing platform read-length for constructing splice-aware reference previously (see documentation for more information) \\
+ \hline
+ --downstream & Number of nucleotides to track after the landmark (default: 200) \\
+ \hline
+ -m, --max\_processors & Number of max processors to use for tasks (default: No limit) \\
+\end{tabular}
+\newline
 
 \subsubsection{Installation}
 General installation of XPRESSpipe is handled by the package manager, Anaconda{}, which is easy to download and install (https://www.anaconda.com/distribution/). XPRESSpipe can be installed using the following command:
 \newline
+
+% Install XPRESSpipe code block
 \begin{lstlisting}[language=bash, caption=curateReference example]
 $ conda install -c bioconda XPRESSpipe
 \end{lstlisting}
 
-XPRESSpipe is built upon several pre-established software packages, listed below:
-\newline
-
+% Software dependencies table
+\captionof{table}{Summary of dependency software, accession location, and purpose in the XPRESSpipe package.\label{Tab:packages}}
 \begin{tabular}{p{2.4cm}p{7.5cm}p{6.5cm}}
  \textbf{Package} & \textbf{URL} & \textbf{Purpose} \\
  \hline
@@ -174,7 +217,7 @@ XPRESSpipe is built upon several pre-established software packages, listed below
 \end{tabular}
 \newline
 
-These packages will be automatically installing using the Anaconda package manager; however, if installing manually, these packages will need to be installed by the user.
+XPRESSpipe is built upon several pre-established software packages, listed in Table \ref{Tab:packages}. These packages will be automatically installing using the Anaconda package manager; however, if installing manually, these packages will need to be installed by the user.
 
 \subsubsection{Inputs}
 While inputs will vary sub-module to sub-module, and further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering ``xpresspipe \textless sub-module name\textgreater \ --help", a few points of guidance are important to consider.
@@ -201,6 +244,19 @@ While current available arguments are limited, the design is simple enough where
 
 \subsubsection{Read Processing}
 While all intermediate steps of the pipelines can be run singly, we will describe the outline of the software in the context of the pipelines.
+
+\begin{enumerate}
+  \item Trim: The first step in read processing is removing reads of artifacts for the library preparation process. These are most often adaptor sequences that were ligated to each read during the preparatory steps, which will not have homology to the organism's reference sequence. As sequencers are only so accurate, another common artifact are base calls that are statistically not confident. Therefore, in the first step of read processing, it is important to remove these sequences from each read to allow for proper alignment of reads to the reference. XPRESSpipe begins by trimming reads of adaptors, low quality bases, and reads that are too short using fastp, a more recent, faster trimming package that has improved alignable read output{}. Adaptor sequence, base quality, and read length are all adjustable parameters available to the user. Descriptions of the options can be found in Table \ref{Tab:xpresspipe}.
+  \item Align: After sequencing reads have been trimmed of artifacts, the next step is to determine what transcripts these reads originated from to quantitate expression levels. This is done through alignment of each read to the reference transcriptome. XPRESSpipe uses STAR{} for this process as it has consistently proven itself as a fast and accurate alignment tool{}, such that it has been chosen as the TCGA standard alignment software. Alignment is made easy by generating a reference directory using XPRESSpipe's ``curateReference" sub-module. XPRESSpipe then performs a two-pass alignment to maximize alignment to splice junctions. In the first pass, STAR identified potential splice junctions for each sample, generates a reference taking these sites into account, then uses this reference to remap reads to the reference. Afterwards, some file processing is performed to generate the appropriate output files and formats for downstream steps.
+  \item Count: Once reads have been aligned and genome coordinates have been determined, these reads need to be quantified. XPRESSpipe uses htseq{} for this purpose. In this step, reads coordinates along the genome are mapped to the reference transcriptome. If a coding-only or truncated reference was created during the reference curation, this will be used for the quantification of transcipts. By default, htseq behavior conforms to TCGA standards by being strand agnostic, mapping assuming reads were sorted by name, and by using the intersection-nonempty method for handling reads overlapping multiple genes.
+  \item Normalization: As RNA-seq measurements are only relative, they are subject to sample and batch effects. These can arise from different people preparing libraries, one person preparing libraries on different days, or are just inherent in differences in total reads per sample a given chip sequences. In order to remove sample effects arising per sequence chip, it is important to perform normalization. Reads-per-million (RPM) normalization controls for these sample effects. Reads-per-kilobase-million (RPKM) or Fragments-per-kilobase-million (FPKM) performs the same RPM normalization, but additionally normalizes for transcript length as longer transcripts will appear to have more reads aligning to these transcripts normally. Batch effect normalization controls for library to library variances. These normalization options are available in the XPRESSpipe arguments for each pipeline (see Table \ref{Tab:xpresspipe}).
+  \item Quality Control: It is important to perform quality control of sequencing sample to ensure they are reliable and their biological insight can be trusted. XPRESSpipe performs a variety of quality control measures. fastqc{} runs a gambit of quality control measures and multiqc summarizes these and metrics from trimming, aligning, and so on. The ``readDistribution" sub-module will take the read size distributions for each library, as this can be informative, especially in the case of ribosome profiling, to ensure the proper read length was enriched in the sequencing library. The ``metagene" sub-module will summarize read distribution along a representative transcript to highlight any sequencing biases, such as an enrichment of reads on the 3' end indicative of poor library preparation. The ``periodicity" sub-module will take the most enriched read length from ribosome profiling footprint libraries and map the P-site of the ribosome to investigate the 3 nucleotide phasing characteristic of the translating ribosome. Each of these sub-modular quality functions will summarize their results in a single PDF for quick reference by the user.
+  \item Analyses:
+        prober
+
+        diffex
+
+\end{enumerate}
 
 pipeline
   run singly or all together

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1552970502 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1552970502
+["bibtex xpressyourself"] 1553020908 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1553020909
   "./Science.bst" 1552866127 26882 d44ba44187a978cfea85a3cd97387589 ""
   "scibib.bib" 1552866132 1490 d5a14e237cb536b8997b8eec06d544cb ""
-  "xpressyourself.aux" 1552970502 2165 ed47b0dba372a445520e71e58f8a1120 ""
+  "xpressyourself.aux" 1553020909 2599 467b27c723de27c9be15e446182cc0e1 ""
   (generated)
-  "xpressyourself.bbl"
   "xpressyourself.blg"
-["pdflatex"] 1552970502 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1552970502
+  "xpressyourself.bbl"
+["pdflatex"] 1553020908 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1553020909
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1480098688 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
@@ -50,7 +50,8 @@
   "/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty" 1522444781 20418 ca44694be1c8df491925faa194fe6edf ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls" 1523050425 19823 fcbc01552b07b608574cbf8e1977e0c0 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/base/size11.clo" 1523050425 8310 c914ded44e64c3c6e0ed92e7ac6a2004 ""
-  "/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty" 1480098828 6749 16d2656a1984957e674b149555f1ea1d ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty" 1480098823 66233 8b81cfab95a1f8fc2f0f6c89415b087a ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty" 1480098823 64866 1ea74c5f2d1685881497f021b8f186b2 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty" 1522012985 41366 3ed245b911039f45436c2cb62a4d1e62 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1480098830 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1480098830 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -78,10 +79,10 @@
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "figures/xpresspipe_overview.png" 1552431132 98625 12b0737822ff4d08a8944b9db62ad163 ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1552970502 2165 ed47b0dba372a445520e71e58f8a1120 ""
-  "xpressyourself.bbl" 1552970502 49 0eba253fc001332e731e8aba3f23127b "bibtex xpressyourself"
-  "xpressyourself.tex" 1552970501 15726 f578f4e3290f02ade875e2d4433cbb80 ""
+  "xpressyourself.aux" 1553020909 2599 467b27c723de27c9be15e446182cc0e1 ""
+  "xpressyourself.bbl" 1553020908 49 0eba253fc001332e731e8aba3f23127b "bibtex xpressyourself"
+  "xpressyourself.tex" 1553020907 22631 94dc478a07402577583a9e35246c32a1 ""
   (generated)
   "xpressyourself.log"
-  "xpressyourself.pdf"
   "xpressyourself.aux"
+  "xpressyourself.pdf"
