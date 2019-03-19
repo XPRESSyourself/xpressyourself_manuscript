@@ -1,7 +1,11 @@
 % Modified from AAAS Science LATEX template
 % Use only LaTeX2e, calling the article.cls class and 12-point type.
 
-\documentclass[11pt]{article}
+\documentclass[11pt, a4paper, oneside]{article}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{float}
+\usepackage{graphicx}
 
 \usepackage{scicite}
 
@@ -55,6 +59,36 @@ Jason Gertz,$^{3}$ Michael T. Howard,$^{2}$ Aaron R. Quinlan,$^{2,4,5}$ Jared P.
 %%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
 
 
+% Initialize use of code blocks with syntax highlighting
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \begin{document}
 
@@ -97,24 +131,77 @@ In response to these issues surrounding the automation and democratization of se
   \item Flexibility is paramount in creating a tool that can be widely used and built upon. The general structure of  the software was designed to make it easy to add or remove features. We envision as this suite of tools is more widely adopted by the RNAseq community, modules will be added to handle other sequencing platforms, such as genome sequencing, CHIPseq, and so on.
 \end{enumerate}
 
-With XPRESStools, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads, and tools to perform the bulk of sequence analysis with enough flexibility to generate professional, figure-worthy images.
-
+With XPRESSyourself, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads, and tools to perform the bulk of sequence analysis with enough flexibility to generate professional, figure-worthy images.
 
 \section{Materials and Methods}
 
 \subsection{XPRESSpipe}
 
 \subsubsection{Installation}
+General installation of XPRESSpipe is handled by the package manager, Anaconda{}, which is easy to download and install (https://www.anaconda.com/distribution/). XPRESSpipe can be installed using the following command:
+\newline
+\begin{lstlisting}[language=bash, caption=curateReference example]
+$ conda install -c bioconda XPRESSpipe
+\end{lstlisting}
+
+XPRESSpipe is built upon several pre-established software packages, listed below:
+\newline
+
+\begin{tabular}{p{2.4cm}p{7.5cm}p{6.5cm}}
+ \textbf{Package} & \textbf{URL} & \textbf{Purpose} \\
+ \hline
+ fastp & https://github.com/OpenGene/fastp & Read pre-processing \\
+ \hline
+ ucsc-gtftogenepred & http://hgdownload.cse.ucsc.edu/admin/exe/ & Create refFlat reference file used in meta-analysis \\
+ \hline
+ STAR & https://github.com/alexdobin/STAR & Reference curation and read alignment \\
+ \hline
+ samtools & http://www.htslib.org/ & Alignment file manipulation \\
+ \hline
+ bedtools & https://github.com/arq5x/bedtools2 & Alignment file manipulation \\
+ \hline
+ deeptools & https://github.com/deeptools/deepTools & Alignment file manipulation \\
+ \hline
+ htseq & https://github.com/simon-anders/htseq & Read quantification \\
+ \hline
+ fastqc & https://www.bioinformatics.babraham.ac.uk/ projects/fastqc/ & Quality Control \\
+ \hline
+ multiqc & https://multiqc.info/ & Quality Control \\
+ \hline
+ picard & https://broadinstitute.github.io/picard/ & Transcript meta-analysis \\
+ \hline
+ plastid & https://github.com/joshuagryphon/plastid & Periodicity meta-analysis \\
+\end{tabular}
+\newline
+
+These packages will be automatically installing using the Anaconda package manager; however, if installing manually, these packages will need to be installed by the user.
 
 \subsubsection{Inputs}
+While inputs will vary sub-module to sub-module, and further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering ``xpresspipe \textless sub-module name\textgreater \ --help", a few points of guidance are important to consider.
+
+\begin{itemize}
+\item Single-end reads should end in ``.fa", ``.fasta", ``.txt"
+\item Paired-end reads should end in ``.read1/2.suffix" or ``.r1/2.suffix"
+\item The transcriptome reference file should be a valid GTF file and should be named ``transcripts.gtf"
+\item If specifying a group of fasta files to use for alignment or reference curation, the directory containing this files cannot contain any other files ending in ``.txt" or ``.fa"
+\end{itemize}
 
 \subsubsection{Reference Curation}
-Reference curation
-  new tools
-  minimal user input
-  flexible enough to easily add features if user desires
+One of the first preparatory steps of RNAseq alignment is curating a reference transcriptome for the aligner to map reads to. For the purposes of XPRESSpipe, a STAR reference should be created. However, for the purposes of several meta-analyses and more specific mapping, a STAR{} reference alone is not enough. For example, if one is aligning ribosome profiling reads and wishes to avoid mapping reads to the first 45 nucleotides in order to not quantify the inherent 5' biases in library preparation{}, a truncated transcriptome reference needs to be used when counting reads to transcripts. Additionally, if one wishes to only quantify reads to the coding portions of the transcriptome, a custom reference file needs to be created. While each of these steps are available as stand-alone sub-modules, all potential reference files, including STAR files, modified transcriptome files, and other meta-analysis files can be created by running the ``curateReference" command. An example is shown below for creating a ribosome profiling-ready reference XPRESSpipe directory. The following assumes one is avoiding mapping to the first 45 nucleotides, will only quantify to protein coding regions, and is tailored for mapping 50-bp single-end RNA-seq reads. As this can be a time-consuming process, we will leave the ``--max\_processors" argument as default in order to utilize all cores available to the computing unit.
+\newline
+\begin{lstlisting}[language=bash, caption=curateReference example]
+$ xpresspipe curateReference -o /path/to/output/location/
+                              -f /path/to/fasta/genome/files/
+                              -g /path/transcripts.gtf
+                              --truncate_amount 45
+                              --sjdbOverhang 49
+\end{lstlisting}
+
+While current available arguments are limited, the design is simple enough where arguments could be added easily to give more control over STAR reference creation; however, current setting align with TCGA standards.
 
 \subsubsection{Read Processing}
+While all intermediate steps of the pipelines can be run singly, we will describe the outline of the software in the context of the pipelines.
+
 pipeline
   run singly or all together
   normalization / batch effect
@@ -123,6 +210,15 @@ pipeline
 output
   minimal but enough to get clear picture
   optional outputs
+
+  \begin{figure}
+    \fbox{\includegraphics[width=\linewidth]{figures/xpresspipe_overview.png}}
+    \caption{A schematic of XPRESSpipe outputs. Input, output, and often reference directories are specified and each stage of processing or analysis is given a separate directory.}
+    \label{fig:outputs}
+  \end{figure}
+
+Figure \ref{fig:outputs} provides an example of output file scheme for XPRESSpipe.
+
 
 \subsubsection{Quality Control}
 quality control
