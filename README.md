@@ -190,3 +190,53 @@ With the advent of high-throughput sequencing platforms, expression profiling is
   - XPRESSpipe
     - Jeff Morgan (riboseq)
     - Mark Wadsworth? (PE RNAseq)
+
+
+
+# Notes
+
+### INTRO
+RNAseq and riboseq powerful tools   
+
+Automated analysis critical   
+Pipelines that exist that tackle this   
+
+Few options for ribosome profiling   
+Talk about additional tools    
+
+Describe a new protocol for both, plus new tools   
+
+Can focus on ribosome profiling and mention also works with RNAseq   
+Brought it all together in an automated way   
+Flexible easy to use   
+
+Talk about new stuff first in results   
+
+Download someone elses data and find new things, find other references to help explain if possible   
+Find same things at a minimum   
+Find a metabolism slant   
+
+Don't make RNAseq the focus   
+
+Output stdout and error into log file    
+Timestamp or experiment name   
+Scan each output for errors and stop if true   
+
+### Quality control:
+Measure of complexity   
+	- Report from alignment -- # of reads to # of unique locations
+	- Saturation calculation
+	- When big differences between libraries
+	- Random sample a million reads and see how many uniquely align
+
+Multiplexing   
+UMI -- later, may be more effort, no standard protocol   
+
+One or two confirming examples for biorxiv   
+Codecov and docs   
+Get a couple people to test   
+
+### Benchmarking -- not needed for biorxiv
+With new capabilities, not really clear who to benchmark against   
+	- Focus on new tools
+	- Take a couple TCGA samples and run linreg
