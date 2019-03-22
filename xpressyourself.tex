@@ -276,7 +276,7 @@ XPRESSpipe has two analytical sub-modules. The first simplies the R package, DES
 The second, new analytical tool introduced in XPRESSpipe is ``rrnaProbe". Ribosomal RNA (rRNA) contamination is common in RNA-seq library preparation and the bulk of RNA in a cell at any given time is dedicated to rRNA. As unique rRNA sequences are relatively few and therefore highly repeated in sequencing libraries without intervention, depletion of these sequences is often desired in order to have better depth of coverage of non-rRNA sequences. In order to facilitate this depletion, many commercial kits are available that target specific rRNA sequences for depletion, or that enrich mRNA polyA tails. However, and especially in the case of ribosome profiling experiments, where RNA is digested to create ribosome footprints that commercial depletion kits won't detect and polyA selection kits are inoperable as footprints will not have the requisite polyA sequence. To this end, custom rRNA probes are recommended{}. ``rrnaProbe" works on a directory containinng fastqc{} zip files to initially detect over-represented sequences. It then collate these sequences to determine consensus fragments by {insert Jon's methods here}. A rank ordered list of over-represented fragments within the appropriate length range to target for depletion is then output. BLAST capability to verify over-represented consensus fragments are indeed rRNA sequences is not incorporated, so any sequences that will be used as probes should be BLAST-verified.
 
 \subsection{XPRESStools}
-XPRESStools is a python library of analysis features that builds upon existing packages, such as Matplotlib{} and Seaborn{} to generate flexible, specific analyses frequently used by biological researchers that can each be executed in a single line of code. Additionally, many of the introduced analyses are currently available in the R environment but libraries in Python, a programming language becoming more and more common in biological research, have not yet been developed. A summary of these tools is summarized below and methods are discussed in subsequent sections.
+XPRESStools is a python library of analysis features that builds upon existing packages, such as Matplotlib{} and Seaborn{} to generate flexible, specific analyses frequently used by biological researchers that can each be executed in a single line of code. Additionally, many of the introduced analyses are currently available in the R environment but libraries in Python, a programming language becoming more and more common in biological research, have not yet been developed. A summary of these tools is summarized below and methods are discussed in subsequent sections. For the sake of brevity, methods for new capabilities in the Python toolkit will be discussed in detail. We refer the reader to the documentation (https://xpresstools.readthedocs.io/en/latest/?badge=latest) for more details instructions for other features currently in the toolkit, as well as for future features to be added.
 
 \begin{itemize}
   \item Reference File Modification: GTF transcriptome reference files form the backbone of gene expression quanitification and analysis. However, as previously discussed, these files as provided are often not customized or easily modified. To address this issue, we developed a Python tool for modifying these files to create GTF files with coding only records, or records where each exon 1 is truncated by n nucleotides to avoid mapping to regions where library biases may exist. Additionally, these reference files are used throughout the XPRESSyourself framework for gene normalization and data matrix reformatting.
@@ -286,19 +286,70 @@ XPRESStools is a python library of analysis features that builds upon existing p
 \end{itemize}
 
 \subsubsection{Getting Data}
+XPRESStools is designed for analyzing gene expression data, but it tractable to most data types assuming two conditions are met:
+
+\begin{enumerate}
+  \item Expression Matrix: It is assumed the data matrix is \textit{i} * \textit{j} where \textit{i} (columns) are samples and \textit{j} (rows) are genes or other relative measurement points.
+  \item Metagene Table: It is assumed the metagene table is a two column data matrix where column 0 is the sample ID (as specified in \textit{i} of the expression matrix) and column 1 is the sample group (for example, wild-type and treatment).
+\end{enumerate}
+
+Several functions are built into XPRESStools for importing and formatting this data. Options include imported microarray and RNAseq expression data and metadata from the GEO database, as well as custom data and metadata that follows required formatting.
 
 \subsubsection{Normalizing and Formatting Data}
+Normalization and formatting options are available for both RNAseq and microarray processing. RNA-seq sample and batch normalization procedures and methods are discussed above. Gene normalization is performed using a standard scaling procedure via scikit-learn{}, where each gene is scaled so that the mean is 0 and standard deviation is 1 to faciliate gene-to-gene comparisons.
+
+Microarray probe collapse is designed to allow for conversion of probe IDs to common names and collapse of multiple probes. A user will download the relevant GPL or similar text file that includes information for each probe for a given microarray platform and the genes to which the probe maps. There are three possibilities when it comes to probe mapping that the probe collapse procedure will handle:
+
+\begin{enumerate}
+  \item Probe uniquely maps to one gene and there are no redundant probes. In such a case, the probe ID is converted to the common gene name found in the probe index and no further manipulation is performed.
+  \item Probe maps to multiple targets: In these cases, the user has two choices. They can either drop the probe from the analysis or leave as is and convert the probe ID to reflect all genes it maps to.
+  \item Several probes map to a single gene: In these cases, the probe collapser will group these probes together and for each sample take the average measure of these probes. Probe ID will be converted to common gene name.
+\end{enumerate}
+
+To show consistency and accuracy of this Python based probe collapser, we benchmarked it against the commonly used software package, Affy.
+{Insert figure that compares this to Affy}
 
 \subsubsection{Analyzing Data}
+
+While a litany of analysis tools are included in XPRESStools as of time of writing, we will focus on tools unique to this Python library and refer to reader to the documentation for further details and examples of analysis features, current and future.
+
+\begin{itemize}
+  \item Principle Component Analysis: Principle components for the data matrix are performed with the Python sklearn package and desired principle components are plotted in a scatter plot via the Seaborn package{}. The XPRESStools PCA module, as in many other analysis modules within XPRESStools, samples are color-coded by cross-referencing the data matrix with the metagene table to determine sample label. A dictionary is additionally passed into the function that maps a particular color to each sample label. Confidence intervals are plotted over the scatterplot by the following steps:
+
+  \begin{enumerate}
+    \item Compute the covariance of the two principle component arrays, \textit{x} and \textit{y}:
+
+    \item Compute the eigenvalues and normalized eigenvectors of the covariance matrix:
+
+    \item Compute the theta of the normalized eigenvectors:
+
+    \item Compute the lambda of the eigenvalues:
+
+    \item Plot the confidence intervals over the scatter plot: Using the patches library, the center point of the confidence interval is determined from the means of the \textit{x} and \textit{y} arrays. The width of the condfidence interval is calculated by \[ \textit{w} = lambda(\textit{x})\ x\ \textit{ci}\ x\ 2 \] where \textit{ci} is equal to the corresponding confidence level (i.e. 68\% = 1, 95\% = 2, 99\% = 3). The angle is set equal to \[ theta \].
+  \end{enumerate}
+
+  \item Volcano Plots:
+\end{itemize}
+
+When these computations are performed with a metadata table containing several sample types, these computations will be performed for each label type individually and plotted on the scatter plot.
+
+\subsubsection{Other Features}
+How the GTF truncation works
 
 \subsection{Unit Testing and Code Coverage}
 As this suite of tools is intended to be flexible, and built upon in the future, unit tests to cover general and edge cases with each function have been created and future developments to the pacakge will require new functional tests to maintain package integrity.
 
 \subsection{Availability}
-The source code for these packages is open source protected under the GPL-3.0 license and can be publically accessed at https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. Packages are pip and/or conda installable in addition to source installable. 
+The source code for these packages is open source protected under the GPL-3.0 license and can be publically accessed at https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. Packages are pip and/or conda installable in addition to source installable.
 
 \section*{Results and Discussion}
+In order to show the reliability of these tools, we sought to benchmark its output to other publically available datasets.
 
+TCGA
+
+Ribosome profiling
+
+New features
 \subsection{Benchmarking}
 
 \subsection{Example Data Walkthrough}
