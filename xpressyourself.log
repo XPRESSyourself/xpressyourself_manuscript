@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 MAR 2019 17:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 MAR 2019 18:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -354,11 +354,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
 LaTeX Warning: Reference `fig:outputs' on page 5 undefined on input line 262.
 
-[5] [6] (./xpressyourself.bbl
+[5] [6] [7] (./xpressyourself.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [7] [8] (./xpressyourself.aux)
+) [8] [9] (./xpressyourself.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -378,10 +378,10 @@ ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on xpressyourself.pdf (8 pages, 81730 bytes).
+Output written on xpressyourself.pdf (9 pages, 84616 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

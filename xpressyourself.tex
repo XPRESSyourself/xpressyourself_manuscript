@@ -264,11 +264,11 @@ While outputs will vary sub-module to sub-module, generally, the user will speci
 \subsubsection{Quality Control}
 It is important to perform quality control of sequencing sample to ensure they are reliable and their biological insight can be trusted. XPRESSpipe performs a variety of quality control measures. fastqc{} runs a gambit of quality control measures and multiqc summarizes these and metrics from trimming, aligning, and so on. The ``readDistribution" sub-module will take the read size distributions for each library, as this can be informative, especially in the case of ribosome profiling, to ensure the proper read length was enriched in the sequencing library. The ``metagene" sub-module will summarize read distribution along a representative transcript to highlight any sequencing biases, such as an enrichment of reads on the 3' end indicative of poor library preparation. The ``periodicity" sub-module will take the most enriched read length from ribosome profiling footprint libraries and map the P-site of the ribosome to investigate the 3 nucleotide phasing characteristic of the translating ribosome. Each of these sub-modular quality functions will summarize their results in a single PDF for quick reference by the user. Details on how each of these methods were designed follows.
 
-\begin{enumerate}
+\begin{itemize}
   \item readDistribution: Each ``.fastq" sample file in the designated directory is processed by FastQC{} to generate general quality control statistics. The pipeline will take trimmed reads, which we find to be the most informative stage, but can be run on a ``.fastq" or similar file at any stage of processing. Each FastQC output file is then searched for the read distribution statistics and a summary PDF with each sample's read distribution is generated using the Python libraries, Pandas{} and Matplotlib{}. This provides the user with a publication quality summary of each sample that can be rapidly analyzed by the user to assess general quality of each sample, especially in the case of ribosome profiling where generating footprint libraries within a size window is paramount.
   \item metagene: Each ``SAM" sample file in the designated directory is processed by picard's CollectRnaSeqMetrics function{}. Each output file is then searched for the metagene statistics and a summary PDF with each sample's metagene profile is generated using the Python libraries, Pandas{} and Matplotlib{} so that the user can rapidly detect any biases or other issues in each sample library.
   \item periodicity: Each ``SAM" sample file in the designated directory is processed to identify the dominant aligned read length per each sample. The SAM file is then modified to only contain the sequences of the dominant length, converted into an indexed BAM file using samtools{}, and analyzed by plastid's metagene function{} to determine P-site phasing of footprint samples in a ribosome profiling library. Each output file is then searched for the phasing statistics and a summary PDF with each sample's periodicity profile is generated using the Python libraries, Pandas{} and Matplotlib{} so that the user can rapidly determine phasing for each sample. This metric can be informative in ribosome profiling to ensure ribosome behavior is normal and that sufficient sequencing depth was obtained to create a robust ribosome profiling library.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Analyses}
 XPRESSpipe has two analytical sub-modules. The first simplies the R package, DESeq2{}, for the user and acts as a command line interfacable option to access this statistical package.
@@ -276,6 +276,14 @@ XPRESSpipe has two analytical sub-modules. The first simplies the R package, DES
 The second, new analytical tool introduced in XPRESSpipe is ``rrnaProbe". Ribosomal RNA (rRNA) contamination is common in RNA-seq library preparation and the bulk of RNA in a cell at any given time is dedicated to rRNA. As unique rRNA sequences are relatively few and therefore highly repeated in sequencing libraries without intervention, depletion of these sequences is often desired in order to have better depth of coverage of non-rRNA sequences. In order to facilitate this depletion, many commercial kits are available that target specific rRNA sequences for depletion, or that enrich mRNA polyA tails. However, and especially in the case of ribosome profiling experiments, where RNA is digested to create ribosome footprints that commercial depletion kits won't detect and polyA selection kits are inoperable as footprints will not have the requisite polyA sequence. To this end, custom rRNA probes are recommended{}. ``rrnaProbe" works on a directory containinng fastqc{} zip files to initially detect over-represented sequences. It then collate these sequences to determine consensus fragments by {insert Jon's methods here}. A rank ordered list of over-represented fragments within the appropriate length range to target for depletion is then output. BLAST capability to verify over-represented consensus fragments are indeed rRNA sequences is not incorporated, so any sequences that will be used as probes should be BLAST-verified.
 
 \subsection{XPRESStools}
+XPRESStools is a python library of analysis features that builds upon existing packages, such as Matplotlib{} and Seaborn{} to generate flexible, specific analyses frequently used by biological researchers that can each be executed in a single line of code. Additionally, many of the introduced analyses are currently available in the R environment but libraries in Python, a programming language becoming more and more common in biological research, have not yet been developed. A summary of these tools is summarized below and methods are discussed in subsequent sections.
+
+\begin{itemize}
+  \item Reference File Modification: GTF transcriptome reference files form the backbone of gene expression quanitification and analysis. However, as previously discussed, these files as provided are often not customized or easily modified. To address this issue, we developed a Python tool for modifying these files to create GTF files with coding only records, or records where each exon 1 is truncated by n nucleotides to avoid mapping to regions where library biases may exist. Additionally, these reference files are used throughout the XPRESSyourself framework for gene normalization and data matrix reformatting.
+  \item Microarray Probe Collapse: When performing a microarray experiment, there are often multiple probes for a given gene and probes that will map to several transcripts. It is often desireable to obtain a matrix of microarray data with common gene names where these probes are condensed. While several R packages exist to solve this issue{}, no Python packages are available. As microarrays still have incredible utility{reference of RNAseq and microarray correlation}, we thought it relevant to create a Python based package to handle this formatting of microarray data matrices.
+  \item Principle Componenet Analysis: Principle component analysis (PCA) is a frequent tool in expression analysis to determine if samples of different backgrounds will cluster based on their expression to show that they are truly biologically distinct. Standard R packages for performing PCA will optionally plot confidence intervals to convey statistical significance of this delineation of sample types; however, nothing comparable is available as a streamlined Python package for biological research. We thus developed a package where these confidence intervals are plotted over the PCA scatterplot.
+  \item Volcano Plots: Volcano plots are a frequently used analysis in gene expression, proteomics, and metabolomics experiments, to name a few. These plots are a simple way to convey both magnitude and significance of change in expression or other metric of experiment versus control conditions. We developed a Python package that will plot this data, and will additionally plot thresholds, highlight genes of interest by color-coding and name label, and will output significant hits for further analysis.
+\end{itemize}
 
 \subsubsection{Getting Data}
 
@@ -284,14 +292,10 @@ The second, new analytical tool introduced in XPRESSpipe is ``rrnaProbe". Riboso
 \subsubsection{Analyzing Data}
 
 \subsection{Unit Testing and Code Coverage}
-New tools will require new tests to maintain code Coverage
+As this suite of tools is intended to be flexible, and built upon in the future, unit tests to cover general and edge cases with each function have been created and future developments to the pacakge will require new functional tests to maintain package integrity.
 
 \subsection{Availability}
-Open source community
-GitHub
-Version Control
-Singularity
-
+The source code for these packages is open source protected under the GPL-3.0 license and can be publically accessed at https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. Packages are pip and/or conda installable in addition to source installable. 
 
 \section*{Results and Discussion}
 
