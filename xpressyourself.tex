@@ -352,21 +352,31 @@ As this suite of tools is intended to be flexible, and built upon in the future,
 The source code for these packages is open source protected under the GPL-3.0 license and can be publically accessed at https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. Packages are pip and/or conda installable in addition to source installable.
 
 \section*{Results and Discussion}
-In order to show the reliability of these tools, we sought to benchmark its output to other publically available datasets.
+
+\subsection{Example Data Walkthrough}
+In order to describe the utility of the tools available in this software suite, we prepared a Jupyter Notebook with an example walkthrough for the data analysis of an example dataset. This notebook can serve as a guide and framework for future analyses of data by a user of the software. We chose to use the publicly available microarray dataset, GSE20916, which investigates the gene expression in the colon and associated tumors. While this analysis is for a microarray dataset, code blocks describing and executing pertinent steps for RNAseq are included in this notebook. In this dataset, the normal colon and adenoma tissue are selected and imported, cleaned, and normalized. In this example, the microarray probe collapser is used to remove multi-mapping probes and average duplicate probes for a given gene. After data has been formatted, normalized, and checked for overall quality, a simple, example analysis of the biology behind the data is presented. In this example, we chose to investigate mitochondria and metabolism associated factors and their potential role in the development of normal colon tissue into adenomous tissue that could lead to tumorous tissue. In this analysis, we showed that the transporter, \textit{MPC1} ...
+{CHANGE THIS TO RIBOSOME PROFILING DATA AND FIND SOMETHING NEW}
+
+
+\subsection{Cost Analysis}
+
+\subsection{Benchmarking}
 
 TCGA
 
 Ribosome profiling
 
-New features
-\subsection{Benchmarking}
+Affy vs collapser
 
-\subsection{Example Data Walkthrough}
+\section{Conclusions}
+We have described herein a new software suite, XPRESSyourself, a collection of tools and pipelines to aid in expression data processing and analysis. The software was designed to be flexible and modular so that in the future, new modules and tools can be easily added to and tested in the software suite.
 
-\subsection{Cost Analysis}
 
-\subsection{Summary}
+Easy
 
+New
+
+Reproducible, standardized -- ref TCGA benchmark
 
 \bibliography{scibib}
 

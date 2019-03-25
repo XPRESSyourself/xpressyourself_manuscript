@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1553274769 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1553275304
+["bibtex xpressyourself"] 1553473789 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1553474450
   "./Science.bst" 1552866127 26882 d44ba44187a978cfea85a3cd97387589 ""
   "scibib.bib" 1552866132 1490 d5a14e237cb536b8997b8eec06d544cb ""
-  "xpressyourself.aux" 1553275303 2345 28e75cb179d0c8df2e495e5f5bb9b5ab ""
+  "xpressyourself.aux" 1553474450 2344 bf27e4b051f9976282eb9ee84d75d7d3 ""
   (generated)
   "xpressyourself.blg"
   "xpressyourself.bbl"
-["pdflatex"] 1553275303 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1553275304
+["pdflatex"] 1553474449 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1553474450
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1480098688 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
@@ -80,10 +80,10 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1553275303 2345 28e75cb179d0c8df2e495e5f5bb9b5ab ""
-  "xpressyourself.bbl" 1553274769 49 0eba253fc001332e731e8aba3f23127b "bibtex xpressyourself"
-  "xpressyourself.tex" 1553275303 36330 484d085e0e1c52bbc43a4ea84fb425e7 ""
+  "xpressyourself.aux" 1553474450 2344 bf27e4b051f9976282eb9ee84d75d7d3 ""
+  "xpressyourself.bbl" 1553473789 49 0eba253fc001332e731e8aba3f23127b "bibtex xpressyourself"
+  "xpressyourself.tex" 1553474449 37889 b3d664e5cf5745958c8317655c251487 ""
   (generated)
-  "xpressyourself.log"
   "xpressyourself.aux"
+  "xpressyourself.log"
   "xpressyourself.pdf"
