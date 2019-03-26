@@ -28,15 +28,29 @@
     - Get collab with iron community from Jared to validate (don't include in manuscript until story is ready, just include validation points until then)
     - Dennis Winge, Jerry Kaplan
 
+# Progress / To Do
+- Riboprof truth set
+  - Download SRA :ballot_box_with_check:
+  - Troubleshoot low RPF alignment rate
+  - Quality Control final dataset
 
-# To Do
-- Complexity
-- Periodicity test on larger dataset
-- Metagene
-- Beef up code coverage
-- Test analysis more
-- Get manuscript and tester stuff out before leave for China
-  - Maybe just have software stuff in biorxiv for now and surface validation
+- TCGA truth set
+  - Get datasets :ballot_box_with_check:
+  - Create pipeline Docker :ballot_box_with_check:
+  - Implement pipeline in CGC
+  - Run alignment in CGC, align to full genome  
+  - Compare alignments post counting
+
+- Features
+  - Complexity
+  - Validate periodicity more
+  - Metagene
+
+- Testing
+  - Build more test cases
+  - Code coverage
+
+
 
 # Abstract
 With the advent of high-throughput sequencing platforms, expression profiling is becoming commonplace in medical research. However, for the general user, a computational overhead exists. One scenario is the user has no bioinformatics background, and therefore they must pay a bioinformatician to process their data. Another scenario is where the user has bioinformatics experience, but manually process files one by one or are not aware of the proper settings to be used during processing. The XPRESSyourself suite aims to remove these barriers and create a tools to help standardize and increase throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end and paired-end RNAseq, as well as ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or public microarray and RNAseq datasets. This software suite is designed where features can easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment.
