@@ -1,6 +1,43 @@
 # Title
 <b>XPRESSyourself Bioinformatics Suite</b>: Automating and Democratizing High-Throughput Sequencing
 
+# Software Validation
+- Beef up test coverage while preparing manuscript
+- Have testers run pipeline and analysis notebook and critique documentation
+  - XPRESStools
+    - Alex Bott
+    - Yeyun Ouyang
+  - XPRESSpipe
+    - Jeff Morgan (riboseq)
+    - Mark Wadsworth? (PE RNAseq)
+
+# Biological Validation
+- TCGA
+  - Take a sample of raw datasets and compare FPKM output with publicly available FPKM values
+  - Display one example, and all together linreg scatter plot
+  - Have table breaking down each component sample
+- Riboprof
+  - Run example notebook using this dataset
+  - Validate points made in [manuscript](https://www.biorxiv.org/content/biorxiv/early/2018/09/04/408054.full.pdf)
+    -
+    -
+    -
+    -
+    -
+  - Dig out novel components within the metabolism/mitochondria sphere
+    - Get collab with iron community from Jared to validate (don't include in manuscript until story is ready, just include validation points until then)
+    - Dennis Winge, Jerry Kaplan
+
+
+# To Do
+- Complexity
+- Periodicity test on larger dataset
+- Metagene
+- Beef up code coverage
+- Test analysis more
+- Get manuscript and tester stuff out before leave for China
+  - Maybe just have software stuff in biorxiv for now and surface validation
+
 # Abstract
 With the advent of high-throughput sequencing platforms, expression profiling is becoming commonplace in medical research. However, for the general user, a computational overhead exists. One scenario is the user has no bioinformatics background, and therefore they must pay a bioinformatician to process their data. Another scenario is where the user has bioinformatics experience, but manually process files one by one or are not aware of the proper settings to be used during processing. The XPRESSyourself suite aims to remove these barriers and create a tools to help standardize and increase throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end and paired-end RNAseq, as well as ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or public microarray and RNAseq datasets. This software suite is designed where features can easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment.
 
@@ -181,15 +218,7 @@ With the advent of high-throughput sequencing platforms, expression profiling is
   -
 
 
-# Validation
-- Beef up test coverage while preparing manuscript
-- Have testers run pipeline and analysis notebook and critique documentation
-  - XPRESStools
-    - Alex Bott
-    - Yeyun Ouyang
-  - XPRESSpipe
-    - Jeff Morgan (riboseq)
-    - Mark Wadsworth? (PE RNAseq)
+
 
 
 
