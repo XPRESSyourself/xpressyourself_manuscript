@@ -45,6 +45,7 @@
   - Complexity
   - Validate periodicity more
   - Metagene
+  - Conda install pipeline (maybe docker and manual will suffice)
 
 - Testing
   - Build more test cases
