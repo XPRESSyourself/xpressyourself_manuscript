@@ -103,10 +103,12 @@ XPRESSyourself: Automating and Democratizing High-Throughput Sequencing
 
 % Place your abstract within the special {sciabstract} environment.
 
+
 \begin{sciabstract}
-  With the advent of high-throughput sequencing platforms, expression profiling is becoming common-place in medical research. However, for the general user, often someone who ends up outsourcing their bioinformatics, a computational overhead exists. The XPRESSyourself suite aims to remove these barriers and create a tools to help standardize and increase throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end and paired-end RNAseq, and ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or public microarray and RNAseq datasets. This software suite is designed where features can easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment. Currently, this package offers several new tools, specifically for ribosome profiling, but also for the RNA-seq community at large.
-  \newline\\
-  \normalfont XPRESSyourself is freely available on GitHub: https://github.com/XPRESSyourself\\
+With the advent of high-throughput sequencing platforms, expression profiling is becoming common-place in medical research. However, for the general user, a computational overhead often exists. The XPRESSyourself suite aims to remove some of these barriers for users with limited or advanced computational experience alike and create a series tools aiming to standardize and increase throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end and paired-end RNAseq, and ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or public microarray and RNAseq datasets. This software suite is designed where features can easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment. In addition, this package offers several new tools useful in processing RNA-seq data, specifically for ribosome profiling.
+% To demonstrate the capability of this software package, we analyzed a publicly available ribosome profiling dataset and identified new metabolic insights into the ER-stress response.
+\newline\\
+\normalfont XPRESSyourself is freely available on GitHub: https://github.com/XPRESSyourself\\
 \end{sciabstract}
 
 
@@ -114,16 +116,16 @@ XPRESSyourself: Automating and Democratizing High-Throughput Sequencing
 
 High-throughput profiling of gene expression data has revolutionized biomedical, industrial and basic science research. Within the last two decades, RNA-seq as found itself the forerunner technology for highest quality expression profiling, as it can measure relative transcript abundance, differential splice variants, sequence polymorphisms, and more. This technology has also been adopted to create technologies such as single-cell RNA-seq, capable of assaying the transcriptional profile cell by cell; and ribosome profiling, which measures ribosome occupancy and translation efficiency.
 
-While vast strides have been made to these technologies, various bottlenecks still exist. For example, while more and more researchers are becoming accustomed to these technologies, learning the bioinformatics portion of sequencing possesses its own learning curve and often efficiency is lacking in how sequencing reads are processed and analyzed. Also for these users, they may not be aware of which tools are accepted as the standard in the field or which analyses they should be perform. They may also lack the experience to process their sequencing libraries rapidly or may not know all the in-between steps that are not always explicitely stated in protocols.
+While vast strides have been made to these technologies, various bottlenecks still exist. For example, while more and more researchers are becoming accustomed to these technologies, learning the intricracies of the different tools used in processing RNA-seq data can be inhibitory if users are not aware of the proper tools to use or use outdated software {Cite some cases}. For the experienced user, developing robust pipelines that process and check datasets can be laborious and introduce variability to data processing.
 
-While several pipelines have emerged over the last several years that have been built to tackle various aspects of these bottlenecks, most are not widely used or usable by the average wet-bench researcher. Some are difficult to install or use, often they break easily or do not perform well. Additionally, not much attention has been paid to ribosome profiling in order to automate this procedure. Rarely do these tools offer anything new to help overcome emerging challenges in the field. This is critical as many in-silico methods are often discussed in methods papers, but resources that realize these needs are often lacking. For example, a common bias in ribosome profiling libraries is a 5' transcript pile-up. It is recommended that this region of each transcript not be quantified when processing ribosome profiling libraries; however, currently no tools exist to aid the general user in doing so.
+While several pipelines have emerged over the last several years that have been built to tackle various aspects of these bottlenecks, many suffer from usability issues, or are not easily modifiable. Additionally, few if any offer a thorough set of integrated tools for handling common quality control issues or reference creation. For example, a common bias in ribosome profiling libraries is a 5' transcript pile-up. It is recommended that this region of each transcript not be quantified when processing ribosome profiling libraries; however, currently no tools exist to aid the general user in doing so.
 
 In response to these issues surrounding the automation and democratization of sequencing technology, we created the XPRESSyourself bioinformatics suite for processing and analyzing high-throughput expression data. In creating this tool, we focused on five aspects in order to create an easy, reliable tool where large barriers-to-entry would be elimiated. These were create a tool that was useful, usable, reliable, efficient, and flexible.
 
 \begin{enumerate}
-  \item While the bulk of novel methods and tools developed within this package center around ribosome profiling, we wanted the software we created to be useful for a broad audience, where the bulk of processing and analysis desired by a general user would be covered. We wanted to use pre-existing tools that were fast and accurate. We also wanted to provide additional, new tools that would be of use to the general RNA-seq community, which will be discussed in more detail later.
+  \item While the bulk of novel methods and tools developed within this package center around ribosome profiling, we wanted the software we created to be useful for a broad audience, where the bulk of processing and analysis desired by a general user would be covered. We use pre-existing tools that have been benchmarked and proven faster and more accurate than competing options. We also wanted to provide additional, new tools that would be of use to the general RNA-seq community, which will be discussed in more detail later.
 
-  \item We wanted to create a software package that was easy to use. To do so, we made the tools installable by a single command in the command line interface (CLI) using the Conda and PyPi package managers. We also included thorough external documentation hosted on readthedocs that outlines use and considerations for each tool, as well as provides several examples of how to use each tool. Internally in the CLI-packages, summary documentation has been included by way of the help interface. Jupyter notebooks are also created and installed with the software that provide example analyses that can be easily modified and run.
+  \item We wanted to create a software package that was easy to use. To do so, we made the tools installable by a single command in the command line interface package managers such as PyPi, or are self-contained with all dependencies in a Docker image. In addition to internal help menus, we also included thorough external documentation hosted on readthedocs that outlines use and considerations for each tool, as well as provides several examples of how to use each tool. Jupyter notebooks are also available with each software package that provide example analyses that can be easily modified and run.
 
   \item To create a reliable pipeline and analysis package, we use the most current state-of-the-art software tools that have undergone robust benchmarking. We utilize a two-pass RNA-seq alignment process to provide the best coverage around splice sites. We also built the RNA-seq pipeline according to The Cancer Genome Atlas (TCGA) standards. While this technology will no doubt improve over the years, the software is structures in a way for easy modification for addition of tools or substitution of software.
 
@@ -195,8 +197,6 @@ $ conda install -c bioconda XPRESSpipe
  \hline
  fastp & https://github.com/OpenGene/fastp & Read pre-processing \\
  \hline
- ucsc-gtftogenepred & http://hgdownload.cse.ucsc.edu/admin/exe/ & Create refFlat reference file used in meta-analysis \\
- \hline
  STAR & https://github.com/alexdobin/STAR & Reference curation and read alignment \\
  \hline
  samtools & http://www.htslib.org/ & Alignment file manipulation \\
@@ -210,10 +210,6 @@ $ conda install -c bioconda XPRESSpipe
  fastqc & https://www.bioinformatics.babraham.ac.uk/ projects/fastqc/ & Quality Control \\
  \hline
  multiqc & https://multiqc.info/ & Quality Control \\
- \hline
- picard & https://broadinstitute.github.io/picard/ & Transcript meta-analysis \\
- \hline
- plastid & https://github.com/joshuagryphon/plastid & Periodicity meta-analysis \\
 \end{tabular}
 \newline
 
@@ -230,14 +226,16 @@ While inputs will vary sub-module to sub-module, and further information can be 
 \end{itemize}
 
 \subsubsection{Reference Curation}
-One of the first preparatory steps of RNAseq alignment is curating a reference transcriptome for the aligner to map reads to. For the purposes of XPRESSpipe, a STAR reference should be created. However, for the purposes of several meta-analyses and more specific mapping, a STAR{} reference alone is not enough. For example, if one is aligning ribosome profiling reads and wishes to avoid mapping reads to the first 45 nucleotides in order to not quantify the inherent 5' biases in library preparation{}, a truncated transcriptome reference needs to be used when counting reads to transcripts. Additionally, if one wishes to only quantify reads to the coding portions of the transcriptome, a custom reference file needs to be created. While each of these steps are available as stand-alone sub-modules, all potential reference files, including STAR files, modified transcriptome files, and other meta-analysis files can be created by running the ``curateReference" command. An example is shown below for creating a ribosome profiling-ready reference XPRESSpipe directory. The following assumes one is avoiding mapping to the first 45 nucleotides, will only quantify to protein coding regions, and is tailored for mapping 50-bp single-end RNA-seq reads. As this can be a time-consuming process, we will leave the ``--max\_processors" argument as default in order to utilize all cores available to the computing unit.
+One of the first preparatory steps of RNAseq alignment is curating a reference transcriptome for the aligner to map reads to. For the purposes of XPRESSpipe, a STAR reference should be created. However, for the purposes of several meta-analyses and more specific mapping, a STAR{} reference alone is not enough. For example, if one is aligning ribosome profiling reads and wishes to avoid mapping reads to the first 45 nucleotides in order to not quantify the inherent 5' biases in library preparation{}, a truncated transcriptome reference needs to be used when counting reads to transcripts. Additionally, if one wishes to only quantify reads to protein coding portions of the transcriptome, a custom reference file needs to be created. While each of these steps are available as stand-alone sub-modules, all reference files used by XPRESSpipe, including STAR files, modified transcriptome files, and other meta-analysis files can be created by running the ``curateReference" command. An example is shown below for creating a ribosome profiling-ready reference XPRESSpipe directory. The following assumes one is avoiding mapping to the first 45 nucleotides and last 15 nucleotides of the longest transcript for each gene, will only quantify to protein coding regions, and is tailored for mapping 50-bp single-end RNA-seq reads. As this can be a time-consuming process, we will leave the ``--max\_processors" argument as default in order to utilize all cores available to the computing unit.
 \newline
 \begin{lstlisting}[language=bash, caption=curateReference example]
 $ xpresspipe curateReference -o /path/to/output/location/
                               -f /path/to/fasta/genome/files/
                               -g /path/transcripts.gtf
-                              --truncate_amount 45
+                              --truncate_5prime 45
+                              --truncate_3prime 15
                               --sjdbOverhang 49
+                              --protein_coding
 \end{lstlisting}
 
 While current available arguments are limited, the design is simple enough where arguments could be added easily to give more control over STAR reference creation; however, current setting align with TCGA standards.

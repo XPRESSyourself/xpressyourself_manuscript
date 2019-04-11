@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  24 MAR 2019 18:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 APR 2019 18:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,40 +262,40 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 100.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 106.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 107.
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--110
+Underfull \hbox (badness 10000) in paragraph at lines 108--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--110
+Underfull \hbox (badness 10000) in paragraph at lines 108--112
 
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 113.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 115.
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 139.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 141.
 
 [2]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 142.
+(caption)                outside box or environment on input line 144.
 See the caption package documentation for explanation.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 143.
+(Font)              <10.95> on input line 145.
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--181
+Underfull \hbox (badness 10000) in paragraph at lines 145--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--185
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
@@ -306,14 +306,9 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 188.
+(Font)              <9> on input line 190.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 188.
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
-[]\OT1/phv/m/n/10.95 ucsc-
- []
-
+(Font)              <5> on input line 190.
 
 Underfull \hbox (badness 1231) in paragraph at lines 200--201
 []\OT1/phv/m/n/10.95 Reference cu-ra-tion and read align-
@@ -325,46 +320,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--210
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--219
+Underfull \hbox (badness 10000) in paragraph at lines 195--215
 
  []
 
-[3]
-LaTeX Font Info:    Try loading font information for OML+phv on input line 223.
+LaTeX Font Info:    Try loading font information for OML+phv on input line 219.
 
- (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlphv.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlphv.fd
 File: omlphv.fd 
 )
 LaTeX Font Info:    Font shape `OML/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 223.
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 226.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 219.
+ [3]
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 222.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 226.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--235
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 [4]
 
-LaTeX Warning: Reference `fig:outputs' on page 5 undefined on input line 262.
+LaTeX Warning: Reference `fig:outputs' on page 5 undefined on input line 260.
 
 [5] [6] [7]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 292.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 290.
  [8]
-Underfull \hbox (badness 2384) in paragraph at lines 322--323
+Underfull \hbox (badness 2384) in paragraph at lines 320--321
 []\OT1/phv/m/n/10.95 Compute the eigen-val-ues and nor-mal-ized eigen-vec-tors 
 of the co-vari-ance ma-trix us-ing the
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 330.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 328.
 [9] (./xpressyourself.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
@@ -375,13 +370,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4957 strings out of 492649
- 73347 string characters out of 6129622
- 198942 words of memory out of 5000000
- 8779 multiletter control sequences out of 15000+600000
+ 4959 strings out of 492649
+ 73386 string characters out of 6129622
+ 213942 words of memory out of 5000000
+ 8781 multiletter control sequences out of 15000+600000
  26887 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,51p,1481b,1211s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,51p,1532b,1211s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
@@ -390,7 +385,7 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/t
 exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (11 pages, 94563 bytes).
+Output written on xpressyourself.pdf (11 pages, 94258 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
