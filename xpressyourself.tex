@@ -9,6 +9,7 @@
 
 \usepackage{caption}
 \captionsetup{font=small}
+\usepackage{url}
 
 \usepackage{scicite}
 
@@ -105,7 +106,7 @@ XPRESSyourself: Automating and Democratizing High-Throughput Sequencing
 
 
 \begin{sciabstract}
-With the advent of high-throughput sequencing platforms, expression profiling is becoming common-place in medical research. However, for the general user, a computational overhead often exists. The XPRESSyourself suite aims to remove some of these barriers for users with limited or advanced computational experience alike and create a series tools aiming to standardize and increase throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end and paired-end RNAseq, and ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or public microarray and RNAseq datasets. This software suite is designed where features can easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment. In addition, this package offers several new tools useful in processing RNA-seq data, specifically for ribosome profiling.
+With the advent of high-throughput sequencing platforms, expression profiling is becoming common-place in medical research. However, for the general user, a computational overhead often exists. The XPRESSyourself suite aims to remove some of these barriers for users with limited or advanced computational experience alike and create a series of tools aimed at standardizing and increasing throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end, paired-end RNAseq, and ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or RNAseq datasets. This software suite is designed where features can easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment. In addition, this package offers several new tools useful in processing RNA-seq data, specifically for ribosome profiling. We validated the performance of this suite by processing and analyzing pubilcly available datasets and comparing the output with published results.
 % To demonstrate the capability of this software package, we analyzed a publicly available ribosome profiling dataset and identified new metabolic insights into the ER-stress response.
 \newline\\
 \normalfont XPRESSyourself is freely available on GitHub: https://github.com/XPRESSyourself\\
@@ -114,27 +115,15 @@ With the advent of high-throughput sequencing platforms, expression profiling is
 
 \section{Introduction}
 
-High-throughput profiling of gene expression data has revolutionized biomedical, industrial and basic science research. Within the last two decades, RNA-seq as found itself the forerunner technology for highest quality expression profiling, as it can measure relative transcript abundance, differential splice variants, sequence polymorphisms, and more. This technology has also been adopted to create technologies such as single-cell RNA-seq, capable of assaying the transcriptional profile cell by cell; and ribosome profiling, which measures ribosome occupancy and translation efficiency.
+High-throughput profiling of gene expression data has revolutionized biomedical, industrial, and basic science research. Within the last two decades, RNA-seq as found itself the forerunner technology for highest quality expression profiling, as it can measure relative transcript abundance, differential splice variants, sequence polymorphisms, and more \cite{byron_nrg}. This technology has also been adopted to create technologies such as single-cell RNA-seq, capable of assaying the transcriptional profile cell by cell; and ribosome profiling, which measures ribosome occupancy and translation efficiency \cite{ingolia_science}.
 
-While vast strides have been made to these technologies, various bottlenecks still exist. For example, while more and more researchers are becoming accustomed to these technologies, learning the intricracies of the different tools used in processing RNA-seq data can be inhibitory if users are not aware of the proper tools to use or use outdated software {Cite some cases}. For the experienced user, developing robust pipelines that process and check datasets can be laborious and introduce variability to data processing.
+While vast strides have been made to these technologies, various bottlenecks still exist. For example, while more and more researchers are becoming accustomed to these technologies, learning the intricracies of the different tools used in processing RNA-seq data can be inhibitory if users are not aware of the proper tools to use or use outdated software \cite{costello_npjsba, funari_science}. For the experienced user, developing robust pipelines that process and check datasets can be laborious and introduce variability to data processing.
 
-While several pipelines have emerged over the last several years that have been built to tackle various aspects of these bottlenecks, many suffer from usability issues, or are not easily modifiable. Additionally, few if any offer a thorough set of integrated tools for handling common quality control issues or reference creation. For example, a common bias in ribosome profiling libraries is a 5' transcript pile-up. It is recommended that this region of each transcript not be quantified when processing ribosome profiling libraries; however, currently no tools exist to aid the general user in doing so.
+While several pipelines have emerged over the last several years that have been built to tackle various aspects of these bottlenecks, many suffer from usability issues, or are not easily modifiable. Additionally, few if any offer a thorough set of integrated tools for handling common quality control issues or reference creation. For example, a common bias in ribosome profiling libraries is a 5' transcript pile-up \cite{gerashchenko_nar, artieri_gr, hussman_plosg}. It is recommended that this region of each transcript not be quantified when processing ribosome profiling libraries; however, currently no tools exist to aid the general user in doing so \cite{ingolia_meth, weinberg_reports}.
 
-In response to these issues surrounding the automation and democratization of sequencing technology, we created the XPRESSyourself bioinformatics suite for processing and analyzing high-throughput expression data. In creating this tool, we focused on five aspects in order to create an easy, reliable tool where large barriers-to-entry would be elimiated. These were create a tool that was useful, usable, reliable, efficient, and flexible.
+In response to these issues surrounding the automation and democratization of sequencing technology, we created the XPRESSyourself bioinformatics suite for processing and analyzing high-throughput expression data. In creating this tool, we focused on five aspects in order to create an easy, reliable tool where large barriers-to-entry would be elimiated. These were create a tool that was useful, usable, reliable, efficient, and flexible \cite{taschuk_ploscb}.
 
-\begin{enumerate}
-  \item While the bulk of novel methods and tools developed within this package center around ribosome profiling, we wanted the software we created to be useful for a broad audience, where the bulk of processing and analysis desired by a general user would be covered. We use pre-existing tools that have been benchmarked and proven faster and more accurate than competing options. We also wanted to provide additional, new tools that would be of use to the general RNA-seq community, which will be discussed in more detail later.
-
-  \item We wanted to create a software package that was easy to use. To do so, we made the tools installable by a single command in the command line interface package managers such as PyPi, or are self-contained with all dependencies in a Docker image. In addition to internal help menus, we also included thorough external documentation hosted on readthedocs that outlines use and considerations for each tool, as well as provides several examples of how to use each tool. Jupyter notebooks are also available with each software package that provide example analyses that can be easily modified and run.
-
-  \item To create a reliable pipeline and analysis package, we use the most current state-of-the-art software tools that have undergone robust benchmarking. We utilize a two-pass RNA-seq alignment process to provide the best coverage around splice sites. We also built the RNA-seq pipeline according to The Cancer Genome Atlas (TCGA) standards. While this technology will no doubt improve over the years, the software is structures in a way for easy modification for addition of tools or substitution of software.
-
-  \item In order to make the most efficient package possible, by default XPRESSyourself optimizes use of computing cores to ensure all available are utilized when possible. Additionally, for analysis tools processing large files, we utilize a data matrix chunking method, where a dataset is portioned off into a number equal to the number of cores available, and processes each parallely before rejoining the data chunks.
-
-  \item Flexibility is paramount in creating a tool that can be widely used and built upon. The general structure of the software was designed to make it easy to add or remove features. We envision as this suite of tools is more widely adopted by the RNAseq community, modules will be added to handle other sequencing platforms, such as genome sequencing, CHIPseq, and so on.
-\end{enumerate}
-
-With XPRESSyourself, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads, and tools to perform the bulk of sequence analysis with enough flexibility to generate professional, figure-worthy images.
+With XPRESSyourself, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads, and tools to perform the bulk of sequence analysis and generation of figures for publication.
 
 \section{Materials and Methods}
 
@@ -153,7 +142,7 @@ XPRESSpipe pipelines for single-end RNA-seq, paired-end RNA-seq, and ribosome pr
  \hline
  -r, --reference & Path to parent organism reference directory \\
  \hline
- -t, --reference\_type & GTF, refFlat, etc. type (i.e. ``DEFAULT", ``CODING", ``CODING\_TRUNCATED") \\
+ -g, --gtf & Path and file name to GTF used for alignment quantification \\
  \hline
  -e, --experiment & Experiment name \\
  \hline
@@ -169,51 +158,61 @@ XPRESSpipe pipelines for single-end RNA-seq, paired-end RNA-seq, and ribosome pr
  \hline
  --output\_bigwig & Include flag to output bigwig files for each aligned file \\
  \hline
- --method & Normalization method to perform (options: ``RPM", ``RPKM", ``FPKM", ``LOG") \\
+ --method & Normalization method to perform (options: ``RPM", ``TPM", ``RPKM", ``FPKM", ``LOG") \\
  \hline
  --batch & Include path and filename of dataframe with batch normalization parameters \\
  \hline
  --sjdbOverhang & Sequencing platform read-length for constructing splice-aware reference previously (see documentation for more information) \\
- \hline
- --downstream & Number of nucleotides to track after the landmark (default: 200) \\
  \hline
  -m, --max\_processors & Number of max processors to use for tasks (default: No limit) \\
 \end{tabular}
 \newline
 
 \subsubsection{Installation}
-General installation of XPRESSpipe is handled by the package manager, Anaconda{}, which is easy to download and install (https://www.anaconda.com/distribution/). XPRESSpipe can be installed using the following command:
+XPRESSpipe can be compiled from source (https://github.com/XPRESSyourself/XPRESSpipe) or a version-controlled Docker image (https://www.docker.com/) can be loaded using the following commands:
 \newline
 
 % Install XPRESSpipe code block
 \begin{lstlisting}[language=bash, caption=curateReference example]
-$ conda install -c bioconda XPRESSpipe
+$ docker image pull jordanberg/xpresspipe:latest
 \end{lstlisting}
 
 % Software dependencies table
 \captionof{table}{Summary of dependency software, accession location, and purpose in the XPRESSpipe package.\label{Tab:packages}}
-\begin{tabular}{p{2.4cm}p{7.5cm}p{6.5cm}}
- \textbf{Package} & \textbf{URL} & \textbf{Purpose} \\
+\begin{tabular}{p{2.4cm}p{7.5cm}p{3cm}}
+ \textbf{Package} & \textbf{Purpose} & \textbf{Reference} \\
  \hline
- fastp & https://github.com/OpenGene/fastp & Read pre-processing \\
+ fastp & Read pre-processing & \cite{fastp} \\
  \hline
- STAR & https://github.com/alexdobin/STAR & Reference curation and read alignment \\
+ STAR & Reference curation and read alignment & \cite{star} \\
  \hline
- samtools & http://www.htslib.org/ & Alignment file manipulation \\
+ samtools & Alignment file manipulation & \cite{samtools} \\
  \hline
- bedtools & https://github.com/arq5x/bedtools2 & Alignment file manipulation \\
+ bedtools & Alignment file manipulation & \cite{bedtools} \\
  \hline
- deeptools & https://github.com/deeptools/deepTools & Alignment file manipulation \\
+ deeptools & Alignment file manipulation & \cite{deeptools} \\
  \hline
- htseq & https://github.com/simon-anders/htseq & Read quantification \\
+ htseq & Read quantification & \cite{htseq} \\
  \hline
- fastqc & https://www.bioinformatics.babraham.ac.uk/ projects/fastqc/ & Quality Control \\
+ fastqc & Quality Control & \cite{fastqc} \\
  \hline
- multiqc & https://multiqc.info/ & Quality Control \\
+ multiqc & Quality Control & \cite{multiqc} \\
+ \hline
+ dupRadar & Measure library complexity & \cite{dupradar} \\
+ \hline
+ pandas & Data manipulation & \cite{pandas} \\
+ \hline
+ numpy & Data manipulation & \cite{numpy1, numpy2} \\
+ \hline
+ scipy & Data manipulation & \cite{scipy} \\
+ \hline
+ matplotlib & Plotting & \cite{matplotlib} \\
+ \hline
+ xpresstools & Normalization and matrix manipulation & This paper \\
 \end{tabular}
 \newline
 
-XPRESSpipe is built upon several pre-established software packages, listed in Table \ref{Tab:packages}. These packages will be automatically installing using the Anaconda package manager; however, if installing manually, these packages will need to be installed by the user.
+XPRESSpipe is built upon several pre-established software packages, listed in Table \ref{Tab:packages}. These dependencies are included in any Docker images for XPRESSpipe; however, if installing manually, these packages will need to be installed by the user.
 
 \subsubsection{Inputs}
 While inputs will vary sub-module to sub-module, and further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering ``xpresspipe \textless sub-module name\textgreater \ --help", a few points of guidance are important to consider.
@@ -376,10 +375,6 @@ New
 
 Reproducible, standardized -- ref TCGA benchmark
 
-\bibliography{scibib}
-
-\bibliographystyle{Science}
-
 
 \section*{Acknowledgments}
 J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher.
@@ -397,13 +392,11 @@ J.A.B. received support from the National Institute of Diabetes and Digestive an
  \hline
  Formal Analysis & J.A.B. \\
  \hline
- Software & J.A.B. \\
+ Software & J.A.B., J.R.B. \\
  \hline
- Methodology & J.A.B. \\
+ Methodology & J.A.B., J.R.B., M.T.H. \\
  \hline
- Validation & J.A.B., A.J.B. Y.O. \\
- \hline
- Data Curation & J.A.B. \\
+ Validation & J.A.B., J.T.M., A.J.B., Y.O. \\
  \hline
  Resources & J.A.B., J.P.R. \\
  \hline
@@ -415,5 +408,11 @@ J.A.B. received support from the National Institute of Diabetes and Digestive an
  \hline
  Visualization & J.A.B.
 \end{tabular}
+
+
+\bibliography{manubib}
+
+\bibliographystyle{Science}
+
 
 \end{document}

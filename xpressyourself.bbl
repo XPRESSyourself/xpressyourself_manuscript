@@ -1,3 +1,84 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{byron_nrg}
+S.~Byron, K.~V. Keuren-Jensen, D.~Engelthaler, J.~Carpten, D.~Craig, {\it Nat
+  Rev Genet\/} {\bf 17}, 392–393 (2016).
+
+\bibitem{ingolia_science}
+N.~Ingolia, S.~Ghaemmaghami, J.~Newman, J.~Weissman, {\it Science\/} {\bf 324},
+  218 (2009).
+
+\bibitem{costello_npjsba}
+Z.~Costello, H.~Martin, {\it NPJ Syst Biol Appl\/} {\bf 4} (2018).
+
+\bibitem{funari_science}
+V.~Funari, S.~Canosa, {\it Science\/} {\bf 344}, 653 (2014).
+
+\bibitem{gerashchenko_nar}
+M.~Gerashchenko, V.~Gladyshev, {\it Nucleic Acids Res\/} {\bf 42} (2014).
+
+\bibitem{artieri_gr}
+C.~Artieri, H.~Fraser, {\it Genome Res\/} {\bf 24}, 2011 (2014).
+
+\bibitem{hussman_plosg}
+J.~Hussmann, S.~Patchett, A.~Johnson, S.~Sawyer, W.~Press, {\it PLoS Genet\/}
+  {\bf 11} (2015).
+
+\bibitem{ingolia_meth}
+N.~McGlincy, N.~Ingolia, {\it Methods\/} {\bf 126}, 112 (2017).
+
+\bibitem{weinberg_reports}
+D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
+
+\bibitem{taschuk_ploscb}
+M.~Taschuk, G.~Wilson, {\it PLoS Comput Biol\/} {\bf 13} (2017).
+
+\bibitem{fastp}
+S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
+
+\bibitem{star}
+A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
+
+\bibitem{samtools}
+H.~Li, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 25}, 2078 (2009).
+
+\bibitem{bedtools}
+A.~Quinlan, I.~Hall, {\it Bioinformatics\/} {\bf 26}, 841 (2010).
+
+\bibitem{deeptools}
+F.~Ram\'irez, F.~D{\"u}ndar, S.~Diehl, B.~Gr{\"u}ning, T.~Manke, {\it Nucleic
+  Acids Res\/} {\bf 42} (2014).
+
+\bibitem{htseq}
+S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
+
+\bibitem{fastqc}
+S.~Andrews, Fastqc,
+  \url{http://www.bioinformatics.babraham.ac.uk/projects/fastqc/} (2010).
+
+\bibitem{multiqc}
+P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
+  32}, 3047–3048 (2016).
+
+\bibitem{dupradar}
+S.~Sayols, D.~Scherzinger, H.~Klein, {\it BMC Bioinformatics\/} {\bf 17}, 428
+  (2016).
+
+\bibitem{pandas}
+W.~McKinney, {\it Proc of the 9th Python in Science Conf\/} pp. 51--56 (2010).
+
+\bibitem{numpy1}
+T.~Oliphant, {\it A guide to NumPy\/} (Trelgol Publishing, USA, 2006).
+
+\bibitem{numpy2}
+S.~van~der Walt, S.~Colbert, G.~Varoquaux, {\it Computing in Science
+  Engineering\/} {\bf 13}, 22 (2011).
+
+\bibitem{scipy}
+E.~Jones, T.~Oliphant, P.~Peterson, {\it et~al.\/}, Scipy: Open source
+  scientific tools for python, \url{http://www.scipy.org/} (2001).
+
+\bibitem{matplotlib}
+J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
 
 \end{thebibliography}
