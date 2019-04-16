@@ -60,6 +60,9 @@ S.~Andrews, Fastqc,
 P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
   32}, 3047–3048 (2016).
 
+\bibitem{deseq2}
+M.~Love, W.~Huber, S.~Anders, {\it Genome Biol\/} {\bf 15} (2014).
+
 \bibitem{dupradar}
 S.~Sayols, D.~Scherzinger, H.~Klein, {\it BMC Bioinformatics\/} {\bf 17}, 428
   (2016).
@@ -80,5 +83,26 @@ E.~Jones, T.~Oliphant, P.~Peterson, {\it et~al.\/}, Scipy: Open source
 
 \bibitem{matplotlib}
 J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
+
+\bibitem{baruzzo_natmeth}
+G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135–139 (2017).
+
+\bibitem{evans_briefbio}
+C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
+  (2018).
+
+\bibitem{blast}
+S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman, {\it J Mol Biol.\/} {\bf
+  215}, 403 (1990).
+
+\bibitem{seaborn}
+M.~Waskom, et~al  (2012).
+
+\bibitem{scikit_learn}
+F.~Pedregosa, {\it et~al.\/}, {\it Journal of Machine Learning Research\/} {\bf
+  12}, 2825 (2011).
+
+\bibitem{readthedocs}
+Read the docs, \url{https://readthedocs.org/}.
 
 \end{thebibliography}

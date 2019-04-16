@@ -105,6 +105,7 @@
 
 # To Do for BioRXiv
 - Fix deduplication and use deduplicated file for counting, meta-analysis, periodicity
+- For meta position penalty, only count if in exon space
 - Test cases for pipeline
 - Test cases for analysis
 - Test docker instance
@@ -112,3 +113,5 @@
   - Add instructions for beginners
   - Add instructions on how to add to the project
 - Dataset test case
+- Get reference formatted fixed and make in-text superscript
+- Implement UMI to trim
