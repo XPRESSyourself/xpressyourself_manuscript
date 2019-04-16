@@ -76,6 +76,7 @@
 
 ### Documentation
 - Walkthroughs for beginners
+  - Add videos like example in this [README](https://github.com/manubot/manubot)
 - Explanation on how to build upon
 - Test examples for all functions
 
