@@ -37,7 +37,7 @@ XPRESSyourself: Automating and Democratizing High-Throughput Sequencing
 \author{
 Tentative author list/order:
 Jordan A. Berg,$^{1}$ Jonathan R. Belyeu,$^{2}$ Jeffrey T. Morgan,$^{1}$ Alex J. Bott,$^{1}$ \\
-Yeyun Ouyang,$^{1}$ Jason Gertz,$^{3}$ Michael T. Howard,$^{2}$ Aaron R. Quinlan,$^{2,4,5}$ Jared P. Rutter$^{1,6\ast}$\\
+Yeyun Ouyang,$^{1}$ Jason Gertz,$^{3}$ Aaron R. Quinlan,$^{2,4,5}$ Michael T. Howard,$^{2}$ Jared P. Rutter$^{1,6\ast}$\\
 \\
 \normalsize{$^{1}$Department of Biochemistry, University of Utah, Salt Lake City, UT, USA, 84112}\\
 \normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA, 84112}\\
@@ -357,19 +357,23 @@ The source code for these packages is open source protected under the GPL-3.0 li
 \section{Results and Discussion}
 
 \subsection{Validation}
+In order to evaluate the ability of XPRESSpipe to provide the user with reliable results, we processed publicly available raw sequence files through the pipeline. We chose to highlight a ribosome profiling dataset and a subset of TCGA samples.
 
 \subsubsection{Ribosome Profiling Dataset}
+In this section, we will look at the count values available on GEO and the counts we get out of the pipeline. Fig 2A will be correlations showing tight relationships between all mapped genes. F2B-D will replicate the relevant figures from the paper.
 
 \subsubsection{TCGA Dataset}
+In this section, we will process the raw data for 10-20 TCGA samples and compare the FPKM counts output by XPRESSpipe to the publicly available FPKM counts for the relevant samples.
 
 \subsubsection{Ease of Use Case Study}
+In this section, we will discuss a simple case study of 2-4 users with no computational experience and the time it took to get output and the quality of the output.
 
 \subsection{New Insights into Metabolism}
-
+Using the previously discussed ribosome profiling dataset, we will discuss new metabolic insights obtained by focusing on something other than what the authors were interested in. THe way this is explained will be fairly important -- do we want to highlight that this is capable of finding something new (I don't know that that is really the purpose of this), that this just makes it so someone can quickly access the data and re-analyze it for their points of interest? Highlight again the amount of sequencing data out there and how most have only be used to explore one narrow aspect of biology. Figure 3 will include the insights gained. A potential Fig4 discussing validation of the insights.
 
 \section{Conclusions}
 We have described herein a new software suite, XPRESSyourself, a collection of tools and pipelines to aid in expression data processing and analysis. The software was designed to be flexible and modular so that in the future, new modules and tools can be easily added to and tested in the software suite.
-
+Discuss results of validation and biological study
 
 
 

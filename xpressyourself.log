@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 APR 2019 10:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 APR 2019 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -351,7 +351,7 @@ of the co-vari-ance ma-trix us-ing the
 
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 336.
-[8] (./xpressyourself.bbl [9]) [10] (./xpressyourself.aux)
+[8] [9] (./xpressyourself.bbl [10]) [11] (./xpressyourself.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -375,10 +375,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (10 pages, 217531 bytes).
+Output written on xpressyourself.pdf (11 pages, 219027 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
