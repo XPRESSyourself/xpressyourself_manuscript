@@ -105,6 +105,7 @@
 
 
 # To Do for BioRXiv
+- Make own read distribution sub-module 
 - Fix deduplication and use deduplicated file for counting, meta-analysis, periodicity
 - For meta position penalty, only count if in exon space
 - Test cases for pipeline
