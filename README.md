@@ -17,6 +17,7 @@
 
 ### Count
 - Methods, flexibility, assumptions
+- Swap for RSEM
 
 ### Quality Control
 ##### Read distribution summary
@@ -105,7 +106,11 @@
 
 
 # To Do for BioRXiv
-- Make own read distribution sub-module 
+- Make own read distribution sub-module
+- UMI module
+- Find batch control best package
+- Export single summary images too
+- For longest transcript, measure in exon space
 - Fix deduplication and use deduplicated file for counting, meta-analysis, periodicity
 - For meta position penalty, only count if in exon space
 - Test cases for pipeline

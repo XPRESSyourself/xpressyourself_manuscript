@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 APR 2019 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 APR 2019 12:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -289,81 +289,81 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 118.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 116.
 
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 121.
+(caption)                outside box or environment on input line 119.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--158
+Underfull \hbox (badness 10000) in paragraph at lines 120--156
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
 
  []
 
-[2] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 170--204
+Underfull \hbox (badness 10000) in paragraph at lines 168--202
 
  []
 
-LaTeX Font Info:    Try loading font information for OML+cmtt on input line 208
+LaTeX Font Info:    Try loading font information for OML+cmtt on input line 206
 .
-LaTeX Font Info:    No file OMLcmtt.fd. on input line 208.
+LaTeX Font Info:    No file OMLcmtt.fd. on input line 206.
 
 LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 208.
+(Font)              for symbol `textless' on input line 206.
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 211.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 209.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 211.
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--222
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 209.
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 
  []
 
-[3] [4] [5]
+[4] [5]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 265.
 <figures/xpresspipe_overview.png, id=28, 410.0118pt x 475.0548pt>
 File: figures/xpresspipe_overview.png Graphic file (type png)
 <use figures/xpresspipe_overview.png>
 Package pdftex.def Info: figures/xpresspipe_overview.png  used on input line 29
-4.
+1.
 (pdftex.def)             Requested size: 341.43306pt x 395.60016pt.
- [6 <./figures/xpresspipe_overview.png>] [7]
-Underfull \hbox (badness 2384) in paragraph at lines 328--329
+ [6] [7 <./figures/xpresspipe_overview.png>]
+Underfull \hbox (badness 2384) in paragraph at lines 325--326
 []\OT1/phv/m/n/10.95 Compute the eigen-val-ues and nor-mal-ized eigen-vec-tors 
 of the co-vari-ance ma-trix us-ing the
  []
 
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 336.
-[8] [9] (./xpressyourself.bbl [10]) [11] (./xpressyourself.aux)
+[8] [9] (./xpressyourself.bbl [10]) [11] [12] (./xpressyourself.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5063 strings out of 492649
- 74753 string characters out of 6129622
- 167269 words of memory out of 5000000
- 8879 multiletter control sequences out of 15000+600000
+ 5064 strings out of 492649
+ 74762 string characters out of 6129622
+ 168269 words of memory out of 5000000
+ 8880 multiletter control sequences out of 15000+600000
  25705 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,47p,1545b,1175s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,47p,1592b,1175s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
@@ -375,10 +375,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (11 pages, 219027 bytes).
+Output written on xpressyourself.pdf (12 pages, 221745 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
