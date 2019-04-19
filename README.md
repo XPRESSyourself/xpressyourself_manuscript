@@ -1,3 +1,23 @@
+# To Do for BioRXiv
+- Make own read distribution sub-module
+- UMI module
+- Add FastQC to rRNAprobe
+- Find batch control best package
+- Export single summary images
+  - Fix so it doesn't keep subplots as it goes
+- For longest transcript, measure in exon space
+- (COMPLETE) Fix deduplication and use deduplicated file for counting, meta-analysis, periodicity
+- (COMPLETE) For meta position penalty, only count if in exon space
+- Test cases for pipeline
+- Test cases for analysis
+- Test docker instance, ensure R deps are working within
+- Build documentation
+  - Add instructions for beginners
+  - Add instructions on how to add to the project
+- Dataset test case
+- Get reference formatted fixed and make in-text superscript
+
+
 # Title
 <b>XPRESSyourself Bioinformatics Suite</b>: Automating and Democratizing High-Throughput Sequencing
 
@@ -103,22 +123,3 @@
 - Jay Gertz
 - Cameron Waller
 - Others in Dept?
-
-
-# To Do for BioRXiv
-- Make own read distribution sub-module
-- UMI module
-- Find batch control best package
-- Export single summary images too
-- For longest transcript, measure in exon space
-- Fix deduplication and use deduplicated file for counting, meta-analysis, periodicity
-- For meta position penalty, only count if in exon space
-- Test cases for pipeline
-- Test cases for analysis
-- Test docker instance
-- Build documentation
-  - Add instructions for beginners
-  - Add instructions on how to add to the project
-- Dataset test case
-- Get reference formatted fixed and make in-text superscript
-- Implement UMI to trim

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 APR 2019 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 APR 2019 19:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -339,19 +339,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--220
 [4] [5]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 265.
-<figures/xpresspipe_overview.png, id=28, 410.0118pt x 475.0548pt>
+<figures/xpresspipe_overview.png, id=28, 421.575pt x 475.0548pt>
 File: figures/xpresspipe_overview.png Graphic file (type png)
 <use figures/xpresspipe_overview.png>
 Package pdftex.def Info: figures/xpresspipe_overview.png  used on input line 29
 1.
-(pdftex.def)             Requested size: 341.43306pt x 395.60016pt.
+(pdftex.def)             Requested size: 341.43306pt x 384.75603pt.
  [6] [7 <./figures/xpresspipe_overview.png>]
 Underfull \hbox (badness 2384) in paragraph at lines 325--326
 []\OT1/phv/m/n/10.95 Compute the eigen-val-ues and nor-mal-ized eigen-vec-tors 
 of the co-vari-ance ma-trix us-ing the
  []
 
-[8] [9] (./xpressyourself.bbl [10]) [11] [12] (./xpressyourself.aux)
+[8] [9] (./xpressyourself.bbl [10] [11]) [12] (./xpressyourself.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -375,7 +375,7 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
 texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (12 pages, 221745 bytes).
+Output written on xpressyourself.pdf (12 pages, 222107 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
