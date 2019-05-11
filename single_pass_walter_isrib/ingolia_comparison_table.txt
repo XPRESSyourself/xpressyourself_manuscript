@@ -1,0 +1,5 @@
+	mRNA-reads	mRNA-reads	mRNA-reads	mRNA-reads	mRNA-reads	mRNA-reads	mRNA-reads	mRNA-reads	ribo-reads	ribo-reads	ribo-reads	ribo-reads	ribo-reads	ribo-reads	ribo-reads	ribo-reads
+	isrib_a_hek	isrib_b_hek	tm_a_hek	tm_b_hek	tmisrib_a_hek	tmisrib_b_hek	untr_a_hek	untr_b_hek	ribo_isrib_a	ribo_isrib_b	ribo_tm_a	ribo_tm_b	ribo_tmisrib_a	ribo_tmisrib_b	ribo_untr_a	ribo_untr_b
+Expected (Ingolia)	11416295	8759233	8860168	11237213	17587001	25312443	12128022	11149883	4624752	6116701	4278374	3079442	5999103	6664962	8162699	11760801
+Actual	7908934	6736558	6543200	7666308	10013196	12081290	8258632	7514155	2691437	3138898	3125864	2173339	4103819	4030279	4408258	5111154
+Percentage	0.692775896	0.769080809	0.738496155	0.682225032	0.569352103	0.477286606	0.68095457	0.673922318	0.58196353	0.513168455	0.730619623	0.705757407	0.684072102	0.604696471	0.54004907	0.434592338

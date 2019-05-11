@@ -1,0 +1,33 @@
+Run	Experiment	SRA_Sample	Sample_Name	treatment	Assay_Type	ingolia_name
+SRR1795409	SRX870796	SRS841591	GSM1606099	untreated	RNA-Seq	untr_a_hek
+SRR1795410	SRX870796	SRS841591	GSM1606099	untreated	RNA-Seq	untr_a_hek
+SRR1795411	SRX870797	SRS841590	GSM1606100	untreated	RNA-Seq	untr_b_hek
+SRR1795412	SRX870797	SRS841590	GSM1606100	untreated	RNA-Seq	untr_b_hek
+SRR1795413	SRX870798	SRS841589	GSM1606101	ISRIB (200 nM) for 1 hour	RNA-Seq	isrib_a_hek
+SRR1795414	SRX870798	SRS841589	GSM1606101	ISRIB (200 nM) for 1 hour	RNA-Seq	isrib_a_hek
+SRR1795415	SRX870799	SRS841587	GSM1606102	ISRIB (200 nM) for 1 hour	RNA-Seq	isrib_b_hek
+SRR1795416	SRX870799	SRS841587	GSM1606102	ISRIB (200 nM) for 1 hour	RNA-Seq	isrib_b_hek
+SRR1795417	SRX870800	SRS841588	GSM1606103	1µg/ml of tunicamycin for 1 hour	RNA-Seq	tm_a_hek
+SRR1795418	SRX870800	SRS841588	GSM1606103	1µg/ml of tunicamycin for 1 hour	RNA-Seq	tm_a_hek
+SRR1795419	SRX870801	SRS841586	GSM1606104	1µg/ml of tunicamycin for 1 hour	RNA-Seq	tm_b_hek
+SRR1795420	SRX870801	SRS841586	GSM1606104	1µg/ml of tunicamycin for 1 hour	RNA-Seq	tm_b_hek
+SRR1795421	SRX870802	SRS841583	GSM1606105	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	RNA-Seq	tmisrib_a_hek
+SRR1795422	SRX870802	SRS841583	GSM1606105	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	RNA-Seq	tmisrib_a_hek
+SRR1795423	SRX870803	SRS841580	GSM1606106	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	RNA-Seq	tmisrib_b_hek
+SRR1795424	SRX870803	SRS841580	GSM1606106	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	RNA-Seq	tmisrib_b_hek
+SRR1795425	SRX870804	SRS841579	GSM1606107	untreated	Ribo-Seq	ribo_untr_a
+SRR1795426	SRX870804	SRS841579	GSM1606107	untreated	Ribo-Seq	ribo_untr_a
+SRR1795427	SRX870805	SRS841578	GSM1606108	untreated	Ribo-Seq	ribo_untr_b
+SRR1795428	SRX870805	SRS841578	GSM1606108	untreated	Ribo-Seq	ribo_untr_b
+SRR1795429	SRX870806	SRS841577	GSM1606109	ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_isrib_a
+SRR1795430	SRX870806	SRS841577	GSM1606109	ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_isrib_a
+SRR1795431	SRX870807	SRS841576	GSM1606110	ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_isrib_b
+SRR1795432	SRX870807	SRS841576	GSM1606110	ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_isrib_b
+SRR1795433	SRX870808	SRS841575	GSM1606111	1µg/ml of tunicamycin for 1 hour	Ribo-Seq	ribo_tm_a
+SRR1795434	SRX870808	SRS841575	GSM1606111	1µg/ml of tunicamycin for 1 hour	Ribo-Seq	ribo_tm_a
+SRR1795435	SRX870809	SRS841574	GSM1606112	1µg/ml of tunicamycin for 1 hour	Ribo-Seq	ribo_tm_b
+SRR1795436	SRX870809	SRS841574	GSM1606112	1µg/ml of tunicamycin for 1 hour	Ribo-Seq	ribo_tm_b
+SRR1795437	SRX870810	SRS841573	GSM1606113	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_tmisrib_a
+SRR1795438	SRX870810	SRS841573	GSM1606113	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_tmisrib_a
+SRR1795439	SRX870811	SRS841572	GSM1606114	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_tmisrib_b
+SRR1795440	SRX870811	SRS841572	GSM1606114	1µg/ml of tunicamycin and ISRIB (200 nM) for 1 hour	Ribo-Seq	ribo_tmisrib_b

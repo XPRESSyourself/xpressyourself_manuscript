@@ -18,6 +18,19 @@
 - Get reference formatted fixed and make in-text superscript
 
 
+# Citation Notes
+- DOI:10.1038/s41598-017-01617-3
+  - Benchmarking of RNA-sequencing analysis workflows using whole transcriptome RT-qPCR expression data
+  - All quantification methods about similar benchmarked to qPCR validation
+
+# Other Notes
+- Single-pass is about 15 min per file
+- Two-pass is about 55 min per file
+- Plans:
+  - Focus on software and new tools
+  - When doing bio insight, be clear that this is a tool for showcasing pipeline utility
+  - Do lit research and hint at bio insight, maybe do some validation in drug-course with qPCR and WB, but not much more than that
+
 # Title
 <b>XPRESSyourself Bioinformatics Suite</b>: Automating and Democratizing High-Throughput Sequencing
 
