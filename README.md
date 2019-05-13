@@ -1,22 +1,21 @@
 # To Do for BioRXiv
-- Make own read distribution sub-module
-- UMI module
-- Add FastQC to rRNAprobe
-- Find batch control best package
-- Export single summary images
+1. Bio insight section
+2. GTF test cases
+  - Try best to follow Ensembl guidelines
+3. Overall test cases for pipelines
+4. Read distribution sub-module
+5. UMI
+6. Incorporate batch control wrapper
+7. TCGA validation
+8. Export single summary images
   - Fix so it doesn't keep subplots as it goes
-- For longest transcript, measure in exon space
-- (COMPLETE) Fix deduplication and use deduplicated file for counting, meta-analysis, periodicity
-- (COMPLETE) For meta position penalty, only count if in exon space
-- Test cases for pipeline
-- Test cases for analysis
-- Test docker instance, ensure R deps are working within
-- Build documentation
+9. Output example housekeeper with even coverage from bigwig files
+  - Make bigwig output standard
+10. Test docker instance, ensure R deps are working within
+  - Make it upload automatically for each new tag
+11. Build documentation
   - Add instructions for beginners
   - Add instructions on how to add to the project
-- Dataset test case
-- Get reference formatted fixed and make in-text superscript
-
 
 # Citation Notes
 - DOI:10.1038/s41598-017-01617-3
