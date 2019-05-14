@@ -91,6 +91,9 @@ G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135–139 (2017).
 C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
   (2018).
 
+\bibitem{ribowaltz}
+F.~Lauria, {\it et~al.\/}, {\it PLoS Comput Biol\/} {\bf 14} (2018).
+
 \bibitem{blast}
 S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman, {\it J Mol Biol.\/} {\bf
   215}, 403 (1990).
@@ -104,5 +107,39 @@ F.~Pedregosa, {\it et~al.\/}, {\it Journal of Machine Learning Research\/} {\bf
 
 \bibitem{readthedocs}
 Read the docs, \url{https://readthedocs.org/}.
+
+\bibitem{spearman_rnaseq}
+F.~Liesecke, {\it et~al.\/}, {\it Sci Rep\/} {\bf 8} (2018).
+
+\bibitem{statsmodels}
+S.~Seabold, J.~Perktold, {\it 9th Python in Science Conference\/} (2010).
+
+\bibitem{isr_disease}
+D.~Santos-Ribeiro, L.~Godinas, C.~Pilette, F.~Perros, {\it Drug Discov Today\/}
+  {\bf 23} (2018).
+
+\bibitem{isrib_activation}
+H.~Rabouw, {\it et~al.\/}, {\it Proc Natl Acad Sci U S A\/} {\bf 116} (2019).
+
+\bibitem{isrib_structure}
+J.~Tsai, {\it et~al.\/}, {\it Science\/} {\bf 359} (2018).
+
+\bibitem{isrib_riboseq}
+C.~Sidrauski1, A.~McGeachy, N.~Ingolia, P.~Walter, {\it eLIFE\/}  (2015).
+
+\bibitem{isrib_neuroprotective}
+A.~Choua, {\it et~al.\/}, {\it Proc Natl Acad Sci U S A\/} {\bf 114} (2017).
+
+\bibitem{tophat2}
+D.~Kim, {\it et~al.\/}, {\it Genome Biol\/} {\bf 14} (2013).
+
+\bibitem{alignment_benchmark}
+G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
+
+\bibitem{igv}
+J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
+
+\bibitem{circligase_bias}
+R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
 
 \end{thebibliography}

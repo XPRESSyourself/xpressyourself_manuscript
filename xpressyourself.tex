@@ -34,20 +34,20 @@ XPRESSyourself: Automating and Democratizing High-Throughput Sequencing
 }
 
 % Author info
-% \author{
+\author{
 % Tentative author list/order:
-% Jordan A. Berg,$^{1}$ Jonathan R. Belyeu,$^{2}$ Jeffrey T. Morgan,$^{1}$ Alex J. Bott,$^{1}$ \\
-% Yeyun Ouyang,$^{1}$ Jason Gertz,$^{3}$ Aaron R. Quinlan,$^{2,4,5}$ Michael T. Howard,$^{2}$ Jared P. Rutter$^{1,6\ast}$\\
-% \\
-% \normalsize{$^{1}$Department of Biochemistry, University of Utah, Salt Lake City, UT, USA, 84112}\\
-% \normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA, 84112}\\
-% \normalsize{$^{3}$Department of Oncological Sciences, University of Utah, Salt Lake City, UT, USA, 84112}\\
-% \normalsize{$^{4}$USTAR Center for Genetic Discovery, University of Utah, Salt Lake City, UT, USA, 84112}\\
-% \normalsize{$^{5}$Department of Biomedical Informatics, University of Utah, Salt Lake City, UT, USA, 84112}\\
-% \normalsize{$^{6}$Howard Hughes Medical Institute, University of Utah, Salt Lake City, UT, USA, 84112}\\
-% \\
-% \normalsize{$^\ast$To whom correspondence should be addressed; E-mail: rutter@biochem.utah.edu.}
-% }
+Jordan A. Berg,$^{1}$ Jonathan R. Belyeu,$^{2}$ Jeffrey T. Morgan,$^{1}$ Alex J. Bott,$^{1}$ \\
+Yeyun Ouyang,$^{1}$ Jason Gertz,$^{3}$ Aaron R. Quinlan,$^{2,4,5}$ Michael T. Howard,$^{2}$ Jared P. Rutter$^{1,6\ast}$\\
+\\
+\normalsize{$^{1}$Department of Biochemistry, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{3}$Department of Oncological Sciences, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{4}$USTAR Center for Genetic Discovery, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{5}$Department of Biomedical Informatics, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{6}$Howard Hughes Medical Institute, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail: rutter@biochem.utah.edu.}
+}
 
 % Include the date command, but leave its argument blank.
 \date{}
@@ -271,7 +271,7 @@ While all intermediate steps of the pipelines can be run singly, we will describ
       \end{equation}
       Where \textit{c} is the count score for a given meta-position and \textit{n} is the number of different transcripts a given coordinate mapped. To be counted or factored into the penalty, the meta-position coordinate must fall within exon space.
 
-      \item \textbf{Codon Phasing/Periodicity Estimation Profile}: In ribosome profiling, a useful measure of a successful experiment comes by investigating the codon phasing of ribosome footprints \cite{}. To do so, the P-site is calculated for each mapped ribosome footprint by taking the genomic coordinate 16 nucleotides upstream of the 3' end of each transcript and measuring the distance in nucleotides along exon space to the start of the transcript \cite{}. \textit{p} is the distance from the start, \textit{L} is the leftmost coordinate of the mapped read, \textit{r} is the length of the mapped read, and \textit{S} denotes the start coordinate for the transcript. The superscript signs associated with \textit{p} indicate strandedness and the subscript \textit{e} indicates the coordinate is relative to exon space. The same inputs are required as for the \texttt{metagene} sub-module, and the penalty is calculated in the same manner.
+      \item \textbf{Codon Phasing/Periodicity Estimation Profile}: In ribosome profiling, a useful measure of a successful experiment comes by investigating the codon phasing of ribosome footprints \cite{ingolia_meth}. To do so, the P-site is calculated for each mapped ribosome footprint by taking the genomic coordinate 16 nucleotides upstream of the 3' end of each transcript and measuring the distance in nucleotides along exon space to the start of the transcript \cite{ribowaltz}. \textit{p} is the distance from the start, \textit{L} is the leftmost coordinate of the mapped read, \textit{r} is the length of the mapped read, and \textit{S} denotes the start coordinate for the transcript. The superscript signs associated with \textit{p} indicate strandedness and the subscript \textit{e} indicates the coordinate is relative to exon space. The same inputs are required as for the \texttt{metagene} sub-module, and the penalty is calculated in the same manner. While this method may not be as robust as other published methods, it is stable and will provide a good estimate of codon phasing in ribosome profiling data.
       \begin{equation}
         \textit{p}\textsuperscript{+} = (\textit{L}\textsubscript{e}\ +\ \textit{r} - 16)\ -\ \textit{S}
       \end{equation}
@@ -348,20 +348,34 @@ The source code for these packages is open source and protected under the GPL-3.
 \subsection{Cost Analysis}
 Perform an example run using Docker image on AWS and give a cost per sample and time per sample output.
 
+\subsection{Ribosome Profiling Example Data Analysis}
+Only gene names in common between the original data file and XPRESSpipe output were used for the method comparisons. Genes included in all studies were required to have at least 25 counts across samples to be included in the analysis. Correlations and p-values were calculated using the \texttt{scipy.stats.spearman()} function \cite{spearman_rnaseq}. Sample count distributions were plotted using Seaborn where density is indicated by width of plot and boxplot designating interquartile range are plotted \cite{seaborn}. Fold change and translation efficiency plots were created using matplotlib \cite{matplotlib} and pandas \cite{pandas}. Replicates were combined to calculate fold change values and significance between library groups (condition and library type) was calculated using a Benjamini-Hochberg FDR method from \texttt{statsmodels.stats.multitest()} \cite{statsmodels}. Figures and analyses can be reproduced using the associated script (repo address).
 
 \section{Results and Discussion}
 
 \subsection{Validation}
 In order to evaluate the ability of XPRESSpipe to provide the user with reliable results, we processed publicly available raw sequence files through the pipeline. We chose to highlight a ribosome profiling dataset and a subset of TCGA samples to showcase the utility of XPRESSpipe for rapidly gleaming interesting molecular patterns and insights from publicly available data.
 
-\subsubsection{Old Ribosome Profiling Data and New Insights}
-The following analysis took the raw read files from 
+\subsubsection{Ribosome Profiling Data and New Insights from Old Data}
+The integrated stress response (ISR) is a signaling mechanism used by cells and organisms due to a variety of cellular stresses and has been associated with a variety of diseases. Of particular interest, many disorders resulting in neurological decline are associated with the ISR \cite{isr_disease}. While acute ISR is essential for proper cell survival, long periods of sustained ISR can be damaging. A recently discovered molecule, ISRIB, has recently come under the spotlight for its therapeutic potential and relative lack of side-effects. Interestingly, ISRIB is able to suppress low levels of ISR, while seemingly uneffective at managing acute, high-levels of ISR. It has also been shown to be neuroprotective in mouse models of acute neurological damage \cite{isrib_activation, isrib_structure, isrib_riboseq, isrib_neuroprotective}.
 
-The integrated stress response (ISR) is a signaling mechanism used by cells and organisms due to a variety of cellular stresses and has been associated with a variety of diseases. Of particular interest, many disorders resulting in neurological decline are associated with the ISR.  While acute ISR is essential for proper cell survival, long periods of sustained ISR can be damaging. A recently discovered molecule, ISRIB, has recently come under the spotlight for its therapeutic potential and relative lack of side-effects. Interestingly, ISRIB is able to suppress low levels of ISR, while seemingly uneffective at managing acute, high-levels of ISR. It has also been shown to be neuroprotective in mouse models of acute neurological damage.
+A recent study (GSE65778) utilized ribosome profiling in order to better understand the mechanisms of ISRIB and ISR, modeled by tunicamycin (Tm) treatment, from a protein translation viewpoint \cite{isrib_riboseq}. Some key findings from this study were that during acute ISR, a specific subset of mRNAs were translationally regulated, and that canonical signaling factors were part of this response. In order to showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using more current in silico techniques included in the XPRESSpipe package to shed more light on the mechanisms of ISR and ISRIB mode of action. To process the 32 raw files from GEO, using 16 cores, it took 06h33m42s in wall-clock time, or 1d03h18m27s in CPU time. Compared to the raw count data made available in the original manuscript, samples showed comparable alignment rates (Spearman R values ranging from 0.710-0.865) (Figure \ref{fig:figure2}A) as, according to the methods of the original paper, a now outdated alignment program, TopHat2 \cite{tophat2}, was used that has a documented higher false positive alignment rate compared to STAR \cite{alignment_benchmark, star}. Processing of replicates within the XPRESSpipe method showed excellent correlation (Spearman R values all \textgreater 0.99) (Figure \ref{fig:figure2}B). Additionally, samples appeared to be relatively comparable to one another once RPM normalization was performed (Figure \ref{fig:figure2}C).
 
-A recent study utilized ribosome profiling in order to better understand the mechanisms of ISRIB and ISR from a protein translation viewpoint. Some key findings from this study were that during acute ISR, a specific subset of mRNAs were translationally regulated, and that canonical signaling factors were part of this response. In order to showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we reanalyzed this dataset using more current in silico techniques included in the XPRESSpipe package to shed more light on the mechanisms of ISR and ISRIB mode of action. Compared to the raw count data made available in the original manuscript, samples showed comparable alignment rates (Spearman R values ranging from 0.710-0.865) (Supplemental Figure 1A). Processing of replicates within the XPRESSpipe method showed excellent correlation (Spearman R values all \textgreater 0.99)  (Supplemental Figure 1B (add to legend that all are Spearman)).
+\begin{figure}
+\centering
+  \includegraphics[width=160mm]{figures/xpresspipe_figure2.png}
+  \caption{Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. C) Sample gene count distributions. Boxplots embedded within violinplot designate the interquartile range and violinplot reports count density. Note: All R values reported are Spearman R values.}
+  \label{fig:figure2}
+\end{figure}
 
-The XPRESSpipe method interestingly showed that even more limited mRNA regulation was able to occur within the 1hr acute Tm treatment than previously appreciated (Figure 2A), as indicated by the constrained range high-confidence (p-adj \textless 0.01) points fell into along the X-axis, while the range is comparable for translation regulation. Similar canonical targets of translational regulation during ISR were identified, such as ATF4 and ATF5 (Figure 2A, highlighted in magenta). Other targets highlighted in the original study, either narrowly missed the cut-off of adjusted p-value or fold change or had a handful of samples with 10-25 counts for the given gene, thereby missing the cut-off, such as DDIT3 (or CHOP; fold-change = 2.09, p-adj = 0.037) and PPP1R15A (or GADD34; fold-change = 1.95, p-adj = 0.013). Interestingly, using these methods and thresholds, the subset of translationally down-regulated transcripts during simulated ISR all possess a neurodegenerative phenotype based on a literature search (descriptions sourced from www.genecards.org and www.omim.org). This might be helpful in explaining the neurodegenerative phenotype associated with ISR. When an ISR model is treated with ISRIB, the translation efficiency levels of each of these genes returns to a more wildtype-like state (Figure 2B, Table X). Further analysis of these potential hits is strengthened for .
+The XPRESSpipe method interestingly showed that even more limited mRNA regulation was able to occur within the 1hr acute Tm treatment than previously appreciated (Figure \ref{fig:figure3}A), as indicated by the constrained range high-confidence (FDR \textless 0.01) points fell into along the X-axis, while the range is comparable for translation regulation. Similar canonical targets of translational regulation during ISR were identified as in the original study, such as ATF4 and ATF5 (Figure \ref{fig:figure3}A, highlighted in magenta) \cite{isrib_riboseq}. Other targets highlighted in the original study \cite{isrib_riboseq}, either narrowly missed the FDR or fold-change cut-offs or had a handful of samples with 10-25 counts for the given gene, thereby missing the stricter count cut-off, such as DDIT3 (or CHOP; fold-change = 2.09, FDR = 0.037) and PPP1R15A (or GADD34; fold-change = 1.95, FDR = 0.013). Interestingly, using these methods and thresholds, the subset of translationally down-regulated transcripts during simulated ISR all possess a neurodegenerative phenotype based on a literature search (descriptions sourced from www.genecards.org and www.omim.org) (Table \ref{tab:targets}). This might be helpful in explaining the neurodegenerative phenotype associated with ISR. When an ISR model is treated with ISRIB, the translation efficiency levels of each of these genes returns to a more wildtype-like state (Figure \ref{fig:figure3}B). Further analysis of these potential hits is strengthened by looking at the read pile-ups in IGV \cite{igv}, where footprint coverage is observed across the transcript for all ribosome profiling samples except the Tm-treated ones (Figure \ref{fig:figure3}C). This provides further strength to this claim as treatment with CircLigase in the library preparation can bias certain reads' incorporation in sequencing libraries \cite{circligase_bias}.
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_figure3.png}
+  \caption{Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript{2} Translation Efficiency compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholds. C) IGV plot for NOTCH3 for all ribosome profiling samples show read coverage across the transcript.}
+  \label{fig:figure3}
+\end{figure}
 
 \captionof{table}{Translationally down-regulated genes during acute Tm treatment.\label{Tab:packages}}
 \begin{tabular}{p{2.5cm}p{15.5cm}}
@@ -386,44 +400,19 @@ The XPRESSpipe method interestingly showed that even more limited mRNA regulatio
  POMGNT1 & Mutations in this gene may be associated with muscle-eye-brain disease and several congenital muscular dystrophies \\
  \hline
  SMURF2 & Interacts with SMAD proteins; Functions in regulation of neuronal and planar cell polarity, induction of senescence, and tumor suppression \\
+ \label{tab:targets}
 \end{tabular}
 \newline
-
-Only gene names in common between the original data file and XPRESSpipe output were used for the method comparisons. Genes included in all studies were required to have at least 25 counts across samples to be included in the analysis. Figures and analyses can be reproduced using the associated script (repo address).
-
-
-
-
-
-Points to hit:
-mRNA expression showed less variance as expected for a 1 hr treatment (not enough time for much of a transcriptional response)
-Same canonical hits, within a more reasonable range (no super-translators)
-All high-confidence hits down-regulated in Tm are neurological (may explain neurological effects of ISR)
-Verify hits of interest for even coverage across transcripts
-
-Fig 2:
-A: Ingolia like plots, label canonical hits and hits of interest
-B: Line plots
-C: Pileups of hits of interest
-
-Supp 2:
-A: Grid plot of comparisons between methods
-B: Grid plot of comparisons within my method
-
-
-
 
 \subsubsection{Performance Validation Using TCGA Data}
 In this section, we will process the raw data for 10-20 TCGA samples and compare the FPKM counts output by XPRESSpipe to the publicly available FPKM counts for the relevant samples.
 
 
 \section{Conclusions}
-We have described herein a new software suite, XPRESSyourself, a collection of tools and pipelines to aid in expression data processing and analysis. The software was designed to be flexible and modular so that in the future, new modules and tools can be easily added to and tested in the software suite.
-Discuss results of validation and biological study
-
+We have described herein a new software suite, XPRESSyourself, a collection of tools and pipelines to aid in expression data processing and analysis. We hope that with adoption of this pipeline, the field of high-throughput sequencing can arrive towards a standardized processing protocol for sequencing data and eliminate some of the variability that comes from using a variety of software packages for various steps during read processing. XPRESSpipe will act as a flexible pipeline that will be updated with the best performing packages as future tools are created and benchmarks performed. Additionally, various tools missing from the RNA-seq and ribosome profiling communities have been added as part of this pipeline. With these tools, such as the modifyGTF sub-module, genome reference curation is automated, such as creating a longest-transcript only GTF, a protein coding only GTF, or truncating the exonic ends of each transcript for use in ribosome profiling quantification. Further, by using this pipeline on publicly available data, we highlight XPRESSpipe's utility in being able to re-process publicly available data or personal data to uncover novel biological patterns quickly.
 
 \section*{Acknowledgments}
-J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher.
+J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher. The authors wish to thank Mark Wadsworth, Ryan Miller, and Michael Cormier for helpful discussions on pipeline design. They also wish to thank Cameron Waller for helpful discussions related to pipeline design and analysis. 
 
 
 \section*{Contributions}

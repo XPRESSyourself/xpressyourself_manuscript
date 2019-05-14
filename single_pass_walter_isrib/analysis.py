@@ -575,7 +575,7 @@ tmisrib_data_set['Tm + ISRIB'] = np.log2(tmisrib_data_set['ribo_fc'] / tmisrib_d
 isrib_data_set['ISRIB'] = np.log2(isrib_data_set['ribo_fc'] / isrib_data_set['rna_fc'])
 
 dataset = pd.concat([tm_data_set[['Tm']], tmisrib_data_set[['Tm + ISRIB']], isrib_data_set[['ISRIB']]], axis=1, sort=False)
-#dataset
+dataset
 
 ax = dataset.T.plot.line(figsize=(5,7.5), grid = False)
 ax.axvline(1, ls='-', color='white')

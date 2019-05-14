@@ -3,47 +3,46 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: xpressyourself.aux
 The style file: Science.bst
 Database file #1: manubib.bib
-Warning--I didn't find a database entry for ""
 Warning--empty journal in seaborn
-You've used 31 entries,
+You've used 43 entries,
             2300 wiz_defined-function locations,
-            894 strings with 10247 characters,
-and the built_in function-call counts, 6467 in all, are:
-= -- 572
-> -- 325
+            945 strings with 12590 characters,
+and the built_in function-call counts, 8625 in all, are:
+= -- 761
+> -- 437
 < -- 1
-+ -- 163
-- -- 81
-* -- 496
-:= -- 995
-add.period$ -- 31
-call.type$ -- 31
++ -- 219
+- -- 109
+* -- 666
+:= -- 1355
+add.period$ -- 43
+call.type$ -- 43
 change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 327
-empty$ -- 561
-format.name$ -- 107
-if$ -- 1486
+cite$ -- 44
+duplicate$ -- 459
+empty$ -- 755
+format.name$ -- 147
+if$ -- 1964
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 29
-newline$ -- 96
-num.names$ -- 30
-pop$ -- 141
+int.to.str$ -- 43
+missing$ -- 41
+newline$ -- 132
+num.names$ -- 42
+pop$ -- 183
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 223
+skip$ -- 282
 stack$ -- 0
-substring$ -- 281
-swap$ -- 94
+substring$ -- 308
+swap$ -- 136
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 50
-width$ -- 33
-write$ -- 245
-(There were 2 warnings)
+while$ -- 65
+width$ -- 45
+write$ -- 339
+(There was 1 warning)
