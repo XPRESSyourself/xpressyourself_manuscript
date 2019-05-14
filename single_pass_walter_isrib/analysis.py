@@ -190,7 +190,7 @@ for ax, row in zip(axes[:,0], rows):
 
 fig.savefig(
     '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/external_correlations_summary.png',
-    dpi = 1800,
+    dpi = 600,
     bbox_inches = 'tight')
 
 """
@@ -290,7 +290,7 @@ for ax, col in zip(axes[1], cols):
 
 fig.savefig(
     '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/internal_correlations_summary.png',
-    dpi = 1800,
+    dpi = 600,
     bbox_inches = 'tight')
 
 """
@@ -299,10 +299,26 @@ My alignments appear to have less outliers, indicating a better read processing 
 """
 # Get reference line
 ref_line = np.log10(data_rpm + 1).mean().mean()
-
 fig, ax = plt.subplots(1,1, figsize=(12.5,5))
 plt.grid(False)
-ax = sns.violinplot(data=np.log10(data_rpm + 1))
+names = [
+    'ribo_untr_a',
+    'ribo_untr_b',
+    'untr_a_hek',
+    'untr_b_hek',
+    'ribo_tm_a',
+    'ribo_tm_b',
+    'tm_a_hek',
+    'tm_b_hek',
+    'ribo_tmisrib_a',
+    'ribo_tmisrib_b',
+    'tmisrib_a_hek',
+    'tmisrib_b_hek',
+    'ribo_isrib_a',
+    'ribo_isrib_b',
+    'isrib_a_hek',
+    'isrib_b_hek']
+ax = sns.violinplot(data=np.log10(data_rpm + 1), order = names)
 plt.xticks(rotation=45)
 ax.set_ylabel('Normalized Counts (RPM)')
 ax.set_xlabel('Samples')
