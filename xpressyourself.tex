@@ -354,17 +354,67 @@ Perform an example run using Docker image on AWS and give a cost per sample and 
 \subsection{Validation}
 In order to evaluate the ability of XPRESSpipe to provide the user with reliable results, we processed publicly available raw sequence files through the pipeline. We chose to highlight a ribosome profiling dataset and a subset of TCGA samples.
 
-\subsubsection{Ribosome Profiling Dataset}
+\subsubsection{Old Ribosome Profiling Data and New Insights}
 In this section, we will look at the count values available on GEO and the counts we get out of the pipeline. Fig 2A will be correlations showing tight relationships between all mapped genes. F2B-D will replicate the relevant figures from the paper.
 
-\subsubsection{TCGA Dataset}
+The integrated stress response (ISR) is a signaling mechanism used by cells and organisms due to a variety of cellular stresses and has been associated with a variety of diseases. Of particular interest, many disorders resulting in neurological decline are associated with the ISR.  While acute ISR is essential for proper cell survival, long periods of sustained ISR can be damaging. A recently discovered molecule, ISRIB, has recently come under the spotlight for its therapeutic potential and relative lack of side-effects. Interestingly, ISRIB is able to suppress low levels of ISR, while seemingly uneffective at managing acute, high-levels of ISR. It has also been shown to be neuroprotective in mouse models of acute neurological damage.
+
+A recent study utilized ribosome profiling in order to better understand the mechanisms of ISRIB and ISR from a protein translation viewpoint. Some key findings from this study were that during acute ISR, a specific subset of mRNAs were translationally regulated, and that canonical signaling factors were part of this response. In order to showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we reanalyzed this dataset using more current in silico techniques included in the XPRESSpipe package to shed more light on the mechanisms of ISR and ISRIB mode of action. Compared to the raw count data made available in the original manuscript, samples showed comparable alignment rates (Spearman R values ranging from 0.710-0.865) (Supplemental Figure 1A). Processing of replicates within the XPRESSpipe method showed excellent correlation (Spearman R values all \textgreater 0.99)  (Supplemental Figure 1B (add to legend that all are Spearman)).
+
+The XPRESSpipe method interestingly showed that even more limited mRNA regulation was able to occur within the 1hr acute Tm treatment than previously appreciated (Figure 2A), as indicated by the constrained range high-confidence (p-adj \textless 0.01) points fell into along the X-axis, while the range is comparable for translation regulation. Similar canonical targets of translational regulation during ISR were identified, such as ATF4 and ATF5 (Figure 2A, highlighted in magenta). Other targets highlighted in the original study, either narrowly missed the cut-off of adjusted p-value or fold change or had a handful of samples with 10-25 counts for the given gene, thereby missing the cut-off, such as DDIT3 (or CHOP; fold-change = 2.09, p-adj = 0.037) and PPP1R15A (or GADD34; fold-change = 1.95, p-adj = 0.013). Interestingly, using these methods and thresholds, the subset of translationally down-regulated transcripts during simulated ISR all possess a neurodegenerative phenotype based on a literature search (descriptions sourced from www.genecards.org and www.omim.org). This might be helpful in explaining the neurodegenerative phenotype associated with ISR. When an ISR model is treated with ISRIB, the translation efficiency levels of each of these genes returns to a more wildtype-like state (Figure 2B, Table X). Further analysis of these potential hits is strengthened for .
+
+\captionof{table}{Translationally down-regulated genes during acute Tm treatment.\label{Tab:packages}}
+\begin{tabular}{p{2.5cm}p{15.5cm}}
+ \textbf{Gene Name} & \textbf{Relevant Description} \\
+ \hline
+ CCNG2 & Overexpressed in brain; Tightly regulated in cell cycle \\
+ \hline
+ ENPP5 & Suggested role in neuronal cell communications in rat studies \\
+ \hline
+ FGFRL1 & Highly expressed in brain; Sets in motion a cascade of downstream signals ultimately influencing mitogenesis and differentiation; Behavioral and neurological phenotypes \\
+ \hline
+ GALNS & Involved in breaking down and recycling molecules in lysosome \\
+ \hline
+ KIAA1841 & Identified in a screen of proteins expressed in brain \\
+ \hline
+ MYO5B & Identified in a screen for large proteins expressed in brain; Encodes molecular motor that utilizes energy from ATP hydrolysis to generate mechanical force, required for the recycling of transferrin receptor back to the plasma membrane through an endocytotic recycling compartment in nonpolarized cells. \\
+ \hline
+ NGEF & Overexpressed in brain; Involved in axon guidance regulating ephrin-induced growth cone collapse and dendritic spine morphogenesis \\
+ \hline
+ NOTCH3 & Establishes an intercellular signalling pathway that plays a key role in neural development; Mutations in NOTCH3 have been identified as the underlying cause of cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy \\
+ \hline
+ POMGNT1 & Mutations in this gene may be associated with muscle-eye-brain disease and several congenital muscular dystrophies \\
+ \hline
+ SMURF2 & Interacts with SMAD proteins; Functions in regulation of neuronal and planar cell polarity, induction of senescence, and tumor suppression \\
+\end{tabular}
+\newline
+
+Only gene names in common between the original data file and XPRESSpipe output were used for the method comparisons. Genes included in all studies were required to have at least 25 counts across samples to be included in the analysis. Figures and analyses can be reproduced using the associated script (repo address).
+
+
+
+
+
+Points to hit:
+mRNA expression showed less variance as expected for a 1 hr treatment (not enough time for much of a transcriptional response)
+Same canonical hits, within a more reasonable range (no super-translators)
+All high-confidence hits down-regulated in Tm are neurological (may explain neurological effects of ISR)
+Verify hits of interest for even coverage across transcripts
+
+Fig 2:
+A: Ingolia like plots, label canonical hits and hits of interest
+B: Line plots
+C: Pileups of hits of interest
+
+Supp 2:
+A: Grid plot of comparisons between methods
+B: Grid plot of comparisons within my method
+
+
+
+
+\subsubsection{Performance Validation Using TCGA Data}
 In this section, we will process the raw data for 10-20 TCGA samples and compare the FPKM counts output by XPRESSpipe to the publicly available FPKM counts for the relevant samples.
-
-\subsubsection{Ease of Use Case Study}
-In this section, we will discuss a simple case study of 2-4 users with no computational experience and the time it took to get output and the quality of the output.
-
-\subsection{New Insights into Metabolism}
-Using the previously discussed ribosome profiling dataset, we will discuss new metabolic insights obtained by focusing on something other than what the authors were interested in. THe way this is explained will be fairly important -- do we want to highlight that this is capable of finding something new (I don't know that that is really the purpose of this), that this just makes it so someone can quickly access the data and re-analyze it for their points of interest? Highlight again the amount of sequencing data out there and how most have only be used to explore one narrow aspect of biology. Figure 3 will include the insights gained. A potential Fig4 discussing validation of the insights.
 
 
 \section{Conclusions}

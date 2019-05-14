@@ -6,15 +6,19 @@ import matplotlib
 matplotlib.use('TKAgg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+matplotlib.rcParams['font.sans-serif'] = 'Arial'
 import seaborn as sns
 from xpresstools import convert_names, rpm, check_samples, threshold
 from scipy import stats
 from statsmodels.stats.multitest import multipletests
 %matplotlib inline
 
+"""
+READ IN DATA
+"""
 # Read in single-pass XPRESSpipe processed read data
 data = pd.read_csv(
-    './isrib_riboprof_counts_table.tsv',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/isrib_riboprof_counts_table.tsv',
     sep = '\t',
     index_col = 0)
 
@@ -28,7 +32,7 @@ data.head()
 
 # Combine lanes
 sra_info = pd.read_csv(
-    './GSE65778_table.txt',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/GSE65778_table.txt',
     sep = '\t')
 
 sra_info.head()
@@ -41,7 +45,7 @@ data_sum.head()
 
 # Read in Ingolia raw counts from Elife supplement table
 ingolia = pd.read_csv(
-    './elife_ingolia_raw_reads_isrib.txt',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/elife_ingolia_raw_reads_isrib.txt',
     sep = '\t',
     index_col = 0)
 
@@ -56,17 +60,23 @@ ingolia_dups = ingolia.groupby(level=0).sum()
 ingolia_dups_number = ingolia_dups.groupby(level=0).filter(lambda x: len(x) > 1)
 len(ingolia_dups_number)
 
+data_threshold = data_dups[data_dups.min(axis=1) > 25]
+ingolia_threshold = ingolia_dups[ingolia_dups.min(axis=1) > 25]
+
+data_threshold10 = data_dups[data_dups.min(axis=1) > 10]
+ingolia_threshold10 = ingolia_dups[ingolia_dups.min(axis=1) > 10]
+
 # Make dataframes for each dataset for matching genes
-jordan_genes = data_dups.index.tolist()
-ingolia_genes = ingolia_dups.index.tolist()
+jordan_genes = data_threshold.index.tolist()
+ingolia_genes = ingolia_threshold.index.tolist()
 len(jordan_genes)
 len(ingolia_genes)
 
 common_genes = list(set(jordan_genes).intersection(ingolia_genes))
 len(common_genes)
 
-data_common = data_dups.reindex(index = common_genes)
-ingolia_common = ingolia_dups.reindex(index = common_genes)
+data_common = data_threshold.reindex(index = common_genes)
+ingolia_common = ingolia_threshold.reindex(index = common_genes)
 
 # Check all genes are common
 jordan_commongenes = data_common.index.tolist()
@@ -78,106 +88,237 @@ if len(common_all) == len(common_genes):
 else:
     print('Looks like the datasets are still not equal')
 
-# Run correlations between sample alignments
-def run_correlation(name, data1, data2):
-
-    data_c1 = data1.copy()
-    data_c2 = data2.copy()
-
-    sample_a = data_c1[str(name)].values.tolist()
-    sample_a = [x + 1 for x in sample_a]
-    sample_a = np.array(sample_a).astype(np.float)
-    sample_a = np.ndarray.tolist(sample_a)
-
-    sample_b = data_c2[str(name)].values.tolist()
-    sample_b = [x + 1 for x in sample_b]
-    sample_b = np.array(sample_b).astype(np.float)
-    sample_b = np.ndarray.tolist(sample_b)
-
-    sample_a = np.log10(sample_a)
-    sample_b = np.log10(sample_b)
-
-    slope, intercept, r_value, p_value, std_err = stats.linregress(sample_a, sample_b)
-    x = np.linspace(np.amin(sample_a), np.amax(sample_b), 100)
-    y = (slope * x) + intercept
-
-    fig, ax = plt.subplots(1,1, figsize=(4,4))
-
-    ax.scatter(sample_a, sample_b, s=1,c='black')
-    ax.set_title('R2 = ' + str(r_value ** 2) + '\np-value ' + str(p_value))
-    ax.plot(x, y, '-r')
-
-    plt.savefig('./plots/cross_alignment/' + str(name) + '.png', dpi = 600)
-    print(str(name) + ': ' + str(r_value ** 2))
-    plt.close()
-
-def internal_correlation(name1, name2, data):
-
-    data_c = data.copy()
-
-    sample_a = data_c[str(name1)].values.tolist()
-    sample_a = [x + 1 for x in sample_a]
-    sample_a = np.array(sample_a).astype(np.float)
-    sample_a = np.ndarray.tolist(sample_a)
-
-    sample_b = data_c[str(name2)].values.tolist()
-    sample_b = [x + 1 for x in sample_b]
-    sample_b = np.array(sample_b).astype(np.float)
-    sample_b = np.ndarray.tolist(sample_b)
-
-    sample_a = np.log10(sample_a)
-    sample_b = np.log10(sample_b)
-
-    slope, intercept, r_value, p_value, std_err = stats.linregress(sample_a, sample_b)
-    x = np.linspace(np.amin(sample_a), np.amax(sample_b), 100)
-    y = (slope * x) + intercept
-
-    fig, ax = plt.subplots(1,1, figsize=(4,4))
-
-    ax.scatter(sample_a, sample_b, s=1,c='black')
-    ax.set_title('R2 = ' + str(r_value ** 2) + '\np-value ' + str(p_value))
-    ax.plot(x, y, '-r')
-
-    plt.savefig('./plots/internal_comparisions/' + str(name1) + '_' + str(name2) + '_internal.png', dpi = 600)
-    print(str(name1) + ' vs ' + str(name2) + ': ' + str(r_value ** 2))
-    plt.close()
-
-# Run Ingolia vs my alignments for correlations
-os.system('mkdir plots')
-os.system('mkdir plots/cross_alignment')
-for x in data_common.columns.tolist():
-    run_correlation(x, data_common, ingolia_common)
-
-x = 0
-names = data_common.columns.tolist()
-os.system('mkdir plots/internal_comparisions')
-# Run internal correlations for biological replicates from my alignments
-for y in range(int(len(names)/2)):
-
-    internal_correlation(names[x], names[x+1], data_common)
-    x += 2
-
 # Normalize datasets
-data_threshold = data_dups[data_dups.min(axis=1) > 10]
 data_rpm = rpm(data_threshold)
-
-ingolia_threshold = ingolia_dups[ingolia_dups.min(axis=1) > 10]
 ingolia_rpm = rpm(ingolia_threshold)
 
-check_samples(np.log10(data_rpm + 1))
-
-sns.violinplot(data=np.log10(data_rpm + 1))
-
-check_samples(np.log10(ingolia_rpm + 1))
-
-fig2, ax2 = plt.subplots(figsize=(10,10))
-ax2 = sns.boxplot(data=np.log10(ingolia_rpm + 1))
-ax2 = sns.swarmplot(data=np.log10(ingolia_rpm + 1))
+data_rpm10 = rpm(data_threshold10)
+ingolia_rpm10 = rpm(ingolia_threshold10)
 
 """
+SUPPLEMENTAL FIGURE 2A
+"""
+# Run correlations between sample alignments
+fig, axes = plt.subplots(
+    nrows = 4,
+    ncols = 4,
+    figsize = (20, 20),
+    subplot_kw = {
+        'facecolor':'none'},
+    sharex=True, sharey=True) # Create shared axis for cleanliness
+plt.subplots_adjust(
+    bottom = 0.1)
+plt.yticks([1,2,3,4,5]) # Limit axis labels to ints
+plt.xticks([1,2,3,4])
+
+file_number = 0
+file_list = [
+    'ribo_untr_a',
+    'ribo_untr_b',
+    'untr_a_hek',
+    'untr_b_hek',
+    'ribo_tm_a',
+    'ribo_tm_b',
+    'tm_a_hek',
+    'tm_b_hek',
+    'ribo_tmisrib_a',
+    'ribo_tmisrib_b',
+    'tmisrib_a_hek',
+    'tmisrib_b_hek',
+    'ribo_isrib_a',
+    'ribo_isrib_b',
+    'isrib_a_hek',
+    'isrib_b_hek'] # Designate sample order
+
+for x in file_list:
+
+    # Get data as array-like for samples being compared
+    data_c1 = data_common.copy()
+    data_c2 = ingolia_common.copy()
+
+    sample_a = data_c1[x].values.tolist()
+    sample_a = [x + 1 for x in sample_a]
+    sample_a = np.array(sample_a).astype(np.float)
+    sample_a = np.ndarray.tolist(sample_a)
+
+    sample_b = data_c2[x].values.tolist()
+    sample_b = [x + 1 for x in sample_b]
+    sample_b = np.array(sample_b).astype(np.float)
+    sample_b = np.ndarray.tolist(sample_b)
+
+    # Run Spearman R linreg for non-normal data
+    rho, p_value = stats.spearmanr(sample_a, sample_b)
+
+    # Determine subplot location
+    if file_number in [0,1,2,3]:
+        ax_x = file_number % 4
+        ax_y = 0
+    elif file_number in [4,5,6,7]:
+        ax_x = file_number - 4
+        ax_y = 1
+    elif file_number in [8,9,10,11]:
+        ax_x = file_number - 8
+        ax_y = 2
+    elif file_number in [12,13,14,15]:
+        ax_x = file_number - 12
+        ax_y = 3
+    else:
+        print('oops')
+
+    # Format p value
+    if p_value.astype('float') < 0.001:
+        p_val = '< 0.001'
+    else:
+        p_val = round(p_value.astype('float'), 4).astype('str')
+
+    # Plot data
+    axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
+    axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+    axes[ax_y, ax_x].axhline(1, ls='-', color='black') # Create axis lines
+    axes[ax_y, ax_x].axvline(1, ls='-', color='black', ymax=0.88)
+    file_number += 1 # Plot counter
+
+# Create shared row/column titles
+cols = ['RPF RepA','RPF RepB','mRNA RepA','mRNA RepB']
+for ax, col in zip(axes[0], cols):
+    ax.set_xlabel(col, fontsize=24)
+    ax.xaxis.set_label_position('top')
+
+rows = ['Untreated','Tm','Tm + ISRIB','ISRIB']
+for ax, row in zip(axes[:,0], rows):
+    ax.set_ylabel(row, fontsize=24)
+
+fig.savefig(
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/external_correlations_summary.png',
+    dpi = 1800,
+    bbox_inches = 'tight')
+
+"""
+SUPPLEMENTAL FIGURE 2B
+"""
+# Run correlations between sample alignments
+fig, axes = plt.subplots(
+    nrows = 2,
+    ncols = 4,
+    figsize = (20, 10),
+    subplot_kw = {
+        'facecolor':'none'},
+    sharex=True, sharey=True) # Create shared axis for cleanliness
+plt.subplots_adjust(
+    bottom = 0.1)
+plt.yticks([1,2,3,4,5]) # Limit axis labels to ints
+plt.xticks([1,2,3,4,5])
+
+x = 0
+file_number = 0
+file_list = [
+    'ribo_untr_a',
+    'ribo_untr_b',
+    'untr_a_hek',
+    'untr_b_hek',
+    'ribo_tm_a',
+    'ribo_tm_b',
+    'tm_a_hek',
+    'tm_b_hek',
+    'ribo_tmisrib_a',
+    'ribo_tmisrib_b',
+    'tmisrib_a_hek',
+    'tmisrib_b_hek',
+    'ribo_isrib_a',
+    'ribo_isrib_b',
+    'isrib_a_hek',
+    'isrib_b_hek'] # Designate sample order
+
+for y in range(int(len(file_list)/2)):
+
+    # Get data as array-like for samples being compared
+    data_c1 = data_threshold.copy()
+
+    sample_a = data_c1[file_list[x]].values.tolist()
+    sample_a = [x + 1 for x in sample_a]
+    sample_a = np.array(sample_a).astype(np.float)
+    sample_a = np.ndarray.tolist(sample_a)
+
+    sample_b = data_c1[file_list[x+1]].values.tolist()
+    sample_b = [x + 1 for x in sample_b]
+    sample_b = np.array(sample_b).astype(np.float)
+    sample_b = np.ndarray.tolist(sample_b)
+
+    # Run Spearman R linreg for non-normal data
+    rho, p_value = stats.spearmanr(sample_a, sample_b)
+
+    # Determine subplot location
+    if file_number in [0,1,2,3]:
+        ax_x = file_number % 4
+        ax_y = 0
+    elif file_number in [4,5,6,7]:
+        ax_x = file_number - 4
+        ax_y = 1
+    else:
+        print('oops')
+
+    # Format p value
+    if p_value.astype('float') < 0.001:
+        p_val = '< 0.001'
+    else:
+        p_val = round(p_value.astype('float'), 4).astype('str')
+
+
+    if rho >= 0.99:
+        rh = '> 0.99'
+    else:
+        rh = round(rho.astype('float'), 2).astype('float').astype('str')
+
+    # Plot data
+    axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
+    axes[ax_y, ax_x].set_title('R ' + rh + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+    axes[ax_y, ax_x].axhline(1, ls='-', color='black') # Create axis lines
+    axes[ax_y, ax_x].axvline(1, ls='-', color='black', ymax=0.88)
+    file_number += 1 # Plot counter
+    x += 2
+
+# Create shared row/column titles
+cols = ['RPF Untreated','mRNA Untreated','RPF Tm','mRNA Tm']
+for ax, col in zip(axes[0], cols):
+    ax.set_xlabel(col, fontsize=24)
+    ax.xaxis.set_label_position('top')
+
+cols = ['RPF Tm + ISRIB','mRNA Tm + ISRIB','RPF ISRIB','mRNA ISRIB']
+for ax, col in zip(axes[1], cols):
+    ax.set_xlabel(col, fontsize=24)
+    ax.xaxis.set_label_position('top')
+
+fig.savefig(
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/internal_correlations_summary.png',
+    dpi = 1800,
+    bbox_inches = 'tight')
+
+"""
+SUPPLEMENTAL FIGURE 2C
 My alignments appear to have less outliers, indicating a better read processing overall
 """
+# Get reference line
+ref_line = np.log10(data_rpm + 1).mean().mean()
 
+fig, ax = plt.subplots(1,1, figsize=(12.5,5))
+plt.grid(False)
+ax = sns.violinplot(data=np.log10(data_rpm + 1))
+plt.xticks(rotation=45)
+ax.set_ylabel('Normalized Counts (RPM)')
+ax.set_xlabel('Samples')
+ax.axhline(ref_line, ls='--', color='grey')
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/xpresspipe_run_distributions.png', dpi=1800, bbox_inches='tight')
+plt.close
+
+# Check Ingolia
+check_samples(np.log10(ingolia_rpm + 1))
+sns.violinplot(data=np.log10(ingolia_rpm + 1))
+
+"""
+FIGURE 2A
+My alignments have less "Super-translators", which is actually better and expected
+Not sure why the mRNA levels seem to be more constained on the positive side
+"""
 # Make Walter ISRIB paper figures for ribosome profiling data
 def rp_plot(
     data,
@@ -238,8 +379,13 @@ def rp_plot(
         method = 'fdr_bh')[1]
 
     # Print interesting ribo fc results
+    print('Translation targets')
     print(data_fig[(data_fig['p_adj'] < 0.01) & (data_fig['ribo_fc'] > 2)].index.tolist())
     print(data_fig[(data_fig['p_adj'] < 0.01) & (data_fig['ribo_fc'] < 0.5)].index.tolist())
+
+    print('Transcription targets')
+    print(data_fig[(data_fig['p_adj'] < 0.01) & (data_fig['rna_fc'] > 2)].index.tolist())
+    print(data_fig[(data_fig['p_adj'] < 0.01) & (data_fig['rna_fc'] < 0.5)].index.tolist())
 
     # Initialize figure
     fig, ax = plt.subplots(1,1, figsize=(7,7))
@@ -250,20 +396,20 @@ def rp_plot(
     ax.add_patch(rect)
     ax.set_ylabel('Ribo-Seq (' + str(conditionB_name) + '/' + str(conditionA_name) + ')', fontsize=16) # Set axis labels
     ax.set_xlabel('mRNA-Seq (' + str(conditionB_name) + '/' + str(conditionA_name) + ')', fontsize=16)
-    ax.set_xlim(.125,8.5) # Set axis limits
-    ax.set_ylim(.125,8.5)
-    x = [.125,.250,.500,1,2,4,8] # Set axis spacing
-    ticks = ["1/8","1/4","1/2","1","2","4","8"]
+    ax.set_xlim(.25,4.5) # Set axis limits
+    ax.set_ylim(.25,4.5)
+    x = [.250,.500,1,2,4] # Set axis spacing
+    ticks = ["1/4","1/2","1","2","4"]
     ax.set_facecolor("#FFFFFF") # Set background color
 
     # Set X and Y axis scales
     ax.set_xscale('log', basex=2)
     ax.set_xticks(x)
-    ax.set_xticklabels(ticks, fontsize=12)
+    ax.set_xticklabels(ticks, fontsize=16)
     ax.set_xticklabels([""]*len(x), minor=True)
     ax.set_yscale('log', basey=2)
     ax.set_yticks(x)
-    ax.set_yticklabels(ticks, fontsize=12)
+    ax.set_yticklabels(ticks, fontsize=16)
     ax.set_yticklabels([""]*len(x), minor=True)
 
     # Prep data for plotting
@@ -286,18 +432,7 @@ def rp_plot(
     rna_sig = np.array(rna_sig).astype(np.float)
     rna_sig = np.ndarray.tolist(rna_sig)
 
-    # Prep highlights for plotting
-    orfs = ['SLC35A4','PTP4A1','UCP2','PNRC2','C7orf31','BCL2L11','SAT1']
-    data_fig_orf = data_fig.loc[orfs]
-    ribo_orf = data_fig_orf[['ribo_fc']].sum(axis=1).values.tolist()
-    ribo_orf = np.array(ribo_orf).astype(np.float)
-    ribo_orf = np.ndarray.tolist(ribo_orf)
-
-    rna_orf = data_fig_orf[['rna_fc']].sum(axis=1).values.tolist()
-    rna_orf = np.array(rna_orf).astype(np.float)
-    rna_orf = np.ndarray.tolist(rna_orf)
-
-    isr = ['ATF5','ATF4','DDIT3','PPP1R15A']
+    isr = ['ATF5','ATF4']
     data_fig_isr = data_fig.loc[isr]
     ribo_isr = data_fig_isr[['ribo_fc']].sum(axis=1).values.tolist()
     ribo_isr = np.array(ribo_isr).astype(np.float)
@@ -307,7 +442,7 @@ def rp_plot(
     rna_isr = np.array(rna_isr).astype(np.float)
     rna_isr = np.ndarray.tolist(rna_isr)
 
-    other = ['UCP2']
+    other = ['CCNG2', 'ENPP5', 'FGFRL1', 'GALNS', 'KIAA1841', 'MYO5B', 'NGEF', 'NOTCH3', 'POMGNT1', 'SMURF2']
     data_fig_other = data_fig.loc[other]
     ribo_other = data_fig_other[['ribo_fc']].sum(axis=1).values.tolist()
     ribo_other = np.array(ribo_other).astype(np.float)
@@ -317,14 +452,17 @@ def rp_plot(
     rna_other = np.array(rna_other).astype(np.float)
     rna_other = np.ndarray.tolist(rna_other)
 
-    #Plot data
-    ax.scatter(rna_all, ribo_all, s=2,c='gray')
-    ax.scatter(rna_sig, ribo_sig, s=2,c='black',alpha=0.8)
-    ax.scatter(rna_orf, ribo_orf, s=20,c='green')
-    ax.scatter(rna_isr, ribo_isr, s=20,c='#be00be')
-    ax.scatter(rna_other, ribo_other, s=20,c='orange')
+    # Label points of interest
+    for index, row in data_fig_isr.iterrows():
+        ax.text(row[12] + 0.05, row[13] + 0.05, str(index), horizontalalignment='left', size='large', color='#be00be', weight='semibold')
 
-    plt.savefig('./plots/elife_figures/' + str(save_fig), dpi=1800, bbox_inches='tight')
+    #Plot data
+    ax.scatter(rna_all, ribo_all, s=5,c='gray')
+    ax.scatter(rna_sig, ribo_sig, s=5,c='black',alpha=0.8)
+    ax.scatter(rna_isr, ribo_isr, s=40,c='#be00be')
+    ax.scatter(rna_other, ribo_other, s=40,c='green')
+
+    plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/elife_figures/' + str(save_fig), dpi=1800, bbox_inches='tight')
     plt.close()
 
     return data_fig
@@ -343,6 +481,10 @@ os.system('mkdir plots/elife_figures')
 
 """Tm vs Untr"""
 tm_data = rp_plot(data_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan.png')
+
+#tm_data10 = rp_plot(data_rpm10, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_threshold10_jordan.png')
+#tm_data10.loc[['ATF5','ATF4','DDIT3','PPP1R15A']]
+
 tm_up = ['ATF4', 'ATF5', 'ISY1', 'PMAIP1', 'PNRC2', 'TMSB10', 'ZNF155']
 # ISY1 = mRNA splicing
 # PMAIP1 = diseases include Ischemic Neuropathy, promotes mitochondrial membrane changes and efflux of apoptogenic proteins from the mitochondria
@@ -350,10 +492,16 @@ tm_up = ['ATF4', 'ATF5', 'ISY1', 'PMAIP1', 'PNRC2', 'TMSB10', 'ZNF155']
 # ZNF155 = May be involved in transcriptional regulation
 
 tm_down = ['AVEN', 'BMP6', 'CABLES2', 'CCNG2', 'DDN', 'EHBP1L1', 'ENPP5', 'FGFRL1', 'GALNS', 'HSPA2', 'KIAA1841', 'LIMD1', 'LOXL2', 'LY75-CD302', 'MYB', 'MYO5B', 'NGEF', 'NOTCH3', 'POMGNT1', 'RASGRF2', 'SMURF2']
+
+tm_down_neuro_strict = ['CCNG2', 'ENPP5', 'FGFRL1', 'GALNS', 'KIAA1841', 'MYO5B', 'NGEF', 'NOTCH3', 'POMGNT1', 'SMURF2']
+tm_down_neuro = ['CCNG2', 'ENPP5', 'FGFRL1', 'GALNS', 'KIAA1841', 'MYO5B', 'NGEF', 'NOTCH3','POMGNT1','SMURF2']
+tm_down_transc = ['BMP6', 'DDN', 'LIMD1', 'LOXL2', 'MYB', 'SMURF2']
 # AVEN = associated with Schizoid Personality Disorder
 # ENPP5 = Studies in rat suggest the encoded protein may play a role in neuronal cell communications
 # FGFRL1 = behavior/neurological phenotype
-
+# CCNG2 = overexpressed in brain, tightly regulated in cell cycle
+# KIAA1841 = ID'd in screen of proteins expressed in brain
+# MYO5B = ID'd in screen for large proteins expressed in brain, utilize energy from ATP hydrolysis to generate mechanical force, required for the recycling of transferrin receptor back to the plasma membrane through an endocytotic recycling compartment in nonpolarized, but not polarized, cells.
 # NGEF = axon guidance regulating ephrin-induced growth cone collapse and dendritic spine morphogenesis
 # ***NOTCH3 = intercellular signalling pathway that plays a key role in neural development, mutations in NOTCH3 have been identified as the underlying cause of cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy
 # POMGNT1 = Mutations in this gene may be associated with muscle-eye-brain disease and several congenital muscular dystrophies
@@ -364,9 +512,10 @@ tm_down = ['AVEN', 'BMP6', 'CABLES2', 'CCNG2', 'DDN', 'EHBP1L1', 'ENPP5', 'FGFRL
 # LIMD1 = Gene Ontology (GO) annotations related to this gene include transcription corepressor activity.
 # LOXL2 = Gene Ontology (GO) annotations related to this gene include chromatin binding and electron transfer activity; Also mediates deamination of methylated TAF10, a member of the transcription factor IID (TFIID) complex, which induces release of TAF10 from promoters, leading to inhibition of TFIID-dependent transcription; SNAI1 recruits LOXL2 to pericentromeric regions to oxidize histone H3 and repress transcription which leads to release of heterochromatin component CBX5/HP1A, enabling chromatin reorganization and acquisition of mesenchymal traits; a susceptibility gene to intracranial aneurysms
 # MYB = contains three HTH DNA-binding domains that functions as a transcription regulator; considered an oncogene, related to Notch signaling,
-# SMURF2 = Interacts with SMAD proteins
+# SMURF2 = Interacts with SMAD proteins; functions in regulation of neuronal and planar cell polarity, induction of senescence, and tumor suppression
 
 # HSPA2 = Heat Shock Protein Family A (Hsp70) Member 2;  including protection of the proteome from stress, folding and transport of newly synthesized polypeptides, activation of proteolysis of misfolded proteins and the formation and dissociation of protein complexes. Plays a pivotal role in the protein quality control system, ensuring the correct folding of proteins, the re-folding of misfolded proteins and controlling the targeting of proteins for subsequent degradation; normally over-expressed in brain
+# GALNS = Involved in breaking down and recycling molecules in lysosome
 
 """Tm + ISRIB vs Untr"""
 tmisrib_data = rp_plot(data_rpm, tmisrib_mrna, tmisrib_ribo, untr_mrna, untr_ribo, 'Tm+ISRIB', 'Untr', 'TmISRIB_vs_Untr_jordan.png')
@@ -399,22 +548,90 @@ isrib_up_ingolia = []
 isrib_down_ingolia = []
 
 """
-My alignments have less "Super-translators", which is actually better and expected
-Not sure why the mRNA levels seem to be more constained on the positive side
+FIGURE 2B
 """
 # Track neuronal related genes across conditions to see if they are significantly changed between conditions
-tm_data_set = tm_data.reindex(labels=tm_down)
-tmisrib_data_set = tmisrib_data.reindex(labels=tm_down)
-isrib_data_set = isrib_data.reindex(labels=tm_down)
-tm_data_set['te_tm'] = np.log2(tm_data_set['ribo_fc'] / tm_data_set['rna_fc'])
-tmisrib_data_set['te_tmisrib'] = np.log2(tmisrib_data_set['ribo_fc'] / tmisrib_data_set['rna_fc'])
-isrib_data_set['te_isrib'] = np.log2(isrib_data_set['ribo_fc'] / isrib_data_set['rna_fc'])
+tm_data_set = tm_data.reindex(labels=tm_down_neuro_strict)
+tmisrib_data_set = tmisrib_data.reindex(labels=tm_down_neuro_strict)
+isrib_data_set = isrib_data.reindex(labels=tm_down_neuro_strict)
+tm_data_set['Tm'] = np.log2(tm_data_set['ribo_fc'] / tm_data_set['rna_fc'])
+tmisrib_data_set['Tm + ISRIB'] = np.log2(tmisrib_data_set['ribo_fc'] / tmisrib_data_set['rna_fc'])
+isrib_data_set['ISRIB'] = np.log2(isrib_data_set['ribo_fc'] / isrib_data_set['rna_fc'])
 
-dataset = pd.concat([tm_data_set[['te_tm']], tmisrib_data_set[['te_tmisrib']], isrib_data_set[['te_isrib']]], axis=1, sort=False)
+dataset = pd.concat([tm_data_set[['Tm']], tmisrib_data_set[['Tm + ISRIB']], isrib_data_set[['ISRIB']]], axis=1, sort=False)
+#dataset
 
-dataset
+ax = dataset.T.plot.line(figsize=(5,7.5), grid = False)
+ax.axvline(1, ls='-', color='white')
+ax.set_ylabel('log$_2$TE')
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/elife_figures/translation_efficiencies_interest.png', dpi=1800, bbox_inches='tight')
 
-dataset.T.plot.line(figsize=(10,10))
 
-
+"""
+FIGURE 2C
+"""
 # Analyze bigwig files for genes of interest to make sure they are reliable hits
+input = '/Users/jordan/Desktop/7093913_bams/'
+output = '/Users/jordan/Desktop/7093913_bw/'
+
+def get_files(
+        directory,
+        suffix,
+        omit=[]):
+
+    # Initialize blank file list to fill
+    file_list = []
+
+    # Walk through raw data files within given directory
+    for file in next(os.walk(directory))[2]:
+        if file.endswith(tuple(suffix)):
+            file_list.append(file) # Do not append directory, files in list will be modified and output to different locations
+
+    # Sort files in alphabetical order (helps in formatting the count tables correctly)
+    file_list = sorted(file_list)
+
+    # Get rid of bad grabs
+    omit_drop = []
+    if len(omit) > 0:
+        for x in file_list:
+            for o in omit:
+                if str(o) in x:
+                    omit_drop.append(x)
+
+    for x in omit_drop:
+        file_list.remove(x)
+
+    return tuple(file_list)
+
+files = get_files(
+    input,
+    ['.bam'])
+
+files = list(files)
+
+x = 0
+for y in range(int(len(files)/2)):
+
+    os.system(
+        'samtools merge'
+        + ' ' + str(input) + str(files[x])[:-4] + '_merged.bam'
+        + ' ' + str(input) + str(files[x]) + ' ' + str(input) + str(files[x+1]))
+    os.system(
+        'samtools index'
+        + ' ' + str(input) + str(files[x])[:-4] + '_merged.bam')
+    x += 2
+
+files = get_files(
+    input,
+    ['_merged.bam'])
+
+files = list(files)
+
+files
+
+for file in files:
+    os.system(
+        'bamCoverage'
+        + ' -b ' + str(input) + str(file[:-4]) + '.bam'
+        + ' -o ' + str(output) + str(file[:-4]) + '.bw'
+        + ' -of bigwig')

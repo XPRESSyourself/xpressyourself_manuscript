@@ -134,6 +134,8 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlphv.fd
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlphv.fd
 INPUT xpressyourself.bbl
 INPUT xpressyourself.bbl
 INPUT xpressyourself.aux
