@@ -37,7 +37,7 @@ XPRESSyourself: Automating and Democratizing High-Throughput Sequencing
 \author{
 % Tentative author list/order:
 Jordan A. Berg,$^{1}$ Jonathan R. Belyeu,$^{2}$ Jeffrey T. Morgan,$^{1}$ Alex J. Bott,$^{1}$ \\
-Yeyun Ouyang,$^{1}$ Jason Gertz,$^{3}$ Aaron R. Quinlan,$^{2,4,5}$ Michael T. Howard,$^{2}$ Jared P. Rutter$^{1,6\ast}$\\
+Jason Gertz,$^{3}$ Aaron R. Quinlan,$^{2,4,5}$ Michael T. Howard,$^{2}$ Jared P. Rutter$^{1,6\ast}$\\
 \\
 \normalsize{$^{1}$Department of Biochemistry, University of Utah, Salt Lake City, UT, USA, 84112}\\
 \normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA, 84112}\\
@@ -406,20 +406,19 @@ The XPRESSpipe method interestingly showed that even more limited mRNA regulatio
 
 \subsubsection{Performance Validation Using TCGA Data}
 In this section, we will process the raw data for 10-20 TCGA samples and compare the FPKM counts output by XPRESSpipe to the publicly available FPKM counts for the relevant samples.
-
+This will probably end up being added right before bioRXiv submission.
 
 \section{Conclusions}
 We have described herein a new software suite, XPRESSyourself, a collection of tools and pipelines to aid in expression data processing and analysis. We hope that with adoption of this pipeline, the field of high-throughput sequencing can arrive towards a standardized processing protocol for sequencing data and eliminate some of the variability that comes from using a variety of software packages for various steps during read processing. XPRESSpipe will act as a flexible pipeline that will be updated with the best performing packages as future tools are created and benchmarks performed. Additionally, various tools missing from the RNA-seq and ribosome profiling communities have been added as part of this pipeline. With these tools, such as the modifyGTF sub-module, genome reference curation is automated, such as creating a longest-transcript only GTF, a protein coding only GTF, or truncating the exonic ends of each transcript for use in ribosome profiling quantification. Further, by using this pipeline on publicly available data, we highlight XPRESSpipe's utility in being able to re-process publicly available data or personal data to uncover novel biological patterns quickly.
 
 \section*{Acknowledgments}
-J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher. The authors wish to thank Mark Wadsworth, Ryan Miller, and Michael Cormier for helpful discussions on pipeline design. They also wish to thank Cameron Waller for helpful discussions related to pipeline design and analysis. 
-
+J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher. The authors wish to thank Mark Wadsworth, Ryan Miller, and Michael Cormier for helpful discussions on pipeline design. They also wish to thank Cameron Waller for helpful discussions related to pipeline design and analysis. The support and resources from the Center for High Performance Computing at the University of Utah are gratefully acknowledged.
 
 \section*{Contributions}
 \begin{tabular}{ l l }
  Conceptualization & J.A.B. \\
  \hline
- Supervision & M.T.H., J.G., A.R.Q., J.P.R. \\
+ Supervision & J.P.R, M.T.H., J.G., A.R.Q. \\
  \hline
  Project Administration & J.A.B. \\
  \hline
@@ -429,17 +428,19 @@ J.A.B. received support from the National Institute of Diabetes and Digestive an
  \hline
  Software & J.A.B., J.R.B. \\
  \hline
- Methodology & J.A.B., J.R.B., M.T.H. \\
+ Methodology & J.A.B., J.R.B., M.T.H., J.G. \\
  \hline
  Validation & J.A.B., J.T.M., A.J.B., Y.O. \\
  \hline
- Resources & J.A.B., J.P.R. \\
+ Data Curation & J.A.B. \\
  \hline
- Funding Acquisition & J.A.B., J.P.R. \\
+ Resources & J.A.B. \\
+ \hline
+ Funding Acquisition & J.A.B. \\
  \hline
  Writing - Original Draft & J.A.B. \\
  \hline
- Writing - Review \& Editing & J.A.B., M.T.H., J.G., A.R.Q., J.P.R. \\
+ Writing - Review \& Editing & J.A.B., J.P.R., A.R.Q., M.T.H., J.G.,  \\
  \hline
  Visualization & J.A.B.
 \end{tabular}
