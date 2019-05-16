@@ -1,21 +1,43 @@
 # To Do for BioRXiv
-1. Bio insight section
-2. GTF test cases
-  - Try best to follow Ensembl guidelines
-3. Overall test cases for pipelines
-4. Read distribution sub-module
-5. UMI
-6. Incorporate batch control wrapper
-7. TCGA validation
-8. Export single summary images
+<!--- Finished
+Bio insight section
+Export single summary images
   - Fix so it doesn't keep subplots as it goes
+-->
+
+### Before bioRXiv
+1. Add correlation sample axis labels (Ingolia vs XPRESSpipe)
+2. GTFmod test cases
+  - Try best to follow Ensembl guidelines
+3. Read distribution sub-module
+4. Analysis test cases (DESeq2, complexity, read dist, periodicity, metagene)
+5. Overall test cases for pipelines
+6. UMI
+7. Incorporate batch control wrapper
 9. Output example housekeeper with even coverage from bigwig files
   - Make bigwig output standard
 10. Test docker instance, ensure R deps are working within
   - Make it upload automatically for each new tag
 11. Build documentation
   - Add instructions for beginners
-  - Add instructions on how to add to the project
+  - Add IGV instructions
+12. Make sure aspects of XPRESStools discussed are tested (PCA, volcano plots, normalizations)
+13. Solve OOM errors on HPC
+14. Figure out analysis output issues on HPC
+
+
+### After bioRXiv
+1. Add instructions on how to add to the project
+2. Walkthrough video
+  - Add videos like example in this [README](https://github.com/manubot/manubot)
+3. Biology validation
+4. TCGA validation
+5. More tests!
+6. Jupyter notebook examples
+7. AWS walkthrough and cost breakdown
+
+
+
 
 # Citation Notes
 - DOI:10.1038/s41598-017-01617-3
@@ -28,101 +50,7 @@
 - Plans:
   - Focus on software and new tools
   - When doing bio insight, be clear that this is a tool for showcasing pipeline utility
-  - Do lit research and hint at bio insight, maybe do some validation in drug-course with qPCR and WB, but not much more than that
-
-# Title
-<b>XPRESSyourself Bioinformatics Suite</b>: Automating and Democratizing High-Throughput Sequencing
-
-# Intro
-
-
-# Methods
-### Reference Curation
-- Methods, flexibility, assumptions
-- How GTF is modified
-
-### Trim
-- Methods, flexibility, assumptions
-
-### Align
-- Methods, flexibility, assumptions
-
-### Count
-- Methods, flexibility, assumptions
-- Swap for RSEM
-
-### Quality Control
-##### Read distribution summary
-
-##### Complexity summary
-- Uses dupRadar on each file and plot together
-
-##### Metagene summary
-- For each read, take left-most coordinate + 1/2 * mapped read length
-- Find distance from strand-aware 5' end of transcript range it falls into and take percentage position
-- Penalty for multimappers
-- Custom refFlat
-
-##### Periodicity summary
-- For each read, take position of 3' end mapped - 16 (refs)
-- Find distance from strand-aware 5' end of transcript range it falls if first 200 nt from start
-- Penalty for multimappers
-- Custom refFlat
-
-### Other features
-##### rRNAprobe
-- Take FastQC output zip files and parse for footprint samples and find over-represented sequences
-  - How to handle with no name saying that
-
-##### Normalization and Batch Effect
-- RPM, TPM, RPKM, FPKM, Log
-  - Automated with GTF used in mapping
-- Batch effect
-
-##### DESeq2
-- Python wrapper for DESeq2
-
-### Further analysis with XPRESStools
-##### Unique Features
-- Python volcano plot, PCA confidence plotting
-- Ease of plotting uses
-
-##### How to use
-- Jupyter notebook example
-- Show how to take dataframe dictionary to remap sample name with meaningful name
-
-
-# Validation
-### Replicating publicly available datasets
-- Replicate TCGA FPKM counts
-- Replicate Ingolia ISRIB plots
-
-### Case Study: Ease of Use
-- Questionaire
-  - Explain background
-  - Explain time catching up with codecademy
-  - Explain time to get using
-  - Compare output vs actual, were they able to extract key points
-
-### Cost
-- AWS example
-
-### Documentation
-- Walkthroughs for beginners
-  - Add videos like example in this [README](https://github.com/manubot/manubot)
-- Explanation on how to build upon
-- Test examples for all functions
-
-# Biological Insight
-- Do after BioRXiv submission
-
-
-# Conclusions
-
-
-# References
-- Cite all software used to create this (all dependencies)
-
+  - Do lit. research and hint at bio insight, maybe do some validation in drug-course with qPCR and WB, but not much more than that
 
 
 # Test people:

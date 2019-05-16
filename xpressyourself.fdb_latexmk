@@ -1,16 +1,18 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1557872112 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1558039268
+["bibtex xpressyourself"] 1558039721 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1558039723
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
   "manubib.bib" 1557869698 12977 011162587c2d3f201a3317286dbbe341 ""
-  "xpressyourself.aux" 1558039268 6655 bde607e1f3aecdf2ced49df43dea5e34 ""
+  "xpressyourself.aux" 1558039723 6713 9e7a41fda4ee797b7e4eac4d795dedb9 ""
   (generated)
-  "xpressyourself.bbl"
   "xpressyourself.blg"
-["pdflatex"] 1558039266 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1558039268
+  "xpressyourself.bbl"
+["pdflatex"] 1558039721 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1558039723
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1480098688 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1480098688 4484 b828043cbd581d289d955903c1339981 ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvbo7t.tfm" 1480098688 2492 944eaaf64cd820f73cb5bff1e7b2f0c2 ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvbo8r.tfm" 1480098688 4736 423eba67d4e9420ec9df4a8def143b08 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm" 1480098688 2520 53e01eef820ca829e42c1333c3fd02b9 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm" 1480098688 4712 9ef4d7d106579d4b136e1529e1a4533c ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm" 1480098688 2772 ab6561c8ff5ee69ff6d5961b9356db5a ""
@@ -35,9 +37,11 @@
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1480098733 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1480098733 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1480098746 35941 f27169cc74234d5bd5e4cca5abafaabb ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb" 1480098746 39013 b244066151b1e3e718f9b8e88a5ff23b ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb" 1480098746 44648 23115b2a545ebfe2c526c3ca99db8b95 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb" 1480098746 48169 b4fd9d908b9ee8c65d4305ad39071c5e ""
   "/usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf" 1480098757 1372 1c26b449eb4a1a0bcf6ac7cfe376d450 ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvbo7t.vf" 1480098757 1372 fea22db4182f43265902745af9666ad6 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf" 1480098757 1372 dc841a9f00a1a11b1443367ae6c5588e ""
   "/usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf" 1480098757 1372 9948cedecdb0445a3b5cf1b8a8082ab8 ""
   "/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1480098806 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -85,10 +89,10 @@
   "figures/xpresspipe_figure3.png" 1557870723 429202 3fa3bebc5df138348196b05f581060c4 ""
   "figures/xpresspipe_overview.png" 1555645998 119837 93f6fc962966a585fc77d6d32407d4d8 ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1558039268 6655 bde607e1f3aecdf2ced49df43dea5e34 ""
-  "xpressyourself.bbl" 1557872112 4390 e6b125431128e755e55af6894df056cc "bibtex xpressyourself"
-  "xpressyourself.tex" 1558039265 43502 90977cb63e9392684d0169a765439174 ""
+  "xpressyourself.aux" 1558039723 6713 9e7a41fda4ee797b7e4eac4d795dedb9 ""
+  "xpressyourself.bbl" 1558039721 4390 e6b125431128e755e55af6894df056cc "bibtex xpressyourself"
+  "xpressyourself.tex" 1558039719 43834 2741bab71791c988bc6d2922988751be ""
   (generated)
   "xpressyourself.pdf"
-  "xpressyourself.log"
   "xpressyourself.aux"
+  "xpressyourself.log"
