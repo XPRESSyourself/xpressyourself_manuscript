@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 MAY 2019 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  20 MAY 2019 09:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -414,7 +414,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5113 strings out of 492649
  75685 string characters out of 6129622
- 169240 words of memory out of 5000000
+ 169239 words of memory out of 5000000
  8921 multiletter control sequences out of 15000+600000
  29224 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -431,7 +431,7 @@ texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (15 pages, 1306032 bytes).
+Output written on xpressyourself.pdf (15 pages, 1306036 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

@@ -5,6 +5,13 @@ Export single summary images
   - Fix so it doesn't keep subplots as it goes
 -->
 
+Correlate ATF4 with methianine s35 translation
+Not classical reegualtion -- starts out missing ATG, then when translation efficiency poor, can actually get to the ATG, doesnt get knocked off in microORFs
+GCN2 has same microORFs?
+Plot scatters with distribution to make change points
+ATF4 could be repressing or activating, check that
+Would they have found same down genes with what they did 
+
 ### Before sending manuscript to co-authors
 1. Add correlation sample axis labels (Ingolia vs XPRESSpipe)
 2. GTFmod test cases

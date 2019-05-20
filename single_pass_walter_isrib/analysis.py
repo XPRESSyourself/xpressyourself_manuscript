@@ -96,7 +96,75 @@ data_rpm10 = rpm(data_threshold10)
 ingolia_rpm10 = rpm(ingolia_threshold10)
 
 """
-SUPPLEMENTAL FIGURE 2A
+SUPPLEMENTAL FIGURE 2
+Compare non-deduplicated XPRESSpipe output
+ID Systematic Differences Between Ingolia and XPRESSpipe methods
+"""
+data_method = pd.read_csv(
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/test_nonduplicated_counts_counts_table.tsv',
+    sep = '\t',
+    index_col = 0)
+
+data_method = convert_names(
+    data_method,
+    '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.95.gtf')
+
+# Combine duplicate genes (assuming mappings of different isoforms)
+data_method_dups = data_method.groupby(level=0).sum()
+data_method_dups_number = data_method_dups.groupby(level=0).filter(lambda x: len(x) > 1)
+len(data_method_dups_number)
+data_method_threshold = data_method_dups[data_method_dups.min(axis=1) > 25]
+
+data_method_genes = data_method_threshold.index.tolist()
+ingolia_genes = ingolia_threshold.index.tolist()
+len(data_method_genes)
+len(ingolia_genes)
+
+common_genes_method = list(set(data_method_genes).intersection(ingolia_genes))
+len(common_genes_method)
+
+data_method_common = data_method_threshold.reindex(index = common_genes_method)
+ingolia_method_common = ingolia_threshold.reindex(index = common_genes_method)
+
+# Check all genes are common
+data_method_commongenes = data_method_common.index.tolist()
+ingolia_method_commongenes = ingolia_method_common.index.tolist()
+common_genes_method_all = list(set(data_method_commongenes).intersection(ingolia_method_commongenes))
+
+data_method_common['counts'] = data_method_common['SRR1795425_1_Aligned'] + data_method_common['SRR1795426_1_Aligned']
+
+# Plot
+data_c1 = data_method_common.copy()
+data_c2 = ingolia_method_common.copy()
+
+sample_a = data_c1['counts'].values.tolist()
+sample_a = [x + 1 for x in sample_a]
+sample_a = np.array(sample_a).astype(np.float)
+sample_a = np.ndarray.tolist(sample_a)
+
+sample_b = data_c2['ribo_untr_a'].values.tolist()
+sample_b = [x + 1 for x in sample_b]
+sample_b = np.array(sample_b).astype(np.float)
+sample_b = np.ndarray.tolist(sample_b)
+
+# Run Spearman R linreg for non-normal data
+rho, p_value = stats.spearmanr(sample_a, sample_b)
+
+# Format p value
+if p_value.astype('float') < 0.001:
+    p_val = '< 0.001'
+else:
+    p_val = round(p_value.astype('float'), 4).astype('str')
+
+# Plot data
+plt.scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
+plt.title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+plt.axhline(1, ls='-', color='black') # Create axis lines
+plt.axvline(1, ls='-', color='black', ymax=0.88)
+plt.show()
+
+"""
+FIGURE 2A
 """
 # Run correlations between sample alignments
 fig, axes = plt.subplots(
@@ -194,7 +262,7 @@ fig.savefig(
     bbox_inches = 'tight')
 
 """
-SUPPLEMENTAL FIGURE 2B
+FIGURE 2B
 """
 # Run correlations between sample alignments
 fig, axes = plt.subplots(
@@ -294,7 +362,7 @@ fig.savefig(
     bbox_inches = 'tight')
 
 """
-SUPPLEMENTAL FIGURE 2C
+FIGURE 2C
 My alignments appear to have less outliers, indicating a better read processing overall
 """
 # Get reference line
@@ -498,6 +566,9 @@ os.system('mkdir plots/elife_figures')
 """Tm vs Untr"""
 tm_data = rp_plot(data_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan.png')
 
+tm_data.loc['ATF4']
+tm_over_untr_atf4_ribo_fc = 2.65
+tm_over_untr_atf4_ribo_fc_ingolia_paper = 6.44
 #tm_data10 = rp_plot(data_rpm10, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_threshold10_jordan.png')
 #tm_data10.loc[['ATF5','ATF4','DDIT3','PPP1R15A']]
 
