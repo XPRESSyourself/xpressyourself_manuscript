@@ -10,7 +10,9 @@ Not classical reegualtion -- starts out missing ATG, then when translation effic
 GCN2 has same microORFs?
 Plot scatters with distribution to make change points
 ATF4 could be repressing or activating, check that
-Would they have found same down genes with what they did 
+Would they have found same down genes with what they did
+
+Be gracious to original authors, state what they did well and why we chose the dataset, and then tell how methods have improved and show advantages to re-analyzing data with the most current, complete methods
 
 ### Before sending manuscript to co-authors
 1. Add correlation sample axis labels (Ingolia vs XPRESSpipe)
@@ -35,6 +37,8 @@ Would they have found same down genes with what they did
 6. Figure out analysis output issues on HPC
 7. Get test cases from people
 8. TCGA validation
+9. Add note about truncator only editing exon files, thus must point htseq to exons
+  - Could add editing transcripts and genes later
 
 ### After bioRXiv
 1. Add instructions on how to add to the project
