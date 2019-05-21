@@ -24,6 +24,8 @@ Be gracious to original authors, state what they did well and why we chose the d
 6. UMI
 7. Output example housekeeper with even coverage from bigwig files
   - Make bigwig output standard
+8. Add cufflinks info to paper
+  - Run quick test to make sure it flows
 
 ### Before bioRXiv
 1. Incorporate batch control wrapper
