@@ -26,6 +26,7 @@ Be gracious to original authors, state what they did well and why we chose the d
   - Make bigwig output standard
 8. Add cufflinks info to paper
   - Run quick test to make sure it flows
+  - Cite https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0734-x#CR43
 
 ### Before bioRXiv
 1. Incorporate batch control wrapper
