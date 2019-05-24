@@ -30,8 +30,11 @@ N.~McGlincy, N.~Ingolia, {\it Methods\/} {\bf 126}, 112 (2017).
 \bibitem{weinberg_reports}
 D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
 
-\bibitem{taschuk_ploscb}
-M.~Taschuk, G.~Wilson, {\it PLoS Comput Biol\/} {\bf 13} (2017).
+\bibitem{cufflinks}
+C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
+
+\bibitem{anaconda}
+Anaconda, Anaconda software distribution, \url{https://anaconda.com}.
 
 \bibitem{fastp}
 S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
@@ -86,6 +89,9 @@ J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
 
 \bibitem{baruzzo_natmeth}
 G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135–139 (2017).
+
+\bibitem{count_benchmark}
+C.~Robert, M.~Watson, {\it Genome Biol\/} {\bf 16} (2015).
 
 \bibitem{evans_briefbio}
 C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792

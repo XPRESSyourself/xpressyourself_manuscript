@@ -94,27 +94,27 @@ Yeyun Ouyang,$^{1}$ Aaron R. Quinlan,$^{2,4,5}$ Jason Gertz,$^{3}$ Michael T. Ho
 
 % Place your abstract within the special {sciabstract} environment.
 \begin{sciabstract}
-With the advent of high-throughput sequencing platforms, expression profiling is becoming common-place in medical research. However, for the general user, a computational overhead often exists. The XPRESSyourself suite aims to reduce these barriers to entry for those with limited or advanced computational experience alike and create a series of tools aimed at standardizing and increasing throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of single-end, paired-end RNA-seq, and ribosome profiling sequence data. The second, XPRESStools, is a Python toolkit for expression data analysis, compatible with private or RNA-seq datasets. This software suite is designed to be easily be modified, and additional packages can be included for processing of other data types in the future, such as CHIPseq or genome alignment. In addition, this package offers several new tools useful in processing RNA-seq data, specifically for ribosome profiling. We validated the performance of this suite by processing and analyzing pubilcly available datasets and comparing the output with published results. Use of this pipeline will close gaps in the stardardization of RNA-seq processing and democratize the RNA-seq bioinformatic experience.
-% To demonstrate the capability of this software package, we analyzed a publicly available ribosome profiling dataset and identified new metabolic insights into the ER-stress response.
+With the advent of high-throughput sequencing platforms, expression profiling is becoming common-place in medical research. However, for the general user, a computational overhead often exists. The XPRESSyourself suite aims to reduce these barriers to entry for those with limited or advanced computational experience alike and create a series of tools aimed at standardizing and increasing throughput of data processing and analysis. The XPRESSyourself suite is currently broken down into two software packages. The first, XPRESSpipe, automates the pre-processing, alignment, quantification, normalization, and quality control of ribosome profiling and other single-end or paired-end RNA-seq sequence data. The second, XPRESSplot, is a Python toolkit for expression data analysis, compatible with private or RNA-seq datasets. This software suite is designed with flexibility in mind for future implementation of additional sequencing modules. In addition, this package offers several new tools useful in processing RNA-seq data, specifically for ribosome profiling. We validated the performance of this suite by processing and analyzing pubilcly available datasets and comparing the output with published results. From this study, we were able to find new putative hits by using updated methods, showcasing the ease for others to re-analyze publicly available dataset or their own data to make biological insights. Use of this pipeline will close gaps in stardardization of RNA-seq processing and democratize the RNA-seq bioinformatic experience.
 \newline\\
-\normalfont XPRESSyourself is freely available on GitHub: https://github.com/XPRESSyourself\\
+\normalfont XPRESSyourself is freely available under a GPL-3.0 license: https://github.com/XPRESSyourself
 \end{sciabstract}
 
 
 \section{Introduction}
+High-throughput profiling of gene expression data has revolutionized biomedical, industrial, and basic science research. Within the last two decades, RNA-seq has found itself the forerunner technology for high quality gene expression profiling, as it can measure relative transcript abundance, differential splice variants, sequence polymorphisms, and more \cite{byron_nrg}. This technology has been co-opted to create a variety of technologies such as single-cell RNA-seq, ChIP-seq, and ribosome profiling \cite{ingolia_science}.
 
-High-throughput profiling of gene expression data has revolutionized biomedical, industrial, and basic science research. Within the last two decades, RNA-seq has found itself the forerunner technology for high quality gene expression profiling, as it can measure relative transcript abundance, differential splice variants, sequence polymorphisms, and more \cite{byron_nrg}. This technology has also been adopted to create technologies such as single-cell RNA-seq, capable of assaying the transcriptional profile cell by cell; and ribosome profiling, which measures ribosome occupancy and translation efficiency \cite{ingolia_science}.
+While vast strides have been made to these technologies, various bottlenecks still exist. For example, while more and more researchers are becoming accustomed to to the field of bioinformatics and computational biology, learning the intricracies of the different tools used in processing RNA-seq data can be inhibitory if users are not aware of the proper tools to use or use outdated software \cite{costello_npjsba, funari_science}. Even for the experienced user, developing robust, automated pipelines that meticulously process and assess quality of these datasets can be laborious, notwithstanding the induced variability of multiple pipelines.
 
-While vast strides have been made to these technologies, various bottlenecks still exist. For example, while more and more researchers are becoming accustomed to to the field of bioinformatics and computational biology, learning the intricracies of the different tools used in processing RNA-seq data can be inhibitory if users are not aware of the proper tools to use or use outdated software \cite{costello_npjsba, funari_science}. Even for the experienced user, developing robust, automated pipelines that process and check datasets can be laborious and introduce variability to data processing.
+While several computational pipelines for sequencing have emerged intending to tackle various aspects of these bottlenecks, many suffer from usability issues, are not easily modifiable, or sacrifice quality for speed. While RNA-seq is a more matured technology, there are still an abundance of biases and idiosyncrasies associated with each method or tool of which the beginner user may not be aware. Additionally, few if any pre-existing pipeline or toolkit offer a thorough set of integrated tools for handling common quality control issues or reference creation. For example, a common bias in ribosome profiling libraries is a 5' transcript pile-up \cite{gerashchenko_nar, artieri_gr, hussman_plosg}. It is recommended that this region of each transcript not be quantified when processing ribosome profiling libraries; however, currently no tools exist to facilitate this essential step \cite{ingolia_meth, weinberg_reports}.
 
-While several computational pipelines for sequencing have emerged intending to tackle various aspects of these bottlenecks, many suffer from usability issues, are not easily modifiable, or sacrifice quality for speed. Additionally, few if any offer a thorough set of integrated tools for handling common quality control issues or reference creation. For example, a common bias in ribosome profiling libraries is a 5' transcript pile-up \cite{gerashchenko_nar, artieri_gr, hussman_plosg}. It is recommended that this region of each transcript not be quantified when processing ribosome profiling libraries; however, currently no tools exist to aid the general user in doing so \cite{ingolia_meth, weinberg_reports}.
+In response to the issues surrounding the automation and democratization of sequencing technology, we designed the XPRESSyourself bioinformatics suite for processing and analyzing high-throughput expression data. Architectually, this suite is designed to work fast (~1.48 min per gigabyte of raw input data), while not sacrifices quality for speed. Each step of the pipelines utilize the state of the art software package for that task, having been previously vetted by peer-reviewed benchmarking studies. Additionally, the scaffold that creates this pipeline structure is designed in a way that update and testing of a new module when better software comes along should only take a couple of hours.
 
-In response to the issues surrounding the automation and democratization of sequencing technology, we created the XPRESSyourself bioinformatics suite for processing and analyzing high-throughput expression data. In creating this tool, we focused on usefulness, usability, reliability, efficiency, and flexibility \cite{taschuk_ploscb}. With the XPRESSyourself package XPRESSpipe, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads. We also provide access to key quality control measures useful for assessing RNA-seq and ribosome profiling experiments. These include read length distributions to ensure correct sequencing library read sizes and a periodicity sub-module that tracks the P-site of ribosome footprints to assess effective capture of the ribosome's characteristic 1 codon step. These measures are particular helpful for ribosome profiling experiments. XPRESSpipe also includes a metagene analysis sub-module that shows the distribution of all aligned reads across a representative transcript a library and a library complexity visualization sub-module to ensure minimalization of PCR duplicates. Additionally, housed within the XPRESSyourself XPRESStools package, tools are provided to perform the bulk of sequence analysis and generation of figures for publication.
+With the XPRESSyourself package XPRESSpipe, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying reads, performing quality control via various meta-analyses of pre- and post-processed reads. We also provide access to key quality control measures useful for assessing ribosome profiling and other RNA-seq experiments. These include read length distributions to ensure correct sequencing library read sizes and a periodicity sub-module that tracks the P-site of ribosome footprints to assess effective capture of the ribosome's characteristic 1 codon step. These measurements are particular helpful for ribosome profiling experiments due the unique characteristics of the libraries. XPRESSpipe also includes a metagene analysis sub-module that shows the distribution of all aligned reads across a representative transcript a library and a library complexity visualization sub-module to ensure minimalization of PCR duplicates. Additionally, housed within the XPRESSyourself XPRESSplot package, tools are provided to perform the bulk of sequence analysis and generation of figures for publication, where many plot generation protocols that might take several hundred lines of code are whittled down to one line.
 
 \section{Materials and Methods}
 
 \subsection{XPRESSpipe}
-XPRESSpipe pipelines for single-end RNA-seq, paired-end RNA-seq, and ribosome profiling offer a handful of tunable parameters to the user, while keeping most parameters hidden to maintain The Cancer Genome Atlas (TCGA) (https://www.cancer.gov/tcga) alignment standards and ensure standardization of alignment. In the future it is feasible that additional tunable parameters will be added. For the purposes of this manuscript, we will focus on ribosome profiling examples, while the majority of statements are applicable to single- and paired-end RNA-seq. More details can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/). Table \ref{Tab:xpresspipe} outlines these parameters.
+XPRESSpipe pipelines have been designed for ribosome profiling and other single-end and paired-end RNA-seq. Each pipeline offers a handful of tunable parameters to the user, while keeping most parameters hidden to the benefit of the average user. The pipeline requirements are also largely based upon The Cancer Genome Atlas (TCGA) (https://www.cancer.gov/tcga) alignment standards and ensure standardization of alignment. In the future it is feasible that additional tunable parameters will be added. For the purposes of this manuscript, we will focus on ribosome profiling examples, while the majority of statements are also applicable to single- and paired-end RNA-seq. More details can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/). Table \ref{Tab:xpresspipe} outlines these parameters.
 
 \captionof{table}{Summary of XPRESSpipe pipeline arguments.\label{Tab:xpresspipe}}
 \begin{tabular}{p{5cm}p{13cm}}
@@ -134,21 +134,33 @@ XPRESSpipe pipelines for single-end RNA-seq, paired-end RNA-seq, and ribosome pr
  \hline
  \textbf{Optional} & \\
  \hline
- \texttt{-a, --adaptors} & Specify adaptor as string (only one allowed) -- if ``None" is provided, software will attempt to auto-detect adaptors -- if ``POLYX" is provided as a single string in the list, polyX adaptors will be trimmed \\
+ \texttt{--two\_pass} & Include option to perform a two-step alignment to map for unannotated splice-juntions \\
+ \hline
+ \texttt{--mask} & Include option to perform a primary masking alignment step to remove unwanted, often highly repetative sequences \\
+ \hline
+ \texttt{-a, --adaptors} & Specify adaptor as string -- if ``None" is provided, software will attempt to auto-detect adaptors -- if ``POLYX" is provided as a single string in the list, polyX adaptors will be trimmed \\
  \hline
  \texttt{-q, --quality} & PHRED read quality threshold (default: 28) \\
  \hline
  \texttt{--min\_length} & Minimum read length threshold to keep for reads (default: 18) \\
  \hline
+ \texttt{--count\_duplicates} & Include option to quantify alignment files without de-duplication \\
+ \hline
  \texttt{--output\_bed} & Include option to output BED files for each aligned file \\
  \hline
  \texttt{--output\_bigwig} & Include flag to output bigwig files for each aligned file \\
  \hline
- \texttt{--method} & Normalization method to perform (options: ``RPM", ``TPM", ``RPKM", ``FPKM", ``LOG") \\
+ \texttt{-c, --quantification\_method} & Specify quantification method (default: Cufflinks\cite{cufflinks}) \\
+ \hline
+ \texttt{--method} & Normalization method to perform (options: ``RPM", ``TPM", ``RPKM", ``FPKM") \\
  \hline
  \texttt{--batch} & Include path and filename of dataframe with batch normalization parameters \\
  \hline
- \texttt{--sjdbOverhang} & Sequencing platform read-length for constructing splice-aware reference previously (see documentation for more information) \\
+ \texttt{--sjdbOverhang} & Sequencing platform read-length for constructing splice-aware reference previously (see STAR documentation for more information) \\
+ \hline
+ \texttt{--mismatchRatio} & Alignment ratio of mismatches to mapped length is less than this value (see STAR documentation for more information) \\
+ \hline
+ \texttt{--seedSearchStartLmax} & Adjusting this parameter by providing a lower number will improve mapping sensitivity (recommended value = 15 for reads ~ 25 nts) (see STAR documentation for more information) \\
  \hline
  \texttt{-m, --max\_processors} & Number of max processors to use for tasks (default: No limit) \\
 \end{tabular}
@@ -159,12 +171,21 @@ XPRESSpipe can be compiled from source (https://github.com/XPRESSyourself/XPRESS
 \newline
 
 % Install XPRESSpipe code block
-\begin{lstlisting}[language=bash, caption=curateReference example]
+\begin{lstlisting}[language=bash, caption=Source installation.]
+Download and unzip archived version from https://github.com/XPRESSyourself/XPRESSpipe/releases
+$ cd XPRESSpipe
+$ python setup.py install
+\end{lstlisting}
+
+The source install will automatically check the system for Anaconda\cite{anaconda} and install required dependencies (Table \ref{tab:software}).
+
+% Install XPRESSpipe code block
+\begin{lstlisting}[language=bash, caption=Docker installation]
 $ docker image pull jordanberg/xpresspipe:latest
 \end{lstlisting}
 
 % Software dependencies table
-\captionof{table}{Summary of dependency software, accession location, and purpose in the XPRESSpipe package.\label{Tab:packages}}
+\captionof{table}{Summary of dependency software, accession location, and purpose in the XPRESSpipe package.}
 \begin{tabular}{p{2.4cm}p{7.5cm}p{3cm}}
  \textbf{Package} & \textbf{Purpose} & \textbf{Reference} \\
  \hline
@@ -180,13 +201,15 @@ $ docker image pull jordanberg/xpresspipe:latest
  \hline
  bedtools & Alignment file manipulation & \cite{bedtools} \\
  \hline
- deeptools & Alignment file manipulation & \cite{deeptools} \\
+ deepTools & Alignment file manipulation & \cite{deeptools} \\
  \hline
- htseq & Read quantification & \cite{htseq} \\
+ Cufflinks & Read quantification (primary) & \cite{cufflinks} \\
  \hline
- fastqc & Quality Control & \cite{fastqc} \\
+ HTSeq & Read quantification & \cite{htseq} \\
  \hline
- multiqc & Quality Control & \cite{multiqc} \\
+ FastQC & Quality Control & \cite{fastqc} \\
+ \hline
+ MultiQC & Quality Control & \cite{multiqc} \\
  \hline
  DESeq2 & Perform differential expression analysis & \cite{deseq2} \\
  \hline
@@ -200,18 +223,18 @@ $ docker image pull jordanberg/xpresspipe:latest
  \hline
  matplotlib & Plotting & \cite{matplotlib} \\
  \hline
- xpresstools & Normalization and matrix manipulation & This paper \\
+ XPRESSplot & Normalization and matrix manipulation & This paper \\
  \hline
  rsubread & Dependency for dupRadar & \cite{rsubread} \\
  \hline
  dupRadar & Performs library complexity calculations & \cite{dupradar} \\
  \hline
  deseq2 & Performs differential expression analysis & \cite{deseq2} \\
-
+ \label{Tab:software}
 \end{tabular}
 \newline
 
-XPRESSpipe is built upon several pre-established software packages, listed in Table \ref{Tab:packages}. These dependencies are included in any Docker images for XPRESSpipe; however, if installing manually, these packages will need to be installed by the user.
+XPRESSpipe is built upon several pre-established software packages, listed in Table \ref{Tab:software}. These dependencies are included in any Docker images or source installs for XPRESSpipe.
 
 \subsubsection{Inputs}
 While inputs will vary sub-module to sub-module, and further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering \texttt{xpresspipe \textless sub-module name\textgreater \ --help}, a few points of guidance are important to consider.
@@ -223,15 +246,14 @@ While inputs will vary sub-module to sub-module, and further information can be 
 \item If specifying a group of fasta files to use for alignment or reference curation, the directory containing these files cannot contain any other files ending in \texttt{.txt} or \texttt{.fa}
 \end{itemize}
 
-Other sub-modules that handle a point in the middle of sequence processing need to be of appropriate file type, explained more in the help menu or documentation.
-
 \subsubsection{Reference Curation}
-One of the first preparatory steps of RNA-seq alignment is curating a reference for the alignment software to map reads. For the purposes of the current version of XPRESSpipe, a STAR \cite{star} reference should be created. An Ensembl-formatted (https://ensembl.org) GTF should also be placed in the reference directory and be named \texttt{transcripts.gtf}. Additional modifications are recommended to this file, which can be performed using the \texttt{modifyGTF} sub-module. Modifications include removing all genes not annotated as protein-coding and/or retaining only the longest transcript for each gene. For the purposes of ribosome profiling, where 5' and 3' transcript biases are frequent \cite{ingolia_meth, weinberg_reports}, the 5' and 3' ends of each gene record can be trimmed using the same function. While each of these steps are available as stand-alone sub-modules, all reference files used by XPRESSpipe, including STAR files and modified transcriptome files can be created by running the \texttt{curateReference} command. An example is shown below for creating a ribosome profiling-ready reference XPRESSpipe directory. The following assumes one is avoiding mapping to the first 45 nucleotides and last 15 nucleotides of the longest transcript for each gene, will only quantify to protein coding regions, and is tailored for mapping 50-bp single-end RNA-seq reads. As this can be a time-consuming process, we will leave the \texttt{--max\_processors} argument as default in order to utilize all cores available to the computing unit.
+One of the first steps of RNA-seq alignment is curating a reference for the alignment software to map reads. For the purposes of the current version of XPRESSpipe, a STAR \cite{star} reference should be created. An Ensembl-formatted (https://ensembl.org) GTF should also be placed in the reference directory and be named \texttt{transcripts.gtf}. Additional modifications are recommended to this file, which can be performed using this sub-module, discussed in more detail below. Additionally, any chromosome \texttt{.fasta} files should be places in their own directory within the curated reference directory. As this can be a time-consuming process, we will leave the \texttt{--max\_processors} argument as default in order to utilize all cores available to the computing unit. Additionally, if a masking step will be required of the pipeline, the appropriate \texttt{.fasta} file or files should be places in their own directory and the
 \newline
 \begin{lstlisting}[language=bash, caption=curateReference example]
 $ xpresspipe curateReference -o /path/to/output/location/ \
-                                -f /path/to/fasta/genome/files/ \
+                                -f /path/to/fasta/genome/ \
                                 -g /path/transcripts.gtf \
+                                --masked_index /path/to/fasta/mask/ \
                                 --protein_coding \
                                 --longest_transcript \
                                 --truncate \
@@ -241,13 +263,19 @@ $ xpresspipe curateReference -o /path/to/output/location/ \
                                 --max_processors None
 \end{lstlisting}
 
+
+\subsubsection{GTF Modification}
+As ribosomal RNAs and other non-coding RNAs are highly abundant in RNA-seq experiments, it is often recommended to disregard these sequences. While the masking step mentioned above can handle this issue, it is also recommended to do so during the quantification step. By providing the \texttt{--protein\_coding} argument, only genes annotated as ``protein\_coding" will be retained in the GTF file.
+In most eukaryotes, mRNAs undergo alternative splicing. However, some quantification will consider the multiply annotated splice variants of a gene as a multi-mapper since they map to a location where several isoforms of the same gene overlap. These reads are either penalized or discarded. By providing the \texttt{--longest\_transcript} argument, the longest coding transcript for each gene is retained in the GTF file. This is performed by calculating the exon space lacking any pre-mature stop codon for each transcript of a gene and keeping only the longest version of the gene.
+For the purposes of ribosome profiling, where 5' and 3' transcript biases are frequent \cite{ingolia_meth, weinberg_reports}, the 5' and 3' ends of each transcript record need to be trimmed to avoid quantification to this region. By providing the \texttt{--truncate} argument, the 5' and 3' ends of each transcript will be trimmed by the specified amounts. Since a given exon may be less than the specified amounts, the function will recursively search exon by exon until the full truncated amount is trimmed. The amounts to be truncated can be modulated by the user.
+
 \subsubsection{Read Processing}
-While all intermediate steps of the pipelines can be run singly, we will describe the outline of the software in the context of the pipelines. Pipelines and individual sub-modules are capable of being run in a parallel manner for each input file, thus accelerating the overall process. Descriptions of the options can be found in Table \ref{Tab:xpresspipe}.
+While all intermediate steps of the pipelines can be run singly, we will describe the outline of the software in the context of the ribosome profiling pipeline. Pipelines and individual sub-modules are capable of being run in a parallel manner for each input file, thus accelerating the overall process. Descriptions of the options can be found in Table \ref{Tab:xpresspipe}.
 
 \begin{enumerate}
   \item \textbf{Trim}: First, reads need to be cleaned of artifacts for the library preparation and sequencing process. These include adaptors, unique molecular identifier (UMI) sequences, and base calls with low confidence. By doing so, non-native sequences are removed and reads can align properly to the reference sequence. XPRESSpipe uses fastp, a faster, more accurate trimming package that has improved alignable read output \cite{fastp}. Adaptor sequence, base quality, and read length are all adjustable parameters available to the user.
-  \item \textbf{Align}: After trimming, reads are then aligned to a reference genome. XPRESSpipe uses STAR, which, while taking a memory intensive approach, is fast and one of the most best performing sequence alignment software packages currently available \cite{star, baruzzo_natmeth}. XPRESSpipe performs a two-pass alignment of reads wherein first splice junctions are mapped and built into the reference; and second, reads are mapped accounting for these junctions to improve mappability over these regions. A sorted-by-coordinate and indexed BAM file is output and only unique alignments pass on to the next steps. PCR duplicates are detected and marked or removed for downstream processing. Optionally, bed and bigwig files can also be output.
-  \item \textbf{Count}: XPRESSpipe quantifies read alignments for each de-duplicated input file using htseq-count \cite{htseq}. If a modified GTF was provided as input, it is used here to avoid potential pitfalls with read quanitification (i.e. a read being counted as a multi-mapper when belonging to multiple transcripts for the same gene). By default, htseq behavior conforms to TCGA standards by being strand agnostic, mapping assuming reads were sorted by name, and by using the \texttt{intersection-nonempty} method for handling reads overlapping multiple genes.
+  \item \textbf{Align}: After trimming, reads are then aligned to a reference genome. XPRESSpipe uses STAR, which, while taking a memory intensive approach, is fast and one of the most best performing sequence alignment software packages currently available \cite{star, baruzzo_natmeth}. XPRESSpipe is capable of performing a masking alignment, a single-pass, splice-aware GTF-guided alignment, or a two-pass alignment of reads wherein novel splice junctions are determined and built into the reference, followed by alignment of reads to the reference accounting for these junctions. A sorted-by-coordinate and indexed BAM file is output and only unique alignments pass on to the next steps. PCR duplicates are detected and marked or removed for downstream processing. Optionally, bed and bigwig files can also be output.
+  \item \textbf{Count}: XPRESSpipe quantifies read alignments for each de-duplicated input file using Cufflinks \cite{cufflinks, count_benchmark}. If a modified GTF was provided as input, it is used here to avoid potential pitfalls with read quanitification (i.e. a read being counted as a multi-mapper when belonging to multiple transcripts for the same gene). Optionally, a user may use HTSeq \cite{htseq} so that quantification behavior conforms to TCGA standards by being strand agnostic, mapping assuming reads were sorted by name, and by using the \texttt{intersection-nonempty} method for handling reads overlapping multiple genes. However, use of HTSeq is not recommended due to documented short-comings \cite{count_benchmark}.
   \item \textbf{Normalize}: Methods for count normalization are available within XPRESSpipe. For normalizations involving transcript length, the appropriate GTF (transcripts-only recommended) must be provided. For samples sequenced on different chips, prepared by different individuals, or on different days, the \texttt{--batch} argument should be provided along with the appropriate metadata matrix. Sample normalization methods available include reads-per-million (RPM), Reads-per-kilobase-million (RPKM) or Fragments-per-kilobase-million (FPKM), and transcripts per million (TPM) normalizatin, as outlined in Equations 1-4 \cite{evans_briefbio}.
 
   \begin{equation}
@@ -310,25 +338,25 @@ XPRESSpipe has two analytical sub-modules. The first acts as a wrapper for the R
 
 The second analytical tool introduced in XPRESSpipe is \texttt{rrnaProbe}. Ribosomal RNA (rRNA) contamination is common in RNA-seq library preparation and the bulk of RNA in a cell at any given time is dedicated to rRNA. As unique rRNA sequences are relatively few and therefore highly repeated in sequencing libraries without depletion. Depletion of these sequences is often desired in order to have better depth of coverage of mRNA sequences. In order to facilitate this depletion, many commercial kits are available that target specific rRNA sequences for depletion, or that enrich mRNA polyA tails. However, and especially in the case of ribosome profiling experiments, where RNA is digested by an RNase to create ribosome footprints, many commercial depletion kits will not perform sufficiently and polyA selection kits are inoperable as footprints will not have the requisite polyA sequence. To this end, custom rRNA probes are recommended \cite{ingolia_meth, ingolia_science}. \texttt{rrnaProbe} works on a directory containing fastqc \cite{fastqc} zip compressed files to detect over-represented sequences for each sample. These sequences are then collated to create consensus fragments. A rank ordered list of over-represented fragments within the appropriate length range to target for depletion is then output. A BLAST \cite{blast} search on consensus sequences intended for probe useage can then be performed to verify the fragment maps to an rRNA sequence and is thus a suitable depletion probe.
 
-\subsection{XPRESStools}
-XPRESStools is a python library of analysis features that builds upon existing packages, such as Matplotlib \cite{matplotlib} and Seaborn \cite{seaborn} to generate flexible, specific analyses and plots frequently used by biological researchers that can each be executed in a single line of code rather then tens to hundreds. Additionally, many included analytical features are currently available in an R package but not in a Python package, a programming language becoming more and more common in biological research. A summary of new or more automated tools is provided below and methods are discussed in subsequent sections. We refer the reader to the documentation (https://xpresstools.readthedocs.io/en/latest/?badge=latest) for more details instructions for other features currently in the toolkit, as well as for future features to be added.
+\subsection{XPRESSplot}
+XPRESSplot is a python library of analysis features that builds upon existing packages, such as Matplotlib \cite{matplotlib} and Seaborn \cite{seaborn} to generate flexible, specific analyses and plots frequently used by biological researchers that can each be executed in a single line of code rather then tens to hundreds. Additionally, many included analytical features are currently available in an R package but not in a Python package, a programming language becoming more and more common in biological research. A summary of new or more automated tools is provided below and methods are discussed in subsequent sections. We refer the reader to the documentation (https://xpressplot.readthedocs.io/en/latest/?badge=latest) for more details instructions for other features currently in the toolkit, as well as for future features to be added.
 
 \subsubsection{Getting Data}
-XPRESStools is designed for analyzing gene expression data, but it is tractable to most data types assuming two conditions are met:
+XPRESSplot is designed for analyzing gene expression data, but it is tractable to most data types assuming two conditions are met:
 
 \begin{enumerate}
   \item \textbf{Expression Matrix}: It is assumed the input data matrix = \textit{i} * \textit{j} where \textit{i} (columns) are samples and \textit{j} (rows) are genes or other relative measurement points.
   \item \textbf{Metagene Table}: It is assumed the metagene table is a two column, header-less data matrix where column 0 is the sample ID (as specified in \textit{i} of the expression matrix) and column 1 is the sample group (for example, wild-type or treatment).
 \end{enumerate}
 
-Several functions are built into XPRESStools for importing and formatting this data. Options include importing microarray and RNA-seq expression data and metadata from the GEO database, as well as custom data and metadata that follows required formatting requirements. Several methods for normalization, such as RPM, RPKM, FPKM, TPM and log-scale normalization are accessible within this toolkit.
+Several functions are built into XPRESSplot for importing and formatting this data. Options include importing microarray and RNA-seq expression data and metadata from the GEO database, as well as custom data and metadata that follows required formatting requirements. Several methods for normalization, such as RPM, RPKM, FPKM, TPM and log-scale normalization are accessible within this toolkit.
 
 \subsubsection{Analyzing Data}
 
-While a litany of analysis tools are included in XPRESStools as of the time of writing, we will focus on tools unique to this Python library and refer to reader to the documentation for further details and examples of analysis features, current and future.
+While a litany of analysis tools are included in XPRESSplot as of the time of writing, we will focus on tools unique to this Python library and refer to reader to the documentation for further details and examples of analysis features, current and future.
 
 \begin{itemize}
-  \item \textbf{Principle Components Analysis}: Principle components analysis (PCA) for the data matrix are performed with Python's scikit-learn package \cite{scikit_learn} and desired principle components are plotted in a scatter plot via the matplotlib \cite{matplotlib} and seaborn \cite{seaborn} packages. The XPRESStools PCA module, as in many other analysis modules within XPRESStools, samples are color-coded by cross-referencing the data matrix with the metagene table to determine sample label. A dictionary is additionally passed into the function that maps a particular color to each sample label. Confidence intervals are plotted over the scatterplot using numpy \cite{numpy1, numpy2} functionality as follows:
+  \item \textbf{Principle Components Analysis}: Principle components analysis (PCA) for the data matrix are performed with Python's scikit-learn package \cite{scikit_learn} and desired principle components are plotted in a scatter plot via the matplotlib \cite{matplotlib} and seaborn \cite{seaborn} packages. The XPRESSplot PCA module, as in many other analysis modules within XPRESSplot, samples are color-coded by cross-referencing the data matrix with the metagene table to determine sample label. A dictionary is additionally passed into the function that maps a particular color to each sample label. Confidence intervals are plotted over the scatterplot using numpy \cite{numpy1, numpy2} functionality as follows:
 
   \begin{enumerate}
     \item Compute the covariance of the two principle component arrays, \textit{x} and \textit{y} using the numpy.cov() function.
@@ -349,12 +377,12 @@ While a litany of analysis tools are included in XPRESStools as of the time of w
     \]
   \end{enumerate}
 
-  \item \textbf{Volcano Plot}: Volcano plots are an efficient method for plotting magnitude, direction, and significance of changes in expression or other data types between two conditions with multiple replicates each. By providing the categorical names for samples of two conditions in the metadata matrix, XPRESStools will automate the calculation and plotting of this plotting method. For each gene, expression levels are averaged between the two conditions and the log\textsubscript{2}(fold change) is calculated. Additionally, for each gene, the P-value between the two conditions is calculated using scipy's individual T-test function \cite{scipy}. The log\textsubscript{2}(fold change) and -log\textsubscript{10}(P-value) is then plotted for each gene between the two conditions. Additional features available are the ability to plot threshold lines, highlight subsets of genes within the plot, and label specific genes by name.
+  \item \textbf{Volcano Plot}: Volcano plots are an efficient method for plotting magnitude, direction, and significance of changes in expression or other data types between two conditions with multiple replicates each. By providing the categorical names for samples of two conditions in the metadata matrix, XPRESSplot will automate the calculation and plotting of this plotting method. For each gene, expression levels are averaged between the two conditions and the log\textsubscript{2}(fold change) is calculated. Additionally, for each gene, the P-value between the two conditions is calculated using scipy's individual T-test function \cite{scipy}. The log\textsubscript{2}(fold change) and -log\textsubscript{10}(P-value) is then plotted for each gene between the two conditions. Additional features available are the ability to plot threshold lines, highlight subsets of genes within the plot, and label specific genes by name.
 
 \end{itemize}
 
 \subsection{Availability}
-The source code for these packages is open source and protected under the GPL-3.0 license. The code can be publicly accessed and installed from https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. XPRESStools is pip installable. XPRESSpipe is available as a Docker image. Jupyter notebooks and video walkthroughs are included on https://github.com/XPRESSyourself for guiding a user through use of the packages. Documentation is hosted on readthedocs \cite{readthedocs}.
+The source code for these packages is open source and protected under the GPL-3.0 license. The code can be publicly accessed and installed from https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. XPRESSplot is pip installable. XPRESSpipe is available as a Docker image. Jupyter notebooks and video walkthroughs are included on https://github.com/XPRESSyourself for guiding a user through use of the packages. Documentation is hosted on readthedocs \cite{readthedocs}.
 
 \subsection{Cost Analysis}
 Perform an example run using Docker image on AWS and give a cost per sample and time per sample output.
@@ -388,7 +416,7 @@ The XPRESSpipe method interestingly showed that even more limited mRNA regulatio
   \label{fig:figure3}
 \end{figure}
 
-\captionof{table}{Translationally down-regulated genes during acute Tm treatment.\label{Tab:packages}}
+\captionof{table}{Translationally down-regulated genes during acute Tm treatment.}
 \begin{tabular}{p{2.5cm}p{15.5cm}}
  \textbf{Gene Name} & \textbf{Relevant Description} \\
  \hline
