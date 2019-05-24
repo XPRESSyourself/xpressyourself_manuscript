@@ -21,38 +21,37 @@ Be gracious to original authors, state what they did well and why we chose the d
 3. Read distribution sub-module
 4. Analysis test cases (DESeq2, complexity, read dist, periodicity, metagene)
 5. Overall test cases for pipelines
-6. UMI
-7. Output example housekeeper with even coverage from bigwig files
-  - Make bigwig output standard
-8. Add cufflinks info to paper
+6. Add cufflinks info to paper
   - Run quick test to make sure it flows
   - Cite https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0734-x#CR43
 
 ### Before bioRXiv
 1. Incorporate batch control wrapper
-2. Test docker instance, ensure R deps are working within
+2. UMI
+3. Output example housekeeper with even coverage from bigwig files
+  - Make bigwig output standard
+4. Test docker instance, ensure R deps are working within
   - Make it upload automatically for each new tag
-3. Build documentation
+5. Build documentation
   - Add instructions for beginners
   - Add IGV instructions
-4. Make sure aspects of XPRESStools discussed are tested (PCA, volcano plots, normalizations)
-5. Solve OOM errors on HPC
-6. Figure out analysis output issues on HPC
-7. Get test cases from people
-8. TCGA validation
-9. Add note about truncator only editing exon files, thus must point htseq to exons
+6. Make sure aspects of XPRESStools discussed are tested (PCA, volcano plots, normalizations)
+7. Solve OOM errors on HPC
+8. Figure out analysis output issues on HPC
+9. Get test cases from people
+10. TCGA validation
+11. Add note about truncator only editing exon files, thus must point htseq to exons
   - Could add editing transcripts and genes later
+12. Get tests back from Jeff, Alex, Yeyun
+13. Incorporate rRNA prober
 
 ### After bioRXiv
 1. Add instructions on how to add to the project
 2. Walkthrough video
   - Add videos like example in this [README](https://github.com/manubot/manubot)
-3. Biology validation
-4. More tests!
-5. Jupyter notebook examples
-6. AWS walkthrough and cost breakdown
-
-
+3. More tests!
+4. Jupyter notebook examples
+5. AWS walkthrough and cost breakdown
 
 
 # Citation Notes
@@ -75,8 +74,3 @@ Be gracious to original authors, state what they did well and why we chose the d
 - Boris Zinshteyn?
 - Alex Bott
 - Yeyun Ouyang
-- Jon Belyeu
-- Mike Howard
-- Jay Gertz
-- Cameron Waller
-- Others in Dept?

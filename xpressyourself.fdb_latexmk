@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1558039721 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1558385622
+["bibtex xpressyourself"] 1558039721 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1558569449
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
   "manubib.bib" 1557869698 12977 011162587c2d3f201a3317286dbbe341 ""
   "xpressyourself.aux" 1558385621 6713 9e7a41fda4ee797b7e4eac4d795dedb9 ""
   (generated)
-  "xpressyourself.blg"
   "xpressyourself.bbl"
-["pdflatex"] 1558385620 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1558385622
+  "xpressyourself.blg"
+["pdflatex"] 1558385620 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1558569449
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1480098688 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
@@ -91,7 +91,7 @@
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
   "xpressyourself.aux" 1558385621 6713 9e7a41fda4ee797b7e4eac4d795dedb9 ""
   "xpressyourself.bbl" 1558039721 4390 e6b125431128e755e55af6894df056cc "bibtex xpressyourself"
-  "xpressyourself.tex" 1558385619 43834 a777c8b10a2e64a6abe037d19c962af6 ""
+  "xpressyourself.tex" 1558569449 43834 a777c8b10a2e64a6abe037d19c962af6 ""
   (generated)
   "xpressyourself.pdf"
   "xpressyourself.log"
