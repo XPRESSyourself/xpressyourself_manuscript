@@ -12,7 +12,7 @@ Export single summary images
               7130188.bat+     rutter              06:19:55 2-07:52:58         16    62.50Gn  40771596K      0:0
               7130188.ext+     rutter              06:19:58  00:00.003         16    62.50Gn          0      0:0
   - ~ 1.48 min / GB input
-  - ~ 11.86 min / input file 
+  - ~ 11.86 min / input file
 
 Correlate ATF4 with methianine s35 translation
 Not classical reegualtion -- starts out missing ATG, then when translation efficiency poor, can actually get to the ATG, doesnt get knocked off in microORFs
@@ -61,6 +61,7 @@ Be gracious to original authors, state what they did well and why we chose the d
 3. More tests!
 4. Jupyter notebook examples
 5. AWS walkthrough and cost breakdown
+6. Benchmarking for Genome Biology
 
 
 # Citation Notes

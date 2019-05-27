@@ -36,11 +36,18 @@ C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
 \bibitem{anaconda}
 Anaconda, Anaconda software distribution, \url{https://anaconda.com}.
 
+\bibitem{star}
+A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
+
 \bibitem{fastp}
 S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
 
-\bibitem{star}
-A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
+\bibitem{umi}
+Y.~Fu, P.~Wu, T.~Beane, P.~Zamore, Z.~Weng, {\it BMC Genomics\/} {\bf 19}
+  (2018).
+
+\bibitem{baruzzo_natmeth}
+G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135–139 (2017).
 
 \bibitem{samtools}
 H.~Li, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 25}, 2078 (2009).
@@ -52,26 +59,40 @@ A.~Quinlan, I.~Hall, {\it Bioinformatics\/} {\bf 26}, 841 (2010).
 F.~Ram\'irez, F.~D{\"u}ndar, S.~Diehl, B.~Gr{\"u}ning, T.~Manke, {\it Nucleic
   Acids Res\/} {\bf 42} (2014).
 
+\bibitem{count_benchmark}
+C.~Robert, M.~Watson, {\it Genome Biol\/} {\bf 16} (2015).
+
 \bibitem{htseq}
 S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
+
+\bibitem{sva}
+J.~Leek, W.~Johnson, H.~Parker, A.~Jaffe, J.~Storey, {\it Bioinformatics\/}
+  {\bf 28} (2012).
+
+\bibitem{evans_briefbio}
+C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
+  (2018).
 
 \bibitem{fastqc}
 S.~Andrews, Fastqc,
   \url{http://www.bioinformatics.babraham.ac.uk/projects/fastqc/} (2010).
 
-\bibitem{multiqc}
-P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
-  32}, 3047–3048 (2016).
-
-\bibitem{deseq2}
-M.~Love, W.~Huber, S.~Anders, {\it Genome Biol\/} {\bf 15} (2014).
-
 \bibitem{dupradar}
 S.~Sayols, D.~Scherzinger, H.~Klein, {\it BMC Bioinformatics\/} {\bf 17}, 428
   (2016).
 
-\bibitem{pandas}
-W.~McKinney, {\it Proc of the 9th Python in Science Conf\/} pp. 51--56 (2010).
+\bibitem{ribowaltz}
+F.~Lauria, {\it et~al.\/}, {\it PLoS Comput Biol\/} {\bf 14} (2018).
+
+\bibitem{matplotlib}
+J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
+
+\bibitem{seaborn}
+M.~Waskom, et~al  (2012).
+
+\bibitem{scikit_learn}
+F.~Pedregosa, {\it et~al.\/}, {\it Journal of Machine Learning Research\/} {\bf
+  12}, 2825 (2011).
 
 \bibitem{numpy1}
 T.~Oliphant, {\it A guide to NumPy\/} (Trelgol Publishing, USA, 2006).
@@ -84,41 +105,8 @@ S.~van~der Walt, S.~Colbert, G.~Varoquaux, {\it Computing in Science
 E.~Jones, T.~Oliphant, P.~Peterson, {\it et~al.\/}, Scipy: Open source
   scientific tools for python, \url{http://www.scipy.org/} (2001).
 
-\bibitem{matplotlib}
-J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
-
-\bibitem{baruzzo_natmeth}
-G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135–139 (2017).
-
-\bibitem{count_benchmark}
-C.~Robert, M.~Watson, {\it Genome Biol\/} {\bf 16} (2015).
-
-\bibitem{evans_briefbio}
-C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
-  (2018).
-
-\bibitem{ribowaltz}
-F.~Lauria, {\it et~al.\/}, {\it PLoS Comput Biol\/} {\bf 14} (2018).
-
-\bibitem{blast}
-S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman, {\it J Mol Biol.\/} {\bf
-  215}, 403 (1990).
-
-\bibitem{seaborn}
-M.~Waskom, et~al  (2012).
-
-\bibitem{scikit_learn}
-F.~Pedregosa, {\it et~al.\/}, {\it Journal of Machine Learning Research\/} {\bf
-  12}, 2825 (2011).
-
-\bibitem{readthedocs}
-Read the docs, \url{https://readthedocs.org/}.
-
-\bibitem{spearman_rnaseq}
-F.~Liesecke, {\it et~al.\/}, {\it Sci Rep\/} {\bf 8} (2018).
-
-\bibitem{statsmodels}
-S.~Seabold, J.~Perktold, {\it 9th Python in Science Conference\/} (2010).
+\bibitem{deseq2}
+M.~Love, W.~Huber, S.~Anders, {\it Genome Biol\/} {\bf 15} (2014).
 
 \bibitem{isr_disease}
 D.~Santos-Ribeiro, L.~Godinas, C.~Pilette, F.~Perros, {\it Drug Discov Today\/}
@@ -147,5 +135,34 @@ J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
 
 \bibitem{circligase_bias}
 R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
+
+\bibitem{multiqc}
+P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
+  32}, 3047–3048 (2016).
+
+\bibitem{pandas}
+W.~McKinney, {\it Proc of the 9th Python in Science Conf\/} pp. 51--56 (2010).
+
+\bibitem{sklearn}
+ .
+
+\bibitem{plotly}
+ .
+
+\bibitem{geoparse}
+ .
+
+\bibitem{blast}
+S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman, {\it J Mol Biol.\/} {\bf
+  215}, 403 (1990).
+
+\bibitem{spearman_rnaseq}
+F.~Liesecke, {\it et~al.\/}, {\it Sci Rep\/} {\bf 8} (2018).
+
+\bibitem{statsmodels}
+S.~Seabold, J.~Perktold, {\it 9th Python in Science Conference\/} (2010).
+
+\bibitem{readthedocs}
+Read the docs, \url{https://readthedocs.org/}.
 
 \end{thebibliography}

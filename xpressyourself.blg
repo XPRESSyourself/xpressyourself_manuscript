@@ -5,45 +5,54 @@ The style file: Science.bst
 Database file #1: manubib.bib
 Warning--I didn't find a database entry for "rsubread"
 Warning--empty journal in seaborn
-You've used 45 entries,
+Warning--empty author in sklearn
+Warning--empty journal in sklearn
+Warning--empty year in sklearn
+Warning--empty author in plotly
+Warning--empty journal in plotly
+Warning--empty year in plotly
+Warning--empty author in geoparse
+Warning--empty journal in geoparse
+Warning--empty year in geoparse
+You've used 50 entries,
             2300 wiz_defined-function locations,
-            956 strings with 12940 characters,
-and the built_in function-call counts, 8896 in all, are:
-= -- 783
-> -- 449
+            967 strings with 13290 characters,
+and the built_in function-call counts, 9601 in all, are:
+= -- 825
+> -- 492
 < -- 1
-+ -- 225
-- -- 112
-* -- 681
-:= -- 1400
-add.period$ -- 45
-call.type$ -- 45
++ -- 248
+- -- 122
+* -- 745
+:= -- 1493
+add.period$ -- 50
+call.type$ -- 50
 change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 476
-empty$ -- 785
-format.name$ -- 151
-if$ -- 2024
+cite$ -- 60
+duplicate$ -- 523
+empty$ -- 850
+format.name$ -- 163
+if$ -- 2167
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 42
-newline$ -- 138
-num.names$ -- 44
-pop$ -- 189
+int.to.str$ -- 50
+missing$ -- 47
+newline$ -- 153
+num.names$ -- 46
+pop$ -- 225
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 292
+skip$ -- 318
 stack$ -- 0
 substring$ -- 308
-swap$ -- 140
+swap$ -- 146
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 67
-width$ -- 47
-write$ -- 354
-(There were 2 warnings)
+warning$ -- 10
+while$ -- 69
+width$ -- 52
+write$ -- 382
+(There were 11 warnings)
