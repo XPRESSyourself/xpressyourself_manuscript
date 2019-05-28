@@ -14,45 +14,45 @@ Warning--empty year in plotly
 Warning--empty author in geoparse
 Warning--empty journal in geoparse
 Warning--empty year in geoparse
-You've used 50 entries,
+You've used 51 entries,
             2300 wiz_defined-function locations,
-            967 strings with 13290 characters,
-and the built_in function-call counts, 9601 in all, are:
-= -- 825
-> -- 492
+            973 strings with 13472 characters,
+and the built_in function-call counts, 9777 in all, are:
+= -- 841
+> -- 504
 < -- 1
-+ -- 248
-- -- 122
-* -- 745
-:= -- 1493
-add.period$ -- 50
-call.type$ -- 50
++ -- 254
+- -- 125
+* -- 758
+:= -- 1523
+add.period$ -- 51
+call.type$ -- 51
 change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 523
-empty$ -- 850
-format.name$ -- 163
-if$ -- 2167
+cite$ -- 61
+duplicate$ -- 533
+empty$ -- 863
+format.name$ -- 167
+if$ -- 2205
 int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 47
-newline$ -- 153
-num.names$ -- 46
-pop$ -- 225
+int.to.str$ -- 51
+missing$ -- 48
+newline$ -- 156
+num.names$ -- 47
+pop$ -- 229
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 318
+skip$ -- 323
 stack$ -- 0
 substring$ -- 308
-swap$ -- 146
+swap$ -- 149
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 10
-while$ -- 69
-width$ -- 52
-write$ -- 382
+while$ -- 70
+width$ -- 53
+write$ -- 390
 (There were 11 warnings)

@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 matplotlib.rcParams['font.sans-serif'] = 'Arial'
 import seaborn as sns
-from xpresstools import convert_names, rpm, check_samples, threshold
+from xpressplot import convert_names, rpm, r_fpkm, check_samples, threshold
 from scipy import stats
 from statsmodels.stats.multitest import multipletests
 %matplotlib inline
@@ -17,8 +17,9 @@ from statsmodels.stats.multitest import multipletests
 READ IN DATA
 """
 # Read in single-pass XPRESSpipe processed read data
+# Masked, only unique hits accepted, de-duplicated, and merged before quantification
 data = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/isrib_riboprof_counts_table.tsv',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/isrib_merged_counts_cufflinksFPKM_table.tsv',
     sep = '\t',
     index_col = 0)
 
@@ -26,11 +27,11 @@ data = convert_names(
     data,
     '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.95.gtf')
 
-data.columns = data.columns.str.replace('_1_dedupRemoved', '')
+data.columns = data.columns.str.replace('merged_dedupRemoved_cufflinks_counts_fpkm_counts', '')
 
 data.head()
 
-# Combine lanes
+# Rename samples
 sra_info = pd.read_csv(
     '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/GSE65778_table.txt',
     sep = '\t')
@@ -40,43 +41,47 @@ sra_info.head()
 name_dict = pd.Series(sra_info.ingolia_name.values,index=sra_info.Run).to_dict()
 data_c = data.copy()
 data_c.columns = data_c.columns.to_series().map(name_dict)
-data_sum = data_c.groupby(data_c.columns, axis=1).sum()
-data_sum.head()
+data_c.head()
 
 # Read in Ingolia raw counts from Elife supplement table
 ingolia = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/elife_ingolia_raw_reads_isrib.txt',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/ingolia_counts_table.txt',
     sep = '\t',
     index_col = 0)
 
-ingolia.head()
+# Make transcript size dictionary for RPKM normalization
+ingolia_size_dict = ingolia[['size']]
+ingolia_size_dict['size'] = ingolia_size_dict['size'] / 1e3
+
+ingolia = ingolia.drop('size', axis=1)
+
+# Perform RPKM normalization
+ingolia_rpm = rpm(
+    ingolia)
+ingolia_rpkm = ingolia_rpm.div(ingolia_size_dict['size'], axis=0)
+ingolia_rpkm = ingolia_rpkm.dropna(axis=0)
+ingolia_rpkm.head()
 
 # Combine duplicate genes (assuming mappings of different isoforms)
-data_dups = data_sum.groupby(level=0).sum()
+data_dups = data_c.groupby(level=0).sum()
 data_dups_number = data_dups.groupby(level=0).filter(lambda x: len(x) > 1)
 len(data_dups_number)
 
-ingolia_dups = ingolia.groupby(level=0).sum()
+ingolia_dups = ingolia_rpkm.groupby(level=0).sum()
 ingolia_dups_number = ingolia_dups.groupby(level=0).filter(lambda x: len(x) > 1)
 len(ingolia_dups_number)
 
-data_threshold = data_dups[data_dups.min(axis=1) > 25]
-ingolia_threshold = ingolia_dups[ingolia_dups.min(axis=1) > 25]
-
-data_threshold10 = data_dups[data_dups.min(axis=1) > 10]
-ingolia_threshold10 = ingolia_dups[ingolia_dups.min(axis=1) > 10]
-
 # Make dataframes for each dataset for matching genes
-jordan_genes = data_threshold.index.tolist()
-ingolia_genes = ingolia_threshold.index.tolist()
+jordan_genes = data_dups.index.tolist()
+ingolia_genes = ingolia_dups.index.tolist()
 len(jordan_genes)
 len(ingolia_genes)
 
 common_genes = list(set(jordan_genes).intersection(ingolia_genes))
 len(common_genes)
 
-data_common = data_threshold.reindex(index = common_genes)
-ingolia_common = ingolia_threshold.reindex(index = common_genes)
+data_common = data_dups.reindex(index = common_genes)
+ingolia_common = ingolia_dups.reindex(index = common_genes)
 
 # Check all genes are common
 jordan_commongenes = data_common.index.tolist()
@@ -88,12 +93,6 @@ if len(common_all) == len(common_genes):
 else:
     print('Looks like the datasets are still not equal')
 
-# Normalize datasets
-data_rpm = rpm(data_threshold)
-ingolia_rpm = rpm(ingolia_threshold)
-
-data_rpm10 = rpm(data_threshold10)
-ingolia_rpm10 = rpm(ingolia_threshold10)
 
 """
 SUPPLEMENTAL FIGURE 2
@@ -242,8 +241,8 @@ for x in file_list:
     # Plot data
     axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
     axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
-    axes[ax_y, ax_x].axhline(1, ls='-', color='black') # Create axis lines
-    axes[ax_y, ax_x].axvline(1, ls='-', color='black', ymax=0.88)
+    axes[ax_y, ax_x].axhline(0, ls='-', color='black') # Create axis lines
+    axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymax=0.88)
     file_number += 1 # Plot counter
 
 # Create shared row/column titles
@@ -257,7 +256,7 @@ for ax, row in zip(axes[:,0], rows):
     ax.set_ylabel(row, fontsize=24)
 
 fig.savefig(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/external_correlations_summary.png',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/external_correlations_summary_cufflinks_length.png',
     dpi = 600,
     bbox_inches = 'tight')
 
@@ -300,7 +299,7 @@ file_list = [
 for y in range(int(len(file_list)/2)):
 
     # Get data as array-like for samples being compared
-    data_c1 = data_threshold.copy()
+    data_c1 = data_dups.copy()
 
     sample_a = data_c1[file_list[x]].values.tolist()
     sample_a = [x + 1 for x in sample_a]
@@ -340,8 +339,8 @@ for y in range(int(len(file_list)/2)):
     # Plot data
     axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
     axes[ax_y, ax_x].set_title('R ' + rh + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
-    axes[ax_y, ax_x].axhline(1, ls='-', color='black') # Create axis lines
-    axes[ax_y, ax_x].axvline(1, ls='-', color='black', ymax=0.88)
+    axes[ax_y, ax_x].axhline(0, ls='-', color='black') # Create axis lines
+    axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymax=0.88)
     file_number += 1 # Plot counter
     x += 2
 
@@ -357,7 +356,7 @@ for ax, col in zip(axes[1], cols):
     ax.xaxis.set_label_position('top')
 
 fig.savefig(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/internal_correlations_summary.png',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/internal_correlations_summary_cufflinks_lengthcorrected.png',
     dpi = 600,
     bbox_inches = 'tight')
 
@@ -366,7 +365,7 @@ FIGURE 2C
 My alignments appear to have less outliers, indicating a better read processing overall
 """
 # Get reference line
-ref_line = np.log10(data_rpm + 1).mean().mean()
+ref_line = np.log10(data_dups + 1).mean().mean()
 fig, ax = plt.subplots(1,1, figsize=(12.5,5))
 plt.grid(False)
 names = [
@@ -386,17 +385,16 @@ names = [
     'ribo_isrib_b',
     'isrib_a_hek',
     'isrib_b_hek']
-ax = sns.violinplot(data=np.log10(data_rpm + 1), order = names)
+ax = sns.violinplot(data=np.log10(data_dups + 1), order = names)
 plt.xticks(rotation=45)
-ax.set_ylabel('Normalized Counts (RPM)')
+ax.set_ylabel('Normalized Counts (RPKM)')
 ax.set_xlabel('Samples')
 ax.axhline(ref_line, ls='--', color='grey')
-plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/xpresspipe_run_distributions.png', dpi=1800, bbox_inches='tight')
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/plots/figures/xpresspipe_run_distributions_cufflinks_lengthcorrected.png', dpi=1800, bbox_inches='tight')
 plt.close
 
 # Check Ingolia
-check_samples(np.log10(ingolia_rpm + 1))
-sns.violinplot(data=np.log10(ingolia_rpm + 1))
+sns.violinplot(data=np.log10(ingolia_dups + 1))
 
 """
 FIGURE 2A
@@ -564,7 +562,7 @@ isrib_ribo = ['ribo_isrib_a', 'ribo_isrib_b']
 os.system('mkdir plots/elife_figures')
 
 """Tm vs Untr"""
-tm_data = rp_plot(data_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan.png')
+tm_data = rp_plot(data_dups, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan_cufflinks_length.png')
 
 tm_data.loc['ATF4']
 tm_over_untr_atf4_ribo_fc = 2.65
@@ -605,7 +603,7 @@ tm_down_transc = ['BMP6', 'DDN', 'LIMD1', 'LOXL2', 'MYB', 'SMURF2']
 # GALNS = Involved in breaking down and recycling molecules in lysosome
 
 """Tm + ISRIB vs Untr"""
-tmisrib_data = rp_plot(data_rpm, tmisrib_mrna, tmisrib_ribo, untr_mrna, untr_ribo, 'Tm+ISRIB', 'Untr', 'TmISRIB_vs_Untr_jordan.png')
+tmisrib_data = rp_plot(data_dups, tmisrib_mrna, tmisrib_ribo, untr_mrna, untr_ribo, 'Tm+ISRIB', 'Untr', 'TmISRIB_vs_Untr_jordan_cufflinks.png')
 tmisrib_up = ['CHD5', 'STARD9']
 # CHD5 = Neuron-specific protein that may function in chromatin remodeling and gene transcription. This gene is a potential tumor suppressor gene that may play a role in the development of neuroblastoma. Diseases associated with CHD5 include Neuroblastoma. Overexpressed in brain
 
@@ -613,7 +611,7 @@ tmisrib_down = ['CHAC1']
 # CHAC1 = Shown to promote neuronal differentiation by deglycination of the Notch receptor, which prevents receptor maturation and inhibits Notch signaling. This protein may also play a role in the unfolded protein response, and in regulation of glutathione levels and oxidative balance in the cell. Elevated expression of this gene may indicate increased risk of cancer recurrence among breast and ovarian cancer patients.
 
 """ISRIB vs Untr"""
-isrib_data = rp_plot(data_rpm, isrib_mrna, isrib_ribo, untr_mrna, untr_ribo, 'ISRIB', 'Untr', 'ISRIB_vs_Untr_jordan.png')
+isrib_data = rp_plot(data_dups, isrib_mrna, isrib_ribo, untr_mrna, untr_ribo, 'ISRIB', 'Untr', 'ISRIB_vs_Untr_jordan_cufflinks.png')
 isrib_up = []
 isrib_down = ['AC008758.1', 'CA13', 'EHBP1L1', 'ENPP5', 'ZBTB37']
 # ***CA13 = related pathways are Metabolism and Nitrogen metabolism
@@ -622,15 +620,15 @@ isrib_down = ['AC008758.1', 'CA13', 'EHBP1L1', 'ENPP5', 'ZBTB37']
 # ZBTB37 = May be involved in transcriptional regulation
 
 # Ingolia plots
-rp_plot(ingolia_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_ingolia.png')
+rp_plot(ingolia_dups, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_ingolia_rpkm.png')
 tm_up_ingolia = ['AGAP4', 'AK097143', 'ATF4', 'BCL2L11', 'CPS1', 'DDIT3', 'FAM13B', 'FAM198A', 'GOLGA8A', 'GOLGA8B', 'HOXB2', 'NGRN', 'OAZ1', 'PNRC2', 'PTP4A1', 'SAT1', 'UCP2', 'ZNF432', 'ZSCAN5A']
 tm_down_ingolia = ['KIAA1841', 'MYO5B']
 
-rp_plot(ingolia_rpm, tmisrib_mrna, tmisrib_ribo, untr_mrna, untr_ribo, 'Tm+ISRIB', 'Untr', 'TmISRIB_vs_Untr_ingolia.png')
+rp_plot(ingolia_dups, tmisrib_mrna, tmisrib_ribo, untr_mrna, untr_ribo, 'Tm+ISRIB', 'Untr', 'TmISRIB_vs_Untr_ingolia_rpkm.png')
 tmisrib_up_ingolia = ['AGAP4', 'AGAP5', 'AGAP6', 'AGAP7', 'AGAP8', 'AGAP9', 'AK097143', 'AK304826', 'GOLGA8A', 'GOLGA8B', 'LOC100132247', 'LRP1B', 'MAPK8IP3', 'NPIPL3', 'PKD1']
 tmisrib_down_ingolia = ['ZNF449']
 
-rp_plot(ingolia_rpm, isrib_mrna, isrib_ribo, untr_mrna, untr_ribo, 'ISRIB', 'Untr', 'ISRIB_vs_Untr_ingolia.png')
+rp_plot(ingolia_dups, isrib_mrna, isrib_ribo, untr_mrna, untr_ribo, 'ISRIB', 'Untr', 'ISRIB_vs_Untr_ingolia_rpkm.png')
 isrib_up_ingolia = []
 isrib_down_ingolia = []
 
