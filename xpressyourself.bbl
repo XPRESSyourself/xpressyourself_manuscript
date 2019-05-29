@@ -30,14 +30,17 @@ N.~McGlincy, N.~Ingolia, {\it Methods\/} {\bf 126}, 112 (2017).
 \bibitem{weinberg_reports}
 D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
 
-\bibitem{cufflinks}
-C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
+\bibitem{htseq}
+S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
 
 \bibitem{anaconda}
 Anaconda, Anaconda software distribution, \url{https://anaconda.com}.
 
 \bibitem{star}
 A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
+
+\bibitem{cufflinks}
+C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
 
 \bibitem{fastp}
 S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
@@ -59,19 +62,16 @@ A.~Quinlan, I.~Hall, {\it Bioinformatics\/} {\bf 26}, 841 (2010).
 F.~Ram\'irez, F.~D{\"u}ndar, S.~Diehl, B.~Gr{\"u}ning, T.~Manke, {\it Nucleic
   Acids Res\/} {\bf 42} (2014).
 
-\bibitem{htseq}
-S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
-
 \bibitem{count_benchmark}
 C.~Robert, M.~Watson, {\it Genome Biol\/} {\bf 16} (2015).
-
-\bibitem{sva}
-J.~Leek, W.~Johnson, H.~Parker, A.~Jaffe, J.~Storey, {\it Bioinformatics\/}
-  {\bf 28} (2012).
 
 \bibitem{evans_briefbio}
 C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
   (2018).
+
+\bibitem{sva}
+J.~Leek, W.~Johnson, H.~Parker, A.~Jaffe, J.~Storey, {\it Bioinformatics\/}
+  {\bf 28} (2012).
 
 \bibitem{fastqc}
 S.~Andrews, Fastqc,
