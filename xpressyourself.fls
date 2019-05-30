@@ -152,6 +152,15 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
 INPUT xpressyourself.bbl
 INPUT xpressyourself.bbl
+INPUT figures/xpresspipe_supplement2.png
+INPUT ./figures/xpresspipe_supplement2.png
+INPUT ./figures/xpresspipe_supplement2.png
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm
+INPUT figures/xpresspipe_supplement3.png
+INPUT ./figures/xpresspipe_supplement3.png
+INPUT ./figures/xpresspipe_supplement3.png
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
 INPUT xpressyourself.aux
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

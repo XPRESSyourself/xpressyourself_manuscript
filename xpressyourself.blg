@@ -3,56 +3,51 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: xpressyourself.aux
 The style file: Science.bst
 Database file #1: manubib.bib
+Warning--entry type for "plotly" isn't style-file defined
+--line 432 of file manubib.bib
+Warning--entry type for "GEOparse" isn't style-file defined
+--line 440 of file manubib.bib
 Warning--I didn't find a database entry for "rsubread"
 Warning--empty journal in seaborn
-Warning--empty author in sklearn
-Warning--empty journal in sklearn
-Warning--empty year in sklearn
-Warning--empty author in plotly
-Warning--empty journal in plotly
-Warning--empty year in plotly
-Warning--empty author in geoparse
-Warning--empty journal in geoparse
-Warning--empty year in geoparse
 You've used 51 entries,
             2300 wiz_defined-function locations,
-            973 strings with 13472 characters,
-and the built_in function-call counts, 9777 in all, are:
-= -- 841
-> -- 504
-< -- 1
-+ -- 254
-- -- 125
-* -- 758
-:= -- 1523
+            983 strings with 14038 characters,
+and the built_in function-call counts, 10095 in all, are:
+= -- 887
+> -- 517
+< -- 2
++ -- 259
+- -- 129
+* -- 757
+:= -- 1578
 add.period$ -- 51
 call.type$ -- 51
-change.case$ -- 4
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 61
-duplicate$ -- 533
-empty$ -- 863
-format.name$ -- 167
-if$ -- 2205
+cite$ -- 52
+duplicate$ -- 538
+empty$ -- 898
+format.name$ -- 172
+if$ -- 2300
 int.to.chr$ -- 0
 int.to.str$ -- 51
-missing$ -- 48
+missing$ -- 46
 newline$ -- 156
-num.names$ -- 47
-pop$ -- 229
+num.names$ -- 50
+pop$ -- 221
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 323
+skip$ -- 340
 stack$ -- 0
-substring$ -- 308
-swap$ -- 149
-text.length$ -- 1
+substring$ -- 340
+swap$ -- 161
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 10
-while$ -- 70
+warning$ -- 1
+while$ -- 76
 width$ -- 53
-write$ -- 390
-(There were 11 warnings)
+write$ -- 400
+(There were 4 warnings)

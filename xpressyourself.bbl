@@ -130,14 +130,14 @@ D.~Kim, {\it et~al.\/}, {\it Genome Biol\/} {\bf 14} (2013).
 \bibitem{alignment_benchmark}
 G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
 
+\bibitem{circligase_bias}
+R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
+
 \bibitem{atf4_translation}
 P.~Lu, H.~Harding, D.~Ron, {\it J Cell Biol\/} {\bf 167} (2004).
 
 \bibitem{igv}
 J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
-
-\bibitem{circligase_bias}
-R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
 
 \bibitem{multiqc}
 P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
@@ -147,13 +147,14 @@ P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
 W.~McKinney, {\it Proc of the 9th Python in Science Conf\/} pp. 51--56 (2010).
 
 \bibitem{sklearn}
- .
+L.~Buitinck, {\it et~al.\/}, {\it ECML PKDD Workshop: Languages for Data Mining
+  and Machine Learning\/} (2013), pp. 108--122.
 
 \bibitem{plotly}
- .
+P.~T. Inc., Collaborative data science (2015).
 
 \bibitem{geoparse}
- .
+R.~Gumienny, Geoparse, \url{https://github.com/guma44/GEOparse}.
 
 \bibitem{blast}
 S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman, {\it J Mol Biol.\/} {\bf

@@ -19,6 +19,7 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4}Docker installation}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Inputs}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Reference Curation}{4}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}curateReference example}{4}}
 \citation{cufflinks}
 \citation{ingolia_meth,weinberg_reports}
 \citation{fastp}
@@ -27,7 +28,6 @@
 \citation{samtools}
 \citation{bedtools}
 \citation{deeptools}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}curateReference example}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}GTF Modification}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}Read Processing}{5}}
 \citation{htseq,count_benchmark}
@@ -63,6 +63,7 @@
 \citation{isrib_riboseq}
 \citation{tophat2}
 \citation{alignment_benchmark,star}
+\citation{circligase_bias,isrib_riboseq}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Analyzing Data}{9}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Validation}{9}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Ribosome Profiling Data and New Insights from Old Data}{9}}
@@ -72,7 +73,7 @@
 \citation{igv}
 \citation{circligase_bias}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Translationally down-regulated genes during acute Tm treatment.\relax }}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. C) Sample gene count distributions. Boxplots embedded within violinplot designate the interquartile range and violinplot reports count density. Note: All R values reported are Spearman R values.\relax }}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. Note: All R values reported are Spearman R values.\relax }}{11}}
 \newlabel{fig:figure2}{{2}{11}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript  {2} Translation Efficiency compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholds. C) IGV plot for NOTCH3 for all ribosome profiling samples show read coverage across the transcript.\relax }}{12}}
 \newlabel{fig:figure3}{{3}{12}}
@@ -140,8 +141,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Confidence Interval Plotting}{17}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Ribosome Profiling Example Data Analysis}{17}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {6}Ribosome profiling processing command.}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Cost Analysis}{17}}
 \citation{readthedocs}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Cost Analysis}{18}}
 \bibdata{manubib}
 \bibcite{byron_nrg}{1}
 \bibcite{ingolia_science}{2}
@@ -182,9 +183,9 @@
 \bibcite{isrib_neuroprotective}{37}
 \bibcite{tophat2}{38}
 \bibcite{alignment_benchmark}{39}
-\bibcite{atf4_translation}{40}
-\bibcite{igv}{41}
-\bibcite{circligase_bias}{42}
+\bibcite{circligase_bias}{40}
+\bibcite{atf4_translation}{41}
+\bibcite{igv}{42}
 \bibcite{multiqc}{43}
 \bibcite{pandas}{44}
 \bibcite{sklearn}{45}
@@ -195,3 +196,7 @@
 \bibcite{statsmodels}{50}
 \bibcite{readthedocs}{51}
 \bibstyle{Science}
+\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces A) Dispersion of read counts between samples decreases with \textit  {in silico} de-duplication. Note: All R values reported are Spearman R values. B) log\textsubscript  {10}(RPM) value distributions for XPRESSpipe processed samples. Boxplots embedded within violinplot designate the interquartile range and violinplot reports count density.\relax }}{21}}
+\newlabel{fig:supplement2}{{S1}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S2}{\ignorespaces A) Fold change for each drug condition compared to untreated for the de-duplicated ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript  {2} Translation Efficiency compared to Untreated for each drug condition for each of the canonical ISR genes passing previous discussed thresholds. C) IGV plot for ENPP5 for all ribosome profiling samples show read coverage across the transcript. D) IGV plot for ATF4 for all ribosome profiling samples show read coverage across the transcript.\relax }}{22}}
+\newlabel{fig:supplement3}{{S2}{22}}
