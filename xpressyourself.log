@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 MAY 2019 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 MAY 2019 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -385,10 +385,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 381--396
  []
 
 [13]
-
-LaTeX Warning: Citation `rsubread' on page 14 undefined on input line 466.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 427--474
 
  []
@@ -427,15 +423,12 @@ nt3.png>] (./xpressyourself.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 5185 strings out of 492649
- 76762 string characters out of 6129622
+ 5184 strings out of 492649
+ 76752 string characters out of 6129622
  185496 words of memory out of 5000000
- 8990 multiletter control sequences out of 15000+600000
+ 8989 multiletter control sequences out of 15000+600000
  31110 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,47p,1841b,1652s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -451,7 +444,7 @@ texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (22 pages, 1777683 bytes).
+Output written on xpressyourself.pdf (22 pages, 1777488 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  85 compressed objects within 1 object stream

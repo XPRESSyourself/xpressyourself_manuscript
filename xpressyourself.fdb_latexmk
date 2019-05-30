@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1559175681 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1559176266
+["bibtex xpressyourself"] 1559177717 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1559177722
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
   "manubib.bib" 1559174879 15686 d51259889ffe236a60ccd3e3d3b5a82d ""
-  "xpressyourself.aux" 1559176266 10447 b5021cc11b649de3b780af13077cb4ac ""
+  "xpressyourself.aux" 1559177721 10427 9cd0df62a1fd0304366a80db6f95ce2c ""
   (generated)
   "xpressyourself.bbl"
   "xpressyourself.blg"
-["pdflatex"] 1559176263 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1559176266
+["pdflatex"] 1559177718 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1559177722
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1480098688 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
@@ -91,10 +91,10 @@
   "figures/xpresspipe_supplement2.png" 1559173317 457558 eaebcb5224c742495a2e3ad08abbba51 ""
   "figures/xpresspipe_supplement3.png" 1559173360 387811 7a966e866523d3cb0dc6e235a689e37c ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1559176266 10447 b5021cc11b649de3b780af13077cb4ac ""
-  "xpressyourself.bbl" 1559175681 5159 dede95c99b36ff3190c850dcb403e8dc "bibtex xpressyourself"
-  "xpressyourself.tex" 1559176263 63026 1118651409961f1027c2cf2f7f5f8d4d ""
+  "xpressyourself.aux" 1559177721 10427 9cd0df62a1fd0304366a80db6f95ce2c ""
+  "xpressyourself.bbl" 1559177718 5159 dede95c99b36ff3190c850dcb403e8dc "bibtex xpressyourself"
+  "xpressyourself.tex" 1559177714 63011 115f72e77c9e7f44c7a07607886a9eb0 ""
   (generated)
-  "xpressyourself.log"
-  "xpressyourself.pdf"
   "xpressyourself.aux"
+  "xpressyourself.pdf"
+  "xpressyourself.log"

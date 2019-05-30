@@ -7,11 +7,10 @@ Warning--entry type for "plotly" isn't style-file defined
 --line 432 of file manubib.bib
 Warning--entry type for "GEOparse" isn't style-file defined
 --line 440 of file manubib.bib
-Warning--I didn't find a database entry for "rsubread"
 Warning--empty journal in seaborn
 You've used 51 entries,
             2300 wiz_defined-function locations,
-            983 strings with 14038 characters,
+            982 strings with 14030 characters,
 and the built_in function-call counts, 10095 in all, are:
 = -- 887
 > -- 517
@@ -50,4 +49,4 @@ warning$ -- 1
 while$ -- 76
 width$ -- 53
 write$ -- 400
-(There were 4 warnings)
+(There were 3 warnings)
