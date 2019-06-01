@@ -425,6 +425,9 @@ data_duped = pd.read_csv(
     '/Users/jordan/Desktop/xpressyourself_manuscript/single_pass_walter_isrib/isrib_riboprof_count_dups_count_table_7155666_no_deduplication_htseq.tsv',
     sep = '\t',
     index_col = 0)
+
+data_duped.head()
+
 data_duped = convert_names(
     data_duped,
     '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.95.gtf')
