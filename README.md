@@ -11,7 +11,12 @@ Week ending June 2:
 [X] Set Cufflinks default
 [?] Dedup with fixmate step before, not default
   - Apparently not needed with coordinate sorted
-[ ] Longest transcript over exon space
+[ ] Longest transcript over CDS/exon space
+  [ ] Truncate on CDS (see notes below)
+  [ ] Update docs
+  [ ] Run comparison tests between exon and CDS
+  [ ] Have periodicity use CDS
+  [ ] Have metagene use exon? Include introns? Or give option. Use whatever is mature mRNA (I'm guess without introns)
 [ ] Make own IGV where introns collapsed, output housekeeper for user
 [ ] Cufflinks option to not do length norm
 [ ] Pipeline test cases (paired end too)
@@ -64,3 +69,4 @@ Week ending June 23:
 
 # Other Notes
 - NOTCH3 not annotated to be related to ISR from a quick google search
+- To measure the degree to which a transcript is translated wecount the number of footprints aligning to the central portion ofthe ORF, by convention 15 codons from the start codon until 5codons before the stop codon. We focus on this area of the ORFbecause the ribosomes there are the most likely to be undergoingelongation, and therefore their frequency should reflect the trans-lational capacity of the transcript rather than the kinetics of initia-tion and termination. In addition, we impose two furtherconditions to increase the likelihood we are counting genuine foot-prints: first, we only count fragments of lengths that represent>5%of total fragments. Secondly, in order to determine whether frag-ments spanning the boundary between the central ORF and theareas around the start & stop codons should be counted, we deter-mine for each fragment the likely location of the ribosomal A-site –the site of aminoacyl-tRNA decoding. If the fragment’s inferred A-site is within the central portion of the ORF, the fragment is judgedto be the footprint of a ribosome undergoing elongation, and thuscounted. The offset between the 50end of the fragment and theribosomal A-site is inferred for each fragment length representing>5% of total fragments by examining the frame bias of fragments ofthat length at the start codon. Presuming variance in the digestionpattern of the 30end of the footprint is rare[20], the location of theA-site of a fragment over the start codon can be known with greatconfidence, as many lines of evidence indicate that initiating ribo-somes contain the AUG start codon within their P-site.
