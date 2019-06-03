@@ -1,41 +1,40 @@
 # To Do for BioRXiv
-<!--- Finished
-Bio insight section
-Export single summary images
-  - Fix so it doesn't keep subplots as it goes
--->
 
-### Before bioRXiv
-Week ending June 2:
+## Changes to add to manuscript/docs
+[ ] Longest transcripts follow Ensembl canonical transcript conventions, if there is a tie, the first listed is chosen
+[ ] Truncation only happens across CDS annotated records, riboseq quantification only done using CDS (only works when using HTSeq right now)
+[ ] Periodicity used CDS, metagene and others use exons
+
+## Before bioRXiv
+### Week ending June 2:
 [X] Genome size in curateReference
 [X] Set Cufflinks default
 [?] Dedup with fixmate step before, not default
   - Apparently not needed with coordinate sorted
 [ ] Longest transcript over CDS/exon space
-  [ ] Truncate on CDS (see notes below)
+  [X] Truncate on CDS (see notes below)
   [ ] Update docs
   [ ] Run comparison tests between exon and CDS
-  [ ] Have periodicity use CDS
-  [ ] Have metagene use exon? Include introns? Or give option. Use whatever is mature mRNA (I'm guess without introns)
-[ ] Make own IGV where introns collapsed, output housekeeper for user
+  [X] Have periodicity use CDS
 [ ] Cufflinks option to not do length norm
 [ ] Pipeline test cases (paired end too)
 
-Week ending June 9:
-[ ] TCGA data
-[ ] Ribosome profiling quantification with cufflinks needs GTF with only truncation is you want isoform abundance
+### Week ending June 9:
+[ ] Strandedness protocol
 [ ] UMI handling (add arguments and docs to trim and pipelines)
 [ ] Meta-analysis test cases
   [ ] Make 3 nt light grid pattern to aid in viewing
   [ ] Weird that SRRXXXXX25 shows a drop at 5' end, look into this.
   [X] Complexity needs axis labels
   [ ] Give more notes as to how its quantifying (i.e. using longest transcript only?)
+[ ] Make own IGV where introns collapsed, output housekeeper for user
+[ ] TCGA data
+[ ] Ribosome profiling quantification with cufflinks needs GTF with only truncation is you want isoform abundance
 [ ] Work in Jon's tests
-[ ] Strandedness protocol
 [ ] Fix Travis and codecov and make sure all important steps are included in tests
 [ ] Make sure aspects of XPRESSplot discussed are tested (PCA, volcano plots, normalizations)
 
-Week ending June 16:
+### Week ending June 16:
 [ ] Test Docker instance
 [ ] Figure out analysis output issues on HPC
   [ ] This is probably where the OOM errors on HPC are coming from. Works fine for smaller datasets, but not for bigger ones
@@ -46,7 +45,7 @@ Week ending June 16:
 [ ] Use a ribosome profiling specific DE package?
 [ ] Incorporate Author feedback
 
-Week ending June 23:
+### Week ending June 23:
 [ ] Send final manuscript to all authors for 1 week to get approval
 [ ] Wrap up anything else for bioRXiv
 [ ] Jupyter notebook examples
@@ -56,7 +55,7 @@ Week ending June 23:
 [ ] Deconstruct diffs between Ingolia and XPRESSpipe
 [ ] Submit to bioRXiv and Genome Biology
 
-### After bioRXiv
+## After bioRXiv
 [ ] Add instructions on how to add to the project
 [ ] More tests!
 [ ] Analyze other datasets using pipeline as backups
