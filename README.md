@@ -4,22 +4,23 @@
 [ ] Longest transcripts follow Ensembl canonical transcript conventions, if there is a tie, the first listed is chosen
 [ ] Truncation only happens across CDS annotated records, riboseq quantification only done using CDS (only works when using HTSeq right now)
 [ ] Periodicity used CDS, metagene and others use exons
+[ ] Read distribution is handled locally, remove references to fastqc
 
 ## Before bioRXiv
 ### Week ending June 2:
 [X] Genome size in curateReference
 [X] Set Cufflinks default
-[?] Dedup with fixmate step before, not default
-  - Apparently not needed with coordinate sorted
 [ ] Longest transcript over CDS/exon space
   [X] Truncate on CDS (see notes below)
   [ ] Update docs
   [ ] Run comparison tests between exon and CDS
   [X] Have periodicity use CDS
 [ ] Cufflinks option to not do length norm
-[ ] Pipeline test cases (paired end too)
+[X] Pipeline test cases (paired end too)
 
 ### Week ending June 9:
+[X] Dedup with fixmate step before for PE, not default
+[X] Make own read distribution
 [ ] Strandedness protocol
 [ ] UMI handling (add arguments and docs to trim and pipelines)
 [ ] Meta-analysis test cases
@@ -58,6 +59,7 @@
 ## After bioRXiv
 [ ] Add instructions on how to add to the project
 [ ] More tests!
+  [ ] Find better way to test output of pipeline irrespective of versions and software
 [ ] Analyze other datasets using pipeline as backups
 
 
