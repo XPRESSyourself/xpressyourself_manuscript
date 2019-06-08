@@ -18,6 +18,7 @@
 [ ] Cufflinks option to not do length norm
 [X] Pipeline test cases (paired end too)
 
+
 ### Week ending June 9:
 [X] Dedup with fixmate step before for PE, not default
 [X] Make own read distribution
@@ -34,6 +35,12 @@
 [ ] Work in Jon's tests
 [ ] Fix Travis and codecov and make sure all important steps are included in tests
 [ ] Make sure aspects of XPRESSplot discussed are tested (PCA, volcano plots, normalizations)
+[ ] Re-run analyses
+  [ ] No dedup, quant with htseq over CDS, no MT in index
+  [ ] Calculate TE for all, should all center around 1
+  [ ] Look at neuro GO terms related to list I pulled out and see if they shift down compared to rest
+  [ ] Cite future directions of follow up in neuro cells as these were done in HEK
+
 
 ### Week ending June 16:
 [ ] Test Docker instance
