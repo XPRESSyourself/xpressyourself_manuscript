@@ -52,6 +52,7 @@
 [ ] Retry dataset with Cufflinks now that not masking and see how ISRIB stuff looks
 [ ] Use a ribosome profiling specific DE package?
 [ ] Incorporate Author feedback
+[ ] Note that RPKM will skew ribo-seq stuff? Exon length not indicative of CDS, and just going by transcript length also missing the point with introns 
 
 ### Week ending June 23:
 [ ] Send final manuscript to all authors for 1 week to get approval
