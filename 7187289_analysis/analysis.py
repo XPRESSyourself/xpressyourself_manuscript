@@ -44,7 +44,7 @@ def make_figure2A(
     plt.subplots_adjust(
         bottom = 0.1)
     plt.yticks([1,2,3,4,5]) # Limit axis labels to ints
-    plt.xticks([1,2,3,4])
+    plt.xticks([0,1,2,3,4])
 
     file_number = 0
     file_list = [
@@ -110,7 +110,7 @@ def make_figure2A(
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
         axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(1, ls='-', color='black') # Create axis lines
-        axes[ax_y, ax_x].axvline(1, ls='-', color='black', ymax=0.88)
+        axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymax=0.88)
         file_number += 1 # Plot counter
 
     # Create shared row/column titles
@@ -343,10 +343,10 @@ def rp_plot(
     ax.add_patch(rect)
     ax.set_ylabel('Ribo-Seq (' + str(conditionB_name) + '/' + str(conditionA_name) + ')', fontsize=16) # Set axis labels
     ax.set_xlabel('mRNA-Seq (' + str(conditionB_name) + '/' + str(conditionA_name) + ')', fontsize=16)
-    ax.set_xlim(.25,4.5) # Set axis limits
-    ax.set_ylim(.25,4.5)
-    x = [.250,.500,1,2,4] # Set axis spacing
-    ticks = ["1/4","1/2","1","2","4"]
+    ax.set_xlim(.125,8.5) # Set axis limits
+    ax.set_ylim(.125,8.5)
+    x = [.125,.250,.500,1,2,4,8] # Set axis spacing
+    ticks = ["1/8","1/4","1/2","1","2","4","8"]
     ax.set_facecolor("#FFFFFF") # Set background color
 
     # Set X and Y axis scales
@@ -418,7 +418,7 @@ def rp_plot(
     return data_fig
 
 """
-READ IN DUPLICATED DATA
+READ IN DATA
 """
 # Read in single-pass XPRESSpipe processed read data quantified with HTSeq using non-de-deuplicated alignments
 data = pd.read_csv(
@@ -443,16 +443,9 @@ data.head()
 
 # Clean up data
 data = data.groupby(level=0).sum() # Combine duplicate named genes
-data_threshold = data[data.min(axis=1) > 25] # Apply threshold to data
+data_threshold = data[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) > 25] # Apply threshold to data
 data_rpm = rpm(data_threshold)
 
-data_threshold_10 = data[data.min(axis=1) > 10] # Apply threshold to data
-data_rpm_10 = rpm(data_threshold_10)
-
-data_threshold_25max = data[data.max(axis=1) > 25] # Apply threshold to data
-data_rpm_25max = rpm(data_threshold_25max)
-
-data_threshold_25max.loc['APOE']
 
 """
 READ IN DE-DUPLICATED DATA
@@ -495,6 +488,7 @@ ingolia = ingolia.drop('size', axis = 1)
 ingolia = ingolia.groupby(level=0).sum() # Combine duplicate named genes
 ingolia_threshold = ingolia[ingolia.min(axis=1) > 25] # Apply threshold to data
 ingolia_rpm = rpm(ingolia_threshold)
+
 
 """
 GET COMMON GENE SET BETWEEN DATASETS
@@ -587,17 +581,17 @@ isrib_mrna = ['isrib_a_hek', 'isrib_b_hek']
 isrib_ribo = ['ribo_isrib_a', 'ribo_isrib_b']
 
 """Tm vs Untr"""
-isr_10 = ['ATF5','ATF4','PPP1R15A']
-down_intersection_10 = ['MYO5B', 'NOTCH3', 'NGEF', 'POMGNT1', 'ENPP5', 'CCNG2', 'SMURF2', 'ARHGEF6', 'FGFRL1']
+isr = ['ATF5','ATF4','PPP1R15A','DDIT3']
+down_intersection = ['MYO5B', 'NOTCH3', 'NGEF', 'POMGNT1', 'ENPP5', 'CCNG2', 'SMURF2', 'ARHGEF6', 'FGFRL1']
 
-isr = ['ATF4','PPP1R15A']
-down_intersection = ['MYO5B', 'NOTCH3', 'NGEF', 'POMGNT1', 'CCNG2', 'SMURF2', 'ARHGEF6', 'FGFRL1']
-
-data_rpm.loc['FGFRL1']
+up_ingolia = ['ATF4','ATF5']
+down_ingolia = ['MYO5B']
 
 tm_data = rp_plot(data_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan.png', isr, down_intersection)
+
 # tm_data_deduped = rp_plot(data_deduped_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan_deduped.png', isr, down_intersection)
 tm_data.loc['ATF4']['ribo_fc']
+tm_data.loc['ATF5']['ribo_fc']
 tm_data_down = tm_data.loc[(tm_data['ribo_fc'] < 0.6) & (tm_data['p_adj'] < 0.05)].index.tolist()
 
 # tm_data_deduped_down = tm_data_deduped.loc[(tm_data_deduped['ribo_fc'] < 0.5) & (tm_data_deduped['p_adj'] < 0.05)].index.tolist()
@@ -616,12 +610,13 @@ isrib_data = rp_plot(data_rpm, isrib_mrna, isrib_ribo, untr_mrna, untr_ribo, 'IS
 
 
 # Ingolia plots
-ingolia_tm = rp_plot(ingolia_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_ingolia.png', isr, down_intersection)
+ingolia_rpm.shape
+ingolia_rpm = ingolia_rpm.dropna()
+ingolia_rpm.shape
+
+ingolia_tm = rp_plot(ingolia_rpm, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_ingolia.png', up_ingolia, down_ingolia)
 ingolia_tm.loc['ATF4']['ribo_fc']
 ingolia_tm.loc['ATF5']['ribo_fc']
-
-
-
 
 rp_plot(ingolia_rpm, tmisrib_mrna, tmisrib_ribo, untr_mrna, untr_ribo, 'Tm+ISRIB', 'Untr', 'TmISRIB_vs_Untr_ingolia.png', isr, down_intersection)
 
@@ -720,7 +715,7 @@ data_te['tmisrib_a'] = data_ordered['ribo_tmisrib_a'] / data_ordered['tmisrib_a_
 data_te['tmisrib_b'] = data_ordered['ribo_tmisrib_b'] / data_ordered['tmisrib_b_hek']
 data_te['isrib_a'] = data_ordered['ribo_isrib_a'] / data_ordered['isrib_a_hek']
 data_te['isrib_b'] = data_ordered['ribo_isrib_b'] / data_ordered['isrib_b_hek']
-data_te += 0.000001
+data_te += 0.01
 data_te = np.log2(data_te)
 data_te.mean()
 
@@ -740,52 +735,17 @@ data_te_zero.head()
 
 check_samples(data_te_zero)
 
-down_list = data_te_zero.loc[(data_te_zero['tm'] <= -0.9) & (data_te_zero['tmisrib'] >= -0.3)].index.tolist()
-up_list = data_te_zero.loc[(data_te_zero['tm'] <= 0.1) & (data_te_zero['tmisrib'] >= 0.6) & (data_te_zero['isrib'] >= 0)].index.tolist()
+down_list = data_te_zero.loc[(data_te_zero['tm'] <= -1) & (data_te_zero['tmisrib'] >= 0)].index.tolist()
+up_list = data_te_zero.loc[(data_te_zero['tm'] >= 1) & (data_te_zero['tmisrib'] >= 0.6)].index.tolist()
 neuro_diff = []
 down_up_up = data_te_zero.loc[(data_te_zero['tm'] <= -0.9) & (data_te_zero['tmisrib'] >= -0.3) & (data_te_zero['isrib'] >= 0)].index.tolist()
 up_up = data_te_zero.loc[(data_te_zero['tm'] <= 0.1) & (data_te_zero['tmisrib'] >= 0.6) & (data_te_zero['isrib'] >= 0.6)].index.tolist()
 
-
+# Get random subset same size as down_list and compare annotations
+import random
+random.sample(data_te_zero.index.tolist(), k=25)
 
 fig, ax = plt.subplots()
-data_te_zero.T.plot.line(legend=False, color='lightgrey', ax=ax)
+#data_te_zero.T.plot.line(legend=False, color='lightgrey', ax=ax)
 data_te_zero.loc[isr].T.plot.line(legend=False, color='red', ax=ax)
-data_te_zero.loc[down_list].T.plot.line(legend=False, color='lightgreen', ax=ax)
-data_te_zero.loc[up_list].T.plot.line(legend=False, color='lightblue', ax=ax)
-data_te_zero.loc[down_up_up].T.plot.line(legend=False, color='green', ax=ax)
-data_te_zero.loc[up_up].T.plot.line(legend=False, color='blue', ax=ax)
-
-
-data_te_zero.loc[data_te_zero['tm'] > 2]
-
-data_te_zero.loc[data_te_zero['tmisrib'] > 2]
-
-down_up_up
-
-up_up
-
-down_list
-up_list
-
-
-down_list = data_te_zero.loc[(data_te_zero['tm'] <= -1) & (data_te_zero['tmisrib'] >= -0.5)].index.tolist()
-
-
-
-
-
-
-# Other lists
-
-# Go term GO:0061002, Homo sapiens
-neg_reg_dendritic_spine_morphogenesis = ['EFNA1','DNM3','UBE3A','NGEF','NLGN1','NLGN3','PTEN']
-neg_reg_neurogenesis = ['APOE','ASCL1','GAK','CRMP1','SEMA3A','BAG5','SRGAP2','	KIAA0319','EFNB2','CALR','F2','BMP7','CIB1',
- 'ZNF365','PAQR3','ACP4','MYLIP','GFI1','WNT7A','CNTN4','PTPN9','RAB29','GORASP1','STMN2','RAPGEF2','NLGN1','DISP3','SOX11','REST',
- 'KANK1','SKI','SPOCK1','SLIT2','DTX1','OSTN','MT3','ITM2C','RTN4','SRGAP2C']
-
-data_rpm_all = rpm(data)
-
-tm_data_all = rp_plot(data_rpm_all, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan_all_neg_reg_dendriticspine.png', isr, neg_reg_dendritic_spine_morphogenesis)
-
-tm_data_all = rp_plot(data_rpm_all, tm_mrna, tm_ribo, untr_mrna, untr_ribo, 'Tm', 'Untr', 'Tm_vs_Untr_jordan_all_neurogenesis.png', isr, neg_reg_neurogenesis)
+data_te_zero.loc[down_list].T.plot.line(legend=False, color='green', ax=ax)
