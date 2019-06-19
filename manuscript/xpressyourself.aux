@@ -5,6 +5,9 @@
 \citation{gerashchenko_nar,artieri_gr,hussman_plosg}
 \citation{ingolia_meth,weinberg_reports}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Background}{1}}
+\citation{encode_pipeline,gdc_pipeline}
+\citation{pavlidis_pipeline,nfcore_pipeline,umcu_pipeline,cellgeni_pipeline}
+\citation{dnanexus_pipeline,nextflow_pipeline}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Results}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}XPRESSpipe}{2}}
 \citation{htseq}
@@ -22,16 +25,17 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {5}curateReference example}{4}}
 \citation{cufflinks}
 \citation{ingolia_meth,weinberg_reports}
+\citation{ingolia_meth}
 \citation{fastp}
 \citation{umi}
 \citation{star,baruzzo_natmeth}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}GTF Modification}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}Read Processing}{5}}
 \citation{samtools}
 \citation{bedtools}
 \citation{deeptools}
-\citation{htseq,count_benchmark}
 \citation{cufflinks,count_benchmark}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}GTF Modification}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}Read Processing}{5}}
+\citation{htseq,count_benchmark}
 \citation{evans_briefbio}
 \citation{sva}
 \citation{fastqc}
@@ -43,21 +47,21 @@
 \citation{ingolia_meth,ingolia_science}
 \citation{matplotlib}
 \citation{seaborn}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.6}Outputs}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}XPRESSplot}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An example schematic of the inputs required by XPRESSpipe and organization of the ouputs.\relax }}{8}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:outputs}{{1}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.6}Outputs}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}XPRESSplot}{8}}
 \citation{evans_briefbio}
 \citation{scikit_learn}
 \citation{scikit_learn}
 \citation{matplotlib}
 \citation{seaborn}
 \citation{numpy1,numpy2}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An example schematic of the inputs required by XPRESSpipe and organization of the ouputs.\relax }}{8}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:outputs}{{1}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Getting Data}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Normalization}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Analyzing Data}{8}}
 \citation{scipy}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Getting Data}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Normalization}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Analyzing Data}{9}}
 \citation{deseq2}
 \citation{isr_disease}
 \citation{isrib_activation,isrib_structure,isrib_riboseq,isrib_neuroprotective}
@@ -65,137 +69,12 @@
 \citation{tophat2}
 \citation{alignment_benchmark,star}
 \citation{circligase_bias,isrib_riboseq}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Validation}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Ribosome Profiling Data and New Insights from Old Data}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Validation}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Ribosome Profiling Data and New Insights from Old Data}{10}}
 \citation{isrib_riboseq}
-\citation{atf4_translation}
 \citation{isrib_riboseq}
 \citation{igv}
 \citation{circligase_bias}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Translationally down-regulated genes during acute Tm treatment.\relax }}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. Note: All R values reported are Spearman R values.\relax }}{11}}
-\newlabel{fig:figure2}{{2}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript  {2} Translation Efficiency compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholds. C) IGV plot for NOTCH3 for all ribosome profiling samples show read coverage across the transcript.\relax }}{12}}
-\newlabel{fig:figure3}{{3}{12}}
-\newlabel{tab:targets}{{2}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Performance Validation Using TCGA Data}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Cost Analysis}{13}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces XPRESSpipe processing statistics for dataset GSE65778.\relax }}{13}}
-\newlabel{tab:chpc_performance}{{3}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Comparisons to Other Workflows}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{13}}
-\citation{fastp}
-\citation{star}
-\citation{samtools}
-\citation{bedtools}
-\citation{deeptools}
-\citation{cufflinks}
-\citation{htseq}
-\citation{fastqc}
-\citation{multiqc}
-\citation{dupradar}
-\citation{pandas}
-\citation{numpy1,numpy2}
-\citation{scipy}
-\citation{sklearn}
-\citation{matplotlib}
-\citation{dupradar}
-\citation{deseq2}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Materials and Methods}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Software Dependencies}{14}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSpipe package.\relax }}{14}}
-\citation{pandas}
-\citation{numpy1,numpy2}
-\citation{scipy}
-\citation{matplotlib}
-\citation{seaborn}
-\citation{plotly}
-\citation{sklearn}
-\citation{geoparse}
-\citation{deseq2}
-\citation{sva}
-\citation{ingolia_meth}
-\newlabel{Tab:software_pipe}{{4}{15}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSplot package.\relax }}{15}}
-\newlabel{Tab:software_plot}{{5}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GTF Modification}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Normalization}{15}}
-\citation{pandas}
-\citation{matplotlib}
-\citation{numpy1,numpy2}
-\citation{scipy}
-\citation{fastqc}
-\citation{blast}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Quality Control Summary Plotting}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Metagene Estimation}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Periodicity}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}rRNA Probe}{16}}
-\citation{spearman_rnaseq}
-\citation{seaborn}
-\citation{matplotlib}
-\citation{pandas}
-\citation{statsmodels}
-\citation{igv}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Confidence Interval Plotting}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Ribosome Profiling Example Data Analysis}{17}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}Ribosome profiling processing command.}{17}}
-\citation{readthedocs}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Cost Analysis}{18}}
-\bibdata{manubib}
-\bibcite{byron_nrg}{1}
-\bibcite{ingolia_science}{2}
-\bibcite{costello_npjsba}{3}
-\bibcite{funari_science}{4}
-\bibcite{gerashchenko_nar}{5}
-\bibcite{artieri_gr}{6}
-\bibcite{hussman_plosg}{7}
-\bibcite{ingolia_meth}{8}
-\bibcite{weinberg_reports}{9}
-\bibcite{htseq}{10}
-\bibcite{anaconda}{11}
-\bibcite{star}{12}
-\bibcite{cufflinks}{13}
-\bibcite{fastp}{14}
-\bibcite{umi}{15}
-\bibcite{baruzzo_natmeth}{16}
-\bibcite{samtools}{17}
-\bibcite{bedtools}{18}
-\bibcite{deeptools}{19}
-\bibcite{count_benchmark}{20}
-\bibcite{evans_briefbio}{21}
-\bibcite{sva}{22}
-\bibcite{fastqc}{23}
-\bibcite{dupradar}{24}
-\bibcite{ribowaltz}{25}
-\bibcite{matplotlib}{26}
-\bibcite{seaborn}{27}
-\bibcite{scikit_learn}{28}
-\bibcite{numpy1}{29}
-\bibcite{numpy2}{30}
-\bibcite{scipy}{31}
-\bibcite{deseq2}{32}
-\bibcite{isr_disease}{33}
-\bibcite{isrib_activation}{34}
-\bibcite{isrib_structure}{35}
-\bibcite{isrib_riboseq}{36}
-\bibcite{isrib_neuroprotective}{37}
-\bibcite{tophat2}{38}
-\bibcite{alignment_benchmark}{39}
-\bibcite{circligase_bias}{40}
-\bibcite{atf4_translation}{41}
-\bibcite{igv}{42}
-\bibcite{multiqc}{43}
-\bibcite{pandas}{44}
-\bibcite{sklearn}{45}
-\bibcite{plotly}{46}
-\bibcite{geoparse}{47}
-\bibcite{blast}{48}
-\bibcite{spearman_rnaseq}{49}
-\bibcite{statsmodels}{50}
-\bibcite{readthedocs}{51}
-\bibstyle{Science}
-\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces A) Dispersion of read counts between samples decreases with \textit  {in silico} de-duplication. Note: All R values reported are Spearman R values. B) log\textsubscript  {10}(RPM) value distributions for XPRESSpipe processed samples. Boxplots embedded within violinplot designate the interquartile range and violinplot reports count density.\relax }}{21}}
-\newlabel{fig:supplement2}{{S1}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S2}{\ignorespaces A) Fold change for each drug condition compared to untreated for the de-duplicated ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript  {2} Translation Efficiency compared to Untreated for each drug condition for each of the canonical ISR genes passing previous discussed thresholds. C) IGV plot for ENPP5 for all ribosome profiling samples show read coverage across the transcript. D) IGV plot for ATF4 for all ribosome profiling samples show read coverage across the transcript.\relax }}{22}}
-\newlabel{fig:supplement3}{{S2}{22}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Translationally down-regulated genes during acute Tm treatment.\relax }}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. Note: All R values reported are Spearman R values.\relax }}{12}}
+\newlabel{f

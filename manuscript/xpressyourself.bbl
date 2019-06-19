@@ -30,6 +30,30 @@ N.~McGlincy, N.~Ingolia, {\it Methods\/} {\bf 126}, 112 (2017).
 \bibitem{weinberg_reports}
 D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
 
+\bibitem{encode_pipeline}
+\url{https://www.encodeproject.org/rna-seq/}.
+
+\bibitem{gdc_pipeline}
+\url{https://docs.gdc.cancer.gov/Data/Bioinformatics_Pipelines/Expression_mRNA_Pipeline/}.
+
+\bibitem{pavlidis_pipeline}
+\url{https://github.com/PavlidisLab/rnaseq-pipeline}.
+
+\bibitem{nfcore_pipeline}
+\url{https://github.com/nf-core/rnaseq}.
+
+\bibitem{umcu_pipeline}
+\url{https://github.com/UMCUGenetics/RNASeq}.
+
+\bibitem{cellgeni_pipeline}
+\url{https://github.com/cellgeni/rnaseq}.
+
+\bibitem{dnanexus_pipeline}
+\url{https://github.com/dnanexus/tophat_cufflinks_rnaseq}.
+
+\bibitem{nextflow_pipeline}
+\url{https://www.nextflow.io/example4.html}.
+
 \bibitem{htseq}
 S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
 

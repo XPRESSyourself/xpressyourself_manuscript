@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 MAY 2019 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 JUN 2019 18:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -277,25 +277,21 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 107.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
-
-Overfull \hbox (133.57433pt too wide) in paragraph at lines 117--117
-\OT1/phv/m/n/10.95 con-fig-u-ra-tion (https://github.com/PavlidisLab/rnaseq-pip
-eline, https://github.com/nf-core/rnaseq, https://github.com/UMCUGenetics/RNASe
-q,
- []
-
-
-Overfull \hbox (103.2964pt too wide) in paragraph at lines 117--117
-\OT1/phv/m/n/10.95 fig-u-ra-tion to mod-ify com-mon pa-ram-e-ters (https://gith
-ub.com/dnanexus/tophat[]cufflinks[]rnaseq, https://www.nextflow.io/example4.htm
-l).
- []
-
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (3.05652pt too wide) in paragraph at lines 119--119
+[]\OT1/phv/m/n/10.95 In re-sponse to these is-sues sur-round-ing the au-toma-ti
+on of se-quenc-ing tech-nol-ogy, we de-signed the XPRESSy-
+ []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 126.
+
+Overfull \hbox (10.84427pt too wide) in paragraph at lines 127--128
+\OT1/phv/m/n/10.95 pipeline re-quire-ments are also largely based upon The Can-
+cer Genome At-las (TCGA) (https://www.cancer.gov/tcga)
+ []
 
 [2]
 
@@ -321,133 +317,1294 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) [3]
-LaTeX Font Info:    Try loading font information for OML+cmtt on input line 220
+LaTeX Font Info:    Try loading font information for OML+cmtt on input line 228
 .
-LaTeX Font Info:    No file OMLcmtt.fd. on input line 220.
+LaTeX Font Info:    No file OMLcmtt.fd. on input line 228.
 
 
 LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 220.
+(Font)              for symbol `textless' on input line 228.
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 223.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 231.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 223.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 231.
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--232
+Underfull \hbox (badness 10000) in paragraph at lines 239--241
 
  []
 
-[4] [5] [6]
-<figures/xpresspipe_overview.png, id=28, 421.575pt x 472.8867pt>
+[4]
+./xpressyourself.tex:260: Missing $ inserted.
+<inserted text> 
+                $
+l.260 ...fied using the \texttt{--truncate_5prime}
+                                                   or \texttt{--truncate_5pr...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./xpressyourself.tex:260: Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.260 ...fied using the \texttt{--truncate_5prime}
+                                                   or \texttt{--truncate_5pr...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./xpressyourself.tex:260: Missing $ inserted.
+<inserted text> 
+                $
+l.260 ...ate_5prime} or \texttt{--truncate_5prime}
+                                                   arguments.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./xpressyourself.tex:260: Extra }, or forgotten $.
+\mbox #1->\leavevmode \hbox {#1}
+                                
+l.260 ...ate_5prime} or \texttt{--truncate_5prime}
+                                                   arguments.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./xpressyourself.tex:260: Extra }, or forgotten $.
+\nfss@text #1->{\mbox {#1}}
+                           
+l.260 ...ate_5prime} or \texttt{--truncate_5prime}
+                                                   arguments.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./xpressyourself.tex:261: Missing $ inserted.
+<inserted text> 
+                $
+l.261 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./xpressyourself.tex:262: LaTeX Error: Something's wrong--perhaps a missing \it
+em.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 \subsubsection
+                    {Read Processing}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./xpressyourself.tex:262: LaTeX Error: Something's wrong--perhaps a missing \it
+em.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 \subsubsection
+                    {Read Processing}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./xpressyourself.tex:262: Missing } inserted.
+<inserted text> 
+                }
+l.262 \subsubsection{Read Processing}
+                                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./xpressyourself.tex:262: Missing $ inserted.
+<inserted text> 
+                $
+l.262 \subsubsection{Read Processing}
+                                     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./xpressyourself.tex:262: Missing } inserted.
+<inserted text> 
+                }
+l.262 \subsubsection{Read Processing}
+                                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+\OT1/cmtt/m/n/10.95 While all intermediate steps of the pipelines can be run si
+ngly, we will describe the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+\OT1/cmtt/m/n/10.95 outline of the software in the context of the ribosome prof
+iling pipeline. Pipelines and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+\OT1/cmtt/m/n/10.95 individual sub-modules are capable of being run in a parall
+el manner for each input file, thus
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 266.
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+[]\OT1/cmtt/m/n/10.95 Trimming: First, reads need to be cleaned of artifacts fr
+om library creation. These
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+\OT1/cmtt/m/n/10.95 include adaptors, unique molecular identifier (UMI) sequenc
+es, and technical errors
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+\OT1/cmtt/m/n/10.95 in the form of low quality base calls. By doing so, non-nat
+ive sequences are removed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+\OT1/cmtt/m/n/10.95 and reads can align properly to the reference. XPRESSpipe u
+ses fastp, a faster,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+\OT1/cmtt/m/n/10.95 more accurate trimming package that has improved alignable 
+read output (\OT1/cmtt/m/it/10.95 22\OT1/cmtt/m/n/10.95 ). Adaptor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+\OT1/cmtt/m/n/10.95 sequence, base quality, and read length are all adjustable 
+parameters available to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+\OT1/cmtt/m/n/10.95 user. Additionally, features, such as UMIs can be input and
+ used in pre-processing to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+[]\OT1/cmtt/m/n/10.95 Alignment: After trimming, reads are then aligned to a re
+ference genome. XPRESSpipe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\OT1/cmtt/m/n/10.95 uses STAR, which, while being a more memory intensive appro
+ach, is fast and one of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\OT1/cmtt/m/n/10.95 best performing sequence alignment options currently availa
+ble (\OT1/cmtt/m/it/10.95 20, 24\OT1/cmtt/m/n/10.95 ). XPRESSpipe is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\OT1/cmtt/m/n/10.95 capable of performing a single-pass, splice-aware GTF-guide
+d alignment or a two-pass
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\OT1/cmtt/m/n/10.95 alignment of reads wherein novel splice junctions are deter
+mined and built into the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\OT1/cmtt/m/n/10.95 reference, followed by alignment of reads to the new refere
+nce. A sorted-by-coordinate
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+[]\OT1/cmtt/m/n/10.95 Post-alignment Processing: XPRESSpipe will further proces
+s alignment files by parsing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 files for only unique alignments that are then passed on to
+ the next steps. PCR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 duplicates are detected and marked or removed for downstrea
+m processing; however, these
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 files are not used in cases where UMIs were provided or whe
+n the user specifies to use
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 deduplicated alignments for downstream processing. Use of d
+e-duplicated alignment files
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 may be advisable in situations where the library complexity
+ profiles (discussed below)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 exhibit high duplication levels; however, files with duplic
+ates are used for downstream
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 processing by default. These steps are performed using samt
+ools (\OT1/cmtt/m/it/10.95 25\OT1/cmtt/m/n/10.95 ). Optionally, BED
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+\OT1/cmtt/m/n/10.95 and bigWig files can also be output. These conversions are 
+handled by bedtools (\OT1/cmtt/m/it/10.95 26\OT1/cmtt/m/n/10.95 ) and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+[]\OT1/cmtt/m/n/10.95 Read Quantification: XPRESSpipe quantifies read alignment
+s for each input file using
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10.95 Cufflinks (\OT1/cmtt/m/it/10.95 21, 28\OT1/cmtt/m/n/10.95 )
+. Use of Cufflinks will output a read table that has been normalized
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10.95 already as well as a counts table for downstream applicatio
+ns where required. If masking
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10.95 of non-coding RNAs is desired, a protein[]coding modified G
+TF file should be provided for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10.95 the --gtf argument. Optionally, the user can use HTSeq with
+ the intersection-nonempty
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10.95 method as default (\OT1/cmtt/m/it/10.95 18, 28\OT1/cmtt/m/n
+/10.95 ). Our rationale for this decision is that it conforms closer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10.95 to TCGA standards. Additionally, most users will be using l
+ongest-transcript only GTF so
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+\OT1/cmtt/m/n/10.95 will be less concerned with isoform abundance estimates. Ho
+wever, there are limitations
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+[]\OT1/cmtt/m/n/10.95 Normalization: Methods for count normalization are availa
+ble within XPRESSpipe by way
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\OT1/cmtt/m/n/10.95 of the XPRESSplot package described later. For normalizatio
+ns involving transcript
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\OT1/cmtt/m/n/10.95 length, the appropriate GTF must be provided. Current sampl
+e normalization methods
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\OT1/cmtt/m/n/10.95 available include reads-per-million (RPM), Reads-per-kiloba
+se-million (RPKM) or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\OT1/cmtt/m/n/10.95 Fragments-per-kilobase-million (FPKM), and transcripts per 
+million (TPM) normalization
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\OT1/cmtt/m/n/10.95 (\OT1/cmtt/m/it/10.95 29\OT1/cmtt/m/n/10.95 ). For samples 
+sequenced on different chips, prepared by different individuals, or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\OT1/cmtt/m/n/10.95 on different days, the --batch argument should be provided 
+along with the appropriate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
+[]\OT1/cmtt/m/n/10.95 Quality Control: An important step in RNA-seq analysis is
+ proper quality control of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
+\OT1/cmtt/m/n/10.95 sequencing samples to ensure the interpreted downstream res
+ults are reliable. XPRESSpipe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
+\OT1/cmtt/m/n/10.95 performs a variety of quality control measures. For each an
+alysis type, high-resolution,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
+\OT1/cmtt/m/n/10.95 publication quality summary figures are output for all samp
+les in a given experiment for
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 275
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 275.
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 275.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+[]\OT1/cmtt/m/n/10.95 Read Length Distribution: Per sample, the lengths of all 
+reads are analyzed by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+\OT1/cmtt/m/n/10.95 FastQC (\OT1/cmtt/m/it/10.95 31\OT1/cmtt/m/n/10.95 ) after 
+trimming. By assessing the read distribution of each sample, the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+\OT1/cmtt/m/n/10.95 user can ensure the expected read size was sequenced. This 
+is particularly helpful
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+\OT1/cmtt/m/n/10.95 in ribosome profiling experiments for verifying the requisi
+te 21-30 nt ribosome
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+\OT1/cmtt/m/n/10.95 footprints were inserted into the sequencing library succes
+sfully (\OT1/cmtt/m/it/10.95 8\OT1/cmtt/m/n/10.95 ). Metrics are
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+[]\OT1/cmtt/m/n/10.95 Library Complexity: Analyzing library complexity is an ef
+fective method for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+\OT1/cmtt/m/n/10.95 analyzing the robustness of a sequencing experiment in capt
+uring various, unique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+\OT1/cmtt/m/n/10.95 mRNA species. As the majority of RNA-seq preparation method
+s involve a PCR step, at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+\OT1/cmtt/m/n/10.95 times certain fragments are favored and over-replicated in 
+contrast to others. By
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+\OT1/cmtt/m/n/10.95 plotting the number of PCR replicates versus expression lev
+el, one can determine how
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+\OT1/cmtt/m/n/10.95 successful the library preparation was at reducing these bi
+ases and at capturing a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+\OT1/cmtt/m/n/10.95 robust subset of mRNAs. This analysis is performed using du
+pRadar (\OT1/cmtt/m/it/10.95 32\OT1/cmtt/m/n/10.95 ) where inputs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+\OT1/cmtt/m/n/10.95 are the PCR duplicate-tagged BAM files output by XPRESSpipe
+. Duplicate tagging is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+[]\OT1/cmtt/m/n/10.95 Metagene Estimation Profile: In order to identify any gen
+eral 5' or 3' transcript
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/cmtt/m/n/10.95 biases in captured reads, a metagene profile can be created
+ for each sample. This
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/cmtt/m/n/10.95 is performed by determining the meta-genomic coordinate for
+ each aligned read in exon
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/cmtt/m/n/10.95 space. Required inputs are an indexed BAM file and an unmod
+ified GTF reference file
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+[]\OT1/cmtt/m/n/10.95 Codon Phasing/Periodicity Estimation Profile: In ribosome
+ profiling, a useful
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 measure of a successful experiment comes by investigating t
+he codon phasing of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 ribosome footprints (\OT1/cmtt/m/it/10.95 8\OT1/cmtt/m/n/10
+.95 ). To do so, the P-site is calculated for each mapped ribosome
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 footprint by taking the genomic coordinate 16 nucleotides u
+pstream of the 3' end
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 of each transcript and measuring the distance in nucleotide
+s along exon space to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 the start of the transcript (\OT1/cmtt/m/it/10.95 33\OT1/cm
+tt/m/n/10.95 ). The same inputs are required as for the metagene
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 sub-module. This method is intended as a quality control an
+d will provide a good
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 estimate of codon phasing in ribosome profiling data. Howev
+er, it does forgo any
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+\OT1/cmtt/m/n/10.95 further normalization, therefore it may not be best suited 
+for more in-depth studies
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+[]\OT1/cmtt/m/n/10.95 rRNA Depletion Probe: Ribosomal RNA (rRNA) contamination 
+is common in RNA-seq
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 library preparation and the bulk of RNA in a cell at any gi
+ven time is dedicated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 to rRNA. As unique rRNA sequences are relatively few, seque
+ncing of these reads
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 becomes highly repetative and often biologically uninterest
+ing in the context of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 transcription. Depletion of these sequences is often desire
+d in order to have better
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 depth of coverage of mRNA sequences. In order to facilitate
+ this depletion, many
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 commercial kits are available that target specific rRNA seq
+uences for depletion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 or that enrich for mRNA polyA tails. However, and especiall
+y in the case of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 ribosome profiling experiments, where RNA is digested by an
+ RNase to create ribosome
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 footprints, many commercial depletion kits will not perform
+ sufficiently and polyA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 selection kits are inoperable as footprints will not have t
+he requisite polyA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 sequence. To this end, custom rRNA probes are recommended (
+\OT1/cmtt/m/it/10.95 2, 8\OT1/cmtt/m/n/10.95 ). rrnaProbe will
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 analyze the over-represented sequences between footprint li
+braries after adaptor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+\OT1/cmtt/m/n/10.95 and quality trimming and compile conserved k-mers across th
+e overall experiment and
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 While outputs will vary sub-module to sub-module, generally
+, the user will specify
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 a parent output directory and necessary sub-directories wil
+l be created based on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 the step in the pipeline. Further information can be found 
+in the documentation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 (https://xpresspipe.readthedocs.io/en/latest/) or by enteri
+ng xpresspipe \OML/cmtt/m/n/10.95 <\OT1/cmtt/m/n/10.95 sub-module name\OML/cmtt
+/m/n/10.95 >
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 --help in the command line. Figure 1[] provides an example 
+of the output file scheme for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 XPRESSpipe. For a complete pipeline run, the user can expec
+t BAM alignment files, a collated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 count table of all samples in the experiment, and quality c
+ontrol figures and metrics. For
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/cmtt/m/n/10.95 almost all sub-modules, a log file will also be output to t
+rack performance and possible
+ []
+
+<figures/xpresspipe_overview.png, id=36, 421.575pt x 472.8867pt>
 File: figures/xpresspipe_overview.png Graphic file (type png)
 <use figures/xpresspipe_overview.png>
-Package pdftex.def Info: figures/xpresspipe_overview.png  used on input line 28
-6.
+Package pdftex.def Info: figures/xpresspipe_overview.png  used on input line 29
+4.
 (pdftex.def)             Requested size: 341.43306pt x 383.00005pt.
- [7] [8 <./figures/xpresspipe_overview.png>]
-LaTeX Font Info:    Try loading font information for OML+phv on input line 325.
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 Further analysis of ribosome profiling or RNA-seq data is h
+andled within XPRESSplot.
+ []
 
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlphv.fd
-File: omlphv.fd 
-)
-LaTeX Font Info:    Font shape `OML/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 325.
- [9]
-<figures/xpresspipe_figure2.png, id=41, 426.1521pt x 594.0594pt>
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 XPRESSplot is a Pythonic library of analysis and plotting t
+ools that builds upon existing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 packages, such as Matplotlib (\OT1/cmtt/m/it/10.95 34\OT1/c
+mtt/m/n/10.95 ) and Seaborn (\OT1/cmtt/m/it/10.95 35\OT1/cmtt/m/n/10.95 ) to ge
+nerate flexible, specific analyses
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 and plots frequently used by biological researchers that ca
+n each be executed in a single
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 line of code rather than tens to hundreds. Additionally, ma
+ny included features are currently
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 available in an R or other programming language package but
+ not in a Python package. Brief
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 summaries of key components of this package, as well as des
+criptions of new or more automated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 tools is provided below and methods are discussed in subseq
+uent sections. We refer the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 reader to the documentation (https://xpressplot.readthedocs
+.io/en/latest/?badge=latest)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 for more detailed instructions for other features currently
+ in the toolkit, as well as for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 future features to be added. While XPRESSplot is designed f
+or handling transcriptomics
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+\OT1/cmtt/m/n/10.95 datasets, is also capable in many cases of handling other o
+mics datasets, such as proteomics
+ []
+
+[8 <./figures/xpresspipe_overview.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+[]\OT1/cmtt/m/n/10.95 Expression Matrix: It is assumed the input data matrix = 
+\OT1/cmtt/m/it/10.95 i \OT1/cmtt/m/n/10.95 * \OT1/cmtt/m/it/10.95 j \OT1/cmtt/m
+/n/10.95 where \OT1/cmtt/m/it/10.95 i \OT1/cmtt/m/n/10.95 (columns) are
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+[]\OT1/cmtt/m/n/10.95 Metagene Table: It is assumed the metagene table is a two
+ column, header-less data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+\OT1/cmtt/m/n/10.95 matrix where column 0 is the sample ID (as specified in \OT
+1/cmtt/m/it/10.95 i \OT1/cmtt/m/n/10.95 of the expression matrix) and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/cmtt/m/n/10.95 RNA-seq experiments can be normalized using the reads-per-m
+illion (RPM),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/cmtt/m/n/10.95 Reads-per-kilobase-million (RPKM) or Fragments-per-kilobase
+-million (FPKM), and transcripts
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/cmtt/m/n/10.95 per million (TPM) methods, as outlined in Equations 1-4 in 
+the Methods (\OT1/cmtt/m/it/10.95 29\OT1/cmtt/m/n/10.95 ). Other
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/cmtt/m/n/10.95 normalizations, such as mean centering of \OT1/cmtt/m/it/10
+.95 j \OT1/cmtt/m/n/10.95 features (i.e. genes or other items) by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/cmtt/m/n/10.95 sklearn's preprocessing module (\OT1/cmtt/m/it/10.95 36\OT1
+/cmtt/m/n/10.95 ). Count thresholds can also be set to remove genes from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+\OT1/cmtt/m/n/10.95 While a litany of analysis tools are included in XPRESSplot
+ as of the time of writing, we will
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+\OT1/cmtt/m/n/10.95 focus on tools unique to this Python library or that are pa
+rticularly useful and refer the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+[]\OT1/cmtt/m/n/10.95 Principle Components Analysis: Principle components analy
+sis (PCA) for the data matrix
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+\OT1/cmtt/m/n/10.95 is computed using Python's scikit-learn package (\OT1/cmtt/
+m/it/10.95 36\OT1/cmtt/m/n/10.95 ) and desired principle components
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+\OT1/cmtt/m/n/10.95 are plotted in a scatter plot via the matplotlib (\OT1/cmtt
+/m/it/10.95 34\OT1/cmtt/m/n/10.95 ) and seaborn (\OT1/cmtt/m/it/10.95 35\OT1/cm
+tt/m/n/10.95 ) packages. The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+\OT1/cmtt/m/n/10.95 XPRESSplot PCA module, as in many other analysis modules wi
+thin XPRESSplot, samples are
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+\OT1/cmtt/m/n/10.95 color-coded by cross-referencing the data matrix with the m
+etagene table to determine
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+\OT1/cmtt/m/n/10.95 sample labels. A dictionary is additionally passed into the
+ function that maps a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+\OT1/cmtt/m/n/10.95 particular color to each sample label. Confidence intervals
+ are plotted over the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+[]\OT1/cmtt/m/n/10.95 Volcano Plot: Volcano plots are an efficient method for p
+lotting magnitude, direction,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 and significance of changes in expression or other data typ
+es between two conditions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 with multiple replicates each. By providing the categorical
+ names for samples of two
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 conditions in the metadata matrix, XPRESSplot will automate
+ the calculation and plotting
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 of this plotting method. For each gene, expression levels a
+re averaged between the two
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 conditions and the log$[]$(fold change) is calculated. Addi
+tionally, for each gene, the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 P-value between the two conditions is calculated using scip
+y's individual T-test function
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 (\OT1/cmtt/m/it/10.95 39\OT1/cmtt/m/n/10.95 ). The log$[]$(
+fold change) and -log$[]$(P-value) is then plotted for each gene between the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/cmtt/m/n/10.95 two conditions. Additional features available are the abili
+ty to plot threshold lines,
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
+[]\OT1/cmtt/m/n/10.95 Differential Expression Analysis: XPRESSpipe includes a P
+ython wrapper for DESeq2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
+\OT1/cmtt/m/n/10.95 for performing differential expression analysis of count da
+ta. We refer users to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/cmtt/m/n/10.95 In order to evaluate the ability of XPRESSpipe to provide t
+he user with reliable results, we
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/cmtt/m/n/10.95 processed publicly available raw sequence files through the
+ pipeline. We chose to highlight
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/cmtt/m/n/10.95 one ribosome profiling dataset and a subset of TCGA samples
+ to showcase the utility of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/cmtt/m/n/10.95 XPRESSpipe for rapidly extracting potentially interesting m
+olecular patterns and insights
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 The integrated stress response (ISR) is a signaling mechani
+sm used by cells and organisms in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 response to a variety of cellular stresses and has been ass
+ociated with a variety of diseases.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 Of particular interest, many disorders resulting in neurolo
+gical decline are associated with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 the activation of the ISR (\OT1/cmtt/m/it/10.95 41\OT1/cmtt
+/m/n/10.95 ). While acute ISR activation is essential for proper cell
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 survival, long periods of sustained ISR activity can be dam
+aging. A recently discovered small
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 molecule inhibitor of the ISR, ISRIB, has demonstrated ther
+apeutic potential and relative lack
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 of side-effects. Interestingly, ISRIB is able to suppress a
+ chronic low-grade ISR, while it
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
+\OT1/cmtt/m/n/10.95 does not inhibit an acute, high-grade ISR. It has also been
+ shown to be neuroprotective in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+[]\OT1/cmtt/m/n/10.95 UPDATE: ADD MORE EXAMPLES HERE --> JR: It is my impressio
+n that there are many, many examples
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+[]\OT1/cmtt/m/n/10.95 A recent study (GSE65778) utilized ribosome profiling in 
+order to better define the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 mechanisms of ISRIB action on the ISR, modeled by tunicamyc
+in (Tm) treatment of HEK293T
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 cells (\OT1/cmtt/m/it/10.95 44\OT1/cmtt/m/n/10.95 ). Some k
+ey findings from this study were that during acute ISR, a specific subset
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 of canonical stress-related transcription factors mRNAs wer
+e translationally enhanced during
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 ISR and returned to levels seen in untreated cells when ISR
+-induced cells were additionally
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 treated with ISRIB. In order to showcase the utility of XPR
+ESSpipe in re-analyzing ribosome
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 profiling and sequencing datasets, we re-processed and anal
+yzed this dataset using the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 more current \OT1/cmtt/m/it/10.95 in silico \OT1/cmtt/m/n/1
+0.95 techniques included in the XPRESSpipe package to shed more light
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 on the translational mechanisms of the ISR and ISRIB. Compa
+red to the raw count data made
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 available in the original manuscript, samples showed compar
+able alignment rates between
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 the two analytical regimes (Spearman R values ranging from 
+UPDATE) (Figure 2[]A). This is in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 spite of the fact that the methods section of the original 
+publication outlines the use of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 now outdated software, such as TopHat2 (\OT1/cmtt/m/it/10.9
+5 46\OT1/cmtt/m/n/10.95 ), which has a documented higher false positive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 alignment rate compared to the current state-of-the-art too
+l, STAR (\OT1/cmtt/m/it/10.95 20, 47\OT1/cmtt/m/n/10.95 ). This bias is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 reflected in the Spearman correlations in Figure 2[]A. Proc
+essing of replicates within the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 XPRESSpipe method showed excellent correlation (Spearman R 
+values all \OML/cmtt/m/n/10.95 >\OT1/cmtt/m/n/10.95 0.98) (Figure 2[]B).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 Interestingly, de-duplication of ribosome footprint samples
+ appeared to improve the count
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 values correlations, which may be in part due to the inhere
+nt bias of certain sequences by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 CircLigase, used in the creation of these libraries (\OT1/c
+mtt/m/it/10.95 44, 48\OT1/cmtt/m/n/10.95 ) (Figure S1[]A). Additionally,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+\OT1/cmtt/m/n/10.95 samples appeared to be relatively comparable to one another
+ once RPM normalization was
+ []
+
+[10]
+<figures/xpresspipe_figure2.png, id=49, 426.1521pt x 594.0594pt>
 File: figures/xpresspipe_figure2.png Graphic file (type png)
 <use figures/xpresspipe_figure2.png>
-Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 329
+Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 337
 .
 (pdftex.def)             Requested size: 455.24408pt x 634.64925pt.
-<figures/xpresspipe_figure3.png, id=42, 572.8602pt x 394.1124pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+[]\OT1/cmtt/m/n/10.95 XPRESSpipe-processed samples discovered similar canonical
+ targets of translational regulation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+\OT1/cmtt/m/n/10.95 during ISR compared to the original study, such as ATF4, AT
+F5, and PPP1R15A (Figure 3[]A,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+\OT1/cmtt/m/n/10.95 highlighted in magenta) (\OT1/cmtt/m/it/10.95 44\OT1/cmtt/m
+/n/10.95 ). Of note, the fold change in translation efficiency of ATF4
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+\OT1/cmtt/m/n/10.95 (UDPATE) from XPRESSpipe-processed samples closely matched 
+the estimate from the original
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+\OT1/cmtt/m/n/10.95 publication (UPDATE). Other targets highlighted in the orig
+inal study (\OT1/cmtt/m/it/10.95 44\OT1/cmtt/m/n/10.95 ), such as ATF5
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+\OT1/cmtt/m/n/10.95 and PPP1R15A also increased in their translation efficiency
+ fold change (2.178 and 2.594,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+[]\OT1/cmtt/m/n/10.95 In the original study, the genes translationally down-reg
+ulated appeared to reveal no
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+\OT1/cmtt/m/n/10.95 discernable pattern of regulation related to ISR and ISRIB 
+treatment. However, re-analyzing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+\OT1/cmtt/m/n/10.95 these data with updated the updated methodology within XPRE
+SSpipe may shed new light on an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+[]\OT1/cmtt/m/n/10.95 UPDATE Genes with an FDR \OML/cmtt/m/n/10.95 <\OT1/cmtt/m
+/n/10.95 0.05 and a ribosome footprint fold change \OML/cmtt/m/n/10.95 <\OT1/cm
+tt/m/n/10.95 0.5 in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 non-deduplicated dataset and a fold change \OML/cmtt/m/n/10
+.95 <\OT1/cmtt/m/n/10.95 0.5 in the duplicated dataset, all genes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 contain some phenotypic or functional annotation related to
+ cognitive function, as listed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 in Table 2[] (descriptions sourced from www.genecards.org a
+nd www.omim.org). The translational
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 down-regulation of these genes could likely play a role in 
+the cognitive decline associated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 with ISR and the rescue in translation during ISRIB may par
+tially explain the drugs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 neuroprotective properties. Further analysis of these poten
+tial hits is strengthened by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 investigating the read pile-ups along these genes in IGV (\
+OT1/cmtt/m/it/10.95 50\OT1/cmtt/m/n/10.95 ), where footprint coverage
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 is observed across the transcript for all ribosome profilin
+g samples except the Tm-treated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 samples (Figures 3[]C, S2[]C, D). This provides further sup
+port to this observation as use of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+\OT1/cmtt/m/n/10.95 CircLigase in the library preparation can bias certain read
+s' incorporation in sequencing
+ []
+
+<figures/xpresspipe_figure3.png, id=50, 572.8602pt x 394.1124pt>
 File: figures/xpresspipe_figure3.png Graphic file (type png)
 <use figures/xpresspipe_figure3.png>
-Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 340
+Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 351
 .
 (pdftex.def)             Requested size: 512.1496pt x 352.37057pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 341.
+(Font)              <7> on input line 352.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 341.
+(Font)              <5> on input line 352.
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--369
-
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+[]\OT1/cmtt/m/n/10.95 Identified in a screen for large proteins expressed in br
+ain; Encodes
  []
 
-[10] [11 <./figures/xpresspipe_figure2.png>] [12 <./figures/xpresspipe_figure3.
-png>]
-Underfull \hbox (badness 10000) in paragraph at lines 381--396
 
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 427--474
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 477--506
-
- []
-
-[15]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 532.
- [16]
-Underfull \hbox (badness 1292) in paragraph at lines 596--597
-\OT1/phv/m/n/10.95 Cost anal-y-sis was per-formed by ac-cess-ing run logs from 
-the HPC and us-ing pub-lished AWS prices
- []
-
-[17] [18] (./xpressyourself.bbl [19] [20])
-<figures/xpresspipe_supplement2.png, id=82, 426.1521pt x 459.3963pt>
-File: figures/xpresspipe_supplement2.png Graphic file (type png)
-<use figures/xpresspipe_supplement2.png>
-Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
- 629.
-(pdftex.def)             Requested size: 455.24408pt x 490.78511pt.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 630.
-<figures/xpresspipe_supplement3.png, id=83, 585.1461pt x 432.8973pt>
-File: figures/xpresspipe_supplement3.png Graphic file (type png)
-<use figures/xpresspipe_supplement3.png>
-Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 636.
-(pdftex.def)             Requested size: 512.1496pt x 378.9031pt.
- [21 <./figures/xpresspipe_supplement2.png>] [22 <./figures/xpresspipe_suppleme
-nt3.png>] (./xpressyourself.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
-Here is how much of TeX's memory you used:
- 5183 strings out of 492649
- 76746 string characters out of 6129622
- 181895 words of memory out of 5000000
- 8989 multiletter control sequences out of 15000+600000
- 29956 words of font info for 54 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,9n,47p,1841b,1644s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
-/type1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (22 pages, 1761454 bytes).
-PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+Underfull \hbox (badnes

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1559192197 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1559192200
+["bibtex xpressyourself"] 1560902195 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1560902198
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
-  "manubib.bib" 1559174879 15686 d51259889ffe236a60ccd3e3d3b5a82d ""
-  "xpressyourself.aux" 1559192200 10427 d603cd68f98de2b850c302389f496808 ""
+  "manubib.bib" 1560901163 16476 9e7ca93855920f56186cfad113dc8838 ""
+  "xpressyourself.aux" 1560902198 10834 c14d448e0f6849bd6a70268dc04f9a2c ""
   (generated)
   "xpressyourself.blg"
   "xpressyourself.bbl"
-["pdflatex"] 1559192197 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1559192200
+["pdflatex"] 1560902195 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1560902198
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1480098688 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
@@ -30,9 +30,11 @@
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1480098701 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1480098701 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1480098733 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1480098733 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1480098733 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1480098733 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1480098733 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1480098733 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1480098733 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1480098746 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb" 1480098746 39013 b244066151b1e3e718f9b8e88a5ff23b ""
@@ -89,10 +91,10 @@
   "figures/xpresspipe_supplement2.png" 1559173317 457558 eaebcb5224c742495a2e3ad08abbba51 ""
   "figures/xpresspipe_supplement3.png" 1559173360 387811 7a966e866523d3cb0dc6e235a689e37c ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1559192200 10427 d603cd68f98de2b850c302389f496808 ""
-  "xpressyourself.bbl" 1559192197 5159 dede95c99b36ff3190c850dcb403e8dc "bibtex xpressyourself"
-  "xpressyourself.tex" 1559192194 63022 2b5d3efb63f079fb7f7054d377480034 ""
+  "xpressyourself.aux" 1560902198 10834 c14d448e0f6849bd6a70268dc04f9a2c ""
+  "xpressyourself.bbl" 1560902195 5802 cfae38a7aa069a727df92a7de69a60e1 "bibtex xpressyourself"
+  "xpressyourself.tex" 1560902192 63558 652b84500e22e23672f795aabbc70fe3 ""
   (generated)
-  "xpressyourself.pdf"
   "xpressyourself.log"
   "xpressyourself.aux"
+  "xpressyourself.pdf"

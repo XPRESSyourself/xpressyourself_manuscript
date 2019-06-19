@@ -7,37 +7,53 @@ Warning--entry type for "plotly" isn't style-file defined
 --line 432 of file manubib.bib
 Warning--entry type for "GEOparse" isn't style-file defined
 --line 440 of file manubib.bib
+Warning--entry type for "encode_pipeline" isn't style-file defined
+--line 467 of file manubib.bib
+Warning--entry type for "gdc_pipeline" isn't style-file defined
+--line 470 of file manubib.bib
+Warning--entry type for "pavlidis_pipeline" isn't style-file defined
+--line 473 of file manubib.bib
+Warning--entry type for "nfcore_pipeline" isn't style-file defined
+--line 476 of file manubib.bib
+Warning--entry type for "umcu_pipeline" isn't style-file defined
+--line 479 of file manubib.bib
+Warning--entry type for "cellgeni_pipeline" isn't style-file defined
+--line 482 of file manubib.bib
+Warning--entry type for "dnanexus_pipeline" isn't style-file defined
+--line 485 of file manubib.bib
+Warning--entry type for "nextflow_pipeline" isn't style-file defined
+--line 488 of file manubib.bib
 Warning--empty journal in seaborn
-You've used 51 entries,
+You've used 59 entries,
             2300 wiz_defined-function locations,
-            982 strings with 14030 characters,
-and the built_in function-call counts, 10095 in all, are:
-= -- 887
-> -- 517
+            998 strings with 14561 characters,
+and the built_in function-call counts, 10751 in all, are:
+= -- 927
+> -- 525
 < -- 2
-+ -- 259
++ -- 267
 - -- 129
 * -- 757
-:= -- 1578
-add.period$ -- 51
-call.type$ -- 51
+:= -- 1626
+add.period$ -- 59
+call.type$ -- 59
 change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 52
-duplicate$ -- 538
-empty$ -- 898
+cite$ -- 60
+duplicate$ -- 586
+empty$ -- 1026
 format.name$ -- 172
-if$ -- 2300
+if$ -- 2476
 int.to.chr$ -- 0
-int.to.str$ -- 51
+int.to.str$ -- 59
 missing$ -- 46
-newline$ -- 156
+newline$ -- 180
 num.names$ -- 50
-pop$ -- 221
+pop$ -- 269
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 340
+skip$ -- 388
 stack$ -- 0
 substring$ -- 340
 swap$ -- 161
@@ -47,6 +63,6 @@ top$ -- 0
 type$ -- 0
 warning$ -- 1
 while$ -- 76
-width$ -- 53
-write$ -- 400
-(There were 3 warnings)
+width$ -- 61
+write$ -- 440
+(There were 11 warnings)
