@@ -23,46 +23,48 @@ Warning--entry type for "dnanexus_pipeline" isn't style-file defined
 --line 485 of file manubib.bib
 Warning--entry type for "nextflow_pipeline" isn't style-file defined
 --line 488 of file manubib.bib
+Warning--entry type for "ensembl_canon" isn't style-file defined
+--line 491 of file manubib.bib
 Warning--empty journal in seaborn
 You've used 59 entries,
             2300 wiz_defined-function locations,
-            998 strings with 14561 characters,
-and the built_in function-call counts, 10751 in all, are:
-= -- 927
-> -- 525
+            994 strings with 14438 characters,
+and the built_in function-call counts, 10657 in all, are:
+= -- 916
+> -- 514
 < -- 2
-+ -- 267
-- -- 129
-* -- 757
-:= -- 1626
++ -- 262
+- -- 126
+* -- 744
+:= -- 1602
 add.period$ -- 59
 call.type$ -- 59
 change.case$ -- 6
 chr.to.int$ -- 0
 cite$ -- 60
-duplicate$ -- 586
-empty$ -- 1026
-format.name$ -- 172
-if$ -- 2476
+duplicate$ -- 582
+empty$ -- 1029
+format.name$ -- 168
+if$ -- 2460
 int.to.chr$ -- 0
 int.to.str$ -- 59
-missing$ -- 46
+missing$ -- 45
 newline$ -- 180
-num.names$ -- 50
-pop$ -- 269
+num.names$ -- 49
+pop$ -- 271
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 388
+skip$ -- 389
 stack$ -- 0
 substring$ -- 340
-swap$ -- 161
+swap$ -- 158
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 76
+while$ -- 75
 width$ -- 61
-write$ -- 440
-(There were 11 warnings)
+write$ -- 437
+(There were 12 warnings)

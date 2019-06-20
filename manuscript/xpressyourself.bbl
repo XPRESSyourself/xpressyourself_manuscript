@@ -63,6 +63,9 @@ Anaconda, Anaconda software distribution, \url{https://anaconda.com}.
 \bibitem{star}
 A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
 
+\bibitem{ensembl_canon}
+\url{https://uswest.ensembl.org/Help/Glossary}.
+
 \bibitem{cufflinks}
 C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
 
@@ -156,9 +159,6 @@ G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
 
 \bibitem{circligase_bias}
 R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
-
-\bibitem{atf4_translation}
-P.~Lu, H.~Harding, D.~Ron, {\it J Cell Biol\/} {\bf 167} (2004).
 
 \bibitem{igv}
 J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).

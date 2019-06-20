@@ -45,15 +45,15 @@ XPRESSyourself: Automating and Strengthening the High-Throughput Sequencing Tool
 % Tentative author list/order:
 Jordan A. Berg,$^{1}$ Jeffrey T. Morgan,$^{1}$ Jonathan R. Belyeu,$^{2}$ Alex J. Bott,$^{1}$\\
 Yeyun Ouyang,$^{1}$ Jason Gertz,$^{3}$ Aaron R. Quinlan,$^{2,4,5}$ Jared P. Rutter$^{1,6\ast}$\\
-%\\
-%\normalsize{$^{1}$Department of Biochemistry, University of Utah, Salt Lake City, UT, USA, 84112}\\
-%\normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA, 84112}\\
-%\normalsize{$^{3}$Department of Oncological Sciences, University of Utah, Salt Lake City, UT, USA, 84112}\\
-%\normalsize{$^{4}$USTAR Center for Genetic Discovery, University of Utah, Salt Lake City, UT, USA, 84112}\\
-%\normalsize{$^{5}$Department of Biomedical Informatics, University of Utah, Salt Lake City, UT, USA, 84112}\\
-%\normalsize{$^{6}$Howard Hughes Medical Institute, University of Utah, Salt Lake City, UT, USA, 84112}\\
-%\\
-%\normalsize{$^\ast$To whom correspondence should be addressed; E-mail: rutter@biochem.utah.edu.}
+\\
+\normalsize{$^{1}$Department of Biochemistry, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{2}$Department of Human Genetics, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{3}$Department of Oncological Sciences, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{4}$USTAR Center for Genetic Discovery, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{5}$Department of Biomedical Informatics, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\normalsize{$^{6}$Howard Hughes Medical Institute, University of Utah, Salt Lake City, UT, USA, 84112}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail: rutter@biochem.utah.edu.}
 }
 
 % Include the date command, but leave its argument blank.
@@ -255,9 +255,9 @@ $ xpresspipe curateReference -o /path/to/output/location/ \
 \subsubsection{GTF Modification}
 As ribosomal RNAs and other non-coding RNAs are highly abundant in RNA-seq experiments, it is often recommended to disregard these sequences. By providing the \texttt{--protein\_coding} argument, only protein-coding genes are retained in the GTF file, which acts as a masking of any reads aligning to non-coding regions of the genome. \par
 
-In most eukaryotes, mRNAs undergo alternative splicing. However, some quantification will consider the multiple annotated splice variants of a gene as a multi-mapper since they map to a location where several isoforms of the same gene overlap. These reads are either penalized or discarded. By providing the \texttt{--longest\_transcript} argument, the longest coding transcript for each gene is retained in the GTF file. However, if using Cufflinks to quantify reads (discussed further in the next section), this is not recommended as Cufflinks is optimized to quantify isoform abundances \cite{cufflinks}. \par
+In most eukaryotes, mRNAs undergo alternative splicing. However, some quantification tools will consider the multiple annotated splice variants of a gene as a multi-mapper since they map to a location where several isoforms of the same gene overlap. These reads are either penalized or discarded. By providing the \texttt{--longest\_transcript} argument, the longest Ensembl canonical transcrtipt \cite{ensembl_canon} is retained for each gene in the GTF file. However, if using Cufflinks to quantify reads (discussed further in the next section), this is may not be recommended as Cufflinks is optimized to quantify isoform abundances \cite{cufflinks}. \par
 
-For the purposes of ribosome profiling, where 5' and 3' transcript biases are frequent \cite{ingolia_meth, weinberg_reports}, the 5' and 3' ends of each transcript record need to be trimmed to avoid quantification to this region. By providing the \texttt{--truncate} argument, the 5' and 3' ends of each transcript will be trimmed by the specified amounts. These values are set to defaults of 45 nt for 5' truncation and 15 nt for 3' truncation, as is common in the field \cite{ingolia_meth}, but these can be modified using the \texttt{--truncate_5prime} or \texttt{--truncate_5prime} arguments.
+For the purposes of ribosome profiling, where 5' and 3' transcript biases are frequent \cite{ingolia_meth, weinberg_reports}, the 5' and 3' ends of each transcript's coding space need to be trimmed to avoid quantification to this region. By providing the \texttt{--truncate} argument, the 5' and 3' ends of each transcript will be trimmed by the specified amounts. These values are set to defaults of 45 nt for 5' truncation and 15 nt for 3' truncation, as is common in the field \cite{ingolia_meth}, but these can be modified using the \texttt{--truncate\_5prime} or \texttt{--truncate\_5prime} arguments.
 
 \subsubsection{Read Processing}
 While all intermediate steps of the pipelines can be run singly, we will describe the outline of the software in the context of the ribosome profiling pipeline. Pipelines and individual sub-modules are capable of being run in a parallel manner for each input file, thus accelerating the overall process. Descriptions of the options can be found in Table \ref{Tab:xpresspipe}.
@@ -330,64 +330,67 @@ In order to evaluate the ability of XPRESSpipe to provide the user with reliable
 \subsubsection{Ribosome Profiling Data and New Insights from Old Data}
 The integrated stress response (ISR) is a signaling mechanism used by cells and organisms in response to a variety of cellular stresses and has been associated with a variety of diseases. Of particular interest, many disorders resulting in neurological decline are associated with the activation of the ISR \cite{isr_disease}. While acute ISR activation is essential for proper cell survival, long periods of sustained ISR activity can be damaging. A recently discovered small molecule inhibitor of the ISR, ISRIB, has demonstrated therapeutic potential and relative lack of side-effects. Interestingly, ISRIB is able to suppress a chronic low-grade ISR, while it does not inhibit an acute, high-grade ISR. It has also been shown to be neuroprotective in mouse models of acute neurological damage \cite{isrib_activation, isrib_structure, isrib_riboseq, isrib_neuroprotective}. \par UPDATE: ADD MORE EXAMPLES HERE --> JR: It is my impression that there are many, many examples of ISRIB efficacy demonstration in animals.  We should try to be as comprehensive as possible.
 
-A recent study (GSE65778) utilized ribosome profiling in order to better define the mechanisms of ISRIB action on the ISR, modeled by tunicamycin (Tm) treatment of HEK293T cells \cite{isrib_riboseq}. Some key findings from this study were that during acute ISR, a specific subset of canonical stress-related transcription factors mRNAs were translationally enhanced during ISR and returned to levels seen in untreated cells when ISR-induced cells were additionally treated with ISRIB. In order to showcase the utility of XPRESSpipe in re-analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to shed more light on the translational mechanisms of the ISR and ISRIB. Compared to the raw count data made available in the original manuscript, samples showed comparable alignment rates between the two analytical regimes (Spearman R values ranging from UPDATE) (Figure \ref{fig:figure2}A). This is in spite of the fact that the methods section of the original publication outlines the use of now outdated software, such as TopHat2 \cite{tophat2}, which has a documented higher false positive alignment rate compared to the current state-of-the-art tool, STAR \cite{alignment_benchmark, star}. This bias is reflected in the Spearman correlations in Figure \ref{fig:figure2}A. Processing of replicates within the XPRESSpipe method showed excellent correlation (Spearman R values all \textgreater 0.98) (Figure \ref{fig:figure2}B). Interestingly, de-duplication of ribosome footprint samples appeared to improve the count values correlations, which may be in part due to the inherent bias of certain sequences by CircLigase, used in the creation of these libraries \cite{circligase_bias, isrib_riboseq} (Figure \ref{fig:supplement2}A). Additionally, samples appeared to be relatively comparable to one another once RPM normalization was performed with few outliers (Figure \ref{fig:supplement2}B). \par
+A recent study (GSE65778) utilized ribosome profiling in order to better define the mechanisms of ISRIB action on the ISR, modeled by tunicamycin (Tm) treatment of HEK293T cells \cite{isrib_riboseq}. Some key findings from this study were that during acute ISR, a specific subset of canonical stress-related transcription factors mRNAs were translationally enhanced during ISR and returned to levels seen in untreated cells when ISR-induced cells were additionally treated with ISRIB. In order to showcase the utility of XPRESSpipe in re-analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to shed more light on the translational mechanisms of the ISR and ISRIB. Compared to the raw count data made available in the original manuscript, samples showed comparable alignment rates between the two analytical regimes (Spearman R values \textgreater 0.90) (Figure \ref{fig:figure2}A). This is in spite of the fact that the methods section of the original publication outlines the use of now outdated software, such as TopHat2 \cite{tophat2}, which has a documented higher false positive alignment rate compared to the current state-of-the-art tool, STAR \cite{alignment_benchmark, star}. This bias is reflected in the Spearman correlations in Figure \ref{fig:figure2}A. Processing of replicates within the XPRESSpipe method showed excellent correlation (Spearman R values all \textgreater 0.98) (Figure \ref{fig:figure2}B). Interestingly, de-duplication of ribosome footprint samples appeared to improve the count values correlations, which may be in part due to the inherent bias of certain sequences by CircLigase, used in the creation of these libraries \cite{circligase_bias, isrib_riboseq}. \par
 
 \begin{figure}
 \centering
   \includegraphics[width=160mm]{figures/xpresspipe_figure2.png}
-  \caption{Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. Note: All R values reported are Spearman R values.}
+  \caption{Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. Note: All R values reported are Spearman R values. All axes are log\textsubscript{10}(counts).}
   \label{fig:figure2}
 \end{figure}
 
-XPRESSpipe-processed samples discovered similar canonical targets of translational regulation during ISR compared to the original study, such as ATF4, ATF5, and PPP1R15A (Figure \ref{fig:figure3}A, highlighted in magenta) \cite{isrib_riboseq}. Of note, the fold change in translation efficiency of ATF4 (UDPATE) from XPRESSpipe-processed samples closely matched the estimate from the original publication (UPDATE). Other targets highlighted in the original study \cite{isrib_riboseq}, such as ATF5 and PPP1R15A also increased in their  translation efficiency fold change (2.178 and 2.594, respectively) (Figures \ref{fig:figure3}A, B; \ref{fig:supplement3}A, B).  \par
+XPRESSpipe-processed samples discovered similar canonical targets of translational regulation during ISR compared to the original study, such as ATF4, ATF5, and PPP1R15A (Figure \ref{fig:figure3}A, highlighted in magenta) \cite{isrib_riboseq}. Of note, the fold-change in ribosome occupancy of ATF4 (6.75) from XPRESSpipe-processed samples closely matched the estimate from the original publication (6.44). Other targets highlighted in the original study \cite{isrib_riboseq}, such as ATF5, PPP1R15A, and DDIT3 also increased in their ribosome occupancy fold-changes (5.83, 2.49, and 3.29; respectively) (Figures \ref{fig:figure3}A, B.  \par
 
-In the original study, the genes translationally down-regulated appeared to reveal no discernable pattern of regulation related to ISR and ISRIB treatment. However, re-analyzing these data with updated the updated methodology within XPRESSpipe may shed new light on an interesting subset of genes potentially relevant to the neuroprotective properties of ISRIB.
-
-UPDATE
-Genes with an FDR \textless 0.05 and a ribosome footprint fold change \textless 0.5 in the non-deduplicated dataset and a fold change \textless 0.5 in the duplicated dataset, all genes contain some phenotypic or functional annotation related to cognitive function, as listed in Table \ref{tab:targets} (descriptions sourced from www.genecards.org and www.omim.org). The translational down-regulation of these genes could likely play a role in the cognitive decline associated with ISR and the rescue in translation during ISRIB may partially explain the drugs neuroprotective properties. Further analysis of these potential hits is strengthened by investigating the read pile-ups along these genes in IGV \cite{igv}, where footprint coverage is observed across the transcript for all ribosome profiling samples except the Tm-treated samples (Figures \ref{fig:figure3}C, \ref{fig:supplement3}C, D). This provides further support to this observation as use of CircLigase in the library preparation can bias certain reads' incorporation in sequencing libraries, whereas there appears to be none in these samples \cite{circligase_bias}.
+In the original study, the genes translationally down-regulated genes were identified. However, re-analyzing these data with the updated XPRESSpipe methodology identifies some genes that may play a role in the neurodegenerative effects of ISR and the neuroprotective properties of ISRIB. For example, one would expect putative targets to be significantly translationally down-regulated during ISR and that these same targets would show no change in the ISR + ISRIB condition. Using this paradigm as a guide, we identified seven genes following this pattern of translational regulation, as listed in Table \ref{tab:targets} (descriptions sourced from https://www.genecards.org/, https://www.ncbi.nlm.nih.gov/gene/, and https://www.uniprot.org/uniprot/; annotations accessed 19 Jun 2019) \ref{fig:figure3}B. These targets act as interesting putative targets for further follow-up in a model better mirroring the neurological environment than HEK-293T cells. Further analysis of these potential hits is strengthened by investigating read pile-ups along these genes in IGV \cite{igv}, where footprint coverage is observed across the transcript for all ribosome profiling samples except the Tm-treated samples (Figures \ref{fig:figure3}C. This provides further support to this observation as use of CircLigase in the library preparation can bias certain reads' incorporation in sequencing libraries, whereas there appears to be none in these samples \cite{circligase_bias}.
 
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_figure3.png}
-  \caption{Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript{2} Translation Efficiency compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholds. C) IGV plot for NOTCH3 for all ribosome profiling samples show read coverage across the transcript.}
+  \caption{Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets highlighted in original study are in magenta. B) Changes in log\textsubscript{2} Translation Efficiency compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholding paradigms. Grey lines are all genes, magenta lines are ISR canonical targets from original study, light green lines are all genes fitting thresholding, and dark green lines are neurologically-annotated genes within the thresholding limits. C) Read coverage plot for UPDATE for all ribosome profiling samples show read coverage across the transcript.}
   \label{fig:figure3}
 \end{figure}
 
-\captionof{table}{Translationally down-regulated genes during acute Tm treatment.}
+\captionof{table}{Translationally down-regulated genes during acute Tm treatment and normal regulation during Tm + ISRIB treatment.}
 \begin{tabular}{p{2.5cm}p{15.5cm}}
  \textbf{Gene Name} & \textbf{Relevant Description} \\
  \hline
- MYO5B & Identified in a screen for large proteins expressed in brain; Encodes molecular motor that utilizes energy from ATP hydrolysis to generate mechanical force, required for the recycling of transferrin receptor back to the plasma membrane through an endocytotic recycling compartment in nonpolarized cells. \\
+ ADAP1 & Overexpressed in fetal brain, frontal cortex, and spinal cord. Expressed at highest levels in brain. Involved in cell signaling events. \\
  \hline
- NOTCH3 & Establishes an intercellular signalling pathway that plays a key role in neural development; Mutations in NOTCH3 have been identified as the underlying cause of cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy \\
+ ADRA2C & Critical role in neurotransmitter release from sympathetic nerves and adrenergic neurons. Role in positive regulation of neuron differentiation. \\
  \hline
- NGEF & Overexpressed in brain; Involved in axon guidance regulating ephrin-induced growth cone collapse and dendritic spine morphogenesis \\
+ GPR183 & Chemotactic receptor in dendritic cells. Expression required for splenic dendritic cell homeostasis, localization, and induction of B- and T-cell responses. Regulates astrocyte migration. \\
  \hline
- POMGNT1 & Mutations in this gene may be associated with muscle-eye-brain disease and several congenital muscular dystrophies \\
+ HTRA1 & Moderate overexpression in brain. Suggested role in cell growth regulation. Variations in promoter region increase susceptability to age-related macular degeneration type 7. Associated with other neurodegenerative diseases. May regulate neuronal survival and maturation during development. \\
  \hline
- ENPP5 & Suggested role in neuronal cell communications in rat studies \\
+ KIFC2 & Overexpressed in cerebellum. May function as motor for multivesicular body-like organelles in dendrites (by similarity). \\
  \hline
- CCNG2 & Overexpressed in brain; Tightly regulated in cell cycle \\
+ RGPD8 & Moderate expression in brain. Embryonic expression in neural tube. Associated behavioral/neurological phenotypes. \\
  \hline
- SMURF2 & Interacts with SMAD proteins; Functions in regulation of neuronal and planar cell polarity, induction of senescence, and tumor suppression \\
- \hline
- ARHGEF6 & Mutations cause X-chromosomal non-specific cognitive disability and other neurodevelopmental abnormalities \\
- \hline
- FGFRL1 & Highly expressed in brain; Sets in motion a cascade of downstream signals ultimately influencing mitogenesis and differentiation; Behavioral and neurological phenotypes \\
+ SLC1A1 & Dense expression in substantia nigra, red nucleus, hippocampus, and cerebral cortical layers. Member of high-affinity glutamate transporter. In brain, crucial for terminating postsynaptic action of the neurotransmitter glutamate. Responsible for maintaining glutamate concentrations below neurotoxic levels. \\
  \label{tab:targets}
 \end{tabular}
 \newline
 
+
 \subsubsection{Performance Validation Using TCGA Data}
-\textit{In this section, we will process the raw data for 10-20 TCGA samples and compare the FPKM counts output by XPRESSpipe to the publicly available FPKM counts for the relevant samples.
-This will a simple section with one supplemental figure showing comparisons and probably end up being added right before bioRXiv submission.
-Summarize metrics (total reads mapped, etc)
-PE application sent to CHPC, waiting for project space set-up}
+To validate the general design and reliability of the XPRESSpipe pipeline, we used raw TCGA sequence data, processed it using XPRESSpipe, and compared the output FPKM values to those publicly available through TCGA. Spearman R values were \textgreater UPDATE, indicating integrity of pipeline design.
+
+UPDATE add methods
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_figure4.png}
+  \caption{Pipeline validation using publicly available TCGA FPKM data. Correlations were calculated between publicly available FPKM counts from TCGA samples and the calculated FPKM values using XPRESSpipe on the raw sequence data. Note: All R values reported are Spearman R values. All axes are log\textsubscript{10}(counts).}
+  \label{fig:figure4}
+\end{figure}
+
+
 
 \subsubsection{Cost Analysis}
 XPRESSpipe functions can be computationally intensive and thus super-computing resources are recommended. Many universities provide super-computing resources to their staff; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) (https://aws.amazon.com/) can be used to process sequencing data using XPRESSpipe. For example, the ribosome profiling dataset of 32 raw sequence files used in the study was processed using the University of Utah's Center for High Performance Computing resources. Run statistics can be found in Table \ref{tab:chpc_performance}.
 
-% UPDATE BEFORE SUBMISSION ONCE QUALITY CONTROL STABLE AND CHECK CONVERSIONS
+% UPDATE BEFORE SUBMISSION ONCE QUALITY CONTROL STABLE AND CHECK CONVERSIONS\
+UPDATE
 \captionof{table}{XPRESSpipe processing statistics for dataset GSE65778.}
 \begin{tabular}{p{5cm}p{3cm}}
 \textbf{Metric} & \textbf{Value} \\
@@ -405,27 +408,23 @@ XPRESSpipe functions can be computationally intensive and thus super-computing r
 \end{tabular}
 \newline
 
-Based on these metrics, if HPC services weren't locally available for a user, one could use Amazon Web Services to process the data for relatively little money. For a comparable run, storage cost would amount to around 14 USD on Amazon S3 storage and compute cost for a similar computational node for the given elapsed time would cost around 6 USD using Amazon EC2 On-Demand (however, significantly reduced rates are available if using Spot instances).
-
-
-\subsubsection{Comparisons to Other Workflows}
-\textit{I'm not sure quite sure how to handle a benchmarking with this as RiboGalaxy it very different and is not directly comparable -- is the TCGA and ISRIB validation enough?}
+Based on these metrics, if HPC services weren't locally available for a user, one could use Amazon Web Services to process the data for relatively little money. For a comparable run, storage cost would amount to around 14 USD/month on Amazon S3 storage and compute cost for a similar computational node for the given elapsed time would cost around 6 USD using Amazon EC2 On-Demand (however, significantly reduced rates are available if using Spot instances).
 
 
 \section{Discussion}
-We have described herein a new software suite, XPRESSyourself, a collection of tools to aid in expression data processing and analysis. While RNA-seq technologies are becoming more and more mature, standardized protocols are lacking. This is problematic when individuals or groups may not be using the most up-to-date methods or be aware of particular biases or measures of quality control required to produce a reliable, high-quality sequencing study. XPRESSpipe handles these issues for the user by continuously updating to utilize the best-performing software tools in sequencing as measured by peer-reviewed benchmarking studies. It also outputs all necessary quality control metrics so that the user can quickly assess quality and identify any systematic problems or technical biases that may be present in their samples. \par
+We have described herein a new software suite, XPRESSyourself, a collection of tools to aid in expression data processing and analysis. While RNA-seq technologies are becoming more and more mature, standardized protocols are lacking. This is problematic when individuals or groups may not be using the most up-to-date methods or be aware of particular biases or measures of quality control required to produce a reliable, high-quality sequencing study. XPRESSpipe handles these issues through continuous curation by XPRESSyourself team members to ensure the pipeline is utilizing the best-performing software tools in sequencing as measured by peer-reviewed benchmarking studies. It also outputs all necessary quality control metrics so that the user can quickly assess quality and identify any systematic problems or technical biases that may be present in their samples. \par
 
-An additional problem XPRESSpipe addresses is use these software tools properly, especially for those coming from a non-computational background. This is especially important in situations where a bioinformatics core may be so backlogged it takes 2-4 months to process a dataset, which is inhibitory to scientific discovery and dissemination. XPRESSyourself will dissolve this barrier to entry for most users so that they can process and analyze their data immediately upon receipt of the raw data and only requires simple programming knowledge covered by a variety of free online programs (such as https://www.codecademy.com/learn/learn-the-command-line). These users can also be assured they are using the most up-to-date standard for RNA-seq processing and analysis. \par
+An additional problem XPRESSpipe addresses is the incorrect use of these software tools, which is especially important  for those coming from a non-computational background. XPRESSyourself will dissolve this barrier to entry for most users so that they can process and analyze their data immediately upon receipt of the raw data and only requires simple programming knowledge covered by a variety of free online programs (such as https://www.codecademy.com/learn/learn-the-command-line). These users can also be assured they are using the most up-to-date standard for RNA-seq processing and analysis. \par
 
-Tools previously missing from the general ribosome profiling toolkit have also been added within XPRESSyourself. This includes GTF truncation of transcripts in a recursive manner over exon space and rRNA probe design aids for removing contaminating rRNA sequences in ribosome profiling libraries that are difficult to remove with commercial kits. \par
+Tools previously missing from the general ribosome profiling toolkit have also been added within XPRESSyourself. This includes GTF truncation of transcripts in a recursive manner over CDS space and rRNA probe design aids for removing contaminating rRNA sequences in ribosome profiling libraries that are difficult to remove with commercial kits. \par
 
-We demonstrated the utility of the XPRESSyourself toolkit by re-analyzing a publicly available ribosome profiling dataset. From this analysis, we identified putative hits that may contribute to the neurodegenerative effects of integrated stress response (ISR) and how the molecule ISRIB may be acting on these hits to act as a neuroprotective agent. This additionally highlights the importance of re-analyzing older datasets with more current methods, as over time methodologies improve to reduce errors. We also showed the capability of quickly processing data on TCGA data. These principles are transferable to new datasets and XPRESSyourself will have individuals and labs take sequence processing and analysis into their own hands to avoid long queues with bioinformatics cores, save money, and generally democratize the process. \par
+We demonstrated the utility of the XPRESSyourself toolkit by re-analyzing a publicly available ribosome profiling dataset. From this analysis, we identified putative hits that may contribute to the neurodegenerative effects of integrated stress response (ISR) and how the molecule ISRIB may be acting on these hits to act as a neuroprotective agent. This additionally highlights the importance of re-analyzing older datasets with more current methods, as over time methodologies improve to reduce errors. We also showed the capability of quickly processing data on TCGA data. These principles are transferable to new datasets and XPRESSyourself will have individuals and labs take sequence processing and analysis into their own hands rapidly process and analyze their data, save money, and put missing or incomplete computational tools required for ribosome profiling and RNA-seq into the hands of the average user. \par
 
-While XPRESSyourself's pipeline may be somewhat more time and computationally intensive than other pipelines, the trade-off is higher quality alignments and quantification, and unless analyzing thousands of samples, is generally not too expensive or time-consuming.
+While admittedly the XPRESSyourself pipeline may be somewhat more time and computationally intensive than other pipelines, the trade-off is higher quality alignments and quantification, and unless analyzing thousands of samples, is generally not too expensive or time-consuming.
 
 
 \section{Conclusions}
-With the adoption of this pipeline, the field of high-throughput sequencing can begin to arrive towards a standardized processing protocol for sequencing data and eliminate some of the variability that comes from using a variety of software packages for various steps during read processing. XPRESSpipe will act as a flexible pipeline that will be updated with the best performing packages as future tools are created and benchmarks performed. Additionally, various tools missing from the ribosome profiling and RNA-seq communities have been added as part of this pipeline. With these tools, such as the GTF modification sub-module, genome reference formatting and curation is automated and accessible to the public. Further, by using this pipeline on publicly available data, we highlight XPRESSpipe's utility in being able to re-process publicly available data or personal data to uncover novel biological patterns quickly. Adoption of this tool will aid the average scientist is quickly accessing their data, using the highest-quality methods.
+With the adoption of this pipeline, the field of high-throughput sequencing, particularly within ribosome profiling, can continue to standardize the processing protocol for sequencing data and eliminate some of the variability that comes from using a variety of software packages for various steps during read processing. XPRESSpipe will act as a flexible pipeline that will be updated with the best performing packages as future tools are created and benchmarks performed. Additionally, various tools missing from the ribosome profiling and RNA-seq communities have been added as part of this pipeline. With these tools, such as the GTF modification sub-module, genome reference formatting and curation is automated and accessible to the public. Further, by using this pipeline on publicly available data, we highlight XPRESSpipe's utility in being able to re-process publicly available data or personal data to uncover novel biological patterns quickly. Adoption of this tool will aid the average scientist is quickly accessing their data, using the highest-quality methods.
 
 
 \section{Materials and Methods}
@@ -517,8 +516,9 @@ A list of dependencies required for XPRESSpipe is listed in Table \ref{Tab:softw
 
 \subsection{GTF Modification}
 Protein coding genes are identified by the ``protein\_coding" annotation within \texttt{attribute} column of the GTF file.
+UPDATE
 Longest transcripts are determined by calculating the exon space for each transcript associated with a given \texttt{gene\_id}. If a pre-mature stop is annotated within a transcript, that is considered the end-point of the transcript length. \par
-Truncation is performed by identifying the 5' and 3' end of each transcript and modifying the given coordinates to reflect the given truncation amounts. The amounts to be truncated can be modulated by the user; however, suggested ranges are 45 nt from the 5' end and 15 nt from the 3' end, set as the default parameters for the function \cite{ingolia_meth}. As a given exon may be less than the specified amounts, the function will recursively search exon by exon until the full truncated amount is trimmed.
+Truncation is performed by identifying the 5' and 3' end of each transcript and modifying the given coordinates to reflect the given truncation amounts. The amounts to be truncated can be modulated by the user; however, suggested ranges are 45 nt from the 5' end and 15 nt from the 3' end, set as the default parameters for the function \cite{ingolia_meth}. As a given CDS may be less than the specified amounts, the function will recursively search CDS by CDS until the full truncated amount is trimmed.
 
 \subsection{Normalization}
 Equations 1-4 reflect the design of the normalization functions within XPRESSplot.
@@ -634,19 +634,19 @@ The authors wish to thank Mark Wadsworth, Ryan Miller, and Michael Cormier for h
 \bibliography{manubib}
 \bibliographystyle{Science}
 
-\beginsupplement
-\begin{figure}
-\centering
-  \includegraphics[width=160mm]{figures/xpresspipe_supplement2.png}
-  \caption{A) Dispersion of read counts between samples decreases with \textit{in silico} de-duplication. Note: All R values reported are Spearman R values. B) log\textsubscript{10}(RPM) value distributions for XPRESSpipe processed samples. Boxplots embedded within violinplot designate the interquartile range and violinplot reports count density.}
-  \label{fig:supplement2}
-\end{figure}
+%\beginsupplement
+%\begin{figure}
+%\centering
+%  \includegraphics[width=160mm]{figures/xpresspipe_supplement2.png}
+%  \caption{A) Dispersion of read counts between samples decreases with \textit{in silico} de-duplication. Note: All R values reported are Spearman R values. B) log\textsubscript{10}(RPM) value distributions for XPRESSpipe processed samples. Boxplots embedded within violinplot designate the interquartile range and violinplot reports count density.}
+%  \label{fig:supplement2}
+%\end{figure}
 
-\begin{figure}
-\centering
-  \includegraphics[width=180mm]{figures/xpresspipe_supplement3.png}
-  \caption{A) Fold change for each drug condition compared to untreated for the de-duplicated ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript{2} Translation Efficiency compared to Untreated for each drug condition for each of the canonical ISR genes passing previous discussed thresholds. C) IGV plot for ENPP5 for all ribosome profiling samples show read coverage across the transcript. D) IGV plot for ATF4 for all ribosome profiling samples show read coverage across the transcript.}
-  \label{fig:supplement3}
-\end{figure}
+%\begin{figure}
+%\centering
+%  \includegraphics[width=180mm]{figures/xpresspipe_supplement3.png}
+%  \caption{A) Fold change for each drug condition compared to untreated for the de-duplicated ribosome profiling and RNA-seq data. ISR canonical targets passing fold change and significance threshold during Tm conditions are highlighted in magenta. All translationally down-regulated genes passing fold change and significance threshold during Tm conditions are highlighted in green. B) Changes in log\textsubscript{2} Translation Efficiency compared to Untreated for each drug condition for each of the canonical ISR genes passing previous discussed thresholds. C) IGV plot for ENPP5 for all ribosome profiling samples show read coverage across the transcript. D) IGV plot for ATF4 for all ribosome profiling samples show read coverage across the transcript.}
+%  \label{fig:supplement3}
+%\end{figure}
 
 \end{document}

@@ -1,0 +1,16 @@
+File ID	File Name	Data Category	Data Type	Project ID	Case ID	Sample ID	Sample Type
+bf31e977-261e-4d58-a054-eccc1ed495dc	e52fefef-84a4-4b1d-91e2-9e9735e19e1f.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0744	TCGA-06-0744-01A	Primary Tumor
+a259f82f-7343-4ba4-bd35-94827513c8b6	28f0c53a-abdd-4789-adcf-f59132ae3a92.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0125	TCGA-06-0125-01A	Primary Tumor
+f8135631-b048-471a-8dca-6397d09e3f6f	18fbf794-a85b-4b0d-9a5c-c1c0e0ede3d8.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0156	TCGA-06-0156-01A	Primary Tumor
+0ae35663-3494-45ed-bed8-4a33247bc1c8	bcdc68db-c874-4097-9c46-b06e331caaf5.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0745	TCGA-06-0745-01A	Primary Tumor
+d1cf2e67-5e70-448c-8f97-c4d90f4f53e6	b0717300-0735-4451-bba1-7ce0fc0d4ac6.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-08-0386	TCGA-08-0386-01A	Primary Tumor
+dcf8c6fe-695d-434d-8a09-1aff4789fb52	c341aa36-a431-477a-9fae-4550c4eea047.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0156	TCGA-06-0156-01A	Primary Tumor
+cf8195fb-503b-4d66-b99d-b49b974f4d1f	b4919075-90a9-4c8a-82a0-a0b5f9944ad3.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0211	TCGA-06-0211-02A	Recurrent Tumor
+e1b9a28e-eb04-403e-a1bc-18c420fa4c71	c904090b-149e-4146-9769-f0d2ff965da9.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0211	TCGA-06-0211-01A	Primary Tumor
+6cfb3229-0056-4463-9461-da5156dcd35e	76c6e110-9a94-4fcf-a534-a21ba4698f86.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0138	TCGA-06-0138-01A	Primary Tumor
+33d229f7-8581-4213-9a25-a1d731df2628	21f38c14-7d7c-4156-8c85-88be68cae18d.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0184	TCGA-06-0184-01A	Primary Tumor
+e995fcb0-602c-418e-89e9-62d8ffe1a3aa	8cb39efc-4bfb-49df-bc48-159d9211bc5a.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0743	TCGA-06-0743-01A	Primary Tumor
+6674de13-7754-43fb-8570-28ac9e76667c	50a6757f-496c-4d2d-9463-f948c09c28f6.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0132	TCGA-06-0132-01A	Primary Tumor
+0b708aec-180c-461e-be13-bb93d68a1122	f67cf68d-56b3-451d-ba21-566664213691.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0211	TCGA-06-0211-01B	Primary Tumor
+69516e1a-b3bf-4d0e-9470-a9f6a9339b63	928160c7-f711-4b23-832c-8c12aea9fe85.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0125	TCGA-06-0125-02A	Recurrent Tumor
+be3aa92d-f235-4e35-b4b0-416e1328d481	c1fdf09e-3960-4aaa-8c49-fe64c6c5bcea.FPKM.txt.gz	Transcriptome Profiling	Gene Expression Quantification	TCGA-GBM	TCGA-06-0174	TCGA-06-0174-01A	Primary Tumor
