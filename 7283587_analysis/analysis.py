@@ -142,6 +142,86 @@ def make_figure2A(
         dpi = 600,
         bbox_inches = 'tight')
 
+def make_figure2S(
+    data,
+    ingolia_data,
+    title):
+
+    fig, axes = plt.subplots(
+        nrows = 2,
+        ncols = 2,
+        figsize = (10, 10),
+        subplot_kw = {
+            'facecolor':'none'},
+        sharex=True, sharey=True) # Create shared axis for cleanliness
+    plt.subplots_adjust(
+        bottom = 0.1)
+    plt.yticks([0,1,2,3,4,5]) # Limit axis labels to ints
+    plt.xticks([0,1,2,3,4,5])
+
+    file_number = 0
+    file_list = [
+        'ribo_untr_a',
+        'untr_a_hek'] # Designate sample order
+
+    for x in file_list:
+
+        # Get data as array-like for samples being compared
+        data_c1 = data.copy()
+        data_c2 = ingolia_data.copy()
+
+        sample_a = data_c1[x].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c2[x].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
+        # Run Spearman R linreg for non-normal data
+        rho, p_value = stats.spearmanr(sample_a, sample_b)
+
+        # Determine subplot location
+        ax_y = 0
+        if file_number == 0:
+            ax_x = 0
+        elif file_number == 1:
+            ax_x = 1
+        else:
+            print('oops')
+
+        # Format p value
+        if p_value.astype('float') < 0.001:
+            p_val = '< 0.001'
+        else:
+            p_val = round(p_value.astype('float'), 4).astype('str')
+
+        # Plot data
+        axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
+        axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
+        axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=0.88)
+        file_number += 1 # Plot counter
+        print(round(rho.astype('float'), 2).astype('str'))
+
+    # Create shared row/column titles
+    count_label = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)']
+
+    cols = ['Untr RPF RepA','Untr mRNA RepA']
+    for ax, col in zip(axes[0], cols):
+        ax.set_xlabel(col, fontsize=24)
+        ax.xaxis.set_label_position('top')
+
+    for ax in axes[:,0]:
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=16)
+
+    fig.savefig(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/plots/' + str(title),
+        dpi = 600,
+        bbox_inches = 'tight')
+
 # Make Figure 2B
 def make_figure2B(
     data,
@@ -644,7 +724,7 @@ data_rpm = rpm(data_threshold)
 READ IN TOPHAT SAMPLES
 """
 data_tophat = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/tophat_isrib_counts_table.tsv',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/tophat_isrib_counts_count_table.tsv',
     sep = '\t',
     index_col = 0)
 
@@ -653,7 +733,7 @@ data_tophat.head()
 data_tophat = convert_names(
     data_tophat,
     '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf')
-data_tophat.columns = data_tophat.columns.str.replace('_1_Aligned', '')
+data_tophat.columns = data_tophat.columns.str.replace('_accepted_hits', '')
 data_tophat.shape
 
 # Combine lanes
@@ -661,6 +741,8 @@ sra_info = pd.read_csv(
     '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/GSE65778_table.txt',
     sep = '\t')
 data_tophat = name_map(data_tophat, sra_info)
+data_tophat = data_tophat.groupby(level=0).sum()
+data_tophat_threshold = data_tophat[data_tophat[['untr_a_hek']].min(axis=1) > 25] # Apply threshold to data
 data_tophat.head()
 
 
@@ -673,6 +755,7 @@ ingolia = pd.read_csv(
     sep = '\t',
     index_col = 0)
 ingolia = ingolia.drop('size', axis = 1)
+ingolia.head()
 
 # Clean up data
 ingolia = ingolia.groupby(level=0).sum() # Combine duplicate named genes
@@ -708,6 +791,19 @@ data_common = data.reindex(index = common_genes)
 ingolia_common = ingolia.reindex(index = common_genes)
 
 
+data_tophat_genes = data_tophat.index.tolist()
+ingolia_genes_thcomp = ingolia.index.tolist()
+len(data_tophat_genes)
+len(ingolia_genes_thcomp)
+
+common_genes_th = list(set(data_tophat_genes).intersection(ingolia_genes_thcomp))
+len(common_genes_th)
+
+data_tophat_common = data_tophat.reindex(index = common_genes_th)
+ingolia_common_thcomp = ingolia.reindex(index = common_genes_th)
+
+
+
 """
 FIGURE 2A
 """
@@ -716,6 +812,12 @@ make_figure2A(
     data_common,
     ingolia_common,
     'external_correlations_summary_htseq.png')
+
+
+make_figure2S(
+    data_tophat_common,
+    ingolia_common_thcomp,
+    'external_correlations_summary_tophat.png')
 
 """
 FIGURE 2B

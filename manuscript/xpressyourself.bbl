@@ -54,20 +54,14 @@ D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
 \bibitem{nextflow_pipeline}
 \url{https://www.nextflow.io/example4.html}.
 
-\bibitem{htseq}
-S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
-
-\bibitem{anaconda}
-Anaconda, Anaconda software distribution, \url{https://anaconda.com}.
+\bibitem{cufflinks}
+C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
 
 \bibitem{star}
 A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
 
 \bibitem{ensembl_canon}
 \url{https://uswest.ensembl.org/Help/Glossary}.
-
-\bibitem{cufflinks}
-C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
 
 \bibitem{fastp}
 S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
@@ -85,12 +79,11 @@ H.~Li, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 25}, 2078 (2009).
 \bibitem{bedtools}
 A.~Quinlan, I.~Hall, {\it Bioinformatics\/} {\bf 26}, 841 (2010).
 
-\bibitem{deeptools}
-F.~Ram\'irez, F.~D{\"u}ndar, S.~Diehl, B.~Gr{\"u}ning, T.~Manke, {\it Nucleic
-  Acids Res\/} {\bf 42} (2014).
-
 \bibitem{count_benchmark}
 C.~Robert, M.~Watson, {\it Genome Biol\/} {\bf 16} (2015).
+
+\bibitem{htseq}
+S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
 
 \bibitem{evans_briefbio}
 C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
@@ -151,6 +144,15 @@ C.~Sidrauski1, A.~McGeachy, N.~Ingolia, P.~Walter, {\it eLIFE\/}  (2015).
 \bibitem{isrib_neuroprotective}
 A.~Choua, {\it et~al.\/}, {\it Proc Natl Acad Sci U S A\/} {\bf 114} (2017).
 
+\bibitem{isrib_neuroprotective2}
+M.~Halliday, {\it et~al.\/}, {\it Cell Death Dis\/} {\bf 6} (2015).
+
+\bibitem{isrib_neuroprotective3}
+C.~Sidrauski, {\it et~al.\/}, {\it Elife\/} {\bf 2} (2013).
+
+\bibitem{isrib_neuroprotective4}
+Y.~Sekine, {\it et~al.\/}, {\it Science\/} {\bf 348} (2015).
+
 \bibitem{tophat2}
 D.~Kim, {\it et~al.\/}, {\it Genome Biol\/} {\bf 14} (2013).
 
@@ -162,6 +164,18 @@ R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
 
 \bibitem{igv}
 J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
+
+\bibitem{eif2b_neuroprotective}
+Y.~Wong, {\it et~al.\/}, {\it Elife\/} {\bf 8} (2019).
+
+\bibitem{slc1a1_neurotoxic}
+L.~Vera-Portocarrero, {\it et~al.\/}, {\it Brain Res\/} {\bf 927} (2002).
+
+\bibitem{htra1_neurotoxic1}
+J.~Chen, {\it et~al.\/}, {\it J Neurosci\/} {\bf 38} (2018).
+
+\bibitem{htra1_neurotoxic2}
+S.~Mu{\~n}oz, {\it et~al.\/}, {\it J Biol Chem\/} {\bf 293} (2018).
 
 \bibitem{multiqc}
 P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf

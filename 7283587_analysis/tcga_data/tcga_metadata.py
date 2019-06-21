@@ -1,5 +1,3 @@
-
-
 """
 IMPORT DEPENDENCIES
 """
@@ -125,22 +123,34 @@ metadata['fpkm_name'] = meta['File Name']
 """
 IMPORT XPRESSPIPE GENERATED DATA
 """
-directory = '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/tcga_data/xpresspipe/'
-file_list = []
+x_file = '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/tcga_data/xpresspipe/tcga_validation_count_table_r_fpkmNormalized_gdc_quant.tsv'
+xpresspipe_f = pd.read_csv(x_file, sep='\t', index_col=0)
+
+x_samples = [
+    'G17189.TCGA-06-0132-01A-02R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17190.TCGA-06-0174-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17193.TCGA-06-0743-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17195.TCGA-06-0138-01A-02R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17197.TCGA-06-0211-01B-01R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17199.TCGA-06-0744-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17202.TCGA-06-0184-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17203.TCGA-06-0211-02A-02R-2005-01.2.bam__Aligned.sort.tsv',
+    'G17204.TCGA-08-0386-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17205.TCGA-06-0745-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
+    'G17206.TCGA-06-0125-02A-11R-2005-01.2.bam__Aligned.sort.tsv',
+    'G17207.TCGA-06-0156-01A-03R-1849-01.2.bam__Aligned.sort.tsv',
+    ]
+
 di = {}
+for x in x_samples:
+    name = x.split('.')[0]
+    id = x.split('.')[1][:-12]
+    di[name] = id
 
-for file in os.listdir(directory):
-    if file.endswith('sort.tsv') and os.path.isfile(str(directory) + str(file)) == True:
-        file_list.append(str(directory) + str(file))
-        di[file.split('.')[0]] = file.split('.')[1][:-12]
+xpresspipe_f.columns = xpresspipe_f.columns.to_series().map(di)
+xpresspipe_f.shape
 
-xpresspipe = count_table(file_list)
-xpresspipe.columns = xpresspipe.columns.to_series().map(di)
-xpresspipe = xpresspipe.reindex(sorted(xpresspipe.columns), axis=1)
-
-gtf = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf'
-xpresspipe_f = r_fpkm(xpresspipe, gtf)
-
+xpresspipe_f.head()
 """
 IMPORT TCGA GENERATED DATA
 """
@@ -158,6 +168,8 @@ tcga_fpkm.columns = tcga_fpkm.columns.to_series().map(di2)
 tcga_fpkm.index = tcga_fpkm.index.str.split('.').str[0]
 tcga_fpkm = tcga_fpkm.loc[:,~tcga_fpkm.columns.duplicated(keep=False)]
 
+tcga_fpkm.shape
+
 
 """
 GET COMMON SAMPLES AND GENES
@@ -167,7 +179,7 @@ tcga_fpkm_genes = tcga_fpkm.index.tolist()
 len(xpresspipe_genes)
 len(tcga_fpkm_genes)
 
-xpresspipe_cols = xpresspipe.columns.tolist()
+xpresspipe_cols = xpresspipe_f.columns.tolist()
 tcga_fpkm_cols = tcga_fpkm.columns.tolist()
 len(xpresspipe_cols)
 len(tcga_fpkm_cols)

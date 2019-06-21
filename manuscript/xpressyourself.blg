@@ -4,67 +4,67 @@ The top-level auxiliary file: xpressyourself.aux
 The style file: Science.bst
 Database file #1: manubib.bib
 Warning--entry type for "plotly" isn't style-file defined
---line 432 of file manubib.bib
+--line 425 of file manubib.bib
 Warning--entry type for "GEOparse" isn't style-file defined
---line 440 of file manubib.bib
+--line 433 of file manubib.bib
 Warning--entry type for "encode_pipeline" isn't style-file defined
---line 467 of file manubib.bib
+--line 460 of file manubib.bib
 Warning--entry type for "gdc_pipeline" isn't style-file defined
---line 470 of file manubib.bib
+--line 463 of file manubib.bib
 Warning--entry type for "pavlidis_pipeline" isn't style-file defined
---line 473 of file manubib.bib
+--line 466 of file manubib.bib
 Warning--entry type for "nfcore_pipeline" isn't style-file defined
---line 476 of file manubib.bib
+--line 469 of file manubib.bib
 Warning--entry type for "umcu_pipeline" isn't style-file defined
---line 479 of file manubib.bib
+--line 472 of file manubib.bib
 Warning--entry type for "cellgeni_pipeline" isn't style-file defined
---line 482 of file manubib.bib
+--line 475 of file manubib.bib
 Warning--entry type for "dnanexus_pipeline" isn't style-file defined
---line 485 of file manubib.bib
+--line 478 of file manubib.bib
 Warning--entry type for "nextflow_pipeline" isn't style-file defined
---line 488 of file manubib.bib
+--line 481 of file manubib.bib
 Warning--entry type for "ensembl_canon" isn't style-file defined
---line 491 of file manubib.bib
+--line 484 of file manubib.bib
 Warning--empty journal in seaborn
-You've used 59 entries,
+You've used 64 entries,
             2300 wiz_defined-function locations,
-            994 strings with 14438 characters,
-and the built_in function-call counts, 10657 in all, are:
-= -- 916
-> -- 514
+            1019 strings with 16284 characters,
+and the built_in function-call counts, 11474 in all, are:
+= -- 996
+> -- 546
 < -- 2
-+ -- 262
-- -- 126
-* -- 744
-:= -- 1602
-add.period$ -- 59
-call.type$ -- 59
-change.case$ -- 6
++ -- 278
+- -- 134
+* -- 816
+:= -- 1753
+add.period$ -- 64
+call.type$ -- 64
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 582
-empty$ -- 1029
-format.name$ -- 168
-if$ -- 2460
+cite$ -- 65
+duplicate$ -- 643
+empty$ -- 1098
+format.name$ -- 182
+if$ -- 2634
 int.to.chr$ -- 0
-int.to.str$ -- 59
-missing$ -- 45
-newline$ -- 180
-num.names$ -- 49
-pop$ -- 271
+int.to.str$ -- 64
+missing$ -- 51
+newline$ -- 195
+num.names$ -- 54
+pop$ -- 275
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 389
+skip$ -- 404
 stack$ -- 0
 substring$ -- 340
-swap$ -- 158
+swap$ -- 183
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 75
-width$ -- 61
-write$ -- 437
+while$ -- 80
+width$ -- 66
+write$ -- 478
 (There were 12 warnings)
