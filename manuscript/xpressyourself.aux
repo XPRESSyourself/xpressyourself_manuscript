@@ -68,7 +68,6 @@
 \citation{isrib_riboseq}
 \citation{tophat2}
 \citation{alignment_benchmark,star}
-\citation{circligase_bias,isrib_riboseq}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Validation}{10}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Ribosome Profiling Data and New Insights from Old Data}{10}}
 \citation{isrib_riboseq}
@@ -86,15 +85,15 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets highlighted in original study are in magenta. B) Changes in log\textsubscript  {2} Translation Efficiency compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholding paradigms. Grey lines are all genes, magenta lines are ISR canonical targets from original study, light green lines are all genes fitting thresholding, and dark green lines are neurologically-annotated genes within the thresholding limits.\relax }}{13}}
 \newlabel{fig:figure3}{{3}{13}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Translationally down-regulated genes during acute Tm treatment and normal regulation during Tm + ISRIB treatment.\relax }}{13}}
-\newlabel{tab:targets}{{2}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pipeline validation using publicly available TCGA FPKM data. Correlations were calculated between publicly available FPKM counts from TCGA samples and the calculated FPKM values using XPRESSpipe on the raw sequence data. Note: All R values reported are Spearman R values. All axes are log\textsubscript  {10}(counts).\relax }}{14}}
-\newlabel{fig:figure4}{{4}{14}}
+\citation{gdc_pipeline}
+\newlabel{tab:targets}{{2}{14}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Performance Validation Using TCGA Data}{14}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Cost Analysis}{14}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces XPRESSpipe processing statistics for dataset GSE65778.\relax }}{14}}
 \newlabel{tab:chpc_performance}{{3}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pipeline validation using publicly available TCGA count data. Correlations were calculated between publicly available count data from TCGA samples and the XPRESSpipe on the sequence count data. Note: All R values reported are Spearman R values. All axes are log\textsubscript  {10}(counts).\relax }}{15}}
+\newlabel{fig:figure4}{{4}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{15}}
 \citation{fastp}
 \citation{star}
 \citation{samtools}
@@ -111,6 +110,10 @@
 \citation{matplotlib}
 \citation{dupradar}
 \citation{deseq2}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Materials and Methods}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Software Dependencies}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSpipe package.\relax }}{16}}
 \citation{pandas}
 \citation{numpy1,numpy2}
 \citation{scipy}
@@ -122,100 +125,25 @@
 \citation{deseq2}
 \citation{sva}
 \citation{ingolia_meth}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Materials and Methods}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Software Dependencies}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSpipe package.\relax }}{16}}
-\newlabel{Tab:software_pipe}{{4}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSplot package.\relax }}{16}}
-\newlabel{Tab:software_plot}{{5}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GTF Modification}{16}}
+\newlabel{Tab:software_pipe}{{4}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSplot package.\relax }}{17}}
+\newlabel{Tab:software_plot}{{5}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GTF Modification}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Normalization}{17}}
 \citation{pandas}
 \citation{matplotlib}
 \citation{numpy1,numpy2}
 \citation{scipy}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Normalization}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Quality Control Summary Plotting}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Metagene Estimation}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Periodicity}{17}}
 \citation{fastqc}
 \citation{blast}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Quality Control Summary Plotting}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Metagene Estimation}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Periodicity}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}rRNA Probe}{18}}
 \citation{spearman_rnaseq}
 \citation{seaborn}
 \citation{matplotlib}
 \citation{pandas}
 \citation{statsmodels}
 \citation{igv}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}rRNA Probe}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Confidence Interval Plotting}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Ribosome Profiling Example Data Analysis}{18}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}Ribosome profiling processing command.}{18}}
-\citation{readthedocs}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Cost Analysis}{19}}
-\bibdata{manubib}
-\bibcite{byron_nrg}{1}
-\bibcite{ingolia_science}{2}
-\bibcite{costello_npjsba}{3}
-\bibcite{funari_science}{4}
-\bibcite{gerashchenko_nar}{5}
-\bibcite{artieri_gr}{6}
-\bibcite{hussman_plosg}{7}
-\bibcite{ingolia_meth}{8}
-\bibcite{weinberg_reports}{9}
-\bibcite{encode_pipeline}{10}
-\bibcite{gdc_pipeline}{11}
-\bibcite{pavlidis_pipeline}{12}
-\bibcite{nfcore_pipeline}{13}
-\bibcite{umcu_pipeline}{14}
-\bibcite{cellgeni_pipeline}{15}
-\bibcite{dnanexus_pipeline}{16}
-\bibcite{nextflow_pipeline}{17}
-\bibcite{cufflinks}{18}
-\bibcite{star}{19}
-\bibcite{ensembl_canon}{20}
-\bibcite{fastp}{21}
-\bibcite{umi}{22}
-\bibcite{baruzzo_natmeth}{23}
-\bibcite{samtools}{24}
-\bibcite{bedtools}{25}
-\bibcite{count_benchmark}{26}
-\bibcite{htseq}{27}
-\bibcite{evans_briefbio}{28}
-\bibcite{sva}{29}
-\bibcite{fastqc}{30}
-\bibcite{dupradar}{31}
-\bibcite{ribowaltz}{32}
-\bibcite{matplotlib}{33}
-\bibcite{seaborn}{34}
-\bibcite{scikit_learn}{35}
-\bibcite{numpy1}{36}
-\bibcite{numpy2}{37}
-\bibcite{scipy}{38}
-\bibcite{deseq2}{39}
-\bibcite{isr_disease}{40}
-\bibcite{isrib_activation}{41}
-\bibcite{isrib_structure}{42}
-\bibcite{isrib_riboseq}{43}
-\bibcite{isrib_neuroprotective}{44}
-\bibcite{isrib_neuroprotective2}{45}
-\bibcite{isrib_neuroprotective3}{46}
-\bibcite{isrib_neuroprotective4}{47}
-\bibcite{tophat2}{48}
-\bibcite{alignment_benchmark}{49}
-\bibcite{circligase_bias}{50}
-\bibcite{igv}{51}
-\bibcite{eif2b_neuroprotective}{52}
-\bibcite{slc1a1_neurotoxic}{53}
-\bibcite{htra1_neurotoxic1}{54}
-\bibcite{htra1_neurotoxic2}{55}
-\bibcite{multiqc}{56}
-\bibcite{pandas}{57}
-\bibcite{sklearn}{58}
-\bibcite{plotly}{59}
-\bibcite{geoparse}{60}
-\bibcite{blast}{61}
-\bibcite{spearman_rnaseq}{62}
-\bibcite{statsmodels}{63}
-\bibcite{readthedocs}{64}
-\bibstyle{Science}
-\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces IGV coverage plots for HTRA1 and SLC1A1. ADAP1 is provided as a counter-example where CircLigase bias may have had a role in calculated TEs for that particular gene. Only a portion of the representative coverages for SLC1A1 are displayed.\relax }}{23}}
-\newlabel{fig:supplement3}{{S1}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Conf
