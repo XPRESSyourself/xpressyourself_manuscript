@@ -1,0 +1,5 @@
+Sample	Replicate	Condition	Type
+tm_a_hek	A	TM	RNA
+tm_b_hek	B	TM	RNA
+untr_a_hek	A	UNTR	RNA
+untr_b_hek	B	UNTR	RNA

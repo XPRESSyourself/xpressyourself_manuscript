@@ -1,0 +1,5 @@
+Sample	Replicate	Condition	Type
+isrib_a_hek	A	ISRIB	RNA
+isrib_b_hek	B	ISRIB	RNA
+untr_a_hek	A	UNTR	RNA
+untr_b_hek	B	UNTR	RNA

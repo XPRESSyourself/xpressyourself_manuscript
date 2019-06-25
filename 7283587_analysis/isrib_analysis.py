@@ -706,8 +706,6 @@ data = pd.read_csv(
     sep = '\t',
     index_col = 0)
 
-data.head()
-
 # Accessed via:
 # $ curl -O ftp://ftp.ensembl.org/pub/release-96/gtf/homo_sapiens/Homo_sapiens.GRCh38.96.gtf.gz
 # $ gzip -d Homo_sapiens.GRCh38.96.gtf.gz
@@ -725,13 +723,34 @@ data = name_map(data, sra_info)
 
 # Clean up data
 data = data.groupby(level=0).sum() # Combine duplicate named genes
-data_threshold = data[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) > 50] # Apply threshold to data
+data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
+
 data_rpm = rpm(data_threshold)
 
-data.shape
-data_threshold.shape
+data_threshold.loc['ATF5']
+# Export for DESeq2
+data_threshold.to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isribxpresspipe_thresholded_counts.tsv',sep='\t')
 
-data_threshold.loc['HTRA1']
+untr_mrna = ['untr_a_hek', 'untr_b_hek']
+untr_ribo = ['ribo_untr_a', 'ribo_untr_b']
+tm_mrna = ['tm_a_hek', 'tm_b_hek']
+tm_ribo = ['ribo_tm_a', 'ribo_tm_b']
+tmisrib_mrna = ['tmisrib_a_hek', 'tmisrib_b_hek']
+tmisrib_ribo = ['ribo_tmisrib_a', 'ribo_tmisrib_b']
+isrib_mrna = ['isrib_a_hek', 'isrib_b_hek']
+isrib_ribo = ['ribo_isrib_a', 'ribo_isrib_b']
+
+data_threshold[untr_ribo + tm_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tm_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + tmisrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tmisrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + isrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+
+data_threshold[untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tm_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tmisrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+
+data_threshold[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tm_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tmisrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
 """
 READ IN TOPHAT SAMPLES

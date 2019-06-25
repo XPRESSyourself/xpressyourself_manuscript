@@ -155,7 +155,6 @@ for x in x_samples:
 xpresspipe.columns = xpresspipe.columns.to_series().map(di)
 xpresspipe.shape
 
-
 """
 IMPORT TCGA GENERATED DATA
 """
@@ -228,3 +227,49 @@ make_figure4(
     tcga_common,
     sample_list,
     'xpresspipe_vs_tcga_counts_more.png')
+
+
+
+
+"""
+Plot a sample using v79 Ensemble build (gencode v22)
+"""
+# Sample quantified to v22 gencode
+v22_path = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/count_gencode22/'
+v22_counts = pd.read_csv(
+    str(v22_path) + 'G17189.TCGA-06-0132-01A_justsorted_gencodev22.tsv',
+    sep='\t',
+    header=None,
+    index_col=0)
+
+del v22_counts.index.name
+v22_counts.columns = ['TCGA-06-0132-01A']
+v22_counts.index = v22_counts.index.str.split('.').str[0]
+
+v22_counts = v22_counts.iloc[:-5]
+v22_counts.shape
+v22_counts.sum()
+
+v22_counts_genes = v22_counts.index.tolist()
+tcga_v22_genes = tcga[['TCGA-06-0132-01A']].index.tolist()
+len(v22_counts_genes)
+len(tcga_v22_genes)
+
+common_v22_genes = list(set(v22_counts_genes).intersection(tcga_v22_genes))
+len(common_v22_genes)
+
+v22_counts_common = v22_counts.reindex(index = common_v22_genes)
+tcga_v22_common = tcga[['TCGA-06-0132-01A']].reindex(index = common_v22_genes)
+
+v22_counts_common.shape
+tcga_v22_common.shape
+
+v22_counts_common = v22_counts_common.reindex(sorted(v22_counts_common.columns), axis=1)
+tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
+
+
+make_figure4(
+    v22_counts_common,
+    tcga_v22_common,
+    ['TCGA-06-0132-01A'],
+    'xpresspipe_vs_tcga_counts_v22_comparison.png')
