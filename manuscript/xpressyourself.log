@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  24 JUN 2019 12:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 JUN 2019 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -531,14 +531,14 @@ Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 353
 .
 (pdftex.def)             Requested size: 455.24408pt x 616.3767pt.
  [11] [12 <./figures/xpresspipe_figure2.png>]
-<figures/xpresspipe_figure3.png, id=56, 561.5379pt x 366.4089pt>
+<figures/xpresspipe_figure3.png, id=56, 565.6332pt x 382.0674pt>
 File: figures/xpresspipe_figure3.png Graphic file (type png)
 <use figures/xpresspipe_figure3.png>
-Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 371
+Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 372
 .
-(pdftex.def)             Requested size: 512.1496pt x 334.20416pt.
+(pdftex.def)             Requested size: 512.1496pt x 345.94456pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--396
+Underfull \hbox (badness 10000) in paragraph at lines 378--397
 
  []
 
@@ -546,30 +546,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 377--396
 <figures/xpresspipe_figure4.png, id=61, 549.7338pt x 439.4016pt>
 File: figures/xpresspipe_figure4.png Graphic file (type png)
 <use figures/xpresspipe_figure4.png>
-Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 405
+Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 406
 .
 (pdftex.def)             Requested size: 512.1496pt x 409.39018pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--433
-
- []
-
-[14 <./figures/xpresspipe_figure3.png>] [15 <./figures/xpresspipe_figure4.png>]
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 460--505
+ [14 <./figures/xpresspipe_figure3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 419--434
 
  []
 
+[15 <./figures/xpresspipe_figure4.png>] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 461--506
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--537
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--538
 
  []
 
 [17]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 564.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 565.
  [18] [19]
-Underfull \hbox (badness 1292) in paragraph at lines 628--629
+Underfull \hbox (badness 1292) in paragraph at lines 629--630
 []\OT1/phv/m/n/10.95 Cost anal-y-sis was per-formed by ac-cess-ing run logs fro
 m the HPC and us-ing pub-lished AWS prices
  []
@@ -579,7 +578,7 @@ m the HPC and us-ing pub-lished AWS prices
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 662.
+ 663.
 (pdftex.def)             Requested size: 512.1496pt x 578.05922pt.
  [23] [24 <./figures/xpresspipe_supplement3.png>] (./xpressyourself.aux)
 
@@ -587,10 +586,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 5753 strings out of 492649
- 85418 string characters out of 6129622
- 223958 words of memory out of 5000000
- 9539 multiletter control sequences out of 15000+600000
+ 5751 strings out of 492649
+ 85380 string characters out of 6129622
+ 223950 words of memory out of 5000000
+ 9537 multiletter control sequences out of 15000+600000
  29834 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,47p,2155b,1417s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -608,7 +607,7 @@ mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (24 pages, 1832355 bytes).
+Output written on xpressyourself.pdf (24 pages, 1873633 bytes).
 PDF statistics:
  142 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream

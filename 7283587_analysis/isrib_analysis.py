@@ -727,7 +727,6 @@ data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_he
 
 data_rpm = rpm(data_threshold)
 
-data_threshold.loc['ATF5']
 # Export for DESeq2
 data_threshold.to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isribxpresspipe_thresholded_counts.tsv',sep='\t')
 

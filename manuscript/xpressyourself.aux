@@ -81,17 +81,16 @@
 \citation{slc1a1_neurotoxic}
 \citation{slc1a1_neurotoxic}
 \citation{isrib_riboseq}
-\citation{htra1_neurotoxic1,htra1_neurotoxic2}
 \citation{gdc_pipeline}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Translationally down-regulated genes during acute Tm treatment and normal regulation during Tm + ISRIB treatment.\relax }}{13}}
 \newlabel{tab:targets}{{2}{13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Performance Validation Using TCGA Data}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets highlighted in original study are in magenta. B) Changes in log\textsubscript  {2} Translation Efficiency compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholding paradigms. Grey lines are all genes, magenta lines are ISR canonical targets from original study, light green lines are all genes fitting thresholding, and dark green lines are neurologically-annotated genes within the thresholding limits.\relax }}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Biological validation and insight into previously published ISR model ribosome profiling data. A) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets highlighted in original study are in magenta. Changes in ribo-seq and mRNA-seq where calculated by DESeq2. Statistically significant changes in translation efficienty as calculated by DESeq2 are highlighted in black. Points falling outside of plotted range not included. B) Changes in log\textsubscript  {2} Translation Efficiency (TE) compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholding paradigms. Grey lines are all genes, orange lines indicate ISR canonical targets from original study, green lines are all genes fitting a strict thresholding paradigm to identify genes that experience a 2-fold or greater increase in TE from Tm treatment to Tm + ISRIB treatment.\relax }}{14}}
 \newlabel{fig:figure3}{{3}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Performance Validation Using TCGA Data}{14}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Cost Analysis}{14}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces XPRESSpipe processing statistics for dataset GSE65778.\relax }}{14}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pipeline validation using publicly available TCGA count data. Correlations were calculated between publicly available count data from TCGA samples and the XPRESSpipe on the sequence count data. Note: All R values reported are Spearman R values. All axes are log\textsubscript  {10}(counts).\relax }}{15}}
 \newlabel{fig:figure4}{{4}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces XPRESSpipe processing statistics for dataset GSE65778.\relax }}{15}}
 \newlabel{tab:chpc_performance}{{3}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{16}}
@@ -205,17 +204,15 @@
 \bibcite{circligase_bias}{51}
 \bibcite{eif2b_neuroprotective}{52}
 \bibcite{slc1a1_neurotoxic}{53}
-\bibcite{htra1_neurotoxic1}{54}
-\bibcite{htra1_neurotoxic2}{55}
-\bibcite{multiqc}{56}
-\bibcite{pandas}{57}
-\bibcite{sklearn}{58}
-\bibcite{plotly}{59}
-\bibcite{geoparse}{60}
-\bibcite{blast}{61}
-\bibcite{spearman_rnaseq}{62}
-\bibcite{statsmodels}{63}
-\bibcite{readthedocs}{64}
+\bibcite{multiqc}{54}
+\bibcite{pandas}{55}
+\bibcite{sklearn}{56}
+\bibcite{plotly}{57}
+\bibcite{geoparse}{58}
+\bibcite{blast}{59}
+\bibcite{spearman_rnaseq}{60}
+\bibcite{statsmodels}{61}
+\bibcite{readthedocs}{62}
 \bibstyle{Science}
 \@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces IGV coverage plots for HTRA1 and SLC1A1. ADAP1 is provided as a counter-example where CircLigase bias may have had a role in calculated TEs for that particular gene. Only a portion of the representative coverages for SLC1A1 are displayed.\relax }}{24}}
 \newlabel{fig:supplement3}{{S1}{24}}

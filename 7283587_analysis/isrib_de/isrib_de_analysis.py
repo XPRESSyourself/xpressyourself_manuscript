@@ -6,8 +6,6 @@ import matplotlib.patches as patches
 matplotlib.rcParams['font.sans-serif'] = 'Arial'
 import seaborn as sns
 
-
-
 def rp_plot(
     data,
     y_fc,
@@ -143,16 +141,18 @@ def rp_plot(
     #plt.show()
     plt.close()
 
-
+# Import threshold counts data for any checking
 dir = '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/'
 
 check_data = pd.read_csv(str(dir) + 'isribxpresspipe_thresholded_counts.tsv', sep='\t', index_col=0)
 check_list = check_data.index.tolist()
 
+# Import DESeq2 TE data
 tm_data = pd.read_csv(str(dir) + 'tm_ISRIBxpresspipe_processed_counts_diffx.tsv', sep='\t')
 tmisrib_data = pd.read_csv(str(dir) + 'tmisrib_ISRIBxpresspipe_processed_counts_diffx.tsv', sep='\t')
 isrib_data = pd.read_csv(str(dir) + 'isrib_ISRIBxpresspipe_processed_counts_diffx.tsv', sep='\t')
 
+### Clean up this data
 tm_data = tm_data.drop(['baseMean','lfcSE','stat'],axis=1)
 tm_data.columns = ['tm_log2FC','tm_p','tm_padj']
 
@@ -164,7 +164,7 @@ isrib_data.columns = ['isrib_log2FC','isrib_p','isrib_padj']
 
 merged_data = pd.concat([tm_data, tmisrib_data, isrib_data], axis=1, sort=False)
 
-# Ingolia probably did RNA and RPF seperate in DESeq to get values
+# Import DESeq2 RNA and RPF data
 tm_ribo_data = pd.read_csv(str(dir) + 'tm_ribo_ISRIBxpresspipe_processed_counts_diffx.tsv', sep='\t')
 tm_rna_data = pd.read_csv(str(dir) + 'tm_rna_ISRIBxpresspipe_processed_counts_diffx.tsv', sep='\t')
 
@@ -174,7 +174,7 @@ tmisrib_rna_data = pd.read_csv(str(dir) + 'tmisrib_rna_ISRIBxpresspipe_processed
 isrib_ribo_data = pd.read_csv(str(dir) + 'isrib_ribo_ISRIBxpresspipe_processed_counts_diffx.tsv', sep='\t')
 isrib_rna_data = pd.read_csv(str(dir) + 'isrib_rna_ISRIBxpresspipe_processed_counts_diffx.tsv', sep='\t')
 
-
+### Clean up this data
 tm_ribo_data = tm_ribo_data.drop(['baseMean','lfcSE','stat','pvalue'],axis=1)
 tm_ribo_data.columns = ['tm_ribo_log2FC','tm_ribo_padj']
 tm_rna_data = tm_rna_data.drop(['baseMean','lfcSE','stat','pvalue'],axis=1)
@@ -192,10 +192,11 @@ isrib_rna_data.columns = ['isrib_rna_log2FC','isrib_rna_padj']
 
 merged_data_split = pd.concat([tm_ribo_data, tm_rna_data, tmisrib_ribo_data, tmisrib_rna_data, isrib_ribo_data, isrib_rna_data], axis=1, sort=False)
 
-
+# Initialize lists of Ingolia highlights
 isr = ['ATF4','ATF5','PPP1R15A','DDIT3']
 uorf_targets = ['SLC35A4','PTP4A1','UCP2','C7orf31','BCL2L11','PNRC2','SAT1']
 
+# Make ribo-seq vs rna-seq plots with hightlights
 rp_plot(
     merged_data_split,
     'tm_ribo_log2FC',
@@ -209,7 +210,6 @@ rp_plot(
     'Tm_vs_Untr_deseq.png',
     isr,
     uorf_targets)
-
 
 rp_plot(
     merged_data_split,
@@ -241,14 +241,23 @@ rp_plot(
     uorf_targets,
     label_down=False)
 
+# Check fold changes of targets for comparison
+print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[0])
+print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[0])
+print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[1])
+print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[1])
+print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[2])
+print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[2])
+print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[3])
+print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[3])
 
+check_data.loc['SLC39A1']
 # TE analysis
 data_de_plot = merged_data.copy()
 
 data_de_plot['Untreated'] = 0
 data_de_plot = data_de_plot[['Untreated','tm_log2FC', 'tmisrib_log2FC','isrib_log2FC']]
 data_de_plot.columns = ['Untreated','Tm', 'Tm + ISRIB','ISRIB']
-
 
 down_strict = merged_data.loc[(merged_data['tm_log2FC'] - merged_data['tmisrib_log2FC'] <= -1) & (merged_data['tm_padj'] <= 0.1)]
 
@@ -263,9 +272,9 @@ down_loose_L = down_loose.index.tolist()
 up_strict_L = up_strict.index.tolist()
 up_loose_L = up_loose.index.tolist()
 
-
+# Plot TEs
 fig, ax = plt.subplots()
-plt.yticks([-4,-3,-2,-1,0,1,2,3,4,5,6])
+plt.yticks([-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10])
 
 ax.set_facecolor('white')
 ax.grid(color='grey', axis='y')
@@ -279,62 +288,23 @@ ax.axhline(0, ls='-', color='black')
 ax.axhline(1, ls='--', color='black')
 ax.axhline(-1, ls='--', color='black')
 
-data_de_plot.loc[isr].T.plot.line(legend=False, color='red', linewidth=1, ax=ax)
-data_de_plot.loc[down_strict_L].T.plot.line(legend=False, color='green', linewidth=1, ax=ax)
-ax.set_ylabel('log$_2$(TE)')
+data_de_plot.loc[isr].T.plot.line(legend=False, color='#d95f02', linewidth=1, ax=ax)
+data_de_plot.loc[down_strict_L].T.plot.line(legend=False, color='#1b9e77', linewidth=1, ax=ax)
+ax.set_ylabel(u'Δ' + 'log$_2$(TE)')
 
 from matplotlib.lines import Line2D
 legend_elements = [Line2D([0], [0], color='gray', lw=2, label='All'),
-                   Line2D([0], [0], color='red', lw=2, label='ISR'),
-                   Line2D([0], [0], color='green', lw=2, label='Other')]
+                   Line2D([0], [0], color='#d95f02', lw=2, label='ISR'),
+                   Line2D([0], [0], color='#1b9e77', lw=2, label='Other')]
 
 ax.legend(handles=legend_elements, loc='upper right')
 plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/te_analysis_down_strict.png', dpi=1800, bbox_inches='tight')
 
 plt.close()
 
-
-
-
-fig, ax = plt.subplots()
-plt.yticks([-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6])
-
-ax.set_facecolor('white')
-ax.grid(color='grey', axis='y')
-data_de_plot.T.plot.line(legend=False, color='lightgrey', linewidth=0.5, ax=ax)
-
-ax.axvline(0.02, ls='-', color='black')
-ax.axvline(1, ls='-', color='black')
-ax.axvline(2, ls='-', color='black')
-ax.axvline(2.99, ls='-', color='black')
-ax.axhline(0, ls='-', color='black')
-ax.axhline(1, ls='--', color='black')
-ax.axhline(-1, ls='--', color='black')
-
-data_de_plot.loc[isr].T.plot.line(legend=False, color='red', linewidth=1, ax=ax)
-data_de_plot.loc[down_loose_L].T.plot.line(legend=False, color='green', linewidth=1, ax=ax)
-ax.set_ylabel('log$_2$(TE)')
-
-from matplotlib.lines import Line2D
-legend_elements = [Line2D([0], [0], color='gray', lw=2, label='All'),
-                   Line2D([0], [0], color='red', lw=2, label='ISR'),
-                   Line2D([0], [0], color='green', lw=2, label='Other')]
-
-ax.legend(handles=legend_elements, loc='upper right')
-plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/te_analysis_down_loose.png', dpi=1800, bbox_inches='tight')
-
-plt.close()
-
-
-
-
-down_strict
-
 """
-
-
-
-POMGNT1:
+Strict hits and annotations from GeneCards:
+* POMGNT1:
     - Entrez: O-mannosyl glycosylation and is specific for alpha linked terminal mannose. Mutations in this gene may be associated with muscle-eye-brain disease and several congenital muscular dystrophies
     - LifeMap Discovery: Stem cell expression across brain
     - Uniprot: Expressed especially in astrocytes. Also expressed in immature and mature neurons
@@ -348,12 +318,33 @@ PABPC1
 RPL12
     - No neuro-related annotations
     - Ribosome subunit
-ARNTL2
-SLC1A1
-MAP3K10	-
-RPLP1
-TMEM54
-AL358472.7
-TSPAN33
-
+* ARNTL2
+    - basic helix-loop-helix transcription factor
+    - The PAS proteins play important roles in adaptation to low atmospheric and cellular oxygen levels, exposure to certain environmental pollutants, and diurnal oscillations in light and temperature
+    - this protein is coexpressed in regions of the brain such as the thalamus, hypothalamus, and amygdala
+    - Uniprot Expression:
+        - Expressed in fetal brain. Highly expressed in brain and placenta
+        - Located to endothelial cells and neuronal cells of the suprachiasmatic nucleus
+        - In the brain, specifically expressed in the thalamus, hippocampus and amygdala
+* SLC1A1
+    - Dense expression in substantia nigra, red nucleus, hippocampus, and cerebral cortical layers.
+    - Member of high-affinity glutamate transporter.
+    - In brain, crucial for terminating postsynaptic action of the neurotransmitter glutamate.
+    - Responsible for maintaining glutamate concentrations below neurotoxic levels.
+* MAP3K10
+    - functions preferentially on the JNK signaling pathway, and is reported to be involved in nerve growth factor (NGF) induced neuronal apoptosis
+    - overexpressed in Brain - Cortex
+    - Activates: NEUROD1; promotes neural differentiation
+    - Inactivates: TCF3; Transcriptional regulator. Involved in the initiation of neuronal differentiation
+~ RPLP1
+    - Ribosome subunit
+    - Stem cell and embronic expression in cerebral cortex
+? TMEM54
+    - No annotations
+? AL358472.7
+    - Uncharacterized protein
+~ TSPAN33
+    - Regulates maturation and trafficking of the transmembrane metalloprotease ADAM10 (PubMed:26686862)
+    - Negatively regulates ligand-induced Notch activity probably by regulating ADAM10 activity (PubMed:26686862)
+    - Notch signaling vital for neurogenesis
 """
