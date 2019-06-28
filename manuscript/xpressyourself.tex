@@ -341,7 +341,7 @@ While a litany of analysis tools are included in XPRESSplot as of the time of wr
 \end{itemize}
 
 \subsection{Validation}
-In order to evaluate the ability of XPRESSpipe to provide the user with reliable results, we processed publicly available raw sequence files through the pipeline. We chose to highlight one ribosome profiling dataset to showcase the utility of XPRESSpipe for rapidly extracting potentially interesting molecular patterns and insights from publicly available data. We additionally chose a small validation subset of TCGA samples, processed their raw read data through XPRESSpipe, and compared the counts to the publicly available counts tables corresponding to each sample.
+In order to evaluate the ability of XPRESSpipe to provide the user with reliable results, we processed publicly available raw sequence files using this automated pipeline. We chose to highlight one ribosome profiling dataset to showcase the utility of XPRESSpipe for rapidly extracting potentially interesting molecular patterns and insights from sequence data. We additionally chose a small validation subset of TCGA samples, processed their raw read data through XPRESSpipe, and compared the counts to the TCGA-processed counts tables corresponding to each sample.
 
 \subsubsection{Ribosome Profiling Data and New Insights from Old Data}
 The integrated stress response (ISR) is a signaling mechanism used by cells and organisms in response to a variety of cellular stresses. While acute ISR activation is essential for cells to properly respond to stresses, long periods of sustained ISR activity can be damaging. These prolonged episodes lead to a variety of diseases, including many that result in neurological decline \cite{isr_disease}. A recently discovered small molecule inhibitor of the ISR, ISRIB, has demonstrated therapeutic potential and relative lack of side-effects. Interestingly, ISRIB is able to suppress a chronic activation of the ISR, while it does not inhibit an acute, high-grade ISR. It has also been shown to be neuroprotective in mouse models of traumatic brain injury \cite{isrib_activation, isrib_structure, isrib_riboseq, isrib_neuroprotective, isrib_neuroprotective2, isrib_neuroprotective3, isrib_neuroprotective4}. \par
@@ -359,12 +359,9 @@ XPRESSpipe-processed replicate samples XPRESSpipe exhibited excellent correlatio
 
 In the original study, the genes translationally down-regulated genes were not discussed. However, re-analyzing these data with the updated XPRESSpipe methodology identifies some genes that may play a role in the neurodegenerative effects of ISR and the neuroprotective properties of ISRIB and that were not identified as significantly down-regulated in the original analysis. For example, one would expect putative targets to be significantly translationally down-regulated during ISR and that these same targets would show no change in the ISR + ISRIB condition. Using this paradigm as a guide, we identified seven genes following this pattern of translational regulation, as listed in Table \ref{tab:targets} (descriptions sourced from https://www.genecards.org/, https://www.ncbi.nlm.nih.gov/gene/, and https://www.uniprot.org/uniprot/; annotations accessed 19 Jun 2019) \ref{fig:figure3}B. These targets act as interesting putative targets for further follow-up in a model better mirroring the neurological environment than HEK-293T cells. Further analysis of these potential hits is strengthened by investigating read pile-ups along these genes in IGV \cite{igv}. This is an important consideration as use of CircLigase in the library preparation can bias certain reads' incorporation in sequencing libraries \cite{circligase_bias}.
 
-Good, distributed footprint coverage is observed across transcripts for all highlighted genes; however, while certain samples appear to be down-regulated in these plots, specific regluation cannot be gleamed from this information as it has not been sample normalized (Figure \ref{fig:supplement3}). However, interestingly, 4 out of the 11 hits passing this strict pattern threshold are strongly annotated as neurological in some manner, and another 2 have mild to moderate neurological annotations. This provides further support to these particular hits for future follow-up for the role in ISR and ISRIB's ability to be neuroprotective by modulating these genes.
+Distributed footprint coverage is observed across transcripts for all highlighted genes; however, while certain samples appear to be down-regulated in these plots, specific regluation should not be inferred from this information as it has not been sample normalized (Figure \ref{fig:supplement3}). However, interestingly, 4 out of the 11 hits passing this strict pattern threshold are strongly annotated as neurological in some manner, and another 2 have mild to moderate neurological annotations. This provides further support to these particular hits for future follow-up for the role in ISR and ISRIB's ability to be neuroprotective by modulating these genes.
 
-Interestingly, SLC1A1 transcriptional down-regulation has already been implicated in diseases such as neurodegenerative diseases caused by mutations in the eukaryotic translation initiation factor 2B subunit epsilon (eIF2B5) \cite{eif2b_neuroprotective}. ISR operates by a similar mechanism, where eIF2$\alpha$ is phosphorylated and a general translation effect is observed \cite{isrib_riboseq, isrib_structure}. This suggests that SLC1A1 abundance control by translation initiation factors is key in an array of neurological conditions and may be partially responsible for the neurodegeneration observed in prolonged ISR conditions. This is a logical target as SLC1A1 is densely expressed throughput the brain and is vital for neurotransmission and preventing neurotoxic levels of glutamate \cite{slc1a1_neurotoxic}. ISRIB's neuroprotective descriptions may therefore stem from a recovery of SLC1A1 levels and an ability to avoid glutamate surges. What is even more interesting is that glutamate transporters, like SLC1A1, have been implicated in preventing neurotrauma within the first few minutes of insult \cite{slc1a1_neurotoxic}. Within 1 hour of ISR-induction in the focus study \cite{isrib_riboseq}, there was a large decrease in translation efficiency of SLC1A1, indicating that there is a rapid disruption in a vital transporter to prevent neurotoxicity.
-
-
-
+For example, SLC1A1 is a glutamine transporter vital for neurotransmission and maintaining glutamine homeostasis. Deficits in this transporter can lead to neurotoxic levels of glutamine within a cell. This transporter is densely expressed throughout the brain \cite{slc1a1_neurotoxic}. Down-regulation of SLC1A1 has already been implicated in diseases such as neurodegenerative diseases caused by mutations in the eukaryotic translation initiation factor 2B subunit epsilon (eIF2B5) \cite{eif2b_neuroprotective}. ISR operates by a similar mechanism, where eIF2$\alpha$ is phosphorylated and a general translation effect is observed \cite{isrib_riboseq, isrib_structure}. This suggests that SLC1A1 abundance control by translation initiation factors is key in an array of neurological conditions and may be partially responsible for the neurodegeneration observed in prolonged ISR conditions. ISRIB's neuroprotective descriptions may therefore stem from a recovery of SLC1A1 levels to wild-type levels which in turn helps regulate glutamine levels. Glutamate transporters, like SLC1A1, have even been implicated in preventing neurotrauma within the first few minutes of insult \cite{slc1a1_neurotoxic}. Within 1 hour of ISR-induction in the focus study \cite{isrib_riboseq}, there was a large decrease in translation efficiency of SLC1A1, suggesting that a rapid rapid disruption in a vital transporter may play a role in these neurodegenerative and neuroprotective properties.
 
 
 \begin{figure}
@@ -378,26 +375,37 @@ Interestingly, SLC1A1 transcriptional down-regulation has already been implicate
 \begin{tabular}{p{2.5cm}p{15.5cm}}
  \textbf{Gene Name} & \textbf{Relevant Description} \\
  \hline
- ADAP1 & Overexpressed in fetal brain, frontal cortex, and spinal cord. Expressed at highest levels in brain. Involved in cell signaling events. \\
+ POMGNT1 & Participates in O-mannosyl glycosylation. Mutations have been associated with muscle-eye-brain diseases and congenital muscular dystrophies. Expressed especially in astrocytes, as well as in immature and mature neurons. Expressed across brain stem cells. \\
  \hline
- ADRA2C & Critical role in neurotransmitter release from sympathetic nerves and adrenergic neurons. Role in positive regulation of neuron differentiation. \\
+ MYO5B & May be involved in plasma membrane recycling. Identified in original ISRIB study. No neurological related annotations. \\
  \hline
- GPR183 & Chemotactic receptor in dendritic cells. Expression required for splenic dendritic cell homeostasis, localization, and induction of B- and T-cell responses. Regulates astrocyte migration. \\
+ PABPC1 & Promotes ribosome recruitment and translation initation. May contribute to mRNA stability. No neurological related annotations. \\
  \hline
- HTRA1 & Moderate overexpression in brain. Suggested role in cell growth regulation. Variations in promoter region increase susceptability to age-related macular degeneration type 7. Associated with other neurodegenerative diseases. May regulate neuronal survival and maturation during development. \\
+ RPL12 & Ribosomal subunit. No neurological related annotations. \\
  \hline
- KIFC2 & Overexpressed in cerebellum. May function as motor for multivesicular body-like organelles in dendrites (by similarity). \\
- \hline
- RGPD8 & Moderate expression in brain. Embryonic expression in neural tube. Associated behavioral/neurological phenotypes. \\
+ ARNTL2 & Helix-loop-helix transcription factor. Expressed throughout the brain, including in the thalamus, hypothalamus, and amygdala. Plays important roles in adaptations to low atmospheric and cellular oxygen levels. \\
  \hline
  SLC1A1 & Dense expression in substantia nigra, red nucleus, hippocampus, and cerebral cortical layers. Member of high-affinity glutamate transporter. In brain, crucial for terminating postsynaptic action of the neurotransmitter glutamate. Responsible for maintaining glutamate concentrations below neurotoxic levels. \\
+ \hline
+ MAP3K10 & Functions in JNK signaling, reportedly involved in nerve growth factor induces neuronal apoptosis. Expressed in the cerebral cortex. Activates NEUROD1, which promotes neuronal differentation. \\
+ \hline
+ RPLP1 & Ribosome subunit. Evidence for stem cell and embryonic expression in cerebral cortex. \\
+ \hline
+ TMEM54 & Unannotated transmembrane protein. \\
+ \hline
+ AL358472.7 & Unannotated membrane protein. Nonsense mediated decay paralog of JTB, which plays a role in regulation of cell proliferation. \\
+ \hline
+ TSPAN33 & Plays a role in normal erythropoiesis and regulates maturation and trafficking of ADAM10, a metalloprotease. Negatively regulates Notch activity by way of its regulation of ADAM10. Notch signaling is vital to neurogenesis. \\
  \label{tab:targets}
 \end{tabular}
 \newline
 
 
+
+
+
 \subsubsection{Performance Validation Using TCGA Data}
-To validate the general design and reliability of the XPRESSpipe pipeline, we used raw TCGA sequence data, processed it using XPRESSpipe, and compared the output count values to those publicly available through TCGA. Spearman R values for the selected samples ranged from 0.96 - 0.98 (Figure \ref{fig:figure4}), indicating integrity of pipeline design. Slight differences in reported counts may stem from XPRESSpipe only accepted reads that do not multimap, but this is difficult to say for sure as the presence of this step is not documented in their protocol \cite{gdc_pipeline}. Other differences may have arisen in the version of the annotated transcriptome used to quantify reads. For example, XPRESSpipe used a Ensembl canonical transcript-modified version of the Ensembl GTF (GRCh38 Assembly, version 96). Additionally, these files are updated every few months, and between versions 95 and 96 alone (version 95 published 24 Nov 2018, version 96 published 13 Mar 2019), 32,259 additional records were added.
+To validate the general design and reliability of the XPRESSpipe pipeline, we processed raw TCGA sequence data using XPRESSpipe and compared the output count values to those publicly available through TCGA. Spearman R values for the selected samples ranged from 0.96 - 0.98 (Figure \ref{fig:figure4}), indicating integrity of pipeline design according to TCGA standards. The only major differences in reported counts arise in quantification of various pseudogenes, with the TCGA pipeline quantifying more pseudogenes. While pseudogene expression is real and often biologically relevant, high levels, particularly 10-fold increases, of pseudogene expression are less likely, indicating a slightly more reliable quantification. Other differences arise in the version of the annotated transcriptome used to quantify reads. For example, the GDC pipeline cites Ensembl build GRCh38 version 79, while the most recent version of this reference is version 96. In the 4 years difference between these versions, significant advances have been made in our understanding of transcribed regions of the genome. Between versions 95 and 96 alone (version 95 published 24 Nov 2018, version 96 published 13 Mar 2019), 32,259 additional records were added.
 
 UPDATE add methods
 

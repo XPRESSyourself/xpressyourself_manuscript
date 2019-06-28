@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1561581614 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1561581618
+["bibtex xpressyourself"] 1561684121 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1561684125
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
   "manubib.bib" 1561063217 19465 6639f0f9368985821ec7e4c1ee30b9ee ""
-  "xpressyourself.aux" 1561581617 10802 09851cb6093b1835dbbff0706d1123b4 ""
+  "xpressyourself.aux" 1561684124 10778 d4c05c8feca3807acc5de6739a4c43f2 ""
   (generated)
-  "xpressyourself.blg"
   "xpressyourself.bbl"
-["pdflatex"] 1561581614 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1561581618
+  "xpressyourself.blg"
+["pdflatex"] 1561684121 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1561684125
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -97,15 +97,15 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "figures/xpresspipe_figure2.png" 1560978639 672544 c652303436c8c8d4489968c09bfb68a0 ""
-  "figures/xpresspipe_figure3.png" 1561577949 614704 1c6030e9bc114810672ed64a483838cf ""
+  "figures/xpresspipe_figure3.png" 1561676683 712673 12130d0b182e3765b3281e604709ef83 ""
   "figures/xpresspipe_figure4.png" 1561138216 817203 4d4d13bdf486f82c90810184054879b3 ""
   "figures/xpresspipe_overview.png" 1555645998 119837 93f6fc962966a585fc77d6d32407d4d8 ""
-  "figures/xpresspipe_supplement3.png" 1561057843 111917 8cc1f981b4221bdf4c901898a7d55781 ""
+  "figures/xpresspipe_supplement3.png" 1561582241 167903 93c66365b733129428f3509947c3a306 ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1561581617 10802 09851cb6093b1835dbbff0706d1123b4 ""
-  "xpressyourself.bbl" 1561581614 6043 175e9dd5ecc3e5a377f2b3a91400971f "bibtex xpressyourself"
-  "xpressyourself.tex" 1561581608 69876 c72305926e2e200336acd303824569ad ""
+  "xpressyourself.aux" 1561684124 10778 d4c05c8feca3807acc5de6739a4c43f2 ""
+  "xpressyourself.bbl" 1561684121 6043 7161f2245c6d284810080c08fbe6d378 "bibtex xpressyourself"
+  "xpressyourself.tex" 1561684115 70734 59c6a8bde6289a3b770bcb05bcf74c56 ""
   (generated)
-  "xpressyourself.log"
   "xpressyourself.pdf"
+  "xpressyourself.log"
   "xpressyourself.aux"

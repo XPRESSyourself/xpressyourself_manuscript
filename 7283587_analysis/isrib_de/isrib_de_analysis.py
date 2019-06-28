@@ -33,7 +33,7 @@ def rp_plot(
     plt.grid(False)
     ax.axhline(0, ls='-', color='black') # Create central axis line
     ax.axvline(0, ls='-', color='black')
-    rect = patches.Rectangle((-1,-1),2,2,linewidth=1.5,edgecolor='#505050',facecolor='none') # Create significance zone
+    rect = patches.Rectangle((-1,-1),2,2,linewidth=1.5,edgecolor='lightgray',facecolor='none') # Create significance zone
     ax.add_patch(rect)
     ax.set_ylabel('Ribo-Seq (' + str(y_name) + '/' + str(x_name) + ')', fontsize=16) # Set axis labels
     ax.set_xlabel('mRNA-Seq (' + str(y_name) + '/' + str(x_name) + ')', fontsize=16)
@@ -95,49 +95,48 @@ def rp_plot(
         rna_down = np.ndarray.tolist(rna_down)
 
     #Plot data
-    ax.scatter(rna_all, ribo_all, s=2.5,c='gray',alpha=1)
+    ax.scatter(rna_all, ribo_all, s=2.5,c='gray',alpha=0.5)
     ax.scatter(rna_sig, ribo_sig, s=5,c='black',alpha=1)
 
-    if list_up != None:
-        ax.scatter(rna_up, ribo_up, s=40,c='#be00be',alpha=1)
-
-        for index, row in data_fig.iterrows():
-            if index in list_up:
-                if index in sig_list:
-                    ax.scatter(row[1], row[0], s=5,c='black',alpha=1)
-                else:
-                    ax.scatter(row[1], row[0], s=2.5,c='gray',alpha=1)
-            else:
-                pass
-
-        if label_up == True:
-            for index, row in data_fig_up.iterrows():
-                if index == 'DDIT3':
-                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#be00be', weight='semibold')
-                else:
-                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#be00be', weight='semibold')
-
-
     if list_down != None:
-        ax.scatter(rna_down, ribo_down, s=40,c='green',alpha=1)
+        ax.scatter(rna_down, ribo_down, s=80,c='#1b9e77',alpha=1)
 
         for index, row in data_fig.iterrows():
             if index in list_down:
                 if index in sig_list:
-                    ax.scatter(row[1], row[0], s=5,c='black',alpha=1)
+                    ax.scatter(row[1], row[0], s=20,c='black',alpha=1)
                 else:
-                    ax.scatter(row[1], row[0], s=2.5,c='gray',alpha=1)
+                    ax.scatter(row[1], row[0], s=20,c='gray',alpha=1)
             else:
                 pass
 
         if label_down == True:
             for index, row in data_fig_down.iterrows():
                 if index == 'PNRC2' or index == 'SAT1':
-                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='green', weight='semibold')
+                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#1b9e77', weight='semibold')
                 else:
-                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='green', weight='semibold')
+                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#1b9e77', weight='semibold')
 
-    plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/' + str(title), dpi=1800, bbox_inches='tight')
+    if list_up != None:
+        ax.scatter(rna_up, ribo_up, s=80,c='#7570b3',alpha=1)
+
+        for index, row in data_fig.iterrows():
+            if index in list_up:
+                if index in sig_list:
+                    ax.scatter(row[1], row[0], s=20,c='black',alpha=1)
+                else:
+                    ax.scatter(row[1], row[0], s=20,c='gray',alpha=1)
+            else:
+                pass
+
+        if label_up == True:
+            for index, row in data_fig_up.iterrows():
+                if index == 'DDIT3':
+                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#7570b3', weight='semibold')
+                else:
+                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#7570b3', weight='semibold')
+
+    plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/' + str(title), dpi=3600, bbox_inches='tight')
     #plt.show()
     plt.close()
 
@@ -288,13 +287,13 @@ ax.axhline(0, ls='-', color='black')
 ax.axhline(1, ls='--', color='black')
 ax.axhline(-1, ls='--', color='black')
 
-data_de_plot.loc[isr].T.plot.line(legend=False, color='#d95f02', linewidth=1, ax=ax)
+data_de_plot.loc[isr].T.plot.line(legend=False, color='#7570b3', linewidth=1, ax=ax)
 data_de_plot.loc[down_strict_L].T.plot.line(legend=False, color='#1b9e77', linewidth=1, ax=ax)
 ax.set_ylabel(u'Δ' + 'log$_2$(TE)')
 
 from matplotlib.lines import Line2D
 legend_elements = [Line2D([0], [0], color='gray', lw=2, label='All'),
-                   Line2D([0], [0], color='#d95f02', lw=2, label='ISR'),
+                   Line2D([0], [0], color='#7570b3', lw=2, label='ISR'),
                    Line2D([0], [0], color='#1b9e77', lw=2, label='Other')]
 
 ax.legend(handles=legend_elements, loc='upper right')

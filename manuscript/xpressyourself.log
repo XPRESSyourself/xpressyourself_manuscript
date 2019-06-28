@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 JUN 2019 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 JUN 2019 19:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -531,56 +531,56 @@ Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 353
 .
 (pdftex.def)             Requested size: 455.24408pt x 616.3767pt.
  [11] [12 <./figures/xpresspipe_figure2.png>]
-<figures/xpresspipe_figure3.png, id=56, 565.6332pt x 382.0674pt>
+<figures/xpresspipe_figure3.png, id=56, 552.8655pt x 510.9489pt>
 File: figures/xpresspipe_figure3.png Graphic file (type png)
 <use figures/xpresspipe_figure3.png>
-Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 372
+Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 369
 .
-(pdftex.def)             Requested size: 512.1496pt x 345.94456pt.
+(pdftex.def)             Requested size: 512.1496pt x 473.361pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--397
+Underfull \hbox (badness 10000) in paragraph at lines 375--402
 
  []
 
-[13]
-<figures/xpresspipe_figure4.png, id=61, 549.7338pt x 439.4016pt>
+[13] [14 <./figures/xpresspipe_figure3.png>]
+<figures/xpresspipe_figure4.png, id=65, 549.7338pt x 439.4016pt>
 File: figures/xpresspipe_figure4.png Graphic file (type png)
 <use figures/xpresspipe_figure4.png>
-Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 406
+Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 414
 .
 (pdftex.def)             Requested size: 512.1496pt x 409.39018pt.
- [14 <./figures/xpresspipe_figure3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 419--434
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 427--442
 
  []
 
-[15 <./figures/xpresspipe_figure4.png>] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 461--506
+[16 <./figures/xpresspipe_figure4.png>] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 469--514
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--538
+Underfull \hbox (badness 10000) in paragraph at lines 517--546
 
  []
 
-[17]
+[18]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 565.
- [18] [19]
-Underfull \hbox (badness 1292) in paragraph at lines 629--630
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 573.
+ [19] [20]
+Underfull \hbox (badness 1292) in paragraph at lines 637--638
 []\OT1/phv/m/n/10.95 Cost anal-y-sis was per-formed by ac-cess-ing run logs fro
 m the HPC and us-ing pub-lished AWS prices
  []
 
-[20] (./xpressyourself.bbl [21] [22])
-<figures/xpresspipe_supplement3.png, id=93, 561.7788pt x 634.0488pt>
+[21] (./xpressyourself.bbl [22] [23])
+<figures/xpresspipe_supplement3.png, id=96, 589.2414pt x 737.154pt>
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 663.
-(pdftex.def)             Requested size: 512.1496pt x 578.05922pt.
- [23] [24 <./figures/xpresspipe_supplement3.png>] (./xpressyourself.aux)
+ 671.
+(pdftex.def)             Requested size: 512.1496pt x 640.75641pt.
+ [24] [25 <./figures/xpresspipe_supplement3.png>] (./xpressyourself.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -607,10 +607,10 @@ mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (24 pages, 1873633 bytes).
+Output written on xpressyourself.pdf (25 pages, 2037441 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 146 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
