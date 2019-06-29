@@ -1,0 +1,1440 @@
+Read1 before filtering:
+total reads: 14808006
+total bases: 740400300
+Q20 bases: 730569881(98.6723%)
+Q30 bases: 710125077(95.911%)
+
+Read1 after filtering:
+total reads: 14576830
+total bases: 714089558
+Q20 bases: 707907582(99.1343%)
+Q30 bases: 690369074(96.6782%)
+
+Filtering result:
+reads passed filter: 14576830
+reads failed due to low quality: 230910
+reads failed due to too many N: 100
+reads failed due to too short: 166
+reads with adapter trimmed: 29531
+bases trimmed due to adapters: 179477
+
+Duplication rate (may be overestimated since this is SE data): 25.4296%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795417_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795417_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795417_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795417_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795417_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795417_1fastp.html 
+fastp v0.20.0, time used: 87 seconds
+Read1 before filtering:
+total reads: 14896916
+total bases: 744845800
+Q20 bases: 726071580(97.4794%)
+Q30 bases: 692807515(93.0135%)
+
+Read1 after filtering:
+total reads: 14465936
+total bases: 708659035
+Q20 bases: 696749485(98.3194%)
+Q30 bases: 668573345(94.3434%)
+
+Filtering result:
+reads passed filter: 14465936
+reads failed due to low quality: 429945
+reads failed due to too many N: 843
+reads failed due to too short: 192
+reads with adapter trimmed: 29189
+bases trimmed due to adapters: 177578
+
+Duplication rate (may be overestimated since this is SE data): 21.9213%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795418_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795418_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795418_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795418_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795418_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795418_1fastp.html 
+fastp v0.20.0, time used: 90 seconds
+Read1 before filtering:
+total reads: 15923596
+total bases: 796179800
+Q20 bases: 775290660(97.3763%)
+Q30 bases: 739657083(92.9008%)
+
+Read1 after filtering:
+total reads: 15438975
+total bases: 756313060
+Q20 bases: 743316860(98.2816%)
+Q30 bases: 713219486(94.3022%)
+
+Filtering result:
+reads passed filter: 15438975
+reads failed due to low quality: 483489
+reads failed due to too many N: 909
+reads failed due to too short: 223
+reads with adapter trimmed: 33531
+bases trimmed due to adapters: 203772
+
+Duplication rate (may be overestimated since this is SE data): 17.5592%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795416_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795416_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795416_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795416_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795416_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795416_1fastp.html 
+fastp v0.20.0, time used: 92 seconds
+Read1 before filtering:
+total reads: 17185011
+total bases: 859250550
+Q20 bases: 837646924(97.4858%)
+Q30 bases: 799070591(92.9962%)
+
+Read1 after filtering:
+total reads: 16688282
+total bases: 817521853
+Q20 bases: 803801756(98.3217%)
+Q30 bases: 771143805(94.327%)
+
+Filtering result:
+reads passed filter: 16688282
+reads failed due to low quality: 495476
+reads failed due to too many N: 998
+reads failed due to too short: 255
+reads with adapter trimmed: 34719
+bases trimmed due to adapters: 211535
+
+Duplication rate (may be overestimated since this is SE data): 22.5195%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795420_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795420_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795420_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795420_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795420_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795420_1fastp.html 
+fastp v0.20.0, time used: 97 seconds
+Read1 before filtering:
+total reads: 17613014
+total bases: 880650700
+Q20 bases: 858495018(97.4842%)
+Q30 bases: 819020608(93.0018%)
+
+Read1 after filtering:
+total reads: 17103831
+total bases: 837876813
+Q20 bases: 823822047(98.3226%)
+Q30 bases: 790381794(94.3315%)
+
+Filtering result:
+reads passed filter: 17103831
+reads failed due to low quality: 507857
+reads failed due to too many N: 1090
+reads failed due to too short: 236
+reads with adapter trimmed: 35990
+bases trimmed due to adapters: 218396
+
+Duplication rate (may be overestimated since this is SE data): 20.9274%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795414_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795414_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795414_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795414_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795414_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795414_1fastp.html 
+fastp v0.20.0, time used: 101 seconds
+Read1 before filtering:
+total reads: 18433754
+total bases: 921687700
+Q20 bases: 898294362(97.4619%)
+Q30 bases: 856694663(92.9485%)
+
+Read1 after filtering:
+total reads: 17889128
+total bases: 876351481
+Q20 bases: 861621433(98.3192%)
+Q30 bases: 826495024(94.3109%)
+
+Filtering result:
+reads passed filter: 17889128
+reads failed due to low quality: 543273
+reads failed due to too many N: 1091
+reads failed due to too short: 262
+reads with adapter trimmed: 36866
+bases trimmed due to adapters: 224119
+
+Duplication rate (may be overestimated since this is SE data): 23.5664%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795422_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795422_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795422_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795422_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795422_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795422_1fastp.html 
+fastp v0.20.0, time used: 104 seconds
+Read1 before filtering:
+total reads: 20002013
+total bases: 1000100650
+Q20 bases: 985884848(98.5786%)
+Q30 bases: 957992586(95.7896%)
+
+Read1 after filtering:
+total reads: 19663805
+total bases: 963276392
+Q20 bases: 954559491(99.0951%)
+Q30 bases: 930703640(96.6185%)
+
+Filtering result:
+reads passed filter: 19663805
+reads failed due to low quality: 337800
+reads failed due to too many N: 151
+reads failed due to too short: 257
+reads with adapter trimmed: 42231
+bases trimmed due to adapters: 256790
+
+Duplication rate (may be overestimated since this is SE data): 21.9161%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795415_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795415_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795415_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795415_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795415_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795415_1fastp.html 
+fastp v0.20.0, time used: 109 seconds
+Read1 before filtering:
+total reads: 20095008
+total bases: 1004750400
+Q20 bases: 990499400(98.5816%)
+Q30 bases: 961616020(95.707%)
+
+Read1 after filtering:
+total reads: 19749534
+total bases: 967491865
+Q20 bases: 958790019(99.1006%)
+Q30 bases: 934144742(96.5532%)
+
+Filtering result:
+reads passed filter: 19749534
+reads failed due to low quality: 345094
+reads failed due to too many N: 148
+reads failed due to too short: 232
+reads with adapter trimmed: 39764
+bases trimmed due to adapters: 241360
+
+Duplication rate (may be overestimated since this is SE data): 26.592%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795423_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795423_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795423_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795423_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795423_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795423_1fastp.html 
+fastp v0.20.0, time used: 111 seconds
+Read1 before filtering:
+total reads: 20984212
+total bases: 1049210600
+Q20 bases: 1018920970(97.1131%)
+Q30 bases: 969150335(92.3695%)
+
+Read1 after filtering:
+total reads: 20252219
+total bases: 992121100
+Q20 bases: 974043038(98.1778%)
+Q30 bases: 932414144(93.9819%)
+
+Filtering result:
+reads passed filter: 20252219
+reads failed due to low quality: 730376
+reads failed due to too many N: 1283
+reads failed due to too short: 334
+reads with adapter trimmed: 40825
+bases trimmed due to adapters: 247572
+
+Duplication rate (may be overestimated since this is SE data): 20.7542%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795412_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795412_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795412_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795412_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795412_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795412_1fastp.html 
+fastp v0.20.0, time used: 116 seconds
+Read1 before filtering:
+total reads: 20762175
+total bases: 1038108750
+Q20 bases: 1024504840(98.6895%)
+Q30 bases: 995756181(95.9202%)
+
+Read1 after filtering:
+total reads: 20440979
+total bases: 1001359734
+Q20 bases: 992791054(99.1443%)
+Q30 bases: 968149554(96.6835%)
+
+Filtering result:
+reads passed filter: 20440979
+reads failed due to low quality: 320779
+reads failed due to too many N: 150
+reads failed due to too short: 267
+reads with adapter trimmed: 41842
+bases trimmed due to adapters: 254827
+
+Duplication rate (may be overestimated since this is SE data): 27.1366%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795419_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795419_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795419_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795419_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795419_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795419_1fastp.html 
+fastp v0.20.0, time used: 117 seconds
+Read1 before filtering:
+total reads: 23142599
+total bases: 1157129950
+Q20 bases: 1141838435(98.6785%)
+Q30 bases: 1109752819(95.9056%)
+
+Read1 after filtering:
+total reads: 22781707
+total bases: 1116022642
+Q20 bases: 1106405009(99.1382%)
+Q30 bases: 1078884688(96.6723%)
+
+Filtering result:
+reads passed filter: 22781707
+reads failed due to low quality: 360438
+reads failed due to too many N: 153
+reads failed due to too short: 301
+reads with adapter trimmed: 47511
+bases trimmed due to adapters: 288666
+
+Duplication rate (may be overestimated since this is SE data): 26.0088%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795413_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795413_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795413_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795413_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795413_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795413_1fastp.html 
+fastp v0.20.0, time used: 122 seconds
+Read1 before filtering:
+total reads: 22950752
+total bases: 1147537600
+Q20 bases: 1129665412(98.4426%)
+Q30 bases: 1095360406(95.4531%)
+
+Read1 after filtering:
+total reads: 22505440
+total bases: 1102495459
+Q20 bases: 1091992588(99.0474%)
+Q30 bases: 1062920326(96.4104%)
+
+Filtering result:
+reads passed filter: 22505440
+reads failed due to low quality: 444874
+reads failed due to too many N: 140
+reads failed due to too short: 298
+reads with adapter trimmed: 45978
+bases trimmed due to adapters: 278414
+
+Duplication rate (may be overestimated since this is SE data): 23.4647%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795409_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795409_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795409_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795409_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795409_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795409_1fastp.html 
+fastp v0.20.0, time used: 125 seconds
+Read1 before filtering:
+total reads: 24517587
+total bases: 1225879350
+Q20 bases: 1206350621(98.407%)
+Q30 bases: 1169347947(95.3885%)
+
+Read1 after filtering:
+total reads: 24027000
+total bases: 1177041771
+Q20 bases: 1165676023(99.0344%)
+Q30 bases: 1134394449(96.3767%)
+
+Filtering result:
+reads passed filter: 24027000
+reads failed due to low quality: 490115
+reads failed due to too many N: 152
+reads failed due to too short: 320
+reads with adapter trimmed: 47899
+bases trimmed due to adapters: 289504
+
+Duplication rate (may be overestimated since this is SE data): 25.3444%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795411_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795411_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795411_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795411_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795411_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795411_1fastp.html 
+fastp v0.20.0, time used: 126 seconds
+Read1 before filtering:
+total reads: 27110656
+total bases: 1355532800
+Q20 bases: 1317131613(97.1671%)
+Q30 bases: 1253275379(92.4563%)
+
+Read1 after filtering:
+total reads: 26190284
+total bases: 1283006086
+Q20 bases: 1259886667(98.198%)
+Q30 bases: 1206339056(94.0244%)
+
+Filtering result:
+reads passed filter: 26190284
+reads failed due to low quality: 918547
+reads failed due to too many N: 1455
+reads failed due to too short: 370
+reads with adapter trimmed: 54376
+bases trimmed due to adapters: 329402
+
+Duplication rate (may be overestimated since this is SE data): 20.8788%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795410_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795410_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795410_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795410_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795410_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795410_1fastp.html 
+fastp v0.20.0, time used: 145 seconds
+Read1 before filtering:
+total reads: 39588434
+total bases: 1979421700
+Q20 bases: 1953236514(98.6771%)
+Q30 bases: 1898009735(95.8871%)
+
+Read1 after filtering:
+total reads: 38963544
+total bases: 1908742777
+Q20 bases: 1892352669(99.1413%)
+Q30 bases: 1845103195(96.6659%)
+
+Filtering result:
+reads passed filter: 38963544
+reads failed due to low quality: 624132
+reads failed due to too many N: 265
+reads failed due to too short: 493
+reads with adapter trimmed: 79495
+bases trimmed due to adapters: 483593
+
+Duplication rate (may be overestimated since this is SE data): 32.5692%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795421_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795421_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795421_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795421_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795421_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795421_1fastp.html 
+fastp v0.20.0, time used: 171 seconds
+Read1 before filtering:
+total reads: 47236931
+total bases: 2361846550
+Q20 bases: 2300621862(97.4078%)
+Q30 bases: 2204448721(93.3358%)
+
+Read1 after filtering:
+total reads: 46046444
+total bases: 1398558888
+Q20 bases: 1377352766(98.4837%)
+Q30 bases: 1331021797(95.171%)
+
+Filtering result:
+reads passed filter: 46046444
+reads failed due to low quality: 1168468
+reads failed due to too many N: 3035
+reads failed due to too short: 18984
+reads with adapter trimmed: 46458695
+bases trimmed due to adapters: 874811779
+
+Duplication rate (may be overestimated since this is SE data): 8.77661%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795426_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795426_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795426_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795426_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795426_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795426_1fastp.html 
+fastp v0.20.0, time used: 192 seconds
+Read1 before filtering:
+total reads: 46820845
+total bases: 2341042250
+Q20 bases: 2296688913(98.1054%)
+Q30 bases: 2212398331(94.5048%)
+
+Read1 after filtering:
+total reads: 45865690
+total bases: 1370905419
+Q20 bases: 1358246536(99.0766%)
+Q30 bases: 1319841859(96.2752%)
+
+Filtering result:
+reads passed filter: 45865690
+reads failed due to low quality: 894401
+reads failed due to too many N: 2070
+reads failed due to too short: 58684
+reads with adapter trimmed: 46305283
+bases trimmed due to adapters: 891924532
+
+Duplication rate (may be overestimated since this is SE data): 10.5724%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795427_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795427_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795427_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795427_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795427_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795427_1fastp.html 
+fastp v0.20.0, time used: 196 seconds
+Read1 before filtering:
+total reads: 59944413
+total bases: 2997220650
+Q20 bases: 2924630514(97.5781%)
+Q30 bases: 2806718448(93.644%)
+
+Read1 after filtering:
+total reads: 58464102
+total bases: 1776147358
+Q20 bases: 1750255953(98.5423%)
+Q30 bases: 1692942784(95.3154%)
+
+Filtering result:
+reads passed filter: 58464102
+reads failed due to low quality: 1423488
+reads failed due to too many N: 3928
+reads failed due to too short: 52895
+reads with adapter trimmed: 59172704
+bases trimmed due to adapters: 1110949460
+
+Duplication rate (may be overestimated since this is SE data): 7.43732%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795428_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795428_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795428_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795428_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795428_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795428_1fastp.html 
+fastp v0.20.0, time used: 225 seconds
+Read1 before filtering:
+total reads: 66704290
+total bases: 3335214500
+Q20 bases: 3275907351(98.2218%)
+Q30 bases: 3162100233(94.8095%)
+
+Read1 after filtering:
+total reads: 65463357
+total bases: 1974784327
+Q20 bases: 1958505276(99.1757%)
+Q30 bases: 1908176869(96.6271%)
+
+Filtering result:
+reads passed filter: 65463357
+reads failed due to low quality: 1178597
+reads failed due to too many N: 2944
+reads failed due to too short: 59392
+reads with adapter trimmed: 65801343
+bases trimmed due to adapters: 1252682449
+
+Duplication rate (may be overestimated since this is SE data): 10.0301%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795425_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795425_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795425_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795425_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795425_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795425_1fastp.html 
+fastp v0.20.0, time used: 253 seconds
+Read1 before filtering:
+total reads: 71771597
+total bases: 3588579850
+Q20 bases: 3492947592(97.3351%)
+Q30 bases: 3328291311(92.7468%)
+
+Read1 after filtering:
+total reads: 69522448
+total bases: 3405767172
+Q20 bases: 3346687587(98.2653%)
+Q30 bases: 3207949590(94.1917%)
+
+Filtering result:
+reads passed filter: 69522448
+reads failed due to low quality: 2243938
+reads failed due to too many N: 4316
+reads failed due to too short: 895
+reads with adapter trimmed: 142191
+bases trimmed due to adapters: 862367
+
+Duplication rate (may be overestimated since this is SE data): 30.8682%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795424_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795424_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795424_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795424_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795424_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795424_1fastp.html 
+fastp v0.20.0, time used: 271 seconds
+Read1 before filtering:
+total reads: 26252378
+total bases: 1312618900
+Q20 bases: 1288908624(98.1937%)
+Q30 bases: 1243064902(94.7011%)
+
+Read1 after filtering:
+total reads: 25749473
+total bases: 758368808
+Q20 bases: 751548410(99.1006%)
+Q30 bases: 731118093(96.4067%)
+
+Filtering result:
+reads passed filter: 25749473
+reads failed due to low quality: 428252
+reads failed due to too many N: 1189
+reads failed due to too short: 73464
+reads with adapter trimmed: 25900326
+bases trimmed due to adapters: 512228774
+
+Duplication rate (may be overestimated since this is SE data): 7.98574%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795435_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795435_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795435_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795435_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795435_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795435_1fastp.html 
+fastp v0.20.0, time used: 107 seconds
+Read1 before filtering:
+total reads: 31993886
+total bases: 1599694300
+Q20 bases: 1566212624(97.907%)
+Q30 bases: 1504919270(94.0754%)
+
+Read1 after filtering:
+total reads: 31014386
+total bases: 961778080
+Q20 bases: 952141736(98.9981%)
+Q30 bases: 924122278(96.0848%)
+
+Filtering result:
+reads passed filter: 31014386
+reads failed due to low quality: 646873
+reads failed due to too many N: 1637
+reads failed due to too short: 330990
+reads with adapter trimmed: 31588068
+bases trimmed due to adapters: 577254853
+
+Duplication rate (may be overestimated since this is SE data): 11.0556%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795431_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795431_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795431_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795431_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795431_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795431_1fastp.html 
+fastp v0.20.0, time used: 130 seconds
+Read1 before filtering:
+total reads: 34451165
+total bases: 1722558250
+Q20 bases: 1674734239(97.2237%)
+Q30 bases: 1597013530(92.7117%)
+
+Read1 after filtering:
+total reads: 33136980
+total bases: 1031486766
+Q20 bases: 1015382338(98.4387%)
+Q30 bases: 979851033(94.994%)
+
+Filtering result:
+reads passed filter: 33136980
+reads failed due to low quality: 939286
+reads failed due to too many N: 2203
+reads failed due to too short: 372696
+reads with adapter trimmed: 33944634
+bases trimmed due to adapters: 617040455
+
+Duplication rate (may be overestimated since this is SE data): 8.47343%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795432_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795432_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795432_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795432_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795432_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795432_1fastp.html 
+fastp v0.20.0, time used: 135 seconds
+Read1 before filtering:
+total reads: 35387242
+total bases: 1769362100
+Q20 bases: 1740819961(98.3869%)
+Q30 bases: 1684014029(95.1763%)
+
+Read1 after filtering:
+total reads: 34612512
+total bases: 1025400186
+Q20 bases: 1017493306(99.2289%)
+Q30 bases: 992805288(96.8213%)
+
+Filtering result:
+reads passed filter: 34612512
+reads failed due to low quality: 502763
+reads failed due to too many N: 1723
+reads failed due to too short: 270244
+reads with adapter trimmed: 34961769
+bases trimmed due to adapters: 687293632
+
+Duplication rate (may be overestimated since this is SE data): 8.12566%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795429_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795429_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795429_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795429_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795429_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795429_1fastp.html 
+fastp v0.20.0, time used: 137 seconds
+Read1 before filtering:
+total reads: 38494857
+total bases: 1924742850
+Q20 bases: 1877054440(97.5223%)
+Q30 bases: 1800778487(93.5594%)
+
+Read1 after filtering:
+total reads: 37331812
+total bases: 1120497152
+Q20 bases: 1103330375(98.4679%)
+Q30 bases: 1066289124(95.1621%)
+
+Filtering result:
+reads passed filter: 37331812
+reads failed due to low quality: 850182
+reads failed due to too many N: 2390
+reads failed due to too short: 310473
+reads with adapter trimmed: 37920924
+bases trimmed due to adapters: 730955121
+
+Duplication rate (may be overestimated since this is SE data): 8.20052%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795430_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795430_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795430_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795430_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795430_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795430_1fastp.html 
+fastp v0.20.0, time used: 147 seconds
+Read1 before filtering:
+total reads: 40463608
+total bases: 2023180400
+Q20 bases: 1973505136(97.5447%)
+Q30 bases: 1892034699(93.5178%)
+
+Read1 after filtering:
+total reads: 39428514
+total bases: 1183141056
+Q20 bases: 1164950547(98.4625%)
+Q30 bases: 1125198823(95.1027%)
+
+Filtering result:
+reads passed filter: 39428514
+reads failed due to low quality: 941816
+reads failed due to too many N: 2484
+reads failed due to too short: 90794
+reads with adapter trimmed: 39878659
+bases trimmed due to adapters: 765620648
+
+Duplication rate (may be overestimated since this is SE data): 7.15769%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795436_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795436_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795436_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795436_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795436_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795436_1fastp.html 
+fastp v0.20.0, time used: 156 seconds
+Read1 before filtering:
+total reads: 42046522
+total bases: 2102326100
+Q20 bases: 2057649412(97.8749%)
+Q30 bases: 1979222533(94.1444%)
+
+Read1 after filtering:
+total reads: 41131784
+total bases: 1267621530
+Q20 bases: 1254757740(98.9852%)
+Q30 bases: 1218411402(96.1179%)
+
+Filtering result:
+reads passed filter: 41131784
+reads failed due to low quality: 874214
+reads failed due to too many N: 2024
+reads failed due to too short: 38500
+reads with adapter trimmed: 41541577
+bases trimmed due to adapters: 761118645
+
+Duplication rate (may be overestimated since this is SE data): 7.93989%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795433_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795433_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795433_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795433_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795433_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795433_1fastp.html 
+fastp v0.20.0, time used: 157 seconds
+Read1 before filtering:
+total reads: 41912080
+total bases: 2095604000
+Q20 bases: 2054214436(98.0249%)
+Q30 bases: 1976450523(94.3141%)
+
+Read1 after filtering:
+total reads: 40909746
+total bases: 1200183272
+Q20 bases: 1188961116(99.065%)
+Q30 bases: 1155072997(96.2414%)
+
+Filtering result:
+reads passed filter: 40909746
+reads failed due to low quality: 768846
+reads failed due to too many N: 1783
+reads failed due to too short: 231705
+reads with adapter trimmed: 41379480
+bases trimmed due to adapters: 823317399
+
+Duplication rate (may be overestimated since this is SE data): 8.18422%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795437_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795437_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795437_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795437_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795437_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795437_1fastp.html 
+fastp v0.20.0, time used: 159 seconds
+Read1 before filtering:
+total reads: 45000457
+total bases: 2250022850
+Q20 bases: 2185272390(97.1222%)
+Q30 bases: 2084204114(92.6304%)
+
+Read1 after filtering:
+total reads: 43614268
+total bases: 1311576714
+Q20 bases: 1289275286(98.2996%)
+Q30 bases: 1239901681(94.5352%)
+
+Filtering result:
+reads passed filter: 43614268
+reads failed due to low quality: 1282054
+reads failed due to too many N: 2695
+reads failed due to too short: 101440
+reads with adapter trimmed: 44334976
+bases trimmed due to adapters: 846253051
+
+Duplication rate (may be overestimated since this is SE data): 7.32391%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795438_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795438_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795438_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795438_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795438_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795438_1fastp.html 
+fastp v0.20.0, time used: 171 seconds
+Read1 before filtering:
+total reads: 49157600
+total bases: 2457880000
+Q20 bases: 2389591859(97.2217%)
+Q30 bases: 2283738133(92.915%)
+
+Read1 after filtering:
+total reads: 47149327
+total bases: 1437797135
+Q20 bases: 1414366788(98.3704%)
+Q30 bases: 1362703871(94.7772%)
+
+Filtering result:
+reads passed filter: 47149327
+reads failed due to low quality: 1355793
+reads failed due to too many N: 2859
+reads failed due to too short: 649621
+reads with adapter trimmed: 48409043
+bases trimmed due to adapters: 911886720
+
+Duplication rate (may be overestimated since this is SE data): 8.99168%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795440_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795440_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795440_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795440_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795440_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795440_1fastp.html 
+fastp v0.20.0, time used: 178 seconds
+Read1 before filtering:
+total reads: 53450667
+total bases: 2672533350
+Q20 bases: 2599395137(97.2633%)
+Q30 bases: 2486546991(93.0408%)
+
+Read1 after filtering:
+total reads: 51927742
+total bases: 1606816554
+Q20 bases: 1581075548(98.398%)
+Q30 bases: 1525113429(94.9152%)
+
+Filtering result:
+reads passed filter: 51927742
+reads failed due to low quality: 1447986
+reads failed due to too many N: 3438
+reads failed due to too short: 71501
+reads with adapter trimmed: 52704431
+bases trimmed due to adapters: 959612215
+
+Duplication rate (may be overestimated since this is SE data): 7.13788%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795434_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795434_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795434_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795434_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795434_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795434_1fastp.html 
+fastp v0.20.0, time used: 188 seconds
+Read1 before filtering:
+total reads: 61908226
+total bases: 3095411300
+Q20 bases: 3037043278(98.1144%)
+Q30 bases: 2926727785(94.5505%)
+
+Read1 after filtering:
+total reads: 59524381
+total bases: 1797206734
+Q20 bases: 1781191560(99.1089%)
+Q30 bases: 1732631373(96.4069%)
+
+Filtering result:
+reads passed filter: 59524381
+reads failed due to low quality: 1153290
+reads failed due to too many N: 2760
+reads failed due to too short: 1227795
+reads with adapter trimmed: 61133656
+bases trimmed due to adapters: 1176099082
+
+Duplication rate (may be overestimated since this is SE data): 11.0833%
+
+JSON report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795439_1fastp.json
+HTML report: /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795439_1fastp.html
+
+fastp -f 1 --thread 2 -i /scratch/general/lustre/u0690617/7283587/input/SRR1795439_1.fastq -o /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/trimmed_SRR1795439_1.fastq -a CTGTAGGCACCATCAAT -l 18 -q 28 -j /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795439_1fastp.json -h /scratch/general/lustre/u0690617/7283587/output/trimmed_fastq/SRR1795439_1fastp.html 
+fastp v0.20.0, time used: 223 seconds
+Jun 18 18:24:37 ..... started STAR run
+Jun 18 18:24:38 ..... loading genome
+Jun 18 18:25:57 ..... processing annotations GTF
+Jun 18 18:26:14 ..... inserting junctions into the genome indices
+Jun 18 18:28:07 ..... started mapping
+Jun 18 18:29:54 ..... finished mapping
+Jun 18 18:30:00 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 18015638 WRITTEN 18015638 
+EXCLUDED 0 EXAMINED 18015638
+PAIRED 0 SINGLE 18015638
+DULPICATE PAIR 0 DUPLICATE SINGLE 5813458
+DUPLICATE TOTAL 5813458
+READ 18015638 WRITTEN 12202180 
+EXCLUDED 0 EXAMINED 18015638
+PAIRED 0 SINGLE 18015638
+DULPICATE PAIR 0 DUPLICATE SINGLE 5813458
+DUPLICATE TOTAL 5813458
+Jun 18 18:32:27 ..... started STAR run
+Jun 18 18:32:27 ..... loading genome
+Jun 18 18:33:01 ..... processing annotations GTF
+Jun 18 18:33:17 ..... inserting junctions into the genome indices
+Jun 18 18:35:09 ..... started mapping
+Jun 18 18:37:12 ..... finished mapping
+Jun 18 18:37:18 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 21102733 WRITTEN 21102733 
+EXCLUDED 0 EXAMINED 21102733
+PAIRED 0 SINGLE 21102733
+DULPICATE PAIR 0 DUPLICATE SINGLE 7074088
+DUPLICATE TOTAL 7074088
+READ 21102733 WRITTEN 14028645 
+EXCLUDED 0 EXAMINED 21102733
+PAIRED 0 SINGLE 21102733
+DULPICATE PAIR 0 DUPLICATE SINGLE 7074088
+DUPLICATE TOTAL 7074088
+Jun 18 18:40:19 ..... started STAR run
+Jun 18 18:40:19 ..... loading genome
+Jun 18 18:40:39 ..... processing annotations GTF
+Jun 18 18:40:55 ..... inserting junctions into the genome indices
+Jun 18 18:42:38 ..... started mapping
+Jun 18 18:44:31 ..... finished mapping
+Jun 18 18:44:37 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 19124231 WRITTEN 19124231 
+EXCLUDED 0 EXAMINED 19124231
+PAIRED 0 SINGLE 19124231
+DULPICATE PAIR 0 DUPLICATE SINGLE 6622614
+DUPLICATE TOTAL 6622614
+READ 19124231 WRITTEN 12501617 
+EXCLUDED 0 EXAMINED 19124231
+PAIRED 0 SINGLE 19124231
+DULPICATE PAIR 0 DUPLICATE SINGLE 6622614
+DUPLICATE TOTAL 6622614
+Jun 18 18:47:16 ..... started STAR run
+Jun 18 18:47:16 ..... loading genome
+Jun 18 18:47:36 ..... processing annotations GTF
+Jun 18 18:47:52 ..... inserting junctions into the genome indices
+Jun 18 18:49:29 ..... started mapping
+Jun 18 18:51:08 ..... finished mapping
+Jun 18 18:51:15 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 16264873 WRITTEN 16264873 
+EXCLUDED 0 EXAMINED 16264873
+PAIRED 0 SINGLE 16264873
+DULPICATE PAIR 0 DUPLICATE SINGLE 5269831
+DUPLICATE TOTAL 5269831
+READ 16264873 WRITTEN 10995042 
+EXCLUDED 0 EXAMINED 16264873
+PAIRED 0 SINGLE 16264873
+DULPICATE PAIR 0 DUPLICATE SINGLE 5269831
+DUPLICATE TOTAL 5269831
+Jun 18 18:53:32 ..... started STAR run
+Jun 18 18:53:32 ..... loading genome
+Jun 18 18:54:20 ..... processing annotations GTF
+Jun 18 18:54:35 ..... inserting junctions into the genome indices
+Jun 18 18:56:17 ..... started mapping
+Jun 18 18:58:03 ..... finished mapping
+Jun 18 18:58:09 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 18688358 WRITTEN 18688358 
+EXCLUDED 0 EXAMINED 18688358
+PAIRED 0 SINGLE 18688358
+DULPICATE PAIR 0 DUPLICATE SINGLE 6680132
+DUPLICATE TOTAL 6680132
+READ 18688358 WRITTEN 12008226 
+EXCLUDED 0 EXAMINED 18688358
+PAIRED 0 SINGLE 18688358
+DULPICATE PAIR 0 DUPLICATE SINGLE 6680132
+DUPLICATE TOTAL 6680132
+Jun 18 19:00:39 ..... started STAR run
+Jun 18 19:00:39 ..... loading genome
+Jun 18 19:01:17 ..... processing annotations GTF
+Jun 18 19:01:34 ..... inserting junctions into the genome indices
+Jun 18 19:03:34 ..... started mapping
+Jun 18 19:04:59 ..... finished mapping
+Jun 18 19:05:05 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 14098321 WRITTEN 14098321 
+EXCLUDED 0 EXAMINED 14098321
+PAIRED 0 SINGLE 14098321
+DULPICATE PAIR 0 DUPLICATE SINGLE 4532629
+DUPLICATE TOTAL 4532629
+READ 14098321 WRITTEN 9565692 
+EXCLUDED 0 EXAMINED 14098321
+PAIRED 0 SINGLE 14098321
+DULPICATE PAIR 0 DUPLICATE SINGLE 4532629
+DUPLICATE TOTAL 4532629
+Jun 18 19:07:07 ..... started STAR run
+Jun 18 19:07:07 ..... loading genome
+Jun 18 19:07:29 ..... processing annotations GTF
+Jun 18 19:07:47 ..... inserting junctions into the genome indices
+Jun 18 19:09:28 ..... started mapping
+Jun 18 19:10:59 ..... finished mapping
+Jun 18 19:11:06 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 16417442 WRITTEN 16417442 
+EXCLUDED 0 EXAMINED 16417442
+PAIRED 0 SINGLE 16417442
+DULPICATE PAIR 0 DUPLICATE SINGLE 4769438
+DUPLICATE TOTAL 4769438
+READ 16417442 WRITTEN 11648004 
+EXCLUDED 0 EXAMINED 16417442
+PAIRED 0 SINGLE 16417442
+DULPICATE PAIR 0 DUPLICATE SINGLE 4769438
+DUPLICATE TOTAL 4769438
+Jun 18 19:13:24 ..... started STAR run
+Jun 18 19:13:24 ..... loading genome
+Jun 18 19:13:46 ..... processing annotations GTF
+Jun 18 19:14:01 ..... inserting junctions into the genome indices
+Jun 18 19:15:34 ..... started mapping
+Jun 18 19:16:53 ..... finished mapping
+Jun 18 19:16:58 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 12954749 WRITTEN 12954749 
+EXCLUDED 0 EXAMINED 12954749
+PAIRED 0 SINGLE 12954749
+DULPICATE PAIR 0 DUPLICATE SINGLE 3386183
+DUPLICATE TOTAL 3386183
+READ 12954749 WRITTEN 9568566 
+EXCLUDED 0 EXAMINED 12954749
+PAIRED 0 SINGLE 12954749
+DULPICATE PAIR 0 DUPLICATE SINGLE 3386183
+DUPLICATE TOTAL 3386183
+Jun 18 19:18:52 ..... started STAR run
+Jun 18 19:18:52 ..... loading genome
+Jun 18 19:19:13 ..... processing annotations GTF
+Jun 18 19:19:29 ..... inserting junctions into the genome indices
+Jun 18 19:21:38 ..... started mapping
+Jun 18 19:22:51 ..... finished mapping
+Jun 18 19:22:56 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 11755990 WRITTEN 11755990 
+EXCLUDED 0 EXAMINED 11755990
+PAIRED 0 SINGLE 11755990
+DULPICATE PAIR 0 DUPLICATE SINGLE 4051053
+DUPLICATE TOTAL 4051053
+READ 11755990 WRITTEN 7704937 
+EXCLUDED 0 EXAMINED 11755990
+PAIRED 0 SINGLE 11755990
+DULPICATE PAIR 0 DUPLICATE SINGLE 4051053
+DUPLICATE TOTAL 4051053
+Jun 18 19:24:31 ..... started STAR run
+Jun 18 19:24:31 ..... loading genome
+Jun 18 19:24:53 ..... processing annotations GTF
+Jun 18 19:25:09 ..... inserting junctions into the genome indices
+Jun 18 19:26:40 ..... started mapping
+Jun 18 19:27:54 ..... finished mapping
+Jun 18 19:27:59 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 11723706 WRITTEN 11723706 
+EXCLUDED 0 EXAMINED 11723706
+PAIRED 0 SINGLE 11723706
+DULPICATE PAIR 0 DUPLICATE SINGLE 3964605
+DUPLICATE TOTAL 3964605
+READ 11723706 WRITTEN 7759101 
+EXCLUDED 0 EXAMINED 11723706
+PAIRED 0 SINGLE 11723706
+DULPICATE PAIR 0 DUPLICATE SINGLE 3964605
+DUPLICATE TOTAL 3964605
+Jun 18 19:29:36 ..... started STAR run
+Jun 18 19:29:36 ..... loading genome
+Jun 18 19:30:18 ..... processing annotations GTF
+Jun 18 19:30:37 ..... inserting junctions into the genome indices
+Jun 18 19:32:52 ..... started mapping
+Jun 18 19:34:30 ..... finished mapping
+Jun 18 19:34:36 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 16594043 WRITTEN 16594043 
+EXCLUDED 0 EXAMINED 16594043
+PAIRED 0 SINGLE 16594043
+DULPICATE PAIR 0 DUPLICATE SINGLE 6157029
+DUPLICATE TOTAL 6157029
+READ 16594043 WRITTEN 10437014 
+EXCLUDED 0 EXAMINED 16594043
+PAIRED 0 SINGLE 16594043
+DULPICATE PAIR 0 DUPLICATE SINGLE 6157029
+DUPLICATE TOTAL 6157029
+Jun 18 19:36:49 ..... started STAR run
+Jun 18 19:36:50 ..... loading genome
+Jun 18 19:37:56 ..... processing annotations GTF
+Jun 18 19:38:13 ..... inserting junctions into the genome indices
+Jun 18 19:40:03 ..... started mapping
+Jun 18 19:41:26 ..... finished mapping
+Jun 18 19:41:31 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 13581852 WRITTEN 13581852 
+EXCLUDED 0 EXAMINED 13581852
+PAIRED 0 SINGLE 13581852
+DULPICATE PAIR 0 DUPLICATE SINGLE 4680817
+DUPLICATE TOTAL 4680817
+READ 13581852 WRITTEN 8901035 
+EXCLUDED 0 EXAMINED 13581852
+PAIRED 0 SINGLE 13581852
+DULPICATE PAIR 0 DUPLICATE SINGLE 4680817
+DUPLICATE TOTAL 4680817
+Jun 18 19:43:23 ..... started STAR run
+Jun 18 19:43:23 ..... loading genome
+Jun 18 19:43:47 ..... processing annotations GTF
+Jun 18 19:44:03 ..... inserting junctions into the genome indices
+Jun 18 19:46:14 ..... started mapping
+Jun 18 19:49:06 ..... finished mapping
+Jun 18 19:49:13 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 31340994 WRITTEN 31340994 
+EXCLUDED 0 EXAMINED 31340994
+PAIRED 0 SINGLE 31340994
+DULPICATE PAIR 0 DUPLICATE SINGLE 14399711
+DUPLICATE TOTAL 14399711
+READ 31340994 WRITTEN 16941283 
+EXCLUDED 0 EXAMINED 31340994
+PAIRED 0 SINGLE 31340994
+DULPICATE PAIR 0 DUPLICATE SINGLE 14399711
+DUPLICATE TOTAL 14399711
+Jun 18 19:53:18 ..... started STAR run
+Jun 18 19:53:18 ..... loading genome
+Jun 18 19:54:19 ..... processing annotations GTF
+Jun 18 19:54:36 ..... inserting junctions into the genome indices
+Jun 18 19:56:39 ..... started mapping
+Jun 18 19:58:10 ..... finished mapping
+Jun 18 19:58:16 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 14454038 WRITTEN 14454038 
+EXCLUDED 0 EXAMINED 14454038
+PAIRED 0 SINGLE 14454038
+DULPICATE PAIR 0 DUPLICATE SINGLE 5288805
+DUPLICATE TOTAL 5288805
+READ 14454038 WRITTEN 9165233 
+EXCLUDED 0 EXAMINED 14454038
+PAIRED 0 SINGLE 14454038
+DULPICATE PAIR 0 DUPLICATE SINGLE 5288805
+DUPLICATE TOTAL 5288805
+Jun 18 20:00:14 ..... started STAR run
+Jun 18 20:00:14 ..... loading genome
+Jun 18 20:00:35 ..... processing annotations GTF
+Jun 18 20:00:52 ..... inserting junctions into the genome indices
+Jun 18 20:02:44 ..... started mapping
+Jun 18 20:04:22 ..... finished mapping
+Jun 18 20:04:29 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 15647576 WRITTEN 15647576 
+EXCLUDED 0 EXAMINED 15647576
+PAIRED 0 SINGLE 15647576
+DULPICATE PAIR 0 DUPLICATE SINGLE 5590464
+DUPLICATE TOTAL 5590464
+READ 15647576 WRITTEN 10057112 
+EXCLUDED 0 EXAMINED 15647576
+PAIRED 0 SINGLE 15647576
+DULPICATE PAIR 0 DUPLICATE SINGLE 5590464
+DUPLICATE TOTAL 5590464
+Jun 18 20:06:36 ..... started STAR run
+Jun 18 20:06:36 ..... loading genome
+Jun 18 20:08:11 ..... processing annotations GTF
+Jun 18 20:08:28 ..... inserting junctions into the genome indices
+Jun 18 20:10:26 ..... started mapping
+Jun 18 20:15:27 ..... finished mapping
+Jun 18 20:15:34 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 55524802 WRITTEN 55524802 
+EXCLUDED 0 EXAMINED 55524802
+PAIRED 0 SINGLE 55524802
+DULPICATE PAIR 0 DUPLICATE SINGLE 27615803
+DUPLICATE TOTAL 27615803
+READ 55524802 WRITTEN 27908999 
+EXCLUDED 0 EXAMINED 55524802
+PAIRED 0 SINGLE 55524802
+DULPICATE PAIR 0 DUPLICATE SINGLE 27615803
+DUPLICATE TOTAL 27615803
+Jun 18 20:22:42 ..... started STAR run
+Jun 18 20:22:42 ..... loading genome
+Jun 18 20:23:05 ..... processing annotations GTF
+Jun 18 20:23:22 ..... inserting junctions into the genome indices
+Jun 18 20:24:58 ..... started mapping
+Jun 18 20:30:18 ..... finished mapping
+Jun 18 20:30:23 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 7453204 WRITTEN 7453204 
+EXCLUDED 0 EXAMINED 7453204
+PAIRED 0 SINGLE 7453204
+DULPICATE PAIR 0 DUPLICATE SINGLE 4414407
+DUPLICATE TOTAL 4414407
+READ 7453204 WRITTEN 3038797 
+EXCLUDED 0 EXAMINED 7453204
+PAIRED 0 SINGLE 7453204
+DULPICATE PAIR 0 DUPLICATE SINGLE 4414407
+DUPLICATE TOTAL 4414407
+Jun 18 20:31:30 ..... started STAR run
+Jun 18 20:31:30 ..... loading genome
+Jun 18 20:31:51 ..... processing annotations GTF
+Jun 18 20:32:07 ..... inserting junctions into the genome indices
+Jun 18 20:34:25 ..... started mapping
+Jun 18 20:38:16 ..... finished mapping
+Jun 18 20:38:21 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 4711298 WRITTEN 4711298 
+EXCLUDED 0 EXAMINED 4711298
+PAIRED 0 SINGLE 4711298
+DULPICATE PAIR 0 DUPLICATE SINGLE 2579065
+DUPLICATE TOTAL 2579065
+READ 4711298 WRITTEN 2132233 
+EXCLUDED 0 EXAMINED 4711298
+PAIRED 0 SINGLE 4711298
+DULPICATE PAIR 0 DUPLICATE SINGLE 2579065
+DUPLICATE TOTAL 2579065
+Jun 18 20:39:08 ..... started STAR run
+Jun 18 20:39:08 ..... loading genome
+Jun 18 20:39:30 ..... processing annotations GTF
+Jun 18 20:39:49 ..... inserting junctions into the genome indices
+Jun 18 20:41:26 ..... started mapping
+Jun 18 20:45:27 ..... finished mapping
+Jun 18 20:45:33 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 9545727 WRITTEN 9545727 
+EXCLUDED 0 EXAMINED 9545727
+PAIRED 0 SINGLE 9545727
+DULPICATE PAIR 0 DUPLICATE SINGLE 5963465
+DUPLICATE TOTAL 5963465
+READ 9545727 WRITTEN 3582262 
+EXCLUDED 0 EXAMINED 9545727
+PAIRED 0 SINGLE 9545727
+DULPICATE PAIR 0 DUPLICATE SINGLE 5963465
+DUPLICATE TOTAL 5963465
+Jun 18 20:46:44 ..... started STAR run
+Jun 18 20:46:44 ..... loading genome
+Jun 18 20:47:07 ..... processing annotations GTF
+Jun 18 20:47:23 ..... inserting junctions into the genome indices
+Jun 18 20:49:41 ..... started mapping
+Jun 18 20:54:32 ..... finished mapping
+Jun 18 20:54:37 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 5610522 WRITTEN 5610522 
+EXCLUDED 0 EXAMINED 5610522
+PAIRED 0 SINGLE 5610522
+DULPICATE PAIR 0 DUPLICATE SINGLE 3181611
+DUPLICATE TOTAL 3181611
+READ 5610522 WRITTEN 2428911 
+EXCLUDED 0 EXAMINED 5610522
+PAIRED 0 SINGLE 5610522
+DULPICATE PAIR 0 DUPLICATE SINGLE 3181611
+DUPLICATE TOTAL 3181611
+Jun 18 20:55:32 ..... started STAR run
+Jun 18 20:55:32 ..... loading genome
+Jun 18 20:55:59 ..... processing annotations GTF
+Jun 18 20:56:15 ..... inserting junctions into the genome indices
+Jun 18 20:58:24 ..... started mapping
+Jun 18 21:01:37 ..... finished mapping
+Jun 18 21:01:42 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 3270728 WRITTEN 3270728 
+EXCLUDED 0 EXAMINED 3270728
+PAIRED 0 SINGLE 3270728
+DULPICATE PAIR 0 DUPLICATE SINGLE 1639462
+DUPLICATE TOTAL 1639462
+READ 3270728 WRITTEN 1631266 
+EXCLUDED 0 EXAMINED 3270728
+PAIRED 0 SINGLE 3270728
+DULPICATE PAIR 0 DUPLICATE SINGLE 1639462
+DUPLICATE TOTAL 1639462
+Jun 18 21:02:16 ..... started STAR run
+Jun 18 21:02:16 ..... loading genome
+Jun 18 21:02:38 ..... processing annotations GTF
+Jun 18 21:02:56 ..... inserting junctions into the genome indices
+Jun 18 21:04:38 ..... started mapping
+Jun 18 21:08:07 ..... finished mapping
+Jun 18 21:08:11 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 3234355 WRITTEN 3234355 
+EXCLUDED 0 EXAMINED 3234355
+PAIRED 0 SINGLE 3234355
+DULPICATE PAIR 0 DUPLICATE SINGLE 1716797
+DUPLICATE TOTAL 1716797
+READ 3234355 WRITTEN 1517558 
+EXCLUDED 0 EXAMINED 3234355
+PAIRED 0 SINGLE 3234355
+DULPICATE PAIR 0 DUPLICATE SINGLE 1716797
+DUPLICATE TOTAL 1716797
+Jun 18 21:08:46 ..... started STAR run
+Jun 18 21:08:49 ..... loading genome
+Jun 18 21:09:22 ..... processing annotations GTF
+Jun 18 21:09:38 ..... inserting junctions into the genome indices
+Jun 18 21:11:16 ..... started mapping
+Jun 18 21:14:11 ..... finished mapping
+Jun 18 21:14:16 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 4942079 WRITTEN 4942079 
+EXCLUDED 0 EXAMINED 4942079
+PAIRED 0 SINGLE 4942079
+DULPICATE PAIR 0 DUPLICATE SINGLE 2763681
+DUPLICATE TOTAL 2763681
+READ 4942079 WRITTEN 2178398 
+EXCLUDED 0 EXAMINED 4942079
+PAIRED 0 SINGLE 4942079
+DULPICATE PAIR 0 DUPLICATE SINGLE 2763681
+DUPLICATE TOTAL 2763681
+Jun 18 21:14:58 ..... started STAR run
+Jun 18 21:14:58 ..... loading genome
+Jun 18 21:15:21 ..... processing annotations GTF
+Jun 18 21:15:36 ..... inserting junctions into the genome indices
+Jun 18 21:17:41 ..... started mapping
+Jun 18 21:20:34 ..... finished mapping
+Jun 18 21:20:39 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 3028529 WRITTEN 3028529 
+EXCLUDED 0 EXAMINED 3028529
+PAIRED 0 SINGLE 3028529
+DULPICATE PAIR 0 DUPLICATE SINGLE 1551292
+DUPLICATE TOTAL 1551292
+READ 3028529 WRITTEN 1477237 
+EXCLUDED 0 EXAMINED 3028529
+PAIRED 0 SINGLE 3028529
+DULPICATE PAIR 0 DUPLICATE SINGLE 1551292
+DUPLICATE TOTAL 1551292
+Jun 18 21:21:11 ..... started STAR run
+Jun 18 21:21:11 ..... loading genome
+Jun 18 21:21:34 ..... processing annotations GTF
+Jun 18 21:21:52 ..... inserting junctions into the genome indices
+Jun 18 21:24:07 ..... started mapping
+Jun 18 21:27:54 ..... finished mapping
+Jun 18 21:28:00 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 4482027 WRITTEN 4482027 
+EXCLUDED 0 EXAMINED 4482027
+PAIRED 0 SINGLE 4482027
+DULPICATE PAIR 0 DUPLICATE SINGLE 2441677
+DUPLICATE TOTAL 2441677
+READ 4482027 WRITTEN 2040350 
+EXCLUDED 0 EXAMINED 4482027
+PAIRED 0 SINGLE 4482027
+DULPICATE PAIR 0 DUPLICATE SINGLE 2441677
+DUPLICATE TOTAL 2441677
+Jun 18 21:28:43 ..... started STAR run
+Jun 18 21:28:43 ..... loading genome
+Jun 18 21:29:03 ..... processing annotations GTF
+Jun 18 21:29:19 ..... inserting junctions into the genome indices
+Jun 18 21:30:55 ..... started mapping
+Jun 18 21:35:27 ..... finished mapping
+Jun 18 21:35:32 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 3828883 WRITTEN 3828883 
+EXCLUDED 0 EXAMINED 3828883
+PAIRED 0 SINGLE 3828883
+DULPICATE PAIR 0 DUPLICATE SINGLE 2099730
+DUPLICATE TOTAL 2099730
+READ 3828883 WRITTEN 1729153 
+EXCLUDED 0 EXAMINED 3828883
+PAIRED 0 SINGLE 3828883
+DULPICATE PAIR 0 DUPLICATE SINGLE 2099730
+DUPLICATE TOTAL 2099730
+Jun 18 21:36:16 ..... started STAR run
+Jun 18 21:36:16 ..... loading genome
+Jun 18 21:37:12 ..... processing annotations GTF
+Jun 18 21:37:28 ..... inserting junctions into the genome indices
+Jun 18 21:39:26 ..... started mapping
+Jun 18 21:42:03 ..... finished mapping
+Jun 18 21:42:08 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 2811764 WRITTEN 2811764 
+EXCLUDED 0 EXAMINED 2811764
+PAIRED 0 SINGLE 2811764
+DULPICATE PAIR 0 DUPLICATE SINGLE 1403572
+DUPLICATE TOTAL 1403572
+READ 2811764 WRITTEN 1408192 
+EXCLUDED 0 EXAMINED 2811764
+PAIRED 0 SINGLE 2811764
+DULPICATE PAIR 0 DUPLICATE SINGLE 1403572
+DUPLICATE TOTAL 1403572
+Jun 18 21:42:36 ..... started STAR run
+Jun 18 21:42:36 ..... loading genome
+Jun 18 21:42:59 ..... processing annotations GTF
+Jun 18 21:43:18 ..... inserting junctions into the genome indices
+Jun 18 21:44:55 ..... started mapping
+Jun 18 21:48:34 ..... finished mapping
+Jun 18 21:48:39 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 2535726 WRITTEN 2535726 
+EXCLUDED 0 EXAMINED 2535726
+PAIRED 0 SINGLE 2535726
+DULPICATE PAIR 0 DUPLICATE SINGLE 1336168
+DUPLICATE TOTAL 1336168
+READ 2535726 WRITTEN 1199558 
+EXCLUDED 0 EXAMINED 2535726
+PAIRED 0 SINGLE 2535726
+DULPICATE PAIR 0 DUPLICATE SINGLE 1336168
+DUPLICATE TOTAL 1336168
+Jun 18 21:49:11 ..... started STAR run
+Jun 18 21:49:11 ..... loading genome
+Jun 18 21:49:32 ..... processing annotations GTF
+Jun 18 21:49:49 ..... inserting junctions into the genome indices
+Jun 18 21:52:09 ..... started mapping
+Jun 18 21:56:00 ..... finished mapping
+Jun 18 21:56:05 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 5880543 WRITTEN 5880543 
+EXCLUDED 0 EXAMINED 5880543
+PAIRED 0 SINGLE 5880543
+DULPICATE PAIR 0 DUPLICATE SINGLE 3246506
+DUPLICATE TOTAL 3246506
+READ 5880543 WRITTEN 2634037 
+EXCLUDED 0 EXAMINED 5880543
+PAIRED 0 SINGLE 5880543
+DULPICATE PAIR 0 DUPLICATE SINGLE 3246506
+DUPLICATE TOTAL 3246506
+Jun 18 21:57:05 ..... started STAR run
+Jun 18 21:57:05 ..... loading genome
+Jun 18 21:58:16 ..... processing annotations GTF
+Jun 18 21:58:33 ..... inserting junctions into the genome indices
+Jun 18 22:00:35 ..... started mapping
+Jun 18 22:04:32 ..... finished mapping
+Jun 18 22:04:37 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 4907486 WRITTEN 4907486 
+EXCLUDED 0 EXAMINED 4907486
+PAIRED 0 SINGLE 4907486
+DULPICATE PAIR 0 DUPLICATE SINGLE 2657215
+DUPLICATE TOTAL 2657215
+READ 4907486 WRITTEN 2250271 
+EXCLUDED 0 EXAMINED 4907486
+PAIRED 0 SINGLE 4907486
+DULPICATE PAIR 0 DUPLICATE SINGLE 2657215
+DUPLICATE TOTAL 2657215
+Jun 18 22:05:24 ..... started STAR run
+Jun 18 22:05:24 ..... loading genome
+Jun 18 22:05:47 ..... processing annotations GTF
+Jun 18 22:06:04 ..... inserting junctions into the genome indices
+Jun 18 22:07:54 ..... started mapping
+Jun 18 22:13:13 ..... finished mapping
+Jun 18 22:13:18 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 6672852 WRITTEN 6672852 
+EXCLUDED 0 EXAMINED 6672852
+PAIRED 0 SINGLE 6672852
+DULPICATE PAIR 0 DUPLICATE SINGLE 3919765
+DUPLICATE TOTAL 3919765
+READ 6672852 WRITTEN 2753087 
+EXCLUDED 0 EXAMINED 6672852
+PAIRED 0 SINGLE 6672852
+DULPICATE PAIR 0 DUPLICATE SINGLE 3919765
+DUPLICATE TOTAL 3919765
+Jun 18 22:14:20 ..... started STAR run
+Jun 18 22:14:20 ..... loading genome
+Jun 18 22:14:43 ..... processing annotations GTF
+Jun 18 22:14:59 ..... inserting junctions into the genome indices
+Jun 18 22:17:03 ..... started mapping
+Jun 18 22:21:17 ..... finished mapping
+Jun 18 22:21:22 ..... finished successfully
+[bam_sort_core] merging from 0 files and 30 in-memory blocks...
+READ 4671710 WRITTEN 4671710 
+EXCLUDED 0 EXAMINED 4671710
+PAIRED 0 SINGLE 4671710
+DULPICATE PAIR 0 DUPLICATE SINGLE 2609145
+DUPLICATE TOTAL 2609145
+READ 4671710 WRITTEN 2062565 
+EXCLUDED 0 EXAMINED 4671710
+PAIRED 0 SINGLE 4671710
+DULPICATE PAIR 0 DUPLICATE SINGLE 2609145
+DUPLICATE TOTAL 2609145

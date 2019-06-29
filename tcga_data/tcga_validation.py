@@ -7,14 +7,17 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 import matplotlib
-#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 matplotlib.rcParams['font.sans-serif'] = 'Arial'
 import seaborn as sns
 %matplotlib inline
 
-from xpressplot import r_fpkm, count_table
+from xpressplot import r_fpkm, count_table, convert_names
+
+import plotly
+import plotly.offline as py
+import plotly_express as px
 
 """
 FUNCTIONS
@@ -108,7 +111,7 @@ def make_figure4(
         ax.xaxis.set_label_position('top')
 
     fig.savefig(
-        '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/' + str(title),
+        '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/' + str(title),
         dpi = 600,
         bbox_inches = 'tight')
 
@@ -178,6 +181,110 @@ def make_figure4S(
     return axes
 
 
+def interactive_scatter(
+    file_name,
+    title,
+    sample_id,
+    gtf_file,
+    xpresspipe_settings):
+
+    best_counts = pd.read_csv(
+        str(file_name),
+        sep='\t',
+        header=None,
+        index_col=0)
+
+    del best_counts.index.name
+    best_counts.columns = [title]
+    best_counts.index = best_counts.index.str.split('.').str[0]
+    best_counts = best_counts.dropna()
+    best_counts = best_counts.iloc[:-5]
+
+    counts_genes = best_counts.index.tolist()
+    tcga_v22_genes = tcga[[sample_id]].index.tolist()
+    len(counts_genes)
+    len(tcga_v22_genes)
+
+    common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
+    len(common_v22_genes)
+
+    counts_common = best_counts.reindex(index = common_v22_genes)
+    tcga_v22_common = tcga[[sample_id]].reindex(index = common_v22_genes)
+
+    counts_common.shape
+    tcga_v22_common.shape
+
+    counts_common = counts_common.reindex(sorted(counts_common.columns), axis=1)
+    tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
+
+    merged_best = pd.concat([counts_common, tcga_v22_common], axis=1, sort=False)
+    merged_best.head()
+    merged_best.columns.tolist()[0]
+
+    merged_best = convert_names(
+        merged_best,
+        gtf_file)
+    merged_best['genes'] = merged_best.index
+
+
+    # Import reference GTF
+    gtf = pd.read_csv(str(gtf_file),sep='\t',comment='#', low_memory=False, header=None)
+
+    # Parse out old and new names from GTF
+    gtf_genes = gtf.loc[gtf[2] == 'gene']
+    gtf_genes['id'] = gtf[8].str.split(';').str[0]
+    gtf_genes['original'] = gtf[8].str.split(';').str[2]
+    gtf_genes['new'] = gtf[8].str.split(';').str[4]
+    gtf_genes['id'] = gtf_genes['id'].map(lambda x: x.lstrip(str('gene_id \"')).rstrip('\"').rstrip(' '))
+    gtf_genes['original'] = gtf_genes['original'].map(lambda x: x.lstrip(str('gene_name \"')).rstrip('\"').rstrip(' '))
+    gtf_genes['new'] = gtf_genes['new'].map(lambda x: x.lstrip(str('gene_biotype \"')).rstrip('\"').rstrip(' '))
+    gtf_genes = gtf_genes[['id','original','new']].copy()
+
+    gtf_genes.head()
+
+    gene_dict = pd.Series(gtf_genes['new'].values,index=gtf_genes['original']).to_dict()
+    merged_best['color'] = merged_best.index.to_series().map(gene_dict)
+
+    merged_best.head()
+
+    merged_best_c = merged_best.copy()
+    merged_best_c = merged_best_c.reset_index()
+    del merged_best_c['index']
+    merged_best_c = merged_best_c.fillna('other')
+
+    merged_best_c.loc[merged_best_c['color'].str.contains('coding'), 'color'] = 'protein_coding'
+    merged_best_c.loc[merged_best_c['color'].str.contains('pseudogene'), 'color'] = 'pseudogene'
+    merged_best_c.loc[(~merged_best_c['color'].str.contains('coding')) & (~merged_best_c['color'].str.contains('pseudogene')), 'color'] = 'other'
+    merged_best_c.index = merged_best_c['genes']
+    del merged_best_c.index.name
+
+    merged_best_c.head()
+
+    set(merged_best_c.color.tolist())
+
+
+    labels = {
+        sample_id: 'TCGA processed',
+        title: 'xpresspipe: ' + str(xpresspipe_settings)
+    }
+
+    sc = px.scatter(
+        merged_best_c,
+        x=merged_best_c.columns.tolist()[0],
+        y=merged_best_c.columns.tolist()[1],
+        color='color',
+        hover_name='genes',
+        log_x=True,
+        log_y=True,
+        opacity=0.4,
+        width=1400,
+        height=1000,
+        labels=labels,
+        title=str(sample_id))
+
+    py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/' + str(title) + '.html')
+
+
 """
 IMPORT METADATA
 """
@@ -191,6 +298,7 @@ metadata['count_name'] = meta['File Name']
 
 """
 IMPORT XPRESSPIPE GENERATED DATA
+"""
 """
 x_path = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/xpresspipe/'
 
@@ -220,6 +328,30 @@ for x in x_samples:
 
 xpresspipe.columns = xpresspipe.columns.to_series().map(di)
 xpresspipe.shape
+"""
+x_samples = {
+    'G17189':'TCGA-06-0132-01A',
+    'G17190':'TCGA-06-0174-01A',
+    'G17193':'TCGA-06-0743-01A',
+    'G17195':'TCGA-06-0138-01A',
+    'G17197':'TCGA-06-0211-01B',
+    'G17199':'TCGA-06-0744-01A',
+    'G17202':'TCGA-06-0184-01A',
+    'G17203':'TCGA-06-0211-02A',
+    'G17204':'TCGA-08-0386-01A',
+    'G17205':'TCGA-06-0745-01A',
+    'G17206':'TCGA-06-0125-02A',
+    'G17207':'TCGA-06-0156-01A',
+    }
+
+x_file = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/xpresspipe/tcga_validation_count_table_28jun19.tsv'
+xpresspipe = pd.read_csv(x_file, sep='\t', index_col=0)
+
+xpresspipe.columns = xpresspipe.columns.to_series().map(x_samples)
+
+
+
+xpresspipe.head()
 
 """
 IMPORT TCGA GENERATED DATA
@@ -292,66 +424,30 @@ make_figure4(
     xpresspipe_common,
     tcga_common,
     sample_list,
-    'xpresspipe_vs_tcga_counts_more.png')
-
-
-
+    'xpresspipe_vs_tcga_counts.png')
 
 """
 Plot a sample using v79 Ensemble build (gencode v22)
 """
-# Sample quantified to v22 gencode
-v22_path = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/count_gencode22/'
-v22_counts = pd.read_csv(
-    str(v22_path) + 'G17189.TCGA-06-0132-01A_justsorted_gencodev22.tsv',
-    sep='\t',
-    header=None,
-    index_col=0)
-
-del v22_counts.index.name
-v22_counts.columns = ['TCGA-06-0132-01A']
-v22_counts.index = v22_counts.index.str.split('.').str[0]
-
-v22_counts = v22_counts.iloc[:-5]
-v22_counts.shape
-
-v22_counts_genes = v22_counts.index.tolist()
-tcga_v22_genes = tcga[['TCGA-06-0132-01A']].index.tolist()
-len(v22_counts_genes)
-len(tcga_v22_genes)
-
-common_v22_genes = list(set(v22_counts_genes).intersection(tcga_v22_genes))
-len(common_v22_genes)
-
-v22_counts_common = v22_counts.reindex(index = common_v22_genes)
-tcga_v22_common = tcga[['TCGA-06-0132-01A']].reindex(index = common_v22_genes)
-
-v22_counts_common.shape
-tcga_v22_common.shape
-
-v22_counts_common = v22_counts_common.reindex(sorted(v22_counts_common.columns), axis=1)
-tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
-
-
-make_figure4(
-    v22_counts_common,
-    tcga_v22_common,
-    ['TCGA-06-0132-01A'],
-    'xpresspipe_vs_tcga_counts_v22_comparison.png')
-
-
-
 comp_dir = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/'
 comp_samples = [
-    'v79_looseTrim_longestGTF_multimappers_count_table',
     'v79_looseTrim_normalGTF_multimappers_count_table',
-    'v79_strictTrim_longestGTF_multimappers_count_table',
-    'v79_strictTrim_normalGTF_multimappers_count_table',
-    'v96_looseTrim_normalGTF_multimappers_count_table',
-    'v96_strictTrim_longestGTF_multimappers_count_table',
-    'v96_strictTrim_normalGTF_multimappers_count_table',
     'v79_looseTrim_normalGTF_uniqueOnly_count_table',
-    'htseq_oldtest_count_table'
+    'v79_strictTrim_normalGTF_multimappers_count_table',
+    'v79_strictTrim_normalGTF_uniqueOnly_count_table',
+    'v79_looseTrim_longestGTF_multimappers_count_table',
+    'v79_looseTrim_longestGTF_uniqueonly_count_table',
+    'v79_strictTrim_longestGTF_multimappers_count_table',
+    'v79_strictTrim_longestGTF_uniqueonly_count_table',
+    'v96_looseTrim_normalGTF_multimappers_count_table',
+    'v96_looseTrim_normalGTF_uniqueOnly_count_table',
+    'v96_strictTrim_normalGTF_multimappers_count_table',
+    'v96_strictTrim_normalGTF_uniqueOnly_count_table',
+    'v96_looseTrim_longestGTF_multimappers_count_table',
+    'v96_looseTrim_longestGTF_uniqueonly_count_table',
+    'v96_strictTrim_longestGTF_multimappers_count_table',
+    'v96_strictTrim_longestGTF_uniqueonly_count_table',
+
 ]
 
 comp_files = []
@@ -415,120 +511,25 @@ for x in comp_files:
         x[0])
 
     file_number += 1
+
 fig.savefig(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comparisons_table.png',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/tcga_comparisons_table.png',
     dpi = 600,
     bbox_inches = 'tight')
 
 
 
+"""
+Plot pseudogenes
+"""
+best_file1 = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v79_looseTrim_normalGTF_multimappers_count_table.tsv'
+best_name1 = 'v79_looseTrim_normalGTF_multimappers'
+gtf_file1 = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.79.gtf'
+settings1 = 'GTFv79, PHRED>=10, normalGTF, allow multimappers'
+interactive_scatter(best_file1, best_name1, 'TCGA-06-0132-01A', gtf_file1, settings1)
 
-import plotly_express as px
-best_file = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v79_looseTrim_normalGTF_multimappers_count_table.tsv'
-
-
-worst_file = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v96_strictTrim_longestGTF_multimappers_count_table.tsv'
-
-
-
-best_name = 'v79_looseTrim_normalGTF_multimappers'
-best_counts = pd.read_csv(
-    str(best_file),
-    sep='\t',
-    header=None,
-    index_col=0)
-
-del best_counts.index.name
-best_counts.columns = [best_name]
-best_counts.index = best_counts.index.str.split('.').str[0]
-best_counts = best_counts.dropna()
-best_counts = best_counts.iloc[:-5]
-
-counts_genes = best_counts.index.tolist()
-tcga_v22_genes = tcga[['TCGA-06-0132-01A']].index.tolist()
-len(counts_genes)
-len(tcga_v22_genes)
-
-common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
-len(common_v22_genes)
-
-counts_common = best_counts.reindex(index = common_v22_genes)
-tcga_v22_common = tcga[['TCGA-06-0132-01A']].reindex(index = common_v22_genes)
-
-counts_common.shape
-tcga_v22_common.shape
-
-counts_common = counts_common.reindex(sorted(counts_common.columns), axis=1)
-tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
-
-merged_best = pd.concat([counts_common, tcga_v22_common], axis=1, sort=False)
-merged_best.head()
-merged_best.columns.tolist()[0]
-
-from xpressplot import convert_names
-merged_best = convert_names(
-    merged_best,
-    '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf')
-merged_best['genes'] = merged_best.index
-
-
-# Import reference GTF
-gtf = pd.read_csv(str('/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf'),sep='\t',comment='#', low_memory=False, header=None)
-
-# Parse out old and new names from GTF
-gtf_genes = gtf.loc[gtf[2] == 'gene']
-gtf_genes['id'] = gtf[8].str.split(';').str[0]
-gtf_genes['original'] = gtf[8].str.split(';').str[2]
-gtf_genes['new'] = gtf[8].str.split(';').str[4]
-gtf_genes['id'] = gtf_genes['id'].map(lambda x: x.lstrip(str('gene_id \"')).rstrip('\"').rstrip(' '))
-gtf_genes['original'] = gtf_genes['original'].map(lambda x: x.lstrip(str('gene_name \"')).rstrip('\"').rstrip(' '))
-gtf_genes['new'] = gtf_genes['new'].map(lambda x: x.lstrip(str('gene_biotype \"')).rstrip('\"').rstrip(' '))
-gtf_genes = gtf_genes[['id','original','new']].copy()
-
-gtf_genes.head()
-
-gene_dict = pd.Series(gtf_genes['new'].values,index=gtf_genes['original']).to_dict()
-merged_best['color'] = merged_best.index.to_series().map(gene_dict)
-
-merged_best.head()
-
-merged_best_c = merged_best.copy()
-merged_best_c = merged_best_c.reset_index()
-del merged_best_c['index']
-merged_best_c = merged_best_c.fillna('other')
-
-merged_best_c.loc[merged_best_c['color'].str.contains('coding'), 'color'] = 'protein_coding'
-merged_best_c.loc[merged_best_c['color'].str.contains('pseudogene'), 'color'] = 'pseudogene'
-merged_best_c.loc[(~merged_best_c['color'].str.contains('coding')) & (~merged_best_c['color'].str.contains('pseudogene')), 'color'] = 'other'
-merged_best_c.index = merged_best_c['genes']
-del merged_best_c.index.name
-
-merged_best_c.head()
-
-set(merged_best_c.color.tolist())
-
-
-labels = {
-    'TCGA-06-0132-01A':'TCGA processed',
-    best_name: 'xpresspipe: GTFv96, PHRED>28, longestGTF, allow multimappers'
-}
-
-
-
-sc = px.scatter(
-    merged_best_c,
-    x=merged_best_c.columns.tolist()[0],
-    y=merged_best_c.columns.tolist()[1],
-    color='color',
-    hover_name='genes',
-    log_x=True,
-    log_y=True,
-    opacity=0.4,
-    width=1400,
-    height=1000,
-    labels=labels,
-    title='TCGA-06-0132-01A')
-
-import plotly
-import plotly.offline as py
-py.offline.plot(sc, filename='/Users/jordan/Desktop/tcga_comparison_v96_stricttrim_longestGTF_multimappers.html')
+best_file2 = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v96_looseTrim_normalGTF_multimappers_count_table.tsv'
+best_name2 = 'v96_looseTrim_normalGTF_multimappers'
+gtf_file2 = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf'
+settings2 = 'GTFv96, PHRED>=10, normalGTF, allow multimappers'
+interactive_scatter(best_file2, best_name2, 'TCGA-06-0132-01A', gtf_file2, settings2)

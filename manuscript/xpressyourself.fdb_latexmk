@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1561684121 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1561684125
+["bibtex xpressyourself"] 1561769347 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1561769352
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
   "manubib.bib" 1561063217 19465 6639f0f9368985821ec7e4c1ee30b9ee ""
-  "xpressyourself.aux" 1561684124 10778 d4c05c8feca3807acc5de6739a4c43f2 ""
+  "xpressyourself.aux" 1561769352 12318 f3954e20b1adbe7a253605f4f9697e20 ""
   (generated)
   "xpressyourself.bbl"
   "xpressyourself.blg"
-["pdflatex"] 1561684121 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1561684125
+["pdflatex"] 1561769347 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1561769352
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -87,7 +87,6 @@
   "/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty" 1480098836 7075 2fe3d848bba95f139de11ded085e74aa ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty" 1480098836 22417 1d9df1eb66848aa31b18a593099cf45c ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/helvet.sty" 1480098837 1500 3c2647c8649928795ededd42a6e85f85 ""
-  "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlphv.fd" 1480098837 577 7e2a60c6a7a261f37ffb5bfe21c10431 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1phv.fd" 1480098837 1684 0ac4554419e828cf2c810306539da167 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ts1phv.fd" 1480098837 1185 3390c7c308a2c06e3492bc49746a4996 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty" 1523050425 1615 dba466e323af4fcd4a6acb87444d96c3 ""
@@ -96,16 +95,18 @@
   "/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1523934492 2717033 f61a5287d9c22a39a74f1979fe3f905c ""
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "figures/xpresspipe_figure2.png" 1560978639 672544 c652303436c8c8d4489968c09bfb68a0 ""
-  "figures/xpresspipe_figure3.png" 1561676683 712673 12130d0b182e3765b3281e604709ef83 ""
-  "figures/xpresspipe_figure4.png" 1561138216 817203 4d4d13bdf486f82c90810184054879b3 ""
+  "figures/xpresspipe_figure2.png" 1561759757 672617 d54e42686f4dfb9191fb89176d16b4f5 ""
+  "figures/xpresspipe_figure3.png" 1561767750 769160 790ed426ef2c48ebc482b6d2a0b7eb85 ""
+  "figures/xpresspipe_figure4.png" 1561760739 609395 342b308e364430804c439949e815e6c0 ""
   "figures/xpresspipe_overview.png" 1555645998 119837 93f6fc962966a585fc77d6d32407d4d8 ""
+  "figures/xpresspipe_supplement2.png" 1561762971 348291 7565005eb298a3446992303abfa17fd0 ""
   "figures/xpresspipe_supplement3.png" 1561582241 167903 93c66365b733129428f3509947c3a306 ""
+  "figures/xpresspipe_supplement4.png" 1561762263 952753 327d0ff16209c721146511c03c6aa986 ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1561684124 10778 d4c05c8feca3807acc5de6739a4c43f2 ""
-  "xpressyourself.bbl" 1561684121 6043 7161f2245c6d284810080c08fbe6d378 "bibtex xpressyourself"
-  "xpressyourself.tex" 1561684115 70734 59c6a8bde6289a3b770bcb05bcf74c56 ""
+  "xpressyourself.aux" 1561769352 12318 f3954e20b1adbe7a253605f4f9697e20 ""
+  "xpressyourself.bbl" 1561769347 6043 7161f2245c6d284810080c08fbe6d378 "bibtex xpressyourself"
+  "xpressyourself.tex" 1561769343 73999 1e611660734ba37f5ccb6100e6caa777 ""
   (generated)
+  "xpressyourself.aux"
   "xpressyourself.pdf"
   "xpressyourself.log"
-  "xpressyourself.aux"

@@ -136,12 +136,12 @@ def rp_plot(
                 else:
                     ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#7570b3', weight='semibold')
 
-    plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/' + str(title), dpi=3600, bbox_inches='tight')
+    plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/' + str(title), dpi=3600, bbox_inches='tight')
     #plt.show()
     plt.close()
 
 # Import threshold counts data for any checking
-dir = '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/'
+dir = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/'
 
 check_data = pd.read_csv(str(dir) + 'isribxpresspipe_thresholded_counts.tsv', sep='\t', index_col=0)
 check_list = check_data.index.tolist()
@@ -297,7 +297,7 @@ legend_elements = [Line2D([0], [0], color='gray', lw=2, label='All'),
                    Line2D([0], [0], color='#1b9e77', lw=2, label='Other')]
 
 ax.legend(handles=legend_elements, loc='upper right')
-plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/te_analysis_down_strict.png', dpi=1800, bbox_inches='tight')
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/te_analysis_down_strict.png', dpi=1800, bbox_inches='tight')
 
 plt.close()
 

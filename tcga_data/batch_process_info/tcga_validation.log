@@ -1,3 +1,37 @@
+======================
+User commands summary:
+======================
+cmd: peRNAseq
+input: /scratch/mammoth/serial/u0690617/888908/input/
+output: /scratch/mammoth/serial/u0690617/888908/output/
+reference: /uufs/chpc.utah.edu/common/HIPAA/proj_rutter_lab/references/human_reference_pe/
+gtf: /uufs/chpc.utah.edu/common/HIPAA/proj_rutter_lab/references/human_reference_pe/transcripts.gtf
+experiment: tcga_validation
+two_pass: True
+adaptors: ['NONE', 'NONE']
+quality: 28
+min_length: 18
+no_multimappers: False
+deduplicate: False
+output_bed: False
+quantification_method: htseq
+feature_type: exon
+stranded: no
+method: None
+batch: None
+sjdbOverhang: 75
+mismatchRatio: 0.1
+seedSearchStartLmax: 50
+genome_size: 14
+max_processors: None
+path: /uufs/chpc.utah.edu/common/HIPAA/u0690617/XPRESSpipe/xpresspipe/
+log_loc: /scratch/mammoth/serial/u0690617/888908/output/
+log:  >> /scratch/mammoth/serial/u0690617/888908/output/tcga_validation.log 2>&1
+log_file: /scratch/mammoth/serial/u0690617/888908/output/tcga_validation.log
+=====================
+End commands summary
+=====================
+
 Read1 before filtering:
 total reads: 53137713
 total bases: 4038466188
@@ -34,134 +68,11 @@ Duplication rate: 1.88171%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 311 seconds
-Read1 before filtering:
-total reads: 59414945
-total bases: 4515535820
-Q20 bases: 3904729065(86.4732%)
-Q30 bases: 3540114026(78.3985%)
-
-Read2 before filtering:
-total reads: 59414945
-total bases: 4515535820
-Q20 bases: 3727138486(82.5403%)
-Q30 bases: 3361909606(74.4521%)
-
-Read1 after filtering:
-total reads: 42502433
-total bases: 3184794672
-Q20 bases: 3122477476(98.0433%)
-Q30 bases: 2951085368(92.6617%)
-
-Read2 aftering filtering:
-total reads: 42502433
-total bases: 3184794672
-Q20 bases: 3103519095(97.448%)
-Q30 bases: 2915862207(91.5557%)
-
-Filtering result:
-reads passed filter: 85004866
-reads failed due to low quality: 33792920
-reads failed due to too many N: 32104
-reads failed due to too short: 0
-reads with adapter trimmed: 453390
-bases trimmed due to adapters: 7742840
-
-Duplication rate: 1.59235%
-
-Insert size peak (evaluated by paired-end reads): 121
-
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.html
-
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 347 seconds
-Read1 before filtering:
-total reads: 59671233
-total bases: 4535013708
-Q20 bases: 3917965125(86.3937%)
-Q30 bases: 3564579243(78.6013%)
-
-Read2 before filtering:
-total reads: 59671233
-total bases: 4535013708
-Q20 bases: 3606700387(79.5301%)
-Q30 bases: 3257374427(71.8272%)
-
-Read1 after filtering:
-total reads: 41280867
-total bases: 3091309889
-Q20 bases: 3033822447(98.1404%)
-Q30 bases: 2874628202(92.9906%)
-
-Read2 aftering filtering:
-total reads: 41280867
-total bases: 3091309889
-Q20 bases: 3012753837(97.4588%)
-Q30 bases: 2833904162(91.6732%)
-
-Filtering result:
-reads passed filter: 82561734
-reads failed due to low quality: 36747166
-reads failed due to too many N: 33566
-reads failed due to too short: 0
-reads with adapter trimmed: 670382
-bases trimmed due to adapters: 13809580
-
-Duplication rate: 2.03791%
-
-Insert size peak (evaluated by paired-end reads): 121
-
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.html
-
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 354 seconds
-Read1 before filtering:
-total reads: 62171889
-total bases: 4725063564
-Q20 bases: 4114786320(87.0843%)
-Q30 bases: 3748899942(79.3407%)
-
-Read2 before filtering:
-total reads: 62171889
-total bases: 4725063564
-Q20 bases: 3934403778(83.2667%)
-Q30 bases: 3562009105(75.3854%)
-
-Read1 after filtering:
-total reads: 45215518
-total bases: 3387505437
-Q20 bases: 3324189688(98.1309%)
-Q30 bases: 3148994817(92.9591%)
-
-Read2 aftering filtering:
-total reads: 45215518
-total bases: 3387505437
-Q20 bases: 3302771327(97.4986%)
-Q30 bases: 3108849127(91.774%)
-
-Filtering result:
-reads passed filter: 90431036
-reads failed due to low quality: 33876696
-reads failed due to too many N: 36046
-reads failed due to too short: 0
-reads with adapter trimmed: 496946
-bases trimmed due to adapters: 9884414
-
-Duplication rate: 2.04301%
-
-Insert size peak (evaluated by paired-end reads): 121
-
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.html
-
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 355 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 367 seconds
 Read1 before filtering:
 total reads: 56663480
 total bases: 4306424480
@@ -198,11 +109,52 @@ Duplication rate: 1.67971%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 357 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 379 seconds
+Read1 before filtering:
+total reads: 59414945
+total bases: 4515535820
+Q20 bases: 3904729065(86.4732%)
+Q30 bases: 3540114026(78.3985%)
+
+Read2 before filtering:
+total reads: 59414945
+total bases: 4515535820
+Q20 bases: 3727138486(82.5403%)
+Q30 bases: 3361909606(74.4521%)
+
+Read1 after filtering:
+total reads: 42502433
+total bases: 3184794672
+Q20 bases: 3122477476(98.0433%)
+Q30 bases: 2951085368(92.6617%)
+
+Read2 aftering filtering:
+total reads: 42502433
+total bases: 3184794672
+Q20 bases: 3103519095(97.448%)
+Q30 bases: 2915862207(91.5557%)
+
+Filtering result:
+reads passed filter: 85004866
+reads failed due to low quality: 33792920
+reads failed due to too many N: 32104
+reads failed due to too short: 0
+reads with adapter trimmed: 453390
+bases trimmed due to adapters: 7742840
+
+Duplication rate: 1.59235%
+
+Insert size peak (evaluated by paired-end reads): 121
+
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.html
+
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 385 seconds
 Read1 before filtering:
 total reads: 61232113
 total bases: 4653640588
@@ -239,52 +191,93 @@ Duplication rate: 1.99717%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 366 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 399 seconds
 Read1 before filtering:
-total reads: 69548902
-total bases: 5285716552
-Q20 bases: 4490455777(84.9545%)
-Q30 bases: 4073581984(77.0677%)
+total reads: 59671233
+total bases: 4535013708
+Q20 bases: 3917965125(86.3937%)
+Q30 bases: 3564579243(78.6013%)
 
 Read2 before filtering:
-total reads: 69548902
-total bases: 5285716552
-Q20 bases: 4139017746(78.3057%)
-Q30 bases: 3722860000(70.4325%)
+total reads: 59671233
+total bases: 4535013708
+Q20 bases: 3606700387(79.5301%)
+Q30 bases: 3257374427(71.8272%)
 
 Read1 after filtering:
-total reads: 47005563
-total bases: 3520475816
-Q20 bases: 3452603067(98.0721%)
-Q30 bases: 3269477485(92.8703%)
+total reads: 41280867
+total bases: 3091309889
+Q20 bases: 3033822447(98.1404%)
+Q30 bases: 2874628202(92.9906%)
 
 Read2 aftering filtering:
-total reads: 47005563
-total bases: 3520475816
-Q20 bases: 3426701580(97.3363%)
-Q30 bases: 3216790482(91.3737%)
+total reads: 41280867
+total bases: 3091309889
+Q20 bases: 3012753837(97.4588%)
+Q30 bases: 2833904162(91.6732%)
 
 Filtering result:
-reads passed filter: 94011126
-reads failed due to low quality: 45050060
-reads failed due to too many N: 36618
+reads passed filter: 82561734
+reads failed due to low quality: 36747166
+reads failed due to too many N: 33566
 reads failed due to too short: 0
-reads with adapter trimmed: 711888
-bases trimmed due to adapters: 14390202
+reads with adapter trimmed: 670382
+bases trimmed due to adapters: 13809580
 
-Duplication rate: 2.12874%
+Duplication rate: 2.03793%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 417 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 402 seconds
+Read1 before filtering:
+total reads: 62171889
+total bases: 4725063564
+Q20 bases: 4114786320(87.0843%)
+Q30 bases: 3748899942(79.3407%)
+
+Read2 before filtering:
+total reads: 62171889
+total bases: 4725063564
+Q20 bases: 3934403778(83.2667%)
+Q30 bases: 3562009105(75.3854%)
+
+Read1 after filtering:
+total reads: 45215518
+total bases: 3387505437
+Q20 bases: 3324189688(98.1309%)
+Q30 bases: 3148994817(92.9591%)
+
+Read2 aftering filtering:
+total reads: 45215518
+total bases: 3387505437
+Q20 bases: 3302771327(97.4986%)
+Q30 bases: 3108849127(91.774%)
+
+Filtering result:
+reads passed filter: 90431036
+reads failed due to low quality: 33876696
+reads failed due to too many N: 36046
+reads failed due to too short: 0
+reads with adapter trimmed: 496946
+bases trimmed due to adapters: 9884414
+
+Duplication rate: 2.04301%
+
+Insert size peak (evaluated by paired-end reads): 121
+
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.html
+
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 405 seconds
 Read1 before filtering:
 total reads: 69697251
 total bases: 5296991076
@@ -321,11 +314,52 @@ Duplication rate: 1.61758%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 445 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 432 seconds
+Read1 before filtering:
+total reads: 69548902
+total bases: 5285716552
+Q20 bases: 4490455777(84.9545%)
+Q30 bases: 4073581984(77.0677%)
+
+Read2 before filtering:
+total reads: 69548902
+total bases: 5285716552
+Q20 bases: 4139017746(78.3057%)
+Q30 bases: 3722860000(70.4325%)
+
+Read1 after filtering:
+total reads: 47005563
+total bases: 3520475816
+Q20 bases: 3452603067(98.0721%)
+Q30 bases: 3269477485(92.8703%)
+
+Read2 aftering filtering:
+total reads: 47005563
+total bases: 3520475816
+Q20 bases: 3426701580(97.3363%)
+Q30 bases: 3216790482(91.3737%)
+
+Filtering result:
+reads passed filter: 94011126
+reads failed due to low quality: 45050060
+reads failed due to too many N: 36618
+reads failed due to too short: 0
+reads with adapter trimmed: 711888
+bases trimmed due to adapters: 14390202
+
+Duplication rate: 2.12873%
+
+Insert size peak (evaluated by paired-end reads): 121
+
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.html
+
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 440 seconds
 Read1 before filtering:
 total reads: 55681868
 total bases: 4231821968
@@ -362,11 +396,11 @@ Duplication rate: 1.68627%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 253 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 267 seconds
 Read1 before filtering:
 total reads: 61231796
 total bases: 4653616496
@@ -403,11 +437,11 @@ Duplication rate: 1.44688%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 282 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 303 seconds
 Read1 before filtering:
 total reads: 62399519
 total bases: 4742363444
@@ -440,15 +474,15 @@ reads failed due to too short: 0
 reads with adapter trimmed: 650348
 bases trimmed due to adapters: 14205104
 
-Duplication rate: 1.71886%
+Duplication rate: 1.71887%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 351 seconds
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 344 seconds
 Read1 before filtering:
 total reads: 76923717
 total bases: 5846202492
@@ -485,224 +519,212 @@ Duplication rate: 2.59202%
 
 Insert size peak (evaluated by paired-end reads): 121
 
-JSON report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.json
-HTML report: /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.html
+JSON report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.json
+HTML report: /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.html
 
-fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/845416/input/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/845416/input/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/trimmed_G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/845416/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.html 
-fastp v0.20.0, time used: 390 seconds
-Jun 18 12:17:47 ..... started STAR run
-Jun 18 12:17:48 ..... loading genome
-Jun 18 12:18:20 ..... processing annotations GTF
-Jun 18 12:18:33 ..... inserting junctions into the genome indices
-Jun 18 12:20:01 ..... started mapping
-Jun 18 12:25:05 ..... finished mapping
-Jun 18 12:25:08 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 77243191 WRITTEN 77243191 
-EXCLUDED 0 EXAMINED 77243191
-PAIRED 76938164 SINGLE 305027
-DULPICATE PAIR 18308980 DUPLICATE SINGLE 280855
-DUPLICATE TOTAL 18589835
-READ 77243191 WRITTEN 58653356 
-EXCLUDED 0 EXAMINED 77243191
-PAIRED 76938164 SINGLE 305027
-DULPICATE PAIR 18308980 DUPLICATE SINGLE 280855
-DUPLICATE TOTAL 18589835
-Jun 18 13:11:24 ..... started STAR run
-Jun 18 13:11:24 ..... loading genome
-Jun 18 13:11:43 ..... processing annotations GTF
-Jun 18 13:11:55 ..... inserting junctions into the genome indices
-Jun 18 13:13:23 ..... started mapping
-Jun 18 13:18:42 ..... finished mapping
-Jun 18 13:18:45 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 79940792 WRITTEN 79940792 
-EXCLUDED 0 EXAMINED 79940792
-PAIRED 79818440 SINGLE 122352
-DULPICATE PAIR 12689784 DUPLICATE SINGLE 99204
-DUPLICATE TOTAL 12788988
-READ 79940792 WRITTEN 67151804 
-EXCLUDED 0 EXAMINED 79940792
-PAIRED 79818440 SINGLE 122352
-DULPICATE PAIR 12689784 DUPLICATE SINGLE 99204
-DUPLICATE TOTAL 12788988
-Jun 18 14:07:34 ..... started STAR run
-Jun 18 14:07:35 ..... loading genome
-Jun 18 14:07:52 ..... processing annotations GTF
-Jun 18 14:08:06 ..... inserting junctions into the genome indices
-Jun 18 14:09:34 ..... started mapping
-Jun 18 14:14:57 ..... finished mapping
-Jun 18 14:15:00 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 85533165 WRITTEN 85533165 
-EXCLUDED 0 EXAMINED 85533165
-PAIRED 85210708 SINGLE 322457
-DULPICATE PAIR 18285328 DUPLICATE SINGLE 287055
-DUPLICATE TOTAL 18572383
-READ 85533165 WRITTEN 66960782 
-EXCLUDED 0 EXAMINED 85533165
-PAIRED 85210708 SINGLE 322457
-DULPICATE PAIR 18285328 DUPLICATE SINGLE 287055
-DUPLICATE TOTAL 18572383
-Jun 18 15:06:35 ..... started STAR run
-Jun 18 15:06:36 ..... loading genome
-Jun 18 15:07:00 ..... processing annotations GTF
-Jun 18 15:07:13 ..... inserting junctions into the genome indices
-Jun 18 15:08:43 ..... started mapping
-Jun 18 15:13:26 ..... finished mapping
-Jun 18 15:13:29 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 68346608 WRITTEN 68346608 
-EXCLUDED 0 EXAMINED 68346608
-PAIRED 68127548 SINGLE 219060
-DULPICATE PAIR 14257812 DUPLICATE SINGLE 191512
-DUPLICATE TOTAL 14449324
-READ 68346608 WRITTEN 53897284 
-EXCLUDED 0 EXAMINED 68346608
-PAIRED 68127548 SINGLE 219060
-DULPICATE PAIR 14257812 DUPLICATE SINGLE 191512
-DUPLICATE TOTAL 14449324
-Jun 18 15:54:29 ..... started STAR run
-Jun 18 15:54:29 ..... loading genome
-Jun 18 15:54:52 ..... processing annotations GTF
-Jun 18 15:55:05 ..... inserting junctions into the genome indices
-Jun 18 15:56:36 ..... started mapping
-Jun 18 16:02:44 ..... finished mapping
-Jun 18 16:02:47 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 93453928 WRITTEN 93453928 
-EXCLUDED 0 EXAMINED 93453928
-PAIRED 93303486 SINGLE 150442
-DULPICATE PAIR 14649558 DUPLICATE SINGLE 123739
-DUPLICATE TOTAL 14773297
-READ 93453928 WRITTEN 78680631 
-EXCLUDED 0 EXAMINED 93453928
-PAIRED 93303486 SINGLE 150442
-DULPICATE PAIR 14649558 DUPLICATE SINGLE 123739
-DUPLICATE TOTAL 14773297
-Jun 18 16:59:57 ..... started STAR run
-Jun 18 16:59:58 ..... loading genome
-Jun 18 17:00:24 ..... processing annotations GTF
-Jun 18 17:00:38 ..... inserting junctions into the genome indices
-Jun 18 17:02:06 ..... started mapping
-Jun 18 17:07:35 ..... finished mapping
-Jun 18 17:07:38 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 83719762 WRITTEN 83719762 
-EXCLUDED 0 EXAMINED 83719762
-PAIRED 83401340 SINGLE 318422
-DULPICATE PAIR 18388608 DUPLICATE SINGLE 285398
-DUPLICATE TOTAL 18674006
-READ 83719762 WRITTEN 65045756 
-EXCLUDED 0 EXAMINED 83719762
-PAIRED 83401340 SINGLE 318422
-DULPICATE PAIR 18388608 DUPLICATE SINGLE 285398
-DUPLICATE TOTAL 18674006
-Jun 18 17:57:54 ..... started STAR run
-Jun 18 17:57:54 ..... loading genome
-Jun 18 17:58:13 ..... processing annotations GTF
-Jun 18 17:58:26 ..... inserting junctions into the genome indices
-Jun 18 17:59:54 ..... started mapping
-Jun 18 18:05:38 ..... finished mapping
-Jun 18 18:05:42 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 87837736 WRITTEN 87837736 
-EXCLUDED 0 EXAMINED 87837736
-PAIRED 87595446 SINGLE 242290
-DULPICATE PAIR 19814196 DUPLICATE SINGLE 218762
-DUPLICATE TOTAL 20032958
-READ 87837736 WRITTEN 67804778 
-EXCLUDED 0 EXAMINED 87837736
-PAIRED 87595446 SINGLE 242290
-DULPICATE PAIR 19814196 DUPLICATE SINGLE 218762
-DUPLICATE TOTAL 20032958
-Jun 18 18:59:09 ..... started STAR run
-Jun 18 18:59:09 ..... loading genome
-Jun 18 18:59:29 ..... processing annotations GTF
-Jun 18 18:59:42 ..... inserting junctions into the genome indices
-Jun 18 19:01:09 ..... started mapping
-Jun 18 19:06:17 ..... finished mapping
-Jun 18 19:06:20 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 76660870 WRITTEN 76660870 
-EXCLUDED 0 EXAMINED 76660870
-PAIRED 76505444 SINGLE 155426
-DULPICATE PAIR 13550934 DUPLICATE SINGLE 132552
-DUPLICATE TOTAL 13683486
-READ 76660870 WRITTEN 62977384 
-EXCLUDED 0 EXAMINED 76660870
-PAIRED 76505444 SINGLE 155426
-DULPICATE PAIR 13550934 DUPLICATE SINGLE 132552
-DUPLICATE TOTAL 13683486
-Jun 18 19:53:40 ..... started STAR run
-Jun 18 19:53:40 ..... loading genome
-Jun 18 19:54:00 ..... processing annotations GTF
-Jun 18 19:54:12 ..... inserting junctions into the genome indices
-Jun 18 19:55:44 ..... started mapping
-Jun 18 20:01:03 ..... finished mapping
-Jun 18 20:01:07 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 83294043 WRITTEN 83294043 
-EXCLUDED 0 EXAMINED 83294043
-PAIRED 83112846 SINGLE 181197
-DULPICATE PAIR 12092890 DUPLICATE SINGLE 150333
-DUPLICATE TOTAL 12243223
-READ 83294043 WRITTEN 71050820 
-EXCLUDED 0 EXAMINED 83294043
-PAIRED 83112846 SINGLE 181197
-DULPICATE PAIR 12092890 DUPLICATE SINGLE 150333
-DUPLICATE TOTAL 12243223
-Jun 18 20:52:14 ..... started STAR run
-Jun 18 20:52:15 ..... loading genome
-Jun 18 20:52:33 ..... processing annotations GTF
-Jun 18 20:52:46 ..... inserting junctions into the genome indices
-Jun 18 20:54:14 ..... started mapping
-Jun 18 21:01:22 ..... finished mapping
-Jun 18 21:01:25 ..... finished successfully
-[bam_sort_core] merging from 30 files and 30 in-memory blocks...
-READ 98265120 WRITTEN 98265120 
-EXCLUDED 0 EXAMINED 98265120
-PAIRED 98047306 SINGLE 217814
-DULPICATE PAIR 21901056 DUPLICATE SINGLE 192362
-DUPLICATE TOTAL 22093418
-READ 98265120 WRITTEN 76171702 
-EXCLUDED 0 EXAMINED 98265120
-PAIRED 98047306 SINGLE 217814
-DULPICATE PAIR 21901056 DUPLICATE SINGLE 192362
-DUPLICATE TOTAL 22093418
-Jun 18 22:01:30 ..... started STAR run
-Jun 18 22:01:30 ..... loading genome
-Jun 18 22:01:59 ..... processing annotations GTF
-Jun 18 22:02:12 ..... inserting junctions into the genome indices
-Jun 18 22:03:39 ..... started mapping
-Jun 18 22:09:08 ..... finished mapping
-Jun 18 22:09:11 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 81645475 WRITTEN 81645475 
-EXCLUDED 0 EXAMINED 81645475
-PAIRED 81494794 SINGLE 150681
-DULPICATE PAIR 13222608 DUPLICATE SINGLE 124604
-DUPLICATE TOTAL 13347212
-READ 81645475 WRITTEN 68298263 
-EXCLUDED 0 EXAMINED 81645475
-PAIRED 81494794 SINGLE 150681
-DULPICATE PAIR 13222608 DUPLICATE SINGLE 124604
-DUPLICATE TOTAL 13347212
-Jun 18 22:59:00 ..... started STAR run
-Jun 18 22:59:01 ..... loading genome
-Jun 18 22:59:21 ..... processing annotations GTF
-Jun 18 22:59:34 ..... inserting junctions into the genome indices
-Jun 18 23:01:03 ..... started mapping
-Jun 18 23:06:02 ..... finished mapping
-Jun 18 23:06:05 ..... finished successfully
-[bam_sort_core] merging from 0 files and 30 in-memory blocks...
-READ 75411230 WRITTEN 75411230 
-EXCLUDED 0 EXAMINED 75411230
-PAIRED 75214524 SINGLE 196706
-DULPICATE PAIR 12362320 DUPLICATE SINGLE 164376
-DUPLICATE TOTAL 12526696
-READ 75411230 WRITTEN 62884534 
-EXCLUDED 0 EXAMINED 75411230
-PAIRED 75214524 SINGLE 196706
-DULPICATE PAIR 12362320 DUPLICATE SINGLE 164376
-DUPLICATE TOTAL 12526696
+fastp -f 1 --thread 7 -i /scratch/mammoth/serial/u0690617/888908/input/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1.fastq -I /scratch/mammoth/serial/u0690617/888908/input/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_2.fastq -o /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1.fastq -O /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/trimmed_G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_2.fastq -l 18 -q 28 -j /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.json -h /scratch/mammoth/serial/u0690617/888908/output/trimmed_fastq/G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1fastp.html 
+fastp v0.20.0, time used: 361 seconds
+Jun 27 18:00:38 ..... started STAR run
+Jun 27 18:00:38 ..... loading genome
+Jun 27 18:01:08 ..... processing annotations GTF
+Jun 27 18:01:21 ..... inserting junctions into the genome indices
+Jun 27 18:02:48 ..... started mapping
+Jun 27 18:07:52 ..... finished mapping
+Jun 27 18:07:55 ..... finished successfully
+READ 89008057 WRITTEN 89008057 
+EXCLUDED 8071346 EXAMINED 80936711
+PAIRED 80475442 SINGLE 461269
+DULPICATE PAIR 19717166 DUPLICATE SINGLE 402882
+DUPLICATE TOTAL 20120048
+READ 89008057 WRITTEN 68888009 
+EXCLUDED 8071346 EXAMINED 80936711
+PAIRED 80475442 SINGLE 461269
+DULPICATE PAIR 19717166 DUPLICATE SINGLE 402882
+DUPLICATE TOTAL 20120048
+Jun 27 18:58:01 ..... started STAR run
+Jun 27 18:58:04 ..... loading genome
+Jun 27 18:58:24 ..... processing annotations GTF
+Jun 27 18:58:36 ..... inserting junctions into the genome indices
+Jun 27 19:00:03 ..... started mapping
+Jun 27 19:05:18 ..... finished mapping
+Jun 27 19:05:21 ..... finished successfully
+READ 92678679 WRITTEN 92678679 
+EXCLUDED 8556938 EXAMINED 84121741
+PAIRED 83869176 SINGLE 252565
+DULPICATE PAIR 14193354 DUPLICATE SINGLE 193282
+DUPLICATE TOTAL 14386636
+READ 92678679 WRITTEN 78292043 
+EXCLUDED 8556938 EXAMINED 84121741
+PAIRED 83869176 SINGLE 252565
+DULPICATE PAIR 14193354 DUPLICATE SINGLE 193282
+DUPLICATE TOTAL 14386636
+Jun 27 19:58:29 ..... started STAR run
+Jun 27 19:58:29 ..... loading genome
+Jun 27 19:58:49 ..... processing annotations GTF
+Jun 27 19:59:02 ..... inserting junctions into the genome indices
+Jun 27 20:00:33 ..... started mapping
+Jun 27 20:05:57 ..... finished mapping
+Jun 27 20:06:00 ..... finished successfully
+READ 97727457 WRITTEN 97727457 
+EXCLUDED 8312735 EXAMINED 89414722
+PAIRED 88965154 SINGLE 449568
+DULPICATE PAIR 19507204 DUPLICATE SINGLE 379625
+DUPLICATE TOTAL 19886829
+READ 97727457 WRITTEN 77840628 
+EXCLUDED 8312735 EXAMINED 89414722
+PAIRED 88965154 SINGLE 449568
+DULPICATE PAIR 19507204 DUPLICATE SINGLE 379625
+DUPLICATE TOTAL 19886829
+Jun 27 21:01:33 ..... started STAR run
+Jun 27 21:01:33 ..... loading genome
+Jun 27 21:01:52 ..... processing annotations GTF
+Jun 27 21:02:05 ..... inserting junctions into the genome indices
+Jun 27 21:03:36 ..... started mapping
+Jun 27 21:08:19 ..... finished mapping
+Jun 27 21:08:23 ..... finished successfully
+READ 88959857 WRITTEN 88959857 
+EXCLUDED 14364837 EXAMINED 74595020
+PAIRED 74248296 SINGLE 346724
+DULPICATE PAIR 17685962 DUPLICATE SINGLE 287710
+DUPLICATE TOTAL 17973672
+READ 88959857 WRITTEN 70986185 
+EXCLUDED 14364837 EXAMINED 74595020
+PAIRED 74248296 SINGLE 346724
+DULPICATE PAIR 17685962 DUPLICATE SINGLE 287710
+DUPLICATE TOTAL 17973672
+Jun 27 21:57:10 ..... started STAR run
+Jun 27 21:57:10 ..... loading genome
+Jun 27 21:57:34 ..... processing annotations GTF
+Jun 27 21:57:46 ..... inserting junctions into the genome indices
+Jun 27 21:59:15 ..... started mapping
+Jun 27 22:05:13 ..... finished mapping
+Jun 27 22:05:17 ..... finished successfully
+READ 106845858 WRITTEN 106845858 
+EXCLUDED 8949746 EXAMINED 97896112
+PAIRED 97595254 SINGLE 300858
+DULPICATE PAIR 16207548 DUPLICATE SINGLE 233917
+DUPLICATE TOTAL 16441465
+READ 106845858 WRITTEN 90404393 
+EXCLUDED 8949746 EXAMINED 97896112
+PAIRED 97595254 SINGLE 300858
+DULPICATE PAIR 16207548 DUPLICATE SINGLE 233917
+DUPLICATE TOTAL 16441465
+Jun 27 23:06:38 ..... started STAR run
+Jun 27 23:06:38 ..... loading genome
+Jun 27 23:07:03 ..... processing annotations GTF
+Jun 27 23:07:16 ..... inserting junctions into the genome indices
+Jun 27 23:08:44 ..... started mapping
+Jun 27 23:14:19 ..... finished mapping
+Jun 27 23:14:23 ..... finished successfully
+READ 99965196 WRITTEN 99965196 
+EXCLUDED 11156723 EXAMINED 88808473
+PAIRED 88368440 SINGLE 440033
+DULPICATE PAIR 20483904 DUPLICATE SINGLE 373320
+DUPLICATE TOTAL 20857224
+READ 99965196 WRITTEN 79107972 
+EXCLUDED 11156723 EXAMINED 88808473
+PAIRED 88368440 SINGLE 440033
+DULPICATE PAIR 20483904 DUPLICATE SINGLE 373320
+DUPLICATE TOTAL 20857224
+Jun 28 00:10:08 ..... started STAR run
+Jun 28 00:10:08 ..... loading genome
+Jun 28 00:10:31 ..... processing annotations GTF
+Jun 28 00:10:44 ..... inserting junctions into the genome indices
+Jun 28 00:12:14 ..... started mapping
+Jun 28 00:18:01 ..... finished mapping
+Jun 28 00:18:04 ..... finished successfully
+READ 101911144 WRITTEN 101911144 
+EXCLUDED 9754816 EXAMINED 92156328
+PAIRED 91781710 SINGLE 374618
+DULPICATE PAIR 21453992 DUPLICATE SINGLE 320337
+DUPLICATE TOTAL 21774329
+READ 101911144 WRITTEN 80136815 
+EXCLUDED 9754816 EXAMINED 92156328
+PAIRED 91781710 SINGLE 374618
+DULPICATE PAIR 21453992 DUPLICATE SINGLE 320337
+DUPLICATE TOTAL 21774329
+Jun 28 01:15:25 ..... started STAR run
+Jun 28 01:15:25 ..... loading genome
+Jun 28 01:15:46 ..... processing annotations GTF
+Jun 28 01:15:58 ..... inserting junctions into the genome indices
+Jun 28 01:17:27 ..... started mapping
+Jun 28 01:22:33 ..... finished mapping
+Jun 28 01:22:36 ..... finished successfully
+READ 97713384 WRITTEN 97713384 
+EXCLUDED 14479812 EXAMINED 83233572
+PAIRED 82968158 SINGLE 265414
+DULPICATE PAIR 17094080 DUPLICATE SINGLE 212542
+DUPLICATE TOTAL 17306622
+READ 97713384 WRITTEN 80406762 
+EXCLUDED 14479812 EXAMINED 83233572
+PAIRED 82968158 SINGLE 265414
+DULPICATE PAIR 17094080 DUPLICATE SINGLE 212542
+DUPLICATE TOTAL 17306622
+Jun 28 02:16:35 ..... started STAR run
+Jun 28 02:16:36 ..... loading genome
+Jun 28 02:16:57 ..... processing annotations GTF
+Jun 28 02:17:09 ..... inserting junctions into the genome indices
+Jun 28 02:18:41 ..... started mapping
+Jun 28 02:23:59 ..... finished mapping
+Jun 28 02:24:03 ..... finished successfully
+READ 95661055 WRITTEN 95661055 
+EXCLUDED 8312637 EXAMINED 87348418
+PAIRED 87032412 SINGLE 316006
+DULPICATE PAIR 13401584 DUPLICATE SINGLE 245377
+DUPLICATE TOTAL 13646961
+READ 95661055 WRITTEN 82014094 
+EXCLUDED 8312637 EXAMINED 87348418
+PAIRED 87032412 SINGLE 316006
+DULPICATE PAIR 13401584 DUPLICATE SINGLE 245377
+DUPLICATE TOTAL 13646961
+Jun 28 03:19:07 ..... started STAR run
+Jun 28 03:19:07 ..... loading genome
+Jun 28 03:19:32 ..... processing annotations GTF
+Jun 28 03:19:44 ..... inserting junctions into the genome indices
+Jun 28 03:21:17 ..... started mapping
+Jun 28 03:28:18 ..... finished mapping
+Jun 28 03:28:22 ..... finished successfully
+READ 143396505 WRITTEN 143396505 
+EXCLUDED 31726042 EXAMINED 111670463
+PAIRED 111318986 SINGLE 351477
+DULPICATE PAIR 31324178 DUPLICATE SINGLE 296425
+DUPLICATE TOTAL 31620603
+READ 143396505 WRITTEN 111775902 
+EXCLUDED 31726042 EXAMINED 111670463
+PAIRED 111318986 SINGLE 351477
+DULPICATE PAIR 31324178 DUPLICATE SINGLE 296425
+DUPLICATE TOTAL 31620603
+Jun 28 04:44:03 ..... started STAR run
+Jun 28 04:44:03 ..... loading genome
+Jun 28 04:44:31 ..... processing annotations GTF
+Jun 28 04:44:43 ..... inserting junctions into the genome indices
+Jun 28 04:46:14 ..... started mapping
+Jun 28 04:51:42 ..... finished mapping
+Jun 28 04:51:45 ..... finished successfully
+READ 91822628 WRITTEN 91822628 
+EXCLUDED 6981833 EXAMINED 84840795
+PAIRED 84563776 SINGLE 277019
+DULPICATE PAIR 14100298 DUPLICATE SINGLE 217022
+DUPLICATE TOTAL 14317320
+READ 91822628 WRITTEN 77505308 
+EXCLUDED 6981833 EXAMINED 84840795
+PAIRED 84563776 SINGLE 277019
+DULPICATE PAIR 14100298 DUPLICATE SINGLE 217022
+DUPLICATE TOTAL 14317320
+Jun 28 05:44:25 ..... started STAR run
+Jun 28 05:44:25 ..... loading genome
+Jun 28 05:44:44 ..... processing annotations GTF
+Jun 28 05:44:57 ..... inserting junctions into the genome indices
+Jun 28 05:46:30 ..... started mapping
+Jun 28 05:51:21 ..... finished mapping
+Jun 28 05:51:25 ..... finished successfully
+READ 88419173 WRITTEN 88419173 
+EXCLUDED 8675956 EXAMINED 79743217
+PAIRED 79422026 SINGLE 321191
+DULPICATE PAIR 13953780 DUPLICATE SINGLE 252219
+DUPLICATE TOTAL 14205999
+READ 88419173 WRITTEN 74213174 
+EXCLUDED 8675956 EXAMINED 79743217
+PAIRED 79422026 SINGLE 321191
+DULPICATE PAIR 13953780 DUPLICATE SINGLE 252219
+DUPLICATE TOTAL 14205999

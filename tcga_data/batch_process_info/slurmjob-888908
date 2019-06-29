@@ -1,0 +1,292 @@
+{'cmd': 'peRNAseq', 'input': '/scratch/mammoth/serial/u0690617/888908/input', 'output': '/scratch/mammoth/serial/u0690617/888908/output', 'reference': '/uufs/chpc.utah.edu/common/HIPAA/proj_rutter_lab/references/human_reference_pe', 'gtf': '/uufs/chpc.utah.edu/common/HIPAA/proj_rutter_lab/references/human_reference_pe/transcripts.gtf', 'experiment': 'tcga_validation', 'two_pass': True, 'adaptors': ['None', 'None'], 'quality': 28, 'min_length': 18, 'no_multimappers': False, 'deduplicate': False, 'output_bed': False, 'quantification_method': 'htseq', 'feature_type': 'exon', 'stranded': 'fr-unstranded', 'method': None, 'batch': None, 'sjdbOverhang': 75, 'mismatchRatio': 0.1, 'seedSearchStartLmax': 50, 'genome_size': 14, 'max_processors': None, 'path': '/uufs/chpc.utah.edu/common/HIPAA/u0690617/XPRESSpipe/xpresspipe/'}
+======================
+User commands summary:
+======================
+cmd: peRNAseq
+input: /scratch/mammoth/serial/u0690617/888908/input/
+output: /scratch/mammoth/serial/u0690617/888908/output/
+reference: /uufs/chpc.utah.edu/common/HIPAA/proj_rutter_lab/references/human_reference_pe/
+gtf: /uufs/chpc.utah.edu/common/HIPAA/proj_rutter_lab/references/human_reference_pe/transcripts.gtf
+experiment: tcga_validation
+two_pass: True
+adaptors: ['NONE', 'NONE']
+quality: 28
+min_length: 18
+no_multimappers: False
+deduplicate: False
+output_bed: False
+quantification_method: htseq
+feature_type: exon
+stranded: no
+method: None
+batch: None
+sjdbOverhang: 75
+mismatchRatio: 0.1
+seedSearchStartLmax: 50
+genome_size: 14
+max_processors: None
+path: /uufs/chpc.utah.edu/common/HIPAA/u0690617/XPRESSpipe/xpresspipe/
+log_loc: /scratch/mammoth/serial/u0690617/888908/output/
+log:  >> /scratch/mammoth/serial/u0690617/888908/output/tcga_validation.log 2>&1
+log_file: /scratch/mammoth/serial/u0690617/888908/output/tcga_validation.log
+=====================
+End commands summary
+=====================
+
+
+XPRESSpipe initialized...
+    
+Adaptor and quality trimming...
+
+  _       ,/'
+ (_).  ,/'
+  __  ::
+ (__)'  `\.
+           `\.
+       
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 8
+Number of threads per worker (where available): 7
+G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1.fastq has been processed.
+G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1.fastq has been processed.
+G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1.fastq has been processed.
+G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1.fastq has been processed.
+G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1.fastq has been processed.
+G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1.fastq has been processed.
+G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1.fastq has been processed.
+G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1.fastq has been processed.
+Processing of batch 1 of 2 complete...
+G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1.fastq has been processed.
+G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1.fastq has been processed.
+G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1.fastq has been processed.
+G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 2 of 2 complete...
+Process complete.
+************************
+    
+
+Running some QC on trimmed reads...
+
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 12
+Number of threads per worker (where available): 4
+trimmed_G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_2.fastq has been processed.
+Processing of batch 1 of 2 complete...
+trimmed_G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1.fastq has been processed.
+trimmed_G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_2.fastq has been processed.
+trimmed_G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_2.fastq has been processed.
+trimmed_G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1.fastq has been processed.
+trimmed_G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_2.fastq has been processed.
+trimmed_G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1.fastq has been processed.
+trimmed_G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_2.fastq has been processed.
+Processing of batch 2 of 2 complete...
+Aligning...
+
+                                                     __________
+|             _,---.                          _..--'/          \              |
+|          ,-'      )                    _,-,'     /            \             |
+|         (          )               _,-'  /      /              \            |
+|          `-.__, -'             _,-/     /     _/ ,------------. \           |
+|     ,--._,---.             _,-'  /     /_,--'' | |            | |           |
+|   _(_,-'      )        _,-'/    /_, - '|       | |   XPRESS   | |           |
+| ,'  (        )      ,'/   /_, -'|      ||_  -  | |            | |           |
+|(     `--._,-'    _,' /_,-'|     ||_  - |       | |  yourself  | |           |
+| `--.__,-'     _,'/,-'|  - ||_ - |      ||_  -  | |            | |           |
+|            _,'/,'|  - ___ |     ||_  - |       | `------------' |           |
+|        _ ,' |_' -|- _(   ) |_   |      ||_  -  |                |           |
+|       ( ): ((`) -| (. `-/ )   - ||_  - |       |                |           |
+|      ` | '(-.,') '( _\`/-') _ - |      | _   - |                |           |
+|        `   (_.) -(_._|,-_)      ||_  - |       |                |           |
+| .        `. || ` | (_\||_)  _ - |      ||_  -  |                |           |
+|             `.    ` . ||  |   - ||_  - |       |                |           |
+|                `.     ||-.|  :  |  _   ||_   - |     __________ |           |
+|                   `.  ||    ` -.|   |  |   _   |    | ________ |`'--.._     |
+|                      `.           ` - .|  | |  |    || ()._o  ||   __ |     |
+|`.          `            `.   `           ` -' .|____|`'---.|>_||  |. ||     |
+|  `.                        `.                         `' -- .._|__|__||     |
+|    `.                ,----.---------- .                            .-_.     |
+|   _  `.             |.`.,' `.           `.                         || |     |
+|        `.         _|`. / `.  `.            `.                       |_o     |
+|          `.        |  `.   `.  `.-----_-----.\     `                        |
+|            `.      `.|.`|  | `. `./\  c__)___/\             .               |
+|              `.       `. `.|    `.\____\___)___\                            |
+|                `.          `.  _ `.\`____________\                          |
+|                  `.          |    |_|   ____   |_|                          |
+|          _         `.        `.|\ |#|__[....]__|#|`.                        |
+|                      `.         `================'  `.                      |
+
+       
+[bam_sort_core] merging from 27 files and 1 in-memory blocks...
+[bam_sort_core] merging from 29 files and 1 in-memory blocks...
+trimmed_G17189.TCGA-06-0132-01A-02R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 1 of 12 complete...
+[bam_sort_core] merging from 28 files and 1 in-memory blocks...
+[bam_sort_core] merging from 30 files and 1 in-memory blocks...
+trimmed_G17190.TCGA-06-0174-01A-01R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 2 of 12 complete...
+[bam_sort_core] merging from 29 files and 1 in-memory blocks...
+[bam_sort_core] merging from 32 files and 1 in-memory blocks...
+trimmed_G17193.TCGA-06-0743-01A-01R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 3 of 12 complete...
+[bam_sort_core] merging from 27 files and 1 in-memory blocks...
+[bam_sort_core] merging from 29 files and 1 in-memory blocks...
+trimmed_G17195.TCGA-06-0138-01A-02R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 4 of 12 complete...
+[bam_sort_core] merging from 32 files and 1 in-memory blocks...
+[bam_sort_core] merging from 35 files and 1 in-memory blocks...
+trimmed_G17197.TCGA-06-0211-01B-01R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 5 of 12 complete...
+[bam_sort_core] merging from 30 files and 1 in-memory blocks...
+[bam_sort_core] merging from 32 files and 1 in-memory blocks...
+trimmed_G17199.TCGA-06-0744-01A-01R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 6 of 12 complete...
+[bam_sort_core] merging from 31 files and 1 in-memory blocks...
+[bam_sort_core] merging from 33 files and 1 in-memory blocks...
+trimmed_G17202.TCGA-06-0184-01A-01R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 7 of 12 complete...
+[bam_sort_core] merging from 29 files and 1 in-memory blocks...
+[bam_sort_core] merging from 32 files and 1 in-memory blocks...
+trimmed_G17203.TCGA-06-0211-02A-02R-2005-01.2.bam_1.fastq has been processed.
+Processing of batch 8 of 12 complete...
+[bam_sort_core] merging from 29 files and 1 in-memory blocks...
+[bam_sort_core] merging from 31 files and 1 in-memory blocks...
+trimmed_G17204.TCGA-08-0386-01A-01R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 9 of 12 complete...
+[bam_sort_core] merging from 43 files and 1 in-memory blocks...
+[bam_sort_core] merging from 46 files and 1 in-memory blocks...
+trimmed_G17205.TCGA-06-0745-01A-01R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 10 of 12 complete...
+[bam_sort_core] merging from 28 files and 1 in-memory blocks...
+[bam_sort_core] merging from 30 files and 1 in-memory blocks...
+trimmed_G17206.TCGA-06-0125-02A-11R-2005-01.2.bam_1.fastq has been processed.
+Processing of batch 11 of 12 complete...
+[bam_sort_core] merging from 26 files and 1 in-memory blocks...
+[bam_sort_core] merging from 29 files and 1 in-memory blocks...
+trimmed_G17207.TCGA-06-0156-01A-03R-1849-01.2.bam_1.fastq has been processed.
+Processing of batch 12 of 12 complete...
+Process complete.
+************************
+    
+Generating count tables...
+
+    1...2...3...4...5...6...7...8...9...
+ _______________________________________________________________________________
+|{ _ ` ~~'"  /  },\    `,   ,`      _    ,~'                                ,~  |
+| '  \       {  |`,     `,'        / `~,/                               ,~`'    |
+|     \       ``'   \             (,\,'                       /`'~`,,~`'        |
+|      ,'          /            o\_,~'  _                    '~,   {}           |
+|     (       __  /             ,~'/~|\/_\  {}                ,'/               |
+|      `\  (   `'              |,'_  '<_                  ,,''/                 |
+|         `, '_,-              /"'` `'~-/,                )                     |
+|          `_`                {            \  `~,~  ,`, ,~`                     |
+|            ``~{^'~,_         \            \,_/  \/  '\)                       |
+|               /     `~~,,     ``~~~,        /       ; \/\                     |
+|               \          `,         \      /           `' <_>                 |
+|                `,       _|          ,     / _          _,~,|\                 |
+|                  {    ,/            \    / //         /      \                |
+|                  {  ,/               \  /  `          \_,-^,_/                |
+|                  { /                 `~'                    v     v           |
+|                  {,                                              /            |
+|                  `,_                                                          |
+|_______________________________________________________________________________|
+
+       
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 3
+Number of threads per worker (where available): 18
+G17189.TCGA-06-0132-01A-02R-1849-01.2.bam__Aligned.sort.bam has been processed.
+G17190.TCGA-06-0174-01A-01R-1849-01.2.bam__Aligned.sort.bam has been processed.
+G17193.TCGA-06-0743-01A-01R-1849-01.2.bam__Aligned.sort.bam has been processed.
+Processing of batch 1 of 4 complete...
+G17195.TCGA-06-0138-01A-02R-1849-01.2.bam__Aligned.sort.bam has been processed.
+G17197.TCGA-06-0211-01B-01R-1849-01.2.bam__Aligned.sort.bam has been processed.
+G17199.TCGA-06-0744-01A-01R-1849-01.2.bam__Aligned.sort.bam has been processed.
+Processing of batch 2 of 4 complete...
+G17202.TCGA-06-0184-01A-01R-1849-01.2.bam__Aligned.sort.bam has been processed.
+G17203.TCGA-06-0211-02A-02R-2005-01.2.bam__Aligned.sort.bam has been processed.
+G17204.TCGA-08-0386-01A-01R-1849-01.2.bam__Aligned.sort.bam has been processed.
+Processing of batch 3 of 4 complete...
+G17205.TCGA-06-0745-01A-01R-1849-01.2.bam__Aligned.sort.bam has been processed.
+G17206.TCGA-06-0125-02A-11R-2005-01.2.bam__Aligned.sort.bam has been processed.
+G17207.TCGA-06-0156-01A-03R-1849-01.2.bam__Aligned.sort.bam has been processed.
+Processing of batch 4 of 4 complete...
+Process complete.
+************************
+    
+Normalizing counts based on parameters provided...
+
+                           ___,
+                    o___.-' /
+                    |      _\_
+                    |___.-'   `
+                    |
+                    |
+            _   _   j   _   _
+           [_]_[_]_[_]_[_]_[_]
+           [__j__j__j__j__j__]
+             [_j__j__j__j__]
+             [__j__j__j__j_]
+             [_j__j/V\_j__j]
+             [__j_// \__j_]
+             [_j__|   |_j__]
+             [__j_|___|__j_]
+             [_j__j__j__j__]
+             [__j__j__j__j_]
+  _   _   _  [_j__j__j__j__]  _   _   _   _
+_[_]_[_]_[_]_[__j__j__j__j_]_[_]_[_]_[_]_[_]_
+  _j__j__j__j[_j__j__j__j__]j__j__j__j__j_
+     j  j  j [  j  j  j  j ] j  j  j  j
+       
+Process complete.
+************************
+    
+Performing quality control on the processed sequencing data...
+
+      _               _               _
+     | |             | |             | |
+  ___| |__   ___  ___| | _____  _   _| |_
+ / __| '_ \ / _ \/ __| |/ / _ \| | | | __|
+| (__| | | |  __/ (__|   < (_) | |_| | |_
+ \___|_| |_|\___|\___|_|\_\___/ \__,_|\__|
+
+
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 12
+Number of threads per worker (where available): 4
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/.local/bin/bin/xpresspipe", line 11, in <module>
+    load_entry_point('XPRESSpipe', 'console_scripts', 'xpresspipe')()
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/XPRESSpipe/xpresspipe/__main__.py", line 474, in main
+    make_readDistributions(args_dict)
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/XPRESSpipe/xpresspipe/readDistribution.py", line 119, in make_readDistributions
+    mod_workers = True)
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/XPRESSpipe/xpresspipe/parallel.py", line 192, in parallelize_pe
+    args_dict)
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/XPRESSpipe/xpresspipe/parallel.py", line 120, in run_pools
+    for file in zip(batch, executor.map(func, batch)):
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/software/pkg/miniconda3/lib/python3.7/concurrent/futures/process.py", line 476, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/software/pkg/miniconda3/lib/python3.7/concurrent/futures/_base.py", line 586, in result_iterator
+    yield fs.pop().result()
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/software/pkg/miniconda3/lib/python3.7/concurrent/futures/_base.py", line 432, in result
+    return self.__get_result()
+  File "/uufs/chpc.utah.edu/common/HIPAA/u0690617/software/pkg/miniconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+slurmstepd: error: Detected 2 oom-kill event(s) in step 888908.batch cgroup.
