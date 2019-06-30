@@ -195,9 +195,6 @@ S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman, {\it J Mol Biol.\/} {\bf
 \bibitem{spearman_rnaseq}
 F.~Liesecke, {\it et~al.\/}, {\it Sci Rep\/} {\bf 8} (2018).
 
-\bibitem{statsmodels}
-S.~Seabold, J.~Perktold, {\it 9th Python in Science Conference\/} (2010).
-
 \bibitem{readthedocs}
 Read the docs, \url{https://readthedocs.org/}.
 

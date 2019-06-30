@@ -18,9 +18,6 @@ cp $SRA/*.fastq $SCRDIR/input/.
 
 cd $SCRDIR/.
 
-xpresspipe modifyGTF -g $REF/transcripts.gtf -p -t
-
 #run script --- add directory of raw data
 #Using Qiagen Illumina 3' adaptor, but shouldn't need adaptor trimming anyways, just a placeholder for now
-xpresspipe riboseq -i $SCRDIR/input -o $SCRDIR/output -r $REF --gtf $REF/transcripts_CT.gtf -e isrib_riboprof -a CTGTAGGCACCATCAAT --method RPM --sjdbOverhang 49 --quantification_method htseq
-
+xpresspipe riboseq -i $SCRDIR/input -o $SCRDIR/output -r $REF --gtf $REF/transcripts_LCT.gtf -e isrib_riboprof -a CTGTAGGCACCATCAAT --method RPM --sjdbOverhang 49 --quantification_method htseq

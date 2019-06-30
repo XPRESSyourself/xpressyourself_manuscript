@@ -15,7 +15,7 @@
 \newlabel{Tab:xpresspipe}{{1}{3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Installation}{4}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Source installation.}{4}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Anaconda installation on compute node.}{4}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Anaconda installation on a high-performance compute node.}{4}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3}Source installation on compute node.}{4}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4}Docker installation}{4}}
 \citation{star}
@@ -74,16 +74,16 @@
 \citation{isrib_riboseq}
 \citation{igv}
 \citation{circligase_bias}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Broad sample quality control and comparision to original processing. A) Cross-processing comparisions between original manuscript and XPRESSpipe. B) Intra-processing comparisions between replicates for XPRESSpipe processing. Note: All R values reported are Spearman R values. All axes are log\textsubscript  {10}(counts).\relax }}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Broad sample quality control and comparision to the original processing. A) Cross-processing comparisions between the original and XPRESSpipe-processed. B) Intra-processing comparisions between replicates for XPRESSpipe processing. Note: All R values reported are Spearman R values. All axes are log\textsubscript  {10}(counts).\relax }}{12}}
 \newlabel{fig:figure2}{{2}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Biological validation and insight into previously published ISR model ribosome profiling data. A-C) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets highlighted in the original study are in purple. Genes with uORFs effected by ISR as highlighted in the original study are highlighted in green. Changes in ribo-seq and mRNA-seq were calculated by DESeq2. Genes with statistically significant changes in translation efficiency for each condition as calculated by DESeq2 are highlighted in black. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript  {2} Translation Efficiency (TE) compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previously discussed thresholding paradigms. Grey lines are all genes, purple lines indicate ISR canonical targets from the original study, orange lines are all genes fitting a strict thresholding paradigm to identify genes that experience a 2-fold or greater increase in TE from Tm treatment to Tm + ISRIB treatment.\relax }}{13}}
+\newlabel{fig:figure3}{{3}{13}}
 \citation{slc1a1_neurotoxic}
 \citation{eif2b_neuroprotective}
 \citation{isrib_riboseq,isrib_structure}
 \citation{slc1a1_neurotoxic}
 \citation{isrib_riboseq}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Translationally down-regulated genes during acute Tm treatment and recovered regulation during Tm + ISRIB treatment.\relax }}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Biological validation and insight into previously published ISR model ribosome profiling data. A-C) Fold change for each drug condition compared to untreated for the ribosome profiling and RNA-seq data. ISR canonical targets highlighted in original study are in purple. Genes with uORFs effected by ISR as highlighted in the original study are highlighted in green. Changes in ribo-seq and mRNA-seq where calculated by DESeq2. Genes with statistically significant changes in translation efficiency for each condition as calculated by DESeq2 are highlighted in black. Points falling outside of plotted range are not included. D) Changes in log\textsubscript  {2} Translation Efficiency (TE) compared to Untreated for each drug condition for each of the translationally down-regulated genes passing previous discussed thresholding paradigms. Grey lines are all genes, purple lines indicate ISR canonical targets from original study, orange lines are all genes fitting a strict thresholding paradigm to identify genes that experience a 2-fold or greater increase in TE from Tm treatment to Tm + ISRIB treatment.\relax }}{14}}
-\newlabel{fig:figure3}{{3}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Translationally down-regulated genes during acute Tm treatment and recovered regulation during Tm + ISRIB treatment.\relax }}{14}}
 \newlabel{tab:targets}{{2}{15}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Performance Validation Using TCGA Data}{15}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pipeline validation using publicly available TCGA count data. Correlations were calculated between publicly available count data from TCGA samples and the XPRESSpipe on the sequence count data. Note: All R values reported are Spearman R values. All axes are log\textsubscript  {10}(counts).\relax }}{16}}
@@ -116,9 +116,7 @@
 \citation{plotly}
 \citation{sklearn}
 \citation{geoparse}
-\citation{deseq2}
 \citation{sva}
-\citation{ingolia_meth}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Materials and Methods}{18}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Software Dependencies}{18}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSpipe package.\relax }}{18}}
@@ -126,28 +124,30 @@
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Summary of dependency software, accession location, and purpose in the XPRESSplot package.\relax }}{18}}
 \newlabel{Tab:software_plot}{{5}{18}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GTF Modification}{18}}
+\citation{ingolia_meth}
 \citation{pandas}
 \citation{matplotlib}
 \citation{numpy1,numpy2}
 \citation{scipy}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Normalization}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Quality Control Summary Plotting}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Metagene Estimation}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Periodicity}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}GTF Flattened Record}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Normalization}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Quality Control Summary Plotting}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Metagene Estimation}{19}}
 \citation{fastqc}
 \citation{blast}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Periodicity}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}rRNA Probe}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Confidence Interval Plotting}{20}}
 \citation{spearman_rnaseq}
-\citation{seaborn}
-\citation{matplotlib}
-\citation{pandas}
-\citation{statsmodels}
+\citation{deseq2}
 \citation{igv}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}rRNA Probe}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Confidence Interval Plotting}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}Ribosome Profiling Example Data Analysis}{20}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}Ribosome profiling processing command.}{20}}
+\citation{plotly}
+\citation{spearman_rnaseq}
+\citation{plotly}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Ribosome Profiling Data Analysis}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}TCGA Data Analysis}{21}}
 \citation{readthedocs}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Cost Analysis}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.12}Cost Analysis}{22}}
 \bibdata{manubib}
 \bibcite{byron_nrg}{1}
 \bibcite{ingolia_science}{2}
@@ -209,12 +209,11 @@
 \bibcite{geoparse}{58}
 \bibcite{blast}{59}
 \bibcite{spearman_rnaseq}{60}
-\bibcite{statsmodels}{61}
-\bibcite{readthedocs}{62}
+\bibcite{readthedocs}{61}
 \bibstyle{Science}
-\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces A sampling of the original counts data plotted against XPRESSpipe-processed data. Selected highlighted genes show consistent differences between processing methods.\relax }}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces A sampling of the original count data plotted against XPRESSpipe-processed data. Selected highlighted genes show consistent differences between processing methods.\relax }}{25}}
 \newlabel{fig:supplement2}{{S1}{25}}
 \@writefile{lof}{\contentsline {figure}{\numberline {S2}{\ignorespaces IGV coverage plots for strongest neurologically annotated genes passing strict thresholding.\relax }}{26}}
 \newlabel{fig:supplement3}{{S2}{26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S3}{\ignorespaces Sample TCGA-06-0132-01A RNA-seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline. A) An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at time of writing. All points are log\textsubscript  {10}(counts). B) An example of the differences arising solely by varying transcriptome reference version. The plot on the left was processed by using GRCh38v79 and the plot of the right was processed using CRCh38v96. Both used unmodified GTF files of the given file version, both allowed multimappers (however HTSeq does not use multimapped reads in quantification, so this does not effect the quantified reads in this case), and used a PHRED threshold greater than or equal to 10. Blue points represent protein coding genes, green points represent pseudogenes, and orange points represent other genes.\relax }}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S3}{\ignorespaces Sample TCGA-06-0132-01A RNA-seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline. A) An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All points are log\textsubscript  {10}(counts). B) An example of the differences arising solely by varying transcriptome reference version. The plot on the left was processed by using GRCh38v79 and the plot of the right was processed using CRCh38v96. Both used unmodified GTF files of the given file version, both allowed multimappers (however HTSeq does not use multimapped reads in quantification, so this does not affect the quantified reads in this case), and used a PHRED threshold greater than or equal to 10. Blue points represent protein-coding genes, green points represent pseudogenes, and orange points represent other genes.\relax }}{27}}
 \newlabel{fig:supplement4}{{S3}{27}}
