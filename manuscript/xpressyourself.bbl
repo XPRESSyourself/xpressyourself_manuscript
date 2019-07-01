@@ -101,6 +101,9 @@ S.~Andrews, Fastqc,
 S.~Sayols, D.~Scherzinger, H.~Klein, {\it BMC Bioinformatics\/} {\bf 17}, 428
   (2016).
 
+\bibitem{igv}
+J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
+
 \bibitem{ribowaltz}
 F.~Lauria, {\it et~al.\/}, {\it PLoS Comput Biol\/} {\bf 14} (2018).
 
@@ -158,9 +161,6 @@ D.~Kim, {\it et~al.\/}, {\it Genome Biol\/} {\bf 14} (2013).
 
 \bibitem{alignment_benchmark}
 G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
-
-\bibitem{igv}
-J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
 
 \bibitem{circligase_bias}
 R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
