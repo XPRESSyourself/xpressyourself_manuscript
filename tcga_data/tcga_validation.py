@@ -533,3 +533,109 @@ best_name2 = 'v96_looseTrim_normalGTF_multimappers'
 gtf_file2 = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf'
 settings2 = 'GTFv96, PHRED>=10, normalGTF, allow multimappers'
 interactive_scatter(best_file2, best_name2, 'TCGA-06-0132-01A', gtf_file2, settings2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+Plot a sample using v79 Ensemble build (gencode v22) -- THIS BATCH ALIGNED USING STAR 2.4.2a and HTSEQ 0.6.1p
+"""
+comp_dir = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/v242_star/'
+comp_samples = [
+    'v79_looseTrim_normalGTF_multimappers_count_table',
+    'v79_looseTrim_normalGTF_uniqueOnly_count_table',
+    'v79_strictTrim_normalGTF_multimappers_count_table',
+    'v79_strictTrim_normalGTF_uniqueOnly_count_table',
+    'v79_looseTrim_longestGTF_multimappers_count_table',
+    'v79_looseTrim_longestGTF_uniqueonly_count_table',
+    'v79_strictTrim_longestGTF_multimappers_count_table',
+    'v96_looseTrim_normalGTF_multimappers_count_table',
+    'v96_looseTrim_normalGTF_uniqueOnly_count_table',
+    'v96_strictTrim_normalGTF_multimappers_count_table',
+    'v96_looseTrim_longestGTF_multimappers_count_table',
+    'v96_strictTrim_longestGTF_multimappers_count_table',
+]
+
+comp_files = []
+for x in comp_samples:
+    comp_files.append([str(x)[:-12], str(comp_dir) + str(x) + '.tsv'])
+
+fig, axes = plt.subplots(
+    nrows = 4,
+    ncols = 4,
+    figsize = (20, 20),
+    subplot_kw = {
+        'facecolor':'none'},
+    sharex=True, sharey=True) # Create shared axis for cleanliness
+plt.subplots_adjust(
+    bottom = 0.1)
+plt.yticks([0,1,2,3,4,5,6]) # Limit axis labels to ints
+plt.xticks([0,1,2,3,4,5,6])
+file_number = 0
+
+for x in comp_files:
+
+    print(x[0])
+
+    counts = pd.read_csv(
+        str(x[1]),
+        sep='\t',
+        header=None,
+        index_col=0)
+
+    del counts.index.name
+    counts.columns = [str(x[0])]
+    counts.index = counts.index.str.split('.').str[0]
+    counts = counts.dropna()
+    counts = counts.iloc[:-5]
+    counts.columns = ['TCGA-06-0132-01A']
+
+    counts_genes = counts.index.tolist()
+    tcga_v22_genes = tcga[['TCGA-06-0132-01A']].index.tolist()
+    len(counts_genes)
+    len(tcga_v22_genes)
+
+    common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
+    len(common_v22_genes)
+
+    counts_common = counts.reindex(index = common_v22_genes)
+    tcga_v22_common = tcga[['TCGA-06-0132-01A']].reindex(index = common_v22_genes)
+
+    counts_common.shape
+    tcga_v22_common.shape
+
+    counts_common = counts_common.reindex(sorted(counts_common.columns), axis=1)
+    tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
+
+    axes = make_figure4S(
+        counts_common,
+        tcga_v22_common,
+        'TCGA-06-0132-01A',
+        str(x[0]) + '.png',
+        file_number,
+        axes,
+        x[0])
+
+    file_number += 1
+
+fig.savefig(
+    '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/tcga_comparisons_table_star242a.png',
+    dpi = 600,
+    bbox_inches = 'tight')
