@@ -186,7 +186,8 @@ def interactive_scatter(
     title,
     sample_id,
     gtf_file,
-    xpresspipe_settings):
+    xpresspipe_settings,
+    supplement_list=None):
 
     best_counts = pd.read_csv(
         str(file_name),
@@ -205,8 +206,12 @@ def interactive_scatter(
     len(counts_genes)
     len(tcga_v22_genes)
 
-    common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
-    len(common_v22_genes)
+    if supplement_list != None:
+        common_v22_genes_pre = list(set(counts_genes).intersection(supplement_list))
+        common_v22_genes = list(set(common_v22_genes_pre).intersection(tcga_v22_genes))
+    else:
+        common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
+        len(common_v22_genes)
 
     counts_common = best_counts.reindex(index = common_v22_genes)
     tcga_v22_common = tcga[[sample_id]].reindex(index = common_v22_genes)
@@ -296,39 +301,6 @@ metadata['sample_id'] = meta['Sample ID']
 metadata['count_path'] = meta['File ID']
 metadata['count_name'] = meta['File Name']
 
-"""
-IMPORT XPRESSPIPE GENERATED DATA
-"""
-"""
-x_path = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/xpresspipe/'
-
-x_samples = [
-    'G17189.TCGA-06-0132-01A-02R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17190.TCGA-06-0174-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17193.TCGA-06-0743-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17195.TCGA-06-0138-01A-02R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17197.TCGA-06-0211-01B-01R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17199.TCGA-06-0744-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17202.TCGA-06-0184-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17203.TCGA-06-0211-02A-02R-2005-01.2.bam__Aligned.sort.tsv',
-    'G17204.TCGA-08-0386-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17205.TCGA-06-0745-01A-01R-1849-01.2.bam__Aligned.sort.tsv',
-    'G17206.TCGA-06-0125-02A-11R-2005-01.2.bam__Aligned.sort.tsv',
-    'G17207.TCGA-06-0156-01A-03R-1849-01.2.bam__Aligned.sort.tsv',
-    ]
-
-x_path_samples = [str(x_path) + x for x in x_samples]
-xpresspipe = count_table(x_path_samples)
-
-di = {}
-for x in x_samples:
-    name = x.split('.')[0]
-    id = x.split('.')[1][:-12]
-    di[name] = id
-
-xpresspipe.columns = xpresspipe.columns.to_series().map(di)
-xpresspipe.shape
-"""
 x_samples = {
     'G17189':'TCGA-06-0132-01A',
     'G17190':'TCGA-06-0174-01A',
@@ -370,12 +342,28 @@ tcga.columns = tcga.columns.to_series().map(di2)
 tcga.index = tcga.index.str.split('.').str[0]
 tcga = tcga.loc[:,~tcga.columns.duplicated(keep=False)]
 tcga.shape
-
+tcga.head()
 """
 GET COMMON SAMPLES AND GENES
 """
+gtf = pd.read_csv(
+    '~/Desktop/reference/Homo_sapiens.GRCh38.96.gtf',
+    sep='\t',
+    comment='#',
+    header=None,
+    low_memory=False)
+gtf.shape
+
+non_pseudo = gtf.loc[~gtf[8].str.contains('pseudogene')]
+non_pseudo = non_pseudo.loc[non_pseudo[2] == 'gene']
+non_pseudo.shape
+non_pseudo['names'] = non_pseudo[8].str.split('\";').str[0].str.lstrip('gene_id "')
+non_pseudo.head()
+
+non_pseudo_genes = non_pseudo['names'].tolist()
 xpresspipe_genes = xpresspipe.index.tolist()
 tcga_genes = tcga.index.tolist()
+len(non_pseudo_genes)
 len(xpresspipe_genes)
 len(tcga_genes)
 
@@ -426,216 +414,154 @@ make_figure4(
     sample_list,
     'xpresspipe_vs_tcga_counts.png')
 
+
+###
+common_genes_pre = list(set(xpresspipe_genes).intersection(non_pseudo_genes))
+common_genes = list(set(common_genes_pre).intersection(tcga_genes))
+len(common_genes)
+
+xpresspipe_common = xpresspipe.reindex(index = common_genes)
+tcga_common = tcga.reindex(index = common_genes)
+
+common_cols = list(set(xpresspipe_cols).intersection(tcga_cols))
+len(common_cols)
+
+# Missing for some reason
+set(xpresspipe_cols) - set(common_cols)
+
+xpresspipe_common = xpresspipe_common.reindex(columns = common_cols)
+tcga_common = tcga_common.reindex(columns = common_cols)
+
+xpresspipe_common.shape
+tcga_common.shape
+
+xpresspipe_common = xpresspipe_common.reindex(sorted(xpresspipe_common.columns), axis=1)
+tcga_common = tcga_common.reindex(sorted(tcga_common.columns), axis=1)
+
+
+make_figure4(
+    xpresspipe_common,
+    tcga_common,
+    sample_list,
+    'xpresspipe_vs_tcga_counts_nopseudo.png')
+
 """
 Plot a sample using v79 Ensemble build (gencode v22)
 """
-comp_dir = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/'
-comp_samples = [
-    'v79_looseTrim_normalGTF_multimappers_count_table',
-    'v79_looseTrim_normalGTF_uniqueOnly_count_table',
-    'v79_strictTrim_normalGTF_multimappers_count_table',
-    'v79_strictTrim_normalGTF_uniqueOnly_count_table',
-    'v79_looseTrim_longestGTF_multimappers_count_table',
-    'v79_looseTrim_longestGTF_uniqueonly_count_table',
-    'v79_strictTrim_longestGTF_multimappers_count_table',
-    'v79_strictTrim_longestGTF_uniqueonly_count_table',
-    'v96_looseTrim_normalGTF_multimappers_count_table',
-    'v96_looseTrim_normalGTF_uniqueOnly_count_table',
-    'v96_strictTrim_normalGTF_multimappers_count_table',
-    'v96_strictTrim_normalGTF_uniqueOnly_count_table',
-    'v96_looseTrim_longestGTF_multimappers_count_table',
-    'v96_looseTrim_longestGTF_uniqueonly_count_table',
-    'v96_strictTrim_longestGTF_multimappers_count_table',
-    'v96_strictTrim_longestGTF_uniqueonly_count_table',
+def run_comp(pseudogenes=False):
 
-]
+    comp_dir = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/'
+    comp_samples = [
+        'v79_looseTrim_normalGTF_multimappers_count_table',
+        'v79_looseTrim_normalGTF_uniqueOnly_count_table',
+        'v79_strictTrim_normalGTF_multimappers_count_table',
+        'v79_strictTrim_normalGTF_uniqueOnly_count_table',
+        'v79_looseTrim_longestGTF_multimappers_count_table',
+        'v79_looseTrim_longestGTF_uniqueonly_count_table',
+        'v79_strictTrim_longestGTF_multimappers_count_table',
+        'v79_strictTrim_longestGTF_uniqueonly_count_table',
+        'v96_looseTrim_normalGTF_multimappers_count_table',
+        'v96_looseTrim_normalGTF_uniqueOnly_count_table',
+        'v96_strictTrim_normalGTF_multimappers_count_table',
+        'v96_strictTrim_normalGTF_uniqueOnly_count_table',
+        'v96_looseTrim_longestGTF_multimappers_count_table',
+        'v96_looseTrim_longestGTF_uniqueonly_count_table',
+        'v96_strictTrim_longestGTF_multimappers_count_table',
+        'v96_strictTrim_longestGTF_uniqueonly_count_table',
 
-comp_files = []
-for x in comp_samples:
-    comp_files.append([str(x)[:-12], str(comp_dir) + str(x) + '.tsv'])
+    ]
 
-fig, axes = plt.subplots(
-    nrows = 4,
-    ncols = 4,
-    figsize = (20, 20),
-    subplot_kw = {
-        'facecolor':'none'},
-    sharex=True, sharey=True) # Create shared axis for cleanliness
-plt.subplots_adjust(
-    bottom = 0.1)
-plt.yticks([0,1,2,3,4,5,6]) # Limit axis labels to ints
-plt.xticks([0,1,2,3,4,5,6])
-file_number = 0
+    comp_files = []
+    for x in comp_samples:
+        comp_files.append([str(x)[:-12], str(comp_dir) + str(x) + '.tsv'])
 
-for x in comp_files:
+    fig, axes = plt.subplots(
+        nrows = 4,
+        ncols = 4,
+        figsize = (20, 20),
+        subplot_kw = {
+            'facecolor':'none'},
+        sharex=True, sharey=True) # Create shared axis for cleanliness
+    plt.subplots_adjust(
+        bottom = 0.1)
+    plt.yticks([0,1,2,3,4,5,6]) # Limit axis labels to ints
+    plt.xticks([0,1,2,3,4,5,6])
+    file_number = 0
 
-    print(x[0])
+    for x in comp_files:
 
-    counts = pd.read_csv(
-        str(x[1]),
-        sep='\t',
-        header=None,
-        index_col=0)
+        print(x[0])
 
-    del counts.index.name
-    counts.columns = [str(x[0])]
-    counts.index = counts.index.str.split('.').str[0]
-    counts = counts.dropna()
-    counts = counts.iloc[:-5]
-    counts.columns = ['TCGA-06-0132-01A']
+        counts = pd.read_csv(
+            str(x[1]),
+            sep='\t',
+            header=None,
+            index_col=0)
 
-    counts_genes = counts.index.tolist()
-    tcga_v22_genes = tcga[['TCGA-06-0132-01A']].index.tolist()
-    len(counts_genes)
-    len(tcga_v22_genes)
+        del counts.index.name
+        counts.columns = [str(x[0])]
+        counts.index = counts.index.str.split('.').str[0]
+        counts = counts.dropna()
+        counts = counts.iloc[:-5]
+        counts.columns = ['TCGA-06-0132-01A']
 
-    common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
-    len(common_v22_genes)
+        counts_genes = counts.index.tolist()
+        tcga_v22_genes = tcga[['TCGA-06-0132-01A']].index.tolist()
+        len(counts_genes)
+        len(tcga_v22_genes)
 
-    counts_common = counts.reindex(index = common_v22_genes)
-    tcga_v22_common = tcga[['TCGA-06-0132-01A']].reindex(index = common_v22_genes)
+        if pseudogenes == False:
+            common_genes_pre = list(set(counts_genes).intersection(non_pseudo_genes))
+            common_v22_genes = list(set(common_genes_pre).intersection(tcga_v22_genes))
+            file_name = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/tcga_comparisons_table_nopseudo.png'
+            len(common_v22_genes)
+        else:
+            common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
+            file_name = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/tcga_comparisons_table.png'
+            len(common_v22_genes)
 
-    counts_common.shape
-    tcga_v22_common.shape
+        counts_common = counts.reindex(index = common_v22_genes)
+        tcga_v22_common = tcga[['TCGA-06-0132-01A']].reindex(index = common_v22_genes)
 
-    counts_common = counts_common.reindex(sorted(counts_common.columns), axis=1)
-    tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
+        counts_common.shape
+        tcga_v22_common.shape
 
-    axes = make_figure4S(
-        counts_common,
-        tcga_v22_common,
-        'TCGA-06-0132-01A',
-        str(x[0]) + '.png',
-        file_number,
-        axes,
-        x[0])
+        counts_common = counts_common.reindex(sorted(counts_common.columns), axis=1)
+        tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
 
-    file_number += 1
+        axes = make_figure4S(
+            counts_common,
+            tcga_v22_common,
+            'TCGA-06-0132-01A',
+            str(x[0]) + '.png',
+            file_number,
+            axes,
+            x[0])
 
-fig.savefig(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/tcga_comparisons_table.png',
-    dpi = 600,
-    bbox_inches = 'tight')
+        file_number += 1
 
+    fig.savefig(
+        file_name,
+        dpi = 600,
+        bbox_inches = 'tight')
+
+run_comp(pseudogenes=False)
+run_comp(pseudogenes=True)
 
 
 """
 Plot pseudogenes
 """
 best_file1 = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v79_looseTrim_normalGTF_multimappers_count_table.tsv'
-best_name1 = 'v79_looseTrim_normalGTF_multimappers'
 gtf_file1 = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.79.gtf'
 settings1 = 'GTFv79, PHRED>=10, normalGTF, allow multimappers'
+best_name1 = 'v79_looseTrim_normalGTF_multimappers'
 interactive_scatter(best_file1, best_name1, 'TCGA-06-0132-01A', gtf_file1, settings1)
+best_name1 = 'v79_looseTrim_normalGTF_multimappers_nopseudo'
+interactive_scatter(best_file1, best_name1, 'TCGA-06-0132-01A', gtf_file1, settings1, supplement_list=non_pseudo_genes)
 
 best_file2 = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v96_looseTrim_normalGTF_multimappers_count_table.tsv'
 best_name2 = 'v96_looseTrim_normalGTF_multimappers'
 gtf_file2 = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf'
 settings2 = 'GTFv96, PHRED>=10, normalGTF, allow multimappers'
 interactive_scatter(best_file2, best_name2, 'TCGA-06-0132-01A', gtf_file2, settings2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-Plot a sample using v79 Ensemble build (gencode v22) -- THIS BATCH ALIGNED USING STAR 2.4.2a and HTSEQ 0.6.1p
-"""
-comp_dir = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/v242_star/'
-comp_samples = [
-    'v79_looseTrim_normalGTF_multimappers_count_table',
-    'v79_looseTrim_normalGTF_uniqueOnly_count_table',
-    'v79_strictTrim_normalGTF_multimappers_count_table',
-    'v79_strictTrim_normalGTF_uniqueOnly_count_table',
-    'v79_looseTrim_longestGTF_multimappers_count_table',
-    'v79_looseTrim_longestGTF_uniqueonly_count_table',
-    'v79_strictTrim_longestGTF_multimappers_count_table',
-    'v96_looseTrim_normalGTF_multimappers_count_table',
-    'v96_looseTrim_normalGTF_uniqueOnly_count_table',
-    'v96_strictTrim_normalGTF_multimappers_count_table',
-    'v96_looseTrim_longestGTF_multimappers_count_table',
-    'v96_strictTrim_longestGTF_multimappers_count_table',
-]
-
-comp_files = []
-for x in comp_samples:
-    comp_files.append([str(x)[:-12], str(comp_dir) + str(x) + '.tsv'])
-
-fig, axes = plt.subplots(
-    nrows = 4,
-    ncols = 4,
-    figsize = (20, 20),
-    subplot_kw = {
-        'facecolor':'none'},
-    sharex=True, sharey=True) # Create shared axis for cleanliness
-plt.subplots_adjust(
-    bottom = 0.1)
-plt.yticks([0,1,2,3,4,5,6]) # Limit axis labels to ints
-plt.xticks([0,1,2,3,4,5,6])
-file_number = 0
-
-for x in comp_files:
-
-    print(x[0])
-
-    counts = pd.read_csv(
-        str(x[1]),
-        sep='\t',
-        header=None,
-        index_col=0)
-
-    del counts.index.name
-    counts.columns = [str(x[0])]
-    counts.index = counts.index.str.split('.').str[0]
-    counts = counts.dropna()
-    counts = counts.iloc[:-5]
-    counts.columns = ['TCGA-06-0132-01A']
-
-    counts_genes = counts.index.tolist()
-    tcga_v22_genes = tcga[['TCGA-06-0132-01A']].index.tolist()
-    len(counts_genes)
-    len(tcga_v22_genes)
-
-    common_v22_genes = list(set(counts_genes).intersection(tcga_v22_genes))
-    len(common_v22_genes)
-
-    counts_common = counts.reindex(index = common_v22_genes)
-    tcga_v22_common = tcga[['TCGA-06-0132-01A']].reindex(index = common_v22_genes)
-
-    counts_common.shape
-    tcga_v22_common.shape
-
-    counts_common = counts_common.reindex(sorted(counts_common.columns), axis=1)
-    tcga_v22_common = tcga_v22_common.reindex(sorted(tcga_v22_common.columns), axis=1)
-
-    axes = make_figure4S(
-        counts_common,
-        tcga_v22_common,
-        'TCGA-06-0132-01A',
-        str(x[0]) + '.png',
-        file_number,
-        axes,
-        x[0])
-
-    file_number += 1
-
-fig.savefig(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/tcga_comparisons_table_star242a.png',
-    dpi = 600,
-    bbox_inches = 'tight')

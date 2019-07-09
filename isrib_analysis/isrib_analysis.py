@@ -88,7 +88,7 @@ def make_figure2A(
             height=1000,
             title=str(x))
 
-        py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/plots/' + str(title)[:-4] + '.html')
+        py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title)[:-4] + '.html')
 
         # Get data as array-like for samples being compared
         data_c1 = data.copy()
@@ -158,7 +158,7 @@ def make_figure2A(
         ax.yaxis.set_label_position('right')
 
     fig.savefig(
-        '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/plots/' + str(title),
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title),
         dpi = 600,
         bbox_inches = 'tight')
 
@@ -238,7 +238,7 @@ def make_figure2S(
         ax.set_ylabel('log$_1$$_0$(counts)', fontsize=16)
 
     fig.savefig(
-        '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/plots/' + str(title),
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title),
         dpi = 600,
         bbox_inches = 'tight')
 
@@ -344,7 +344,7 @@ def make_figure2B(
         ax.xaxis.set_label_position('top')
 
     fig.savefig(
-        '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/plots/' + str(title),
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title),
         dpi = 600,
         bbox_inches = 'tight')
 
@@ -578,40 +578,48 @@ def interactive_scatter(sample, data, ingolia_data, data1='xpresspipe', data2='i
         height=1000,
         title=sample)
 
-    py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/plots/' + str(sample) + '.html')
+    py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(sample) + '.html')
+
+
+# Read in single-pass XPRESSpipe processed read data quantified with HTSeq using non-de-deuplicated alignments
+def get_data(file, sample_suffix='_1_Aligned'):
+    data = pd.read_csv(
+        file,
+        sep = '\t',
+        index_col = 0)
+
+    # Accessed via:
+    # $ curl -O ftp://ftp.ensembl.org/pub/release-96/gtf/homo_sapiens/Homo_sapiens.GRCh38.96.gtf.gz
+    # $ gzip -d Homo_sapiens.GRCh38.96.gtf.gz
+    data = convert_names(
+        data,
+        '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf')
+    data.columns = data.columns.str.replace(str(sample_suffix), '')
+    data.shape
+
+    # Combine lanes
+    sra_info = pd.read_csv(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/GSE65778_table.txt',
+        sep = '\t')
+    data = name_map(data, sra_info)
+    data = data.groupby(level=0).sum() # Combine duplicate named genes
+
+    return data
+
+file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_riboseq_xpresspipe_count_table.tsv'
+get_data(file)
+
 
 """
 READ IN DATA
 """
-# Read in single-pass XPRESSpipe processed read data quantified with HTSeq using non-de-deuplicated alignments
-data = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_riboseq_xpresspipe_count_table.tsv',
-    sep = '\t',
-    index_col = 0)
-
-# Accessed via:
-# $ curl -O ftp://ftp.ensembl.org/pub/release-96/gtf/homo_sapiens/Homo_sapiens.GRCh38.96.gtf.gz
-# $ gzip -d Homo_sapiens.GRCh38.96.gtf.gz
-data = convert_names(
-    data,
-    '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf')
-data.columns = data.columns.str.replace('_1_Aligned', '')
-data.shape
-
-# Combine lanes
-sra_info = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/GSE65778_table.txt',
-    sep = '\t')
-data = name_map(data, sra_info)
-
 # Clean up data
-data = data.groupby(level=0).sum() # Combine duplicate named genes
 data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
 
 data_rpm = rpm(data_threshold)
 
 # Export for DESeq2
-data_threshold.to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isribxpresspipe_thresholded_counts.tsv',sep='\t')
+data_threshold.to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isribxpresspipe_thresholded_counts.tsv',sep='\t')
 
 untr_mrna = ['untr_a_hek', 'untr_b_hek']
 untr_ribo = ['ribo_untr_a', 'ribo_untr_b']
@@ -622,22 +630,22 @@ tmisrib_ribo = ['ribo_tmisrib_a', 'ribo_tmisrib_b']
 isrib_mrna = ['isrib_a_hek', 'isrib_b_hek']
 isrib_ribo = ['ribo_isrib_a', 'ribo_isrib_b']
 
-data_threshold[untr_ribo + tm_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tm_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + tmisrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tmisrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + isrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + tm_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + tmisrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + isrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
-data_threshold[untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tm_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tmisrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
-data_threshold[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tm_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/tmisrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/isrib_de/isrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
 """
 READ IN TOPHAT SAMPLES
 """
-tophat_file = '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/tophat_isrib_counts_count_table.tsv'
+tophat_file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/tophat_isrib_counts_count_table.tsv'
 data_tophat = pd.read_csv(
     tophat_file,
     sep = '\t',
@@ -652,7 +660,7 @@ data_tophat.shape
 
 # Combine lanes
 sra_info = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/GSE65778_table.txt',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/GSE65778_table.txt',
     sep = '\t')
 data_tophat = name_map(data_tophat, sra_info)
 data_tophat = data_tophat.groupby(level=0).sum()
@@ -664,7 +672,7 @@ READ IN INGOLIA DATA
 """
 # Read in Ingolia raw counts from Elife supplement table
 ingolia = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/7283587_analysis/ingolia_counts_table.txt',
+    '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/ingolia_counts_table.txt',
     sep = '\t',
     index_col = 0)
 ingolia = ingolia.drop('size', axis = 1)
@@ -720,11 +728,48 @@ ingolia_common_thcomp = ingolia.reindex(index = common_genes_th)
 FIGURE 2A
 """
 # Run correlations between sample alignments
+def cycle_fig2a(file, ingolia):
+
+    data = get_data(file, sample_suffix='__Aligned')
+
+    data_genes = data.index.tolist()
+    ingolia_genes = ingolia.index.tolist()
+
+    common_genes = list(set(data_genes).intersection(ingolia_genes))
+
+    data_common = data.reindex(index = common_genes)
+    ingolia_common = ingolia.reindex(index = common_genes)
+
+    make_figure2A(
+        data_common,
+        ingolia_common,
+        str(file.split('/')[-1][:-4]) + '_external_correlations_summary_htseq.png')
+
+
+file_list = [
+    'isrib_comp_v76_truncated_count_table.tsv',
+    'isrib_comp_v76_normal_count_table.tsv',
+    'isrib_comp_v76_longest_truncated_count_table.tsv',
+    'isrib_comp_v96_truncated_count_table.tsv',
+    'isrib_comp_v96_normal_count_table.tsv',
+    'isrib_comp_v96_longest_truncated_count_table.tsv'
+]
+file_list = ['/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/' + str(f) for f in file_list]
+
+for file in file_list:
+
+    cycle_fig2a(file, ingolia)
+
+
+
+
+
+
+
 make_figure2A(
     data_common,
     ingolia_common,
     'external_correlations_summary_htseq.png')
-
 
 make_figure2S(
     data_tophat_common,
