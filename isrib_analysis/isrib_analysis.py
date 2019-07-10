@@ -38,7 +38,8 @@ def name_map(
 def make_figure2A(
     data,
     ingolia_data,
-    title):
+    title,
+    interactive=False):
 
     fig, axes = plt.subplots(
         nrows = 4,
@@ -73,22 +74,23 @@ def make_figure2A(
 
     for x in file_list:
 
-        merged_best = pd.concat([data[[str(x)]], ingolia_data[[str(x)]]], axis=1, sort=False)
-        merged_best.columns = ['xpresspipe', 'ingolia']
-        merged_best['genes'] = merged_best.index
-        sc = px.scatter(
-            merged_best,
-            x='xpresspipe',
-            y='ingolia',
-            hover_name='genes',
-            log_x=True,
-            log_y=True,
-            opacity=0.4,
-            width=1400,
-            height=1000,
-            title=str(x))
+        if interactive == True:
+            merged_best = pd.concat([data[[str(x)]], ingolia_data[[str(x)]]], axis=1, sort=False)
+            merged_best.columns = ['xpresspipe', 'ingolia']
+            merged_best['genes'] = merged_best.index
+            sc = px.scatter(
+                merged_best,
+                x='xpresspipe',
+                y='ingolia',
+                hover_name='genes',
+                log_x=True,
+                log_y=True,
+                opacity=0.4,
+                width=1400,
+                height=1000,
+                title=str(x))
 
-        py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title)[:-4] + '.html')
+            py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title)[:-4] + '.html')
 
         # Get data as array-like for samples being compared
         data_c1 = data.copy()
@@ -587,6 +589,7 @@ def get_data(file, sample_suffix='_1_Aligned'):
         file,
         sep = '\t',
         index_col = 0)
+    data.index = data.index.str.split('.').str[0]
 
     # Accessed via:
     # $ curl -O ftp://ftp.ensembl.org/pub/release-96/gtf/homo_sapiens/Homo_sapiens.GRCh38.96.gtf.gz
@@ -607,7 +610,7 @@ def get_data(file, sample_suffix='_1_Aligned'):
     return data
 
 file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_riboseq_xpresspipe_count_table.tsv'
-get_data(file)
+data = get_data(file)
 
 
 """
@@ -752,18 +755,17 @@ file_list = [
     'isrib_comp_v76_longest_truncated_count_table.tsv',
     'isrib_comp_v96_truncated_count_table.tsv',
     'isrib_comp_v96_normal_count_table.tsv',
-    'isrib_comp_v96_longest_truncated_count_table.tsv'
+    'isrib_comp_v96_longest_truncated_count_table.tsv',
+    'isrib_comp_v72_truncated_count_table.tsv',
+    'isrib_comp_v72_normal_count_table.tsv',
+    'isrib_comp_v72_longest_truncated_count_table.tsv'
 ]
+
 file_list = ['/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/' + str(f) for f in file_list]
 
 for file in file_list:
 
     cycle_fig2a(file, ingolia)
-
-
-
-
-
 
 
 make_figure2A(

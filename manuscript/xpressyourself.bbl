@@ -14,6 +14,9 @@ Z.~Costello, H.~Martin, {\it NPJ Syst Biol Appl\/} {\bf 4} (2018).
 \bibitem{funari_science}
 V.~Funari, S.~Canosa, {\it Science\/} {\bf 344}, 653 (2014).
 
+\bibitem{ingolia_meth}
+N.~McGlincy, N.~Ingolia, {\it Methods\/} {\bf 126}, 112 (2017).
+
 \bibitem{gerashchenko_nar}
 M.~Gerashchenko, V.~Gladyshev, {\it Nucleic Acids Res\/} {\bf 42} (2014).
 
@@ -23,9 +26,6 @@ C.~Artieri, H.~Fraser, {\it Genome Res\/} {\bf 24}, 2011 (2014).
 \bibitem{hussman_plosg}
 J.~Hussmann, S.~Patchett, A.~Johnson, S.~Sawyer, W.~Press, {\it PLoS Genet\/}
   {\bf 11} (2015).
-
-\bibitem{ingolia_meth}
-N.~McGlincy, N.~Ingolia, {\it Methods\/} {\bf 126}, 112 (2017).
 
 \bibitem{weinberg_reports}
 D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
@@ -54,14 +54,23 @@ D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
 \bibitem{nextflow_pipeline}
 \url{https://www.nextflow.io/example4.html}.
 
-\bibitem{cufflinks}
-C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
+\bibitem{fp_range}
+C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green, {\it Mol Cell\/} {\bf 73} (2019).
+
+\bibitem{htseq}
+S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
 
 \bibitem{star}
 A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
 
+\bibitem{alignment_benchmark}
+G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
+
 \bibitem{ensembl_canon}
 \url{https://uswest.ensembl.org/Help/Glossary}.
+
+\bibitem{cufflinks}
+C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
 
 \bibitem{fastp}
 S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
@@ -81,9 +90,6 @@ A.~Quinlan, I.~Hall, {\it Bioinformatics\/} {\bf 26}, 841 (2010).
 
 \bibitem{count_benchmark}
 C.~Robert, M.~Watson, {\it Genome Biol\/} {\bf 16} (2015).
-
-\bibitem{htseq}
-S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
 
 \bibitem{evans_briefbio}
 C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
@@ -158,9 +164,6 @@ Y.~Sekine, {\it et~al.\/}, {\it Science\/} {\bf 348} (2015).
 
 \bibitem{tophat2}
 D.~Kim, {\it et~al.\/}, {\it Genome Biol\/} {\bf 14} (2013).
-
-\bibitem{alignment_benchmark}
-G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
 
 \bibitem{circligase_bias}
 R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
