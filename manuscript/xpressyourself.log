@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 JUL 2019 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 JUL 2019 11:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -571,9 +571,6 @@ m-mend that these pile-up-prone re-gions not be quan-ti-fied when
  []
 
 
-LaTeX Warning: Citation `galaxy' on page 2 undefined on input line 125.
-
-
 Overfull \hbox (2.2035pt too wide) in paragraph at lines 125--125
 \OT1/phv/m/n/10.95 au-to-mated, are of-ten out-dated, and can be dif-fi-cult to
  im-ple-ment. The sec-ond class is a semi-automated pipeline 
@@ -584,13 +581,6 @@ Overfull \hbox (10.8222pt too wide) in paragraph at lines 125--125
 \OT1/phv/m/n/10.95 pro-gram-matic mod-i-fi-ca-tion to change many com-mon pa-ra
 m-e-ters (\OT1/phv/m/sl/10.95 16, 17\OT1/phv/m/n/10.95 ). Per-haps, the most us
 er-friendly ex-am-ple 
- []
-
-
-Overfull \hbox (1.99612pt too wide) in paragraph at lines 125--125
-\OT1/phv/m/n/10.95 is Galaxy (\OT1/phv/b/sl/10.95 ?\OT1/phv/m/n/10.95 ), but in
- cases like its ri-bo-some pro-fil-ing pipeline, meth-ods are severely out-date
-d and a ro-bust qual-ity 
  []
 
 
@@ -656,28 +646,34 @@ Package caption Warning: \captionsetup{type*=...} or \captionof
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--167
+Underfull \hbox (badness 1895) in paragraph at lines 163--164
+[]\OT1/phv/m/n/10.95 Provide pa-ram-e-ter to pro-cess UMIs -- pro-vide lo-ca-ti
+on (see fastp 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
 []\OT1/cmtt/m/n/10.95 -c, 
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 183--184
+Underfull \hbox (badness 1072) in paragraph at lines 187--188
 \OT1/phv/m/n/10.95 sen-si-tiv-ity (rec-om-mended value = 15 for reads   25 nts)
  (see STAR 
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for OML+cmtt on input line 193
+LaTeX Font Info:    Try loading font information for OML+cmtt on input line 197
 .
-LaTeX Font Info:    No file OMLcmtt.fd. on input line 193.
+LaTeX Font Info:    No file OMLcmtt.fd. on input line 197.
 
 
 LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 193.
+(Font)              for symbol `textless' on input line 197.
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 193--194
+Underfull \hbox (badness 1776) in paragraph at lines 197--198
 []\OT1/phv/m/n/10.95 While in-puts will vary sub-module to sub-module, a few po
 ints of guid-ance are im-por-tant to con-sider. 
  []
@@ -688,71 +684,293 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 200
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 204
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 1292) in paragraph at lines 216--216
+Underfull \hbox (badness 1292) in paragraph at lines 220--220
 \OT1/phv/m/n/10.95 the mul-ti-ple an-no-tated splice vari-ants of a gene as a m
 ulti-mapper since they map to a lo-ca-tion where 
  []
 
-[5] [6] [7]
-<figures/xpresspipe_overview.png, id=35, 421.575pt x 472.8867pt>
+[5] [6] [7] [8]
+<figures/xpresspipe_overview.png, id=38, 421.575pt x 472.8867pt>
 File: figures/xpresspipe_overview.png Graphic file (type png)
 <use figures/xpresspipe_overview.png>
-Package pdftex.def Info: figures/xpresspipe_overview.png  used on input line 26
-8.
+Package pdftex.def Info: figures/xpresspipe_overview.png  used on input line 27
+2.
 (pdftex.def)             Requested size: 341.43306pt x 383.00005pt.
- [8]
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+ [9 <./figures/xpresspipe_overview.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 []\OT1/phv/m/n/10.95 RNA-seq ex-per-i-ments can be nor-mal-ized by the user us-
 ing the reads-per-million (RPM), 
  []
 
-[9 <./figures/xpresspipe_overview.png>]
-Underfull \hbox (badness 1048) in paragraph at lines 296--297
+
+Underfull \hbox (badness 1048) in paragraph at lines 300--301
 []\OT1/phv/m/n/10.95 Volcano plots are an ef-fi-cient method for plot-ting the 
 mag-ni-tude, di-rec-tion, and sig-nif-i-cance of changes 
  []
-
-
-LaTeX Warning: Citation `harding_isr' on page 10 undefined on input line 304.
 
 [10]
 <figures/xpresspipe_figure2.png, id=47, 426.1521pt x 558.4062pt>
 File: figures/xpresspipe_figure2.png Graphic file (type png)
 <use figures/xpresspipe_figure2.png>
-Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 310
+Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 314
 .
 (pdftex.def)             Requested size: 455.24408pt x 596.55998pt.
+<figures/xpresspipe_figure3.png, id=48, 557.6835pt x 537.4479pt>
+File: figures/xpresspipe_figure3.png Graphic file (type png)
+<use figures/xpresspipe_figure3.png>
+Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 321
+.
+(pdftex.def)             Requested size: 512.1496pt x 493.61339pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 322.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 322.
+
+Underfull \hbox (badness 1231) in paragraph at lines 326--326
+\OT1/phv/m/n/10.95 3[]A-C, high-lighted in pur-ple) (\OT1/phv/m/sl/10.95 49\OT1
+/phv/m/n/10.95 ). Of note, the fold-change in ri-bo-some oc-cu-pancy of ATF4 (6
+.74) from 
+ []
+
+[11] [12 <./figures/xpresspipe_figure2.png>] [13 <./figures/xpresspipe_figure3.
+png>]
+Underfull \hbox (badness 1436) in paragraph at lines 328--329
+[]\OT1/phv/m/n/10.95 In the orig-i-nal study, trans-la-tion-ally down-regulated
+ genes were re-ported but not dis-cussed. How-ever, 
+ []
+
+[14]
+Underfull \hbox (badness 1910) in paragraph at lines 338--339
+[]\OT1/phv/m/n/10.95 Participates in O-mannosyl gly-co-sy-la-tion. Mu-ta-tions 
+have been as-so-ci-ated with 
+ []
+
+<figures/xpresspipe_figure4.png, id=64, 464.937pt x 366.8907pt>
+File: figures/xpresspipe_figure4.png Graphic file (type png)
+<use figures/xpresspipe_figure4.png>
+Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 374
+.
+(pdftex.def)             Requested size: 512.1496pt x 404.19681pt.
+[15]
+Underfull \hbox (badness 2799) in paragraph at lines 381--382
+[]\OT1/phv/m/n/10.95 XPRESSpipe func-tions can be com-pu-ta-tion-ally in-ten-si
+ve and thus, super-computing re-sources are 
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 381--382
+\OT1/phv/m/n/10.95 in cases where these re-sources are not avail-able, servers 
+such as Ama-zon Web Ser-vices (AWS) 
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 406--406
+\OT1/phv/m/n/10.95 data pro-cess-ing and anal-y-sis. While RNA-seq tech-nolo-gi
+es are be-com-ing more and more ma-ture, 
+ []
+
+[16 <./figures/xpresspipe_figure4.png>]
+Underfull \hbox (badness 4713) in paragraph at lines 410--410
+[]\OT1/phv/m/n/10.95 Tools pre-vi-ously miss-ing from the gen-eral ri-bo-some p
+ro-fil-ing toolkit have also been added within 
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 418--419
+[]\OT1/phv/m/n/10.95 With the adop-tion of this pipeline, the field of high-thr
+oughput se-quenc-ing, par-tic-u-larly within ri-bo-some 
+ []
+
+[17] [18]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 533.
+ [19]
+Underfull \hbox (badness 1067) in paragraph at lines 554--555
+[]\OT1/cmtt/m/n/10.95 rrnaProbe \OT1/phv/m/n/10.95 works on a di-rec-tory con-t
+ain-ing fastqc (\OT1/phv/m/sl/10.95 34\OT1/phv/m/n/10.95 ) zip com-pressed file
+s to de-tect over-represented 
+ []
+
+
+Underfull \hbox (badness 5189) in paragraph at lines 562--563
+[]\OT1/phv/m/n/10.95 Compute the eigen-val-ues and nor-mal-ized eigen-vec-tors 
+of the co-vari-ance ma-trix us-ing the 
+ []
+
+[20]
+Underfull \hbox (badness 1776) in paragraph at lines 568--569
+[]\OT1/phv/m/n/10.95 Plot the con-fi-dence in-ter-vals over the scat-ter plot: 
+The cen-ter point of the con-fi-dence in-ter-val is 
+ []
+
+
+Underfull \hbox (badness 2443) in paragraph at lines 579--579
+[]\OT1/phv/m/n/10.95 Raw data were ob-tained from GEO (GSE65778). Ref-er-ence f
+iles were taken from En-sembl Hu-man 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
+\OT1/phv/m/n/10.95 build GRCh38 ver-sion 96. All as-so-ci-ated fig-ures and ana
+l-y-ses can be re-pro-duced us-ing the 
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 579--579
+\OT1/phv/m/n/10.95 as-so-ci-ated scripts found at https://github.com/XPRESSyour
+self/manuscript (DOI: XXXXXX). See 
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 583--583
+[]\OT1/phv/m/n/10.95 Differential ex-pres-sion and trans-la-tion ef-fi-ciency a
+nal-y-ses were per-formed us-ing all genes, but with a 
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 583--583
+\OT1/phv/m/n/10.95 (\OT1/phv/m/sl/10.95 38\OT1/phv/m/n/10.95 ). Dif-fer-en-tial
+ ex-pres-sion for ribo-seq and RNA-seq was per-formed as de-tailed in the as-so
+-ci-ated 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--588
+\OT1/phv/m/n/10.95 via db-Gap con-trolled ac-cess (https://www.ncbi.nlm.nih.gov
+/gap/). Raw data were pro-cessed 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--588
+\OT1/phv/m/n/10.95 on a pro-tected high-performance com-put-ing en-vi-ron-ment.
+ Cor-re-la-tion be-tween meth-ods or 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--588
+\OT1/phv/m/n/10.95 repli-cates were cal-cu-lated us-ing a Spear-man rank cor-re
+-la-tion co-ef-fi-cient, per-formed us-ing 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--588
+\OT1/phv/m/n/10.95 the \OT1/cmtt/m/n/10.95 scipy.stats.spearman() \OT1/phv/m/n/
+10.95 func-tion (\OT1/phv/m/sl/10.95 63\OT1/phv/m/n/10.95 ). The as-so-ci-ated 
+script can be ac-cessed at 
+ []
+
+
+Underfull \hbox (badness 8189) in paragraph at lines 588--588
+\OT1/phv/m/n/10.95 https://github.com/j-berg/xpressyourself[]-manuscrip-t/blob/
+-mas-ter/tcga[]-data/tcga[]-val-i-da-tion.py. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--588
+\OT1/phv/m/n/10.95 In-ter-ac-tive scat-ter plots were gen-er-ated us-ing Plotly
+ Ex-press (\OT1/phv/m/sl/10.95 61\OT1/phv/m/n/10.95 ) See 
+ []
+
+[21]
+Underfull \hbox (badness 2486) in paragraph at lines 592--593
+[]\OT1/phv/m/n/10.95 Cost anal-y-sis was per-formed by ac-cess-ing run logs fro
+m the HPC and us-ing pub-lished AWS prices 
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 632--633
+[]\OT1/phv/m/n/10.95 The source code for these pack-ages is per-pet-u-ally open
+ source and pro-tected un-der the GPL-3.0 
+ []
+
+
+Underfull \hbox (badness 2529) in paragraph at lines 632--633
+\OT1/phv/m/n/10.95 li-cense. The code can be pub-licly ac-cessed and in-stalled
+ from https://github.com/XPRESSyourself. 
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 632--633
+\OT1/phv/m/n/10.95 and https://xpressplot.readthedocs.io/en/latest/. The pub-li
+cly avail-able ri-bo-some pro-fil-ing data are 
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 632--633
+\OT1/phv/m/n/10.95 ac-ces-sion num-ber phs000178. Code used to cre-ate manuscri
+pt fig-ures and anal-y-ses can be found at 
+ []
+
+[22]
+Underfull \hbox (badness 1776) in paragraph at lines 666--667
+[]\OT1/phv/m/n/10.95 The au-thors wish to thank Michael Howard for help-ful dis
+-cus-sions con-cern-ing ri-bo-some pro-fil-ing and 
+ []
+
+(./xpressyourself.bbl [23] [24])
+<figures/xpresspipe_supplement2.png, id=99, 499.1448pt x 338.7054pt>
+File: figures/xpresspipe_supplement2.png Graphic file (type png)
+<use figures/xpresspipe_supplement2.png>
+Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
+ 676.
+(pdftex.def)             Requested size: 455.24408pt x 308.92528pt.
+<figures/xpresspipe_supplement3.png, id=100, 589.2414pt x 737.154pt>
+File: figures/xpresspipe_supplement3.png Graphic file (type png)
+<use figures/xpresspipe_supplement3.png>
+Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
+ 683.
+(pdftex.def)             Requested size: 512.1496pt x 640.75641pt.
+<figures/xpresspipe_supplement4.png, id=101, 426.393pt x 657.8979pt>
+File: figures/xpresspipe_supplement4.png Graphic file (type png)
+<use figures/xpresspipe_supplement4.png>
+Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
+ 690.
+(pdftex.def)             Requested size: 512.1496pt x 790.23648pt.
+
+Underfull \hbox (badness 1331) in paragraph at lines 691--691
+[]\OT1/phv/m/n/10 Figure S3: |Sam-ple TCGA-06-0132-01A RNA-seq count data com-p
+ared be-tween TCGA count data and var-i-ous 
+ []
+
+[25] [26 <./figures/xpresspipe_supplement2.png>] [27 <./figures/xpresspipe_supp
+lement3.png>] [28 <./figures/xpresspipe_supplement4.png>] (./xpressyourself.aux
 )
-Runaway argument?
-{Comparison between processed data produced by XPRESSpipe and origina\ETC.
-! File ended while scanning use of \caption@xdblarg.
-<inserted text> 
-                \par 
-<*> xpressyourself.tex
-                      
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
 
-! Emergency stop.
-<*> xpressyourself.tex
-                      
-*** (job aborted, no legal \end found)
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- 
+ ) 
 Here is how much of TeX's memory you used:
- 5845 strings out of 492649
- 87450 string characters out of 6129622
- 174897 words of memory out of 5000000
- 9630 multiletter control sequences out of 15000+600000
- 25875 words of font info for 50 fonts, out of 8000000 for 9000
+ 5884 strings out of 492649
+ 88495 string characters out of 6129622
+ 174727 words of memory out of 5000000
+ 9657 multiletter control sequences out of 15000+600000
+ 29521 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,47p,2469b,1406s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
+urw/helvetic/uhvro8a.pfb>
+Output written on xpressyourself.pdf (28 pages, 2941605 bytes).
+PDF statistics:
+ 160 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

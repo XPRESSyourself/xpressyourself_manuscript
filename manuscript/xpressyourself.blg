@@ -4,65 +4,65 @@ The top-level auxiliary file: xpressyourself.aux
 The style file: Science.bst
 Database file #1: manubib.bib
 Warning--entry type for "plotly" isn't style-file defined
---line 425 of file manubib.bib
+--line 434 of file manubib.bib
 Warning--entry type for "encode_pipeline" isn't style-file defined
---line 460 of file manubib.bib
-Warning--entry type for "gdc_pipeline" isn't style-file defined
---line 463 of file manubib.bib
-Warning--entry type for "pavlidis_pipeline" isn't style-file defined
---line 466 of file manubib.bib
-Warning--entry type for "nfcore_pipeline" isn't style-file defined
 --line 469 of file manubib.bib
-Warning--entry type for "umcu_pipeline" isn't style-file defined
+Warning--entry type for "gdc_pipeline" isn't style-file defined
 --line 472 of file manubib.bib
-Warning--entry type for "cellgeni_pipeline" isn't style-file defined
+Warning--entry type for "pavlidis_pipeline" isn't style-file defined
 --line 475 of file manubib.bib
-Warning--entry type for "dnanexus_pipeline" isn't style-file defined
+Warning--entry type for "nfcore_pipeline" isn't style-file defined
 --line 478 of file manubib.bib
-Warning--entry type for "nextflow_pipeline" isn't style-file defined
+Warning--entry type for "umcu_pipeline" isn't style-file defined
 --line 481 of file manubib.bib
-Warning--entry type for "ensembl_canon" isn't style-file defined
+Warning--entry type for "cellgeni_pipeline" isn't style-file defined
 --line 484 of file manubib.bib
+Warning--entry type for "dnanexus_pipeline" isn't style-file defined
+--line 487 of file manubib.bib
+Warning--entry type for "nextflow_pipeline" isn't style-file defined
+--line 490 of file manubib.bib
+Warning--entry type for "ensembl_canon" isn't style-file defined
+--line 493 of file manubib.bib
 Warning--empty journal in seaborn
-You've used 62 entries,
+You've used 64 entries,
             2300 wiz_defined-function locations,
-            1014 strings with 16356 characters,
-and the built_in function-call counts, 11274 in all, are:
-= -- 984
-> -- 542
+            1022 strings with 16796 characters,
+and the built_in function-call counts, 11613 in all, are:
+= -- 1015
+> -- 562
 < -- 2
-+ -- 276
-- -- 133
-* -- 811
-:= -- 1722
-add.period$ -- 62
-call.type$ -- 62
++ -- 286
+- -- 138
+* -- 837
+:= -- 1781
+add.period$ -- 64
+call.type$ -- 64
 change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 63
-duplicate$ -- 627
-empty$ -- 1059
-format.name$ -- 180
-if$ -- 2586
+cite$ -- 65
+duplicate$ -- 648
+empty$ -- 1086
+format.name$ -- 187
+if$ -- 2659
 int.to.chr$ -- 0
-int.to.str$ -- 62
-missing$ -- 50
-newline$ -- 189
-num.names$ -- 52
-pop$ -- 267
+int.to.str$ -- 64
+missing$ -- 52
+newline$ -- 195
+num.names$ -- 54
+pop$ -- 273
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 396
+skip$ -- 405
 stack$ -- 0
 substring$ -- 353
-swap$ -- 181
+swap$ -- 188
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 79
-width$ -- 64
-write$ -- 464
+while$ -- 81
+width$ -- 66
+write$ -- 480
 (There were 11 warnings)

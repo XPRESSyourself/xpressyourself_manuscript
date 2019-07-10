@@ -82,6 +82,9 @@ S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
 Y.~Fu, P.~Wu, T.~Beane, P.~Zamore, Z.~Weng, {\it BMC Genomics\/} {\bf 19}
   (2018).
 
+\bibitem{umitools}
+T.~Smith, A.~Heger, I.~Sudbery, {\it Genome Res\/} {\bf 27} (2017).
+
 \bibitem{baruzzo_natmeth}
 G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135–139 (2017).
 
@@ -116,6 +119,9 @@ J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
 \bibitem{ribowaltz}
 F.~Lauria, {\it et~al.\/}, {\it PLoS Comput Biol\/} {\bf 14} (2018).
 
+\bibitem{deseq2}
+M.~Love, W.~Huber, S.~Anders, {\it Genome Biol\/} {\bf 15} (2014).
+
 \bibitem{matplotlib}
 J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
 
@@ -137,8 +143,8 @@ S.~van~der Walt, S.~Colbert, G.~Varoquaux, {\it Computing in Science
 E.~Jones, T.~Oliphant, P.~Peterson, {\it et~al.\/}, Scipy: Open source
   scientific tools for python, \url{http://www.scipy.org/} (2001).
 
-\bibitem{deseq2}
-M.~Love, W.~Huber, S.~Anders, {\it Genome Biol\/} {\bf 15} (2014).
+\bibitem{harding_isr}
+H.~Harding, {\it et~al.\/}, {\it Mol Cell\/} {\bf 11} (2003).
 
 \bibitem{isr_disease}
 D.~Santos-Ribeiro, L.~Godinas, C.~Pilette, F.~Perros, {\it Drug Discov Today\/}
