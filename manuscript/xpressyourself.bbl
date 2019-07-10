@@ -31,28 +31,29 @@ J.~Hussmann, S.~Patchett, A.~Johnson, S.~Sawyer, W.~Press, {\it PLoS Genet\/}
 D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
 
 \bibitem{encode_pipeline}
-\url{https://www.encodeproject.org/rna-seq/}.
+ENCODE, \url{https://www.encodeproject.org/rna-seq/}.
 
 \bibitem{gdc_pipeline}
-\url{https://docs.gdc.cancer.gov/Data/Bioinformatics_Pipelines/Expression_mRNA_Pipeline/}.
+GDC,
+  \url{https://docs.gdc.cancer.gov/Data/Bioinformatics_Pipelines/Expression_mRNA_Pipeline/}.
 
 \bibitem{pavlidis_pipeline}
-\url{https://github.com/PavlidisLab/rnaseq-pipeline}.
+P.~Lab, \url{https://github.com/PavlidisLab/rnaseq-pipeline}.
 
 \bibitem{nfcore_pipeline}
-\url{https://github.com/nf-core/rnaseq}.
+Nextflow, \url{https://github.com/nf-core/rnaseq}.
 
 \bibitem{umcu_pipeline}
-\url{https://github.com/UMCUGenetics/RNASeq}.
+U.~Genetics, \url{https://github.com/UMCUGenetics/RNASeq}.
 
 \bibitem{cellgeni_pipeline}
-\url{https://github.com/cellgeni/rnaseq}.
+C.~G. Informatics, \url{https://github.com/cellgeni/rnaseq}.
 
 \bibitem{dnanexus_pipeline}
-\url{https://github.com/dnanexus/tophat_cufflinks_rnaseq}.
+DNAnexus, \url{https://github.com/dnanexus/tophat_cufflinks_rnaseq}.
 
 \bibitem{nextflow_pipeline}
-\url{https://www.nextflow.io/example4.html}.
+Nextflow, \url{https://www.nextflow.io/example4.html}.
 
 \bibitem{galaxy}
 E.~Afgan, {\it et~al.\/}, {\it Nucleic Acids Res.\/} {\bf 46}, W537 (2018).
@@ -70,7 +71,7 @@ A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
 G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
 
 \bibitem{ensembl_canon}
-\url{https://uswest.ensembl.org/Help/Glossary}.
+Ensembl, \url{https://uswest.ensembl.org/Help/Glossary}.
 
 \bibitem{cufflinks}
 C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
