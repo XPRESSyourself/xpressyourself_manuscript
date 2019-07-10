@@ -23,47 +23,46 @@ Warning--entry type for "nextflow_pipeline" isn't style-file defined
 --line 481 of file manubib.bib
 Warning--entry type for "ensembl_canon" isn't style-file defined
 --line 484 of file manubib.bib
-Warning--I didn't find a database entry for "galaxy"
 Warning--empty journal in seaborn
-You've used 61 entries,
+You've used 62 entries,
             2300 wiz_defined-function locations,
-            1007 strings with 15791 characters,
-and the built_in function-call counts, 11054 in all, are:
-= -- 964
-> -- 534
+            1014 strings with 16356 characters,
+and the built_in function-call counts, 11274 in all, are:
+= -- 984
+> -- 542
 < -- 2
-+ -- 272
-- -- 131
-* -- 792
-:= -- 1688
-add.period$ -- 61
-call.type$ -- 61
++ -- 276
+- -- 133
+* -- 811
+:= -- 1722
+add.period$ -- 62
+call.type$ -- 62
 change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 615
-empty$ -- 1039
-format.name$ -- 177
-if$ -- 2535
+cite$ -- 63
+duplicate$ -- 627
+empty$ -- 1059
+format.name$ -- 180
+if$ -- 2586
 int.to.chr$ -- 0
-int.to.str$ -- 61
-missing$ -- 49
-newline$ -- 186
-num.names$ -- 51
-pop$ -- 264
+int.to.str$ -- 62
+missing$ -- 50
+newline$ -- 189
+num.names$ -- 52
+pop$ -- 267
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 389
+skip$ -- 396
 stack$ -- 0
-substring$ -- 340
-swap$ -- 177
+substring$ -- 353
+swap$ -- 181
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 77
-width$ -- 63
-write$ -- 456
-(There were 12 warnings)
+while$ -- 79
+width$ -- 64
+write$ -- 464
+(There were 11 warnings)
