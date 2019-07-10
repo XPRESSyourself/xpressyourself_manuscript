@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1562719086 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1562719091
+["bibtex xpressyourself"] 1562730099 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1562730104
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
   "manubib.bib" 1562714283 19805 67f6e5a4374741cc2cc62ef90211b8d9 ""
-  "xpressyourself.aux" 1562719090 13124 785ea3f811dd1993a7ec06d8cd602fa6 ""
+  "xpressyourself.aux" 1562730104 13124 10f887a209c8d82516afa95e829fc98d ""
   (generated)
-  "xpressyourself.blg"
   "xpressyourself.bbl"
-["pdflatex"] 1562719086 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1562719091
+  "xpressyourself.blg"
+["pdflatex"] 1562730100 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1562730104
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -108,10 +108,10 @@
   "figures/xpresspipe_supplement3.png" 1561582241 167903 93c66365b733129428f3509947c3a306 ""
   "figures/xpresspipe_supplement4.png" 1561762263 952753 327d0ff16209c721146511c03c6aa986 ""
   "scicite.sty" 1552866120 21940 f3b9f4a675770828af17c69b198998fc ""
-  "xpressyourself.aux" 1562719090 13124 785ea3f811dd1993a7ec06d8cd602fa6 ""
-  "xpressyourself.bbl" 1562719086 5957 2b9200e0293327d7ccea08e33becfaac "bibtex xpressyourself"
-  "xpressyourself.tex" 1562719081 75412 3ef334cded9517582aeb121fb8035c5d ""
+  "xpressyourself.aux" 1562730104 13124 10f887a209c8d82516afa95e829fc98d ""
+  "xpressyourself.bbl" 1562730099 5957 2b9200e0293327d7ccea08e33becfaac "bibtex xpressyourself"
+  "xpressyourself.tex" 1562730094 75517 e5266b697581d8b922c489c883933f70 ""
   (generated)
-  "xpressyourself.aux"
-  "xpressyourself.log"
   "xpressyourself.pdf"
+  "xpressyourself.log"
+  "xpressyourself.aux"

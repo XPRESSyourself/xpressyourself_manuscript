@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 JUL 2019 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 JUL 2019 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -712,12 +712,13 @@ Underfull \hbox (badness 1107) in paragraph at lines 272--273
 -se-quent sec-tions. We re-fer the reader to the 
  []
 
-[8]
+[8] [9 <./figures/xpresspipe_overview.png>]
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 290.
 
- (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ts1phv.fd
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
-) [9 <./figures/xpresspipe_overview.png>]
+)
 Underfull \hbox (badness 1521) in paragraph at lines 294--295
 \OT1/phv/m/n/10.95 dif-fer-en-tial ex-pres-sion anal-y-sis of count data. We re
 -fer users to the orig-i-nal pub-li-ca-tion for more 
@@ -979,7 +980,7 @@ mf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (28 pages, 2941009 bytes).
+Output written on xpressyourself.pdf (28 pages, 2941090 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  102 compressed objects within 2 object streams
