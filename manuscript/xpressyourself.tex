@@ -261,8 +261,8 @@ While outputs will vary sub-module to sub-module, generally, the user will speci
 
 \begin{figure}
 \centering
-  \includegraphics[width=120mm]{figures/xpresspipe_overview.png}
-  \caption{\textbf{An example schematic of the inputs required by XPRESSpipe and organization of the outputs.}}
+  \includegraphics[width=120mm]{figures/xpresspipe_figure1.png}
+  \caption{\textbf{An example schematic of the inputs required by XPRESSpipe and organization of the outputs.} Representation of the general steps performed by XPRESSpipe and data and log outputs. Steps in parentheses are optional to the user.}
   \label{fig:outputs}
 \end{figure}
 
@@ -658,23 +658,58 @@ The authors wish to thank Michael T. Howard for helpful discussions concerning r
 
 \begin{figure}
 \centering
+  \includegraphics[width=160mm]{figures/xpresspipe_supplement1.png}
+  \caption{\textbf{Comparison between IGV browser and geneCoverage output.} A snapshot of the same samples in IGV (with introns) and the geneCoverage summary (introns collapsed). Green box, exons 11 and 12 of SLC1A1 in human.}
+  \label{fig:supplement1}
+\end{figure}
+
+\begin{figure}
+\centering
   \includegraphics[width=160mm]{figures/xpresspipe_supplement2.png}
-  \caption{\textbf{A sampling of the original count data plotted against XPRESSpipe-processed data.} Selected highlighted genes show consistent differences between processing methods.}
+  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data reveals systematic differences between the analytical regimes.} A) Selected highlighted genes show consistent differences between processing methods. B) Spearman correlation plots using the data table provided as supplementary data with the original ISRIB manuscript comparing biological replicates. RPF, ribosome-protected footprint. Tm, tunicamycin.}
   \label{fig:supplement2}
 \end{figure}
 
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_supplement3.png}
-  \caption{\textbf{IGV coverage plots for neurologically annotated genes passing strict thresholding.}}
+  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligable improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin.}
   \label{fig:supplement3}
 \end{figure}
 
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_supplement4.png}
-  \caption{\textbf{Sample TCGA-06-0132-01A RNA-seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} A) An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. B) An example of the differences arising solely by varying transcriptome reference version. The plot on the left was processed by using GRCh38v79 and the plot of the right was processed using CRCh38v96. Both used un-modified GTF files of the given file version, both allowed multimappers (however HTSeq does not use multimapped reads in quantification, so this does not affect the quantified reads in this case), and used a PHRED threshold greater than or equal to 10. Blue points represent protein-coding genes, green points represent pseudogenes, and orange points represent other genes.}
+  \caption{\textbf{Gene coverage plots for neurologically annotated genes passing strict thresholding.} Coverage plots were generated using XPRESSpipe's geneCoverage module, which collapses introns within the representation.}
   \label{fig:supplement4}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement5.png}
+  \caption{\textbf{Sample RNA-seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing.}
+  \label{fig:supplement5}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement6.png}
+  \caption{\textbf{Effect of pseudogene inclusion on comparability between processing regimes.} Spearman correlations between XPRESSpipe and TCGA-processed count data with pseudogene counts included.}
+  \label{fig:supplement6}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement7.png}
+  \caption{\textbf{Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing.}
+  \label{fig:supplement7}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement8.png}
+  \caption{\textbf{Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v96. Purple points, protein coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.}
+  \label{fig:supplement8}
 \end{figure}
 
 

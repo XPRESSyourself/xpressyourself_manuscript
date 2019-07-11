@@ -29,9 +29,9 @@ def make_figure4(
     title):
 
     fig, axes = plt.subplots(
-        nrows = 3,
+        nrows = 2,
         ncols = 4,
-        figsize = (20, 15),
+        figsize = (20, 10),
         subplot_kw = {
             'facecolor':'none'},
         sharex=True, sharey=True) # Create shared axis for cleanliness
@@ -83,13 +83,15 @@ def make_figure4(
         else:
             p_val = round(p_value.astype('float'), 4).astype('str')
 
+        rho = '{:.3f}'.format(round(rho, 3))
+
         # Plot data
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
         file_number += 1 # Plot counter
-        print(round(rho.astype('float'), 2).astype('str'))
+        print(rho)
 
     # Create shared row/column titles
     cols = file_list[:4]
@@ -102,11 +104,6 @@ def make_figure4(
 
     cols = file_list[4:8]
     for ax, col in zip(axes[1], cols):
-        ax.set_xlabel(col, fontsize=24)
-        ax.xaxis.set_label_position('top')
-
-    cols = file_list[8:11]
-    for ax, col in zip(axes[2], cols):
         ax.set_xlabel(col, fontsize=24)
         ax.xaxis.set_label_position('top')
 
@@ -164,13 +161,15 @@ def make_figure4S(
     else:
         p_val = round(p_value.astype('float'), 4).astype('str')
 
+    rho = '{:.3f}'.format(round(rho, 3))
+
     # Plot data
     axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-    axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+    axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
     axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
     axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
 
-    print(round(rho.astype('float'), 2).astype('str'))
+    print(rho)
 
 
     axes[ax_y, ax_x].set_xlabel(name, fontsize=12)
@@ -273,6 +272,12 @@ def interactive_scatter(
         title: 'xpresspipe: ' + str(xpresspipe_settings)
     }
 
+    color_discrete_map = {
+        'protein_coding':'#7570b3',
+        'pseudogene':'#d95f02',
+        'other':'#1b9e77'
+    }
+
     sc = px.scatter(
         merged_best_c,
         x=merged_best_c.columns.tolist()[0],
@@ -285,9 +290,10 @@ def interactive_scatter(
         width=1400,
         height=1000,
         labels=labels,
+        color_discrete_map=color_discrete_map,
         title=str(sample_id))
 
-    py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/plots/' + str(title) + '.html')
+    py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/supplemental_files/' + str(title) + '.html')
 
 
 """
@@ -403,10 +409,7 @@ sample_list = ['TCGA-06-0125-02A',
              'TCGA-06-0184-01A',
              'TCGA-06-0211-01B',
              'TCGA-06-0211-02A',
-             'TCGA-06-0743-01A',
-             'TCGA-06-0744-01A',
-             'TCGA-06-0745-01A',
-             'TCGA-08-0386-01A']
+             'TCGA-06-0743-01A']
 
 make_figure4(
     xpresspipe_common,
@@ -546,7 +549,7 @@ def run_comp(pseudogenes=False):
         bbox_inches = 'tight')
 
 run_comp(pseudogenes=False)
-run_comp(pseudogenes=True)
+#run_comp(pseudogenes=True)
 
 
 """

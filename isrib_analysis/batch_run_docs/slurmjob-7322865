@@ -1,0 +1,490 @@
+======================
+User commands summary:
+======================
+XPRESSpipe version: 0.1.4-beta
+cmd: riboseq
+input: /scratch/general/lustre/uNID/7322865/input/
+output: /scratch/general/lustre/uNID/7322865/output/v96_truncated/
+reference: /scratch/general/lustre/uNID/references/human_reference_se/
+gtf: /scratch/general/lustre/uNID/references/human_reference_se/transcripts_CT.gtf
+experiment: isrib_comp_v96_truncated
+two_pass: False
+adaptors: ['CTGTAGGCACCATCAAT']
+quality: 28
+min_length: 18
+no_multimappers: False
+deduplicate: False
+output_bed: False
+quantification_method: htseq
+feature_type: CDS
+stranded: no
+method: None
+batch: None
+sjdbOverhang: 49
+mismatchRatio: 0.1
+seedSearchStartLmax: 50
+genome_size: 14
+max_processors: None
+path: /uufs/chpc.utah.edu/common/home/uNID/XPRESSpipe/xpresspipe/
+log_loc: /scratch/general/lustre/uNID/7322865/output/v96_truncated/
+log:  >> /scratch/general/lustre/uNID/7322865/output/v96_truncated/isrib_comp_v96_truncated.log 2>&1
+log_file: /scratch/general/lustre/uNID/7322865/output/v96_truncated/isrib_comp_v96_truncated.log
+=====================
+End commands summary
+=====================
+
+
+XPRESSpipe initialized...
+
+Adaptor and quality trimming...
+
+  _       ,/'
+ (_).  ,/'
+  __  ::
+ (__)'  `\.
+           `\.
+
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 2
+Number of threads per worker (where available): 16
+SRR1795409_1.fastq has been processed.
+SRR1795410_1.fastq has been processed.
+Processing of batch 1 of 16 complete...
+SRR1795411_1.fastq has been processed.
+SRR1795412_1.fastq has been processed.
+Processing of batch 2 of 16 complete...
+SRR1795413_1.fastq has been processed.
+SRR1795414_1.fastq has been processed.
+Processing of batch 3 of 16 complete...
+SRR1795415_1.fastq has been processed.
+SRR1795416_1.fastq has been processed.
+Processing of batch 4 of 16 complete...
+SRR1795417_1.fastq has been processed.
+SRR1795418_1.fastq has been processed.
+Processing of batch 5 of 16 complete...
+SRR1795419_1.fastq has been processed.
+SRR1795420_1.fastq has been processed.
+Processing of batch 6 of 16 complete...
+SRR1795421_1.fastq has been processed.
+SRR1795422_1.fastq has been processed.
+Processing of batch 7 of 16 complete...
+SRR1795423_1.fastq has been processed.
+SRR1795424_1.fastq has been processed.
+Processing of batch 8 of 16 complete...
+SRR1795425_1.fastq has been processed.
+SRR1795426_1.fastq has been processed.
+Processing of batch 9 of 16 complete...
+SRR1795427_1.fastq has been processed.
+SRR1795428_1.fastq has been processed.
+Processing of batch 10 of 16 complete...
+SRR1795429_1.fastq has been processed.
+SRR1795430_1.fastq has been processed.
+Processing of batch 11 of 16 complete...
+SRR1795431_1.fastq has been processed.
+SRR1795432_1.fastq has been processed.
+Processing of batch 12 of 16 complete...
+SRR1795433_1.fastq has been processed.
+SRR1795434_1.fastq has been processed.
+Processing of batch 13 of 16 complete...
+SRR1795435_1.fastq has been processed.
+SRR1795436_1.fastq has been processed.
+Processing of batch 14 of 16 complete...
+SRR1795437_1.fastq has been processed.
+SRR1795438_1.fastq has been processed.
+Processing of batch 15 of 16 complete...
+SRR1795439_1.fastq has been processed.
+SRR1795440_1.fastq has been processed.
+Processing of batch 16 of 16 complete...
+Process complete.
+************************
+
+
+Running some QC on trimmed reads...
+
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 2
+Number of threads per worker (where available): 16
+trimmed_SRR1795409_1.fastq has been processed.
+trimmed_SRR1795410_1.fastq has been processed.
+Processing of batch 1 of 16 complete...
+trimmed_SRR1795411_1.fastq has been processed.
+trimmed_SRR1795412_1.fastq has been processed.
+Processing of batch 2 of 16 complete...
+trimmed_SRR1795413_1.fastq has been processed.
+trimmed_SRR1795414_1.fastq has been processed.
+Processing of batch 3 of 16 complete...
+trimmed_SRR1795415_1.fastq has been processed.
+trimmed_SRR1795416_1.fastq has been processed.
+Processing of batch 4 of 16 complete...
+trimmed_SRR1795417_1.fastq has been processed.
+trimmed_SRR1795418_1.fastq has been processed.
+Processing of batch 5 of 16 complete...
+trimmed_SRR1795419_1.fastq has been processed.
+trimmed_SRR1795420_1.fastq has been processed.
+Processing of batch 6 of 16 complete...
+trimmed_SRR1795421_1.fastq has been processed.
+trimmed_SRR1795422_1.fastq has been processed.
+Processing of batch 7 of 16 complete...
+trimmed_SRR1795423_1.fastq has been processed.
+trimmed_SRR1795424_1.fastq has been processed.
+Processing of batch 8 of 16 complete...
+trimmed_SRR1795425_1.fastq has been processed.
+trimmed_SRR1795426_1.fastq has been processed.
+Processing of batch 9 of 16 complete...
+trimmed_SRR1795427_1.fastq has been processed.
+trimmed_SRR1795428_1.fastq has been processed.
+Processing of batch 10 of 16 complete...
+trimmed_SRR1795429_1.fastq has been processed.
+trimmed_SRR1795430_1.fastq has been processed.
+Processing of batch 11 of 16 complete...
+trimmed_SRR1795431_1.fastq has been processed.
+trimmed_SRR1795432_1.fastq has been processed.
+Processing of batch 12 of 16 complete...
+trimmed_SRR1795433_1.fastq has been processed.
+trimmed_SRR1795434_1.fastq has been processed.
+Processing of batch 13 of 16 complete...
+trimmed_SRR1795435_1.fastq has been processed.
+trimmed_SRR1795436_1.fastq has been processed.
+Processing of batch 14 of 16 complete...
+trimmed_SRR1795437_1.fastq has been processed.
+trimmed_SRR1795438_1.fastq has been processed.
+Processing of batch 15 of 16 complete...
+trimmed_SRR1795439_1.fastq has been processed.
+trimmed_SRR1795440_1.fastq has been processed.
+Processing of batch 16 of 16 complete...
+Aligning...
+
+                                                     __________
+|             _,---.                          _..--'/          \              |
+|          ,-'      )                    _,-,'     /            \             |
+|         (          )               _,-'  /      /              \            |
+|          `-.__, -'             _,-/     /     _/ ,------------. \           |
+|     ,--._,---.             _,-'  /     /_,--'' | |            | |           |
+|   _(_,-'      )        _,-'/    /_, - '|       | |   XPRESS   | |           |
+| ,'  (        )      ,'/   /_, -'|      ||_  -  | |            | |           |
+|(     `--._,-'    _,' /_,-'|     ||_  - |       | |  yourself  | |           |
+| `--.__,-'     _,'/,-'|  - ||_ - |      ||_  -  | |            | |           |
+|            _,'/,'|  - ___ |     ||_  - |       | `------------' |           |
+|        _ ,' |_' -|- _(   ) |_   |      ||_  -  |                |           |
+|       ( ): ((`) -| (. `-/ )   - ||_  - |       |                |           |
+|      ` | '(-.,') '( _\`/-') _ - |      | _   - |                |           |
+|        `   (_.) -(_._|,-_)      ||_  - |       |                |           |
+| .        `. || ` | (_\||_)  _ - |      ||_  -  |                |           |
+|             `.    ` . ||  |   - ||_  - |       |                |           |
+|                `.     ||-.|  :  |  _   ||_   - |     __________ |           |
+|                   `.  ||    ` -.|   |  |   _   |    | ________ |`'--.._     |
+|                      `.           ` - .|  | |  |    || ()._o  ||   __ |     |
+|`.          `            `.   `           ` -' .|____|`'---.|>_||  |. ||     |
+|  `.                        `.                         `' -- .._|__|__||     |
+|    `.                ,----.---------- .                            .-_.     |
+|   _  `.             |.`.,' `.           `.                         || |     |
+|        `.         _|`. / `.  `.            `.                       |_o     |
+|          `.        |  `.   `.  `.-----_-----.\     `                        |
+|            `.      `.|.`|  | `. `./\  c__)___/\             .               |
+|              `.       `. `.|    `.\____\___)___\                            |
+|                `.          `.  _ `.\`____________\                          |
+|                  `.          |    |_|   ____   |_|                          |
+|          _         `.        `.|\ |#|__[....]__|#|`.                        |
+|                      `.         `================'  `.                      |
+
+
+trimmed_SRR1795409_1.fastq has been processed.
+Processing of batch 1 of 32 complete...
+trimmed_SRR1795410_1.fastq has been processed.
+Processing of batch 2 of 32 complete...
+trimmed_SRR1795411_1.fastq has been processed.
+Processing of batch 3 of 32 complete...
+trimmed_SRR1795412_1.fastq has been processed.
+Processing of batch 4 of 32 complete...
+trimmed_SRR1795413_1.fastq has been processed.
+Processing of batch 5 of 32 complete...
+trimmed_SRR1795414_1.fastq has been processed.
+Processing of batch 6 of 32 complete...
+trimmed_SRR1795415_1.fastq has been processed.
+Processing of batch 7 of 32 complete...
+trimmed_SRR1795416_1.fastq has been processed.
+Processing of batch 8 of 32 complete...
+trimmed_SRR1795417_1.fastq has been processed.
+Processing of batch 9 of 32 complete...
+trimmed_SRR1795418_1.fastq has been processed.
+Processing of batch 10 of 32 complete...
+trimmed_SRR1795419_1.fastq has been processed.
+Processing of batch 11 of 32 complete...
+trimmed_SRR1795420_1.fastq has been processed.
+Processing of batch 12 of 32 complete...
+trimmed_SRR1795421_1.fastq has been processed.
+Processing of batch 13 of 32 complete...
+trimmed_SRR1795422_1.fastq has been processed.
+Processing of batch 14 of 32 complete...
+trimmed_SRR1795423_1.fastq has been processed.
+Processing of batch 15 of 32 complete...
+trimmed_SRR1795424_1.fastq has been processed.
+Processing of batch 16 of 32 complete...
+trimmed_SRR1795425_1.fastq has been processed.
+Processing of batch 17 of 32 complete...
+trimmed_SRR1795426_1.fastq has been processed.
+Processing of batch 18 of 32 complete...
+trimmed_SRR1795427_1.fastq has been processed.
+Processing of batch 19 of 32 complete...
+trimmed_SRR1795428_1.fastq has been processed.
+Processing of batch 20 of 32 complete...
+trimmed_SRR1795429_1.fastq has been processed.
+Processing of batch 21 of 32 complete...
+trimmed_SRR1795430_1.fastq has been processed.
+Processing of batch 22 of 32 complete...
+trimmed_SRR1795431_1.fastq has been processed.
+Processing of batch 23 of 32 complete...
+trimmed_SRR1795432_1.fastq has been processed.
+Processing of batch 24 of 32 complete...
+trimmed_SRR1795433_1.fastq has been processed.
+Processing of batch 25 of 32 complete...
+trimmed_SRR1795434_1.fastq has been processed.
+Processing of batch 26 of 32 complete...
+trimmed_SRR1795435_1.fastq has been processed.
+Processing of batch 27 of 32 complete...
+trimmed_SRR1795436_1.fastq has been processed.
+Processing of batch 28 of 32 complete...
+trimmed_SRR1795437_1.fastq has been processed.
+Processing of batch 29 of 32 complete...
+trimmed_SRR1795438_1.fastq has been processed.
+Processing of batch 30 of 32 complete...
+trimmed_SRR1795439_1.fastq has been processed.
+Processing of batch 31 of 32 complete...
+trimmed_SRR1795440_1.fastq has been processed.
+Processing of batch 32 of 32 complete...
+Process complete.
+************************
+
+Generating count tables...
+
+    1...2...3...4...5...6...7...8...9...
+ _______________________________________________________________________________
+|{ _ ` ~~'"  /  },\    `,   ,`      _    ,~'                                ,~  |
+| '  \       {  |`,     `,'        / `~,/                               ,~`'    |
+|     \       ``'   \             (,\,'                       /`'~`,,~`'        |
+|      ,'          /            o\_,~'  _                    '~,   {}           |
+|     (       __  /             ,~'/~|\/_\  {}                ,'/               |
+|      `\  (   `'              |,'_  '<_                  ,,''/                 |
+|         `, '_,-              /"'` `'~-/,                )                     |
+|          `_`                {            \  `~,~  ,`, ,~`                     |
+|            ``~{^'~,_         \            \,_/  \/  '\)                       |
+|               /     `~~,,     ``~~~,        /       ; \/\                     |
+|               \          `,         \      /           `' <_>                 |
+|                `,       _|          ,     / _          _,~,|\                 |
+|                  {    ,/            \    / //         /      \                |
+|                  {  ,/               \  /  `          \_,-^,_/                |
+|                  { /                 `~'                    v     v           |
+|                  {,                                              /            |
+|                  `,_                                                          |
+|_______________________________________________________________________________|
+
+
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 3
+Number of threads per worker (where available): 10
+SRR1795409__Aligned.sort.bam has been processed.
+SRR1795410__Aligned.sort.bam has been processed.
+SRR1795411__Aligned.sort.bam has been processed.
+Processing of batch 1 of 11 complete...
+SRR1795412__Aligned.sort.bam has been processed.
+SRR1795413__Aligned.sort.bam has been processed.
+SRR1795414__Aligned.sort.bam has been processed.
+Processing of batch 2 of 11 complete...
+SRR1795415__Aligned.sort.bam has been processed.
+SRR1795416__Aligned.sort.bam has been processed.
+SRR1795417__Aligned.sort.bam has been processed.
+Processing of batch 3 of 11 complete...
+SRR1795418__Aligned.sort.bam has been processed.
+SRR1795419__Aligned.sort.bam has been processed.
+SRR1795420__Aligned.sort.bam has been processed.
+Processing of batch 4 of 11 complete...
+SRR1795421__Aligned.sort.bam has been processed.
+SRR1795422__Aligned.sort.bam has been processed.
+SRR1795423__Aligned.sort.bam has been processed.
+Processing of batch 5 of 11 complete...
+SRR1795424__Aligned.sort.bam has been processed.
+SRR1795425__Aligned.sort.bam has been processed.
+SRR1795426__Aligned.sort.bam has been processed.
+Processing of batch 6 of 11 complete...
+SRR1795427__Aligned.sort.bam has been processed.
+SRR1795428__Aligned.sort.bam has been processed.
+SRR1795429__Aligned.sort.bam has been processed.
+Processing of batch 7 of 11 complete...
+SRR1795430__Aligned.sort.bam has been processed.
+SRR1795431__Aligned.sort.bam has been processed.
+SRR1795432__Aligned.sort.bam has been processed.
+Processing of batch 8 of 11 complete...
+SRR1795433__Aligned.sort.bam has been processed.
+SRR1795434__Aligned.sort.bam has been processed.
+SRR1795435__Aligned.sort.bam has been processed.
+Processing of batch 9 of 11 complete...
+SRR1795436__Aligned.sort.bam has been processed.
+SRR1795437__Aligned.sort.bam has been processed.
+SRR1795438__Aligned.sort.bam has been processed.
+Processing of batch 10 of 11 complete...
+SRR1795439__Aligned.sort.bam has been processed.
+SRR1795440__Aligned.sort.bam has been processed.
+Processing of batch 11 of 11 complete...
+Process complete.
+************************
+
+Normalizing counts based on parameters provided...
+
+                           ___,
+                    o___.-' /
+                    |      _\_
+                    |___.-'   `
+                    |
+                    |
+            _   _   j   _   _
+           [_]_[_]_[_]_[_]_[_]
+           [__j__j__j__j__j__]
+             [_j__j__j__j__]
+             [__j__j__j__j_]
+             [_j__j/V\_j__j]
+             [__j_// \__j_]
+             [_j__|   |_j__]
+             [__j_|___|__j_]
+             [_j__j__j__j__]
+             [__j__j__j__j_]
+  _   _   _  [_j__j__j__j__]  _   _   _   _
+_[_]_[_]_[_]_[__j__j__j__j_]_[_]_[_]_[_]_[_]_
+  _j__j__j__j[_j__j__j__j__]j__j__j__j__j_
+     j  j  j [  j  j  j  j ] j  j  j  j
+
+Process complete.
+************************
+
+Performing quality control on the processed sequencing data...
+
+      _               _               _
+     | |             | |             | |
+  ___| |__   ___  ___| | _____  _   _| |_
+ / __| '_ \ / _ \/ __| |/ / _ \| | | | __|
+| (__| | | |  __/ (__|   < (_) | |_| | |_
+ \___|_| |_|\___|\___|_|\_\___/ \__,_|\__|
+
+
+Resetting parallelization specs based on max file size to be processed:
+Max number of workers: 2
+Number of threads per worker (where available): 16
+trimmed_SRR1795409_1.fastq has been processed.
+trimmed_SRR1795410_1.fastq has been processed.
+Processing of batch 1 of 16 complete...
+trimmed_SRR1795411_1.fastq has been processed.
+trimmed_SRR1795412_1.fastq has been processed.
+Processing of batch 2 of 16 complete...
+trimmed_SRR1795413_1.fastq has been processed.
+trimmed_SRR1795414_1.fastq has been processed.
+Processing of batch 3 of 16 complete...
+trimmed_SRR1795415_1.fastq has been processed.
+trimmed_SRR1795416_1.fastq has been processed.
+Processing of batch 4 of 16 complete...
+trimmed_SRR1795417_1.fastq has been processed.
+trimmed_SRR1795418_1.fastq has been processed.
+Processing of batch 5 of 16 complete...
+trimmed_SRR1795419_1.fastq has been processed.
+trimmed_SRR1795420_1.fastq has been processed.
+Processing of batch 6 of 16 complete...
+trimmed_SRR1795421_1.fastq has been processed.
+trimmed_SRR1795422_1.fastq has been processed.
+Processing of batch 7 of 16 complete...
+trimmed_SRR1795423_1.fastq has been processed.
+trimmed_SRR1795424_1.fastq has been processed.
+Processing of batch 8 of 16 complete...
+trimmed_SRR1795425_1.fastq has been processed.
+trimmed_SRR1795426_1.fastq has been processed.
+Processing of batch 9 of 16 complete...
+trimmed_SRR1795427_1.fastq has been processed.
+trimmed_SRR1795428_1.fastq has been processed.
+Processing of batch 10 of 16 complete...
+trimmed_SRR1795429_1.fastq has been processed.
+trimmed_SRR1795430_1.fastq has been processed.
+Processing of batch 11 of 16 complete...
+trimmed_SRR1795431_1.fastq has been processed.
+trimmed_SRR1795432_1.fastq has been processed.
+Processing of batch 12 of 16 complete...
+trimmed_SRR1795433_1.fastq has been processed.
+trimmed_SRR1795434_1.fastq has been processed.
+Processing of batch 13 of 16 complete...
+trimmed_SRR1795435_1.fastq has been processed.
+trimmed_SRR1795436_1.fastq has been processed.
+Processing of batch 14 of 16 complete...
+trimmed_SRR1795437_1.fastq has been processed.
+trimmed_SRR1795438_1.fastq has been processed.
+Processing of batch 15 of 16 complete...
+trimmed_SRR1795439_1.fastq has been processed.
+trimmed_SRR1795440_1.fastq has been processed.
+Processing of batch 16 of 16 complete...
+SRR1795409__dedupMarked.bam has been processed.
+Processing of batch 1 of 32 complete...
+SRR1795410__dedupMarked.bam has been processed.
+Processing of batch 2 of 32 complete...
+SRR1795411__dedupMarked.bam has been processed.
+Processing of batch 3 of 32 complete...
+SRR1795412__dedupMarked.bam has been processed.
+Processing of batch 4 of 32 complete...
+SRR1795413__dedupMarked.bam has been processed.
+Processing of batch 5 of 32 complete...
+SRR1795414__dedupMarked.bam has been processed.
+Processing of batch 6 of 32 complete...
+SRR1795415__dedupMarked.bam has been processed.
+Processing of batch 7 of 32 complete...
+SRR1795416__dedupMarked.bam has been processed.
+Processing of batch 8 of 32 complete...
+SRR1795417__dedupMarked.bam has been processed.
+Processing of batch 9 of 32 complete...
+SRR1795418__dedupMarked.bam has been processed.
+Processing of batch 10 of 32 complete...
+SRR1795419__dedupMarked.bam has been processed.
+Processing of batch 11 of 32 complete...
+SRR1795420__dedupMarked.bam has been processed.
+Processing of batch 12 of 32 complete...
+SRR1795421__dedupMarked.bam has been processed.
+Processing of batch 13 of 32 complete...
+SRR1795422__dedupMarked.bam has been processed.
+Processing of batch 14 of 32 complete...
+SRR1795423__dedupMarked.bam has been processed.
+Processing of batch 15 of 32 complete...
+SRR1795424__dedupMarked.bam has been processed.
+Processing of batch 16 of 32 complete...
+SRR1795425__dedupMarked.bam has been processed.
+Processing of batch 17 of 32 complete...
+SRR1795426__dedupMarked.bam has been processed.
+Processing of batch 18 of 32 complete...
+SRR1795427__dedupMarked.bam has been processed.
+Processing of batch 19 of 32 complete...
+SRR1795428__dedupMarked.bam has been processed.
+Processing of batch 20 of 32 complete...
+SRR1795429__dedupMarked.bam has been processed.
+Processing of batch 21 of 32 complete...
+SRR1795430__dedupMarked.bam has been processed.
+Processing of batch 22 of 32 complete...
+SRR1795431__dedupMarked.bam has been processed.
+Processing of batch 23 of 32 complete...
+SRR1795432__dedupMarked.bam has been processed.
+Processing of batch 24 of 32 complete...
+SRR1795433__dedupMarked.bam has been processed.
+Processing of batch 25 of 32 complete...
+SRR1795434__dedupMarked.bam has been processed.
+Processing of batch 26 of 32 complete...
+SRR1795435__dedupMarked.bam has been processed.
+Processing of batch 27 of 32 complete...
+SRR1795436__dedupMarked.bam has been processed.
+Processing of batch 28 of 32 complete...
+SRR1795437__dedupMarked.bam has been processed.
+Processing of batch 29 of 32 complete...
+SRR1795438__dedupMarked.bam has been processed.
+Processing of batch 30 of 32 complete...
+SRR1795439__dedupMarked.bam has been processed.
+Processing of batch 31 of 32 complete...
+SRR1795440__dedupMarked.bam has been processed.
+Processing of batch 32 of 32 complete...
+Traceback (most recent call last):
+  File "/uufs/chpc.utah.edu/common/home/uNID/.local/bin/bin/xpresspipe", line 11, in <module>
+    load_entry_point('XPRESSpipe', 'console_scripts', 'xpresspipe')()
+  File "/uufs/chpc.utah.edu/common/home/uNID/XPRESSpipe/xpresspipe/__main__.py", line 562, in main
+    make_complexity(args_dict)
+  File "/uufs/chpc.utah.edu/common/home/uNID/XPRESSpipe/xpresspipe/complexity.py", line 108, in make_complexity
+    str(args_dict['complexity']) + 'individual_plots/')
+TypeError: compile_complexity_metrics() missing 1 required positional argument: 'individual_output'
