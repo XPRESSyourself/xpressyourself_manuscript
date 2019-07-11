@@ -130,7 +130,7 @@ def rp_plot(
                     ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#1b9e77', weight='semibold')
 
     if list_down_custom != None:
-        ax.scatter(rna_down_custom, ribo_down_custom, s=80,c='#1b9e77',alpha=1)
+        ax.scatter(rna_down_custom, ribo_down_custom, s=80,c='#d95f02',alpha=1)
 
         for index, row in data_fig.iterrows():
             if index in list_down_custom:
@@ -143,7 +143,10 @@ def rp_plot(
 
         if label_down_custom == True:
             for index, row in data_fig_down_custom.iterrows():
-                ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#d95f02', weight='semibold')
+                if index == 'MYO5B' or index == 'SLC1A1':
+                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#d95f02', weight='semibold')
+                else:
+                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#d95f02', weight='semibold')
 
     if list_up != None:
         ax.scatter(rna_up, ribo_up, s=80,c='#7570b3',alpha=1)
@@ -284,7 +287,8 @@ rp_plot(
     isr,
     uorf_targets,
     down_strict_L,
-    label_down=False)
+    label_down=False,
+    label_down_custom=False)
 
 rp_plot(
     merged_data_split,
@@ -300,7 +304,8 @@ rp_plot(
     isr,
     uorf_targets,
     down_strict_L,
-    label_down=False)
+    label_down=False,
+    label_down_custom=False)
 
 
 
@@ -352,14 +357,6 @@ PABPC1
 RPL12
     - No neuro-related annotations
     - Ribosome subunit
-* ARNTL2
-    - basic helix-loop-helix transcription factor
-    - The PAS proteins play important roles in adaptation to low atmospheric and cellular oxygen levels, exposure to certain environmental pollutants, and diurnal oscillations in light and temperature
-    - this protein is coexpressed in regions of the brain such as the thalamus, hypothalamus, and amygdala
-    - Uniprot Expression:
-        - Expressed in fetal brain. Highly expressed in brain and placenta
-        - Located to endothelial cells and neuronal cells of the suprachiasmatic nucleus
-        - In the brain, specifically expressed in the thalamus, hippocampus and amygdala
 * SLC1A1
     - Dense expression in substantia nigra, red nucleus, hippocampus, and cerebral cortical layers.
     - Member of high-affinity glutamate transporter.
@@ -373,10 +370,6 @@ RPL12
 ~ RPLP1
     - Ribosome subunit
     - Stem cell and embronic expression in cerebral cortex
-? TMEM54
-    - No annotations
-? AL358472.7
-    - Uncharacterized protein
 ~ TSPAN33
     - Regulates maturation and trafficking of the transmembrane metalloprotease ADAM10 (PubMed:26686862)
     - Negatively regulates ligand-induced Notch activity probably by regulating ADAM10 activity (PubMed:26686862)

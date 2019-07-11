@@ -3,7 +3,6 @@ import sys
 import pandas as pd
 import numpy as np
 import matplotlib
-#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 matplotlib.rcParams['font.sans-serif'] = 'Arial'
@@ -166,88 +165,6 @@ def make_figure2A(
         dpi = 600,
         bbox_inches = 'tight')
 
-def make_figure2S(
-    data,
-    ingolia_data,
-    title):
-
-    fig, axes = plt.subplots(
-        nrows = 2,
-        ncols = 2,
-        figsize = (10, 10),
-        subplot_kw = {
-            'facecolor':'none'},
-        sharex=True, sharey=True) # Create shared axis for cleanliness
-    plt.subplots_adjust(
-        bottom = 0.1)
-    plt.yticks([0,1,2,3,4,5]) # Limit axis labels to ints
-    plt.xticks([0,1,2,3,4,5])
-
-    file_number = 0
-    file_list = [
-        'ribo_untr_a',
-        'untr_a_hek'] # Designate sample order
-
-    for x in file_list:
-
-        # Get data as array-like for samples being compared
-        data_c1 = data.copy()
-        data_c2 = ingolia_data.copy()
-
-        sample_a = data_c1[x].values.tolist()
-        sample_a = [x + 1 for x in sample_a]
-        sample_a = np.array(sample_a).astype(np.float)
-        sample_a = np.ndarray.tolist(sample_a)
-
-        sample_b = data_c2[x].values.tolist()
-        sample_b = [x + 1 for x in sample_b]
-        sample_b = np.array(sample_b).astype(np.float)
-        sample_b = np.ndarray.tolist(sample_b)
-
-        # Run Spearman R linreg for non-normal data
-        rho, p_value = stats.spearmanr(sample_a, sample_b)
-
-        # Determine subplot location
-        ax_y = 0
-        if file_number == 0:
-            ax_x = 0
-        elif file_number == 1:
-            ax_x = 1
-        else:
-            print('oops')
-
-        # Format p value
-        if p_value.astype('float') < 0.001:
-            p_val = '< 0.001'
-        else:
-            p_val = round(p_value.astype('float'), 4).astype('str')
-
-        rho = '{:.3f}'.format(round(rho, 3))
-
-        # Plot data
-        axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
-        axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
-        axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=0.88)
-        file_number += 1 # Plot counter
-        print(rho)
-
-    # Create shared row/column titles
-    count_label = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)']
-
-    cols = ['Untr RPF RepA','Untr mRNA RepA']
-    for ax, col in zip(axes[0], cols):
-        ax.set_xlabel(col, fontsize=24)
-        ax.xaxis.set_label_position('top')
-
-    for ax in axes[:,0]:
-        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=16)
-
-    fig.savefig(
-        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title),
-        dpi = 600,
-        bbox_inches = 'tight')
-
 # Make Figure 2B
 def make_figure2B(
     data,
@@ -319,8 +236,6 @@ def make_figure2B(
         else:
             p_val = round(p_value.astype('float'), 4).astype('str')
 
-
-
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
@@ -370,38 +285,6 @@ def make_ref(ref_file, gene_list):
 
     return df_genes
 
-
-def interactive_scatter(sample, data, ingolia_data, data1='xpresspipe', data2='ingolia'):
-
-    merged_best = pd.concat([data[[sample]], ingolia_data[[sample]]], axis=1, sort=False)
-    merged_best.columns = [data1,data2]
-    merged_best['genes'] = merged_best.index.tolist()
-
-    merged_best['color'] = 'others'
-    merged_best.loc[merged_best['genes'] == 'EIF3C', 'color'] = 'EIF3C'
-    merged_best.loc[merged_best['genes'] == 'TUBA1A', 'color'] = 'TUBA1A'
-    merged_best.loc[merged_best['genes'] == 'NOMO2', 'color'] = 'NOMO2'
-    merged_best.loc[merged_best['genes'] == 'RPL39', 'color'] = 'RPL39'
-    merged_best.loc[merged_best['genes'] == 'KCNQ2', 'color'] = 'KCNQ2'
-
-    sc = px.scatter(
-        merged_best,
-        x=merged_best.columns.tolist()[0],
-        y=merged_best.columns.tolist()[1],
-        hover_name='genes',
-        color='color',
-        color_discrete_sequence = ['lightgrey','red','blue','green','black','orange'],
-        category_orders = {'others':0,'EIF3C':1,'TUBA1A':2,'NOMO2':3,'RPL39':4,'KCNQ2':5},
-        log_x=True,
-        log_y=True,
-        opacity=1,
-        width=1400,
-        height=1000,
-        title=sample)
-
-    py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(sample) + '.html')
-
-
 # Read in single-pass XPRESSpipe processed read data quantified with HTSeq using non-de-deuplicated alignments
 def get_data(file, sample_suffix='_1_Aligned'):
     data = pd.read_csv(
@@ -427,10 +310,6 @@ def get_data(file, sample_suffix='_1_Aligned'):
     data = data.groupby(level=0).sum() # Combine duplicate named genes
 
     return data
-
-
-
-
 
 
 """
@@ -498,7 +377,6 @@ ingolia_rpm = ingolia_rpm.dropna()
 data_rpm.shape
 ingolia_rpm.shape
 
-
 # Make dataframes for each dataset for matching genes
 data_genes = data_threshold.index.tolist()
 ingolia_genes = ingolia.index.tolist()
@@ -512,7 +390,6 @@ data_common = data_threshold.reindex(index = common_genes)
 ingolia_common = ingolia.reindex(index = common_genes)
 
 
-
 """
 FIGURE 2A
 """
@@ -521,12 +398,13 @@ def cycle_fig2a(file, ingolia):
 
     data = get_data(file, sample_suffix='__Aligned')
 
-    data_genes = data.index.tolist()
+    data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
+    data_genes = data_threshold.index.tolist()
     ingolia_genes = ingolia.index.tolist()
 
     common_genes = list(set(data_genes).intersection(ingolia_genes))
 
-    data_common = data.reindex(index = common_genes)
+    data_common = data_threshold.reindex(index = common_genes)
     ingolia_common = ingolia.reindex(index = common_genes)
 
     make_figure2A(
@@ -536,9 +414,6 @@ def cycle_fig2a(file, ingolia):
 
 
 file_list = [
-    'isrib_comp_v76_truncated_count_table.tsv',
-    'isrib_comp_v76_normal_count_table.tsv',
-    'isrib_comp_v76_longest_truncated_count_table.tsv',
     'isrib_comp_v96_truncated_count_table.tsv',
     'isrib_comp_v96_normal_count_table.tsv',
     'isrib_comp_v96_longest_truncated_count_table.tsv',
@@ -560,13 +435,6 @@ make_figure2A(
     'external_correlations_summary_htseq_protein_truncated_v96.png')
 
 
-interactive_scatter('ribo_untr_a', data_common, ingolia_common)
-interactive_scatter('ribo_tm_a', data_common, ingolia_common)
-interactive_scatter('untr_a_hek', data_common, ingolia_common)
-interactive_scatter('tm_a_hek', data_common, ingolia_common)
-
-
-
 """
 FIGURE 2B
 """
@@ -574,3 +442,11 @@ FIGURE 2B
 make_figure2B(
     data_threshold,
     'internal_correlations_summary_htseq_protein_truncated_v96.png')
+
+
+
+ingolia_weird_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].max(axis=1) >= 50]
+
+make_figure2B(
+    ingolia_weird_threshold,
+    'internal_correlations_summary_ingolia_weird.png')

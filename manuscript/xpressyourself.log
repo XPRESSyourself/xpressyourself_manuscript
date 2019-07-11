@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 JUL 2019 17:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 JUL 2019 22:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -517,69 +517,70 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 326.
 
 
-Overfull \hbox (24.0pt too wide) in paragraph at lines 329--355
+Overfull \hbox (24.0pt too wide) in paragraph at lines 329--349
  [][] 
  []
 
-[18] [19]
-<figures/xpresspipe_figure4.png, id=84, 464.937pt x 366.8907pt>
+[18]
+<figures/xpresspipe_figure4.png, id=80, 464.937pt x 366.8907pt>
 File: figures/xpresspipe_figure4.png Graphic file (type png)
 <use figures/xpresspipe_figure4.png>
-Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 368
+Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 362
 .
 (pdftex.def)             Requested size: 512.1496pt x 404.19681pt.
+ [19] [20 <./figures/xpresspipe_figure4.png>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 373.
+
+[21] [22]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 416.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 379.
+               Default added (so using `!tbp') on input line 462.
 
-[20] [21 <./figures/xpresspipe_figure4.png>] [22]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 422.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 468.
-
-[23] [24]
+[23]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 513.
- [25] [26] [27] [28] [29]
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 507.
+ [24] [25] [26] [27] [28] [29]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 633.
+               Default added (so using `!tbp') on input line 627.
 
-[30] (./xpressyourself.bbl [31] [32] [33])
-<figures/xpresspipe_supplement2.png, id=133, 499.1448pt x 338.7054pt>
+(./xpressyourself.bbl [30] [31] [32])
+<figures/xpresspipe_supplement2.png, id=130, 499.1448pt x 338.7054pt>
 File: figures/xpresspipe_supplement2.png Graphic file (type png)
 <use figures/xpresspipe_supplement2.png>
 Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
- 667.
+ 661.
 (pdftex.def)             Requested size: 455.24408pt x 308.92528pt.
-<figures/xpresspipe_supplement3.png, id=134, 589.2414pt x 737.154pt>
+<figures/xpresspipe_supplement3.png, id=131, 589.2414pt x 737.154pt>
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 674.
+ 668.
 (pdftex.def)             Requested size: 512.1496pt x 640.75641pt.
-<figures/xpresspipe_supplement4.png, id=135, 426.393pt x 657.8979pt>
+<figures/xpresspipe_supplement4.png, id=132, 426.393pt x 657.8979pt>
 File: figures/xpresspipe_supplement4.png Graphic file (type png)
 <use figures/xpresspipe_supplement4.png>
 Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
- 681.
+ 675.
 (pdftex.def)             Requested size: 512.1496pt x 790.23648pt.
 
-Underfull \hbox (badness 1418) in paragraph at lines 682--682
+Underfull \hbox (badness 1418) in paragraph at lines 676--676
 []\OT1/phv/m/n/9 Figure S3: |\OT1/phv/b/n/9 Sam-ple TCGA-06-0132-01A RNA-seq co
 unt data com-pared be-tween TCGA count data and var-i-ous
  []
 
 
-LaTeX Warning: Float too large for page by 227.37035pt on input line 684.
+LaTeX Warning: Float too large for page by 227.37035pt on input line 678.
 
-[34 <./figures/xpresspipe_supplement2.png>] [35 <./figures/xpresspipe_supplemen
-t3.png>] [36 <./figures/xpresspipe_supplement4.png>] (./xpressyourself.aux)
+[33] [34 <./figures/xpresspipe_supplement2.png>] [35 <./figures/xpresspipe_supp
+lement3.png>] [36 <./figures/xpresspipe_supplement4.png>] (./xpressyourself.aux
+)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -587,7 +588,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  5964 strings out of 492649
  88560 string characters out of 6129622
- 186163 words of memory out of 5000000
+ 185163 words of memory out of 5000000
  9726 multiletter control sequences out of 15000+600000
  31149 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -611,7 +612,7 @@ nts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw
 /helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvet
 ic/uhvro8a.pfb>
-Output written on xpressyourself.pdf (36 pages, 2984394 bytes).
+Output written on xpressyourself.pdf (36 pages, 2984155 bytes).
 PDF statistics:
  205 PDF objects out of 1000 (max. 8388607)
  134 compressed objects within 2 object streams
