@@ -131,13 +131,15 @@ def make_figure2A(
         else:
             p_val = round(p_value.astype('float'), 4).astype('str')
 
+        rho = '{:.3f}'.format(round(rho, 3))
+
         # Plot data
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=0.88)
         file_number += 1 # Plot counter
-        print(round(rho.astype('float'), 2).astype('str'))
+        print(rho)
 
     # Create shared row/column titles
     count_label = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)']
@@ -220,13 +222,15 @@ def make_figure2S(
         else:
             p_val = round(p_value.astype('float'), 4).astype('str')
 
+        rho = '{:.3f}'.format(round(rho, 3))
+
         # Plot data
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R = ' + round(rho.astype('float'), 2).astype('str') + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=0.88)
         file_number += 1 # Plot counter
-        print(round(rho.astype('float'), 2).astype('str'))
+        print(rho)
 
     # Create shared row/column titles
     count_label = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)','log$_1$$_0$(counts)']
@@ -316,19 +320,17 @@ def make_figure2B(
             p_val = round(p_value.astype('float'), 4).astype('str')
 
 
-        if rho >= 0.99:
-            rh = '> 0.99'
-        else:
-            rh = round(rho.astype('float'), 2).astype('float').astype('str')
+
+        rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R ' + rh + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title('R ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
         file_number += 1 # Plot counter
         x += 2
-        print(rh)
+        print(rho)
 
     # Create shared row/column titles
 
@@ -368,189 +370,6 @@ def make_ref(ref_file, gene_list):
 
     return df_genes
 
-def run_scraper(ref):
-    hot_terms_1 = [
-        'brain',
-        'neuron',
-        'central nervous system',
-        'synaptic',
-        'sympathetic',
-        'adrenergic',
-        'cerebellum',
-        'cerebral',
-        'dendritic',
-        'astrocyte',
-        'excitatory',
-        'substantia nigra',
-        'red nucleus',
-        'hippocampus',
-        'spinal cord',
-        'motor neuron',
-        'cerebral cortex',
-        'forebrain',
-        'nerve',
-        'neuro',
-        'neurological',
-        'postsynaptic',
-        'synaptic',
-        'neurotransmitter',
-        'neurotoxic',
-        'neuron migration',
-        'neuron projection',
-        'neurodegenerative',
-        'psychomotor',
-        'psych',
-        'noradrenergic',
-        'sympathetic',
-        'synaptic',
-        'epilepsy',
-        'alzheimer',
-        'encephalopathy',
-        'schizophrenia',
-        'encephalomyopathic',
-        'parkinson',
-        'retardation',
-        'autistic',
-        'autism',
-    ]
-
-    hot_terms_2 = [
-        'calcium',
-        'ca2+',
-        'ca(2+)',
-        'sodium',
-        'nacl',
-        'potassium',
-        'k+',
-        'k(+)',
-        'channels',
-        'chemotactic',
-        'receptor',
-        'signaling',
-        'signal transduction',
-        'glutamate',
-        'behavior'
-    ]
-
-    penalty = [
-        'associated',
-        'association',
-        'associate'
-    ]
-
-    # Score gene based on NCBI gene summary
-    for gene_name in ref.index.tolist():
-
-        gene_id = ref.at[gene_name, 'NCBI gene ID']
-        url = 'https://www.ncbi.nlm.nih.gov/gene/' + str(gene_id)
-
-        try:
-            req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            webpage = urlopen(req).read()
-            page = webpage.decode('utf-8').splitlines()
-
-            score_1 = None
-            score_2 = None
-            score_3 = None
-            for line in range(len(page) + 1):
-                if '</html>' in page[line]:
-                    break
-
-                if '<dt>Summary</dt>' in page[line]:
-                    score_1 = 0
-                    score_2 = 0
-                    score_3 = 0
-                    for x in hot_terms_1:
-                        if x.lower() in page[line+1].lower():
-                            score_1 += 2
-
-                    for y in hot_terms_2:
-                        if y.lower() in page[line+1].lower():
-                            score_2 += 1
-
-                    for z in penalty:
-                        if z.lower() in page[line+1].lower():
-                            score_3 -= 0.5
-
-                    # If only hit the penalty, revert back to zero
-                    if score < 0:
-                        score = 0
-                    ref.at[gene_name, 'NCBI_SCORE_1'] = score_1
-                    ref.at[gene_name, 'NCBI_SCORE_2'] = score_2
-                    ref.at[gene_name, 'NCBI_SCORE_PENALTY'] = score_3
-                    break
-
-                if 'var tissues_data =' in page[line]:
-                    exp_data = ast.literal_eval(page[line][27:-1])
-                    exp_df = pd.DataFrame.from_dict(exp_data,orient='index')
-                    exp_len = len(exp_df.index.tolist())
-                    exp_loc = pd.DataFrame.from_dict(exp_data,orient='index').sort_values('full_rpkm', ascending=False).index.get_loc('brain')
-                    exp_rank = (exp_len - exp_loc) / exp_len
-                    ref.at[gene_name, 'NCBI_EXPRESSION_RANK'] = exp_rank
-
-        except:
-            ref.at[gene_name, 'NCBI_SCORE_1'] = None
-            ref.at[gene_name, 'NCBI_SCORE_2'] = None
-            ref.at[gene_name, 'NCBI_SCORE_PENALTY'] = None
-            ref.at[gene_name, 'NCBI_EXPRESSION_RANK'] = None
-
-    # Score gene based on UNIPROT gene summary
-    for gene_name in ref.index.tolist():
-
-        uniprot_id = ref.at[gene_name, 'UniProt accession']
-        url = 'https://www.uniprot.org/uniprot/' + str(uniprot_id)
-
-        try:
-            req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            webpage = urlopen(req).read()
-            page = webpage.decode('utf-8').splitlines()
-
-            score_1 = None
-            score_2 = None
-            score_3 = None
-            for line in range(len(page) + 1):
-                if '</html>' in page[line]:
-                    break
-
-                if 'This section provides any useful information about the protein, mostly biological knowledge' in page[line] or 'This subsection of the ‘Pathology and Biotech’ section provides information' in page[line]:
-                    score_1 = 0
-                    score_2 = 0
-                    score_3 = 0
-                    for x in hot_terms_1:
-                        if x.lower() in page[line].lower():
-                            score_1 += 2
-
-                    for y in hot_terms_2:
-                        if y.lower() in page[line].lower():
-                            score_2 += 1
-
-                    for z in penalty:
-                        if z.lower() in page[line].lower():
-                            score_3 -= 0.5
-
-                    # If only hit the penalty, revert back to zero
-                    if score_3 < 0:
-                        score_3 = 0
-                    ref.at[gene_name, 'UNIPROT_SCORE1'] = score_1
-                    ref.at[gene_name, 'UNIPROT_SCORE2'] = score_2
-                    ref.at[gene_name, 'UNIPROT_SCORE_PENALTY'] = score_3
-                    break
-
-                exp_score = 0
-                if 'This subsection of the ‘Expression’ section provides information on the expression of the gene product' in page[line]:
-                    for x in hot_terms_1:
-                        if x.lower() in page[line].lower():
-                            exp_score += 1
-
-                ref.at[gene_name, 'UNIPROT_EXPRESSION'] = exp_score
-
-        except:
-            ref.at[gene_name, 'UNIPROT_SCORE1'] = None
-            ref.at[gene_name, 'UNIPROT_SCORE2'] = None
-            ref.at[gene_name, 'UNIPROT_SCORE_PENALTY'] = None
-            ref.at[gene_name, 'UNIPROT_EXPRESSION'] = None
-
-    return ref.loc[(ref['NCBI_SCORE_1'] > 0) | (ref['UNIPROT_SCORE1'] > 0) | (ref['NCBI_EXPRESSION_RANK'] > 0.75)].index.tolist(), len(ref.loc[(ref['NCBI_SCORE_1'] > 0) | (ref['UNIPROT_SCORE1'] > 0) | (ref['NCBI_EXPRESSION_RANK'] > 0.75)].index.tolist())
 
 def interactive_scatter(sample, data, ingolia_data, data1='xpresspipe', data2='ingolia'):
 
@@ -589,7 +408,7 @@ def get_data(file, sample_suffix='_1_Aligned'):
         file,
         sep = '\t',
         index_col = 0)
-    data.index = data.index.str.split('.').str[0]
+    data.index = data.index.str.split('.')[0]
 
     # Accessed via:
     # $ curl -O ftp://ftp.ensembl.org/pub/release-96/gtf/homo_sapiens/Homo_sapiens.GRCh38.96.gtf.gz
@@ -609,13 +428,18 @@ def get_data(file, sample_suffix='_1_Aligned'):
 
     return data
 
-file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_riboseq_xpresspipe_count_table.tsv'
-data = get_data(file)
+
+
+
 
 
 """
 READ IN DATA
 """
+# Input file is protein coding only and truncated, not parsed for longest transcript only
+file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/isrib_comp_v96_truncated_count_table.tsv'
+data = get_data(file, sample_suffix='__Aligned')
+
 # Clean up data
 data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
 
@@ -645,30 +469,6 @@ data_threshold[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv('/Users/jordan/
 data_threshold[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 data_threshold[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
-"""
-READ IN TOPHAT SAMPLES
-"""
-tophat_file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/tophat_isrib_counts_count_table.tsv'
-data_tophat = pd.read_csv(
-    tophat_file,
-    sep = '\t',
-    index_col = 0)
-
-data_tophat = convert_names(
-    data_tophat,
-    '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf')
-
-data_tophat.columns = data_tophat.columns.str.replace('_accepted_hits', '')
-data_tophat.shape
-
-# Combine lanes
-sra_info = pd.read_csv(
-    '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/GSE65778_table.txt',
-    sep = '\t')
-data_tophat = name_map(data_tophat, sra_info)
-data_tophat = data_tophat.groupby(level=0).sum()
-data_tophat_threshold = data_tophat[data_tophat[['untr_a_hek']].min(axis=1) > 25] # Apply threshold to data
-
 
 """
 READ IN INGOLIA DATA
@@ -682,8 +482,7 @@ ingolia = ingolia.drop('size', axis = 1)
 
 # Clean up data
 ingolia = ingolia.groupby(level=0).sum() # Combine duplicate named genes
-ingolia_threshold = ingolia[ingolia[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) > 50]
-ingolia_rpm = rpm(ingolia_threshold)
+ingolia_rpm = rpm(ingolia)
 
 
 """
@@ -701,7 +500,7 @@ ingolia_rpm.shape
 
 
 # Make dataframes for each dataset for matching genes
-data_genes = data.index.tolist()
+data_genes = data_threshold.index.tolist()
 ingolia_genes = ingolia.index.tolist()
 len(data_genes)
 len(ingolia_genes)
@@ -709,21 +508,8 @@ len(ingolia_genes)
 common_genes = list(set(data_genes).intersection(ingolia_genes))
 len(common_genes)
 
-data_common = data.reindex(index = common_genes)
+data_common = data_threshold.reindex(index = common_genes)
 ingolia_common = ingolia.reindex(index = common_genes)
-
-
-# Tophat
-data_tophat_genes = data_tophat.index.tolist()
-ingolia_genes_thcomp = ingolia.index.tolist()
-len(data_tophat_genes)
-len(ingolia_genes_thcomp)
-
-common_genes_th = list(set(data_tophat_genes).intersection(ingolia_genes_thcomp))
-len(common_genes_th)
-
-data_tophat_common = data_tophat.reindex(index = common_genes_th)
-ingolia_common_thcomp = ingolia.reindex(index = common_genes_th)
 
 
 
@@ -771,12 +557,7 @@ for file in file_list:
 make_figure2A(
     data_common,
     ingolia_common,
-    'external_correlations_summary_htseq.png')
-
-make_figure2S(
-    data_tophat_common,
-    ingolia_common_thcomp,
-    'external_correlations_summary_tophat.png')
+    'external_correlations_summary_htseq_protein_truncated_v96.png')
 
 
 interactive_scatter('ribo_untr_a', data_common, ingolia_common)
@@ -791,5 +572,5 @@ FIGURE 2B
 """
 # Run correlations between sample alignments
 make_figure2B(
-    data,
-    'internal_correlations_summary_htseq.png')
+    data_threshold,
+    'internal_correlations_summary_htseq_protein_truncated_v96.png')

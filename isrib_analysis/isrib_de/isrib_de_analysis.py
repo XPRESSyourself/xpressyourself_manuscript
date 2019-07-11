@@ -19,9 +19,11 @@ def rp_plot(
     title,
     list_up,
     list_down,
+    list_down_custom,
     genes=[],
     label_up=True,
-    label_down=True):
+    label_down=True,
+    label_down_custom=True):
 
     data_fig = data[[y_fc, x_fc, y_p, x_p]].copy()
 
@@ -94,6 +96,16 @@ def rp_plot(
         rna_down = np.array(rna_down).astype(np.float)
         rna_down = np.ndarray.tolist(rna_down)
 
+    if list_down_custom != None:
+        data_fig_down_custom = data_fig.reindex(list_down_custom)
+        ribo_down_custom = data_fig_down_custom[[y_fc]].sum(axis=1).values.tolist()
+        ribo_down_custom = np.array(ribo_down_custom).astype(np.float)
+        ribo_down_custom = np.ndarray.tolist(ribo_down_custom)
+
+        rna_down_custom = data_fig_down_custom[[x_fc]].sum(axis=1).values.tolist()
+        rna_down_custom = np.array(rna_down_custom).astype(np.float)
+        rna_down_custom = np.ndarray.tolist(rna_down_custom)
+
     #Plot data
     ax.scatter(rna_all, ribo_all, s=2.5,c='gray',alpha=0.5)
     ax.scatter(rna_sig, ribo_sig, s=5,c='black',alpha=1)
@@ -116,6 +128,22 @@ def rp_plot(
                     ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#1b9e77', weight='semibold')
                 else:
                     ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#1b9e77', weight='semibold')
+
+    if list_down_custom != None:
+        ax.scatter(rna_down_custom, ribo_down_custom, s=80,c='#1b9e77',alpha=1)
+
+        for index, row in data_fig.iterrows():
+            if index in list_down_custom:
+                if index in sig_list:
+                    ax.scatter(row[1], row[0], s=20,c='black',alpha=1)
+                else:
+                    ax.scatter(row[1], row[0], s=20,c='gray',alpha=1)
+            else:
+                pass
+
+        if label_down_custom == True:
+            for index, row in data_fig_down_custom.iterrows():
+                ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#d95f02', weight='semibold')
 
     if list_up != None:
         ax.scatter(rna_up, ribo_up, s=80,c='#7570b3',alpha=1)
@@ -195,51 +223,6 @@ merged_data_split = pd.concat([tm_ribo_data, tm_rna_data, tmisrib_ribo_data, tmi
 isr = ['ATF4','ATF5','PPP1R15A','DDIT3']
 uorf_targets = ['SLC35A4','PTP4A1','UCP2','C7orf31','BCL2L11','PNRC2','SAT1']
 
-# Make ribo-seq vs rna-seq plots with hightlights
-rp_plot(
-    merged_data_split,
-    'tm_ribo_log2FC',
-    'tm_rna_log2FC',
-    'tm_ribo_padj',
-    'tm_rna_padj',
-    'Tm',
-    'Untr',
-    tm_data,
-    'tm_padj',
-    'Tm_vs_Untr_deseq.png',
-    isr,
-    uorf_targets)
-
-rp_plot(
-    merged_data_split,
-    'tmisrib_ribo_log2FC',
-    'tmisrib_rna_log2FC',
-    'tmisrib_ribo_padj',
-    'tmisrib_rna_padj',
-    'Tm + ISRIB',
-    'Untr',
-    tmisrib_data,
-    'tmisrib_padj',
-    'TmISRIB_vs_Untr_deseq.png',
-    isr,
-    uorf_targets,
-    label_down=False)
-
-rp_plot(
-    merged_data_split,
-    'isrib_ribo_log2FC',
-    'isrib_rna_log2FC',
-    'isrib_ribo_padj',
-    'isrib_rna_padj',
-    'ISRIB',
-    'Untr',
-    isrib_data,
-    'isrib_padj',
-    'ISRIB_vs_Untr_deseq.png',
-    isr,
-    uorf_targets,
-    label_down=False)
-
 # Check fold changes of targets for comparison
 print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[0])
 print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[0])
@@ -250,7 +233,7 @@ print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[2])
 print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[3])
 print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[3])
 
-check_data.loc['SLC39A1']
+check_data.loc['SLC1A1']
 # TE analysis
 data_de_plot = merged_data.copy()
 
@@ -270,6 +253,58 @@ down_strict_L = down_strict.index.tolist()
 down_loose_L = down_loose.index.tolist()
 up_strict_L = up_strict.index.tolist()
 up_loose_L = up_loose.index.tolist()
+
+# Make ribo-seq vs rna-seq plots with hightlights
+rp_plot(
+    merged_data_split,
+    'tm_ribo_log2FC',
+    'tm_rna_log2FC',
+    'tm_ribo_padj',
+    'tm_rna_padj',
+    'Tm',
+    'Untr',
+    tm_data,
+    'tm_padj',
+    'Tm_vs_Untr_deseq.png',
+    isr,
+    uorf_targets,
+    down_strict_L)
+
+rp_plot(
+    merged_data_split,
+    'tmisrib_ribo_log2FC',
+    'tmisrib_rna_log2FC',
+    'tmisrib_ribo_padj',
+    'tmisrib_rna_padj',
+    'Tm + ISRIB',
+    'Untr',
+    tmisrib_data,
+    'tmisrib_padj',
+    'TmISRIB_vs_Untr_deseq.png',
+    isr,
+    uorf_targets,
+    down_strict_L,
+    label_down=False)
+
+rp_plot(
+    merged_data_split,
+    'isrib_ribo_log2FC',
+    'isrib_rna_log2FC',
+    'isrib_ribo_padj',
+    'isrib_rna_padj',
+    'ISRIB',
+    'Untr',
+    isrib_data,
+    'isrib_padj',
+    'ISRIB_vs_Untr_deseq.png',
+    isr,
+    uorf_targets,
+    down_strict_L,
+    label_down=False)
+
+
+
+
 
 # Plot TEs
 fig, ax = plt.subplots()

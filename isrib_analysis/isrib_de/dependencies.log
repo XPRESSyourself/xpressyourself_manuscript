@@ -1,0 +1,234 @@
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
+Conda dependencies:
+===================
+fastp                     0.20.0               hd9629dc_0    bioconda
+star                      2.7.1a                        0    bioconda
+samtools                  1.9                 h7c4ea83_11    bioconda
+bedtools                  2.28.0               h7fd0a75_0    bioconda
+fastqc                    0.11.8                        1    bioconda
+htseq                     0.11.2           py36h1702cab_1    bioconda
+matplotlib                2.2.3                    py36_1    conda-forge
+matplotlib-base           2.2.3            py36hd64abcd_1    conda-forge
+pandas                    0.24.2           py36h86efe34_0    conda-forge
+numpy                     1.16.2          py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+numpydoc                  0.9.1                    pypi_0    pypi
+scipy                     1.2.1           py36_blas_openblash486cb9f_0  [blas_openblas]  conda-forge
+scikit-learn              0.21.1                   pypi_0    pypi
+multiqc                   1.7                      pypi_0    pypi
+xpressplot                0.0.6b0                   dev_0    <develop>
+seaborn                   0.9.0                    pypi_0    pypi
+R dependencies:
+===================
+DESeq2                                                       DESeq2      1.20.0
+DESeq2                                   <NA>
+dupRadar                                                   dupRadar      1.14.0
+dupRadar                                 <NA>
+riboWaltz                                                 riboWaltz       1.0.1
+riboWaltz                                <NA>
