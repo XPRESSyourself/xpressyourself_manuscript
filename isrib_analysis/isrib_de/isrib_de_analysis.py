@@ -36,10 +36,10 @@ def rp_plot(
     plt.grid(False)
     ax.axhline(0, ls='-', color='black') # Create central axis line
     ax.axvline(0, ls='-', color='black')
-    rect = patches.Rectangle((-1,-1),2,2,linewidth=1.5,edgecolor='lightgray',facecolor='none') # Create significance zone
+    rect = patches.Rectangle((-1,-1),2,2,linewidth=1.5,edgecolor='gray',facecolor='none') # Create significance zone
     ax.add_patch(rect)
-    ax.set_ylabel('Ribo-Seq (' + str(y_name) + '/' + str(x_name) + ')', fontsize=16) # Set axis labels
-    ax.set_xlabel('mRNA-Seq (' + str(y_name) + '/' + str(x_name) + ')', fontsize=16)
+    ax.set_ylabel('Ribo-Seq log$_2$(' + str(y_name) + '/' + str(x_name) + ')', fontsize=16) # Set axis labels
+    ax.set_xlabel('mRNA-Seq log$_2$(' + str(y_name) + '/' + str(x_name) + ')', fontsize=16)
     ax.set_xlim(-3.5,3.5) # Set axis limits
     ax.set_ylim(-3.5,3.5)
     x = [-3,-2,-1,0,1,2,3] # Set axis spacing
@@ -126,9 +126,9 @@ def rp_plot(
         if label_down == True:
             for index, row in data_fig_down.iterrows():
                 if index == 'PNRC2' or index == 'SAT1':
-                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#1b9e77', weight='semibold')
+                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#117a5b', weight='semibold')
                 else:
-                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#1b9e77', weight='semibold')
+                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#117a5b', weight='semibold')
 
     if list_down_custom != None:
         ax.scatter(rna_down_custom, ribo_down_custom, s=80,c='#d95f02',alpha=1)
@@ -145,9 +145,9 @@ def rp_plot(
         if label_down_custom == True:
             for index, row in data_fig_down_custom.iterrows():
                 if index == 'MYO5B' or index == 'SLC1A1':
-                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#d95f02', weight='semibold')
+                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#c25502', weight='semibold')
                 else:
-                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#d95f02', weight='semibold')
+                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#c25502', weight='semibold')
 
     if list_up != None:
         ax.scatter(rna_up, ribo_up, s=80,c='#7570b3',alpha=1)
@@ -164,9 +164,9 @@ def rp_plot(
         if label_up == True:
             for index, row in data_fig_up.iterrows():
                 if index == 'DDIT3':
-                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#7570b3', weight='semibold')
+                    ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#544db3', weight='semibold')
                 else:
-                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#7570b3', weight='semibold')
+                    ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#544db3', weight='semibold')
 
     plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/' + str(title), dpi=3600, bbox_inches='tight')
     #plt.show()
@@ -328,6 +328,7 @@ rp_plot(
     isr,
     uorf_targets,
     down_strict_L,
+    label_up=False,
     label_down=False,
     label_down_custom=False)
 
@@ -345,6 +346,7 @@ rp_plot(
     isr,
     uorf_targets,
     down_strict_L,
+    label_up=False,
     label_down=False,
     label_down_custom=False)
 
@@ -354,13 +356,15 @@ rp_plot(
 
 # Plot TEs
 fig, ax = plt.subplots()
-plt.yticks([-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10])
+plt.yticks([-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10])
+ax.tick_params(axis='x', which='minor',length=0)
 
 ax.set_facecolor('white')
 ax.grid(color='grey', axis='y')
+
 data_de_plot.T.plot.line(legend=False, color='lightgrey', linewidth=0.5, ax=ax)
 
-ax.axvline(0.02, ls='-', color='black')
+ax.axvline(0.01, ls='-', color='black')
 ax.axvline(1, ls='-', color='black')
 ax.axvline(2, ls='-', color='black')
 ax.axvline(2.99, ls='-', color='black')
