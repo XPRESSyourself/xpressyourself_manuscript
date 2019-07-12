@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 matplotlib.rcParams['font.sans-serif'] = 'Arial'
 import seaborn as sns
+from xpressplot import rpm
 
 def rp_plot(
     data,
@@ -247,6 +248,36 @@ print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[3])
 print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[3])
 
 check_data.loc['SLC1A1']
+
+"""
+TE sanity check
+"""
+def te_sanity(data, check_data, gene_name):
+
+    check_data_rpm = rpm(check_data)
+
+    print(gene_name)
+
+    print('DESeq2 estimate: ', data.loc[gene_name]['tm_log2FC'])
+
+    # Get gene info for all samples
+    gene = check_data_rpm.loc[gene_name][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b','tm_a_hek','tm_b_hek','untr_a_hek','untr_b_hek']]
+
+    # Calculate Tm TE by summing replicates and calculating RPF / RNA
+    gene['tm_te'] = (gene['ribo_tm_a'] + gene['ribo_tm_b']) / (gene['tm_a_hek'] + gene['tm_b_hek'])
+    gene['untr_te'] = (gene['ribo_untr_a'] + gene['ribo_untr_b']) / (gene['untr_a_hek'] + gene['untr_b_hek'])
+
+    # Calculate FC of TEs for Treatment / not-treated and take the log2 value of that outpu
+    gene['fold_change'] = np.log2(gene['tm_te'] / gene['untr_te'])
+    print('Sanity estimate: ', gene['fold_change'])
+
+te_sanity(tm_data, check_data, 'ATF4')
+te_sanity(tm_data, check_data, 'DDIT3')
+te_sanity(tm_data, check_data, 'UCP2')
+te_sanity(tm_data, check_data, 'SLC1A1')
+te_sanity(tm_data, check_data, 'POMGNT1')
+
+
 # TE analysis
 data_de_plot = merged_data.copy()
 
