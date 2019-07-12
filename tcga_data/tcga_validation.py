@@ -13,7 +13,7 @@ matplotlib.rcParams['font.sans-serif'] = 'Arial'
 import seaborn as sns
 %matplotlib inline
 
-from xpressplot import r_fpkm, count_table, convert_names
+from xpressplot import count_table, convert_names
 
 import plotly
 import plotly.offline as py
@@ -78,16 +78,16 @@ def make_figure4(
             print('oops')
 
         # Format p value
-        if p_value.astype('float') < 0.001:
+        if p_value < 0.001:
             p_val = '< 0.001'
         else:
-            p_val = round(p_value.astype('float'), 4).astype('str')
+            p_val = '= {:.3f}'.format(round(p_value, 3))
 
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
         file_number += 1 # Plot counter
@@ -156,16 +156,16 @@ def make_figure4S(
         print('oops')
 
     # Format p value
-    if p_value.astype('float') < 0.001:
+    if p_value < 0.001:
         p_val = '< 0.001'
     else:
-        p_val = round(p_value.astype('float'), 4).astype('str')
+        p_val = '= {:.3f}'.format(round(p_value, 3))
 
     rho = '{:.3f}'.format(round(rho, 3))
 
     # Plot data
     axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-    axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+    axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
     axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
     axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
 
@@ -549,7 +549,7 @@ def run_comp(pseudogenes=False):
         bbox_inches = 'tight')
 
 run_comp(pseudogenes=False)
-#run_comp(pseudogenes=True)
+run_comp(pseudogenes=True)
 
 
 """

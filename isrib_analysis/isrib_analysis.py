@@ -125,16 +125,16 @@ def make_figure2A(
             print('oops')
 
         # Format p value
-        if p_value.astype('float') < 0.001:
+        if p_value < 0.001:
             p_val = '< 0.001'
         else:
-            p_val = round(p_value.astype('float'), 4).astype('str')
+            p_val = '= {:.3f}'.format(round(p_value, 3))
 
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=0.88)
         file_number += 1 # Plot counter
@@ -231,16 +231,16 @@ def make_figure2B(
             print('oops')
 
         # Format p value
-        if p_value.astype('float') < 0.001:
+        if p_value < 0.001:
             p_val = '< 0.001'
         else:
-            p_val = round(p_value.astype('float'), 4).astype('str')
+            p_val = '= {:.3f}'.format(round(p_value, 3))
 
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title('R ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
         file_number += 1 # Plot counter
@@ -291,7 +291,8 @@ def get_data(file, sample_suffix='_1_Aligned'):
         file,
         sep = '\t',
         index_col = 0)
-    data.index = data.index.str.split('.')[0]
+
+    data.index = data.index.str.split('.').str[0]
 
     # Accessed via:
     # $ curl -O ftp://ftp.ensembl.org/pub/release-96/gtf/homo_sapiens/Homo_sapiens.GRCh38.96.gtf.gz
@@ -318,6 +319,8 @@ READ IN DATA
 # Input file is protein coding only and truncated, not parsed for longest transcript only
 file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/isrib_comp_v96_truncated_count_table.tsv'
 data = get_data(file, sample_suffix='__Aligned')
+
+
 
 # Clean up data
 data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
@@ -399,6 +402,7 @@ def cycle_fig2a(file, ingolia):
     data = get_data(file, sample_suffix='__Aligned')
 
     data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
+
     data_genes = data_threshold.index.tolist()
     ingolia_genes = ingolia.index.tolist()
 
@@ -413,13 +417,14 @@ def cycle_fig2a(file, ingolia):
         str(file.split('/')[-1][:-4]) + '_external_correlations_summary_htseq.png')
 
 
+#'isrib_comp_v96_truncated_count_table.tsv',
+#'isrib_comp_v96_normal_count_table.tsv',
+#'isrib_comp_v96_longest_truncated_count_table.tsv',
 file_list = [
-    'isrib_comp_v96_truncated_count_table.tsv',
-    'isrib_comp_v96_normal_count_table.tsv',
-    'isrib_comp_v96_longest_truncated_count_table.tsv',
-    'isrib_comp_v72_truncated_count_table.tsv',
+
     'isrib_comp_v72_normal_count_table.tsv',
-    'isrib_comp_v72_longest_truncated_count_table.tsv'
+    'isrib_comp_v72_longest_truncated_count_table.tsv',
+    'isrib_comp_v72_truncated_count_table.tsv',
 ]
 
 file_list = ['/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/' + str(f) for f in file_list]
@@ -443,10 +448,6 @@ make_figure2B(
     data_threshold,
     'internal_correlations_summary_htseq_protein_truncated_v96.png')
 
-
-
-ingolia_weird_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].max(axis=1) >= 50]
-
 make_figure2B(
-    ingolia_weird_threshold,
-    'internal_correlations_summary_ingolia_weird.png')
+    ingolia,
+    'internal_correlations_summary_ingolia.png')
