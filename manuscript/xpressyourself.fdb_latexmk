@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1562893540 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1562894899
+["bibtex xpressyourself"] 1562902920 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1562902925
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
-  "xpressyourself.aux" 1562894898 23416 4656468769f01c003b2d0fe068dbed72 ""
+  "xpressyourself.aux" 1562902925 23408 0ab3cc8d4e4a98667017329fa4655849 ""
   "xpressyourself.bib" 0 -1 0 ""
   (generated)
-  "xpressyourself.bbl"
   "xpressyourself.blg"
-["pdflatex"] 1562894893 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1562894899
+  "xpressyourself.bbl"
+["pdflatex"] 1562902920 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1562902925
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -120,11 +120,11 @@
   "figures/xpresspipe_supplement6.png" 1562892699 361571 213682d67313d0a978c7df0ecd9ddfa6 ""
   "figures/xpresspipe_supplement7.png" 1562892686 692434 a42a33940f4b7769e0bdc33d5d2a2401 ""
   "figures/xpresspipe_supplement8.png" 1562885741 257781 f20e50c8cde27623c806ae2407dd1f7f ""
-  "xpressyourself.aux" 1562894898 23416 4656468769f01c003b2d0fe068dbed72 ""
+  "xpressyourself.aux" 1562902925 23408 0ab3cc8d4e4a98667017329fa4655849 ""
   "xpressyourself.bbl" 1562799616 6318 ef4edeff7d0d21f74f24beed8fe90a10 "bibtex xpressyourself"
-  "xpressyourself.tex" 1562894893 81891 0ae855fbc9a620b39365fc185d281473 ""
+  "xpressyourself.tex" 1562902914 81767 7430867ed268b22611fce3ca18b139be ""
   (generated)
-  "xpressyourself.pdf"
-  "xpressyourself.log"
-  "xpressyourself.aux"
   "xpressyourself.out"
+  "xpressyourself.aux"
+  "xpressyourself.log"
+  "xpressyourself.pdf"
