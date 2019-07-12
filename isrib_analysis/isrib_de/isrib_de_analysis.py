@@ -226,6 +226,16 @@ merged_data_split = pd.concat([tm_ribo_data, tm_rna_data, tmisrib_ribo_data, tmi
 isr = ['ATF4','ATF5','PPP1R15A','DDIT3']
 uorf_targets = ['SLC35A4','PTP4A1','UCP2','C7orf31','BCL2L11','PNRC2','SAT1']
 
+"""
+Some of the genes in plotting cluster on a single y-axis coordinate
+This is due to insufficient RPF counts after RNA thresholding of the data
+"""
+tm_ribo_data[(tm_ribo_data['tm_ribo_log2FC'] > 2.7) & (tm_ribo_data['tm_ribo_log2FC'] < 2.75)]
+check_data.loc['SLC10A5'][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b']]
+check_data.loc['CD19'][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b']]
+check_data.loc['NOX1'][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b']]
+""""""
+
 # Check fold changes of targets for comparison
 print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[0])
 print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[0])
