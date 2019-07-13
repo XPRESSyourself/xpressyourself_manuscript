@@ -26,7 +26,7 @@ def name_map(
     data,
     map):
 
-    name_dict = pd.Series(map.ingolia_name.values,index=map.Run).to_dict()
+    name_dict = pd.Series(map.original_name.values,index=map.Run).to_dict()
     data_c = data.copy()
     data_c.columns = data_c.columns.to_series().map(name_dict)
     data_sum = data_c.groupby(data_c.columns, axis=1).sum()
@@ -36,7 +36,7 @@ def name_map(
 # Make figure 2A
 def make_figure2A(
     data,
-    ingolia_data,
+    original_data,
     title,
     interactive=False):
 
@@ -74,13 +74,13 @@ def make_figure2A(
     for x in file_list:
 
         if interactive == True:
-            merged_best = pd.concat([data[[str(x)]], ingolia_data[[str(x)]]], axis=1, sort=False)
-            merged_best.columns = ['xpresspipe', 'ingolia']
+            merged_best = pd.concat([data[[str(x)]], original_data[[str(x)]]], axis=1, sort=False)
+            merged_best.columns = ['xpresspipe', 'original']
             merged_best['genes'] = merged_best.index
             sc = px.scatter(
                 merged_best,
                 x='xpresspipe',
-                y='ingolia',
+                y='original',
                 hover_name='genes',
                 log_x=True,
                 log_y=True,
@@ -93,7 +93,7 @@ def make_figure2A(
 
         # Get data as array-like for samples being compared
         data_c1 = data.copy()
-        data_c2 = ingolia_data.copy()
+        data_c2 = original_data.copy()
 
         sample_a = data_c1[x].values.tolist()
         sample_a = [x + 1 for x in sample_a]
@@ -353,18 +353,18 @@ data_threshold[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/j
 
 
 """
-READ IN INGOLIA DATA
+READ IN ORIGINAL DATA
 """
-# Read in Ingolia raw counts from Elife supplement table
-ingolia = pd.read_csv(
+# Read in original raw counts from Elife supplement table
+original = pd.read_csv(
     '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/ingolia_counts_table.txt',
     sep = '\t',
     index_col = 0)
-ingolia = ingolia.drop('size', axis = 1)
+original = original.drop('size', axis = 1)
 
 # Clean up data
-ingolia = ingolia.groupby(level=0).sum() # Combine duplicate named genes
-ingolia_rpm = rpm(ingolia)
+original = original.groupby(level=0).sum() # Combine duplicate named genes
+original_rpm = rpm(original)
 
 
 """
@@ -372,48 +372,110 @@ GET COMMON GENE SET BETWEEN DATASETS
 """
 # Clean NaNs
 data_rpm.shape
-ingolia_rpm.shape
+original_rpm.shape
 
 data_rpm = data_rpm.dropna()
-ingolia_rpm = ingolia_rpm.dropna()
+original_rpm = original_rpm.dropna()
 
 data_rpm.shape
-ingolia_rpm.shape
+original_rpm.shape
 
 # Make dataframes for each dataset for matching genes
 data_genes = data_threshold.index.tolist()
-ingolia_genes = ingolia.index.tolist()
+original_genes = original.index.tolist()
 len(data_genes)
-len(ingolia_genes)
+len(original_genes)
 
-common_genes = list(set(data_genes).intersection(ingolia_genes))
+common_genes = list(set(data_genes).intersection(original_genes))
 len(common_genes)
 
 data_common = data_threshold.reindex(index = common_genes)
-ingolia_common = ingolia.reindex(index = common_genes)
+original_common = original.reindex(index = common_genes)
 
+
+"""
+Over-representation analysis
+TopHat2 is .48% more likely to align a read that should be counted as ambiguous
+https://www.nature.com/articles/nmeth.4106, supplementary table 5
+"""
+tophat_overcount_rate = '0.48%'
+
+#RPF Untr A -> started with ~135,000,000 reads
+rpf_start_reads = 135000000 #approx
+
+rpf_test = pd.concat([data_common[['ribo_untr_a']], original_common[['ribo_untr_a']]], axis=1, sort=False)
+rpf_test.columns = ['xpresspipe','original']
+rpf_test = rpf_test[(rpf_test['xpresspipe'] >= 10) & (rpf_test['original'] >= 10)]
+
+rpf_test.shape
+rpf_test.sum()
+rpf_log = np.log10(rpf_test+1)
+
+plt.scatter(rpf_log['xpresspipe'].values, rpf_log['original'], s=1)
+x, y = [0, 4.9], [-0.05, 5.05]
+plt.plot(x, y, c='black')
+
+m = (y[1] - y[0]) / (x[1] - x[0])
+b = y[0]
+
+rpf_above = rpf_log.loc[rpf_log['original'] > ((rpf_log['xpresspipe'] * m) + b)]
+rpf_above.shape
+rpf_above['diff'] = 10**rpf_above['original'] - 10**rpf_above['xpresspipe']
+overcounts = rpf_above['diff'].sum()
+overcount_rate = overcounts / rpf_start_reads
+print('RPF_Untr_A')
+print('# Reads overcounted: ' + str(int(round(overcounts))))
+print('Overcount rate: ' + str(overcount_rate * 100) + '%')
+print('TopHat2 vs STAR overcount ambiguous rate increase: ' + tophat_overcount_rate)
+
+#RNA Untr A
+rna_start_reads = 48000000
+
+rna_test = pd.concat([data_common[['untr_a_hek']], original_common[['untr_a_hek']]], axis=1, sort=False)
+rna_test.columns = ['xpresspipe','original']
+rna_test.shape
+rna_test.sum()
+
+rna_log = np.log10(rna_test+1)
+
+plt.scatter(rna_log['xpresspipe'].values, rna_log['original'], s=1)
+x, y = [0, 4.9], [0.18, 5.03]
+plt.plot(x, y, c='black')
+
+m = (y[1] - y[0]) / (x[1] - x[0])
+b = y[0]
+
+rna_above = rna_log.loc[rna_log['original'] > ((rna_log['xpresspipe'] * m) + b)]
+print(rna_above.shape)
+rna_above['diff'] = 10**rna_above['original'] - 10**rna_above['xpresspipe']
+overcounts = rna_above['diff'].sum()
+overcount_rate = overcounts / rna_start_reads
+print('RNA_Untr_A')
+print('# Reads overcounted: ' + str(int(round(overcounts))))
+print('Overcount rate: ' + str(overcount_rate * 100) + '%')
+print('TopHat2 vs STAR overcount ambiguous rate increase: ' + tophat_overcount_rate)
 
 """
 FIGURE 2A
 """
 # Run correlations between sample alignments
-def cycle_fig2a(file, ingolia):
+def cycle_fig2a(file, original):
 
     data = get_data(file, sample_suffix='__Aligned')
 
     data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
 
     data_genes = data_threshold.index.tolist()
-    ingolia_genes = ingolia.index.tolist()
+    original_genes = original.index.tolist()
 
-    common_genes = list(set(data_genes).intersection(ingolia_genes))
+    common_genes = list(set(data_genes).intersection(original_genes))
 
     data_common = data_threshold.reindex(index = common_genes)
-    ingolia_common = ingolia.reindex(index = common_genes)
+    original_common = original.reindex(index = common_genes)
 
     make_figure2A(
         data_common,
-        ingolia_common,
+        original_common,
         str(file.split('/')[-1][:-4]) + '_external_correlations_summary_htseq.png')
 
 
@@ -431,12 +493,12 @@ file_list = ['/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isr
 
 for file in file_list:
 
-    cycle_fig2a(file, ingolia)
+    cycle_fig2a(file, original)
 
 
 make_figure2A(
     data_common,
-    ingolia_common,
+    original_common,
     'external_correlations_summary_htseq_protein_truncated_v96.png')
 
 
@@ -449,5 +511,5 @@ make_figure2B(
     'internal_correlations_summary_htseq_protein_truncated_v96.png')
 
 make_figure2B(
-    ingolia,
-    'internal_correlations_summary_ingolia.png')
+    original,
+    'internal_correlations_summary_original.png')
