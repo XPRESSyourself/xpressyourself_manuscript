@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  13 JUL 2019 00:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  13 JUL 2019 14:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -615,7 +615,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  5992 strings out of 492649
  89531 string characters out of 6129622
- 185163 words of memory out of 5000000
+ 185137 words of memory out of 5000000
  9749 multiletter control sequences out of 15000+600000
  31149 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -640,7 +640,7 @@ s/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 /urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/h
 elvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic
 /uhvro8a.pfb>
-Output written on xpressyourself.pdf (42 pages, 4169803 bytes).
+Output written on xpressyourself.pdf (42 pages, 4169973 bytes).
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams
