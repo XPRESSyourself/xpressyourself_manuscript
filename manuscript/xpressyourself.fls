@@ -164,10 +164,13 @@ INPUT ./figures/xpresspipe_figure2.png
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro7t.tfm
 INPUT figures/xpresspipe_figure3.png
 INPUT ./figures/xpresspipe_figure3.png
 INPUT ./figures/xpresspipe_figure3.png
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvro7t.vf
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvr7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT figures/xpresspipe_figure4.png

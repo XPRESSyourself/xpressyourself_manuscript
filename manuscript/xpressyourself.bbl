@@ -61,6 +61,9 @@ E.~Afgan, {\it et~al.\/}, {\it Nucleic Acids Res.\/} {\bf 46}, W537 (2018).
 \bibitem{fp_range}
 C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green, {\it Mol Cell\/} {\bf 73} (2019).
 
+\bibitem{igv}
+J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
+
 \bibitem{htseq}
 S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
 
@@ -106,22 +109,23 @@ C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
 J.~Leek, W.~Johnson, H.~Parker, A.~Jaffe, J.~Storey, {\it Bioinformatics\/}
   {\bf 28} (2012).
 
-\bibitem{fastqc}
-S.~Andrews, Fastqc,
-  \url{http://www.bioinformatics.babraham.ac.uk/projects/fastqc/} (2010).
-
 \bibitem{dupradar}
 S.~Sayols, D.~Scherzinger, H.~Klein, {\it BMC Bioinformatics\/} {\bf 17}, 428
   (2016).
-
-\bibitem{igv}
-J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
 
 \bibitem{ribowaltz}
 F.~Lauria, {\it et~al.\/}, {\it PLoS Comput Biol\/} {\bf 14} (2018).
 
 \bibitem{deseq2}
 M.~Love, W.~Huber, S.~Anders, {\it Genome Biol\/} {\bf 15} (2014).
+
+\bibitem{multiqc}
+P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
+  32}, 3047–3048 (2016).
+
+\bibitem{fastqc}
+S.~Andrews, Fastqc,
+  \url{http://www.bioinformatics.babraham.ac.uk/projects/fastqc/} (2010).
 
 \bibitem{matplotlib}
 J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
@@ -184,16 +188,16 @@ L.~Vera-Portocarrero, {\it et~al.\/}, {\it Brain Res\/} {\bf 927} (2002).
 \bibitem{eif2b_neuroprotective}
 Y.~Wong, {\it et~al.\/}, {\it Elife\/} {\bf 8} (2019).
 
-\bibitem{multiqc}
-P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
-  32}, 3047–3048 (2016).
-
 \bibitem{pandas}
 W.~McKinney, {\it Proc of the 9th Python in Science Conf\/} pp. 51--56 (2010).
 
 \bibitem{sklearn}
 L.~Buitinck, {\it et~al.\/}, {\it ECML PKDD Workshop: Languages for Data Mining
   and Machine Learning\/} (2013), pp. 108--122.
+
+\bibitem{genomicalign}
+M.~Lawrence, {\it et~al.\/}, {\it {PLoS} Computational Biology\/} {\bf 9}
+  (2013).
 
 \bibitem{plotly}
 P.~T. Inc., Collaborative data science (2015).

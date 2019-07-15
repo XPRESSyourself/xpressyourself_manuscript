@@ -24,45 +24,45 @@ Warning--entry type for "nextflow_pipeline" isn't style-file defined
 Warning--entry type for "ensembl_canon" isn't style-file defined
 --line 501 of file manubib.bib
 Warning--empty journal in seaborn
-You've used 64 entries,
+You've used 65 entries,
             2300 wiz_defined-function locations,
-            1030 strings with 16885 characters,
-and the built_in function-call counts, 11802 in all, are:
-= -- 1024
-> -- 589
+            1034 strings with 17126 characters,
+and the built_in function-call counts, 11965 in all, are:
+= -- 1039
+> -- 597
 < -- 2
-+ -- 295
-- -- 147
-* -- 846
-:= -- 1862
-add.period$ -- 64
-call.type$ -- 64
++ -- 299
+- -- 149
+* -- 859
+:= -- 1891
+add.period$ -- 65
+call.type$ -- 65
 change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 65
-duplicate$ -- 648
-empty$ -- 1086
-format.name$ -- 196
-if$ -- 2677
+cite$ -- 66
+duplicate$ -- 659
+empty$ -- 1100
+format.name$ -- 199
+if$ -- 2712
 int.to.chr$ -- 0
-int.to.str$ -- 64
-missing$ -- 52
-newline$ -- 195
-num.names$ -- 63
-pop$ -- 264
+int.to.str$ -- 65
+missing$ -- 53
+newline$ -- 198
+num.names$ -- 64
+pop$ -- 266
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 405
+skip$ -- 409
 stack$ -- 0
 substring$ -- 353
-swap$ -- 188
+swap$ -- 192
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 90
-width$ -- 66
-write$ -- 489
+while$ -- 91
+width$ -- 67
+write$ -- 497
 (There were 11 warnings)

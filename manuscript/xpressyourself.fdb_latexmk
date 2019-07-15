@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself"] 1563160686 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1563160692
+["bibtex xpressyourself"] 1563167311 "xpressyourself.aux" "xpressyourself.bbl" "xpressyourself" 1563169530
   "./Science.bst" 1555374069 26881 e27d4d65d870ab5242d9845e78d9bb02 ""
-  "xpressyourself.aux" 1563160692 23616 5afdea83915999d5bed85b57b8f4873d ""
-  "xpressyourself.bib" 0 -1 0 ""
+  "manubib.bib" 1563163852 22055 c4b5fe895bff1dac01b60a28236808ff ""
+  "xpressyourself.aux" 1563169530 24478 e190644e5363b4be517369dd65a9247c ""
   (generated)
   "xpressyourself.blg"
   "xpressyourself.bbl"
-["pdflatex"] 1563160686 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1563160692
+["pdflatex"] 1563169524 "xpressyourself.tex" "xpressyourself.pdf" "xpressyourself" 1563169530
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1480098666 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -109,8 +109,8 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "figures/xpresspipe_figure1.png" 1562883583 150183 9be6d3f0f67718b8874ffa94f545a255 ""
-  "figures/xpresspipe_figure2.png" 1562892786 623979 06d65a4a3f632e8ecffec1dda4c7a8e2 ""
-  "figures/xpresspipe_figure3.png" 1562974613 767082 0066c626d66eb1326fc5f0ffd091c763 ""
+  "figures/xpresspipe_figure2.png" 1563164555 568326 13ded3e8dab098777290815d8f0bbb14 ""
+  "figures/xpresspipe_figure3.png" 1563164790 773471 1154d448bb66deb8c2f3c8ba8870799b ""
   "figures/xpresspipe_figure4.png" 1562893369 415883 428d97a72c9b2f07890df3ad2e18d397 ""
   "figures/xpresspipe_supplement1.png" 1562876255 189210 39c1692ddbfb02b3f10ab98d3cfa9347 ""
   "figures/xpresspipe_supplement2.png" 1562892733 498474 c43fe489f2ae3bc1529809325e0b3fb6 ""
@@ -120,11 +120,11 @@
   "figures/xpresspipe_supplement6.png" 1562892699 361571 213682d67313d0a978c7df0ecd9ddfa6 ""
   "figures/xpresspipe_supplement7.png" 1562892686 692434 a42a33940f4b7769e0bdc33d5d2a2401 ""
   "figures/xpresspipe_supplement8.png" 1562885741 257781 f20e50c8cde27623c806ae2407dd1f7f ""
-  "xpressyourself.aux" 1563160692 23616 5afdea83915999d5bed85b57b8f4873d ""
-  "xpressyourself.bbl" 1562799616 6318 ef4edeff7d0d21f74f24beed8fe90a10 "bibtex xpressyourself"
-  "xpressyourself.tex" 1563160680 87388 5556f3280ffe810e76cc64568a89c5cc ""
+  "xpressyourself.aux" 1563169530 24478 e190644e5363b4be517369dd65a9247c ""
+  "xpressyourself.bbl" 1563167311 6426 b65a9c9d27a8902a832f8b3cf5542da9 "bibtex xpressyourself"
+  "xpressyourself.tex" 1563169524 87517 1a2ce46752561aa6e6919c479efce158 ""
   (generated)
-  "xpressyourself.log"
   "xpressyourself.out"
   "xpressyourself.aux"
+  "xpressyourself.log"
   "xpressyourself.pdf"

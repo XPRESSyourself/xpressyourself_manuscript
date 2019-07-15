@@ -214,7 +214,7 @@ As ribosomal RNAs and other non-coding RNAs can be highly abundant in RNA-Seq ex
 
 In most eukaryotes, mRNAs undergo alternative splicing of exons to generate the mature mRNA. However, some tools consider reads that align to multiple annotated splice variants of a gene as a multi-mapping read since they map to a location where several isoforms, recognized as separate records, of the same gene overlap. These reads are either penalized or discarded. By providing the \texttt{--longest\_transcript} argument, the longest Ensembl canonical transcript \cite{ensembl_canon} is retained for each gene in the GTF file. However, if using HTSeq with default XPRESSpipe parameters or Cufflinks to quantify reads, this is not necessary as the software is optimized to quantify abundances of the different isoforms of each gene \cite{cufflinks}. \par
 
-For ribosome profiling, we observe frequent read pile-ups at the $5'$- and $3'$- ends of an open reading frame which are largely uninformative as to the translational efficiency of the gene. Therefore, the $5'$- and $3'$- ends of each transcript's total coding region should be truncated as to be excluded from consideration during read quantification \cite{ingolia_meth, weinberg_reports}. By providing the \texttt{--truncate} argument, the $5'$- and $3'$- ends of each coding region will be trimmed by the specified amounts. These values are set to defaults of 45 nt for $5'$- truncation and 15 nt for $3'$- truncation, as is the convention within the ribosome profiling field \cite{ingolia_meth}, but these can be modified using the \texttt{--truncate\_5prime} or \texttt{--truncate\_3prime} parameters. If generating a GTF for use with general RNA-Seq datasets not associated with a ribosome profiling dataset (i.e., a RNA-Seq library that originates from the same sample as a ribosome profiling library), the \texttt{--truncate} argument should not be provided.
+For ribosome profiling, we observe frequent read pile-ups at the $5'$- and $3'$- ends of an open reading frame which are largely uninformative as to the translational efficiency of the gene. Therefore, the $5'$- and $3'$- ends of each transcript's total coding region should be truncated as to be excluded from consideration during read quantification \cite{ingolia_meth, weinberg_reports}. By providing the \texttt{--truncate} argument, the $5'$- and $3'$- ends of each coding region will be trimmed by the specified amounts. These values are set to defaults of 45 nt for $5'$- truncation and 15 nt for $3'$- truncation, as is the convention within the ribosome profiling field \cite{ingolia_meth}, but these can be modified using the \texttt{--truncate\_5prime} or \texttt{--truncate\_3prime} parameters. If generating a GTF for use with general RNA-Seq datasets not associated with a ribosome profiling dataset (i.e., an RNA-Seq library that originates from the same sample as a ribosome profiling library), the \texttt{--truncate} argument should not be provided.
 
 \subsubsection{Trimming}
 Reads generally need to be cleaned of artifacts from library creation. These include adaptors, unique molecular identifier (UMI) sequences, and technical errors in the form of low-quality base calls. By doing so, non-native sequences are removed and reads can align properly to the reference. XPRESSpipe uses fastp, a faster, more accurate trimming package that has improved alignable read output compared to its predecessors \cite{fastp}. Adaptor sequence, base quality, and read length are all adjustable parameters available to the user. Additionally, feature details, such as those for UMIs, can be specified. PCR artifacts will then be identified and grouped during pre-processing, then removed in post-alignment processing \cite{umi, umitools}.
@@ -294,25 +294,25 @@ The integrated stress response (ISR) is a signaling mechanism used by cells and 
 
 A recent study (data available under Gene Expression Omnibus accession number GSE65778) utilized ribosome profiling to better define the mechanisms of ISRIB action on the ISR, modeled by 1-hour tunicamycin (Tm) treatment in HEK293T cells \cite{isrib_riboseq}. A key finding of this study is that a specific subset of stress-related transcription factor mRNAs exhibit increased translational efficiency (TE) compared to untreated cells during the tunicamycin-induced ISR. However, when cells were co-treated with tunicamycin and ISRIB, the TE of these stress-related mRNAs showed no significant increase compared to untreated cells, which indicates that ISRIB can counteract the translational responses associated with the ISR. \par
 
-To showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to further query the translational mechanisms of the ISR and ISRIB. All XPRESSpipe-processed biological replicate samples exhibited strong correlation between read counts per gene when thresholded similarly to count data available with the original publication (Spearman $\rho$ values 0.991-0.997) (Figure \ref{fig:figure2}B; Figure \ref{fig:supplement2}B shows the corresponding plots using the count data provided with the original publication for reference). \par
+To showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to further query the translational mechanisms of the ISR and ISRIB. All XPRESSpipe-processed biological replicate samples exhibited strong correlation between read counts per gene when thresholded similarly to count data available with the original publication (Spearman $\rho$ values 0.991-0.997) (Figure \ref{fig:figure2}A; Figure \ref{fig:supplement2}B shows the corresponding plots using the count data provided with the original publication for reference). \par
 
-Compared to the raw count data made available in the original manuscript, when XPRESSpipe-processed samples were thresholded as in the original published raw count data, samples showed generally comparable read counts per gene between the two analytical regimes (Spearman $\rho$ values 0.937-0.950) (Figure \ref{fig:figure2}A). This is in spite of the fact that the methods section of the original publication employed software that was current at the time but is now outdated, such as TopHat2 \cite{tophat2}, which has a documented higher false positive alignment rate, generally lower recall, and lower precision at correctly aligning multi-mapping reads compared to STAR \cite{alignment_benchmark, star}. Many of the genes over-represented in the original count data as compared to data processed by XPRESSpipe are genes that have pseudogenes or other paralogs (Figure \ref{fig:supplement2}A highlights a sampling of some extreme cases). As these genes share high sequence similarity with each other, reads mapping to these regions are difficult to attribute to a specific genomic locus and are often excluded from further analyses due to their multi-mapping nature. The benchmarking study \cite{alignment_benchmark} that examined these and other aligners described how TopHat2 had a disproportionally high rate of incorrectly aligned bases, or bases that were aligned uniquely when they should have been aligned ambiguously, at least partially explaining the observed overcounted effect with TopHat2. Had TopHat2 marked problematic reads as ambiguous, they would have been excluded from later quantification. \par
+Compared to the raw count data made available in the original manuscript, when XPRESSpipe-processed samples were thresholded as in the original published raw count data, samples showed generally comparable read counts per gene between the two analytical regimes (Spearman $\rho$ values 0.937-0.950) (Figure \ref{fig:figure2}B). This is in spite of the fact that the methods section of the original publication employed software that was current at the time but is now outdated, such as TopHat2 \cite{tophat2}, which has a documented higher false positive alignment rate, generally lower recall, and lower precision at correctly aligning multi-mapping reads compared to STAR \cite{alignment_benchmark, star}. Many of the genes over-represented in the original count data as compared to data processed by XPRESSpipe are genes that have pseudogenes or other paralogs (Figure \ref{fig:supplement2}A highlights a sampling of some extreme cases). As these genes share high sequence similarity with each other, reads mapping to these regions are difficult to attribute to a specific genomic locus and are often excluded from further analyses due to their multi-mapping nature. The benchmarking study \cite{alignment_benchmark} that examined these and other aligners described how TopHat2 had a disproportionally high rate of incorrectly aligned bases, or bases that were aligned uniquely when they should have been aligned ambiguously, at least partially explaining the observed overcounted effect with TopHat2. Had TopHat2 marked problematic reads as ambiguous, they would have been excluded from later quantification. \par
 
-Additionally, when TopHat2 and STAR were tested using multi-mapper simulated test data of varying complexity, TopHat2 consistently suffered in precision and recall. These calls are increasingly more difficult to make with smaller reads as well, and this is evident from Figure \ref{fig:figure2}A, where ribosome footprint samples consistently showed more over-counted genes than the corresponding RNA-Seq samples. When dealing with a ribosome footprint library of about 50-100 million reads, and with TopHat2's simulated likelihood of not marking an ambiguous read as such being about 0.5\% higher than STAR, this would lead to around 250,000 to 500,000 spuriously aligned reads, which is in line with our observations (all benchmarking details were derived from \cite{alignment_benchmark}). \par
+Additionally, when TopHat2 and STAR were tested using multi-mapper simulated test data of varying complexity, TopHat2 consistently suffered in precision and recall. These calls are increasingly more difficult to make with smaller reads as well, and this is evident from Figure \ref{fig:figure2}B, where ribosome footprint samples consistently showed more over-counted genes than the corresponding RNA-Seq samples. When dealing with a ribosome footprint library of about 50-100 million reads, and with TopHat2's simulated likelihood of not marking an ambiguous read as such being about 0.5\% higher than STAR, this would lead to around 250,000 to 500,000 spuriously aligned reads, which is in line with our observations (all benchmarking details were derived from \cite{alignment_benchmark}). \par
 
 An additional potential contributor to this divergence is that the alignment and quantification within XPRESSpipe use a current human transcriptome reference, which no doubt contains updates and modifications to annotated canonical transcripts and so forth when compared to the version used in the original study. However, in practice, these effects are modest for this dataset (Figure \ref{fig:supplement3}). While differences in processing between the outdated and current methods may not always create broad differences in output, key biological insights may be missed. The analysis that follows is exploratory and only meant to suggest putative targets identifiable by re-analyzing pre-existing, publicly available data. \par
 
 \begin{figure}
 \centering
   \includegraphics[width=160mm]{figures/xpresspipe_figure2.png}
-  \caption{\textbf{Comparison between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Comparison of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. B) Comparison of biological replicate read counts processed by XPRESSpipe. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients.}
+  \caption{\textbf{Comparison between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Comparison of biological replicate read counts processed by XPRESSpipe. B) Comparison of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
   \label{fig:figure2}
 \end{figure}
 
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_figure3.png}
-  \caption{\textbf{Analysis of previously published ISR TE data using XPRESSpipe.} A-C) Log\textsubscript{2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript{2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment.}
+  \caption{\textbf{Analysis of previously published ISR TE data using XPRESSpipe.} A-C) Log\textsubscript{2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript{2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
   \label{fig:figure3}
 \end{figure}
 
@@ -359,7 +359,7 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_figure4.png}
-  \caption{\textbf{Pipeline validation using publicly available TCGA count data.} Correlations were calculated between publicly available count data from TCGA samples and the count data processed by XPRESSpipe. Pseudogenes were excluded from the analysis. All reported $\rho$ values are Spearman correlation coefficients.}
+  \caption{\textbf{Pipeline validation using publicly available TCGA count data.} Correlations were calculated between publicly available count data from TCGA samples and the count data processed by XPRESSpipe. Pseudogenes were excluded from the analysis. All reported $\rho$ values are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using an unmodified GTF.}
   \label{fig:figure4}
 \end{figure}
 
@@ -416,7 +416,7 @@ A list of dependencies required for XPRESSpipe at the time of writing is listed 
 \begin{table}[!]
     \centering
 \captionof{table}{\textbf{Summary of dependency software, accession location, and purpose in the XPRESSpipe package.}}
-\begin{tabular}{p{2.4cm}p{7.5cm}p{3cm}}
+\begin{tabular}{p{3cm}p{7.5cm}p{2.4cm}}
  \textbf{Package} & \textbf{Purpose} & \textbf{Reference} \\
  \hline
  Python & Primary language & \\
@@ -450,6 +450,8 @@ A list of dependencies required for XPRESSpipe at the time of writing is listed 
  Matplotlib & Plotting & \cite{matplotlib} \\
  \hline
  XPRESSplot & Normalization and matrix manipulation & This paper \\
+ \hline
+ GenomicAlignments & BAM file processing & \cite{genomicalign} \\
  \hline
  dupRadar & Perform library complexity calculations & \cite{dupradar} \\
  \hline
@@ -485,22 +487,22 @@ A list of dependencies required for XPRESSpipe at the time of writing is listed 
  \hline
  scikit-learn & Data manipulation & \cite{sklearn} \\
  \hline
- SVA & Perform batch correction for known effects with the ComBat function & \cite{sva} \\
+ SVA & Perform batch correction for known effects & \cite{sva} \\
  \label{Tab:software_plot}
  \end{tabular}
 \end{table}
 
 \subsection{GTF Modification}
-To parallelize GTF modification, a GTF file is split into approximately proportional chunks equal to the specified number of threads. To avoid an incomplete gene record being included in a chunk, a given chunk endpoint is determined by calculating the size of the GTF, dividing by the number of threads, and advancing one chunk size forward in line number, then advancing line by line until the last line of the current gene record. This is performed for each subsequent chunk. If creating the last chunk, the end of the chunk is automatically the last line of the GTF record. \par
+To parallelize GTF modification, a GTF file is split into approximately proportional chunks equal to the specified number of threads. To avoid an incomplete gene record being included in a chunk and being inappropriately processed, a given chunk endpoint is determined by calculating the size of the GTF, dividing by the number of threads, and advancing to that endpoint, then advancing line by line until the last line of the gene record encountered at the endpoint. This is performed for each subsequent chunk. If creating the last chunk, the end of the chunk is the last line of the GTF record. \par
 
-Ensembl canonical transcripts are determined according to the Ensembl glossary definition of a canonical transcript \cite{ensembl_canon}. For cases where a tie-breaker exists with equal priority transcripts, the longest is chosen. When there are more than one of these equal priority transcripts of the same length exist, the first listed record is retained. Exon or CDS lengths are calculated by taking the sum of each exon or CDS, not including intron or other space in the calculation. \par
+Ensembl canonical transcripts are determined according to the Ensembl glossary definition of a canonical transcript \cite{ensembl_canon}. For cases where a tie exists between equal priority transcripts, the longest is chosen. When there are more than one transcript that tie for equal priority and longest length, the first listed record is retained. Exon or CDS lengths are calculated by taking the sum of each exon or CDS, not including intron or other space in the calculation. \par
 
 Protein-coding records are retained by performing a simple string search for the ``protein\_coding" annotation in the attribute column of a GTF file. \par
 
-Truncation of records is performed by identifying the $5'$- and $3'$- end of each transcript and modifying the given coordinates to reflect the given truncation amounts. Suggested truncation amounts are 45 nt from the $5'$- end and 15 nt from the $3'$- end, both of which are set as the default truncation amount parameters for the function and do not need to be modified unless the user desires \cite{ingolia_meth}. As a given CDS portion of a given exon may be less than a truncation amount, the function will recursively search CDS by CDS per transcript until the full truncation amount is fully trimmed. Any record smaller than the sum of the $5'$- and $3'$- truncation amounts is removed from the output file. Searching is performed in a strand-specific manner. \par
+Truncation of records is performed by identifying the $5'$- and $3'$- end of each transcript and modifying the given coordinates to reflect the given truncation amounts. Suggested truncation amounts are 45 nt from the $5'$- end and 15 nt from the $3'$- end, both of which are set as the default truncation amount parameters for the function and do not need to be modified unless the user desires \cite{ingolia_meth}. As a given CDS portion of a given exon may be less than a truncation amount, the function will perform a strand-aware recursive search CDS by CDS per transcript until the full truncation amount has been fully removed for each end. Any record smaller than the sum of the $5'$- and $3'$- truncation amounts is removed entirely from the output file. \par
 
-\subsection{GTF Flattened Record}
-Flattened transcriptome references are created for meta-analysis modules by providing a GTF. This curation operates in a similar manner to the methods employed by general GTF modification; however, only exon or CDS records are retained with other minimal key information (i.e., strandedness). These records are then divided into a multidimensional array, where each parent array contains all the records for a given chromosome. \par
+\subsection{Flattened GTF Records}
+Flattened transcriptome references are created for meta-analysis modules by providing a GTF. Vectorized expressions in Pandas \cite{pandas} are performed to quickly parse out pertinent meta-information for each transcript for the given analysis. Intermediate files are created for retrieval by each process when parallelizing analysis of each alignment file. This allows for fast processing of each BAM file, where the bottleneck in speed arises from the decompression and import of the binary alignment data. Flat files are automatically destroyed after sub-module completion. \par
 
 \subsection{Normalization}
 Equations 1-4 reflect the design of the normalization functions within XPRESSplot, where \textit{g} is gene \textit{n}, \textit{ge} is cumulative exon space for gene \textit{n}, \textit{r} is total reads, \textit{f} is total fragments, and \textit{l} is length.
@@ -523,25 +525,19 @@ Equations 1-4 reflect the design of the normalization functions within XPRESSplo
 Summary plots are created using Pandas \cite{pandas} and Matplotlib \cite{matplotlib}. Kernel density plots for library complexity analyses are created using NumPy \cite{numpy1, numpy2} and SciPy's \texttt{gaussian\_kde} function \cite{scipy}.
 
 \subsection{Metagene Estimation}
-Metagene calculations are performed by determining the meta-genomic coordinate \textit{M} for each aligned read, where \textit{L\textsubscript{e}} is the leftmost mapped position of the read (strand agnostic) and \textit{r} is the length of the mapped read. \textit{S} denotes the start coordinate for the transcript and \textit{l\textsubscript{e}} is the cumulative length of all exons for the given transcript. The subscripted \textit{e} indicates the coordinate is relative to exon space (intronic ranges within a transcript do not contribute to total space calculation). Required inputs are a BAM file and an un-modified GTF reference file, which is then curated into its longest-transcript, protein-coding-only flattened form, as discussed above. If a longest-transcript, protein-coding-only modified GTF has already been curated, this can alternatively be provided as input, with which the module will flatten (file suffix must be ``LC.gtf"). For each mapped coordinate, the metagene position is calculated as:
+Metagene calculations are performed by determining the meta-transcript coordinate \textit{M} for each read alignment within a transcriptome-aligned BAM file (automatically output by STAR within XPRESSpipe). Let \textit{L\textsubscript{e}} be the first mapped position of the read (strand agnostic and in reference to exon space to the $5'$-end) and \textit{r} be the length of the mapped read. Let \textit{$\ell$\textsubscript{e}} be the cumulative length of all exons for the given transcript. The subscripted \textit{e} indicates the coordinate is relative to the exon space (intronic ranges within a transcript do not contribute to total space calculation). Required inputs are a transcriptome-aligned BAM file and a GTF reference file, which is flattened for downstream processing. For each mapped coordinate, the metagene position is calculated as:
 \begin{equation}
-\textit{M} = \frac{|(L\textsubscript{e}\ +\ \frac{1}{2}r)\ -\ S|\ \cdot\ 100}{\textit{l\textsubscript{e}}}
+\textit{M} = \frac{(L\textsubscript{e}\ +\ \frac{1}{2}r)\ \cdot\ 100}{\textit{$\ell$\textsubscript{e}}}
 \end{equation}
-
-In the case where a mapped coordinate falls within multiple genes, a penalty is assigned as:
-\begin{equation}
-  \textit{c} = \frac{1}{\textit{n}}
-\end{equation}
-Where \textit{c} is the count score for a given meta-position and \textit{n} is the number of different transcripts a given coordinate mapped. To be counted or factored into the penalty, the meta-position coordinate must fall within exon space.
 
 \subsection{Gene Coverage Plotting}
-Gene coverage calculations are performed by determining the exon space of the gene of interest and mapping any read for a given sample to this space. Each nucleotide that maps to these exon regions is counted. During plotting, a rolling window of 20 nucleotides is used to smoothen the plotted coordinates' read coverage. Required inputs are a BAM file and an un-modified GTF reference file, which is then curated into its longest-transcript, protein-coding-only flattened form, as discussed above. If a longest-transcript, protein-coding-only modified GTF has already been curated, this can alternatively be provided as input, with which the module will flatten.
+Gene coverage calculations are performed by determining the exon space of the gene of interest and mapping any read for a given sample to this space. Each nucleotide of a read that maps to a nucleotide within these exon regions is counted. During plotting, a rolling window of 20 nucleotides is used to smoothen the plotted coordinates' read coverage. Required inputs are a transcriptome-aligned BAM file (as output by STAR within XPRESSpipe) and a GTF reference file, which is then curated into its longest-transcript, protein-coding-only flattened form, as discussed above. If a longest-transcript, protein-coding-only modified GTF has already been curated, this can alternatively be provided as input, with which the module will flatten (file suffix must be \texttt{LC.gtf}).
 
 \subsection{Periodicity}
-Ribosome p-site periodicity is calculated using riboWaltz \cite{ribowaltz}. Required inputs are the path to a directory containing transcriptome-aligned BAM files (ending in ``toTranscriptome.out.bam") and the path and file name of the appropriate un-modified GTF.
+Ribosome p-site periodicity is calculated using riboWaltz \cite{ribowaltz}. Required inputs are the path to a directory containing transcriptome-aligned BAM files (as output by STAR within XPRESSpipe) and the path and file name of the appropriate un-modified GTF.
 
 \subsection{rRNA Probe}
-\texttt{rrnaProbe} works on a directory containing FastQC \cite{fastqc} zip compressed files to detect over-represented sequences for each sample. These sequences are then collated to create consensus fragments. One caveat of FastQC is that it collates on exact matching strings, but these strings, or sequences, can be 1 nt steps from each other and a single rRNA probe could be used to effectively pull out all these sequences. To handle this situation, XPRESSpipe will combine these near matches. A rank-ordered list of over-represented fragments within the appropriate length range to target for depletion is then output. A BLAST \cite{blast} search on these consensus sequences intended for probe usage can then be performed to verify the fragment maps to an rRNA sequence and is thus a suitable depletion probe.
+\texttt{rrnaProbe} works on a directory containing FastQC \cite{fastqc} zip compressed files to detect over-represented sequences for each sample. These sequences are then collated to create consensus fragments. One caveat of FastQC is that it collates on exact matching strings, but these strings, or sequences, can be 1 nt steps from each other and a single rRNA probe could be used to effectively pull out all these sequences. To handle this situation, XPRESSpipe will combine these near matches. A rank-ordered list of over-represented fragments within the appropriate length range to target for depletion is then output. A BLAST \cite{blast} search on a consensus sequence intended for probe usage can then be performed to verify the fragment maps to an rRNA sequence and is thus suitable for rRNA depletion.
 
 \subsection{Confidence Interval Plotting}
 Confidence intervals within PCA scatterplots generated by XRESSplot are calculated as follows:
@@ -586,7 +582,7 @@ AWS - Amazon Web Services,
 BAM - Binary Sequence Alignment Map,
 BED - Browser Extensible Data,
 cDNA - complementary DNA,
-CDS - coding region of gene,
+CDS - coding sequence of gene,
 ChIP-seq - chromatin immunoprecipitation sequencing,
 CPU - central processing unit,
 dbGaP - Database of Genotypes and Phenotypes,
@@ -619,45 +615,45 @@ Protected TCGA data were obtained through dbGaP project number 21674 and utilize
 Protected TCGA data were obtained through dbGaP project number 21674 and utilized according to the associated policies and guidelines.
 
 \section*{Availability of data and materials}
-The source code for these packages is perpetually open source and protected under the GPL-3.0 license. The code can be publicly accessed and installed from https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. Jupyter notebooks and video walkthroughs are included within the README files at https://github.com/XPRESSyourself. Documentation is hosted on readthedocs \cite{readthedocs} at https://xpresspipe.readthedocs.io/en/latest/ and https://xpressplot.readthedocs.io/en/latest/. The publicly available ribosome profiling data are accessible through GEO series accession number GSE65778. TCGA data are accessible through dbGaP accession number phs000178. Code used to create manuscript figures and analyses can be found at https://github.com/XPRESSyourself/xpressyourself\_manuscript (DOI: XXXXXX).
+The source code for these packages is perpetually open source and protected under the GPL-3.0 license. The code can be publicly accessed and installed from https://github.com/XPRESSyourself. Updates to the software are version controlled and maintained on GitHub. Jupyter notebooks and video walkthroughs are included within the README files at https://github.com/XPRESSyourself. Documentation is hosted on readthedocs \cite{readthedocs} at https://xpresspipe.readthedocs.io/en/latest/ and https://xpressplot.readthedocs.io/en/latest/. The publicly available ribosome profiling data are accessible through GEO series accession number GSE65778. TCGA data are accessible through dbGaP accession number phs000178. Manuscript source code and code used to create manuscript figures and analyses can be found at https://github.com/XPRESSyourself/xpressyourself\_manuscript (DOI: XXXXXX).
 
 \section*{Competing interests}
 The authors declare that they have no competing interests.
 
 \section*{Funding}
-J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher. J.T.M. received support as an HHMI Fellow of the Jane Coffin Childs Memorial Fund for Medical Research. A.J.B received support from the National Cancer Institute (NCI) Predoctoral to Postdoctoral Fellow Transition Award, K00CA212445. This work was supported by NIH grant R35GM13185 (to J.R.).
+J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher. J.T.M. received support as an HHMI Fellow of the Jane Coffin Childs Memorial Fund for Medical Research. A.J.B received support from the National Cancer Institute (NCI) Predoctoral to Postdoctoral Fellow Transition Award, K00CA212445. This work was supported by NIH grant R35GM13185 (to J.R.). The computational resources used were partially funded by the NIH Shared Instrumentation Grant 1S10OD021644-01A1.
 
 \section*{Contributions}
-J.A.B. conceptualized and administered the project; performed all investigation, analysis, visualization, and data curation; provisioned resources; acquired funding; and wrote the original draft for this study. J.A.B. and J.R.B. designed and wrote the software. J.A.B., J.T.M., A.J.B., and Y.O. performed software validation. J.A.B., J.R.B., J.T.M., and J.G. and developed the methodology. J.R., A.R.Q., and J.G. supervised the study. All authors were involved in reviewing and editing the manuscript.
+J.A.B. conceptualized and administered the project; performed all investigation, analysis, visualization, and data curation; provisioned resources; and wrote the original draft of this manuscript. J.A.B., J.R.B., J.T.M., and J.G. and developed the methodology. J.A.B. and J.R.B. designed and wrote the software. J.A.B., J.T.M., A.J.B., and Y.O. performed software validation. J.A.B. and J.R. acquired funding. J.R., A.R.Q., and J.G. supervised the study. All authors reviewed and edited this manuscript.
 
 \begin{table}[!]
     \centering
 \captionof{table}{\textbf{Author ORCIDs}}
-\begin{tabular}{p{2.4cm}p{7.5cm}}
+\begin{tabular}{p{1.5cm}p{4cm}}
  \textbf{Author} & \textbf{ORCID}\\
  \hline
- JAB & 0000-0002-5096-0558 \\
+ J.A.B. & 0000-0002-5096-0558 \\
  \hline
- JRB & 0000-0001-5470-8299 \\
+ J.R.B. & 0000-0001-5470-8299 \\
  \hline
- JTM & 0000-0002-3017-8665 \\
+ J.T.M. & 0000-0002-3017-8665 \\
  \hline
- AJB & 0000-0003-2273-8922 \\
+ A.J.B. & 0000-0003-2273-8922 \\
  \hline
- YO & 0000-0001-9523-1044 \\
+ Y.O. & 0000-0001-9523-1044 \\
  \hline
- ARQ & 0000-0003-1756-0859 \\
+ A.R.Q. & 0000-0003-1756-0859 \\
  \hline
- JG & 0000-0001-7568-6789 \\
+ J.G. & 0000-0001-7568-6789 \\
  \hline
- JR & 0000-0002-2710-9765 \\
+ J.R. & 0000-0002-2710-9765 \\
 \end{tabular}
 \end{table}
 
 \section*{Acknowledgments}
-The authors wish to thank Michael T. Howard for helpful discussions concerning ribosome profiling and sequencing analysis. The authors also wish to thank Mark E. Wadsworth, Ryan Miller, and Michael J. Cormier for helpful discussions on pipeline design. They also wish to thank T. Cameron Waller for helpful discussions related to pipeline design and biological analysis. This work was supported by NIH grant R35GM13185 (to JR). The support and resources from the Center for High-Performance Computing at the University of Utah are gratefully acknowledged. The computational resources used were partially funded by the NIH Shared Instrumentation Grant 1S10OD021644-01A1. The results published here are in whole or part based upon data generated by the TCGA Research Network: https://www.cancer.gov/tcga.
+The authors wish to thank Michael T. Howard for helpful discussions concerning ribosome profiling and sequencing analysis. The authors also wish to thank Mark E. Wadsworth, Ryan Miller, and Michael J. Cormier for helpful discussions on pipeline design. They also wish to thank T. Cameron Waller for helpful discussions related to pipeline design and biological analysis. The support and resources from the Center for High-Performance Computing at the University of Utah are gratefully acknowledged. The results published here are in whole or part based upon data generated by the TCGA Research Network: https://www.cancer.gov/tcga.
 
-\bibliography{xpressyourself}
+\bibliography{manubib}
 \bibliographystyle{Science}
 
 \beginsupplement
