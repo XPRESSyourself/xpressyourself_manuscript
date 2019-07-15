@@ -241,7 +241,7 @@ Measuring library complexity is an effective method for analyzing the robustness
 To identify any general biases for the preferential capture of the $5'$- or $3'$- ends of transcripts, metagene profiles can be generated for each sample. This is performed by determining the meta-genomic coordinate for each aligned read in exon space. Required inputs are an indexed BAM file and an un-modified GTF reference file. Outputs include metagene metrics, individual plots, and summary plots.
 
 \subsubsection{Gene Coverage Profile}
-Extending the metagene estimation analysis, the user can focus on the coverage profile across a single gene. Although traditional tools like IGV \cite{igv} offer the ability to perform such tasks, XPRESSpipe provides the ability to collapse the introns to observe coverage over exon space only. This is helpful in situations where massive introns spread out exons and make it difficult to visualize exon coverage for the entire transcript in a concise manner. When running an XPRESSpipe pipeline, a housekeeping gene will be processed and output for the user's reference. Figure \ref{fig:supplement1} provides a comparison with the output of IGV \cite{igv} and XPRESSpipe's geneCoverage module over a similar region to demonstrate the compatibility between the methods.
+Extending the metagene estimation analysis, the user can focus on the coverage profile across a single gene. Although traditional tools like IGV \cite{igv} offer the ability to perform such tasks, XPRESSpipe provides the ability to collapse the introns to observe coverage over exon space only. This is helpful in situations where massive introns spread out exons and make it difficult to visualize exon coverage for the entire transcript in a concise manner. When running an XPRESSpipe pipeline, a housekeeping gene will be processed and output for the user's reference. Figure \ref{fig:supplement1} provides a comparison with the output of IGV \cite{igv} and XPRESSpipe's geneCoverage module over a similar region for two genes to demonstrate the compatibility between the methods.
 
 \subsubsection{Codon Phasing/Periodicity Estimation Profile}
 In ribosome profiling, a useful measure of a successful experiment comes by investigating the codon phasing of ribosome footprints \cite{ingolia_meth}. To do so, the P-site positions relative to the start codon of each ribosome footprint that mapped to a transcript are calculated using riboWaltz \cite{ribowaltz}. The same inputs are required as in the \texttt{metagene} sub-module.
@@ -365,7 +365,7 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 
 
 \subsubsection{Cost Analysis}
-XPRESSpipe functions can be computationally intensive, and thus, super-computing resources are recommended, especially when dealing with large datasets, or when aligning to larger genomes, such as \textit{Homo sapiens}. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) (https://aws.amazon.com) can be used to process sequencing data using XPRESSpipe. The ISRIB ribosome profiling dataset discussed above contained a total of 32 raw sequence files. Table \ref{tab:chpc_performance} outlines runtime statistics, providing an example of the time required to process a dataset. \par
+XPRESSpipe functions can be computationally intensive, and thus, super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes, such as \textit{Homo sapiens}. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) (https://aws.amazon.com) can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} outlines runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files and takes significantly longer to align to than organisms with smaller genomes, such as \textit{S. cereviseae}, so this example can be considered a high-end estimate of the time required to process data with XPRESSpipe. \par
 
 % UPDATE BEFORE SUBMISSION ONCE QUALITY CONTROL STABLE AND CHECK CONVERSIONS\
 \begin{table}[!]
@@ -661,7 +661,7 @@ The authors wish to thank Michael T. Howard for helpful discussions concerning r
 \begin{figure}
 \centering
   \includegraphics[width=160mm]{figures/xpresspipe_supplement1.png}
-  \caption{\textbf{Comparison between IGV browser and geneCoverage output.} A snapshot of the same samples in IGV (with introns) and the geneCoverage summary (introns collapsed). Green box, exons 11 and 12 of SLC1A1 in human.}
+  \caption{\textbf{Comparison between IGV browser and geneCoverage output.} A) Gene coverage from IGV (above) and XPRESSpipe (below) for SLC1A1. B) Gene coverage from IGV (above) and XPRESSpipe (below) for TSPAN33. Introns collapsed by XPRESSpipe. Green box, region shown in corresponding IGV window comparing outputs between the two programs.}
   \label{fig:supplement1}
 \end{figure}
 
