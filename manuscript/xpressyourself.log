@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 JUL 2019 03:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 JUL 2019 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,12 +536,12 @@ File: figures/xpresspipe_figure4.png Graphic file (type png)
 Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 361
 .
 (pdftex.def)             Requested size: 512.1496pt x 287.12549pt.
- [21 <./figures/xpresspipe_figure4.png>]
+
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 371.
 
-[22] [23]
+[21] [22 <./figures/xpresspipe_figure4.png>] [23]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 416.
@@ -551,73 +551,74 @@ Overfull \hbox (4.11082pt too wide) in paragraph at lines 454--454
 []\OT1/phv/m/n/10 GenomicAlignments| 
  []
 
+[24]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 466.
 
-[24] [25]
+[25]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 511.
- [26] [27] [28] [29] [30]
+ [26] [27] [28] [29] [30] [31]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 629.
+               Default added (so using `!tbp') on input line 632.
 
-[31] (./xpressyourself.bbl [32] [33] [34])
+(./xpressyourself.bbl [32] [33] [34])
 <figures/xpresspipe_supplement1.png, id=137, 588.7596pt x 466.1415pt>
 File: figures/xpresspipe_supplement1.png Graphic file (type png)
 <use figures/xpresspipe_supplement1.png>
 Package pdftex.def Info: figures/xpresspipe_supplement1.png  used on input line
- 663.
+ 666.
 (pdftex.def)             Requested size: 455.24408pt x 360.43085pt.
 <figures/xpresspipe_supplement2.png, id=138, 483.7272pt x 555.7563pt>
 File: figures/xpresspipe_supplement2.png Graphic file (type png)
 <use figures/xpresspipe_supplement2.png>
 Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
- 670.
+ 673.
 (pdftex.def)             Requested size: 455.24408pt x 523.03853pt.
 <figures/xpresspipe_supplement3.png, id=139, 516.9714pt x 513.5988pt>
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 677.
+ 680.
 (pdftex.def)             Requested size: 512.1496pt x 508.84056pt.
 <figures/xpresspipe_supplement4.png, id=140, 554.3109pt x 665.3658pt>
 File: figures/xpresspipe_supplement4.png Graphic file (type png)
 <use figures/xpresspipe_supplement4.png>
 Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
- 684.
+ 687.
 (pdftex.def)             Requested size: 512.1496pt x 614.8141pt.
 <figures/xpresspipe_supplement5.png, id=141, 420.8523pt x 426.1521pt>
 File: figures/xpresspipe_supplement5.png Graphic file (type png)
 <use figures/xpresspipe_supplement5.png>
 Package pdftex.def Info: figures/xpresspipe_supplement5.png  used on input line
- 691.
+ 694.
 (pdftex.def)             Requested size: 512.1496pt x 518.6433pt.
 <figures/xpresspipe_supplement6.png, id=142, 398.4486pt x 226.2051pt>
 File: figures/xpresspipe_supplement6.png Graphic file (type png)
 <use figures/xpresspipe_supplement6.png>
 Package pdftex.def Info: figures/xpresspipe_supplement6.png  used on input line
- 698.
+ 701.
 (pdftex.def)             Requested size: 512.1496pt x 290.75993pt.
 <figures/xpresspipe_supplement7.png, id=143, 427.3566pt x 410.9754pt>
 File: figures/xpresspipe_supplement7.png Graphic file (type png)
 <use figures/xpresspipe_supplement7.png>
 Package pdftex.def Info: figures/xpresspipe_supplement7.png  used on input line
- 705.
+ 708.
 (pdftex.def)             Requested size: 512.1496pt x 492.566pt.
 <figures/xpresspipe_supplement8.png, id=144, 377.2494pt x 337.0191pt>
 File: figures/xpresspipe_supplement8.png Graphic file (type png)
 <use figures/xpresspipe_supplement8.png>
 Package pdftex.def Info: figures/xpresspipe_supplement8.png  used on input line
- 712.
+ 715.
 (pdftex.def)             Requested size: 512.1496pt x 457.60454pt.
  [35] [36 <./figures/xpresspipe_supplement1.png>] [37 <./figures/xpresspipe_sup
 plement2.png>] [38 <./figures/xpresspipe_supplement3.png>] [39 <./figures/xpres
 spipe_supplement4.png>] [40 <./figures/xpresspipe_supplement5.png>] [41 <./figu
-res/xpresspipe_supplement6.png>]
-[42 <./figures/xpresspipe_supplement7.png>] [43 <./figures/xpresspipe_supplemen
-t8.png>] (./xpressyourself.aux)
+res/xpresspipe_supplement6.png>] [42 <./figures/xpresspipe_supplement7.png>] [4
+3 <./figures/xpresspipe_supplement8.png>]
+(./xpressyourself.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -625,7 +626,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  5996 strings out of 492649
  89580 string characters out of 6129622
- 187136 words of memory out of 5000000
+ 185136 words of memory out of 5000000
  9752 multiletter control sequences out of 15000+600000
  33035 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -650,7 +651,7 @@ s/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 /urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/h
 elvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic
 /uhvro8a.pfb>
-Output written on xpressyourself.pdf (43 pages, 4432898 bytes).
+Output written on xpressyourself.pdf (43 pages, 4433355 bytes).
 PDF statistics:
  244 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
