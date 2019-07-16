@@ -16,6 +16,7 @@
 \usepackage[none]{hyphenat}%%%%
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage[T1]{fontenc}
 
 % Page setup
 \topmargin -2cm
@@ -132,55 +133,55 @@ XPRESSpipe contains automated pipelines for both single-end and paired-end RNA-S
  \hline
  \textbf{Required} & \\
  \hline
- \texttt{-i, --input} & Path to input directory \\
+ \texttt{-i, -{}-input} & Path to input directory \\
  \hline
- \texttt{-o, --output} & Path to output directory \\
+ \texttt{-o, -{}-output} & Path to output directory \\
  \hline
- \texttt{-r, --reference} & Path to parent organism reference directory \\
+ \texttt{-r, -{}-reference} & Path to parent organism reference directory \\
  \hline
- \texttt{-g, --gtf} & Path and file name to GTF used for alignment quantification \\
+ \texttt{-g, -{}-gtf} & Path and file name to GTF used for alignment quantification \\
  \hline
- \texttt{-e, --experiment} & Experiment name \\
+ \texttt{-e, -{}-experiment} & Experiment name \\
  \hline
  \textbf{Optional} & \\
  \hline
- \texttt{--two\_pass} & Include option to perform a two-step alignment to map for unannotated splice-junctions \\
+ \texttt{-{}-two\_pass} & Include option to perform a two-step alignment to map for unannotated splice-junctions \\
  \hline
- \texttt{-a, --adaptors} & Specify adaptor as string -- if ``None" is provided, software will attempt to auto-detect adaptors -- if ``POLYX" is provided as a single string in the list, polyX adaptors will be trimmed \\
+ \texttt{-a, -{}-adaptors} & Specify adaptor as string -{}- if ``None" is provided, software will attempt to auto-detect adaptors -{}- if ``POLYX" is provided as a single string in the list, polyX adaptors will be trimmed \\
  \hline
- \texttt{-q, --quality} & PHRED read quality threshold (default: 28) \\
+ \texttt{-q, -{}-quality} & PHRED read quality threshold (default: 28) \\
  \hline
- \texttt{--min\_length} & Minimum read length threshold to keep for reads (default: 18) \\
+ \texttt{-{}-min\_length} & Minimum read length threshold to keep for reads (default: 18) \\
  \hline
- \texttt{--umi\_location} & Provide parameter to process UMIs -- provide the location (see fastp documentation for more details) \\
+ \texttt{-{}-umi\_location} & Provide parameter to process UMIs -{}- provide the location (see fastp documentation for more details) \\
  \hline
- \texttt{--umi\_length} & Provide parameter to process UMIs -- provide UMI length (must provide the --umi\_location argument) \\
+ \texttt{-{}-umi\_length} & Provide parameter to process UMIs -{}- provide UMI length (must provide the -{}-umi\_location argument) \\
  \hline
- \texttt{--deduplicate} & Include option to quantify alignment files with de-duplication \\
+ \texttt{-{}-deduplicate} & Include option to quantify alignment files with de-duplication \\
  \hline
- \texttt{--output\_bed} & Include option to output BED files for each aligned file \\
+ \texttt{-{}-output\_bed} & Include option to output BED files for each aligned file \\
  \hline
- \texttt{-c, --quantification\_method} & Specify quantification method (default: HTSeq\cite{htseq}) \\
+ \texttt{-c, -{}-quantification\_method} & Specify quantification method (default: HTSeq\cite{htseq}) \\
  \hline
- \texttt{--feature\_type} & Specify feature type (3rd column in GFF file) to be used if quantifying with HTSeq (default: CDS) \\
+ \texttt{-{}-feature\_type} & Specify feature type (3rd column in GFF file) to be used if quantifying with HTSeq (default: CDS) \\
  \hline
- \texttt{--stranded} & Specify stranded library preparation method (Varies based on quantification method, see documentation for more information) \\
+ \texttt{-{}-stranded} & Specify stranded library preparation method (Varies based on quantification method, see documentation for more information) \\
  \hline
- \texttt{--method} & Provide parameter and method to perform library normalization on samples (options: ``RPM", ``TPM", ``RPKM", ``FPKM") \\
+ \texttt{-{}-method} & Provide parameter and method to perform library normalization on samples (options: ``RPM", ``TPM", ``RPKM", ``FPKM") \\
  \hline
- \texttt{--vcf} & Provide full path and file name to VCF file if you would like to detect personal variants overlapping alignments, otherwise not considered \\
+ \texttt{-{}-vcf} & Provide full path and file name to VCF file if you would like to detect personal variants overlapping alignments, otherwise not considered \\
  \hline
- \texttt{--batch} & Include path and filename of dataframe with batch normalization parameters \\
+ \texttt{-{}-batch} & Include path and filename of dataframe with batch normalization parameters \\
  \hline
- \texttt{--sjdbOverhang} & Sequencing read-length - 1 parameter used during reference curation (see STAR documentation for more information) \\
+ \texttt{-{}-sjdbOverhang} & Sequencing read-length - 1 parameter used during reference curation (see STAR documentation for more information) \\
  \hline
- \texttt{--mismatchRatio} & Alignment ratio of mismatches to mapped length is less than this value (see STAR documentation for more information) \\
+ \texttt{-{}-mismatchRatio} & Alignment ratio of mismatches to mapped length is less than this value (see STAR documentation for more information) \\
  \hline
- \texttt{--seedSearchStartLmax} & Adjust this parameter by providing a lower number to improve mapping sensitivity (recommended value = 15 for reads ~ 25 nts) (see STAR documentation for more information) \\
+ \texttt{-{}-seedSearchStartLmax} & Adjust this parameter by providing a lower number to improve mapping sensitivity (recommended value = 15 for reads ~ 25 nts) (see STAR documentation for more information) \\
  \hline
- \texttt{--genome\_size} & Change if parameter is provided during reference building and using a two-pass alignment \\
+ \texttt{-{}-genome\_size} & Change if parameter is provided during reference building and using a two-pass alignment \\
  \hline
- \texttt{-m, --max\_processors} & Specify number of max processors to use for tasks (default: No limit) \\
+ \texttt{-m, -{}-max\_processors} & Specify number of max processors to use for tasks (default: No limit) \\
 \end{tabular}
 \end{table}
 
@@ -189,11 +190,11 @@ Several tools and resources are provided to aid in making XPRESSyourself accessi
 
 
 \subsubsection{Inputs}
-While inputs will vary between sub-modules, a few points of guidance are important to consider. Further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering \texttt{xpresspipe \textless sub-module name\textgreater \ --help}. For example, single-end reads should be saved as a FASTQ-formatted file that ends in \texttt{.fq}, \texttt{.fastq}, or \texttt{.txt}. Paired-end reads should additionally include the appropriate mate-pair suffix before the file suffix, such as \texttt{.read1.fastq} or \texttt{.read2.fastq}. Read files can be \texttt{.zip} - or \texttt{.gz} - compressed. Decompression will be handled automatically by XPRESSpipe. Required input reference files from the user are limited. XPRESSpipe only requires a valid GTF file appropriate for the organism of interest saved as \texttt{transcripts.gtf} and the appropriate genomic FASTA file(s). We recommend the genomic FASTA file(s) be placed in a separate sub-directory within the parent reference directory and that the most up-to-date Ensembl curation be used (https://www.ensembl.org).
+While inputs will vary between sub-modules, a few points of guidance are important to consider. Further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering \texttt{xpresspipe \textless sub-module name\textgreater \ -{}-help}. For example, single-end reads should be saved as a FASTQ-formatted file that ends in \texttt{.fq}, \texttt{.fastq}, or \texttt{.txt}. Paired-end reads should additionally include the appropriate mate-pair suffix before the file suffix, such as \texttt{.read1.fastq} or \texttt{.read2.fastq}. Read files can be \texttt{.zip} - or \texttt{.gz} - compressed. Decompression will be handled automatically by XPRESSpipe. Required input reference files from the user are limited. XPRESSpipe only requires a valid GTF file appropriate for the organism of interest saved as \texttt{transcripts.gtf} and the appropriate genomic FASTA file(s). We recommend the genomic FASTA file(s) be placed in a separate sub-directory within the parent reference directory and that the most up-to-date Ensembl curation be used (https://www.ensembl.org).
 
 
 \subsubsection{Automated Reference Curation}
-One of the first steps of RNA-Seq alignment is curating an organism reference to which the alignment software will map reads. For the current version of XPRESSpipe, a STAR \cite{star} reference is automatically curated simply by providing the appropriate GTF file saved as \texttt{transcripts.gtf} and directory path to the genomic FASTA file(s). Currently, STAR is used within the pipeline as it has been shown consistently to be the best performing read aligner for RNA-Seq data \cite{alignment_benchmark}. Additional modifications are occasionally recommended to this file, which can be performed within this sub-module or separately, as discussed in more detail in the next section. As this can be a time-consuming process, we will leave the \texttt{--max\_processors} parameter as default in this example to utilize all cores available to the computing unit. This entire process is automatically handled with the \texttt{curateReference} sub-module for ease of use. More on GTF modification arguments used in this code block follows in the section below.
+One of the first steps of RNA-Seq alignment is curating an organism reference to which the alignment software will map reads. For the current version of XPRESSpipe, a STAR \cite{star} reference is automatically curated simply by providing the appropriate GTF file saved as \texttt{transcripts.gtf} and directory path to the genomic FASTA file(s). Currently, STAR is used within the pipeline as it has been shown consistently to be the best performing read aligner for RNA-Seq data \cite{alignment_benchmark}. Additional modifications are occasionally recommended to this file, which can be performed within this sub-module or separately, as discussed in more detail in the next section. As this can be a time-consuming process, we will leave the \texttt{-{}-max\_processors} parameter as default in this example to utilize all cores available to the computing unit. This entire process is automatically handled with the \texttt{curateReference} sub-module for ease of use. More on GTF modification arguments used in this code block follows in the section below.
 \newline
 \begin{lstlisting}[language=bash, caption=curateReference example]
 $ xpresspipe curateReference -o /path/to/reference/ \
@@ -210,11 +211,11 @@ $ xpresspipe curateReference -o /path/to/reference/ \
 
 
 \subsubsection{GTF Modification}
-As ribosomal RNAs and other non-coding RNAs can be highly abundant in RNA-Seq experiments, it is often recommended to not include these sequences for quantification. By providing the \texttt{--protein\_coding} argument, only protein-coding genes are retained in the GTF file, which acts as a masking step of reads aligning to non-coding regions of the genome. \par
+As ribosomal RNAs and other non-coding RNAs can be highly abundant in RNA-Seq experiments, it is often recommended to not include these sequences for quantification. By providing the \texttt{-{}-protein\_coding} argument, only protein-coding genes are retained in the GTF file, which acts as a masking step of reads aligning to non-coding regions of the genome. \par
 
-In most eukaryotes, mRNAs undergo alternative splicing of exons to generate the mature mRNA. However, some tools consider reads that align to multiple annotated splice variants of a gene as a multi-mapping read since they map to a location where several isoforms, recognized as separate records, of the same gene overlap. These reads are either penalized or discarded. By providing the \texttt{--longest\_transcript} argument, the longest Ensembl canonical transcript \cite{ensembl_canon} is retained for each gene in the GTF file. However, if using HTSeq with default XPRESSpipe parameters or Cufflinks to quantify reads, this is not necessary as the software is optimized to quantify abundances of the different isoforms of each gene \cite{cufflinks}. \par
+In most eukaryotes, mRNAs undergo alternative splicing of exons to generate the mature mRNA. However, some tools consider reads that align to multiple annotated splice variants of a gene as a multi-mapping read since they map to a location where several isoforms, recognized as separate records, of the same gene overlap. These reads are either penalized or discarded. By providing the \texttt{-{}-longest\_transcript} argument, the longest Ensembl canonical transcript \cite{ensembl_canon} is retained for each gene in the GTF file. However, if using HTSeq with default XPRESSpipe parameters or Cufflinks to quantify reads, this is not necessary as the software is optimized to quantify abundances of the different isoforms of each gene \cite{cufflinks}. \par
 
-For ribosome profiling, we observe frequent read pile-ups at the $5'$- and $3'$- ends of an open reading frame which are largely uninformative as to the translational efficiency of the gene. Therefore, the $5'$- and $3'$- ends of each transcript's total coding region should be truncated as to be excluded from consideration during read quantification \cite{ingolia_meth, weinberg_reports}. By providing the \texttt{--truncate} argument, the $5'$- and $3'$- ends of each coding region will be trimmed by the specified amounts. These values are set to defaults of 45 nt for $5'$- truncation and 15 nt for $3'$- truncation, as is the convention within the ribosome profiling field \cite{ingolia_meth}, but these can be modified using the \texttt{--truncate\_5prime} or \texttt{--truncate\_3prime} parameters. If generating a GTF for use with general RNA-Seq datasets not associated with a ribosome profiling dataset (i.e., an RNA-Seq library that originates from the same sample as a ribosome profiling library), the \texttt{--truncate} argument should not be provided.
+For ribosome profiling, we observe frequent read pile-ups at the $5'$- and $3'$- ends of an open reading frame which are largely uninformative as to the translational efficiency of the gene. Therefore, the $5'$- and $3'$- ends of each transcript's total coding region should be truncated as to be excluded from consideration during read quantification \cite{ingolia_meth, weinberg_reports}. By providing the \texttt{-{}-truncate} argument, the $5'$- and $3'$- ends of each coding region will be trimmed by the specified amounts. These values are set to defaults of 45 nt for $5'$- truncation and 15 nt for $3'$- truncation, as is the convention within the ribosome profiling field \cite{ingolia_meth}, but these can be modified using the \texttt{-{}-truncate\_5prime} or \texttt{-{}-truncate\_3prime} parameters. If generating a GTF for use with general RNA-Seq datasets not associated with a ribosome profiling dataset (i.e., an RNA-Seq library that originates from the same sample as a ribosome profiling library), the \texttt{-{}-truncate} argument should not be provided.
 
 \subsubsection{Trimming}
 Reads generally need to be cleaned of artifacts from library creation. These include adaptors, unique molecular identifier (UMI) sequences, and technical errors in the form of low-quality base calls. By doing so, non-native sequences are removed and reads can align properly to the reference. XPRESSpipe uses fastp, a faster, more accurate trimming package that has improved alignable read output compared to its predecessors \cite{fastp}. Adaptor sequence, base quality, and read length are all adjustable parameters available to the user. Additionally, feature details, such as those for UMIs, can be specified. PCR artifacts will then be identified and grouped during pre-processing, then removed in post-alignment processing \cite{umi, umitools}.
@@ -226,10 +227,10 @@ Reads are aligned to a reference genome. XPRESSpipe uses STAR, which, despite be
 XPRESSpipe further processes alignment files by optionally parsing for unique alignments that are then passed on to the next steps. PCR duplicates are detected and marked or removed for downstream processing; however, these files are only used for relevant downstream steps (such as library complexity quality control) or if the user specifies to use these de-duplicated files in downstream steps such as read quantification. Use of de-duplicated alignment files may be advisable in situations where the library complexity profiles (discussed below) exhibit high duplication frequencies. However, generally the abundance of PCR-duplicates is low in properly-prepared sequencing libraries; thus, doing so may be overly stringent and unnecessary \cite{umi}. These steps are performed using samtools \cite{samtools}. Optionally, BED coverage files can also be output. These conversions are handled by bedtools \cite{bedtools}.
 
 \subsubsection{Read Quantification}
-XPRESSpipe quantifies read alignments for each input file using HTSeq with the \texttt{intersection-nonempty} method by default \cite{htseq, count_benchmark}. Our rationale for including this quantification method is that it conforms to the current default TCGA standards and is favorable in most applications. If masking of non-coding RNAs is desired, a \texttt{protein\_coding} modified GTF file should be provided for the \texttt{--gtf} argument. HTSeq is recommended for processing ribosome profiling data as it allows selection of feature type across which to quantify, thus allowing for quantification across the CDSs of a transcript instead of the exons. Additionally, if a user is interested in quantifying ribosome occupancy of transcript uORFs for ribosome footprint samples, they could provide \texttt{five\_prime\_utr} or \texttt{three\_prime\_utr} for the \texttt{--feature\_type} parameter if such annotations exist for the organism of interest. If the user is interested in isoform abundance estimation, Cufflinks is available to perform this method of quantification instead \cite{cufflinks, count_benchmark}.
+XPRESSpipe quantifies read alignments for each input file using HTSeq with the \texttt{intersection-nonempty} method by default \cite{htseq, count_benchmark}. Our rationale for including this quantification method is that it conforms to the current default TCGA standards and is favorable in most applications. If masking of non-coding RNAs is desired, a \texttt{protein\_coding} modified GTF file should be provided for the \texttt{-{}-gtf} argument. HTSeq is recommended for processing ribosome profiling data as it allows selection of feature type across which to quantify, thus allowing for quantification across the CDSs of a transcript instead of the exons. Additionally, if a user is interested in quantifying ribosome occupancy of transcript uORFs for ribosome footprint samples, they could provide \texttt{five\_prime\_utr} or \texttt{three\_prime\_utr} for the \texttt{-{}-feature\_type} parameter if such annotations exist for the organism of interest. If the user is interested in isoform abundance estimation, Cufflinks is available to perform this method of quantification instead \cite{cufflinks, count_benchmark}.
 
 \subsubsection{Normalization}
-Methods for count normalization are available within XPRESSpipe by way of the XPRESSplot package. For normalizations correcting for transcript length, the appropriate GTF must be provided. Current sample normalization methods available include reads-per-million (RPM), Reads-per-kilobase-million (RPKM) or Fragments-per-kilobase-million (FPKM), and transcripts per million (TPM) normalization \cite{evans_briefbio}. For samples sequenced on different flow cells, prepared by different individuals, or on different days, the \texttt{--batch} argument should be provided along with the appropriate metadata matrix, which is then processed by way of XPRESSplot using the ComBat package \cite{sva}.
+Methods for count normalization are available within XPRESSpipe by way of the XPRESSplot package. For normalizations correcting for transcript length, the appropriate GTF must be provided. Current sample normalization methods available include reads-per-million (RPM), Reads-per-kilobase-million (RPKM) or Fragments-per-kilobase-million (FPKM), and transcripts per million (TPM) normalization \cite{evans_briefbio}. For samples sequenced on different flow cells, prepared by different individuals, or on different days, the \texttt{-{}-batch} argument should be provided along with the appropriate metadata matrix, which is then processed by way of XPRESSplot using the ComBat package \cite{sva}.
 
 \subsubsection{Read Length Distribution}
 The lengths of all reads are analyzed after trimming. By assessing the read distribution of each sample, the user can ensure the expected read size was sequenced. This is particularly helpful in ribosome profiling experiments for verifying the requisite 17-33 nt ribosome footprints were selectively captured during library preparation \cite{ingolia_meth, fp_range}. Metrics here, as in all other quality control sub-modules, are then compiled into summary figures by XPRESSpipe for assessment of the overall experiment by the user.
@@ -253,7 +254,7 @@ Ribosomal RNA (rRNA) contamination is common in RNA-Seq library preparation as t
 XPRESSpipe incorporates DESeq2 for performing differential expression analysis of count data. We refer users to the original publication for more information about uses and methodology \cite{deseq2}. In this module, the user provides the count table output by XPRESSpipe, along with a sample summary table and design formula (as explained in the DESeq2 documentation).
 
 \subsubsection{Outputs}
-While outputs will vary between sub-modules, generally the user will specify a parent output directory and the necessary sub-directories will be created based on the step in the pipeline. Further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering \texttt{xpresspipe \textless sub-module name\textgreater \ --help} in the command line. Figure \ref{fig:outputs} provides an example of the output file scheme for XPRESSpipe. For a complete pipeline run, the user can expect BAM alignment files, a collated count table of all samples in the experiment, and quality control figures and metrics. Additionally, broad level reports are collected by MultiQC \cite{multiqc}, which include general sequence read statistics generated by FastQC \cite{fastqc}. For almost all sub-modules, a log file will also be written to summarize provided user parameters, track performance, and report errors. An additional log file will be written summarizing the versions of the different dependency software used during the execution of the pipeline or sub-module. Users are encouraged to provide these files as supplements within publications when presenting XPRESSpipe-processed data to aid in documentation.
+While outputs will vary between sub-modules, generally the user will specify a parent output directory and the necessary sub-directories will be created based on the step in the pipeline. Further information can be found in the documentation (https://xpresspipe.readthedocs.io/en/latest/) or by entering \texttt{xpresspipe \textless sub-module name\textgreater \ -{}-help} in the command line. Figure \ref{fig:outputs} provides an example of the output file scheme for XPRESSpipe. For a complete pipeline run, the user can expect BAM alignment files, a collated count table of all samples in the experiment, and quality control figures and metrics. Additionally, broad level reports are collected by MultiQC \cite{multiqc}, which include general sequence read statistics generated by FastQC \cite{fastqc}. For almost all sub-modules, a log file will also be written to summarize provided user parameters, track performance, and report errors. An additional log file will be written summarizing the versions of the different dependency software used during the execution of the pipeline or sub-module. Users are encouraged to provide these files as supplements within publications when presenting XPRESSpipe-processed data to aid in documentation.
 
 \begin{figure}
 \centering
@@ -576,8 +577,8 @@ Intron-agnostic gene coverage profiles were generated using XPRESSpipe's geneCov
 Raw data and processed TCGA count data was obtained from the TCGA Portal (https://portal.gdc.cancer.gov/) via dbGap controlled access (https://www.ncbi.nlm.nih.gov/gap/). Raw data were processed on a protected high-performance computing environment. Correlations between methods or replicates were calculated using a Spearman rank correlation coefficient, performed using the \texttt{scipy.stats.spearman()} function \cite{spearman_rnaseq}. The associated script can be accessed at https://github.com/j-berg/xpressyourself\_manuscript/blob/master/tcga\_data/tcga\_validation.py. Interactive scatter plots were generated using Plotly Express \cite{plotly} See https://github.com/j-berg/xpressyourself\_manuscript/tree/master/tcga\_data/batch\_process\_info for scripts used to process data. \par
 
 
-\subsection{Cost Analysis}
-Cost analysis was performed by assessing run logs from the high-performance computing cluster and using published AWS prices (https://aws.amazon.com/ec2/pricing/on-demand/, https://aws.amazon.com/s3/pricing/, accessed 28 June 2019) to calculate the relative cost for a comparable run.
+%\subsection{Cost Analysis}
+%Cost analysis was performed by assessing run logs from the high-performance computing cluster and using published AWS prices (https://aws.amazon.com/ec2/pricing/on-demand/, https://aws.amazon.com/s3/pricing/, accessed 28 June 2019) to calculate the relative cost for a comparable run.
 
 \section*{List of abbreviations}
 AWS - Amazon Web Services,

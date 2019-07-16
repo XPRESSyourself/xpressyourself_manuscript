@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 JUL 2019 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  16 JUL 2019 00:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -309,6 +309,13 @@ File: babel.def 2018/02/14 3.18 Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count93
 \lst@gtempboxa=\box28
@@ -348,29 +355,29 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (./xpressyourself.aux)
 \openout1 = `xpressyourself.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 90.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 89.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 90.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1phv.fd
-File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -423,233 +430,217 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count107
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 95.
+(Font)              <12> on input line 96.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 95.
+(Font)              <8> on input line 96.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 95.
+(Font)              <6> on input line 96.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 95.
+(Font)              <7> on input line 96.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 95.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
-LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 98.
-LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 98.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 102.
+(Font)              <5> on input line 96.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 99.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 99.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 99.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 103.
 
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3]
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 124.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 125.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 127.
+               Default added (so using `!tbp') on input line 128.
 
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 129.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 130.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 136.
 
-Underfull \hbox (badness 4366) in paragraph at lines 147--148
-[]\OT1/phv/m/n/10 Include op-tion to per-form a two-step align-ment to map for 
-unan-no-tated
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 4366) in paragraph at lines 148--149
+[]\T1/phv/m/n/10 Include op-tion to per-form a two-step align-ment to map for u
+nan-no-tated
  []
 
 
-Overfull \hbox (24.0pt too wide) in paragraph at lines 130--185
+Overfull \hbox (24.0pt too wide) in paragraph at lines 131--186
  [][] 
  []
 
-[4] [5]
-LaTeX Font Info:    Try loading font information for OML+cmtt on input line 192
-.
-LaTeX Font Info:    No file OMLcmtt.fd. on input line 192.
-
-
-LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
-(Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 192.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+[4] [5] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) [6]
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 199
-.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmtt.fd
-File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [7] [8] [9]
-[10]
-<figures/xpresspipe_figure1.png, id=47, 446.3877pt x 524.4393pt>
+[7] [8] [9] [10]
+<figures/xpresspipe_figure1.png, id=45, 446.3877pt x 524.4393pt>
 File: figures/xpresspipe_figure1.png Graphic file (type png)
 <use figures/xpresspipe_figure1.png>
-Package pdftex.def Info: figures/xpresspipe_figure1.png  used on input line 260
+Package pdftex.def Info: figures/xpresspipe_figure1.png  used on input line 261
 .
 (pdftex.def)             Requested size: 341.43306pt x 401.13875pt.
  [11] [12 <./figures/xpresspipe_figure1.png>]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 273.
- [13] [14] [15]
-<figures/xpresspipe_figure2.png, id=67, 426.1521pt x 581.7735pt>
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 274.
+ [13] [14]
+[15]
+<figures/xpresspipe_figure2.png, id=66, 426.1521pt x 581.7735pt>
 File: figures/xpresspipe_figure2.png Graphic file (type png)
 <use figures/xpresspipe_figure2.png>
-Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 307
+Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 308
 .
 (pdftex.def)             Requested size: 455.24408pt x 621.5239pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 308.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 308.
+(Font)              <9> on input line 309.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 309.
 
 
-LaTeX Warning: Float too large for page by 14.65776pt on input line 310.
+LaTeX Warning: Float too large for page by 14.65776pt on input line 311.
 
-<figures/xpresspipe_figure3.png, id=68, 555.2745pt x 537.9297pt>
+<figures/xpresspipe_figure3.png, id=67, 555.2745pt x 537.9297pt>
 File: figures/xpresspipe_figure3.png Graphic file (type png)
 <use figures/xpresspipe_figure3.png>
-Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 314
+Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 315
 .
 (pdftex.def)             Requested size: 512.1496pt x 496.16539pt.
 [16] [17 <./figures/xpresspipe_figure2.png>] [18 <./figures/xpresspipe_figure3.
 png>] [19]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 325.
+               Default added (so using `!tbp') on input line 326.
 
 
-Overfull \hbox (24.0pt too wide) in paragraph at lines 328--348
+Overfull \hbox (24.0pt too wide) in paragraph at lines 329--349
  [][] 
  []
 
 [20]
-<figures/xpresspipe_figure4.png, id=88, 512.6352pt x 287.3937pt>
+<figures/xpresspipe_figure4.png, id=87, 512.6352pt x 287.3937pt>
 File: figures/xpresspipe_figure4.png Graphic file (type png)
 <use figures/xpresspipe_figure4.png>
-Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 361
+Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 362
 .
 (pdftex.def)             Requested size: 512.1496pt x 287.12549pt.
  [21] [22 <./figures/xpresspipe_figure4.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 416.
+               Default added (so using `!tbp') on input line 417.
 
 
-Overfull \hbox (4.11082pt too wide) in paragraph at lines 454--454
-[]\OT1/phv/m/n/10 GenomicAlignments| 
+Overfull \hbox (4.11082pt too wide) in paragraph at lines 455--455
+[]\T1/phv/m/n/10 GenomicAlignments| 
  []
 
 [23]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 468.
+               Default added (so using `!tbp') on input line 469.
 
 [24]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 513.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 514.
  [25] [26] [27] [28] [29] [30]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 632.
+               Default added (so using `!tbp') on input line 633.
 
 (./xpressyourself.bbl [31] [32] [33])
-<figures/xpresspipe_supplement1.png, id=134, 588.5187pt x 472.6458pt>
+<figures/xpresspipe_supplement1.png, id=133, 588.5187pt x 472.6458pt>
 File: figures/xpresspipe_supplement1.png Graphic file (type png)
 <use figures/xpresspipe_supplement1.png>
 Package pdftex.def Info: figures/xpresspipe_supplement1.png  used on input line
- 666.
+ 667.
 (pdftex.def)             Requested size: 455.24408pt x 365.61877pt.
-<figures/xpresspipe_supplement2.png, id=135, 483.7272pt x 555.7563pt>
+<figures/xpresspipe_supplement2.png, id=134, 483.7272pt x 555.7563pt>
 File: figures/xpresspipe_supplement2.png Graphic file (type png)
 <use figures/xpresspipe_supplement2.png>
 Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
- 673.
+ 674.
 (pdftex.def)             Requested size: 455.24408pt x 523.03853pt.
-<figures/xpresspipe_supplement3.png, id=136, 516.9714pt x 513.5988pt>
+<figures/xpresspipe_supplement3.png, id=135, 516.9714pt x 513.5988pt>
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 680.
+ 681.
 (pdftex.def)             Requested size: 512.1496pt x 508.84056pt.
-<figures/xpresspipe_supplement4.png, id=137, 555.9972pt x 668.4975pt>
+<figures/xpresspipe_supplement4.png, id=136, 555.9972pt x 668.4975pt>
 File: figures/xpresspipe_supplement4.png Graphic file (type png)
 <use figures/xpresspipe_supplement4.png>
 Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
- 687.
+ 688.
 (pdftex.def)             Requested size: 512.1496pt x 615.8412pt.
-<figures/xpresspipe_supplement5.png, id=138, 420.8523pt x 426.1521pt>
+<figures/xpresspipe_supplement5.png, id=137, 420.8523pt x 426.1521pt>
 File: figures/xpresspipe_supplement5.png Graphic file (type png)
 <use figures/xpresspipe_supplement5.png>
 Package pdftex.def Info: figures/xpresspipe_supplement5.png  used on input line
- 694.
+ 695.
 (pdftex.def)             Requested size: 512.1496pt x 518.6433pt.
-<figures/xpresspipe_supplement6.png, id=139, 398.4486pt x 226.2051pt>
+<figures/xpresspipe_supplement6.png, id=138, 398.4486pt x 226.2051pt>
 File: figures/xpresspipe_supplement6.png Graphic file (type png)
 <use figures/xpresspipe_supplement6.png>
 Package pdftex.def Info: figures/xpresspipe_supplement6.png  used on input line
- 701.
+ 702.
 (pdftex.def)             Requested size: 512.1496pt x 290.75993pt.
-<figures/xpresspipe_supplement7.png, id=140, 427.3566pt x 410.9754pt>
+<figures/xpresspipe_supplement7.png, id=139, 427.3566pt x 410.9754pt>
 File: figures/xpresspipe_supplement7.png Graphic file (type png)
 <use figures/xpresspipe_supplement7.png>
 Package pdftex.def Info: figures/xpresspipe_supplement7.png  used on input line
- 708.
+ 709.
 (pdftex.def)             Requested size: 512.1496pt x 492.566pt.
-<figures/xpresspipe_supplement8.png, id=141, 377.2494pt x 337.0191pt>
+<figures/xpresspipe_supplement8.png, id=140, 377.2494pt x 337.0191pt>
 File: figures/xpresspipe_supplement8.png Graphic file (type png)
 <use figures/xpresspipe_supplement8.png>
 Package pdftex.def Info: figures/xpresspipe_supplement8.png  used on input line
- 715.
+ 716.
 (pdftex.def)             Requested size: 512.1496pt x 457.60454pt.
  [34] [35 <./figures/xpresspipe_supplement1.png>] [36 <./figures/xpresspipe_sup
 plement2.png>] [37 <./figures/xpresspipe_supplement3.png>] [38 <./figures/xpres
 spipe_supplement4.png>] [39 <./figures/xpresspipe_supplement5.png>] [40 <./figu
 res/xpresspipe_supplement6.png>] [41 <./figures/xpresspipe_supplement7.png>] [4
 2 <./figures/xpresspipe_supplement8.png>]
-(./xpressyourself.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
+(./xpressyourself.aux) ) 
 Here is how much of TeX's memory you used:
- 5995 strings out of 492649
- 89558 string characters out of 6129622
- 185136 words of memory out of 5000000
- 9751 multiletter control sequences out of 15000+600000
- 33035 words of font info for 58 fonts, out of 8000000 for 9000
+ 6192 strings out of 492649
+ 91031 string characters out of 6129622
+ 185200 words of memory out of 5000000
+ 9945 multiletter control sequences out of 15000+600000
+ 50577 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,47p,2339b,1406s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
-/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/h
-elvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic
-/uhvro8a.pfb>
-Output written on xpressyourself.pdf (42 pages, 4489111 bytes).
+ 42i,11n,47p,2339b,1185s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-
+t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on xpressyourself.pdf (42 pages, 4522333 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 236 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
