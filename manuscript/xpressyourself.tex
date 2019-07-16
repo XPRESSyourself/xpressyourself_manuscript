@@ -530,8 +530,6 @@ Metagene calculations are performed by determining the meta-transcript coordinat
 \textit{M} = \frac{(L\textsubscript{e}\ +\ \frac{1}{2}r)\ \cdot\ 100}{\textit{$\ell$\textsubscript{e}}}
 \end{equation}
 
-If calculating meta-coverage over the CDS only, mapped meta-coordinates are corrected by subtracting the sum of the $5'$ UTR lengths for a transcript. Total length for a transcript is corrected by substracting the cumulative length of the $5'$ and $3'$ UTRs.
-
 \subsection{Gene Coverage Plotting}
 Gene coverage calculations are performed by determining the exon space of the gene of interest and mapping any read for a given sample to this space. Each nucleotide of a read that maps to a nucleotide within these exon regions is counted. During plotting, a rolling window of 20 nucleotides is used to smoothen the plotted coordinates' read coverage. Required inputs are a transcriptome-aligned BAM file (as output by STAR within XPRESSpipe) and a GTF reference file, which is then curated into its longest-transcript, protein-coding-only flattened form, as discussed above. If a longest-transcript, protein-coding-only modified GTF has already been curated, this can alternatively be provided as input, with which the module will flatten (file suffix must be \texttt{LC.gtf}).
 

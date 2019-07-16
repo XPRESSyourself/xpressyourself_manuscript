@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 JUL 2019 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 JUL 2019 19:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -562,56 +562,56 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
  [26] [27] [28] [29] [30] [31]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 632.
+               Default added (so using `!tbp') on input line 630.
 
 (./xpressyourself.bbl [32] [33] [34])
 <figures/xpresspipe_supplement1.png, id=137, 588.7596pt x 466.1415pt>
 File: figures/xpresspipe_supplement1.png Graphic file (type png)
 <use figures/xpresspipe_supplement1.png>
 Package pdftex.def Info: figures/xpresspipe_supplement1.png  used on input line
- 666.
+ 664.
 (pdftex.def)             Requested size: 455.24408pt x 360.43085pt.
 <figures/xpresspipe_supplement2.png, id=138, 483.7272pt x 555.7563pt>
 File: figures/xpresspipe_supplement2.png Graphic file (type png)
 <use figures/xpresspipe_supplement2.png>
 Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
- 673.
+ 671.
 (pdftex.def)             Requested size: 455.24408pt x 523.03853pt.
 <figures/xpresspipe_supplement3.png, id=139, 516.9714pt x 513.5988pt>
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 680.
+ 678.
 (pdftex.def)             Requested size: 512.1496pt x 508.84056pt.
 <figures/xpresspipe_supplement4.png, id=140, 554.3109pt x 665.3658pt>
 File: figures/xpresspipe_supplement4.png Graphic file (type png)
 <use figures/xpresspipe_supplement4.png>
 Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
- 687.
+ 685.
 (pdftex.def)             Requested size: 512.1496pt x 614.8141pt.
 <figures/xpresspipe_supplement5.png, id=141, 420.8523pt x 426.1521pt>
 File: figures/xpresspipe_supplement5.png Graphic file (type png)
 <use figures/xpresspipe_supplement5.png>
 Package pdftex.def Info: figures/xpresspipe_supplement5.png  used on input line
- 694.
+ 692.
 (pdftex.def)             Requested size: 512.1496pt x 518.6433pt.
 <figures/xpresspipe_supplement6.png, id=142, 398.4486pt x 226.2051pt>
 File: figures/xpresspipe_supplement6.png Graphic file (type png)
 <use figures/xpresspipe_supplement6.png>
 Package pdftex.def Info: figures/xpresspipe_supplement6.png  used on input line
- 701.
+ 699.
 (pdftex.def)             Requested size: 512.1496pt x 290.75993pt.
 <figures/xpresspipe_supplement7.png, id=143, 427.3566pt x 410.9754pt>
 File: figures/xpresspipe_supplement7.png Graphic file (type png)
 <use figures/xpresspipe_supplement7.png>
 Package pdftex.def Info: figures/xpresspipe_supplement7.png  used on input line
- 708.
+ 706.
 (pdftex.def)             Requested size: 512.1496pt x 492.566pt.
 <figures/xpresspipe_supplement8.png, id=144, 377.2494pt x 337.0191pt>
 File: figures/xpresspipe_supplement8.png Graphic file (type png)
 <use figures/xpresspipe_supplement8.png>
 Package pdftex.def Info: figures/xpresspipe_supplement8.png  used on input line
- 715.
+ 713.
 (pdftex.def)             Requested size: 512.1496pt x 457.60454pt.
  [35] [36 <./figures/xpresspipe_supplement1.png>] [37 <./figures/xpresspipe_sup
 plement2.png>] [38 <./figures/xpresspipe_supplement3.png>] [39 <./figures/xpres
@@ -651,7 +651,7 @@ s/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 /urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/h
 elvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic
 /uhvro8a.pfb>
-Output written on xpressyourself.pdf (43 pages, 4433355 bytes).
+Output written on xpressyourself.pdf (43 pages, 4433209 bytes).
 PDF statistics:
  244 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
