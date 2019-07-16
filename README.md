@@ -1,4 +1,4 @@
-# To Do for BioRXiv
+# XPRESSyourself manuscript associated code and data
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3337599.svg)](https://doi.org/10.5281/zenodo.3337599)
 
