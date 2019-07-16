@@ -112,7 +112,7 @@ Several computational pipelines for RNA sequencing have emerged that intend to t
 
 In response to these issues surrounding the automation of sequencing technology, we built the XPRESSyourself bioinformatics suite for processing and analyzing high-throughput expression data. This suite was architecturally designed from the ground up to be computationally efficient, without sacrificing quality for speed. Each step of the pipeline utilizes the best performing software package for that task, having been previously vetted by peer-reviewed benchmarking studies where such studies exist for a given tool. Additionally, the pipeline is designed such that updating and testing of a new module are facile tasks for a trained bioinformatician. This enables XPRESSyourself packages to continuously offer the best options available to the entire community, regardless of expertise. \par
 
-Currently, XPRESSyourself is partitioned into two main software packages. With the XPRESSpipe package, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying of sequencing reads, performing quality control via various meta-analyses of pre- and post-processed reads. We also provide access to key quality control measures useful for assessing ribosome profiling and other RNA-Seq experiments. These include read length distribution plots that are particularly helpful for ribosome profiling experiments due to the unique characteristics of the ribosome footprint-sized libraries (usually around 17-33 nucleotides) \cite{fp_range}, and a periodicity sub-module that tracks the P-site of ribosome footprints to assess effective capture of the characteristic one codon step of the ribosome. Ribosome profiling also faces the challenge of efficiently depleting ribosomal RNA (rRNA) from samples as commercial depletion kits are frequently not adequately selective due to the sheer variety of rRNA fragments created during ribosome footprinting via RNase digestion. XPRESSpipe provides a feature that identifies the most abundant rRNA species to target for depletion during library preparation. XPRESSpipe also includes a metagene analysis sub-module that shows the distribution of the relative position of all aligned reads across a representative transcript to help identify any $5'$- or $3'$- biases in RNA fragment capture during library preparation. Currently, few current computational tools exist for performing this analysis. Additionally, XPRESSpipe includes a module for plotting gene coverage, similar to interactive genome browser programs, such as IGV \cite{igv}, but where introns are collapsed to more clearly visualize read coverage across exons or coding space. As PCR-based duplicate biases can arise during sequence library preparation, a library complexity visualization sub-module is included in the pipeline to assess the frequency of PCR amplification artifacts in the library and ensure an appropriately broad coverage of gene population was captured during sequence library creation. While XPRESSpipe summarizes hundreds to thousands of lines of code to one or two lines, we also provide the user with a guided command builder module. \par
+Currently, XPRESSyourself is partitioned into two main software packages. With the XPRESSpipe package, the user is provided with a complete suite of software to handle pre-processing, aligning, and quantifying of sequencing reads, performing quality control via various meta-analyses of pre- and post-processed reads. We also provide access to key quality control measures useful for assessing ribosome profiling and other RNA-Seq experiments. These include read length distribution plots that are particularly helpful for ribosome profiling experiments due to the unique characteristics of the ribosome footprint-sized libraries (usually around 17-33 nucleotides) \cite{fp_range}, and a periodicity sub-module that tracks the P-site of ribosome footprints to assess effective capture of the characteristic one codon step of the ribosome. Ribosome profiling also faces the challenge of efficiently depleting ribosomal RNA (rRNA) from samples as commercial depletion kits are frequently not adequately selective due to the sheer variety of rRNA fragments created during ribosome footprinting via RNase digestion. XPRESSpipe provides a feature that identifies the most abundant rRNA species to target for depletion during library preparation. XPRESSpipe also includes a metagene analysis sub-module that shows the distribution of the relative position of all aligned reads across a representative transcript to help identify any $5'$- or $3'$- biases in RNA fragment capture during library preparation. Currently, few current computational tools exist for performing this analysis. Additionally, XPRESSpipe includes a module for plotting gene coverage, similar to interactive genome browser programs, such as IGV \cite{igv}, but where introns are collapsed to more clearly visualize read coverage across exons or coding space. As PCR-based duplicate biases can arise during sequence library preparation, a library complexity visualization sub-module is included in the pipeline to assess the frequency of PCR amplification artifacts in the library and ensure appropriately broad coverage of gene population was captured during sequence library creation. While XPRESSpipe summarizes hundreds to thousands of lines of code to one or two lines, we also provide the user with a guided command builder module. \par
 
 The second package currently available within XPRESSyourself is XPRESSplot, which provides tools to perform the bulk of the sequence analysis and generation of figures for publication, where many plot generation protocols that frequently require several hundred lines of code are condensed to a single line with minimal input from the user. XPRESSyourself suite packages are coded in Python and R, the current linguae francae of computational biology and bioinformatics, which allows for easy modification and improvement by the sequencing community. XPRESSyourself suite packages are perpetually open source under a GPL-3.0 license at https://github.com/XPRESSyourself. \par
 
@@ -294,7 +294,7 @@ The integrated stress response (ISR) is a signaling mechanism used by cells and 
 
 A recent study (data available under Gene Expression Omnibus accession number GSE65778) utilized ribosome profiling to better define the mechanisms of ISRIB action on the ISR, modeled by 1-hour tunicamycin (Tm) treatment in HEK293T cells \cite{isrib_riboseq}. A key finding of this study is that a specific subset of stress-related transcription factor mRNAs exhibit increased translational efficiency (TE) compared to untreated cells during the tunicamycin-induced ISR. However, when cells were co-treated with tunicamycin and ISRIB, the TE of these stress-related mRNAs showed no significant increase compared to untreated cells, which indicates that ISRIB can counteract the translational responses associated with the ISR. \par
 
-To showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to further query the translational mechanisms of the ISR and ISRIB. All XPRESSpipe-processed biological replicate samples exhibited strong correlation between read counts per gene when thresholded similarly to count data available with the original publication (Spearman $\rho$ values 0.991-0.997) (Figure \ref{fig:figure2}A; Figure \ref{fig:supplement2}B shows the corresponding plots using the count data provided with the original publication for reference). \par
+To showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to further query the translational mechanisms of the ISR and ISRIB. All XPRESSpipe-processed biological replicate samples exhibited a strong correlation between read counts per gene when thresholded similarly to count data available with the original publication (Spearman $\rho$ values 0.991-0.997) (Figure \ref{fig:figure2}A; Figure \ref{fig:supplement2}B shows the corresponding plots using the count data provided with the original publication for reference). \par
 
 Compared to the raw count data made available in the original manuscript, when XPRESSpipe-processed samples were thresholded as in the original published raw count data, samples showed generally comparable read counts per gene between the two analytical regimes (Spearman $\rho$ values 0.937-0.950) (Figure \ref{fig:figure2}B). This is in spite of the fact that the methods section of the original publication employed software that was current at the time but is now outdated, such as TopHat2 \cite{tophat2}, which has a documented higher false positive alignment rate, generally lower recall, and lower precision at correctly aligning multi-mapping reads compared to STAR \cite{alignment_benchmark, star}. Many of the genes over-represented in the original count data as compared to data processed by XPRESSpipe are genes that have pseudogenes or other paralogs (Figure \ref{fig:supplement2}A highlights a sampling of some extreme cases). As these genes share high sequence similarity with each other, reads mapping to these regions are difficult to attribute to a specific genomic locus and are often excluded from further analyses due to their multi-mapping nature. The benchmarking study \cite{alignment_benchmark} that examined these and other aligners described how TopHat2 had a disproportionally high rate of incorrectly aligned bases, or bases that were aligned uniquely when they should have been aligned ambiguously, at least partially explaining the observed overcounted effect with TopHat2. Had TopHat2 marked problematic reads as ambiguous, they would have been excluded from later quantification. \par
 
@@ -364,30 +364,30 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 \end{figure}
 
 
-\subsubsection{Cost Analysis}
-XPRESSpipe functions can be computationally intensive, and thus, super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes, such as \textit{Homo sapiens}. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) (https://aws.amazon.com) can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} outlines runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files and takes significantly longer to align to than organisms with smaller genomes, such as \textit{S. cereviseae}, so this example can be considered a high-end estimate of the time required to process data with XPRESSpipe. \par
+%\subsubsection{Cost Analysis}
+%XPRESSpipe functions can be computationally intensive, and thus, super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes, such as \textit{Homo sapiens}. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) (https://aws.amazon.com) can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} outlines runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files and takes significantly longer to align to than organisms with smaller genomes, such as \textit{S. cerevisiae}, so this example can be considered a high-end estimate of the time required to process data with XPRESSpipe. \par
 
 % UPDATE BEFORE SUBMISSION ONCE QUALITY CONTROL STABLE AND CHECK CONVERSIONS\
-\begin{table}[!]
-    \centering
-\captionof{table}{\textbf{XPRESSpipe processing statistics for dataset GSE65778.}}
-\begin{tabular}{p{5cm}p{3cm}}
-\textbf{Metric} & \textbf{Value} \\
-\hline
- Elapsed Real Time & 09h32m58s \\
- \hline
- Total CPU Time & 1d10h11m42s \\
- \hline
- Allocated CPUs & 16 \\
- \hline
- Allocated Memory per Node & 62.50GB \\
- \hline
- Maximum RAM of all tasks & 62.60GB \\
- \label{tab:chpc_performance}
-\end{tabular}
-\end{table}
+%\begin{table}[!]
+%    \centering
+%\captionof{table}{\textbf{XPRESSpipe processing statistics for dataset GSE65778.}}
+%\begin{tabular}{p{5cm}p{3cm}}
+%\textbf{Metric} & \textbf{Value} \\
+%\hline
+% Elapsed Real Time & 09h32m58s \\
+% \hline
+% Total CPU Time & 1d10h11m42s \\
+% \hline
+% Allocated CPUs & 16 \\
+% \hline
+% Allocated Memory per Node & 62.50GB \\
+% \hline
+% Maximum RAM of all tasks & 62.60GB \\
+% \label{tab:chpc_performance}
+%\end{tabular}
+%\end{table}
 
-Processing a sequencing dataset like this could be performed on a platform such as AWS relatively inexpensively. For a comparable run, cost for a similar computational node for the given elapsed time would be approximately 7.50 USD using Amazon EC2 On-Demand m5.4xlarge node (however, significantly reduced rates are available if using Spot instances or by using the free tier and storage cost would amount to around 14 USD/month on Amazon S3 storage (calculations were performed 28 Jun 2019). However, in most cases, the final quantified data and quality control metrics are relatively small in size and could thus be stored locally long-term. \par
+%Processing a sequencing dataset like this could be performed on a platform such as AWS relatively inexpensively. For a comparable run, cost for a similar computational node for the given elapsed time would be approximately 7.50 USD using Amazon EC2 On-Demand m5.4xlarge node (however, significantly reduced rates are available if using Spot instances or by using the free tier and storage cost would amount to around 14 USD/month on Amazon S3 storage (calculations were performed 28 Jun 2019). However, in most cases, the final quantified data and quality control metrics are relatively small in size and could thus be stored locally long-term. \par
 
 
 \section{Discussion}
@@ -453,6 +453,8 @@ A list of dependencies required for XPRESSpipe at the time of writing is listed 
  \hline
  GenomicAlignments & BAM file processing & \cite{genomicalign} \\
  \hline
+ GenomicFeatures & GTF file processing & \cite{genomicalign} \\
+ \hline
  dupRadar & Perform library complexity calculations & \cite{dupradar} \\
  \hline
  riboWaltz & Perform p-site offset calculations & \cite{ribowaltz} \\
@@ -495,7 +497,7 @@ A list of dependencies required for XPRESSpipe at the time of writing is listed 
 \subsection{GTF Modification}
 To parallelize GTF modification, a GTF file is split into approximately proportional chunks equal to the specified number of threads. To avoid an incomplete gene record being included in a chunk and being inappropriately processed, a given chunk endpoint is determined by calculating the size of the GTF, dividing by the number of threads, and advancing to that endpoint, then advancing line by line until the last line of the gene record encountered at the endpoint. This is performed for each subsequent chunk. If creating the last chunk, the end of the chunk is the last line of the GTF record. \par
 
-Ensembl canonical transcripts are determined according to the Ensembl glossary definition of a canonical transcript \cite{ensembl_canon}. For cases where a tie exists between equal priority transcripts, the longest is chosen. When there are more than one transcript that tie for equal priority and longest length, the first listed record is retained. Exon or CDS lengths are calculated by taking the sum of each exon or CDS, not including intron or other space in the calculation. \par
+Ensembl canonical transcripts are determined according to the Ensembl glossary definition of a canonical transcript \cite{ensembl_canon}. For cases where a tie exists between equal priority transcripts, the longest is chosen. When there are multiple transcripts that tie for equal priority and longest length, the first listed record is retained. Exon or CDS lengths are calculated by taking the sum of each exon or CDS, not including intron or other space in the calculation. \par
 
 Protein-coding records are retained by performing a simple string search for the ``protein\_coding" annotation in the attribute column of a GTF file. \par
 

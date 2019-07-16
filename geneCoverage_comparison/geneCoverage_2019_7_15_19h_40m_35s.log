@@ -6,9 +6,9 @@ XPRESSpipe version: 0.1.4-beta
 cmd: geneCoverage
 input: /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/
 output: /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/
-gtf: /Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96_LC.gtf
-gene_name: MAP3K10
-experiment: geneCoverage_2019_7_15_2h_55m_35s
+gtf: /Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf
+gene_name: SLC1A1
+experiment: geneCoverage_2019_7_15_19h_40m_35s
 bam_suffix: trans.bam
 samples: ['SRR1795425.trans.bam', 'SRR1795427.trans.bam', 'SRR1795433.trans.bam', 'SRR1795435.trans.bam', 'SRR1795437.trans.bam', 'SRR1795439.trans.bam', 'SRR1795429.trans.bam', 'SRR1795431.trans.bam']
 sample_names: ['RPF_Untr_A', 'RPF_Untr_B', 'RPF_Tm_A', 'RPF_Tm_B', 'RPF_TmISRIB_A', 'RPF_TmISRIB_B', 'RPF_ISRIB_A', 'RPF_ISRIB_B']
@@ -16,43 +16,14 @@ plot_color: red
 max_processors: None
 path: /Users/jordan/scripts/XPRESSyourself/XPRESSpipe/xpresspipe/
 log_loc: /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/
-log:  >> /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/geneCoverage_2019_7_15_2h_55m_35s.log 2>&1
-log_file: /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/geneCoverage_2019_7_15_2h_55m_35s.log
+log:  >> /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/geneCoverage_2019_7_15_19h_40m_35s.log 2>&1
+log_file: /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/geneCoverage_2019_7_15_19h_40m_35s.log
 =====================
 End commands summary
 =====================
 
-[1] "data.table package already installed"
-[1] "data.table package already installed"
-[1] "data.table package already installed"
-[1] "data.table package already installed"
-[1] "data.table package already installed"
-[1] "data.table package already installed"
-[1] "data.table package already installed"
-[1] "data.table package already installed"
-[1] "GenomicAlignments package already installed"
-[1] "GenomicAlignments package already installed"
-[1] "GenomicAlignments package already installed"
-[1] "GenomicAlignments package already installed"
-[1] "GenomicAlignments package already installed"
-[1] "GenomicAlignments package already installed"
-[1] "GenomicAlignments package already installed"
-[1] "GenomicAlignments package already installed"
+[1] "GenomicFeatures package already installed"
 Loading required package: BiocGenerics
-Loading required package: BiocGenerics
-Loading required package: BiocGenerics
-Loading required package: BiocGenerics
-Loading required package: BiocGenerics
-Loading required package: BiocGenerics
-Loading required package: BiocGenerics
-Loading required package: BiocGenerics
-Loading required package: parallel
-Loading required package: parallel
-Loading required package: parallel
-Loading required package: parallel
-Loading required package: parallel
-Loading required package: parallel
-Loading required package: parallel
 Loading required package: parallel
 
 Attaching package: ‘BiocGenerics’
@@ -62,81 +33,6 @@ The following objects are masked from ‘package:parallel’:
     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
     clusterExport, clusterMap, parApply, parCapply, parLapply,
     parLapplyLB, parRapply, parSapply, parSapplyLB
-
-
-Attaching package: ‘BiocGenerics’
-
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-
-Attaching package: ‘BiocGenerics’
-
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-The following objects are masked from ‘package:base’:
-
-    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
-    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
-    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
-    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
-    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
-    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
-    unsplit, which, which.max, which.min
 
 The following objects are masked from ‘package:stats’:
 
@@ -152,82 +48,221 @@ The following objects are masked from ‘package:base’:
     rowSums, sapply, setdiff, sort, table, tapply, union, unique,
     unsplit, which, which.max, which.min
 
-Loading required package: S4Vectors
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:base’:
-
-    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
-    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
-    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
-    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
-    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
-    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
-    unsplit, which, which.max, which.min
-
-
-Attaching package: ‘BiocGenerics’
-
-Loading required package: S4Vectors
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-The following objects are masked from ‘package:parallel’:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-    clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-Loading required package: S4Vectors
-The following objects are masked from ‘package:base’:
-
-    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
-    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
-    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
-    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
-    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
-    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
-    unsplit, which, which.max, which.min
-
-The following objects are masked from ‘package:base’:
-
-    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
-    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
-    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
-    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
-    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
-    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
-    unsplit, which, which.max, which.min
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-Loading required package: S4Vectors
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:base’:
-
-    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
-    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
-    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
-    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
-    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
-    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
-    unsplit, which, which.max, which.min
-
-Loading required package: stats4
 Loading required package: S4Vectors
 Loading required package: stats4
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: GenomicRanges
+Loading required package: AnnotationDbi
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+[1] "data.table package already installed"
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:GenomicRanges’:
+
+    shift
+
+The following object is masked from ‘package:IRanges’:
+
+    shift
+
+The following objects are masked from ‘package:S4Vectors’:
+
+    first, second
+
+[1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SLC1A1.gtf..."
+Import genomic features from the file as a GRanges object ... OK
+Prepare the 'metadata' data frame ... OK
+Make the TxDb object ... OK
+[1] "Collecting flat reference information..."
+[1] "1 transcript records compiled..."
+Warning message:
+In .get_cds_IDX(type, phase) :
+  The "phase" metadata column contains non-NA values for features of type
+  stop_codon. This information was ignored.
+[1] "data.table package already installed"
+[1] "data.table package already installed"
+[1] "data.table package already installed"
+[1] "data.table package already installed"
+[1] "data.table package already installed"
+[1] "data.table package already installed"
+[1] "data.table package already installed"
+[1] "data.table package already installed"
+[1] "GenomicAlignments package already installed"
+[1] "GenomicAlignments package already installed"
+Loading required package: BiocGenerics
+Loading required package: BiocGenerics
+[1] "GenomicAlignments package already installed"
+[1] "GenomicAlignments package already installed"
+[1] "GenomicAlignments package already installed"
+Loading required package: parallel
+Loading required package: BiocGenerics
+Loading required package: BiocGenerics
+Loading required package: BiocGenerics
+Loading required package: parallel
+[1] "GenomicAlignments package already installed"
+[1] "GenomicAlignments package already installed"
+[1] "GenomicAlignments package already installed"
+Loading required package: parallel
+Loading required package: parallel
+Loading required package: BiocGenerics
+Loading required package: parallel
+Loading required package: BiocGenerics
+Loading required package: BiocGenerics
+Loading required package: parallel
+Loading required package: parallel
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
+    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
+    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
+    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
+    unsplit, which, which.max, which.min
+
+
+Attaching package: ‘BiocGenerics’
+
 Loading required package: S4Vectors
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
+    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
+    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
+    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
+    unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
 Loading required package: stats4
 Loading required package: stats4
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+
+Attaching package: ‘BiocGenerics’
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
+    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
+    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
+    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
+    unsplit, which, which.max, which.min
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+Loading required package: S4Vectors
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
+    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
+    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
+    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
+    unsplit, which, which.max, which.min
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+Loading required package: S4Vectors
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
 Loading required package: stats4
 The following objects are masked from ‘package:base’:
 
@@ -239,7 +274,6 @@ The following objects are masked from ‘package:base’:
     rowSums, sapply, setdiff, sort, table, tapply, union, unique,
     unsplit, which, which.max, which.min
 
-Loading required package: stats4
 The following objects are masked from ‘package:base’:
 
     anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
@@ -253,6 +287,44 @@ The following objects are masked from ‘package:base’:
 Loading required package: S4Vectors
 Loading required package: S4Vectors
 Loading required package: stats4
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
+    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
+    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
+    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
+    unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+Loading required package: stats4
+Loading required package: stats4
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+Loading required package: stats4
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colMeans,
+    colnames, colSums, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply,
+    lengths, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rowMeans, rownames,
+    rowSums, sapply, setdiff, sort, table, tapply, union, unique,
+    unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
 Loading required package: stats4
 
 Attaching package: ‘S4Vectors’
@@ -285,18 +357,6 @@ The following objects are masked from ‘package:data.table’:
     first, second
 
 Loading required package: IRanges
-
-Attaching package: ‘S4Vectors’
-
-The following objects are masked from ‘package:data.table’:
-
-    first, second
-
-The following object is masked from ‘package:base’:
-
-    expand.grid
-
-Loading required package: IRanges
 The following object is masked from ‘package:base’:
 
     expand.grid
@@ -320,7 +380,19 @@ The following object is masked from ‘package:base’:
 
     expand.grid
 
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
 Loading required package: IRanges
+Loading required package: IRanges
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:data.table’:
+
+    first, second
+
 The following object is masked from ‘package:base’:
 
     expand.grid
@@ -340,11 +412,11 @@ The following object is masked from ‘package:base’:
 
 Attaching package: ‘S4Vectors’
 
+Loading required package: IRanges
 The following objects are masked from ‘package:data.table’:
 
     first, second
 
-Loading required package: IRanges
 The following object is masked from ‘package:base’:
 
     expand.grid
@@ -357,6 +429,7 @@ The following object is masked from ‘package:data.table’:
 
     shift
 
+Loading required package: GenomeInfoDb
 
 Attaching package: ‘IRanges’
 
@@ -364,18 +437,10 @@ The following object is masked from ‘package:data.table’:
 
     shift
 
-Loading required package: GenomeInfoDb
-Loading required package: GenomeInfoDb
 
 Attaching package: ‘IRanges’
 
-
-Attaching package: ‘IRanges’
-
-The following object is masked from ‘package:data.table’:
-
-    shift
-
+Loading required package: GenomeInfoDb
 The following object is masked from ‘package:data.table’:
 
     shift
@@ -384,7 +449,6 @@ Loading required package: GenomeInfoDb
 
 Attaching package: ‘IRanges’
 
-Loading required package: GenomeInfoDb
 The following object is masked from ‘package:data.table’:
 
     shift
@@ -413,6 +477,14 @@ The following object is masked from ‘package:data.table’:
     shift
 
 Loading required package: GenomeInfoDb
+
+Attaching package: ‘IRanges’
+
+The following object is masked from ‘package:data.table’:
+
+    shift
+
+Loading required package: GenomeInfoDb
 Loading required package: GenomeInfoDb
 Loading required package: GenomicRanges
 Loading required package: GenomicRanges
@@ -423,19 +495,19 @@ Loading required package: GenomicRanges
 Loading required package: GenomicRanges
 Loading required package: GenomicRanges
 Loading required package: SummarizedExperiment
+Loading required package: Biobase
+Loading required package: SummarizedExperiment
+Loading required package: Biobase
+Loading required package: SummarizedExperiment
+Loading required package: Biobase
+Loading required package: SummarizedExperiment
+Loading required package: SummarizedExperiment
 Loading required package: SummarizedExperiment
 Loading required package: SummarizedExperiment
 Loading required package: Biobase
 Loading required package: Biobase
 Loading required package: Biobase
 Loading required package: SummarizedExperiment
-Loading required package: SummarizedExperiment
-Loading required package: Biobase
-Loading required package: Biobase
-Loading required package: SummarizedExperiment
-Loading required package: Biobase
-Loading required package: SummarizedExperiment
-Loading required package: SummarizedExperiment
 Loading required package: Biobase
 Loading required package: Biobase
 Welcome to Bioconductor
@@ -445,21 +517,7 @@ Welcome to Bioconductor
     'citation("Biobase")', and for packages 'citation("pkgname")'.
 
 Loading required package: DelayedArray
-Welcome to Bioconductor
-
-    Vignettes contain introductory material; view with
-    'browseVignettes()'. To cite Bioconductor, see
-    'citation("Biobase")', and for packages 'citation("pkgname")'.
-
 Loading required package: matrixStats
-Loading required package: DelayedArray
-Loading required package: matrixStats
-Welcome to Bioconductor
-
-    Vignettes contain introductory material; view with
-    'browseVignettes()'. To cite Bioconductor, see
-    'citation("Biobase")', and for packages 'citation("pkgname")'.
-
 
 Attaching package: ‘matrixStats’
 
@@ -467,8 +525,14 @@ The following objects are masked from ‘package:Biobase’:
 
     anyMissing, rowMedians
 
-Loading required package: DelayedArray
 Loading required package: BiocParallel
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
 Loading required package: matrixStats
 Welcome to Bioconductor
 
@@ -476,29 +540,6 @@ Welcome to Bioconductor
     'browseVignettes()'. To cite Bioconductor, see
     'citation("Biobase")', and for packages 'citation("pkgname")'.
 
-
-Attaching package: ‘matrixStats’
-
-Welcome to Bioconductor
-
-    Vignettes contain introductory material; view with
-    'browseVignettes()'. To cite Bioconductor, see
-    'citation("Biobase")', and for packages 'citation("pkgname")'.
-
-The following objects are masked from ‘package:Biobase’:
-
-    anyMissing, rowMedians
-
-Loading required package: DelayedArray
-Welcome to Bioconductor
-
-    Vignettes contain introductory material; view with
-    'browseVignettes()'. To cite Bioconductor, see
-    'citation("Biobase")', and for packages 'citation("pkgname")'.
-
-Loading required package: DelayedArray
-Loading required package: BiocParallel
-Loading required package: matrixStats
 Loading required package: DelayedArray
 Loading required package: matrixStats
 
@@ -508,35 +549,43 @@ The following objects are masked from ‘package:Biobase’:
 
     anyMissing, rowMedians
 
-Loading required package: matrixStats
 Loading required package: BiocParallel
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
 Welcome to Bioconductor
 
     Vignettes contain introductory material; view with
     'browseVignettes()'. To cite Bioconductor, see
     'citation("Biobase")', and for packages 'citation("pkgname")'.
 
+Welcome to Bioconductor
 
-Attaching package: ‘matrixStats’
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
 
+Welcome to Bioconductor
 
-Attaching package: ‘matrixStats’
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
 
-The following objects are masked from ‘package:Biobase’:
+Loading required package: BiocParallel
+Loading required package: DelayedArray
+Welcome to Bioconductor
 
-    anyMissing, rowMedians
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
 
-The following objects are masked from ‘package:Biobase’:
-
-    anyMissing, rowMedians
-
-
-Attaching package: ‘matrixStats’
-
-The following objects are masked from ‘package:Biobase’:
-
-    anyMissing, rowMedians
-
+Loading required package: DelayedArray
+Loading required package: matrixStats
+Loading required package: DelayedArray
 Loading required package: DelayedArray
 Welcome to Bioconductor
 
@@ -545,11 +594,9 @@ Welcome to Bioconductor
     'citation("Biobase")', and for packages 'citation("pkgname")'.
 
 Loading required package: matrixStats
-Loading required package: DelayedArray
-Loading required package: BiocParallel
-Loading required package: BiocParallel
-Loading required package: BiocParallel
 Loading required package: matrixStats
+Loading required package: matrixStats
+Loading required package: DelayedArray
 
 Attaching package: ‘matrixStats’
 
@@ -564,8 +611,44 @@ The following objects are masked from ‘package:Biobase’:
 
     anyMissing, rowMedians
 
+
+Attaching package: ‘matrixStats’
+
+Loading required package: matrixStats
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
 Loading required package: BiocParallel
 Loading required package: BiocParallel
+Loading required package: BiocParallel
+Loading required package: BiocParallel
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+Loading required package: BiocParallel
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following objects are masked from ‘package:base’:
+
+    aperm, apply
+
 
 Attaching package: ‘DelayedArray’
 
@@ -587,10 +670,6 @@ The following objects are masked from ‘package:matrixStats’:
 
 Attaching package: ‘DelayedArray’
 
-The following objects are masked from ‘package:base’:
-
-    aperm, apply
-
 The following objects are masked from ‘package:matrixStats’:
 
     colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
@@ -598,13 +677,6 @@ The following objects are masked from ‘package:matrixStats’:
 The following objects are masked from ‘package:base’:
 
     aperm, apply
-
-
-Attaching package: ‘DelayedArray’
-
-The following objects are masked from ‘package:matrixStats’:
-
-    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
 
 The following objects are masked from ‘package:base’:
 
@@ -617,16 +689,16 @@ The following objects are masked from ‘package:matrixStats’:
 
     colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
 
-The following objects are masked from ‘package:base’:
-
-    aperm, apply
-
 
 Attaching package: ‘DelayedArray’
 
 The following objects are masked from ‘package:matrixStats’:
 
     colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following objects are masked from ‘package:base’:
+
+    aperm, apply
 
 The following objects are masked from ‘package:base’:
 
@@ -657,15 +729,15 @@ The following objects are masked from ‘package:base’:
 Loading required package: Biostrings
 Loading required package: XVector
 Loading required package: Biostrings
+Loading required package: Biostrings
+Loading required package: XVector
+Loading required package: XVector
+Loading required package: Biostrings
+Loading required package: Biostrings
+Loading required package: Biostrings
 Loading required package: XVector
 Loading required package: Biostrings
 Loading required package: XVector
-Loading required package: Biostrings
-Loading required package: XVector
-Loading required package: Biostrings
-Loading required package: Biostrings
-Loading required package: XVector
-Loading required package: Biostrings
 Loading required package: XVector
 Loading required package: XVector
 Loading required package: Biostrings
@@ -692,20 +764,27 @@ The following object is masked from ‘package:DelayedArray’:
 
 Attaching package: ‘Biostrings’
 
+The following object is masked from ‘package:base’:
+
+    strsplit
+
 The following object is masked from ‘package:DelayedArray’:
 
     type
 
-The following object is masked from ‘package:base’:
-
-    strsplit
-
 Loading required package: Rsamtools
 The following object is masked from ‘package:base’:
 
     strsplit
 
 Loading required package: Rsamtools
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
 
 Attaching package: ‘Biostrings’
 
@@ -725,9 +804,14 @@ The following object is masked from ‘package:DelayedArray’:
 
     type
 
+The following object is masked from ‘package:base’:
+
+    strsplit
+
 
 Attaching package: ‘Biostrings’
 
+Loading required package: Rsamtools
 The following object is masked from ‘package:DelayedArray’:
 
     type
@@ -737,18 +821,6 @@ The following object is masked from ‘package:base’:
     strsplit
 
 Loading required package: Rsamtools
-The following object is masked from ‘package:base’:
-
-    strsplit
-
-Loading required package: Rsamtools
-
-Attaching package: ‘Biostrings’
-
-The following object is masked from ‘package:DelayedArray’:
-
-    type
-
 The following object is masked from ‘package:base’:
 
     strsplit
@@ -768,6 +840,21 @@ The following object is masked from ‘package:base’:
 Loading required package: Rsamtools
 
 Attaching package: ‘GenomicAlignments’
+
+The following object is masked from ‘package:data.table’:
+
+    last
+
+[1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795435.trans.bam"
+
+Attaching package: ‘GenomicAlignments’
+
+
+Attaching package: ‘GenomicAlignments’
+
+The following object is masked from ‘package:data.table’:
+
+    last
 
 The following object is masked from ‘package:data.table’:
 
@@ -808,26 +895,11 @@ The following object is masked from ‘package:data.table’:
 
     last
 
-
-Attaching package: ‘GenomicAlignments’
-
-The following object is masked from ‘package:data.table’:
-
-    last
-
-
-Attaching package: ‘GenomicAlignments’
-
-The following object is masked from ‘package:data.table’:
-
-    last
-
-[1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795429.trans.bam"
 [1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795437.trans.bam"
 [1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795425.trans.bam"
-[1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795439.trans.bam"
-[1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795435.trans.bam"
 [1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795427.trans.bam"
+[1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795429.trans.bam"
+[1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795439.trans.bam"
 [1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795431.trans.bam"
 [1] "Reading /Users/jordan/Desktop/transcriptome_isrib/transcriptome_bams/merge/SRR1795433.trans.bam"
 [1] "Processing 56629803 BAM records..."
