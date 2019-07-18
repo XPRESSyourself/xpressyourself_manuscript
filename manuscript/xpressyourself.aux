@@ -9,15 +9,20 @@
 \citation{ingolia_meth,weinberg_reports}
 \citation{encode_pipeline,gdc_pipeline}
 \citation{pavlidis_pipeline,nfcore_pipeline,umcu_pipeline,cellgeni_pipeline}
-\citation{dnanexus_pipeline,nextflow_pipeline,galaxy}
+\citation{dnanexus_pipeline,nextflow_pipeline,galaxy,ribogalaxy}
 \citation{fp_range}
 \citation{igv}
+\citation{xpressyourself}
+\citation{tcga}
+\citation{xpresspipe_docs}
 \citation{htseq}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Results}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}XPRESSpipe}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Summary of XPRESSpipe pipeline user parameters.}\relax }}{5}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{Tab:xpresspipe}{{1}{5}{\textbf {Summary of XPRESSpipe pipeline user parameters.}\relax }{}{}}
+\citation{documentation}
+\citation{ensembl}
 \citation{star}
 \citation{alignment_benchmark}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}User Aids}{6}}
@@ -59,10 +64,12 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.14}Codon Phasing/Periodicity Estimation Profile}{10}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.15}Identify Problematic rRNA Fragments from Ribosome Footprinting for Depletion}{10}}
 \citation{deseq2}
+\citation{xpresspipe_docs}
 \citation{multiqc}
 \citation{fastqc}
 \citation{matplotlib}
 \citation{seaborn}
+\citation{xpressplot_docs}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.16}Differential Expression Analysis}{11}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.17}Outputs}{11}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {An example schematic of the inputs required by XPRESSpipe and organization of the outputs.} Representation of the general steps performed by XPRESSpipe and data and log outputs. Steps in parentheses are optional to the user.\relax }}{12}}
@@ -97,15 +104,22 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Analysis of previously published ISR TE data using XPRESSpipe.} A-C) Log\textsubscript  {2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript  {2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit  {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }}{18}}
 \newlabel{fig:figure3}{{3}{18}{\textbf {Analysis of previously published ISR TE data using XPRESSpipe.} A-C) Log\textsubscript {2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript {2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }{}{}}
 \citation{isrib_neuroprotective,isrib_neuroprotective2,isrib_neuroprotective3,isrib_neuroprotective4}
+\citation{genecards,ncbi,uniprot}
 \citation{circligase_bias}
 \citation{slc1a1_neurotoxic}
 \citation{eif2b_neuroprotective,isrib_riboseq,isrib_structure}
+\citation{tcga}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Translationally down-regulated genes during acute Tm treatment and recovered regulation during Tm + ISRIB treatment.} Gene names with an asterisk indicate these genes were identified as significantly down-regulated during Tm treatment in the original manuscript.\relax }}{20}}
 \newlabel{tab:targets}{{2}{20}{\textbf {Translationally down-regulated genes during acute Tm treatment and recovered regulation during Tm + ISRIB treatment.} Gene names with an asterisk indicate these genes were identified as significantly down-regulated during Tm treatment in the original manuscript.\relax }{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Performance Validation Using TCGA Data}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{21}}
+\citation{manuscript}
+\citation{aws}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Cost Analysis}{21}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Pipeline validation using publicly available TCGA count data.} Correlations were calculated between publicly available count data from TCGA samples and the count data processed by XPRESSpipe. Pseudogenes were excluded from the analysis. All reported $\rho $ values are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit  {Homo sapiens} build CRCh38v96 using an unmodified GTF.\relax }}{22}}
 \newlabel{fig:figure4}{{4}{22}{\textbf {Pipeline validation using publicly available TCGA count data.} Correlations were calculated between publicly available count data from TCGA samples and the count data processed by XPRESSpipe. Pseudogenes were excluded from the analysis. All reported $\rho $ values are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit {Homo sapiens} build CRCh38v96 using an unmodified GTF.\relax }{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {XPRESSpipe processing statistics for dataset GSE65778.}\relax }}{22}}
+\newlabel{tab:chpc_performance}{{3}{22}{\textbf {XPRESSpipe processing statistics for dataset GSE65778.}\relax }{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{23}}
 \citation{fastp}
 \citation{star}
 \citation{samtools}
@@ -124,8 +138,8 @@
 \citation{dupradar}
 \citation{ribowaltz}
 \citation{deseq2}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{23}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Materials and Methods}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{24}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Materials and Methods}{24}}
 \citation{pandas}
 \citation{numpy1,numpy2}
 \citation{scipy}
@@ -134,49 +148,65 @@
 \citation{plotly}
 \citation{sklearn}
 \citation{sva}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Summary of dependency software, accession location, and purpose in the XPRESSpipe package.}\relax }}{24}}
-\newlabel{Tab:software_pipe}{{3}{24}{\textbf {Summary of dependency software, accession location, and purpose in the XPRESSpipe package.}\relax }{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Summary of dependency software, accession location, and purpose in the XPRESSplot package.}\relax }}{24}}
-\newlabel{Tab:software_plot}{{4}{24}{\textbf {Summary of dependency software, accession location, and purpose in the XPRESSplot package.}\relax }{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Software Dependencies}{24}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GTF Modification}{24}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Summary of dependency software, accession location, and purpose in the XPRESSpipe package.}\relax }}{25}}
+\newlabel{Tab:software_pipe}{{4}{25}{\textbf {Summary of dependency software, accession location, and purpose in the XPRESSpipe package.}\relax }{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Summary of dependency software, accession location, and purpose in the XPRESSplot package.}\relax }}{25}}
+\newlabel{Tab:software_plot}{{5}{25}{\textbf {Summary of dependency software, accession location, and purpose in the XPRESSplot package.}\relax }{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Software Dependencies}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GTF Modification}{25}}
 \citation{ensembl_canon}
 \citation{ingolia_meth}
 \citation{ribowaltz}
 \citation{pandas}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Flattened GTF Records}{25}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Normalization}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Flattened GTF Records}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Normalization}{26}}
 \citation{pandas}
 \citation{matplotlib}
 \citation{numpy1,numpy2}
 \citation{scipy}
 \citation{ribowaltz}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Quality Control Summary Plotting}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Metagene Estimation}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Gene Coverage Plotting}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Quality Control Summary Plotting}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Metagene Estimation}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Gene Coverage Plotting}{27}}
 \citation{fastqc}
 \citation{blast}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Periodicity}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}rRNA Probe}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Confidence Interval Plotting}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Periodicity}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}rRNA Probe}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}Confidence Interval Plotting}{28}}
+\citation{manuscript}
 \citation{spearman_rnaseq}
 \citation{deseq2}
+\citation{manuscript}
 \citation{deseq2,isrib_riboseq,ingolia_meth}
 \citation{igv}
 \citation{plotly}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}Ribosome Profiling Data Analysis}{28}}
+\citation{tcga}
+\citation{dbgap}
 \citation{spearman_rnaseq}
 \citation{plotly}
+\citation{manuscript}
+\citation{aws_ec2,aws_s3}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}Ribosome Profiling Data Analysis}{29}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.12}TCGA Data Analysis}{29}}
+\citation{isrib_geo}
+\citation{tcga_data}
+\citation{xpressyourself}
+\citation{xpressyourself}
 \citation{readthedocs}
+\citation{xpresspipe_docs}
+\citation{xpressplot_docs}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.13}Cost Analysis}{30}}
+\citation{manuscript}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Software Description}\relax }}{31}}
+\citation{tcga}
 \bibdata{manubib}
 \bibcite{byron_nrg}{1}
 \bibcite{ingolia_science}{2}
 \bibcite{costello_npjsba}{3}
 \bibcite{funari_science}{4}
 \bibcite{ingolia_meth}{5}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Author ORCIDs}\relax }}{32}}
 \bibcite{gerashchenko_nar}{6}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Author ORCIDs}\relax }}{31}}
 \bibcite{artieri_gr}{7}
 \bibcite{hussman_plosg}{8}
 \bibcite{weinberg_reports}{9}
@@ -189,67 +219,84 @@
 \bibcite{dnanexus_pipeline}{16}
 \bibcite{nextflow_pipeline}{17}
 \bibcite{galaxy}{18}
-\bibcite{fp_range}{19}
-\bibcite{igv}{20}
-\bibcite{htseq}{21}
-\bibcite{star}{22}
-\bibcite{alignment_benchmark}{23}
-\bibcite{ensembl_canon}{24}
-\bibcite{cufflinks}{25}
-\bibcite{fastp}{26}
-\bibcite{umi}{27}
-\bibcite{umitools}{28}
-\bibcite{baruzzo_natmeth}{29}
-\bibcite{samtools}{30}
-\bibcite{bedtools}{31}
-\bibcite{count_benchmark}{32}
-\bibcite{evans_briefbio}{33}
-\bibcite{sva}{34}
-\bibcite{dupradar}{35}
-\bibcite{ribowaltz}{36}
-\bibcite{deseq2}{37}
-\bibcite{multiqc}{38}
-\bibcite{fastqc}{39}
-\bibcite{matplotlib}{40}
-\bibcite{seaborn}{41}
-\bibcite{scikit_learn}{42}
-\bibcite{numpy1}{43}
-\bibcite{numpy2}{44}
-\bibcite{scipy}{45}
-\bibcite{harding_isr}{46}
-\bibcite{isr_disease}{47}
-\bibcite{isrib_activation}{48}
-\bibcite{isrib_structure}{49}
-\bibcite{isrib_riboseq}{50}
-\bibcite{isrib_neuroprotective}{51}
-\bibcite{isrib_neuroprotective2}{52}
-\bibcite{isrib_neuroprotective3}{53}
-\bibcite{isrib_neuroprotective4}{54}
-\bibcite{tophat2}{55}
-\bibcite{circligase_bias}{56}
-\bibcite{slc1a1_neurotoxic}{57}
-\bibcite{eif2b_neuroprotective}{58}
-\bibcite{pandas}{59}
-\bibcite{sklearn}{60}
-\bibcite{genomicalign}{61}
-\bibcite{plotly}{62}
-\bibcite{blast}{63}
-\bibcite{spearman_rnaseq}{64}
-\bibcite{readthedocs}{65}
+\bibcite{ribogalaxy}{19}
+\bibcite{fp_range}{20}
+\bibcite{igv}{21}
+\bibcite{xpressyourself}{22}
+\bibcite{tcga}{23}
+\bibcite{xpresspipe_docs}{24}
+\bibcite{htseq}{25}
+\bibcite{documentation}{26}
+\bibcite{ensembl}{27}
+\bibcite{star}{28}
+\bibcite{alignment_benchmark}{29}
+\bibcite{ensembl_canon}{30}
+\bibcite{cufflinks}{31}
+\bibcite{fastp}{32}
+\bibcite{umi}{33}
+\bibcite{umitools}{34}
+\bibcite{baruzzo_natmeth}{35}
+\bibcite{samtools}{36}
+\bibcite{bedtools}{37}
+\bibcite{count_benchmark}{38}
+\bibcite{evans_briefbio}{39}
+\bibcite{sva}{40}
+\bibcite{dupradar}{41}
+\bibcite{ribowaltz}{42}
+\bibcite{deseq2}{43}
+\bibcite{multiqc}{44}
+\bibcite{fastqc}{45}
+\bibcite{matplotlib}{46}
+\bibcite{seaborn}{47}
+\bibcite{xpressplot_docs}{48}
+\bibcite{scikit_learn}{49}
+\bibcite{numpy1}{50}
+\bibcite{numpy2}{51}
+\bibcite{scipy}{52}
+\bibcite{harding_isr}{53}
+\bibcite{isr_disease}{54}
+\bibcite{isrib_activation}{55}
+\bibcite{isrib_structure}{56}
+\bibcite{isrib_riboseq}{57}
+\bibcite{isrib_neuroprotective}{58}
+\bibcite{isrib_neuroprotective2}{59}
+\bibcite{isrib_neuroprotective3}{60}
+\bibcite{isrib_neuroprotective4}{61}
+\bibcite{tophat2}{62}
+\bibcite{genecards}{63}
+\bibcite{ncbi}{64}
+\bibcite{uniprot}{65}
+\bibcite{circligase_bias}{66}
+\bibcite{slc1a1_neurotoxic}{67}
+\bibcite{eif2b_neuroprotective}{68}
+\bibcite{manuscript}{69}
+\bibcite{aws}{70}
+\bibcite{pandas}{71}
+\bibcite{sklearn}{72}
+\bibcite{genomicalign}{73}
+\bibcite{plotly}{74}
+\bibcite{blast}{75}
+\bibcite{spearman_rnaseq}{76}
+\bibcite{dbgap}{77}
+\bibcite{aws_ec2}{78}
+\bibcite{aws_s3}{79}
+\bibcite{isrib_geo}{80}
+\bibcite{tcga_data}{81}
+\bibcite{readthedocs}{82}
 \bibstyle{Science}
-\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces \textbf  {Comparison between IGV browser and geneCoverage output.} A) Gene coverage from IGV (above) and XPRESSpipe (below) for SLC1A1. B) Gene coverage from IGV (above) and XPRESSpipe (below) for TSPAN33. Introns collapsed by XPRESSpipe. Green box, region shown in corresponding IGV window comparing outputs between the two programs.\relax }}{35}}
-\newlabel{fig:supplement1}{{S1}{35}{\textbf {Comparison between IGV browser and geneCoverage output.} A) Gene coverage from IGV (above) and XPRESSpipe (below) for SLC1A1. B) Gene coverage from IGV (above) and XPRESSpipe (below) for TSPAN33. Introns collapsed by XPRESSpipe. Green box, region shown in corresponding IGV window comparing outputs between the two programs.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S2}{\ignorespaces \textbf  {Original ISRIB count data plotted against XPRESSpipe-processed data reveals systematic differences between the analytical regimes.} A) Selected highlighted genes show consistent differences between processing methods. B) Spearman correlation plots using the data table provided as supplementary data with the original ISRIB manuscript comparing biological replicates. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{36}}
-\newlabel{fig:supplement2}{{S2}{36}{\textbf {Original ISRIB count data plotted against XPRESSpipe-processed data reveals systematic differences between the analytical regimes.} A) Selected highlighted genes show consistent differences between processing methods. B) Spearman correlation plots using the data table provided as supplementary data with the original ISRIB manuscript comparing biological replicates. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S3}{\ignorespaces \textbf  {Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligible improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{37}}
-\newlabel{fig:supplement3}{{S3}{37}{\textbf {Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligible improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S4}{\ignorespaces \textbf  {Gene coverage plots for neurologically annotated genes passing strict thresholding.} Coverage plots were generated using XPRESSpipe's geneCoverage module, which collapses introns within the representation.\relax }}{38}}
-\newlabel{fig:supplement4}{{S4}{38}{\textbf {Gene coverage plots for neurologically annotated genes passing strict thresholding.} Coverage plots were generated using XPRESSpipe's geneCoverage module, which collapses introns within the representation.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S5}{\ignorespaces \textbf  {Sample RNA-Seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{39}}
-\newlabel{fig:supplement5}{{S5}{39}{\textbf {Sample RNA-Seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S6}{\ignorespaces \textbf  {Effect of pseudogene inclusion on comparability between processing regimes.} Spearman correlations between XPRESSpipe and TCGA-processed count data with pseudogene counts included. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{40}}
-\newlabel{fig:supplement6}{{S6}{40}{\textbf {Effect of pseudogene inclusion on comparability between processing regimes.} Spearman correlations between XPRESSpipe and TCGA-processed count data with pseudogene counts included. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S7}{\ignorespaces \textbf  {Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and a current reference transcriptome. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{41}}
-\newlabel{fig:supplement7}{{S7}{41}{\textbf {Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and a current reference transcriptome. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S8}{\ignorespaces \textbf  {Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v96. Purple points, protein-coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.\relax }}{42}}
-\newlabel{fig:supplement8}{{S8}{42}{\textbf {Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v96. Purple points, protein-coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces \textbf  {Comparison between IGV browser and geneCoverage output.} A) Gene coverage from IGV (above) and XPRESSpipe (below) for SLC1A1. B) Gene coverage from IGV (above) and XPRESSpipe (below) for TSPAN33. Introns collapsed by XPRESSpipe. Green box, region shown in corresponding IGV window comparing outputs between the two programs.\relax }}{39}}
+\newlabel{fig:supplement1}{{S1}{39}{\textbf {Comparison between IGV browser and geneCoverage output.} A) Gene coverage from IGV (above) and XPRESSpipe (below) for SLC1A1. B) Gene coverage from IGV (above) and XPRESSpipe (below) for TSPAN33. Introns collapsed by XPRESSpipe. Green box, region shown in corresponding IGV window comparing outputs between the two programs.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S2}{\ignorespaces \textbf  {Original ISRIB count data plotted against XPRESSpipe-processed data reveals systematic differences between the analytical regimes.} A) Selected highlighted genes show consistent differences between processing methods. B) Spearman correlation plots using the data table provided as supplementary data with the original ISRIB manuscript comparing biological replicates. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{40}}
+\newlabel{fig:supplement2}{{S2}{40}{\textbf {Original ISRIB count data plotted against XPRESSpipe-processed data reveals systematic differences between the analytical regimes.} A) Selected highlighted genes show consistent differences between processing methods. B) Spearman correlation plots using the data table provided as supplementary data with the original ISRIB manuscript comparing biological replicates. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S3}{\ignorespaces \textbf  {Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligible improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{41}}
+\newlabel{fig:supplement3}{{S3}{41}{\textbf {Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligible improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S4}{\ignorespaces \textbf  {Gene coverage plots for neurologically annotated genes passing strict thresholding.} Coverage plots were generated using XPRESSpipe's geneCoverage module, which collapses introns within the representation.\relax }}{42}}
+\newlabel{fig:supplement4}{{S4}{42}{\textbf {Gene coverage plots for neurologically annotated genes passing strict thresholding.} Coverage plots were generated using XPRESSpipe's geneCoverage module, which collapses introns within the representation.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S5}{\ignorespaces \textbf  {Sample RNA-Seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{43}}
+\newlabel{fig:supplement5}{{S5}{43}{\textbf {Sample RNA-Seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S6}{\ignorespaces \textbf  {Effect of pseudogene inclusion on comparability between processing regimes.} Spearman correlations between XPRESSpipe and TCGA-processed count data with pseudogene counts included. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{44}}
+\newlabel{fig:supplement6}{{S6}{44}{\textbf {Effect of pseudogene inclusion on comparability between processing regimes.} Spearman correlations between XPRESSpipe and TCGA-processed count data with pseudogene counts included. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S7}{\ignorespaces \textbf  {Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and a current reference transcriptome. All $\rho $ values reported are Spearman correlation coefficients.\relax }}{45}}
+\newlabel{fig:supplement7}{{S7}{45}{\textbf {Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and a current reference transcriptome. All $\rho $ values reported are Spearman correlation coefficients.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {S8}{\ignorespaces \textbf  {Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v96. Purple points, protein-coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.\relax }}{46}}
+\newlabel{fig:supplement8}{{S8}{46}{\textbf {Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v96. Purple points, protein-coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.\relax }{}{}}

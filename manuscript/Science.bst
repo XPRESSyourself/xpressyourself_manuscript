@@ -46,6 +46,7 @@ ENTRY
     edition
     editor
     howpublished
+    urldate
     institution
     journal
     key
@@ -55,6 +56,7 @@ ENTRY
     organization
     pages
     publisher
+    doi
     school
     series
     title
@@ -79,7 +81,7 @@ STRINGS { s t }
 FUNCTION {output.nonnull}
 { 's :=
   output.state mid.sentence =
-    { ", " * write$ }
+    { ". " * write$ }
     { output.state after.block =
         { add.period$ write$
           newline$
@@ -585,7 +587,7 @@ FUNCTION {format.note}
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { title "t" change.case$
+    { title
     }
   if$
 }
@@ -1036,6 +1038,7 @@ FUNCTION {format.organization.address}
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
+  title output
   crossref missing$
     { journal
       emphasize
@@ -1050,6 +1053,7 @@ FUNCTION {article}
   if$
   new.sentence
   format.note output
+  doi output
   fin.entry
 }
 
@@ -1087,10 +1091,12 @@ FUNCTION {booklet}
   format.authors output
   format.title "title" output.check
   howpublished output
+  urldate output
   address output
   format.date output
   new.sentence
   format.note output
+  doi output
   fin.entry
 }
 
@@ -1223,9 +1229,11 @@ FUNCTION {misc}
   format.authors output
   format.title output
   howpublished output
+  urldate output
   format.date output
   new.sentence
   format.note output
+  doi output
   fin.entry
   empty.misc.check
 }

@@ -1,215 +1,375 @@
 \begin{thebibliography}{10}
 
 \bibitem{byron_nrg}
-S.~Byron, K.~V. Keuren-Jensen, D.~Engelthaler, J.~Carpten, D.~Craig, {\it Nat
-  Rev Genet\/} {\bf 17}, 392–393 (2016).
+S.~Byron, K.~V. Keuren-Jensen, D.~Engelthaler, J.~Carpten, D.~Craig.
+  Translating RNA sequencing into clinical diagnostics: opportunities and
+  challenges. {\it Nat Rev Genet\/} {\bf 17}, 392–393 (2016). Available from:
+  https://doi.org/10.1038/nrg.2016.10.
 
 \bibitem{ingolia_science}
-N.~Ingolia, S.~Ghaemmaghami, J.~Newman, J.~Weissman, {\it Science\/} {\bf 324},
-  218 (2009).
+N.~Ingolia, S.~Ghaemmaghami, J.~Newman, J.~Weissman. Genome-wide analysis in
+  vivo of translation with nucleotide resolution using ribosome profiling. {\it
+  Science\/} {\bf 324}, 218 (2009). Available from:
+  https://doi.org/10.1126/science.1168978.
 
 \bibitem{costello_npjsba}
-Z.~Costello, H.~Martin, {\it NPJ Syst Biol Appl\/} {\bf 4} (2018).
+Z.~Costello, H.~Martin. A machine learning approach to predict metabolic
+  pathway dynamics from time-series multiomics data. {\it NPJ Syst Biol Appl\/}
+  {\bf 4} (2018). Available from: https://doi.org/10.1038/s41540-018-0054-3.
 
 \bibitem{funari_science}
-V.~Funari, S.~Canosa, {\it Science\/} {\bf 344}, 653 (2014).
+V.~Funari, S.~Canosa. The Importance of Bioinformatics in NGS: Breaking the
+  Bottleneck in Data Interpretation. {\it Science\/} {\bf 344}, 653 (2014).
+  Available from: https://doi.org/10.1126/science.344.6184.653-c.
 
 \bibitem{ingolia_meth}
-N.~McGlincy, N.~Ingolia, {\it Methods\/} {\bf 126}, 112 (2017).
+N.~McGlincy, N.~Ingolia. Transcriptome-wide measurement of translation by
+  ribosome profiling. {\it Methods\/} {\bf 126}, 112 (2017). Available from:
+  https://doi.org/10.1016/j.ymeth.2017.05.028.
 
 \bibitem{gerashchenko_nar}
-M.~Gerashchenko, V.~Gladyshev, {\it Nucleic Acids Res\/} {\bf 42} (2014).
+M.~Gerashchenko, V.~Gladyshev. Translation inhibitors cause abnormalities in
+  ribosome profiling experiments. {\it Nucleic Acids Res\/} {\bf 42} (2014).
+  Available from: https://doi.org/10.1093/nar/gku671.
 
 \bibitem{artieri_gr}
-C.~Artieri, H.~Fraser, {\it Genome Res\/} {\bf 24}, 2011 (2014).
+C.~Artieri, H.~Fraser. Accounting for biases in riboprofiling data indicates a
+  major role for proline in stalling translation. {\it Genome Res\/} {\bf 24},
+  2011 (2014). Available from: https://doi.org/10.1101/gr.175893.114.
 
 \bibitem{hussman_plosg}
-J.~Hussmann, S.~Patchett, A.~Johnson, S.~Sawyer, W.~Press, {\it PLoS Genet\/}
-  {\bf 11} (2015).
+J.~Hussmann, S.~Patchett, A.~Johnson, S.~Sawyer, W.~Press. Understanding Biases
+  in Ribosome Profiling Experiments Reveals Signatures of Translation Dynamics
+  in Yeast. {\it PLoS Genet\/} {\bf 11} (2015). Available from:
+  https://doi.org/10.1371/journal.pgen.1005732.
 
 \bibitem{weinberg_reports}
-D.~Weinberg, {\it et~al.\/}, {\it Cell Rep\/} {\bf 14}, 1787 (2016).
+D.~Weinberg, {\it et~al.\/}. Improved Ribosome-Footprint and mRNA Measurements
+  Provide Insights into Dynamics and Regulation of Yeast Translation. {\it Cell
+  Rep\/} {\bf 14}, 1787 (2016). Available from:
+  https://doi.org/10.1016/j.celrep.2016.01.043.
 
 \bibitem{encode_pipeline}
-ENCODE, \url{https://www.encodeproject.org/rna-seq/}.
+ENCODE. \url{https://www.encodeproject.org/rna-seq/}.
 
 \bibitem{gdc_pipeline}
-GDC,
+GDC.
   \url{https://docs.gdc.cancer.gov/Data/Bioinformatics_Pipelines/Expression_mRNA_Pipeline/}.
 
 \bibitem{pavlidis_pipeline}
-P.~Lab, \url{https://github.com/PavlidisLab/rnaseq-pipeline}.
+Pavlidis Lab. \url{https://github.com/PavlidisLab/rnaseq-pipeline}.
 
 \bibitem{nfcore_pipeline}
-Nextflow, \url{https://github.com/nf-core/rnaseq}.
+Nextflow. \url{https://github.com/nf-core/rnaseq}.
 
 \bibitem{umcu_pipeline}
-U.~Genetics, \url{https://github.com/UMCUGenetics/RNASeq}.
+UMCU Genetics. \url{https://github.com/UMCUGenetics/RNASeq}.
 
 \bibitem{cellgeni_pipeline}
-C.~G. Informatics, \url{https://github.com/cellgeni/rnaseq}.
+Cellular Genetics Informatics. \url{https://github.com/cellgeni/rnaseq}.
 
 \bibitem{dnanexus_pipeline}
-DNAnexus, \url{https://github.com/dnanexus/tophat_cufflinks_rnaseq}.
+DNAnexus. \url{https://github.com/dnanexus/tophat_cufflinks_rnaseq}.
 
 \bibitem{nextflow_pipeline}
-Nextflow, \url{https://www.nextflow.io/example4.html}.
+Nextflow. \url{https://www.nextflow.io/example4.html}.
 
 \bibitem{galaxy}
-E.~Afgan, {\it et~al.\/}, {\it Nucleic Acids Res.\/} {\bf 46}, W537 (2018).
+E.~Afgan, {\it et~al.\/}. The Galaxy platform for accessible, reproducible and
+  collaborative biomedical analyses: 2018 update. {\it Nucleic Acids Res.\/}
+  {\bf 46}, W537 (2018). Available from: https://doi.org/10.1093/nar/gky379.
+
+\bibitem{ribogalaxy}
+A.~Michel, {\it et~al.\/}. RiboGalaxy: A browser based platform for the
+  alignment, analysis and visualization of ribosome profiling data.. {\it RNA
+  Biol\/} {\bf 13}, 316 (2016). Available from:
+  https://doi.org/10.1080/15476286.2016.1141862.
 
 \bibitem{fp_range}
-C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green, {\it Mol Cell\/} {\bf 73} (2019).
+C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green. High-Resolution Ribosome Profiling
+  Defines Discrete Ribosome Elongation States and Translational Regulation
+  during Cellular Stress. {\it Mol Cell\/} {\bf 73} (2019). Available from:
+  https://doi.org/10.1016/j.molcel.2018.12.009.
 
 \bibitem{igv}
-J.~Robinson, {\it et~al.\/}, {\it Nat Biotechnol\/} {\bf 29}, 24 (2011).
+J.~Robinson, {\it et~al.\/}. Integrative Genomics Viewer. {\it Nat
+  Biotechnol\/} {\bf 29}, 24 (2011). Available from:
+  https://doi.org/10.1038/nbt.1754.
+
+\bibitem{xpressyourself}
+XPRESSyourself. \url{https://github.com/XPRESSyourself/}.
+
+\bibitem{tcga}
+The Cancer Genome Atlas. \url{https://portal.gdc.cancer.gov}.
+
+\bibitem{xpresspipe_docs}
+XPRESSpipe documentation. \url{https://xpresspipe.readthedocs.io/en/latest/}.
 
 \bibitem{htseq}
-S.~Anders, P.~Pyl, W.~Huber, {\it Bioinformatics\/} {\bf 31}, 166 (2015).
+S.~Anders, P.~Pyl, W.~Huber. HTSeq--a Python framework to work with
+  high-throughput sequencing data. {\it Bioinformatics\/} {\bf 31}, 166 (2015).
+  Available from: https://doi.org/10.1093/bioinformatics/btu638.
+
+\bibitem{documentation}
+XPRESSpipe documentation. \url{https://xpresspipe.readthedocs.io/en/latest/}.
+
+\bibitem{ensembl}
+Ensembl. \url{https://uswest.ensembl.org}.
 
 \bibitem{star}
-A.~Dobin, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 29}, 15 (2013).
+A.~Dobin, {\it et~al.\/}. STAR: ultrafast universal RNA-seq aligner. {\it
+  Bioinformatics\/} {\bf 29}, 15 (2013). Available from:
+  https://doi.org/10.1093/bioinformatics/bts635.
 
 \bibitem{alignment_benchmark}
-G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135 (2017).
+G.~Baruzzo, {\it et~al.\/}. Simulation-based comprehensive benchmarking of
+  RNA-seq aligners. {\it Nat Methods\/} {\bf 14}, 135 (2017). Available from:
+  https://doi.org/10.1038/nmeth.4106.
 
 \bibitem{ensembl_canon}
-Ensembl, \url{https://uswest.ensembl.org/Help/Glossary}.
+Ensembl. \url{https://uswest.ensembl.org/Help/Glossary}.
 
 \bibitem{cufflinks}
-C.~Trapnell, {\it et~al.\/}, {\it Nat Protoc\/} {\bf 7} (2012).
+C.~Trapnell, {\it et~al.\/}. Differential gene and transcript expression
+  analysis of RNA-seq experiments with TopHat and Cufflinks. {\it Nat Protoc\/}
+  {\bf 7} (2012). Available from: https://doi.org/10.1038/nprot.2012.016.
 
 \bibitem{fastp}
-S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu, {\it Bioinformatics\/} {\bf 34} (2018).
+S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu. fastp: an ultra-fast all-in-one FASTQ
+  preprocessor. {\it Bioinformatics\/} {\bf 34} (2018). Available from:
+  https://doi.org/10.1093/bioinformatics/bty560.
 
 \bibitem{umi}
-Y.~Fu, P.~Wu, T.~Beane, P.~Zamore, Z.~Weng, {\it BMC Genomics\/} {\bf 19}
-  (2018).
+Y.~Fu, P.~Wu, T.~Beane, P.~Zamore, Z.~Weng. Elimination of PCR duplicates in
+  RNA-seq and small RNA-seq using unique molecular identifiers. {\it BMC
+  Genomics\/} {\bf 19} (2018). Available from:
+  https://doi.org/10.1186/s12864-018-4933-1.
 
 \bibitem{umitools}
-T.~Smith, A.~Heger, I.~Sudbery, {\it Genome Res\/} {\bf 27} (2017).
+T.~Smith, A.~Heger, I.~Sudbery. UMI-tools: Modelling sequencing errors in
+  Unique Molecular Identifiers to improve quantification accuracy. {\it Genome
+  Res\/} {\bf 27} (2017). Available from:
+  https://doi.org/10.1101/gr.209601.116.
 
 \bibitem{baruzzo_natmeth}
-G.~Baruzzo, {\it et~al.\/}, {\it Nat Methods\/} {\bf 14}, 135–139 (2017).
+G.~Baruzzo, {\it et~al.\/}. Simulation-based comprehensive benchmarking of
+  RNA-seq aligners. {\it Nat Methods\/} {\bf 14}, 135–139 (2017). Available
+  from: https://doi.org/10.1038/nmeth.4106.
 
 \bibitem{samtools}
-H.~Li, {\it et~al.\/}, {\it Bioinformatics\/} {\bf 25}, 2078 (2009).
+H.~Li, {\it et~al.\/}. The Sequence Alignment/Map format and SAMtools. {\it
+  Bioinformatics\/} {\bf 25}, 2078 (2009). Available from:
+  https://doi.org/10.1093/bioinformatics/btp352.
 
 \bibitem{bedtools}
-A.~Quinlan, I.~Hall, {\it Bioinformatics\/} {\bf 26}, 841 (2010).
+A.~Quinlan, I.~Hall. BEDTools: a flexible suite of utilities for comparing
+  genomic features. {\it Bioinformatics\/} {\bf 26}, 841 (2010). Available
+  from: https://doi.org/10.1093/bioinformatics/btq033.
 
 \bibitem{count_benchmark}
-C.~Robert, M.~Watson, {\it Genome Biol\/} {\bf 16} (2015).
+C.~Robert, M.~Watson. Errors in RNA-Seq quantification affect genes of
+  relevance to human disease. {\it Genome Biol\/} {\bf 16} (2015). Available
+  from: https://doi.org/10.1186/s13059-015-0734-x.
 
 \bibitem{evans_briefbio}
-C.~Evans, J.~Hardin, D.~Stoebel, {\it Brief Bioinform\/} {\bf 19}, 776–792
-  (2018).
+C.~Evans, J.~Hardin, D.~Stoebel. Selecting between-sample RNA-Seq normalization
+  methods from the perspective of their assumptions. {\it Brief Bioinform\/}
+  {\bf 19}, 776–792 (2018). Available from:
+  https://doi.org/10.1093/bib/bbx008.
 
 \bibitem{sva}
-J.~Leek, W.~Johnson, H.~Parker, A.~Jaffe, J.~Storey, {\it Bioinformatics\/}
-  {\bf 28} (2012).
+J.~Leek, W.~Johnson, H.~Parker, A.~Jaffe, J.~Storey. The sva package for
+  removing batch effects and other unwanted variation in high-throughput
+  experiments. {\it Bioinformatics\/} {\bf 28} (2012). Available from:
+  https://doi.org/10.1093/bioinformatics/bts034.
 
 \bibitem{dupradar}
-S.~Sayols, D.~Scherzinger, H.~Klein, {\it BMC Bioinformatics\/} {\bf 17}, 428
-  (2016).
+S.~Sayols, D.~Scherzinger, H.~Klein. dupRadar: a Bioconductor package for the
+  assessment of PCR artifacts in RNA-Seq data. {\it BMC Bioinformatics\/} {\bf
+  17}, 428 (2016). Available from: https://doi.org/10.1186/s12859-016-1276-2.
 
 \bibitem{ribowaltz}
-F.~Lauria, {\it et~al.\/}, {\it PLoS Comput Biol\/} {\bf 14} (2018).
+F.~Lauria, {\it et~al.\/}. riboWaltz: Optimization of ribosome P-site
+  positioning in ribosome profiling data. {\it PLoS Comput Biol\/} {\bf 14}
+  (2018). Available from: https://doi.org/10.1371/journal.pcbi.1006169.
 
 \bibitem{deseq2}
-M.~Love, W.~Huber, S.~Anders, {\it Genome Biol\/} {\bf 15} (2014).
+M.~Love, W.~Huber, S.~Anders. Moderated estimation of fold change and
+  dispersion for RNA-seq data with DESeq2. {\it Genome Biol\/} {\bf 15} (2014).
+  Available from: https://doi.org/10.1186/s13059-014-0550-8.
 
 \bibitem{multiqc}
-P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller, {\it Bioinformatics\/} {\bf
-  32}, 3047–3048 (2016).
+P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller. MultiQC: summarize analysis
+  results for multiple tools and samples in a single report. {\it
+  Bioinformatics\/} {\bf 32}, 3047–3048 (2016). Available from:
+  https://doi.org/10.1093/bioinformatics/btw354.
 
 \bibitem{fastqc}
-S.~Andrews, Fastqc,
+S.~Andrews. FastQC.
   \url{http://www.bioinformatics.babraham.ac.uk/projects/fastqc/} (2010).
 
 \bibitem{matplotlib}
-J.~Hunter, {\it Computing In Science \& Engineering\/} {\bf 9}, 90 (2007).
+J.~Hunter. Matplotlib: A 2D graphics environment. {\it Computing In Science \&
+  Engineering\/} {\bf 9}, 90 (2007). Available from:
+  https://doi.org/10.1109/MCSE.2007.55.
 
 \bibitem{seaborn}
-M.~Waskom, et~al  (2012).
+M.~Waskom, et~al. seaborn  (2012). Available from:
+  https://doi.org/http://doi.org/10.5281/zenodo.1313201.
+
+\bibitem{xpressplot_docs}
+XPRESSplot documentation. \url{https://xpressplot.readthedocs.io/en/latest/}.
 
 \bibitem{scikit_learn}
-F.~Pedregosa, {\it et~al.\/}, {\it Journal of Machine Learning Research\/} {\bf
-  12}, 2825 (2011).
+F.~Pedregosa, {\it et~al.\/}. Scikit-learn: Machine Learning in Python. {\it
+  Journal of Machine Learning Research\/} {\bf 12}, 2825 (2011).
 
 \bibitem{numpy1}
-T.~Oliphant, {\it A guide to NumPy\/} (Trelgol Publishing, USA, 2006).
+T.~Oliphant. {\it A guide to NumPy\/} (Trelgol Publishing, USA, 2006).
 
 \bibitem{numpy2}
-S.~van~der Walt, S.~Colbert, G.~Varoquaux, {\it Computing in Science
-  Engineering\/} {\bf 13}, 22 (2011).
+S.~van~der Walt, S.~Colbert, G.~Varoquaux. The NumPy Array: A Structure for
+  Efficient Numerical Computation. {\it Computing in Science Engineering\/}
+  {\bf 13}, 22 (2011).
 
 \bibitem{scipy}
-E.~Jones, T.~Oliphant, P.~Peterson, {\it et~al.\/}, Scipy: Open source
-  scientific tools for python, \url{http://www.scipy.org/} (2001).
+E.~Jones, T.~Oliphant, P.~Peterson, {\it et~al.\/}. SciPy: Open source
+  scientific tools for Python. \url{http://www.scipy.org/} (2001).
 
 \bibitem{harding_isr}
-H.~Harding, {\it et~al.\/}, {\it Mol Cell\/} {\bf 11} (2003).
+H.~Harding, {\it et~al.\/}. An integrated stress response regulates amino acid
+  metabolism and resistance to oxidative stress. {\it Mol Cell\/} {\bf 11}
+  (2003). Available from: https://doi.org/10.1016/S1097-2765(03)00105-9.
 
 \bibitem{isr_disease}
-D.~Santos-Ribeiro, L.~Godinas, C.~Pilette, F.~Perros, {\it Drug Discov Today\/}
-  {\bf 23} (2018).
+D.~Santos-Ribeiro, L.~Godinas, C.~Pilette, F.~Perros. The integrated stress
+  response system in cardiovascular disease. {\it Drug Discov Today\/} {\bf 23}
+  (2018). Available from: https://doi.org/10.1016/j.drudis.2018.02.008.
 
 \bibitem{isrib_activation}
-H.~Rabouw, {\it et~al.\/}, {\it Proc Natl Acad Sci U S A\/} {\bf 116} (2019).
+H.~Rabouw, {\it et~al.\/}. Small molecule ISRIB suppresses the integrated
+  stress response within a defined window of activation. {\it Proc Natl Acad
+  Sci U S A\/} {\bf 116} (2019). Available from:
+  https://doi.org/10.1073/pnas.1815767116.
 
 \bibitem{isrib_structure}
-J.~Tsai, {\it et~al.\/}, {\it Science\/} {\bf 359} (2018).
+J.~Tsai, {\it et~al.\/}. Structure of the nucleotide exchange factor eIF2B
+  reveals mechanism of memory-enhancing molecule. {\it Science\/} {\bf 359}
+  (2018). Available from: https://doi.org/10.1126/science.aaq0939.
 
 \bibitem{isrib_riboseq}
-C.~Sidrauski1, A.~McGeachy, N.~Ingolia, P.~Walter, {\it eLIFE\/}  (2015).
+C.~Sidrauski1, A.~McGeachy, N.~Ingolia, P.~Walter. The small molecule ISRIB
+  reverses the effects of eIF2{\~a} phosphorylation on translation and stress
+  granule assembly. {\it eLife\/}  (2015). Available from:
+  https://doi.org/10.7554/eLife.05033.
 
 \bibitem{isrib_neuroprotective}
-A.~Choua, {\it et~al.\/}, {\it Proc Natl Acad Sci U S A\/} {\bf 114} (2017).
+A.~Choua, {\it et~al.\/}. Inhibition of the integrated stress response reverses
+  cognitive deficits after traumatic brain injury. {\it Proc Natl Acad Sci U S
+  A\/} {\bf 114} (2017). Available from:
+  https://doi.org/10.1073/pnas.1707661114.
 
 \bibitem{isrib_neuroprotective2}
-M.~Halliday, {\it et~al.\/}, {\it Cell Death Dis\/} {\bf 6} (2015).
+M.~Halliday, {\it et~al.\/}. Partial restoration of protein synthesis rates by
+  the small molecule ISRIB prevents neurodegeneration without pancreatic
+  toxicity. {\it Cell Death Dis\/} {\bf 6} (2015). Available from:
+  https://doi.org/10.1038/cddis.2015.49.
 
 \bibitem{isrib_neuroprotective3}
-C.~Sidrauski, {\it et~al.\/}, {\it Elife\/} {\bf 2} (2013).
+C.~Sidrauski, {\it et~al.\/}. Pharmacological brake-release of mRNA translation
+  enhances cognitive memory. {\it Elife\/} {\bf 2} (2013). Available from:
+  https://doi.org/10.7554/eLife.00498.
 
 \bibitem{isrib_neuroprotective4}
-Y.~Sekine, {\it et~al.\/}, {\it Science\/} {\bf 348} (2015).
+Y.~Sekine, {\it et~al.\/}. Stress responses. Mutations in a translation
+  initiation factor identify the target of a memory-enhancing compound. {\it
+  Science\/} {\bf 348} (2015). Available from:
+  https://doi.org/10.1126/science.aaa6986.
 
 \bibitem{tophat2}
-D.~Kim, {\it et~al.\/}, {\it Genome Biol\/} {\bf 14} (2013).
+D.~Kim, {\it et~al.\/}. TopHat2: accurate alignment of transcriptomes in the
+  presence of insertions, deletions and gene fusions. {\it Genome Biol\/} {\bf
+  14} (2013). Available from: https://doi.org/10.1186/gb-2013-14-4-r36.
+
+\bibitem{genecards}
+GeneCards. \url{https://www.genecards.org/}. Accessed 27 June 2019.
+
+\bibitem{ncbi}
+National Center for Biotechnology Information.
+  \url{https://www.ncbi.nlm.nih.gov/gene/}. Accessed 27 June 2019.
+
+\bibitem{uniprot}
+UniProt. \url{https://www.uniprot.org/uniprot/}. Accessed 27 June 2019.
 
 \bibitem{circligase_bias}
-R.~Tunney, {\it et~al.\/}, {\it Nat Struct Mol Biol\/} {\bf 25}, 577 (2018).
+R.~Tunney, {\it et~al.\/}. Accurate design of translational output by a neural
+  network model of ribosome distribution. {\it Nat Struct Mol Biol\/} {\bf 25},
+  577 (2018). Available from: https://doi.org/10.1038/s41594-018-0080-2.
 
 \bibitem{slc1a1_neurotoxic}
-L.~Vera-Portocarrero, {\it et~al.\/}, {\it Brain Res\/} {\bf 927} (2002).
+L.~Vera-Portocarrero, {\it et~al.\/}. Rapid changes in expression of glutamate
+  transporters after spinal cord injury. {\it Brain Res\/} {\bf 927} (2002).
+  Available from: https://doi.org/10.1016/S0006-8993(01)03329-7.
 
 \bibitem{eif2b_neuroprotective}
-Y.~Wong, {\it et~al.\/}, {\it Elife\/} {\bf 8} (2019).
+Y.~Wong, {\it et~al.\/}. eIF2B activator prevents neurological defects caused
+  by a chronic integrated stress response. {\it Elife\/} {\bf 8} (2019).
+  Available from: https://doi.org/10.7554/eLife.42940.
+
+\bibitem{manuscript}
+Manuscript code.
+  \url{https://github.com/XPRESSyourself/xpressyourself_manuscript/tree/master/supplemental_files}.
+  Available from: https://doi.org/DOI: 10.5281/zenodo.3337599.
+
+\bibitem{aws}
+Amazon Web Services. \url{https://aws.amazon.com}.
 
 \bibitem{pandas}
-W.~McKinney, {\it Proc of the 9th Python in Science Conf\/} pp. 51--56 (2010).
+W.~McKinney. Data Structures for Statistical Computing in Python. {\it Proc of
+  the 9th Python in Science Conf\/} pp. 51--56 (2010).
 
 \bibitem{sklearn}
-L.~Buitinck, {\it et~al.\/}, {\it ECML PKDD Workshop: Languages for Data Mining
-  and Machine Learning\/} (2013), pp. 108--122.
+L.~Buitinck, {\it et~al.\/}. {\it ECML PKDD Workshop: Languages for Data Mining
+  and Machine Learning\/} (2013). pp. 108--122.
 
 \bibitem{genomicalign}
-M.~Lawrence, {\it et~al.\/}, {\it {PLoS} Computational Biology\/} {\bf 9}
-  (2013).
+M.~Lawrence, {\it et~al.\/}. Software for Computing and Annotating Genomic
+  Ranges. {\it {PLoS} Computational Biology\/} {\bf 9} (2013). Available from:
+  https://doi.org/10.1371/journal.pcbi.1003118.
 
 \bibitem{plotly}
-P.~T. Inc., Collaborative data science (2015).
+P.~T. Inc.. Collaborative data science (2015).
 
 \bibitem{blast}
-S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman, {\it J Mol Biol.\/} {\bf
-  215}, 403 (1990).
+S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman. Basic local alignment
+  search tool. {\it J Mol Biol.\/} {\bf 215}, 403 (1990).
 
 \bibitem{spearman_rnaseq}
-F.~Liesecke, {\it et~al.\/}, {\it Sci Rep\/} {\bf 8} (2018).
+F.~Liesecke, {\it et~al.\/}. Ranking genome-wide correlation measurements
+  improves microarray and RNA-seq based global and targeted co-expression
+  networks. {\it Sci Rep\/} {\bf 8} (2018). Available from:
+  https://doi.org/10.1038/s41598-018-29077-3.
+
+\bibitem{dbgap}
+Database of Genotypes and Phenotypes. \url{https://www.ncbi.nlm.nih.gov/gap/}.
+
+\bibitem{aws_ec2}
+Amazon Web Services EC2 Computing.
+  \url{https://aws.amazon.com/ec2/pricing/on-demand/}. Accessed 18 July 2019.
+
+\bibitem{aws_s3}
+Amazon Web Services S3 Storage. \url{https://aws.amazon.com/s3/pricing/}.
+  Accessed 18 July 2019.
+
+\bibitem{isrib_geo}
+Ribosome Profiling GEO Accession.
+  \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE65778}.
+
+\bibitem{tcga_data}
+TCGA dbGaP Accession.
+  \url{(https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study\_id=phs000178.v10.p8)}.
 
 \bibitem{readthedocs}
-Read the docs, \url{https://readthedocs.org/}.
+Read the Docs. \url{https://readthedocs.org/}.
 
 \end{thebibliography}
