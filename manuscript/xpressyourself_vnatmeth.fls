@@ -77,8 +77,6 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
-INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty
-INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty

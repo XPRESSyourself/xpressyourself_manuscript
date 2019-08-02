@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself_vnatmeth"] 1564531222 "xpressyourself_vnatmeth.aux" "xpressyourself_vnatmeth.bbl" "xpressyourself_vnatmeth" 1564531229
+["bibtex xpressyourself_vnatmeth"] 1564682713 "xpressyourself_vnatmeth.aux" "xpressyourself_vnatmeth.bbl" "xpressyourself_vnatmeth" 1564682930
   "./Science.bst" 1563395597 26972 4362b992ec425b3d8aaa11ba5ecf54a8 ""
   "manubib.bib" 1564520124 26433 d73e0f10b1cffe0abbe761f44606f4db ""
-  "xpressyourself_vnatmeth.aux" 1564531229 21126 9c3e474b364d578019e641ea7709b570 ""
+  "xpressyourself_vnatmeth.aux" 1564682929 21126 67ec9404d1e104fc7d45a83bd5dd4d0f ""
   (generated)
-  "xpressyourself_vnatmeth.blg"
   "xpressyourself_vnatmeth.bbl"
-["pdflatex"] 1564531222 "xpressyourself_vnatmeth.tex" "xpressyourself_vnatmeth.pdf" "xpressyourself_vnatmeth" 1564531229
+  "xpressyourself_vnatmeth.blg"
+["pdflatex"] 1564682913 "xpressyourself_vnatmeth.tex" "xpressyourself_vnatmeth.pdf" "xpressyourself_vnatmeth" 1564682930
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -101,7 +101,6 @@
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/helvet.sty" 1480098837 1500 3c2647c8649928795ededd42a6e85f85 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1phv.fd" 1480098837 1488 9a55ac1cde6b4798a7f56844bb75a553 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty" 1480098841 37387 afa86533e532701faf233f3f592c61e0 ""
-  "/usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty" 1523050425 1615 dba466e323af4fcd4a6acb87444d96c3 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty" 1523050425 30628 652b36ef08363b32730b448cf0e44496 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty" 1480098842 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
@@ -120,10 +119,10 @@
   "figures/xpresspipe_supplement6.png" 1562892699 361571 213682d67313d0a978c7df0ecd9ddfa6 ""
   "figures/xpresspipe_supplement7.png" 1562892686 692434 a42a33940f4b7769e0bdc33d5d2a2401 ""
   "figures/xpresspipe_supplement8.png" 1562885741 257781 f20e50c8cde27623c806ae2407dd1f7f ""
-  "xpressyourself_vnatmeth.aux" 1564531229 21126 9c3e474b364d578019e641ea7709b570 ""
-  "xpressyourself_vnatmeth.bbl" 1564531222 15159 58ab1b100f7c8f8217ca837f9769a199 "bibtex xpressyourself_vnatmeth"
-  "xpressyourself_vnatmeth.tex" 1564531216 80487 29b6b212de1315579b4ae7a0f4876d9b ""
+  "xpressyourself_vnatmeth.aux" 1564682929 21126 67ec9404d1e104fc7d45a83bd5dd4d0f ""
+  "xpressyourself_vnatmeth.bbl" 1564682713 15159 58ab1b100f7c8f8217ca837f9769a199 "bibtex xpressyourself_vnatmeth"
+  "xpressyourself_vnatmeth.tex" 1564682913 80714 74a7da2384ccdbf8ee7c7fd3a8774298 ""
   (generated)
+  "xpressyourself_vnatmeth.log"
   "xpressyourself_vnatmeth.pdf"
   "xpressyourself_vnatmeth.aux"
-  "xpressyourself_vnatmeth.log"
