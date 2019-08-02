@@ -16,6 +16,28 @@ N.~McGlincy, N.~Ingolia. Transcriptome-wide measurement of translation by
   ribosome profiling. {\it Methods\/} {\bf 126}, 112 (2017). Available from:
   https://doi.org/10.1016/j.ymeth.2017.05.028.
 
+\bibitem{galaxy}
+E.~Afgan, {\it et~al.\/}. The Galaxy platform for accessible, reproducible and
+  collaborative biomedical analyses: 2018 update. {\it Nucleic Acids Res.\/}
+  {\bf 46}, W537 (2018). Available from: https://doi.org/10.1093/nar/gky379.
+
+\bibitem{ribogalaxy}
+A.~Michel, {\it et~al.\/}. RiboGalaxy: A browser based platform for the
+  alignment, analysis and visualization of ribosome profiling data. {\it RNA
+  Biol\/} {\bf 13}, 316 (2016). Available from:
+  https://doi.org/10.1080/15476286.2016.1141862.
+
+\bibitem{nextflow_pipeline}
+Nextflow. \url{https://www.nextflow.io/example4.html}.
+
+\bibitem{dnanexus_pipeline}
+DNAnexus. \url{https://github.com/dnanexus/tophat_cufflinks_rnaseq}.
+
+\bibitem{riboviz}
+O.~Carja, T.~Xing, E.~Wallace, J.~Plotkin, P.~Shah. riboviz: analysis and
+  visualization of ribosome profiling datasets. {\it BMC Bioinformatics\/} {\bf
+  18} (2017). Available from: https://doi.org/10.1186/s12859-017-1873-8.
+
 \bibitem{gerashchenko_nar}
 M.~Gerashchenko, V.~Gladyshev. Translation inhibitors cause abnormalities in
   ribosome profiling experiments. {\it Nucleic Acids Res\/} {\bf 42} (2014).
@@ -47,42 +69,6 @@ Z.~Costello, H.~Martin. A machine learning approach to predict metabolic
 V.~Funari, S.~Canosa. The Importance of Bioinformatics in NGS: Breaking the
   Bottleneck in Data Interpretation. {\it Science\/} {\bf 344}, 653 (2014).
   Available from: https://doi.org/10.1126/science.344.6184.653-c.
-
-\bibitem{encode_pipeline}
-ENCODE. \url{https://www.encodeproject.org/rna-seq/}.
-
-\bibitem{gdc_pipeline}
-GDC.
-  \url{https://docs.gdc.cancer.gov/Data/Bioinformatics_Pipelines/Expression_mRNA_Pipeline/}.
-
-\bibitem{pavlidis_pipeline}
-Pavlidis Lab. \url{https://github.com/PavlidisLab/rnaseq-pipeline}.
-
-\bibitem{nfcore_pipeline}
-Nextflow. \url{https://github.com/nf-core/rnaseq}.
-
-\bibitem{umcu_pipeline}
-UMCU Genetics. \url{https://github.com/UMCUGenetics/RNASeq}.
-
-\bibitem{cellgeni_pipeline}
-Cellular Genetics Informatics. \url{https://github.com/cellgeni/rnaseq}.
-
-\bibitem{dnanexus_pipeline}
-DNAnexus. \url{https://github.com/dnanexus/tophat_cufflinks_rnaseq}.
-
-\bibitem{nextflow_pipeline}
-Nextflow. \url{https://www.nextflow.io/example4.html}.
-
-\bibitem{galaxy}
-E.~Afgan, {\it et~al.\/}. The Galaxy platform for accessible, reproducible and
-  collaborative biomedical analyses: 2018 update. {\it Nucleic Acids Res.\/}
-  {\bf 46}, W537 (2018). Available from: https://doi.org/10.1093/nar/gky379.
-
-\bibitem{ribogalaxy}
-A.~Michel, {\it et~al.\/}. RiboGalaxy: A browser based platform for the
-  alignment, analysis and visualization of ribosome profiling data. {\it RNA
-  Biol\/} {\bf 13}, 316 (2016). Available from:
-  https://doi.org/10.1080/15476286.2016.1141862.
 
 \bibitem{fp_range}
 C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green. High-Resolution Ribosome Profiling
@@ -331,6 +317,9 @@ M.~Waskom, et~al. seaborn  (2012). Available from:
 
 \bibitem{plotly}
 P.~T. Inc.. Collaborative data science (2015).
+
+\bibitem{anaconda}
+Anaconda. Anaconda Software Distribution. \url{https://anaconda.com}.
 
 \bibitem{blast}
 S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman. Basic local alignment

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself_vnatmeth"] 1564682713 "xpressyourself_vnatmeth.aux" "xpressyourself_vnatmeth.bbl" "xpressyourself_vnatmeth" 1564682930
+["bibtex xpressyourself_vnatmeth"] 1564767188 "xpressyourself_vnatmeth.aux" "xpressyourself_vnatmeth.bbl" "xpressyourself_vnatmeth" 1564788915
   "./Science.bst" 1563395597 26972 4362b992ec425b3d8aaa11ba5ecf54a8 ""
-  "manubib.bib" 1564520124 26433 d73e0f10b1cffe0abbe761f44606f4db ""
-  "xpressyourself_vnatmeth.aux" 1564682929 21126 67ec9404d1e104fc7d45a83bd5dd4d0f ""
+  "manubib.bib" 1564766882 26760 efb6228f0d44fd695dde060ff7ad43e7 ""
+  "xpressyourself_vnatmeth.aux" 1564788914 21190 fdd7884f936cf4bedea88fcfea3d637a ""
   (generated)
   "xpressyourself_vnatmeth.bbl"
   "xpressyourself_vnatmeth.blg"
-["pdflatex"] 1564682913 "xpressyourself_vnatmeth.tex" "xpressyourself_vnatmeth.pdf" "xpressyourself_vnatmeth" 1564682930
+["pdflatex"] 1564788908 "xpressyourself_vnatmeth.tex" "xpressyourself_vnatmeth.pdf" "xpressyourself_vnatmeth" 1564788915
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -119,9 +119,9 @@
   "figures/xpresspipe_supplement6.png" 1562892699 361571 213682d67313d0a978c7df0ecd9ddfa6 ""
   "figures/xpresspipe_supplement7.png" 1562892686 692434 a42a33940f4b7769e0bdc33d5d2a2401 ""
   "figures/xpresspipe_supplement8.png" 1562885741 257781 f20e50c8cde27623c806ae2407dd1f7f ""
-  "xpressyourself_vnatmeth.aux" 1564682929 21126 67ec9404d1e104fc7d45a83bd5dd4d0f ""
-  "xpressyourself_vnatmeth.bbl" 1564682713 15159 58ab1b100f7c8f8217ca837f9769a199 "bibtex xpressyourself_vnatmeth"
-  "xpressyourself_vnatmeth.tex" 1564682913 80714 74a7da2384ccdbf8ee7c7fd3a8774298 ""
+  "xpressyourself_vnatmeth.aux" 1564788914 21190 fdd7884f936cf4bedea88fcfea3d637a ""
+  "xpressyourself_vnatmeth.bbl" 1564767188 14929 9b7db8365cbc8e0a7e146442fd9bb28c "bibtex xpressyourself_vnatmeth"
+  "xpressyourself_vnatmeth.tex" 1564788908 81857 ff420ca6e06887e6aae12b669225c195 ""
   (generated)
   "xpressyourself_vnatmeth.log"
   "xpressyourself_vnatmeth.pdf"
