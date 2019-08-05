@@ -1,0 +1,1081 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 AUG 2019 19:16
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**xpressyourself_vPLOSCompBio.tex
+(./xpressyourself_vPLOSCompBio.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen105
+\captionmargin@=\dimen106
+\captionwidth=\dimen107
+\caption@tempdima=\dimen108
+\caption@indent=\dimen109
+\caption@parindent=\dimen110
+\caption@hangindent=\dimen111
+)
+\c@ContinuedFloat=\count88
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count89
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/refcount.sty
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))))
+\c@section@level=\count90
+LaTeX Info: Redefining \ref on input line 355.
+LaTeX Info: Redefining \pageref on input line 355.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
+\langwohyphens=\language84
+LaTeX Info: Redefining \_ on input line 43.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count91
+\U@D=\dimen112
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count92
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
+\c@tracingmulticols=\count93
+\mult@box=\box28
+\multicol@leftmargin=\dimen113
+\c@unbalance=\count94
+\c@collectmore=\count95
+\doublecol@number=\count96
+\multicoltolerance=\count97
+\multicolpretolerance=\count98
+\full@width=\dimen114
+\page@free=\dimen115
+\premulticols=\dimen116
+\postmulticols=\dimen117
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box29
+\last@line=\box30
+\maxbalancingoverflow=\dimen118
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count99
+\c@finalcolumnbadness=\count100
+\last@try=\dimen119
+\multicolovershoot=\dimen120
+\multicolundershoot=\dimen121
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\mc@col@check@num=\count101
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box54
+\beforetitleunit=\skip45
+\aftertitleunit=\skip46
+\ttl@plus=\dimen122
+\ttl@minus=\dimen123
+\ttl@toksa=\toks19
+\titlewidth=\dimen124
+\titlewidthlast=\dimen125
+\titlewidthfirst=\dimen126
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count102
+\lst@gtempboxa=\box55
+\lst@token=\toks20
+\lst@length=\count103
+\lst@currlwidth=\dimen127
+\lst@column=\count104
+\lst@pos=\count105
+\lst@lostspace=\dimen128
+\lst@width=\dimen129
+\lst@newlines=\count106
+\lst@lineno=\count107
+\lst@maxwidth=\dimen130
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count108
+\lst@skipnumbers=\count109
+\lst@framebox=\box56
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(./xpressyourself_vPLOSCompBio.aux)
+\openout1 = `xpressyourself_vPLOSCompBio.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 76.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 76.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count110
+\scratchdimen=\dimen131
+\scratchbox=\box57
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen132
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks22
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count116
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 87.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 94.
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--96
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 105.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 105.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 105.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 105.
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 109.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 109.
+[1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
+
+ []
+
+[2]
+Overfull \hbox (1.12541pt too wide) in paragraph at lines 138--138
+\T1/phv/m/n/10 and bulk RNA-Seq anal-y-sis in a ro-bust and easy-to-use soft-wa
+re pack-age. This soft-ware will lead to more re-pro-ducible
+ []
+
+
+Overfull \hbox (23.75652pt too wide) in paragraph at lines 138--138
+\T1/phv/m/n/10 and more ac-ces-si-ble mea-sure-ments of trans-la-tion reg-u-la-
+tion. For in-stance, XPRESSy-our-self cre-ates the mRNA-annotation
+ []
+
+[3]
+Overfull \hbox (10.89136pt too wide) in paragraph at lines 144--144
+[]\T1/phv/m/n/10 XPRESSyourself pro-vides an ac-ces-si-ble, simple-to-use, au-t
+o-mated anal-y-sis plat-form for RNA-Seq, of-ten pack-ag-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+[4]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 150.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 151.
+
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Overfull \hbox (2.0948pt too wide) in paragraph at lines 186--186
+\T1/phv/b/n/10 Library Com-plex-ity\T1/phv/m/n/10 . Mea-sur-ing li-brary com-pl
+ex-ity is an ef-fec-tive method for an-a-lyz-ing the ro-bust-ness of a se-quenc
+-ing
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+<figures/xpresspipe_figure1.png, id=41, 446.3877pt x 524.4393pt>
+File: figures/xpresspipe_figure1.png Graphic file (type png)
+<use figures/xpresspipe_figure1.png>
+Package pdftex.def Info: figures/xpresspipe_figure1.png  used on input line 203
+.
+(pdftex.def)             Requested size: 227.62204pt x 267.4285pt.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 204.
+[10 <./figures/xpresspipe_figure1.png>]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 214.
+
+Overfull \hbox (2.50743pt too wide) in paragraph at lines 214--214
+[]\T1/phv/m/n/10 To show-case the util-ity of XPRESSpipe in an-a-lyz-ing ri-bo-
+some pro-fil-ing and se-quenc-ing datasets, we re-processed
+ []
+
+[11]
+<figures/xpresspipe_figure2.png, id=51, 426.1521pt x 581.7735pt>
+File: figures/xpresspipe_figure2.png Graphic file (type png)
+<use figures/xpresspipe_figure2.png>
+Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 224
+.
+(pdftex.def)             Requested size: 412.56496pt x 563.25436pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 225.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 225.
+<figures/xpresspipe_figure3.png, id=52, 555.2745pt x 537.9297pt>
+File: figures/xpresspipe_figure3.png Graphic file (type png)
+<use figures/xpresspipe_figure3.png>
+Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 231
+.
+(pdftex.def)             Requested size: 512.1496pt x 496.16539pt.
+
+Overfull \hbox (9.88611pt too wide) in paragraph at lines 236--236
+\T1/phv/m/n/10 high-lighted in pur-ple) [39]. Of note, the fold-change in ri-bo
+-some oc-cu-pancy of ATF4 (6.83) from XPRESSpipe-processed
+ []
+
+
+Overfull \hbox (10.31903pt too wide) in paragraph at lines 236--236
+\T1/phv/m/n/10 study [39], such as ATF5, PPP1R15A, and DDIT3 also demon-strated
+ com-pa-ra-ble in-creases in their ri-bo-some oc-cu-pancy
+ []
+
+[12] [13 <./figures/xpresspipe_figure2.png>] [14 <./figures/xpresspipe_figure3.
+png>]
+Overfull \hbox (3.9564pt too wide) in paragraph at lines 238--238
+\T1/phv/m/n/10 cov-er-age across these genes show that the sig-nif-i-cant chang
+es in their TE are due to nei-ther spu-ri-ous, high-abundance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
+
+ []
+
+[15]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 242.
+
+
+Overfull \hbox (24.0pt too wide) in paragraph at lines 245--265
+ [][] 
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+<figures/xpresspipe_figure4.png, id=72, 512.6352pt x 287.3937pt>
+File: figures/xpresspipe_figure4.png Graphic file (type png)
+<use figures/xpresspipe_figure4.png>
+Package pdftex.def Info: figures/xpresspipe_figure4.png  used on input line 278
+.
+(pdftex.def)             Requested size: 512.1496pt x 287.12549pt.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 287.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+
+ []
+
+[17] [18 <./figures/xpresspipe_figure4.png>]
+Overfull \hbox (11.82697pt too wide) in paragraph at lines 310--310
+\T1/phv/m/n/10 tech-nolo-gies are quite ad-vanced, stan-dard-ized com-pu-ta-tio
+nal pro-to-cols are much less es-tab-lished for some ap-pli-ca-tions.
+ []
+
+[19]
+Overfull \hbox (6.82497pt too wide) in paragraph at lines 322--322
+[]\T1/phv/m/n/10 The data used in this manuscript are avail-able un-der the Gen
+e Ex-pres-sion Om-nibus per-sis-tent iden-ti-fier GSE65778
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 328.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
+
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 355.
+
+
+Overfull \hbox (4.11082pt too wide) in paragraph at lines 393--393
+[]\T1/phv/m/n/10 GenomicAlignments| 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 407.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) [21]
+[22]
+Overfull \hbox (18.99133pt too wide) in paragraph at lines 477--478
+[]\T1/phv/m/n/10 Further anal-y-ses, such as ad-di-tional gene cov-er-age pro-f
+iles, dif-fer-en-tial ex-pres-sion anal-y-sis, and batch nor-mal-iza-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 511.
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--526
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+
+ []
+
+
+Overfull \hbox (2.88306pt too wide) in paragraph at lines 537--538
+\T1/phv/m/n/10 transcriptome-aligned BAM files (as out-put by STAR within XPRES
+Spipe) and the path and file name of the ap-pro-pri-ate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+[26]
+Overfull \hbox (11.814pt too wide) in paragraph at lines 565--565
+\T1/phv/m/n/10 ver-sion 96. Read align-ments were quan-ti-fied us-ing an XPRESS
+pipe-modified GTF file that con-tained only protein-coding
+ []
+
+[27]
+Overfull \hbox (8.85461pt too wide) in paragraph at lines 567--567
+\T1/phv/m/n/10 com-par-isons. Cor-re-la-tion be-tween meth-ods or repli-cates w
+ere cal-cu-lated us-ing a Spear-man rank cor-re-la-tion co-ef-fi-cient,
+ []
+
+
+Overfull \hbox (2.53526pt too wide) in paragraph at lines 571--572
+[]\T1/phv/m/n/10 Intron-agnostic gene cov-er-age pro-files were gen-er-ated us-
+ing XPRESSpipe's geneCov-er-age mod-ule. Com-par-i-son
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
+
+ []
+
+
+Overfull \hbox (22.26959pt too wide) in paragraph at lines 574--575
+\T1/phv/m/n/10 or repli-cates were cal-cu-lated us-ing a Spear-man rank cor-re-
+la-tion co-ef-fi-cient, per-formed us-ing the \T1/cmtt/m/n/10 scipy.stats.spear
+man()
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 581--612
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
+
+ []
+
+[29]
+Overfull \hbox (27.0935pt too wide) in paragraph at lines 623--624
+\T1/phv/m/n/10 J.A.B. re-ceived sup-port from the Na-tional In-sti-tute of Di-a
+-betes and Di-ges-tive and Kid-ney Dis-eases (NIDDK) Inter-disciplinary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 628.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+
+ []
+
+[30] (./xpressyourself_vPLOSCompBio.bbl
+Underfull \hbox (badness 7888) in paragraph at lines 4--8
+[]\T1/phv/m/n/10 N. In-go-lia, S. Ghaem-maghami, J. New-man, J. Weiss-man. Geno
+me-wide anal-y-sis in vivo of
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+[]\T1/phv/m/n/10 D. Wein-berg, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . Im-proved
+ Ribosome-Footprint and mRNA Mea-sure-ments Pro-vide In-sights
+ []
+
+
+Underfull \hbox (badness 4846) in paragraph at lines 58--62
+\T1/phv/m/n/10 into Dy-nam-ics and Reg-u-la-tion of Yeast Trans-la-tion. \T1/ph
+v/m/sl/10 Cell Rep \T1/phv/b/n/10 14\T1/phv/m/n/10 , 1787 (2016). Avail-able fr
+om:
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 80--83
+[]\T1/phv/m/n/10 J. Robin-son, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . In-te-gra
+-tive Ge-nomics Viewer. \T1/phv/m/sl/10 Nat Biotech-nol \T1/phv/b/n/10 29\T1/ph
+v/m/n/10 , 24 (2011). Avail-able from:
+ []
+
+[32]
+Underfull \hbox (badness 6708) in paragraph at lines 115--119
+[]\T1/phv/m/n/10 Y. Fu, P. Wu, T. Beane, P. Zamore, Z. Weng. Elim-i-na-tion of 
+PCR du-pli-cates in RNA-seq
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 115--119
+\T1/phv/m/n/10 and small RNA-seq us-ing unique molec-u-lar iden-ti-fiers. \T1/p
+hv/m/sl/10 BMC Ge-nomics \T1/phv/b/n/10 19 \T1/phv/m/n/10 (2018). Avail-able fr
+om:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
+[]\T1/phv/m/n/10 C. Evans, J. Hardin, D. Stoebel. Se-lect-ing between-sample RN
+A-Seq nor-mal-iza-tion meth-ods
+ []
+
+
+Underfull \hbox (badness 5147) in paragraph at lines 142--146
+\T1/phv/m/n/10 from the per-spec-tive of their as-sump-tions. \T1/phv/m/sl/10 B
+rief Bioin-form \T1/phv/b/n/10 19\T1/phv/m/n/10 , 776^^U792 (2018). Avail-able 
+from:
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 148--152
+[]\T1/phv/m/n/10 J. Leek, W. John-son, H. Parker, A. Jaffe, J. Storey. The sva 
+pack-age for re-mov-ing batch ef-fects
+ []
+
+[33]
+Underfull \hbox (badness 1917) in paragraph at lines 190--194
+[]\T1/phv/m/n/10 C. Sidrauski1, A. McGeachy, N. In-go-lia, P. Wal-ter. The smal
+l molecule IS-RIB re-verses the ef-fects
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 190--194
+\T1/phv/m/n/10 of eIF2ã phos-pho-ry-la-tion on trans-la-tion and stress gran-ul
+e as-sem-bly. \T1/phv/m/sl/10 eLife \T1/phv/m/n/10 (2015). Avail-able from:
+ []
+
+
+Underfull \hbox (badness 5460) in paragraph at lines 202--206
+[]\T1/phv/m/n/10 M. Hal-l-i-day, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . Par-tia
+l restora-tion of pro-tein syn-the-sis rates by the small molecule IS-RIB
+ []
+
+
+Underfull \hbox (badness 5637) in paragraph at lines 202--206
+\T1/phv/m/n/10 pre-vents neu-rode-gen-er-a-tion with-out pan-cre-atic tox-i-c-i
+ty. \T1/phv/m/sl/10 Cell Death Dis \T1/phv/b/n/10 6 \T1/phv/m/n/10 (2015). Avai
+l-able from:
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 252--255
+[]\T1/phv/m/n/10 Manuscript code. $\T1/cmtt/m/n/10 https : / / github . com / X
+PRESSyourself / xpressyourself _ manuscript / tree / master /
+ []
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 290--294
+[]\T1/phv/m/n/10 P. Ewels, M. Mag-nus-son, S. Lundin, M. Käller. Mul-tiQC: sum-
+ma-rize anal-y-sis re-sults for mul-ti-ple
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--294
+\T1/phv/m/n/10 tools and sam-ples in a sin-gle re-port. \T1/phv/m/sl/10 Bioin-f
+or-mat-ics \T1/phv/b/n/10 32\T1/phv/m/n/10 , 3047^^U3048 (2016). Avail-able fro
+m:
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 340--344
+[]\T1/phv/m/n/10 F. Liesecke, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . Rank-ing g
+enome-wide cor-re-la-tion mea-sure-ments im-proves mi-croar-ray and
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 340--344
+\T1/phv/m/n/10 RNA-seq based global and tar-geted co-expression net-works. \T1/
+phv/m/sl/10 Sci Rep \T1/phv/b/n/10 8 \T1/phv/m/n/10 (2018). Avail-able from:
+ []
+
+) [36]
+<figures/xpresspipe_supplement1.png, id=141, 588.5187pt x 472.6458pt>
+File: figures/xpresspipe_supplement1.png Graphic file (type png)
+<use figures/xpresspipe_supplement1.png>
+Package pdftex.def Info: figures/xpresspipe_supplement1.png  used on input line
+ 663.
+(pdftex.def)             Requested size: 455.24408pt x 365.61877pt.
+<figures/xpresspipe_supplement2.png, id=142, 483.7272pt x 555.7563pt>
+File: figures/xpresspipe_supplement2.png Graphic file (type png)
+<use figures/xpresspipe_supplement2.png>
+Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
+ 670.
+(pdftex.def)             Requested size: 455.24408pt x 523.03853pt.
+<figures/xpresspipe_supplement3.png, id=143, 516.9714pt x 513.5988pt>
+File: figures/xpresspipe_supplement3.png Graphic file (type png)
+<use figures/xpresspipe_supplement3.png>
+Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
+ 677.
+(pdftex.def)             Requested size: 512.1496pt x 508.84056pt.
+<figures/xpresspipe_supplement4.png, id=144, 555.9972pt x 668.4975pt>
+File: figures/xpresspipe_supplement4.png Graphic file (type png)
+<use figures/xpresspipe_supplement4.png>
+Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
+ 684.
+(pdftex.def)             Requested size: 512.1496pt x 615.8412pt.
+<figures/xpresspipe_supplement5.png, id=145, 420.8523pt x 426.1521pt>
+File: figures/xpresspipe_supplement5.png Graphic file (type png)
+<use figures/xpresspipe_supplement5.png>
+Package pdftex.def Info: figures/xpresspipe_supplement5.png  used on input line
+ 691.
+(pdftex.def)             Requested size: 512.1496pt x 518.6433pt.
+<figures/xpresspipe_supplement6.png, id=146, 398.4486pt x 226.2051pt>
+File: figures/xpresspipe_supplement6.png Graphic file (type png)
+<use figures/xpresspipe_supplement6.png>
+Package pdftex.def Info: figures/xpresspipe_supplement6.png  used on input line
+ 698.
+(pdftex.def)             Requested size: 512.1496pt x 290.75993pt.
+<figures/xpresspipe_supplement7.png, id=147, 427.3566pt x 410.9754pt>
+File: figures/xpresspipe_supplement7.png Graphic file (type png)
+<use figures/xpresspipe_supplement7.png>
+Package pdftex.def Info: figures/xpresspipe_supplement7.png  used on input line
+ 705.
+(pdftex.def)             Requested size: 512.1496pt x 492.566pt.
+<figures/xpresspipe_supplement8.png, id=148, 377.2494pt x 337.0191pt>
+File: figures/xpresspipe_supplement8.png Graphic file (type png)
+<use figures/xpresspipe_supplement8.png>
+Package pdftex.def Info: figures/xpresspipe_supplement8.png  used on input line
+ 712.
+(pdftex.def)             Requested size: 512.1496pt x 457.60454pt.
+ [37 <./figures/xpresspipe_supplement1.png>] [38 <./figures/xpresspipe_suppleme
+nt2.png>] [39 <./figures/xpresspipe_supplement3.png>] [40 <./figures/xpresspipe
+_supplement4.png>] [41 <./figures/xpresspipe_supplement5.png>] [42 <./figures/x
+presspipe_supplement6.png>] [43 <./figures/xpresspipe_supplement7.png>]
+[44 <./figures/xpresspipe_supplement8.png>] (./xpressyourself_vPLOSCompBio.aux)
+ ) 
+Here is how much of TeX's memory you used:
+ 6602 strings out of 492649
+ 96562 string characters out of 6129622
+ 204935 words of memory out of 5000000
+ 10350 multiletter control sequences out of 15000+600000
+ 46693 words of font info for 55 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,10n,47p,2049b,1189s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/he
+lvetic/uhvro8a.pfb>
+Output written on xpressyourself_vPLOSCompBio.pdf (44 pages, 4533572 bytes).
+PDF statistics:
+ 239 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+
