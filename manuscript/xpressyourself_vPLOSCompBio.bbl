@@ -60,6 +60,11 @@ D.~Weinberg, {\it et~al.\/}. Improved Ribosome-Footprint and mRNA Measurements
   Rep\/} {\bf 14}, 1787 (2016). Available from:
   https://doi.org/10.1016/j.celrep.2016.01.043.
 
+\bibitem{igv}
+J.~Robinson, {\it et~al.\/}. Integrative Genomics Viewer. {\it Nat
+  Biotechnol\/} {\bf 29}, 24 (2011). Available from:
+  https://doi.org/10.1038/nbt.1754.
+
 \bibitem{costello_npjsba}
 Z.~Costello, H.~Martin. A machine learning approach to predict metabolic
   pathway dynamics from time-series multiomics data. {\it NPJ Syst Biol Appl\/}
@@ -70,28 +75,11 @@ V.~Funari, S.~Canosa. The Importance of Bioinformatics in NGS: Breaking the
   Bottleneck in Data Interpretation. {\it Science\/} {\bf 344}, 653 (2014).
   Available from: https://doi.org/10.1126/science.344.6184.653-c.
 
-\bibitem{fp_range}
-C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green. High-Resolution Ribosome Profiling
-  Defines Discrete Ribosome Elongation States and Translational Regulation
-  during Cellular Stress. {\it Mol Cell\/} {\bf 73} (2019). Available from:
-  https://doi.org/10.1016/j.molcel.2018.12.009.
-
-\bibitem{igv}
-J.~Robinson, {\it et~al.\/}. Integrative Genomics Viewer. {\it Nat
-  Biotechnol\/} {\bf 29}, 24 (2011). Available from:
-  https://doi.org/10.1038/nbt.1754.
-
-\bibitem{ensembl}
-Ensembl. \url{https://uswest.ensembl.org}.
-
 \bibitem{xpresspipe_docs}
 XPRESSpipe documentation. \url{https://xpresspipe.readthedocs.io/en/latest/}.
 
 \bibitem{xpressplot_docs}
 XPRESSplot documentation. \url{https://xpressplot.readthedocs.io/en/latest/}.
-
-\bibitem{xpressyourself}
-XPRESSyourself. \url{https://github.com/XPRESSyourself/}.
 
 \bibitem{star}
 A.~Dobin, {\it et~al.\/}. STAR: ultrafast universal RNA-seq aligner. {\it
@@ -103,8 +91,10 @@ G.~Baruzzo, {\it et~al.\/}. Simulation-based comprehensive benchmarking of
   RNA-seq aligners. {\it Nat Methods\/} {\bf 14}, 135 (2017). Available from:
   https://doi.org/10.1038/nmeth.4106.
 
-\bibitem{ensembl_canon}
-Ensembl. \url{https://uswest.ensembl.org/Help/Glossary}.
+\bibitem{htseq}
+S.~Anders, P.~Pyl, W.~Huber. HTSeq--a Python framework to work with
+  high-throughput sequencing data. {\it Bioinformatics\/} {\bf 31}, 166 (2015).
+  Available from: https://doi.org/10.1093/bioinformatics/btu638.
 
 \bibitem{cufflinks}
 C.~Trapnell, {\it et~al.\/}. Differential gene and transcript expression
@@ -128,15 +118,13 @@ G.~Baruzzo, {\it et~al.\/}. Simulation-based comprehensive benchmarking of
   RNA-seq aligners. {\it Nat Methods\/} {\bf 14}, 135–139 (2017). Available
   from: https://doi.org/10.1038/nmeth.4106.
 
-\bibitem{htseq}
-S.~Anders, P.~Pyl, W.~Huber. HTSeq--a Python framework to work with
-  high-throughput sequencing data. {\it Bioinformatics\/} {\bf 31}, 166 (2015).
-  Available from: https://doi.org/10.1093/bioinformatics/btu638.
-
 \bibitem{count_benchmark}
 C.~Robert, M.~Watson. Errors in RNA-Seq quantification affect genes of
   relevance to human disease. {\it Genome Biol\/} {\bf 16} (2015). Available
   from: https://doi.org/10.1186/s13059-015-0734-x.
+
+\bibitem{tcga}
+The Cancer Genome Atlas. \url{https://portal.gdc.cancer.gov}.
 
 \bibitem{evans_briefbio}
 C.~Evans, J.~Hardin, D.~Stoebel. Selecting between-sample RNA-Seq normalization
@@ -149,6 +137,12 @@ J.~Leek, W.~Johnson, H.~Parker, A.~Jaffe, J.~Storey. The sva package for
   removing batch effects and other unwanted variation in high-throughput
   experiments. {\it Bioinformatics\/} {\bf 28} (2012). Available from:
   https://doi.org/10.1093/bioinformatics/bts034.
+
+\bibitem{fp_range}
+C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green. High-Resolution Ribosome Profiling
+  Defines Discrete Ribosome Elongation States and Translational Regulation
+  during Cellular Stress. {\it Mol Cell\/} {\bf 73} (2019). Available from:
+  https://doi.org/10.1016/j.molcel.2018.12.009.
 
 \bibitem{dupradar}
 S.~Sayols, D.~Scherzinger, H.~Klein. dupRadar: a Bioconductor package for the
@@ -245,16 +239,16 @@ Y.~Wong, {\it et~al.\/}. eIF2B activator prevents neurological defects caused
   by a chronic integrated stress response. {\it Elife\/} {\bf 8} (2019).
   Available from: https://doi.org/10.7554/eLife.42940.
 
-\bibitem{tcga}
-The Cancer Genome Atlas. \url{https://portal.gdc.cancer.gov}.
+\bibitem{xpressyourself}
+XPRESSyourself. \url{https://github.com/XPRESSyourself/}.
+
+\bibitem{readthedocs}
+Read the Docs. \url{https://readthedocs.org/}.
 
 \bibitem{manuscript}
 Manuscript code.
   \url{https://github.com/XPRESSyourself/xpressyourself_manuscript/tree/master/supplemental_files}.
   Available from: https://doi.org/DOI: 10.5281/zenodo.3337599.
-
-\bibitem{aws}
-Amazon Web Services. \url{https://aws.amazon.com}.
 
 \bibitem{isrib_geo}
 Ribosome Profiling GEO Accession.
@@ -263,94 +257,5 @@ Ribosome Profiling GEO Accession.
 \bibitem{tcga_data}
 TCGA dbGaP Accession.
   \url{(https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study\_id=phs000178.v10.p8)}.
-
-\bibitem{readthedocs}
-Read the Docs. \url{https://readthedocs.org/}.
-
-\bibitem{fastp}
-S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu. fastp: an ultra-fast all-in-one FASTQ
-  preprocessor. {\it Bioinformatics\/} {\bf 34} (2018). Available from:
-  https://doi.org/10.1093/bioinformatics/bty560.
-
-\bibitem{samtools}
-H.~Li, {\it et~al.\/}. The Sequence Alignment/Map format and SAMtools. {\it
-  Bioinformatics\/} {\bf 25}, 2078 (2009). Available from:
-  https://doi.org/10.1093/bioinformatics/btp352.
-
-\bibitem{bedtools}
-A.~Quinlan, I.~Hall. BEDTools: a flexible suite of utilities for comparing
-  genomic features. {\it Bioinformatics\/} {\bf 26}, 841 (2010). Available
-  from: https://doi.org/10.1093/bioinformatics/btq033.
-
-\bibitem{fastqc}
-S.~Andrews. FastQC.
-  \url{http://www.bioinformatics.babraham.ac.uk/projects/fastqc/} (2010).
-
-\bibitem{multiqc}
-P.~Ewels, M.~Magnusson, S.~Lundin, M.~K{\"a}ller. MultiQC: summarize analysis
-  results for multiple tools and samples in a single report. {\it
-  Bioinformatics\/} {\bf 32}, 3047–3048 (2016). Available from:
-  https://doi.org/10.1093/bioinformatics/btw354.
-
-\bibitem{pandas}
-W.~McKinney. Data Structures for Statistical Computing in Python. {\it Proc of
-  the 9th Python in Science Conf\/} pp. 51--56 (2010).
-
-\bibitem{numpy1}
-T.~Oliphant. {\it A guide to NumPy\/} (Trelgol Publishing, USA, 2006).
-
-\bibitem{numpy2}
-S.~van~der Walt, S.~Colbert, G.~Varoquaux. The NumPy Array: A Structure for
-  Efficient Numerical Computation. {\it Computing in Science Engineering\/}
-  {\bf 13}, 22 (2011).
-
-\bibitem{scipy}
-E.~Jones, T.~Oliphant, P.~Peterson, {\it et~al.\/}. SciPy: Open source
-  scientific tools for Python. \url{http://www.scipy.org/} (2001).
-
-\bibitem{sklearn}
-L.~Buitinck, {\it et~al.\/}. {\it ECML PKDD Workshop: Languages for Data Mining
-  and Machine Learning\/} (2013). pp. 108--122.
-
-\bibitem{matplotlib}
-J.~Hunter. Matplotlib: A 2D graphics environment. {\it Computing In Science \&
-  Engineering\/} {\bf 9}, 90 (2007). Available from:
-  https://doi.org/10.1109/MCSE.2007.55.
-
-\bibitem{genomicalign}
-M.~Lawrence, {\it et~al.\/}. Software for Computing and Annotating Genomic
-  Ranges. {\it {PLoS} Computational Biology\/} {\bf 9} (2013). Available from:
-  https://doi.org/10.1371/journal.pcbi.1003118.
-
-\bibitem{seaborn}
-M.~Waskom, et~al. seaborn  (2012). Available from:
-  https://doi.org/http://doi.org/10.5281/zenodo.1313201.
-
-\bibitem{plotly}
-P.~T. Inc.. Collaborative data science (2015).
-
-\bibitem{anaconda}
-Anaconda. Anaconda Software Distribution. \url{https://anaconda.com}.
-
-\bibitem{blast}
-S.~Altschul, W.~Gish, W.~Miller, E.~Myers, D.~Lipman. Basic local alignment
-  search tool. {\it J Mol Biol.\/} {\bf 215}, 403 (1990).
-
-\bibitem{spearman_rnaseq}
-F.~Liesecke, {\it et~al.\/}. Ranking genome-wide correlation measurements
-  improves microarray and RNA-seq based global and targeted co-expression
-  networks. {\it Sci Rep\/} {\bf 8} (2018). Available from:
-  https://doi.org/10.1038/s41598-018-29077-3.
-
-\bibitem{dbgap}
-Database of Genotypes and Phenotypes. \url{https://www.ncbi.nlm.nih.gov/gap/}.
-
-\bibitem{aws_ec2}
-Amazon Web Services EC2 Computing.
-  \url{https://aws.amazon.com/ec2/pricing/on-demand/}. Accessed 18 July 2019.
-
-\bibitem{aws_s3}
-Amazon Web Services S3 Storage. \url{https://aws.amazon.com/s3/pricing/}.
-  Accessed 18 July 2019.
 
 \end{thebibliography}

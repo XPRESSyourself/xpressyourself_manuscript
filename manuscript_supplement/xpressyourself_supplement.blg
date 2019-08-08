@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: xpressyourself_supplement.aux
+The style file: Science.bst
+Database file #1: manubib.bib
+Warning--entry type for "plotly" isn't style-file defined
+--line 434 of file manubib.bib
+Warning--entry type for "ensembl_canon" isn't style-file defined
+--line 501 of file manubib.bib
+Warning--entry type for "aws" isn't style-file defined
+--line 609 of file manubib.bib
+Warning--entry type for "manuscript" isn't style-file defined
+--line 613 of file manubib.bib
+Warning--entry type for "tcga" isn't style-file defined
+--line 618 of file manubib.bib
+Warning--entry type for "dbgap" isn't style-file defined
+--line 622 of file manubib.bib
+Warning--entry type for "ensembl" isn't style-file defined
+--line 626 of file manubib.bib
+Warning--entry type for "xpressyourself" isn't style-file defined
+--line 630 of file manubib.bib
+Warning--entry type for "aws_ec2" isn't style-file defined
+--line 653 of file manubib.bib
+Warning--entry type for "aws_s3" isn't style-file defined
+--line 658 of file manubib.bib
+Warning--entry type for "xpresspipe_docs" isn't style-file defined
+--line 671 of file manubib.bib
+Warning--entry type for "xpressplot_docs" isn't style-file defined
+--line 675 of file manubib.bib
+Warning--empty journal in seaborn
+You've used 38 entries,
+            2310 wiz_defined-function locations,
+            927 strings with 11886 characters,
+and the built_in function-call counts, 6864 in all, are:
+= -- 614
+> -- 278
+< -- 2
++ -- 144
+- -- 67
+* -- 442
+:= -- 979
+add.period$ -- 57
+call.type$ -- 38
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 39
+duplicate$ -- 426
+empty$ -- 734
+format.name$ -- 88
+if$ -- 1625
+int.to.chr$ -- 0
+int.to.str$ -- 38
+missing$ -- 24
+newline$ -- 117
+num.names$ -- 28
+pop$ -- 210
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 240
+stack$ -- 0
+substring$ -- 177
+swap$ -- 89
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 44
+width$ -- 40
+write$ -- 320
+(There were 13 warnings)

@@ -1,0 +1,406 @@
+% Modified from AAAS Science LATEX template
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[10pt, oneside]{article}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\captionsetup{font=small}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{nameref}
+\usepackage[none]{hyphenat}%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+\usepackage{titlesec}
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+
+% Page setup
+\topmargin -2cm
+\oddsidemargin -1cm
+\evensidemargin 1cm
+\textwidth 18cm
+\textheight 24cm
+\footskip 1.0cm
+
+
+\newcommand{\beginsupplement}{%
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{S\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{S\arabic{figure}}%
+}
+
+% Include the date command, but leave its argument blank to prevent date print.
+\date{}
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+% Initialize use of code blocks with syntax highlighting
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%%%%%%%%%%%%%%%%% START OF DOCUMENT %%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Double-space the manuscript.
+\baselineskip24pt
+
+% Paper title
+\noindent
+{\huge
+\textbf{Supplemental Material: XPRESSyourself: Enhancing, Standardizing, and Automating Ribosome Profiling Computational Analyses Yields Improved Insight into Data
+}
+}
+
+\bigskip
+
+% Author info
+
+% Author list/order:
+\noindent
+{\large
+\textbf{Berg, et. al.
+}
+} \\
+
+\subsection*{Benchmarking Against TCGA Data}
+To further validate the design, reliability, and versatility of the XPRESSpipe pipeline, we processed raw TCGA sequence data using XPRESSpipe and compared the output count values to those publicly available through TCGA \cite{tcga}. Spearman $\rho$ values for the selected samples ranged from 0.984-0.986 (Figure \ref{fig:figure4}), indicating XPRESSpipe performs with similar accuracy to the TCGA RNA-Seq processing standards. \par
+
+The differences in reported counts can be accounted for by a couple of key differences. For instance, the XPRESSpipe-processed files are aligned to the \textit{Homo sapiens} GRChv96 reference transcriptome, while the original count data are aligned to the GRChv79 reference transcriptome. The use of a different transcriptome reference can result in variance in the final quantified data for several genes (Figure \ref{fig:supplement5}). For example, in the four years between these versions, significant advances have been made in our understanding of transcribed regions of the human genome. Between versions 95 and 96 alone (version 95 published 24 Nov 2018, version 96 published 13 Mar 2019), at least 32,259 records were added (quantified simply by the difference in line numbers between the files, although in addition other records have been removed or modified). \par
+
+Another source of dissimilarity in data processing appears to arise if an Ensembl canonical transcripts-only reference is used during quantification. TCGA-processed data used an un-modified transcriptome reference file (all transcripts); therefore, the use of this modified (Ensembl canonical transcripts only) GTF will produce varied quantification for some genes as quantifications are constrained to a single transcript version of a given gene and a read will not be quantified if mapping to an exon not used by the canonical transcript. Even using XPRESSpipe settings closest to the TCGA pipeline and using the same genome and transcriptome version resulted in some variation (Figure \ref{fig:supplement5}, plot enclosed in maroon). By performing a more detailed analysis of these differences, it is clear that virtually all genes exhibiting variance between the processing methods are pseudogenes, with the TCGA pipeline accepting and quantifying more pseudogenes at the time of initial analysis of this dataset. This can be indicative of the difficulty surrounding the recognition of these reads as multi-mapping to both the original gene and pseudogene (Figure \ref{fig:supplement6}, \ref{fig:supplement7}, \ref{fig:supplement8}; interactive plots accompanying Figure \ref{fig:supplement8} can be accessed at \cite{manuscript}. \\
+
+
+\begin{figure*}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_figure4.png}
+  \caption{\textbf{Pipeline validation using publicly available TCGA count data.} Correlations were calculated between publicly available count data from TCGA samples and the count data processed by XPRESSpipe. Pseudogenes were excluded from the analysis. All reported $\rho$ values are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using an unmodified GTF.}
+  \label{fig:figure4}
+\end{figure*}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement5.png}
+  \caption{\textbf{Sample RNA-Seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All $\rho$ values reported are Spearman correlation coefficients.}
+  \label{fig:supplement5}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement6.png}
+  \caption{\textbf{Effect of pseudogene inclusion on comparability between processing regimes.} Spearman correlations between XPRESSpipe and TCGA-processed count data with pseudogene counts included. All $\rho$ values reported are Spearman correlation coefficients.}
+  \label{fig:supplement6}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement7.png}
+  \caption{\textbf{Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and a current reference transcriptome. All $\rho$ values reported are Spearman correlation coefficients.}
+  \label{fig:supplement7}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement8.png}
+  \caption{\textbf{Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v96. Purple points, protein-coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.}
+  \label{fig:supplement8}
+\end{figure}
+
+
+\clearpage
+\subsection*{Cost Analysis}
+XPRESSpipe functions can be computationally intensive, and thus, super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) \cite{aws} can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} outlines runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files that were aligned to \textit{Homo sapiens}, thus it acts as a high-end estimate of the time required to process data with XPRESSpipe. For a comparable dataset, cost to use an AWS computational node with similar specifications for the above elapsed time would be approximately 17.13 USD using an Amazon EC2 On-Demand m5.4xlarge node (however, significantly reduced rates are available if using Spot instances or by using the free tier) and storage cost would amount to around 11.5 USD/month on Amazon S3 storage. \\
+
+\begin{table*}[h]
+    \centering
+\captionof{table}{\textbf{XPRESSpipe processing statistics for dataset GSE65778.}}
+\begin{tabular}{p{5cm}p{3cm}}
+\textbf{Metric} & \textbf{Value} \\
+ \hline
+ Total Raw Input & 257 GB \\
+ \hline
+ Total Output & 500 GB \\
+ \hline
+ Elapsed Real Time & 22h 18m \\
+ \hline
+ Allocated CPUs & 16 \\
+ \hline
+ Allocated Memory per Node & 64GB \\
+ \label{tab:chpc_performance}
+\end{tabular}
+\end{table*}
+
+\pagebreak
+\section*{Materials and Methods}
+Methods described in this manuscript apply to the software packages at the time of writing. To obtain the most current methods, please refer to the documentation or source code for a given module.\\
+
+\subsection*{Software Dependencies}
+A list of dependencies required for XPRESSpipe at the time of writing is listed in Table \ref{Tab:software_pipe}. Dependencies for XPRESSplot at the time of writing are listed in Table \ref{Tab:software_plot}.\\
+
+% Software dependencies table
+\begin{table*}[h]
+    \centering
+\captionof{table}{\textbf{Summary of dependency software, accession location, and purpose in the XPRESSpipe package.}}
+\begin{tabular}{p{3cm}p{7.5cm}p{2.4cm}}
+ \textbf{Package} & \textbf{Purpose} & \textbf{Reference} \\
+ \hline
+ Python & Primary language & \\
+ \hline
+ R & Language used for some statistical modules & \\
+ \hline
+ fastp & Read pre-processing & \cite{fastp} \\
+ \hline
+ STAR & Reference curation and read alignment & \cite{star} \\
+ \hline
+ samtools & Alignment file manipulation & \cite{samtools} \\
+ \hline
+ bedtools & Alignment file manipulation & \cite{bedtools} \\
+ \hline
+ Cufflinks & Read quantification (primary) & \cite{cufflinks} \\
+ \hline
+ HTSeq & Read quantification & \cite{htseq} \\
+ \hline
+ FastQC & Quality Control & \cite{fastqc} \\
+ \hline
+ MultiQC & Quality Control & \cite{multiqc} \\
+ \hline
+ Pandas & Data manipulation & \cite{pandas} \\
+ \hline
+ NumPy & Data manipulation & \cite{numpy1, numpy2} \\
+ \hline
+ SciPy & Data manipulation & \cite{scipy} \\
+ \hline
+ scikit-learn & Data manipulation & \cite{sklearn} \\
+ \hline
+ Matplotlib & Plotting & \cite{matplotlib} \\
+ \hline
+ XPRESSplot & Normalization and matrix manipulation & This paper \\
+ \hline
+ GenomicAlignments & BAM file processing & \cite{genomicalign} \\
+ \hline
+ GenomicFeatures & GTF file processing & \cite{genomicalign} \\
+ \hline
+ dupRadar & Perform library complexity calculations & \cite{dupradar} \\
+ \hline
+ riboWaltz & Perform p-site offset calculations & \cite{ribowaltz} \\
+ \hline
+ DESeq2 & Perform differential expression analysis & \cite{deseq2} \\
+ \label{Tab:software_pipe}
+\end{tabular}
+\end{table*}
+
+% Software dependencies table
+\begin{table*}[h]
+    \centering
+\captionof{table}{\textbf{Summary of dependency software, accession location, and purpose in the XPRESSplot package.}}
+\begin{tabular}{p{2.4cm}p{7.5cm}p{3cm}}
+ \textbf{Package} & \textbf{Purpose} & \textbf{Reference} \\
+ \hline
+ Python & Primary language & \\
+ \hline
+ R & Language used for some statistical modules & \\
+ \hline
+ Pandas & Data manipulation & \cite{pandas} \\
+ \hline
+ NumPy & Data manipulation & \cite{numpy1, numpy2} \\
+ \hline
+ SciPy & Data manipulation & \cite{scipy} \\
+ \hline
+ Matplotlib & Plotting & \cite{matplotlib} \\
+ \hline
+ Seaborn & Plotting & \cite{seaborn} \\
+ \hline
+ Plotly & Interactive plotting & \cite{plotly} \\
+ \hline
+ scikit-learn & Data manipulation & \cite{sklearn} \\
+ \hline
+ SVA & Perform batch correction for known effects & \cite{sva} \\
+ \label{Tab:software_plot}
+ \end{tabular}
+\end{table*}
+
+\subsection*{Installation}
+XPRESSyourself suite packages can be easily installed following directions and/or walkthrough videos provided in the documentation and READMEs \cite{xpressyourself, xpresspipe_docs, xpressplot_docs}. Once installed, \texttt{xpresspipe --help} can be run to explore sub-modules and their respective parameters. \par
+
+XPRESSyourself software packages are hosted at https://github.com/XPRESSyourself. Current or past versions of XPRESSyourself packages can be found at their respective repositories under the XPRESSyourself project. For simplest installation, we recommend using the Anaconda package manager \cite{anaconda}. Using the method below, you will need to activate the environment every time you wish to use XPRESSyourself software. Download XPRESSpipe's source code, set up the Anaconda environment, and install XPRESSpipe and XPRESSplot, as below (providing the version number you would like to download):
+
+\begin{lstlisting}[language=bash, caption=XPRESSyourself installation]
+$ curl -L -O https://github.com/XPRESSyourself/XPRESSpipe/archive/v0.2.1b0.tar.gz
+$ tar xvzf v0.0.0.tar.gz
+$ cd XPRESSpipe-0.0.0
+$ conda env create --name xpresspipe -f requirements.yml
+$ conda activate xpresspipe
+$ python setup.py install
+\end{lstlisting}
+
+\subsection*{Running XPRESSpipe}
+Before processing data, the appropriate reference files must be curated. Download the FASTA and GTF files for the organism of interest (we recommend sourcing these from Ensembl \cite{ensembl}), change the GTF file name to \texttt{transcripts.gtf}, and run the code below. This will generate the appropriate STAR index files, as well as a GTF file with protein-coding transcripts only and the $5'$- and $3'$- end of each transcript truncated for ribosome profiling data. More examples of how to curate reference files can be found in the documentation \cite{xpresspipe_docs}.
+
+\begin{lstlisting}[language=bash, caption=curateReference example]
+$ xpresspipe curateReference \
+             -o /path/to/reference/ \
+             -f /path/to/reference/fasta_genome/ \
+             -g /path/to/reference/transcripts.gtf \
+             --protein_coding \
+             --truncate \
+             --truncate_5prime 45 \
+             --truncate_3prime 15 \
+             --sjdbOverhang 49 \
+             --max_processors None
+\end{lstlisting}
+
+To process data, a simplistic example is provided below, but additional parameter changes may be necessary. Refer to the help menu (\texttt{xpresspipe --help}) or the documentation \cite{xpresspipe_docs} for more information and examples of how to tune these parameters.
+
+\begin{lstlisting}[language=bash, caption=riboseq pipeline example]
+$ xpresspipe riboseq \
+              -i /path/to/input_dir \
+              -o /path/to/output_dir \
+              -r /path/to/curated_reference \
+              --gtf /path/to/transcripts_CT.gtf \
+              -e isrib_dataset \
+              -a CTGTAGGCACCATCAAT \
+              --sjdbOverhang 49
+\end{lstlisting}
+
+Further analyses, such as additional gene coverage profiles, differential expression analysis, and batch normalization, can be performed. Details on how to perform these steps can be accessed from the help menu (\texttt{xpresspipe --help}) or the documentation \cite{xpresspipe_docs}. \par
+
+For nearly all sub-modules, log files are written to the provided output directory to summarize provided user parameters, track performance, and report errors. An additional log file is written summarizing the versions of the different dependency software used during the execution of the pipeline or sub-module. Users are encouraged to provide these files as documentation when presenting XPRESSpipe-processed data. \\
+
+\subsection*{Running XPRESSplot}
+Installation is handled during install of XPRESSpipe, but if usage XPRESSplot alone is desired, the user can run:
+
+\begin{lstlisting}[language=bash, caption=XPRESSplot install]
+$ pip install xpressplot
+\end{lstlisting}
+
+Generally, two inputs are required for all functions within XPRESSplot:
+
+\begin{enumerate}
+  \item \textbf{Expression Matrix}: It is assumed that the input data matrix = \textit{i} * \textit{j} where \textit{i} (rows) are genes or other analytes and \textit{j} (columns) are samples.
+  \item \textbf{Metadata Table}: It is assumed that the metadata table is a two-column, header-less data matrix where column 0 is the sample ID (as specified in \textit{j} column names of the expression matrix) and column 1 is the sample group (for example, genotype or treatment group).
+\end{enumerate}
+
+Usage of all xpressplot functionalities can be found in the documentation \cite{xpressplot_docs}.\\
+
+\subsection*{GTF Modification}
+To parallelize GTF modification, a GTF file is split into approximately proportional chunks equal to the specified number of threads. To avoid an incomplete gene record being included in a chunk and being inappropriately processed, a given chunk endpoint is determined by calculating the size of the GTF, dividing by the number of threads, and advancing to that endpoint, then advancing line by line until the last line of the gene record encountered at the endpoint. This is performed for each subsequent chunk. If creating the last chunk, the end of the chunk is the last line of the GTF record. \par
+
+Ensembl canonical transcripts are determined according to the Ensembl glossary definition of a canonical transcript \cite{ensembl_canon}. For cases where a tie exists between equal priority transcripts, the longest is chosen. When there are multiple transcripts that tie for equal priority and longest length, the first listed record is retained. Exon or CDS lengths are calculated by taking the sum of each exon or CDS, not including intron or other space in the calculation. \par
+
+Protein-coding records are retained by performing a simple string search for the ``protein\_coding" annotation in the attribute column of a GTF file. \par
+
+Truncation of records is performed by identifying the $5'$- and $3'$- end of each transcript and modifying the given coordinates to reflect the given truncation amounts. Suggested truncation amounts are 45 nt from the $5'$- end and 15 nt from the $3'$- end, both of which are set as the default truncation amount parameters for the function and do not need to be modified unless the user desires \cite{ingolia_meth}. As a given CDS portion of a given exon may be less than a truncation amount, the function will perform a strand-aware recursive search CDS by CDS per transcript until the full truncation amount has been fully removed for each end. Any record smaller than the sum of the $5'$- and $3'$- truncation amounts is removed entirely from the output file. \\
+
+\subsection*{Flattened GTF Records}
+Flattened transcriptome references are created via a modified version of the annotation curation module available in riboWaltz \cite{ribowaltz}. Vectorized expressions in Pandas \cite{pandas} are performed to quickly parse out pertinent meta-information for each transcript for the given analysis. Intermediate files are created for retrieval by each process when parallelizing analysis of each alignment file. This allows for fast processing of each BAM file, where the bottleneck in speed arises from the decompression and import of the binary alignment data. Flat files are automatically destroyed after sub-module completion. \\
+
+\subsection*{Normalization}
+Equations 1-4 reflect the design of the normalization functions within XPRESSplot, where \textit{g} is gene \textit{n}, \textit{ge} is cumulative exon space for gene \textit{n}, \textit{r} is total reads, \textit{f} is total fragments, and \textit{l} is length.
+
+  \begin{equation}
+    RPM\textsubscript{g} = \frac{1e6 \cdot r\textsubscript{\textit{ge}}}{\sum_{g=1}^{n} r\textsubscript{\textit{ge}}}
+  \end{equation}
+  \begin{equation}
+    RPKM\textsubscript{g} = \frac{1e9 \cdot r\textsubscript{\textit{ge}}}{(\sum_{g=1}^{n} r\textsubscript{\textit{ge}}) \cdot \textit{l} \textsubscript{\textit{ge}}}
+  \end{equation}
+  \begin{equation}
+    FPKM\textsubscript{g} = \frac{1e9 \cdot f\textsubscript{\textit{ge}}}{(\sum_{g=1}^{n} f\textsubscript{\textit{ge}}) \cdot \textit{l} \textsubscript{\textit{ge}}}
+  \end{equation}
+  \begin{equation}
+    TPM\textsubscript{g} = \frac{1e6 \cdot r\textsubscript{\textit{ge}}}{(\sum_{g=1}^{n} (\frac{1e3 \cdot r\textsubscript{\textit{ge}}}{l\textsubscript{\textit{ge}}})) \cdot \textit{l} \textsubscript{\textit{ge}}}
+  \end{equation}
+
+
+\subsection*{Quality Control Summary Plotting}
+Summary plots are created using Pandas \cite{pandas} and Matplotlib \cite{matplotlib}. Kernel density plots for library complexity analyses are created using NumPy \cite{numpy1, numpy2} and SciPy's \texttt{gaussian\_kde} function \cite{scipy}.\\
+
+\subsection*{Metagene Estimation}
+Metagene calculations are performed by determining the meta-transcript coordinate \textit{M} for each read alignment within a transcriptome-aligned BAM file (automatically output by STAR within XPRESSpipe). Let \textit{L\textsubscript{e}} be the first mapped position of the read (strand agnostic and in reference to exon space to the $5'$-end) and \textit{r} be the length of the mapped read. Let \textit{$\ell$\textsubscript{e}} be the cumulative length of all exons for the given transcript. The subscripted \textit{e} indicates the coordinate is relative to the exon space (intronic ranges within a transcript do not contribute to total space calculation). Extreme outliers (i.e., top and bottom 0.5\% of transcripts ordered by their read abundances) are removed from analysis as they will inappropriately skew the meta-profile for the majority (99\%) of transcripts. Required inputs are a transcriptome-aligned BAM file and a GTF reference file, which is flattened for downstream processing. For each mapped coordinate, the metagene position is calculated as:
+\begin{equation}
+\textit{M} = \frac{(L\textsubscript{e}\ +\ \frac{1}{2}r)\ \cdot\ 100}{\textit{$\ell$\textsubscript{e}}}
+\end{equation}
+
+\subsection*{Gene Coverage Plotting}
+Gene coverage calculations are performed by determining the exon space of the gene of interest and mapping any read for a given sample to this space. Each nucleotide of a read that maps to a nucleotide within these exon regions is counted. During plotting, a rolling window of 20 nucleotides is used to smoothen the plotted coordinates' read coverage. Required inputs are a transcriptome-aligned BAM file (as output by STAR within XPRESSpipe) and a GTF reference file, which is then curated into its longest-transcript, protein-coding-only flattened form, as discussed above. If a longest-transcript, protein-coding-only modified GTF has already been curated, this can alternatively be provided as input, with which the module will flatten (file suffix must be \texttt{LC.gtf}).\\
+
+\subsection*{Periodicity}
+Ribosome p-site periodicity is calculated using riboWaltz \cite{ribowaltz}. Required inputs are the path to a directory containing transcriptome-aligned BAM files (as output by STAR within XPRESSpipe) and the path and file name of the appropriate un-modified GTF.\\
+
+\subsection*{rRNA Probe}
+\texttt{rrnaProbe} works on a directory containing FastQC \cite{fastqc} zip compressed files to detect over-represented sequences for each sample. These sequences are then collated to create consensus fragments. One caveat of FastQC is that it collates on exact matching strings, but these strings, or sequences, can be 1 nt steps from each other and a single rRNA probe could be used to effectively pull out all these sequences. To handle this situation, XPRESSpipe will combine these near matches. A rank-ordered list of over-represented fragments within the appropriate length range to target for depletion is then output. A BLAST \cite{blast} search on a consensus sequence intended for probe usage can then be performed to verify the fragment maps to an rRNA sequence and is thus suitable for rRNA depletion.\\
+
+\subsection*{Confidence Interval Plotting}
+Confidence intervals within PCA scatterplots generated by XRESSplot are calculated as follows:
+
+\begin{enumerate}
+  \item Compute the covariance of the two principal component arrays, \textit{x} and \textit{y} using the \texttt{numpy.cov()} function.
+
+  \item Compute the eigenvalues and normalized eigenvectors of the covariance matrix using the \texttt{numpy.linalg.eig()} function.
+
+  \item Compute the $\theta$ of the normalized eigenvectors using the \texttt{numpy.arctan2()} function and converting the output from radians to degrees using \texttt{numpy.deg()}.
+
+  \item Compute the $\lambda$ of the eigenvalues by taking the square root of the eigenvalues.
+
+  \item Plot the confidence intervals over the scatter plot: The center point of the confidence interval is determined from the means of the \textit{x} and \textit{y} arrays. The angle is set equal to $\theta$. The width of the confidence interval is calculated by
+  \[
+  \textit{w} = \lambda _{\textit{\scriptsize{x}}}\ \cdot\ \textit{ci}\ \cdot\ 2
+  \]
+  where \textit{ci} is equal to the corresponding confidence level (i.e., 68\% = 1, 95\% = 2, 99\% = 3). The height is similarly computed by
+  \[
+  \textit{h} = \lambda _{\textit{\scriptsize{y}}}\ \cdot\ \textit{ci}\ \cdot\ 2
+  \]
+\end{enumerate}
+
+\subsection*{Ribosome Profiling Data Analysis}
+Raw data were obtained from GEO (GSE65778). Reference files were taken from Ensembl Human build GRCh38 version 96. Read alignments were quantified using an XPRESSpipe-modified GTF file that contained only protein-coding records and the $5'$- ends of each CDS truncated by 45 nucleotides and the $3'$- ends truncated by 15 nucleotides. All associated figures and analyses can be reproduced using the associated scripts found at \cite{manuscript}. \par
+
+Only gene names in common between the original data file and XPRESSpipe output were used for the method comparisons. Correlation between methods or replicates were calculated using a Spearman rank correlation coefficient, performed using the \texttt{scipy.stats.spearman()} function \cite{spearman_rnaseq}. \par
+
+Differential expression analyses were performed using all genes, but with a minimum count of 10 or greater per gene across samples, as recommended by the DESeq2 documentation \cite{deseq2}. Differential expression for ribo-seq and RNA-Seq was performed as detailed in the associated scripts \cite{manuscript}. For these analyses, the design formula was such that comparisons were designed as ``treated" factor level over ``untreated" factor level. Differential expression of translation efficiencies between conditions used the additional incorporation of the ``ribosome footprint" factor level over ``RNA-Seq" factor level in the design formula \cite{deseq2,isrib_riboseq,ingolia_meth}. Adjusted p-values (FDRs) in the associated figures were calculated from the differential expression of the translation efficiencies of each gene for a given condition. Those passing an adjusted p-value threshold of less than or equal to 0.1 are highlighted in black. \par
+
+Intron-agnostic gene coverage profiles were generated using XPRESSpipe's geneCoverage module. Comparison plots were generated using IGV \cite{igv}. Interactive scatter plots were generated using Plotly Express \cite{plotly}. \\
+
+\subsection*{TCGA Data Analysis}
+Raw data and processed TCGA count data was obtained from the TCGA Portal \cite{tcga} via dbGap controlled access \cite{dbgap}. Raw data were processed on a protected high-performance computing environment. Correlations between methods or replicates were calculated using a Spearman rank correlation coefficient, performed using the \texttt{scipy.stats.spearman()} function \cite{spearman_rnaseq}. Interactive scatter plots were generated using Plotly Express \cite{plotly}. The associated scripts can be accessed at \cite{manuscript}. \\
+
+
+\subsection*{Cost Analysis}
+Cost analysis was performed by assessing run logs from the high-performance computing cluster and using published AWS prices \cite{aws_ec2, aws_s3} to calculate the relative cost for a comparable run.\\
+
+\bibliography{manubib}
+\bibliographystyle{Science}
+
+\end{document}
