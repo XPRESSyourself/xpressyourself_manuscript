@@ -27,45 +27,51 @@ Warning--entry type for "xpresspipe_docs" isn't style-file defined
 --line 671 of file manubib.bib
 Warning--entry type for "xpressplot_docs" isn't style-file defined
 --line 675 of file manubib.bib
-You've used 53 entries,
+Warning--entry type for "orfik" isn't style-file defined
+--line 776 of file manubib.bib
+Warning--entry type for "riboseqr" isn't style-file defined
+--line 798 of file manubib.bib
+Warning--entry type for "picard" isn't style-file defined
+--line 803 of file manubib.bib
+You've used 75 entries,
             2310 wiz_defined-function locations,
-            1016 strings with 17085 characters,
-and the built_in function-call counts, 9895 in all, are:
-= -- 943
-> -- 433
+            1115 strings with 21397 characters,
+and the built_in function-call counts, 14071 in all, are:
+= -- 1349
+> -- 678
 < -- 0
-+ -- 223
-- -- 105
-* -- 720
-:= -- 1497
-add.period$ -- 94
-call.type$ -- 53
++ -- 346
+- -- 166
+* -- 1024
+:= -- 2181
+add.period$ -- 137
+call.type$ -- 75
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 53
-duplicate$ -- 620
-empty$ -- 948
-format.name$ -- 145
-if$ -- 2296
+cite$ -- 75
+duplicate$ -- 878
+empty$ -- 1292
+format.name$ -- 226
+if$ -- 3228
 int.to.chr$ -- 0
-int.to.str$ -- 53
-missing$ -- 40
-newline$ -- 162
-num.names$ -- 40
-pop$ -- 227
+int.to.str$ -- 75
+missing$ -- 59
+newline$ -- 228
+num.names$ -- 61
+pop$ -- 325
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 310
+skip$ -- 421
 stack$ -- 0
 substring$ -- 199
-swap$ -- 139
+swap$ -- 200
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 56
-width$ -- 55
-write$ -- 483
-(There were 12 warnings)
+while$ -- 77
+width$ -- 77
+write$ -- 693
+(There were 15 warnings)

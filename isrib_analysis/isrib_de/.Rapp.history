@@ -1,0 +1,447 @@
+?read.table
+?write.table
+?parLapply
+library(parallel)
+?parLapply
+?parallel
+library(doSNOW)
+library(doMC)
+install.packages("doMC", repos = "http://cran.us.r-project.org")
+library(doMC)
+?foreach
+library(GenomicFeatures)
+cite(GenomicFeatures)
+citation(GenomicFeatures)
+citation("GenomicFeatures")
+library(BiocManager)
+?BiocManager
+?BiocManager::install()
+?install.packages()
+library(readr)
+data <- read_csv(file = '~/Desktop/conA_counts_6hr.tsv')
+data <- read_csv(file = '~/Desktop/conA_counts_6hr.tsv', delimiter='\t')
+data <- read_csv(file = '~/Desktop/conA_counts_6hr.tsv', sep='\t')
+data <- read_csv(file = '~/Desktop/conA_counts_6hr.tsv')
+head(data)
+data <- read.table(file = '~/Desktop/conA_counts_6hr.tsv')
+head(data)
+meta <- read.table(file = '~/Desktop/info_6h_conA.tsv')
+meta$time <- factor(meta$time, levels = c("0", "6"))
+library(DESeq2)
+data <- data[rowSums(counts(data)) > 10, ]
+dds <- DESeqDataSetFromTximport(data, meta, ~ time)
+dds <- DESeqDataSetFromMatrix(countData = data, colData = meta, design = ~ time)
+dds
+data <- read.table(file = '~/Desktop/conA_counts_6hr.tsv')
+dds <- DESeqDataSetFromMatrix(countData = data, colData = meta, design = ~ time)
+dds
+dds <- DESeq(dds)
+dds
+res <- results(dds)
+resOrdered <- res[order(res$padj),]
+head(resOrdered)
+write.table(as.data.frame(resOrdered), file = '~/Desktop/output.tsv', sep = '\t', col.names = T, row.names = T)
+paste('~', tolower(toString(time)))
+paste('~', tolower(toString('time')))
+as.formula(paste('~', tolower(toString('time'))))
+as.formula(paste('~ ', tolower(toString('time'))))
+dds <- DESeqDataSetFromMatrix(countData = data, colData = meta, design = as.formula("~time"))
+dds <- DESeq(dds)
+res <- results(dds)
+resOrdered <- res[order(res$padj),]
+head(resOrdered)
+sample_table <- read.table(text = readLines("~/Desktop/info_6h_conA.tsv", warn = FALSE), header = TRUE, sep = '\t')
+sample_table
+count_table <- read.table('~/Desktop/conA_counts_6hr.tsv', sep = '\t', header = TRUE, row.names = 1)
+head(count_table)
+cols(count_table)
+col(count_table)
+columns(count_table)
+?read.table
+count_table <- read.table("~/Desktop/conA_counts_6hr.tsv", sep = '\t', header = TRUE, row.names = 1, check.names=F))
+count_table <- read.table("~/Desktop/conA_counts_6hr.tsv", sep = '\t', header = TRUE, row.names = 1, check.names=F)
+head(count_table)
+sample_table <- read.table(text = readLines("~/Desktop/info_6h_conA.tsv", warn = FALSE), header = TRUE, sep = '\t')
+dds <- DESeqDataSetFromMatrix(countData = data, colData = meta, design = as.formula("~time"))
+dds <- DESeq(dds)
+res <- results(dds)
+resOrdered <- res[order(res$padj),]
+head(resOrdered)
+library(DESeq2)
+count_table <- read.table("~/Desktop/conA_counts_6hr.tsv", sep = '\t', header = TRUE, row.names = 1, check.names=F)
+sample_table <- read.table(text = readLines("~/Desktop/info_6h_conA.tsv", warn = FALSE), header = TRUE, sep = '\t')
+sample_table
+names(sample_table) <- tolower(names(sample_table))
+sample_table
+dds <- DESeqDataSetFromMatrix(countData = count_table,colData = sample_table,design = as.formula(paste('~', tolower(toString("time")))))
+dds <- DESeq(dds)
+res <- results(dds)
+resOrdered <- res[order(res$padj),]
+head(resOrdered)
+sample_table$time <- factor(sample_table$time, levels = c("0", "6"))
+dds <- DESeqDataSetFromMatrix(countData = count_table,colData = sample_table,design = as.formula(paste('~', tolower(toString("time")))))
+dds <- DESeq(dds)
+res <- results(dds)
+resOrdered <- res[order(res$padj),]
+head(resOrdered)
+strsplit(gsub("[^[:alnum:] ]", "", "time"), " +")[[1]]
+strsplit(gsub("[^[:alnum:] ]", "", "time+conditions+time:condition"), " +")[[1]]
+strsplit(gsub("[^[:alnum:] ]", " ", "time+conditions+time:condition"), " +")[[1]]
+items <- strsplit(gsub("[^[:alnum:] ]", " ", "time+conditions+time:condition"), " +")[[1]]
+items
+items <- strsplit(gsub("[^[:alnum:] ]", " ", "time+conditions+time:conditions"), " +")[[1]]
+items
+unique(items)
+sort(items)
+sort(c('0', '1', '3'))
+sort(c('0', '2', '1'))
+uniq_items <- unique(items)
+uniq_items
+sample_table$uniq_items[1]
+sample_table$uniq_items[0]
+vari <- uniq_items[0]
+vari
+vari <- uniq_items[1]
+vari
+sample_table$vari
+sample_table[vari]
+sample_table[vari][0]
+sample_table[vari][1]
+as.vector(sample_table[vari])
+sample_table[][vari]]
+sample_table[[vari]]
+unique(sample_table[[vari]])
+unique(toString(sample_table[[vari]]))
+unlist(sample_table[[vari]])
+toString(unlist(sample_table[[vari]]))
+lapply(sample_table[[vari]], toString)
+lapply(sample_table[[vari]], toString)[1]
+unlist(lapply(sample_table[[vari]], toString))
+unique(unlist(lapply(sample_table[[vari]], toString)))
+uniq_items <- unique(items)
+uniq_items
+for ( i in uniq_items) {print(i)}
+for ( i in uniq_items) {print(i)[1]}
+for ( i in uniq_items) {print(sample_table[i])}
+for ( i in c("time")) {print(sample_table[i])}
+for ( i in c("conditions")) {print(sample_table[i])}
+sample_table
+EQUATION <- time
+items <- strsplit(gsub("[^[:alnum:] ]", " ", tolower(toString(EQUATION))), " +")[[1]]
+eq <- tolower(toString(EQUATION)))
+eq <- tolower(toString(EQUATION))
+eq <- tolower(toString('time'))
+EQUATION <- "time"
+eq <- tolower(toString(EQUATION)))
+eq <- tolower(toString(EQUATION))
+wq
+eq
+EQUATION <- "time"
+items <- strsplit(gsub("[^[:alnum:] ]", " ", tolower(toString(EQUATION)))), " +")[[1]]
+strsplit()
+items <- strsplit(gsub("[^[:alnum:] ]", " ", tolower(toString(EQUATION)), " +"))[[1]]
+strsplit(tolower(toString(EQUATION)), gsub("[^[:alnum:] ]"))
+items <- strsplit(gsub("[^[:alnum:] ]", "", tolower(toString(EQUATION))), " +")[[1]]
+items
+for ( i in items) {sample_table[i] <- factor(sample_table[i], levels = sort(unique(unlist(lapply(sample_table[[i]], toString))))))
+for ( i in items) {sample_table[i] <- factor(sample_table[i], levels = sort(unique(unlist(lapply(sample_table[[i]], toString)))))
+sample_table
+)
+for ( i in items) {sample_table[i] <- factor(sample_table[i], levels = sort(unique(unlist(lapply(sample_table[[i]], toString))))
+)}
+for ( i in items) {sample_table[i] <- factor(sample_table[i], levels = sort(unique(unlist(lapply(sample_table[[i]], toString)))))}
+sample_table
+sort(unique(unlist(lapply(sample_table[[i]], toString)))))
+sort(unique(unlist(lapply(sample_table[[i]], toString))))
+sort(unique(unlist(lapply(sample_table[["time"]], toString))))
+sample_table <- read.table(text = readLines("~/Desktop/info_6h_conA.tsv", warn = FALSE), header = TRUE, sep = '\t')
+sample_table
+sort(unique(unlist(lapply(sample_table[[""]], toString))))
+sort(unique(unlist(lapply(sample_table[["time"]], toString))))
+sample_table["time"] <- factor(sample_table["time"], levels = sort(unique(unlist(lapply(sample_table[["time"]], toString)))))
+sample_table
+c("0","6")
+sample_table <- read.table(text = readLines("~/Desktop/info_6h_conA.tsv", warn = FALSE), header = TRUE, sep = '\t')
+sample_table$time <- factor(sample_table$time, levels = sort(unique(unlist(lapply(sample_table[["time"]], toString)))))
+sample_table
+sample_table[['time']] <- factor(sample_table[['time']], levels = sort(unique(unlist(lapply(sample_table[["time"]], toString)))))
+sample_table
+setwd('~/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/')
+count_table <- read.table('tm_ISRIBxpresspipe_processed_counts.tsv', sep = '\t', header = TRUE, row.names = 1, check.names=F)
+head(count_table)
+sample_table <- read.table(text = readLines('tmisrib_deseq.txt', warn = FALSE), header = TRUE, sep = '\t')
+names(sample_table) <- tolower(names(sample_table))
+items <- strsplit(gsub("[^[:alnum:] ]", "", tolower(toString(EQUATION))), " +")[[1]]#
+uniq_items <- unique(items)
+items <- strsplit(gsub("[^[:alnum:] ]", "", tolower(toString("Type+Condition+Type:Condition"))), " +")[[1]]#
+uniq_items <- unique(items)
+for ( i in uniq_items) {#
+  print(i)#
+  sample_table[[i]] <- factor(#
+    sample_table[[i]], levels = sort(#
+      unique(#
+        unlist(#
+          lapply(#
+            sample_table[[i]], toString#
+          )#
+        )#
+      )#
+    )#
+  )#
+}
+uniq_items
+items
+items <- strsplit(gsub("[^[:alnum:] ]", " ", tolower(toString("Type+Condition+Type:Condition"))), " +")[[1]]#
+uniq_items <- unique(items)
+items
+uniq_items
+for ( i in uniq_items) {#
+  print(i)#
+  sample_table[[i]] <- factor(#
+    sample_table[[i]], levels = sort(#
+      unique(#
+        unlist(#
+          lapply(#
+            sample_table[[i]], toString#
+          )#
+        )#
+      )#
+    )#
+  )#
+}
+dds <- DESeqDataSetFromMatrix(countData = count_table,#
+  colData = sample_table,#
+  design = as.formula(paste('~', tolower(toString("Type+Condition+Type:Condition")))))
+library(DESeq2)
+dds <- DESeqDataSetFromMatrix(countData = count_table,#
+  colData = sample_table,#
+  design = as.formula(paste('~', tolower(toString("Type+Condition+Type:Condition")))))
+dds <- DESeq(dds)#
+res <- results(dds)#
+resOrdered <- res[order(res$padj),]
+resultsNames(dds)
+sample_table <- read.table(text = readLines('tmisrib_deseq.txt', warn = FALSE), header = TRUE, sep = '\t')
+items <- strsplit(gsub("[^[:alnum:] ]", " ", tolower(toString("Type+Condition+Type:Condition"))), " +")[[1]]#
+uniq_items <- unique(items)
+for ( i in uniq_items) {#
+  print(i)#
+  sample_table[[i]] <- factor(#
+    sample_table[[i]], levels = sort(#
+      unique(#
+        unlist(#
+          lapply(#
+            sample_table[[i]], toString#
+          )#
+        )#
+      )#
+    )#
+  )#
+}
+items
+uniq_items
+sample_table
+> for ( i in uniq_items) {#
++   print(i)#
++   sample_table[[i]] <- factor(#
++     sample_table[[i]], levels = sort(#
++       unique(#
++         unlist(#
++           lapply(#
++             sample_table[[i]], toString#
++           )#
++         )#
++       )#
++     )#
++   )#
++ }
+for ( i in uniq_items) {#
+  print(i)#
+  sample_table[[i]] <- factor(#
+    sample_table[[i]], levels = sort(#
+      unique(#
+        unlist(#
+          lapply(#
+            sample_table[[i]], toString#
+          )#
+        )#
+      )#
+    )#
+  )#
+}
+items
+for ( i in uniq_items) {#
+  print(i)#
+  if sapply(sample_table[[i]], is.numeric) {#
+    sample_table[[i]] <- factor(#
+      sample_table[[i]], levels = sort(#
+        unique(#
+          unlist(#
+            lapply(#
+              sample_table[[i]], toString#
+            )#
+          )#
+        )#
+      )#
+    )#
+  }#
+}
+samples_table
+sample_table
+for ( i in uniq_items) {#
+  print(i)#
+  if sapply(sample_table[[i]], is.numeric) {#
+    sample_table[[i]] <- factor(#
+      sample_table[[i]], levels = sort(#
+        unique(#
+          unlist(#
+            lapply(#
+              sample_table[[i]], toString#
+            )#
+          )#
+        )#
+      )#
+    )#
+  } else {}#
+}
+for ( i in uniq_items) {#
+  print(i)#
+  if sapply(sample_table[[i]], is.numeric) {#
+    print('yp')#
+    sample_table[[i]] <- factor(#
+      sample_table[[i]], levels = sort(#
+        unique(#
+          unlist(#
+            lapply(#
+              sample_table[[i]], toString#
+            )#
+          )#
+        )#
+      )#
+    )#
+  } else {}#
+}
+for ( i in uniq_items) {#
+  print(i)#
+  if (sapply(sample_table[[i]], is.numeric) == TRUE) {#
+    print('yp')#
+    sample_table[[i]] <- factor(#
+      sample_table[[i]], levels = sort(#
+        unique(#
+          unlist(#
+            lapply(#
+              sample_table[[i]], toString#
+            )#
+          )#
+        )#
+      )#
+    )#
+  } else {}#
+}
+if (sapply(sample_table[[i]], is.numeric) == TRUE) {#
+    print('yp')}
+if (sapply([1,2,3], is.numeric) == TRUE) {#
+    print('yp')}
+if (sapply([1,2,3], is.numeric) == TRUE) { print('wat') }
+if (sapply(c(1,2,3), is.numeric) == TRUE) { print('wat') }
+sample_table.condition
+sample_table.Condition
+sample_table.Conditions
+sample_table.conditions
+sample_table
+sample_table[['Condition']]
+is.numeric(sample_table[['Condition']])
+is.numeric(c(1,2,3))
+for ( i in uniq_items) {#
+  print(i)#
+  if (is.numeric(sample_table[[i]]) == TRUE) {#
+    print('yp')#
+    sample_table[[i]] <- factor(#
+      sample_table[[i]], levels = sort(#
+        unique(#
+          unlist(#
+            lapply(#
+              sample_table[[i]], toString#
+            )#
+          )#
+        )#
+      )#
+    )#
+  } else {}#
+}
+dds <- DESeqDataSetFromMatrix(#
+  countData = count_table,#
+  colData = sample_table,#
+  design = as.formula(paste('~', tolower(toString("Type+Condition+Type:Condition")))))
+sample_table
+items <- strsplit(gsub("[^[:alnum:] ]", " ", toString(EQUATION)), " +")[[1]]
+items <- strsplit(gsub("[^[:alnum:] ]", " ", toString("Condition")), " +")[[1]]
+items
+for ( i in uniq_items) {#
+  #if (is.numeric(sample_table[[i]]) == TRUE) {#
+    print('yp')#
+    sample_table[[i]] <- factor(#
+      sample_table[[i]], levels = sort(#
+        unique(#
+          unlist(#
+            lapply(#
+              sample_table[[i]], toString#
+            )#
+          )#
+        )#
+      )#
+    )#
+  #} else {#
+    # Keep formatted as string#
+  #}#
+}
+sample_table
+names(sample_table) <- tolower(names(sample_table))
+sample_table
+items <- strsplit(gsub("[^[:alnum:] ]", " ", tolower(toString(EQUATION))), " +")[[1]]#
+uniq_items <- unique(items)
+items <- strsplit(gsub("[^[:alnum:] ]", " ", tolower(toString("Type+Condition+Type:Condition"))), " +")[[1]]#
+uniq_items <- unique(items)
+for ( i in uniq_items) {#
+  #if (is.numeric(sample_table[[i]]) == TRUE) {#
+    print('yp')#
+    sample_table[[i]] <- factor(#
+      sample_table[[i]], levels = sort(#
+        unique(#
+          unlist(#
+            lapply(#
+              sample_table[[i]], toString#
+            )#
+          )#
+        )#
+      )#
+    )#
+  #} else {#
+    # Keep formatted as string#
+  #}#
+}
+dds <- DESeqDataSetFromMatrix(#
+  countData = count_table,#
+  colData = sample_table,#
+  design = as.formula(paste('~', tolower(toString("Type+Condition+Type:Condition")))))
+dds <- DESeq(dds)
+res <- results(dds)
+resultsNames(dds)
+res <- lfcShrink(dds, coef="typeRPF.conditionTMISRIB", type="apgelm")
+res <- lfcShrink(dds, coef="typeRPF.conditionTMISRIB", type="apeglm")
+head(res)
+res2 <- results(dds)
+dim(res2)
+dim(res)
+head(res2)
+res <- lfcShrink(dds, coef="condition_TMISRIB_vs_A_UNTR", type="apeglm")
+dim(res)
+resultsNames(dds)[-1]
+resultsNames(dds)[1]
+resultsNames(dds)[2]
+resultsNames(dds)[-3]
+tail(resultsNames(dds), n=1)
+shrinkage_var <- tail(resultsNames(dds), n=1)
+shrinkage_var
+print(paste('Using factor ', shrinkage_var, ' as log fold change shrinkage coefficient...' sep=''))
+print(paste('Using factor ', shrinkage_var, ' as log fold change shrinkage coefficient...', sep=''))
+library(apeglm)

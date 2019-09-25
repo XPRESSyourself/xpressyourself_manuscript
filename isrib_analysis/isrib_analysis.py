@@ -26,15 +26,99 @@ def name_map(
     data,
     map):
 
-    name_dict = pd.Series(map.original_name.values,index=map.Run).to_dict()
+    name_dict = pd.Series(map.ingolia_name.values,index=map.Run).to_dict()
     data_c = data.copy()
     data_c.columns = data_c.columns.to_series().map(name_dict)
     data_sum = data_c.groupby(data_c.columns, axis=1).sum()
 
     return data_sum
 
-# Make figure 2A
-def make_figure2A(
+# Make figure 2B
+def make_figure2B(
+    data,
+    original_data,
+    title):
+
+    fig, axes = plt.subplots(
+        nrows = 2,
+        ncols = 2,
+        figsize = (20, 20),
+        subplot_kw = {
+            'facecolor':'none'}) # Create shared axis for cleanliness
+    plt.subplots_adjust(
+        bottom = 0.1)
+    plt.yticks([0,1,2,3,4,5]) # Limit axis labels to ints
+    plt.xticks([0,1,2,3,4,5])
+
+    x = 0
+    file_number = 0
+    file_list = [
+        'ribo_tm_a',
+        'isrib_b_hek'] # Designate sample order
+
+    for y in range(2):
+
+        # Get data as array-like for samples being compared
+        data_c1 = data.copy()
+        data_c2 = original_data.copy()
+
+        sample_a = data_c1[file_list[file_number]].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c2[file_list[file_number]].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
+        # Run Spearman R linreg for non-normal data
+        rho, p_value = stats.spearmanr(sample_a, sample_b)
+
+        # Determine subplot location
+        if file_number in [0,1]:
+            ax_x = file_number % 2
+            ax_y = 0
+        else:
+            print('oops')
+
+        # Format p value
+        if p_value < 0.001:
+            p_val = '< 0.001'
+        else:
+            p_val = '= {:.3f}'.format(round(p_value, 3))
+
+        rho = '{:.3f}'.format(round(rho, 3))
+
+        # Plot data
+        axes[ax_y, ax_x].tick_params(size=20)
+        axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=28) # Format titles
+        axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.0457, xmax=1) # Create axis lines
+        axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.0457, ymax=1)
+        file_number += 1 # Plot counter
+        x += 2
+        print(rho)
+
+    # Create shared row/column titles
+    for ax in axes[:,0]:
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=24)
+
+    cols = ['RPF Tm RepA','mRNA ISRIB RepB']
+    for ax, col in zip(axes[0], cols):
+        ax.set_xlabel(col, fontsize=28)
+        ax.xaxis.set_label_position('top')
+    cols = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)']
+    for ax, col in zip(axes[1], cols):
+        ax.set_xlabel(col, fontsize=28, labelpad=30)
+        ax.xaxis.set_label_position('top')
+
+    fig.savefig(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title),
+        dpi = 600,
+        bbox_inches = 'tight')
+
+def make_figure2B_supplement(
     data,
     original_data,
     title,
@@ -165,8 +249,213 @@ def make_figure2A(
         dpi = 600,
         bbox_inches = 'tight')
 
-# Make Figure 2B
-def make_figure2B(
+
+def make_figure2CD(
+    data,
+    original_data,
+    title):
+
+    file_list = [
+        'ribo_untr_a',
+        'ribo_untr_b',
+        'untr_a_hek',
+        'untr_b_hek',
+        'ribo_tm_a',
+        'ribo_tm_b',
+        'tm_a_hek',
+        'tm_b_hek',
+        'ribo_tmisrib_a',
+        'ribo_tmisrib_b',
+        'tmisrib_a_hek',
+        'tmisrib_b_hek',
+        'ribo_isrib_a',
+        'ribo_isrib_b',
+        'isrib_a_hek',
+        'isrib_b_hek'] # Designate sample order
+
+    spear_list = []
+    pear_list = []
+
+    for x in file_list:
+
+        # Get data as array-like for samples being compared
+        data_c1 = data.copy()
+        data_c2 = original_data.copy()
+
+        sample_a = data_c1[x].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c2[x].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
+        # Run Spearman R linreg for non-normal data
+        rho, spear_p_value = stats.spearmanr(sample_a, sample_b)
+        spear_list.append(rho)
+
+        r, pear_p_value = stats.pearsonr(sample_a, sample_b)
+        pear_list.append(r)
+
+    spear_list_reps = []
+    pear_list_reps = []
+    file_number = 0
+    for x in range(int(len(file_list)/2)):
+
+        # Get data as array-like for samples being compared
+        data_c1 = data.copy()
+
+        sample_a = data_c1[file_list[file_number]].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c1[file_list[file_number+1]].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
+        file_number += 2
+
+        # Run Spearman R linreg for non-normal data
+        rho, spear_p_value = stats.spearmanr(sample_a, sample_b)
+        spear_list_reps.append(rho)
+
+        r, pear_p_value = stats.pearsonr(sample_a, sample_b)
+        pear_list_reps.append(r)
+
+    data = [
+        spear_list_reps,
+        pear_list_reps,
+        spear_list,
+        pear_list]
+
+    names = [
+        'Spearman Replicates',
+        'Pearson Replicates',
+        'Spearman Method Comparison',
+        'Pearson Method Comparison']
+
+    counter = 0
+    df = pd.DataFrame(columns = ['Value', 'Type'])
+
+    for x in range(4):
+        l = data[x]
+        n = names[x]
+
+        for y in l:
+            df.loc[counter] = [float(y), str(n)]
+            counter += 1
+
+    df1 = df.loc[df['Type'].str.contains('Spearman')]
+    df1['Type'] = df1['Type'].str.replace(r'Spearman ', '')
+    df1.columns = ['Value', 'Spearman']
+    ax1 = sns.violinplot(x="Value", y="Spearman", data=df1)
+    plt.savefig(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/spearman_' + str(title),
+        dpi = 1800,
+        bbox_inches = 'tight')
+    plt.close()
+
+    df2 = df.loc[df['Type'].str.contains('Pearson')]
+    df2['Type'] = df2['Type'].str.replace(r'Pearson ', '')
+    df2.columns = ['Value', 'Pearson']
+    ax2 = sns.violinplot(x="Value", y="Pearson", data=df2)
+    plt.savefig(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/pearsan_' + str(title),
+        dpi = 1800,
+        bbox_inches = 'tight')
+    plt.close()
+
+# Make Figure 2A
+def make_figure2A(
+    data,
+    title):
+
+    fig, axes = plt.subplots(
+        nrows = 2,
+        ncols = 2,
+        figsize = (20, 20),
+        subplot_kw = {
+            'facecolor':'none'}) # Create shared axis for cleanliness
+    plt.subplots_adjust(
+        bottom = 0.1)
+    plt.yticks([0,1,2,3,4,5]) # Limit axis labels to ints
+    plt.xticks([0,1,2,3,4,5])
+
+    x = 0
+    file_number = 0
+    file_list = [
+        'ribo_tm_a',
+        'ribo_tm_b',
+        'isrib_a_hek',
+        'isrib_b_hek'] # Designate sample order
+
+    for y in range(int(len(file_list)/2)):
+
+        # Get data as array-like for samples being compared
+        data_c1 = data.copy()
+
+        sample_a = data_c1[file_list[x]].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c1[file_list[x+1]].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
+        # Run Spearman R linreg for non-normal data
+        rho, p_value = stats.spearmanr(sample_a, sample_b)
+
+        # Determine subplot location
+        if file_number in [0,1]:
+            ax_x = file_number % 2
+            ax_y = 0
+        else:
+            print('oops')
+
+        # Format p value
+        if p_value < 0.001:
+            p_val = '< 0.001'
+        else:
+            p_val = '= {:.3f}'.format(round(p_value, 3))
+
+        rho = '{:.3f}'.format(round(rho, 3))
+
+        # Plot data
+        axes[ax_y, ax_x].tick_params(size=20)
+        axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=24) # Format titles
+        axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.0457, xmax=1) # Create axis lines
+        axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.0457, ymax=1)
+        file_number += 1 # Plot counter
+        x += 2
+        print(rho)
+
+    # Create shared row/column titles
+
+    for ax in axes[:,0]:
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=24)
+
+    cols = ['RPF Tm','mRNA ISRIB']
+    for ax, col in zip(axes[0], cols):
+        ax.set_xlabel(col, fontsize=28)
+        ax.xaxis.set_label_position('top')
+    cols = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)']
+    for ax, col in zip(axes[1], cols):
+        ax.set_xlabel(col, fontsize=28, labelpad=30)
+        ax.xaxis.set_label_position('top')
+
+    fig.savefig(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title),
+        dpi = 600,
+        bbox_inches = 'tight')
+
+def make_figure2A_supplement(
     data,
     title):
 
@@ -320,15 +609,15 @@ READ IN DATA
 file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/isrib_comp_v96_truncated_count_table.tsv'
 data = get_data(file, sample_suffix='__Aligned')
 
-
-
 # Clean up data
+data_threshold_deseq = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 25] # Apply threshold to data
+
 data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
 
 data_rpm = rpm(data_threshold)
 
 # Export for DESeq2
-data_threshold.to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isribxpresspipe_thresholded_counts.tsv',sep='\t')
+data_threshold_deseq.to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isribxpresspipe_thresholded_counts.tsv',sep='\t')
 
 untr_mrna = ['untr_a_hek', 'untr_b_hek']
 untr_ribo = ['ribo_untr_a', 'ribo_untr_b']
@@ -339,17 +628,17 @@ tmisrib_ribo = ['ribo_tmisrib_a', 'ribo_tmisrib_b']
 isrib_mrna = ['isrib_a_hek', 'isrib_b_hek']
 isrib_ribo = ['ribo_isrib_a', 'ribo_isrib_b']
 
-data_threshold[untr_ribo + tm_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + tmisrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + isrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + tm_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + tmisrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + isrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
-data_threshold[untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
-data_threshold[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
 
 
 """
@@ -455,11 +744,30 @@ print('# Reads overcounted: ' + str(int(round(overcounts))))
 print('Overcount rate: ' + str(overcount_rate * 100) + '%')
 print('TopHat2 vs STAR overcount ambiguous rate increase: ' + tophat_overcount_rate)
 
+
+
 """
 FIGURE 2A
 """
 # Run correlations between sample alignments
-def cycle_fig2a(file, original):
+make_figure2A(
+    data_threshold,
+    'internal_correlations_summary_htseq_protein_truncated_v96.png')
+
+make_figure2A_supplement(
+    data_threshold,
+    'internal_correlations_summary_htseq_protein_truncated_v96_all.png')
+
+make_figure2A_supplement(
+    original,
+    'internal_correlations_summary_original.png')
+
+
+"""
+FIGURE 2B
+"""
+# Run correlations between sample alignments
+def cycle_fig2b(file, original):
 
     data = get_data(file, sample_suffix='__Aligned')
 
@@ -473,10 +781,10 @@ def cycle_fig2a(file, original):
     data_common = data_threshold.reindex(index = common_genes)
     original_common = original.reindex(index = common_genes)
 
-    make_figure2A(
+    make_figure2B_supplement(
         data_common,
         original_common,
-        str(file.split('/')[-1][:-4]) + '_external_correlations_summary_htseq.png')
+        str(file.split('/')[-1][:-4]) + '_external_correlations_summary_htseq_all.png')
 
 
 #'isrib_comp_v96_truncated_count_table.tsv',
@@ -493,23 +801,19 @@ file_list = ['/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isr
 
 for file in file_list:
 
-    cycle_fig2a(file, original)
+    cycle_fig2b(file, original)
 
-
-make_figure2A(
+make_figure2B(
     data_common,
     original_common,
     'external_correlations_summary_htseq_protein_truncated_v96.png')
 
+make_figure2B_supplement(
+    data_common,
+    original_common,
+    'external_correlations_summary_htseq_protein_truncated_v96_all.png')
 
-"""
-FIGURE 2B
-"""
-# Run correlations between sample alignments
-make_figure2B(
-    data_threshold,
-    'internal_correlations_summary_htseq_protein_truncated_v96.png')
-
-make_figure2B(
-    original,
-    'internal_correlations_summary_original.png')
+make_figure2CD(
+    data_common,
+    original_common,
+    'spearman_pearson_correlations_htseq_protein_truncated_v96.png')

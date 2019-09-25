@@ -81,6 +81,122 @@ XPRESSpipe documentation. \url{https://xpresspipe.readthedocs.io/en/latest/}.
 \bibitem{xpressplot_docs}
 XPRESSplot documentation. \url{https://xpressplot.readthedocs.io/en/latest/}.
 
+\bibitem{pausepred}
+R.~Kumari, A.~Michel, P.~Baranov. PausePred and Rfeet: webtools for inferring
+  ribosome pauses and visualizing footprint density from ribosome profiling
+  data. {\it RNA\/} {\bf 24} (2018). Available from:
+  https://doi.org/10.1261/rna.065235.117.
+
+\bibitem{anota2seq}
+C.~Oertlin, {\it et~al.\/}. Generally applicable transcriptome-wide analysis of
+  translation using anota2seq. {\it Nucleic Acids Res\/} {\bf 47} (2019).
+  Available from: https://doi.org/10.1093/nar/gkz223.
+
+\bibitem{riboprofiling}
+A.~Popa, {\it et~al.\/}. RiboProfiling: a Bioconductor package for standard
+  Ribo-seq pipeline processing. {\it F1000Res\/} {\bf 5} (2016). Available
+  from: https://doi.org/10.12688/f1000research.8964.1.
+
+\bibitem{riborex}
+W.~Li, W.~Wang, P.~Uren, L.~Penalva, A.~Smith. Riborex: fast and flexible
+  identification of differential translation from Ribo-seq data. {\it
+  Bioinformatics\/} {\bf 33} (2017). Available from:
+  https://doi.org/10.1093/bioinformatics/btx047.
+
+\bibitem{mqc}
+S.~Verbruggen, G.~Menschaert. mQC: A post-mapping data exploration tool for
+  ribosome profiling. {\it Comput Methods Programs Biomed\/}  (2018). Available
+  from: https://doi.org/10.1016/j.cmpb.2018.10.018.
+
+\bibitem{shoelaces}
+{\AA}.~Birkeland, K.~Chy{\.Z}y{\'n}ska, E.~Valen. Shoelaces: an interactive
+  tool for ribosome profiling processing and visualization. {\it BMC
+  Genomics\/} {\bf 19} (2018). Available from:
+  https://doi.org/10.1186/s12864-018-4912-6.
+
+\bibitem{supertranscripts}
+N.~Davidson, A.~Hawkins, A.~Oshlack. SuperTranscripts: a data driven reference
+  for analysis and visualisation of transcriptomes. {\it Genome Biol\/} {\bf
+  18} (2017). Available from: https://doi.org/10.1186/s13059-017-1284-1.
+
+\bibitem{systempiper}
+T.~Backman, T.~Girke. systemPipeR: NGS workflow and report generation
+  environment. {\it BMC Bioinformatics\/} {\bf 17} (2016). Available from:
+  https://doi.org/10.1186/s12859-016-1241-0.
+
+\bibitem{orfik}
+H.~Tjeldnes, K.~Labun. ORFik: Open Reading Frames in Genomics.
+  \url{https://github.com/JokingHero/ORFik} (2017). Available from:
+  https://doi.org/10.18129/B9.bioc.ORFik.
+
+\bibitem{comet_1}
+T.~Martin, I.~Erte, P.~Tsai, J.~Bell. coMET: an R plotting package to visualize
+  regional plots of epigenome-wide association scan results. {\it QG14\/}
+  (2014). Available from: http://quantgen.soc.srcf.net/qg14/.
+
+\bibitem{comet_2}
+T.~Martin, I.~Yet, P.~Tsai, J.~Bell. coMET: visualisation of regional
+  epigenome-wide association scan results and DNA co-methylation patterns. {\it
+  BMC Bioinformatics\/} {\bf 16} (2015). Available from:
+  https://doi.org/10.1186/s12859-015-0568-2.
+
+\bibitem{riboseqr}
+T.~Hardcastle. riboSeqR. Available from:
+  https://doi.org/10.18129/B9.bioc.riboSeqR.
+
+\bibitem{deeptools}
+F.~Ram\'irez, F.~D{\"u}ndar, S.~Diehl, B.~Gr{\"u}ning, T.~Manke. deepTools: a
+  flexible platform for exploring deep-sequencing data. {\it Nucleic Acids
+  Res\/} {\bf 42} (2014). Available from: https://doi.org/10.1093/nar/gku365.
+
+\bibitem{picard}
+Picard. \url{https://broadinstitute.github.io/picard/}.
+
+\bibitem{rose}
+S.~Zhang, {\it et~al.\/}. Analysis of Ribosome Stalling and Translation
+  Elongation Dynamics by Deep Learning. {\it Cell Syst\/} {\bf 5} (2017).
+  Available from: https://doi.org/10.1016/j.cels.2017.08.004.
+
+\bibitem{rust}
+P.~O'Connor, D.~Andreev, P.~Baranov. Comparative survey of the relative impact
+  of mRNA features on local ribosome profiling read density. {\it Nat Commun\/}
+  {\bf 7} (2016). Available from: https://doi.org/10.1038/ncomms12915.
+
+\bibitem{xtail}
+Z.~Xiao, Q.~Zou, Y.~Liu, X.~Yang. Genome-wide assessment of differential
+  translations with ribosome profiling data. {\it Nat Commun\/} {\bf 7} (2016).
+  Available from: https://doi.org/10.1038/ncomms11194.
+
+\bibitem{ribodiff}
+Y.~Zhong, {\it et~al.\/}. RiboDiff: detecting changes of mRNA translation
+  efficiency from ribosome footprints. {\it Bioinformatics\/} {\bf 33} (2017).
+  Available from: https://doi.org/10.1093/bioinformatics/btw585.
+
+\bibitem{ribotaper}
+L.~Calviello, {\it et~al.\/}. Detecting actively translated open reading frames
+  in ribosome profiling data. {\it Nat Methods\/} {\bf 13} (2016). Available
+  from: https://doi.org/10.1038/nmeth.3688.
+
+\bibitem{ribomap_1}
+H.~Wang, J.~McManus, C.~Kingsford. Isoform-level ribosome occupancy estimation
+  guided by transcript abundance with Ribomap. {\it Bioinformatics\/} {\bf 32}
+  (2016). Available from: https://doi.org/10.1093/bioinformatics/btw085.
+
+\bibitem{ribomap_2}
+P.~Spealman, H.~Wang, G.~May, C.~Kingsford, C.~McManus. Exploring Ribosome
+  Positioning on Translating Transcripts with Ribosome Profiling. {\it Methods
+  Mol Biol\/} {\bf 1358} (2016). Available from:
+  https://doi.org/10.1007/978-1-4939-3067-8\_5.
+
+\bibitem{plastid}
+J.~Dunn, J.~Weissman. Plastid: nucleotide-resolution analysis of
+  next-generation sequencing and genomics data. {\it BMC Genomics\/} {\bf 17}
+  (2016). Available from:
+  https://doi.org/https://doi.org/10.1186/s12864-016-3278-x.
+
+\bibitem{xpressyourself}
+XPRESSyourself. \url{https://github.com/XPRESSyourself/}.
+
 \bibitem{star}
 A.~Dobin, {\it et~al.\/}. STAR: ultrafast universal RNA-seq aligner. {\it
   Bioinformatics\/} {\bf 29}, 15 (2013). Available from:
@@ -238,9 +354,6 @@ L.~Vera-Portocarrero, {\it et~al.\/}. Rapid changes in expression of glutamate
 Y.~Wong, {\it et~al.\/}. eIF2B activator prevents neurological defects caused
   by a chronic integrated stress response. {\it Elife\/} {\bf 8} (2019).
   Available from: https://doi.org/10.7554/eLife.42940.
-
-\bibitem{xpressyourself}
-XPRESSyourself. \url{https://github.com/XPRESSyourself/}.
 
 \bibitem{readthedocs}
 Read the Docs. \url{https://readthedocs.org/}.

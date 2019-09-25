@@ -57,53 +57,53 @@ def rp_plot(
     ax.set_yticklabels([""]*len(x), minor=True)
 
     # Prep data for plotting
-    ribo_all = data_fig[[y_fc]].sum(axis=1).values.tolist()
+    ribo_all = data_fig[[y_fc]].values.tolist()
     ribo_all = np.array(ribo_all).astype(np.float)
     ribo_all = np.ndarray.tolist(ribo_all)
 
-    rna_all = data_fig[[x_fc]].sum(axis=1).values.tolist()
+    rna_all = data_fig[[x_fc]].values.tolist()
     rna_all = np.array(rna_all).astype(np.float)
     rna_all = np.ndarray.tolist(rna_all)
 
     # Prep significant hits for plotting
-    sig_list = te_data[(te_data[te_p] < 0.1)].index.tolist()
+    sig_list = te_data.loc[te_data[te_p] < 0.1].index.tolist()
     data_sig = data_fig.reindex(sig_list)
 
-    ribo_sig = data_sig[[y_fc]].sum(axis=1).values.tolist()
+    ribo_sig = data_sig[[y_fc]].values.tolist()
     ribo_sig = np.array(ribo_sig).astype(np.float)
     ribo_sig = np.ndarray.tolist(ribo_sig)
 
-    rna_sig = data_sig[[x_fc]].sum(axis=1).values.tolist()
+    rna_sig = data_sig[[x_fc]].values.tolist()
     rna_sig = np.array(rna_sig).astype(np.float)
     rna_sig = np.ndarray.tolist(rna_sig)
 
     if list_up != None:
         data_fig_up = data_fig.reindex(list_up)
-        ribo_up = data_fig_up[[y_fc]].sum(axis=1).values.tolist()
+        ribo_up = data_fig_up[[y_fc]].values.tolist()
         ribo_up = np.array(ribo_up).astype(np.float)
         ribo_up = np.ndarray.tolist(ribo_up)
 
-        rna_up = data_fig_up[[x_fc]].sum(axis=1).values.tolist()
+        rna_up = data_fig_up[[x_fc]].values.tolist()
         rna_up = np.array(rna_up).astype(np.float)
         rna_up = np.ndarray.tolist(rna_up)
 
     if list_down != None:
         data_fig_down = data_fig.reindex(list_down)
-        ribo_down = data_fig_down[[y_fc]].sum(axis=1).values.tolist()
+        ribo_down = data_fig_down[[y_fc]].values.tolist()
         ribo_down = np.array(ribo_down).astype(np.float)
         ribo_down = np.ndarray.tolist(ribo_down)
 
-        rna_down = data_fig_down[[x_fc]].sum(axis=1).values.tolist()
+        rna_down = data_fig_down[[x_fc]].values.tolist()
         rna_down = np.array(rna_down).astype(np.float)
         rna_down = np.ndarray.tolist(rna_down)
 
     if list_down_custom != None:
         data_fig_down_custom = data_fig.reindex(list_down_custom)
-        ribo_down_custom = data_fig_down_custom[[y_fc]].sum(axis=1).values.tolist()
+        ribo_down_custom = data_fig_down_custom[[y_fc]].values.tolist()
         ribo_down_custom = np.array(ribo_down_custom).astype(np.float)
         ribo_down_custom = np.ndarray.tolist(ribo_down_custom)
 
-        rna_down_custom = data_fig_down_custom[[x_fc]].sum(axis=1).values.tolist()
+        rna_down_custom = data_fig_down_custom[[x_fc]].values.tolist()
         rna_down_custom = np.array(rna_down_custom).astype(np.float)
         rna_down_custom = np.ndarray.tolist(rna_down_custom)
 
@@ -144,8 +144,10 @@ def rp_plot(
 
         if label_down_custom == True:
             for index, row in data_fig_down_custom.iterrows():
-                if index == 'MYO5B' or index == 'SLC1A1':
+                if index == 'RPS15A' or index == 'HIST2H3D' or index == 'RPL27':
                     ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#c25502', weight='semibold')
+                elif index == 'HSPA8':
+                    ax.text(row[1] - 0.05, row[0] - 0.2, str(index), horizontalalignment='right', size='medium', color='#c25502', weight='semibold')
                 else:
                     ax.text(row[1] - 0.1, row[0] - 0.07, str(index), horizontalalignment='right', size='medium', color='#c25502', weight='semibold')
 
@@ -168,7 +170,10 @@ def rp_plot(
                 else:
                     ax.text(row[1] + 0.1, row[0] - 0.07, str(index), horizontalalignment='left', size='medium', color='#544db3', weight='semibold')
 
-    plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/' + str(title), dpi=3600, bbox_inches='tight')
+    plt.savefig(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/' + str(title),
+        dpi=3600,
+        bbox_inches='tight')
     #plt.show()
     plt.close()
 
@@ -233,21 +238,17 @@ This is due to insufficient RPF counts after RNA thresholding of the data
 """
 tm_ribo_data[(tm_ribo_data['tm_ribo_log2FC'] > 2.7) & (tm_ribo_data['tm_ribo_log2FC'] < 2.75)]
 check_data.loc['SLC10A5'][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b']]
-check_data.loc['CD19'][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b']]
-check_data.loc['NOX1'][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b']]
 """"""
 
 # Check fold changes of targets for comparison
-print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[0])
-print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[0])
-print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[1])
-print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[1])
-print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[2])
-print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[2])
-print(merged_data_split.loc[isr]['tm_ribo_log2FC'].index[3])
-print(2**merged_data_split.loc[isr]['tm_ribo_log2FC'].iloc[3])
-
-check_data.loc['SLC1A1']
+print('ATF4')
+print(merged_data_split.loc['ATF4']['tm_ribo_log2FC'])
+print('ATF5')
+print(merged_data_split.loc['ATF5']['tm_ribo_log2FC'])
+print('PPP1R15A')
+print(2**merged_data_split.loc['PPP1R15A']['tm_ribo_log2FC'])
+print('DDIT3')
+print(2**merged_data_split.loc['DDIT3']['tm_ribo_log2FC'])
 
 """
 TE sanity check
@@ -274,9 +275,12 @@ def te_sanity(data, check_data, gene_name):
 te_sanity(tm_data, check_data, 'ATF4')
 te_sanity(tm_data, check_data, 'DDIT3')
 te_sanity(tm_data, check_data, 'UCP2')
-te_sanity(tm_data, check_data, 'SLC1A1')
+te_sanity(tm_data, check_data, 'ID2')
+
 te_sanity(tm_data, check_data, 'POMGNT1')
 
+# NDUFA11 pattern really interesting
+te_sanity(tm_data, check_data, 'NDUFA11')
 
 # TE analysis
 data_de_plot = merged_data.copy()
@@ -285,18 +289,20 @@ data_de_plot['Untreated'] = 0
 data_de_plot = data_de_plot[['Untreated','tm_log2FC', 'tmisrib_log2FC','isrib_log2FC']]
 data_de_plot.columns = ['Untreated','Tm', 'Tm + ISRIB','ISRIB']
 
-down_strict = merged_data.loc[(merged_data['tm_log2FC'] - merged_data['tmisrib_log2FC'] <= -1) & (merged_data['tm_padj'] <= 0.1)]
+down_strict_1 = merged_data.loc[
+    (merged_data['tm_log2FC'] - merged_data['tmisrib_log2FC'] <= -1) \
+    & (merged_data['tm_padj'] <= 0.001) \
+    & (merged_data['tmisrib_padj'] <= 0.001) \
+    & ((merged_data_split['tm_ribo_padj'] <= 0.1))]
 
-down_loose = merged_data.loc[(merged_data['tm_log2FC'] - merged_data['tmisrib_log2FC'] <= -0.58) & (merged_data['tm_padj'] <= 0.1)]
+down_strict_2 = merged_data.loc[
+    (merged_data['tm_log2FC'] - merged_data['tmisrib_log2FC'] <= -0.58) \
+    & (merged_data_split['tm_ribo_log2FC'] <= -0.9) \
+    & (merged_data_split['tm_ribo_padj'] <= 0.1)]
 
-up_strict = merged_data.loc[(merged_data['tm_log2FC'] - merged_data['tmisrib_log2FC'] >= 1) & (merged_data['tm_padj'] <= 0.1)]
-
-up_loose = merged_data.loc[(merged_data['tm_log2FC'] - merged_data['tmisrib_log2FC'] >= 0.58) & (merged_data['tm_padj'] <= 0.1)]
-
-down_strict_L = down_strict.index.tolist()
-down_loose_L = down_loose.index.tolist()
-up_strict_L = up_strict.index.tolist()
-up_loose_L = up_loose.index.tolist()
+# All hits have at least 50 counts per RNA
+# Thresholds were designed to maximize
+down_strict_L = down_strict_1.index.tolist() + down_strict_2.index.tolist()
 
 # Make ribo-seq vs rna-seq plots with hightlights
 rp_plot(
@@ -351,9 +357,6 @@ rp_plot(
     label_down_custom=False)
 
 
-
-
-
 # Plot TEs
 fig, ax = plt.subplots()
 plt.yticks([-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10])
@@ -374,7 +377,7 @@ ax.axhline(-1, ls='--', color='black')
 
 data_de_plot.loc[isr].T.plot.line(legend=False, color='#7570b3', linewidth=1, ax=ax)
 data_de_plot.loc[down_strict_L].T.plot.line(legend=False, color='#d95f02', linewidth=1, ax=ax)
-ax.set_ylabel(u'Δ' + 'log$_2$(TE)')
+ax.set_ylabel(u'log$_2$(ΔTE)')
 
 from matplotlib.lines import Line2D
 legend_elements = [Line2D([0], [0], color='gray', lw=2, label='All'),
@@ -382,41 +385,130 @@ legend_elements = [Line2D([0], [0], color='gray', lw=2, label='All'),
                    Line2D([0], [0], color='#d95f02', lw=2, label='Other')]
 
 ax.legend(handles=legend_elements, loc='upper right')
-plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/te_analysis_down_strict.png', dpi=1800, bbox_inches='tight')
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/te_analysis_down_strict.png', dpi=3600, bbox_inches='tight')
 
 plt.close()
 
 """
-Strict hits and annotations from GeneCards:
-* POMGNT1:
-    - Entrez: O-mannosyl glycosylation and is specific for alpha linked terminal mannose. Mutations in this gene may be associated with muscle-eye-brain disease and several congenital muscular dystrophies
-    - LifeMap Discovery: Stem cell expression across brain
-    - Uniprot: Expressed especially in astrocytes. Also expressed in immature and mature neurons
-MYO5B
-    - No neuro-related annotations
-    - Entrez: may be involved in plasma membrane recycling
-PABPC1
-    - No neuro-related annotations
-    - Entrez: promotes ribosome recruitment and translation initiation
-    - By binding to long poly(A) tails, may protect them from uridylation by ZCCHC6/ZCCHC11 and hence contribute to mRNA stability (PubMed:25480299)
-RPL12
-    - No neuro-related annotations
-    - Ribosome subunit
-* SLC1A1
-    - Dense expression in substantia nigra, red nucleus, hippocampus, and cerebral cortical layers.
-    - Member of high-affinity glutamate transporter.
-    - In brain, crucial for terminating postsynaptic action of the neurotransmitter glutamate.
-    - Responsible for maintaining glutamate concentrations below neurotoxic levels.
-* MAP3K10
-    - functions preferentially on the JNK signaling pathway, and is reported to be involved in nerve growth factor (NGF) induced neuronal apoptosis
-    - overexpressed in Brain - Cortex
-    - Activates: NEUROD1; promotes neural differentiation
-    - Inactivates: TCF3; Transcriptional regulator. Involved in the initiation of neuronal differentiation
-~ RPLP1
-    - Ribosome subunit
-    - Stem cell and embronic expression in cerebral cortex
-~ TSPAN33
-    - Regulates maturation and trafficking of the transmembrane metalloprotease ADAM10 (PubMed:26686862)
-    - Negatively regulates ligand-induced Notch activity probably by regulating ADAM10 activity (PubMed:26686862)
-    - Notch signaling vital for neurogenesis
+Comparing outputs
 """
+from matplotlib_venn import venn2
+
+# Tm
+tm_fc = merged_data_split.loc[(merged_data_split['tm_ribo_log2FC'] >= 1) | (merged_data_split['tm_ribo_log2FC'] <= -1)].index.tolist()
+tm_te = merged_data.loc[merged_data['tm_padj'] < 0.1].index.tolist()
+tm_common = list(set(tm_fc).intersection(tm_te))
+ingolia_tm = [
+    'FAM50B',
+    'CHST2',
+    'LNP1',
+    'AX747756',
+    'ACRC',
+    'ATF5',
+    'ANKRD23',
+    'ATF4',
+    'C19orf48',
+    'TEX14',
+    'SLC35A4',
+    'DDIT3',
+    'RAB35',
+    'AK293147',
+    'PTP4A1',
+    'ANKRD36C',
+    'NPIP',
+    'ANKMY1',
+    'UCP2',
+    'NPIPL1',
+    'PNRC2',
+    'C7orf31',
+    'PPP1R15A',
+    'IFRD1',
+    'BCL2L11',
+    'OBSCN',
+    'SLC24A1',
+    'NPIPL1',
+    'NPIPL1',
+    'ZNF22',
+    'NAIP',
+    'NPIP',
+    'DNAH1',
+    'KIAA1377',
+    'FMO4',
+    'CCDC150',
+    'NPIP',
+    'AK310228',
+    'ZSCAN5A',
+    'FAM13B',
+    'NPIPL1',
+    'ZNF79',
+    'HOXA6',
+    'NPIPL2',
+    'SLMO1',
+    'ARMCX4',
+    'AK310228',
+    'LOC100288332',
+    'SAT1',
+    'FLJ00285',
+    'AK097143',
+    'AX748249',
+    'AGAP4',
+    'FLJ00322',
+    'GOLGA8A',
+    'GOLGA8B',
+    'ZNF432',
+    'FSBP',
+    'CPS1',
+    'MATK',
+    'EPB41L4B',
+    'HCN2',
+    'GLRB',
+    'KIAA1841',
+    'MYO5B',
+    'EHBP1L1',
+    'MAPK8IP1',
+    'SH3RF3',
+    'DET1',
+    'PTPN21',
+    'VANGL2',
+    'MMP15',
+    'MAP3K10',
+    'PAQR5',
+    'GAL',
+    'RPP25',
+    'FLJ44955',
+    'DQ576756']
+plt.title("Tm")
+venn2([set(tm_common), set(ingolia_tm)], set_labels = ('This paper', 'Original paper'))
+plt.show()
+
+
+# Tm + ISRIB
+tmisrib_fc = merged_data_split.loc[(merged_data_split['tmisrib_ribo_log2FC'] >= 1) | (merged_data_split['tmisrib_ribo_log2FC'] <= -1)].index.tolist()
+tmisrib_te = merged_data.loc[merged_data['tmisrib_padj'] < 0.1].index.tolist()
+tmisrib_common = list(set(tmisrib_fc).intersection(tmisrib_te))
+ingolia_tmisrib = [
+    'AK310228',
+    'AK310228',
+    'NPIP',
+    'AK302511',
+    'NPIP',
+    'LOC100288332',
+    'STARD9',
+    'PKD1',
+    'ANKRD36']
+plt.title("Tm + ISRIB")
+venn2([set(tmisrib_common), set(ingolia_tmisrib)], set_labels = ('This paper', 'Original paper'))
+plt.show()
+
+# ISRIB
+isrib_fc = merged_data_split.loc[(merged_data_split['isrib_ribo_log2FC'] >= 1) | (merged_data_split['isrib_ribo_log2FC'] <= -1)].index.tolist()
+isrib_te = merged_data.loc[merged_data['isrib_padj'] < 0.1].index.tolist()
+isrib_common = list(set(isrib_fc).intersection(isrib_te))
+ingolia_isrib = [
+    'AK310228',
+    'AK310228',
+    'AK302511',
+    'NPIP']
+plt.title("ISRIB")
+venn2([set(isrib_common), set(ingolia_isrib)], set_labels = ('This paper', 'Original paper'))
+plt.show()

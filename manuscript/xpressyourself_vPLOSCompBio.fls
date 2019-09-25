@@ -182,6 +182,9 @@ INPUT ./figures/xpresspipe_supplement3.png
 INPUT figures/xpresspipe_supplement4.png
 INPUT ./figures/xpresspipe_supplement4.png
 INPUT ./figures/xpresspipe_supplement4.png
+INPUT figures/xpresspipe_supplement5.png
+INPUT ./figures/xpresspipe_supplement5.png
+INPUT ./figures/xpresspipe_supplement5.png
 INPUT xpressyourself_vPLOSCompBio.aux
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc
