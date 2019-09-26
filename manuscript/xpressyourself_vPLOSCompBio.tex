@@ -196,59 +196,115 @@ The integrated stress response (ISR) is a signaling mechanism used by cells and 
 
 A recent study (data available under Gene Expression Omnibus accession number GSE65778) utilized ribosome profiling to better define the mechanisms of ISRIB action on the ISR, modeled by 1-hour tunicamycin (Tm) treatment in HEK293T cells \cite{isrib_riboseq}. A key finding of this study is that a specific subset of stress-related transcription factor mRNAs exhibit increased translational efficiency (TE) compared to untreated cells during the tunicamycin-induced ISR. However, when cells were co-treated with tunicamycin and ISRIB, the TE of these stress-related mRNAs showed no significant increase compared to untreated cells, which indicates that ISRIB can counteract the translational responses associated with the ISR. \par
 
-To showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to further query the translational mechanisms of the ISR and ISRIB. All XPRESSpipe-processed biological replicate samples exhibited a strong correlation between read counts per gene when thresholded similarly to count data available with the original publication (Spearman $\rho$ values 0.991-0.997) (Figure \ref{fig:figure2}A; Figure \ref{fig:supplement3}B shows the corresponding plots using the count data provided with the original publication for reference). \par
+To showcase the utility of XPRESSpipe in analyzing ribosome profiling and sequencing datasets, we re-processed and analyzed this dataset using the more current \textit{in silico} techniques included in the XPRESSpipe package to further query the translational mechanisms of the ISR and ISRIB. All XPRESSpipe-processed biological replicate samples exhibited a strong correlation between read counts per gene when thresholded similarly to count data available with the original publication (Spearman $\rho$ values 0.991-0.997) (Figure \ref{fig:figure2}A shows representative plots; Figure \ref{fig:supplement3}A shows all replicate comparisons; Figure \ref{fig:supplement4}B shows the corresponding plots using the count data provided with the original publication for reference). \par
 
-Compared to the raw count data made available with the original manuscript, when XPRESSpipe-processed samples were thresholded as in the original published raw count data, samples showed generally comparable read counts per gene between the two analytical regimes (Spearman $\rho$ values 0.937-0.950) (Figure \ref{fig:figure2}B). This is in spite of the fact that the methods section of the original publication employed software that was current at the time but is now outdated, such as TopHat2 \cite{tophat2}, which has a documented higher false positive alignment rate, generally lower recall, and lower precision at correctly aligning multi-mapping reads compared to STAR \cite{alignment_benchmark, star}. Many of the genes over-represented in the original count data as compared to data processed by XPRESSpipe are genes that have pseudogenes or other paralogs (Figure \ref{fig:supplement3}A highlights a sampling of some extreme cases). As these genes share high sequence similarity with each other, reads mapping to these regions are difficult to attribute to a specific genomic locus and are often excluded from further analyses due to their multi-mapping nature. The benchmarking study \cite{alignment_benchmark} that examined these and other aligners described how TopHat2 had a disproportionally high rate of incorrectly aligned bases, or bases that were aligned uniquely when they should have been aligned ambiguously, at least partially explaining the observed overcounted effect with TopHat2. Had TopHat2 marked problematic reads as ambiguous, they would have been excluded from later quantification. \par
+Compared to the raw count data made available with the original manuscript, when XPRESSpipe-processed samples were thresholded as in the original published raw count data, samples showed generally comparable read counts per gene between the two analytical regimes (Spearman $\rho$ values 0.937-0.950) (Figure \ref{fig:figure2}B shows representative plots; Figure \ref{fig:supplement3}B shows all comparisons). This is in spite of the fact that the methods section of the original publication employed software that was current at the time but is now outdated, such as TopHat2 \cite{tophat2}, which has a documented higher false positive alignment rate, generally lower recall, and lower precision at correctly aligning multi-mapping reads compared to STAR \cite{alignment_benchmark, star}. Many of the genes over-represented in the original count data as compared to data processed by XPRESSpipe are genes that have pseudogenes or other paralogs (Figure \ref{fig:supplement4}A highlights a sampling of some extreme cases). As these genes share high sequence similarity with each other, reads mapping to these regions are difficult to attribute to a specific genomic locus and are often excluded from further analyses due to their multi-mapping nature. The benchmarking study \cite{alignment_benchmark} that examined these and other aligners described how TopHat2 had a disproportionally high rate of incorrectly aligned bases, or bases that were aligned uniquely when they should have been aligned ambiguously, at least partially explaining the observed overcounted effect with TopHat2. Had TopHat2 marked problematic reads as ambiguous, they would have been excluded from later quantification. \par
 
 Additionally, when TopHat2 and STAR were tested using multi-mapper simulated test data of varying complexity, TopHat2 consistently suffered in precision and recall. These calls are increasingly more difficult to make with smaller reads as well, and this is evident from Figure \ref{fig:figure2}B, where ribosome footprint samples consistently showed more over-counted genes than the corresponding RNA-Seq samples. When dealing with a ribosome footprint library of about 50-100 million reads, and with TopHat2's simulated likelihood of not marking an ambiguous read as such being about 0.5\% higher than STAR, this would lead to around 250,000 to 500,000 spuriously aligned reads, which is in line with our observations (all benchmarking details were derived from \cite{alignment_benchmark}). \par
 
-An additional potential contributor to this divergence is that the alignment and quantification within XPRESSpipe use a current human transcriptome reference, which no doubt contains updates and modifications to annotated canonical transcripts and so forth when compared to the version used in the original study. However, in practice, these effects are modest for this dataset (Figure \ref{fig:supplement4}). While differences in processing between the outdated and current methods may not always create broad differences in output, key biological insights may be missed. The analysis that follows is exploratory and only meant to suggest putative targets identifiable by re-analyzing pre-existing, publicly available data. \par
+An additional potential contributor to this divergence is that the alignment and quantification within XPRESSpipe use a current human transcriptome reference, which no doubt contains updates and modifications to annotated canonical transcripts and so forth when compared to the version used in the original study. However, in practice, these effects are modest for this dataset (Figure \ref{fig:supplement5}). While differences in processing between the outdated and current methods may not always create broad differences in output, key biological insights may be missed. The analysis that follows is exploratory and only meant to suggest putative targets identifiable by re-analyzing pre-existing, publicly available data.\par
 
 \begin{figure*}
 \centering
   \includegraphics[width=145mm]{figures/xpresspipe_figure2.png}
-  \caption{\textbf{Comparison between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Comparison of biological replicate read counts processed by XPRESSpipe. B) Comparison of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
+  \caption{\textbf{Representative comparisons between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Representative comparisons of biological replicate read counts processed by XPRESSpipe. B) Representative comparisons of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. C) Boxplot summaries of Spearman $\rho$ and Pearson r values for biological replicate comparisons. D) Boxplot summaries of Spearman $\rho$ and Pearson r values for between method processing. E) Venn diagrams comparing the differentially translated transcripts when processed by XPRESSpipe (left circles) versus those reported in the original study (right circles). RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported in A and B are Spearman correlation coefficients using raw count data. Pearson correlation coefficients were calculated using log\textsubscript{10}(rpm(counts) + 1) transformed data. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
   \label{fig:figure2}
 \end{figure*}
 
 \begin{figure*}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_figure3.png}
-  \caption{\textbf{Analysis of previously published ISR TE data using XPRESSpipe.} A-C) Log\textsubscript{2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript{2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
+  \caption{\textbf{Analysis of previously published ISR TE data using XPRESSpipe.} A-C) log\textsubscript{2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript{2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
   \label{fig:figure3}
 \end{figure*}
 
-Similar canonical targets of translation regulation during ISR were identified in the XPRESSpipe-processed data as were identified in the original study. These targets include ATF4, ATF5, PPP1R15A, and DDIT3 (Figure \ref{fig:figure3}A-C, highlighted in purple) \cite{isrib_riboseq}. Of note, the fold-change in ribosome occupancy of ATF4 (6.83) from XPRESSpipe-processed samples closely mirrored the estimate from the original publication (6.44). Other targets highlighted in the original study \cite{isrib_riboseq}, such as ATF5, PPP1R15A, and DDIT3 also demonstrated comparable increases in their ribosome occupancy fold-changes to the original publication count data (XPRESSpipe: 5.89, 2.47, and 3.93; respectively. Original: 7.50, 2.70, and 3.89; respectively) (Figure \ref{fig:figure3}A). Similar to the originally processed data, all of these notable changes in ribosome occupancy return to untreated levels during Tm + ISRIB co-treatment (Figure \ref{fig:figure3}B). Additional ISR targets containing micro-ORFs described in the study (highlighted in green in Figure \ref{fig:figure3}A-C) were also similar in translational and transcriptional regulation across conditions between the two analyses. \par
+Similar canonical targets of translation regulation during ISR were identified in the XPRESSpipe-processed data as were identified in the original study. These targets include ATF4, ATF5, PPP1R15A, and DDIT3 (Figure \ref{fig:figure3}A-C, highlighted in purple) \cite{isrib_riboseq}. Of note, the fold-change in ribosome occupancy of ATF4 (6.83) from XPRESSpipe-processed samples closely mirrored the estimate from the original publication (6.44). Other targets highlighted in the original study \cite{isrib_riboseq}, such as ATF5, PPP1R15A, and DDIT3 also demonstrated comparable increases in their ribosome occupancy fold-changes to the original publication count data (XPRESSpipe: 5.90, 2.47, and 3.94; respectively. Original: 7.50, 2.70, and 3.89; respectively) (Figure \ref{fig:figure3}A). Similar to the originally processed data, all of these notable changes in ribosome occupancy return to untreated levels during Tm + ISRIB co-treatment (Figure \ref{fig:figure3}B). Additional ISR targets containing micro-ORFs described in the study (highlighted in green in Figure \ref{fig:figure3}A-C) were also similar in translational and transcriptional regulation across conditions between the two analyses. \par
 
-Both the original study and our XPRESSpipe-based re-analysis show that ISRIB can counteract the significant increase in TE for a set of genes during ISR. To further explore TE regulation during ISR, we asked if ISRIB has a similar muting effect on genes with significant decreases in TE induced by the ISR. In the original study, genes with significant decreases in TE were reported in a source-data table but not a focus in the study. However, re-analysis of these data with the updated XPRESSpipe methodology identifies genes whose translational down-regulation may play a role in the neurodegenerative effects of ISR and the neuroprotective properties of ISRIB \cite{isrib_neuroprotective,isrib_neuroprotective2,isrib_neuroprotective3,isrib_neuroprotective4}. Importantly, several of these genes were not identified as having significantly down-regulated TEs in the original analysis, which suggests why a focus on translational downregulation may have been foregone. In all, we identified eight genes with the regulatory paradigm of interest: significant decreases in TE during tunicamycin-induced ISR that are rescued in the ISR + ISRIB condition (Table \ref{tab:targets}, descriptions sourced from \cite{genecards, ncbi, uniprot} (Figure \ref{fig:figure3}D). RNA-Seq and ribosome-footprint coverage across these genes show that the significant changes in their TE are due to neither spurious, high-abundance fragments differentially present across libraries nor variance from an especially small number of mapped reads (Figure \ref{fig:supplement5}). This is an important consideration as the commonly suggested use of the CircLigase enzyme in published ribosome profiling library preparation protocols, which circularizes template cDNA before sequencing, can bias certain molecules' incorporation into sequencing libraries based on read-end base content alone \cite{circligase_bias}. \par
+Both the original study and our XPRESSpipe-based re-analysis show that ISRIB can counteract the significant increase in TE for a set of genes during ISR. To further explore TE regulation during ISR, we asked if ISRIB has a similar muting effect on genes with significant decreases in TE induced by the ISR. In the original study, genes with significant decreases in TE were reported in a source-data table but not a focus in the study. However, re-analysis of these data with the updated XPRESSpipe methodology identifies genes whose translational down-regulation may play a role in the neurodegenerative effects of ISR and the neuroprotective properties of ISRIB \cite{isrib_neuroprotective,isrib_neuroprotective2,isrib_neuroprotective3,isrib_neuroprotective4}. Importantly, several of these genes were not identified as having significantly down-regulated TEs in the original analysis, which suggests why a focus on translational downregulation may have been foregone. In all, we identified seven genes with the regulatory paradigm of interest: significant decreases in TE during tunicamycin-induced ISR that are rescued or overexpressed in the ISR + ISRIB condition (Table \ref{tab:targets}, descriptions sourced from \cite{genecards, ncbi, uniprot} (Figure \ref{fig:figure3}D). RNA-Seq and ribosome-footprint coverage across these genes show that the significant changes in their TE are due to neither spurious, high-abundance fragments differentially present across libraries nor variance from an especially small number of mapped reads (Figure \ref{fig:supplement6}). This is an important consideration as the commonly suggested use of the CircLigase enzyme in published ribosome profiling library preparation protocols, which circularizes template cDNA before sequencing, can bias certain molecules' incorporation into sequencing libraries based on read-end base content alone \cite{circligase_bias}. \par
 
-Four (POMGNT1, SLC1A1, MAP3K10, TSPAN33) out of the eight identified genes have annotated neurological functions or are integrally tied to a pathway that functions in neurogenesis, which suggests their regulation may be functionally important for the neurodegenerative effects of ISR and the neuroprotective properties of ISRIB. For example, SLC1A1 is a glutamate transporter expressed throughout the brain where it plays vital roles in \\neurotransmission and extracellular glutamate homeostasis. Glutamate transporters, like SLC1A1, have also been implicated in preventing neurotrauma within the first few minutes of insult, and deficits in this transporter can lead to neurotoxic levels of glutamate \cite{slc1a1_neurotoxic}. Finally, down-regulation of SLC1A1 has already been implicated in diseases such as neurodegenerative diseases caused by mutations in the eukaryotic translation initiation factor 2B subunit epsilon (eIF2B5) that mimic the effects of phosphorylated eIF2$\alpha$ on cellular stress response and translation \cite{eif2b_neuroprotective, isrib_riboseq, isrib_structure}. This suggests that TE regulation of SLC1A1 abundance by translation initiation factors might be important in the neurodegeneration observed in prolonged ISR conditions. ISRIB's neuroprotective effects may, therefore, stem from a recovery of SLC1A1 protein expression to wild-type levels, which in turn helps restore normal glutamate regulation. Though speculative, these ISRIB-responsive neuronal targets act as interesting cases for further validation and study in a model more representative of neurotoxic injury and disease than the HEK-293T model used in the original study. In all, this comparison demonstrates the utility of XPRESSpipe for rapid, user-friendly analysis and re-analysis of ribosome-profiling experiments in the pursuit of biological insights and hypothesis generation. \\
-
-\noindent
-For a comparison regarding published paired-end TCGA data and a brief note on estimated run-time costs, we refer the reader to the supplement associated with this manuscript.\\
+Five (POMGNT1, RPL27, TKT, HSPA8, NDUFA11) out of the seven identified genes have annotated neurological functions or mutations in which lead to severe neurological disorders. Several of these disorders are directly tied to central carbon metabolism. Mutations in one other gene (RPS15A) generally present with metabolic disorders. None of these genes were identified as of interest in the original study. These observations suggest their regulation may be functionally important for the neurodegenerative effects of ISR and the neuroprotective properties of ISRIB. For example, NDUFA11 and TKT are two protein-coding genes whose functions are integrally tied to central carbon metabolism. NDUFA11 forms a subunit of mitochondrial complex I and TKT encodes a thiamine-dependent enzyme which channels excess sugars phosphates into glycolysis. Mutations in TKT present diseases associated with neurological phenotypes, and mutations in NDUFA11 present severe neurodegenerative phenotypes such as brain atrophy and encephalopathy. While at this stage speculative, it is interesting that the processing of these data for this manuscript provide a very conservative list of differentially expressed genes, and that the majority of which are associated with severe neurological phenotypes. It is therefore easy to speculate that TE regulation of these targets' abundance might be important in the neurodegeneration observed in prolonged ISR conditions. ISRIB's neuroprotective effects may, therefore, stem from a recovery of one or several of these entities' protein expression to wild-type or better levels. Though speculative, these ISRIB-responsive neuronal targets act as interesting cases for further validation and study in a model more representative of neurotoxic injury and disease than the HEK-293T model used in the original study. In all, this comparison demonstrates the utility of XPRESSpipe for rapid, user-friendly analysis and re-analysis of ribosome-profiling experiments in the pursuit of biological insights and hypothesis generation.\\
 
 \begin{table*}[!]
     \centering
-\captionof{table}{\textbf{Translationally down-regulated genes during acute Tm treatment and recovered regulation during Tm + ISRIB treatment.} Gene names with an asterisk indicate these genes were identified as significantly down-regulated during Tm treatment in the original manuscript.}
+\captionof{table}{\textbf{Translationally down-regulated genes during acute Tm treatment with recovered regulation during Tm + ISRIB treatment.}}
 \begin{tabular}{p{2.5cm}p{15.5cm}}
  \textbf{Gene Name} & \textbf{Relevant Description} \\
  \hline
- POMGNT1 & Participates in O-mannosyl glycosylation. Mutations have been associated with muscle-eye-brain diseases and congenital muscular dystrophies. Expressed especially in astrocytes, as well as in immature and mature neurons. Expressed across brain stem cells. \\
+ POMGNT1 & Participates in O-mannosyl glycosylation. Mutations have been associated with muscle-eye-brain diseases and congenital muscular dystrophies. Expressed especially in astrocytes, as well as in immature and mature neurons. Expressed across brain. \\
  \hline
- MYO5B* & May be involved in plasma membrane recycling. No related neurological annotations. \\
+ RPL27 & Subunit of ribosome catalyzing protein synthesis. Expressed in cerebral cortex in embryonic tissue and/or stem cells. Mutations associated with Diamond-Blackfan Anemia 16, a metabolic disease, which may present with microcephaly. \\
  \hline
- PABPC1 & Binds the poly(A) tail of mRNA. Promotes ribosome recruitment and translation initiation. May contribute to mRNA stability. No related neurological annotations. \\
+ TKT & Encodes thiamine-dependent enzyme that channels excess sugars phosphates to glycolysis. Mutations associated with developmental delays and Wernicke-Korsakoff Syndrome, a metabolic and neuronal disease and associated with encephalopathy and dementia-like characteristics. \\
  \hline
- RPL12 & Ribosomal subunit. No related neurological annotations. \\
+ HSPA8 & Encodes heat shock protein 70 member. Facilitates protein folding and localization. Diseases associated with mutations include Auditory System Disease and Brain Ischemia, both neurological disorders. Expressed in cerebral cortex in embryonic tissue and/or stem cells. \\
  \hline
- SLC1A1 & Dense expression in substantia nigra, red nucleus, hippocampus, and cerebral cortical layers. Member of high-affinity glutamate transporter. In the brain, crucial for terminating postsynaptic action of the neurotransmitter glutamate. Responsible for maintaining glutamate concentrations below neurotoxic levels. \\
+ NDUFA11 & Encodes subunit of mitochondrial complex I, a vital part of the electron transport chain. Mutations associated with severe mitochondrial complex I deficiency. Related pathways include the GABAergic synapse. Associated diseases include brain atrophy, encephalopathy, and leber hereditary optic neuropathy. Overexpressed in frontal cortex. \\
  \hline
- MAP3K10* & Functions in JNK signaling, reportedly involved in nerve growth factor induces neuronal apoptosis. Expressed in the cerebral cortex. Activates NEUROD1, which promotes neuronal differentiation. \\
+ HIST2H3D & Responsible for the nucleosome structure. No neurological descriptions at present. \\
  \hline
- RPLP1 & Ribosome subunit. Evidence for stem cell and embryonic expression in the cerebral cortex. \\
- \hline
- TSPAN33 & Plays a role in normal erythropoiesis and regulates maturation and trafficking of ADAM10, a metalloprotease. Negatively regulates Notch activity by way of its regulation of ADAM10. Notch signaling is vital to neurogenesis. \\
+ RPS15A & Subunit of ribosome catalyzing protein synthesis. Diseases associated include Diamond-Blackfan Anemia, an inborn error of metabolism disease. \\
  \label{tab:targets}
+\end{tabular}
+\end{table*}
+
+\subsection*{Cost Analysis and Speed}
+XPRESSpipe functions can be computationally intensive, and thus, super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) \cite{aws} can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} outlines runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files that were aligned to \textit{Homo sapiens}, thus it acts as a high-end estimate of the time required to process data with XPRESSpipe. For a comparable dataset, cost to use an AWS computational node with similar specifications for the above elapsed time would be approximately 17.13 USD using an Amazon EC2 On-Demand m5.4xlarge node (however, significantly reduced rates are available if using Spot instances or by using the free tier) and storage cost would amount to around 11.5 USD/month on Amazon S3 storage. \\
+
+\begin{table*}[h]
+    \centering
+\captionof{table}{\textbf{XPRESSpipe processing statistics for dataset GSE65778.}}
+\begin{tabular}{p{5cm}p{3cm}}
+\textbf{Metric} & \textbf{Value} \\
+ \hline
+ Total Raw Input & 257 GB \\
+ \hline
+ Total Output & 500 GB \\
+ \hline
+ Elapsed Real Time & 22h 18m \\
+ \hline
+ Allocated CPUs & 16 \\
+ \hline
+ Allocated Memory per Node & 64GB \\
+ \label{tab:chpc_performance}
+\end{tabular}
+\end{table*}
+
+To provide the user with a example of the time each sub-module, we include a table breaking down the time it took for each individual sub-module to process this same data. However, this method repeats some index generation multiple times that the pipeline version will perform once, thus speeding up overall processing time for a pipeline run (Table \ref{tab:submodulebreakdown}).\\
+
+\begin{table*}[h]
+    \centering
+\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.}}
+\begin{tabular}{p{5cm}p{5cm}p{3cm}}
+\textbf{Metric} & \textbf{Command} & \textbf{Value} \\
+  \hline
+  Curate STAR reference & \texttt{curateReference} & 00h 37m 55s \\
+  \hline
+  Truncate GTF & \texttt{modifyGTF -t} & 00h 03m 11s \\
+  \hline
+  Read Pre-processing & \texttt{trim} & 00h 04m 55s \\
+  \hline
+  Alignment and Post-processing & \texttt{align} & 00h 35m 06s \\
+  \hline
+  Quantification & \texttt{count} &  \\
+  \hline
+  Differential Expression & \texttt{diffxpress} &  \\
+  \hline
+  Read Distributions & \texttt{readDistribution} &  \\
+  \hline
+  Metagene Analysis & \texttt{metagene} &  \\
+  \hline
+  Gene Coverage (1 gene) & \texttt{geneCoverage} &  \\
+  \hline
+  Periodicity & \texttt{periodicity} &  \\
+  \hline
+  Library Complexity & \texttt{complexity} &  \\
+  \hline
+  rRNA probe & \texttt{rrnaProbe} &  \\
+ \hline
+ Allocated CPUs & & 16 \\
+ \hline
+ Allocated Memory per Node & & 64GB \\
+ \label{tab:submodulebreakdown}
 \end{tabular}
 \end{table*}
 
@@ -366,7 +422,7 @@ The authors wish to thank Michael T. Howard for helpful discussions concerning r
 
 \begin{figure}
 \centering
-  \includegraphics[width=160mm]{figures/xpresspipe_supplement1.png}
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement1.png}
   \caption{\textbf{Comparison between XPRESSyourself and other available software packages for ribosome profiling data analysis.} Black boxes indicate full functionality, blue boxes indicate partial functionality, grey boxes indicate incomplete or outdated functionality, and white boxes indicate no functionality for the specified task. Rankings were compiled using the tools' documentation and manuscript. If a function was not clearly described in either, a white box was given.}
   \label{fig:supplement1}
 \end{figure}
@@ -381,22 +437,29 @@ The authors wish to thank Michael T. Howard for helpful discussions concerning r
 \begin{figure}
 \centering
   \includegraphics[width=160mm]{figures/xpresspipe_supplement3.png}
-  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data reveals systematic differences between the analytical regimes.} A) Selected highlighted genes show consistent differences between processing methods. B) Spearman correlation plots using the data table provided as supplementary data with the original ISRIB manuscript comparing biological replicates. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients.}
+  \caption{\textbf{Comparison between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Comparison of biological replicate read counts processed by XPRESSpipe. B) Comparison of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
   \label{fig:supplement3}
 \end{figure}
 
 \begin{figure}
 \centering
-  \includegraphics[width=180mm]{figures/xpresspipe_supplement4.png}
-  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligible improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients.}
+  \includegraphics[width=160mm]{figures/xpresspipe_supplement4.png}
+  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data reveals systematic differences between the analytical regimes.} A) Selected highlighted genes show consistent differences between processing methods. B) Spearman correlation plots using the data table provided as supplementary data with the original ISRIB manuscript comparing biological replicates. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients.}
   \label{fig:supplement4}
 \end{figure}
 
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_supplement5.png}
-  \caption{\textbf{Gene coverage plots for neurologically annotated genes passing strict thresholding.} Coverage plots were generated using XPRESSpipe's geneCoverage module, which collapses introns within the representation.}
+  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligible improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients.}
   \label{fig:supplement5}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[width=180mm]{figures/xpresspipe_supplement6.png}
+  \caption{\textbf{Gene coverage plots for neurologically annotated genes passing strict thresholding.} Coverage plots were generated using XPRESSpipe's geneCoverage module, which collapses introns within the representation.}
+  \label{fig:supplement6}
 \end{figure}
 
 \end{document}

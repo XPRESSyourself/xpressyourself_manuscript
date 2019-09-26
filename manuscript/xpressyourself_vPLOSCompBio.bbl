@@ -345,15 +345,8 @@ R.~Tunney, {\it et~al.\/}. Accurate design of translational output by a neural
   network model of ribosome distribution. {\it Nat Struct Mol Biol\/} {\bf 25},
   577 (2018). Available from: https://doi.org/10.1038/s41594-018-0080-2.
 
-\bibitem{slc1a1_neurotoxic}
-L.~Vera-Portocarrero, {\it et~al.\/}. Rapid changes in expression of glutamate
-  transporters after spinal cord injury. {\it Brain Res\/} {\bf 927} (2002).
-  Available from: https://doi.org/10.1016/S0006-8993(01)03329-7.
-
-\bibitem{eif2b_neuroprotective}
-Y.~Wong, {\it et~al.\/}. eIF2B activator prevents neurological defects caused
-  by a chronic integrated stress response. {\it Elife\/} {\bf 8} (2019).
-  Available from: https://doi.org/10.7554/eLife.42940.
+\bibitem{aws}
+Amazon Web Services. \url{https://aws.amazon.com}.
 
 \bibitem{readthedocs}
 Read the Docs. \url{https://readthedocs.org/}.

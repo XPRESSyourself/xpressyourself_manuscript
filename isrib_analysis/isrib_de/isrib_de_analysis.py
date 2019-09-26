@@ -242,9 +242,9 @@ check_data.loc['SLC10A5'][['ribo_tm_a', 'ribo_tm_b', 'ribo_untr_a', 'ribo_untr_b
 
 # Check fold changes of targets for comparison
 print('ATF4')
-print(merged_data_split.loc['ATF4']['tm_ribo_log2FC'])
+print(2**merged_data_split.loc['ATF4']['tm_ribo_log2FC'])
 print('ATF5')
-print(merged_data_split.loc['ATF5']['tm_ribo_log2FC'])
+print(2**merged_data_split.loc['ATF5']['tm_ribo_log2FC'])
 print('PPP1R15A')
 print(2**merged_data_split.loc['PPP1R15A']['tm_ribo_log2FC'])
 print('DDIT3')
@@ -392,7 +392,7 @@ plt.close()
 """
 Comparing outputs
 """
-from matplotlib_venn import venn2
+from matplotlib_venn import venn2, venn3
 
 # Tm
 tm_fc = merged_data_split.loc[(merged_data_split['tm_ribo_log2FC'] >= 1) | (merged_data_split['tm_ribo_log2FC'] <= -1)].index.tolist()
@@ -477,9 +477,22 @@ ingolia_tm = [
     'RPP25',
     'FLJ44955',
     'DQ576756']
-plt.title("Tm")
-venn2([set(tm_common), set(ingolia_tm)], set_labels = ('This paper', 'Original paper'))
-plt.show()
+plt.title("Tm", fontsize = 28)
+c = venn2(
+    [set(tm_common), set(ingolia_tm)],
+    set_labels = ('This paper', 'Original paper'))
+c.get_patch_by_id('10').set_color('#d95f02')
+c.get_patch_by_id('01').set_color('#1b9e77')
+c.get_patch_by_id('10').set_edgecolor('black')
+c.get_patch_by_id('01').set_edgecolor('black')
+for text in c.set_labels:
+    text.set_fontsize(22)
+try:
+    for text in c.subset_labels:
+        text.set_fontsize(18)
+except:
+    pass
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/tm_venn.png', dpi=3600, bbox_inches='tight')
 
 
 # Tm + ISRIB
@@ -496,9 +509,20 @@ ingolia_tmisrib = [
     'STARD9',
     'PKD1',
     'ANKRD36']
-plt.title("Tm + ISRIB")
-venn2([set(tmisrib_common), set(ingolia_tmisrib)], set_labels = ('This paper', 'Original paper'))
-plt.show()
+plt.title("Tm + ISRIB", fontsize = 28)
+c = venn2([set(tmisrib_common), set(ingolia_tmisrib)], set_labels = ('This paper', 'Original paper'))
+c.get_patch_by_id('10').set_color('#d95f02')
+c.get_patch_by_id('01').set_color('#1b9e77')
+c.get_patch_by_id('10').set_edgecolor('black')
+c.get_patch_by_id('01').set_edgecolor('black')
+for text in c.set_labels:
+    text.set_fontsize(22)
+try:
+    for text in c.subset_labels:
+        text.set_fontsize(18)
+except:
+    pass
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/tm_isrib_venn.png', dpi=3600, bbox_inches='tight')
 
 # ISRIB
 isrib_fc = merged_data_split.loc[(merged_data_split['isrib_ribo_log2FC'] >= 1) | (merged_data_split['isrib_ribo_log2FC'] <= -1)].index.tolist()
@@ -509,6 +533,17 @@ ingolia_isrib = [
     'AK310228',
     'AK302511',
     'NPIP']
-plt.title("ISRIB")
-venn2([set(isrib_common), set(ingolia_isrib)], set_labels = ('This paper', 'Original paper'))
-plt.show()
+plt.title("ISRIB", fontsize = 28)
+c = venn2([set(isrib_common), set(ingolia_isrib)], set_labels = ('This paper', 'Original paper'))
+c.get_patch_by_id('10').set_color('#d95f02')
+c.get_patch_by_id('01').set_color('#1b9e77')
+c.get_patch_by_id('10').set_edgecolor('black')
+c.get_patch_by_id('01').set_edgecolor('black')
+for text in c.set_labels:
+    text.set_fontsize(22)
+try:
+    for text in c.subset_labels:
+        text.set_fontsize(18)
+except:
+    pass
+plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/isrib_venn.png', dpi=3600, bbox_inches='tight')

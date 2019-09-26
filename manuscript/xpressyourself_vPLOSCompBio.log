@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  24 SEP 2019 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 SEP 2019 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -624,12 +624,12 @@ some pro-fil-ing and se-quenc-ing datasets, we re-processed
  []
 
 [10] [11]
-<figures/xpresspipe_figure2.png, id=51, 426.1521pt x 581.7735pt>
+<figures/xpresspipe_figure2.png, id=51, 589.2414pt x 534.798pt>
 File: figures/xpresspipe_figure2.png Graphic file (type png)
 <use figures/xpresspipe_figure2.png>
 Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 209
 .
-(pdftex.def)             Requested size: 412.56496pt x 563.25436pt.
+(pdftex.def)             Requested size: 412.56496pt x 374.45396pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 210.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
@@ -652,10 +652,11 @@ Overfull \hbox (10.31903pt too wide) in paragraph at lines 221--221
  com-pa-ra-ble in-creases in their ri-bo-some oc-cu-pancy
  []
 
-
-Overfull \hbox (3.9564pt too wide) in paragraph at lines 223--223
-\T1/phv/m/n/10 cov-er-age across these genes show that the sig-nif-i-cant chang
-es in their TE are due to nei-ther spu-ri-ous, high-abundance
+[12] [13 <./figures/xpresspipe_figure2.png>] [14 <./figures/xpresspipe_figure3.
+png>]
+Overfull \hbox (10.64465pt too wide) in paragraph at lines 225--226
+\T1/phv/m/n/10 anal-y-sis and re-analysis of ribosome-profiling ex-per-i-ments 
+in the pur-suit of bi-o-log-i-cal in-sights and hy-poth-e-sis gen-er-a-tion. 
  []
 
 
@@ -663,45 +664,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-[12] [13 <./figures/xpresspipe_figure2.png>] [14 <./figures/xpresspipe_figure3.
-png>]
-Underfull \hbox (badness 10000) in paragraph at lines 227--229
-
- []
-
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 230.
+               Default added (so using `!tbp') on input line 227.
 
 
-Overfull \hbox (24.0pt too wide) in paragraph at lines 233--253
+Overfull \hbox (24.0pt too wide) in paragraph at lines 230--248
  [][] 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
 [15]
-Overfull \hbox (20.15698pt too wide) in paragraph at lines 258--258
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+ []
+
+[16]
+Overfull \hbox (20.15698pt too wide) in paragraph at lines 314--314
 []\T1/phv/m/n/10 Although RNA-Seq tech-nolo-gies are quite ad-vanced, stan-dard
 -ized com-pu-ta-tional pro-to-cols are much less es-tab-lished
  []
 
 
-Overfull \hbox (1.57664pt too wide) in paragraph at lines 258--258
+Overfull \hbox (1.57664pt too wide) in paragraph at lines 314--314
 \T1/phv/m/n/10 re-li-able, high-quality se-quenc-ing study. XPRESSpipe han-dles
  these is-sues through on-going cu-ra-tion of bench-marked
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
-
- []
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 266.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--318
-
  []
 
 [17]
@@ -710,38 +701,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--321
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 322.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--374
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
 
-Overfull \hbox (27.0935pt too wide) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+
+Overfull \hbox (27.0935pt too wide) in paragraph at lines 385--386
 \T1/phv/m/n/10 J.A.B. re-ceived sup-port from the Na-tional In-sti-tute of Di-a
 -betes and Di-ges-tive and Kid-ney Dis-eases (NIDDK) Inter-disciplinary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 
  []
 
-[18]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 334.
+               Default added (so using `!tbp') on input line 390.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
@@ -751,7 +755,7 @@ Underfull \hbox (badness 7888) in paragraph at lines 4--8
 me-wide anal-y-sis in vivo of
  []
 
-[19]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 58--62
 []\T1/phv/m/n/10 D. Wein-berg, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . Im-proved
  Ribosome-Footprint and mRNA Mea-sure-ments Pro-vide In-sights
@@ -764,14 +768,14 @@ v/m/sl/10 Cell Rep \T1/phv/b/n/10 14\T1/phv/m/n/10 , 1787 (2016). Avail-able fr
 om:
  []
 
-
+[21]
 Underfull \hbox (badness 3601) in paragraph at lines 64--67
 []\T1/phv/m/n/10 J. Robin-son, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . In-te-gra
 -tive Ge-nomics Viewer. \T1/phv/m/sl/10 Nat Biotech-nol \T1/phv/b/n/10 29\T1/ph
 v/m/n/10 , 24 (2011). Avail-able from:
  []
 
-[20]
+
 Underfull \hbox (badness 2384) in paragraph at lines 85--89
 []\T1/phv/m/n/10 R. Ku-mari, A. Michel, P. Bara-nov. PausePred and Rfeet: webto
 ols for in-fer-ring ri-bo-some pauses
@@ -784,7 +788,7 @@ ing data. \T1/phv/m/sl/10 RNA \T1/phv/b/n/10 24 \T1/phv/m/n/10 (2018). Avail-ab
 le from:
  []
 
-[21]
+[22]
 Underfull \hbox (badness 4543) in paragraph at lines 138--142
 []\T1/phv/m/n/10 T. Mar-tin, I. Yet, P. Tsai, J. Bell. coMET: vi-su-al-i-sa-tio
 n of re-gional epigenome-wide as-so-ci-a-tion
@@ -815,7 +819,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--184
 Bioin-for-mat-ics \T1/phv/b/n/10 32 \T1/phv/m/n/10 (2016). Avail-able from:
  []
 
-
+[23]
 Underfull \hbox (badness 6542) in paragraph at lines 186--190
 []\T1/phv/m/n/10 P. Speal-man, H. Wang, G. May, C. Kings-ford, C. Mc-Manus. Ex-
 plor-ing Ri-bo-some Po-si-tion-ing
@@ -828,7 +832,7 @@ hv/m/sl/10 Meth-ods Mol Biol \T1/phv/b/n/10 1358 \T1/phv/m/n/10 (2016). Avail-a
 ble from:
  []
 
-[22]
+
 Underfull \hbox (badness 6708) in paragraph at lines 221--225
 []\T1/phv/m/n/10 Y. Fu, P. Wu, T. Beane, P. Zamore, Z. Weng. Elim-i-na-tion of 
 PCR du-pli-cates in RNA-seq
@@ -841,7 +845,7 @@ hv/m/sl/10 BMC Ge-nomics \T1/phv/b/n/10 19 \T1/phv/m/n/10 (2018). Avail-able fr
 om:
  []
 
-
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 246--250
 []\T1/phv/m/n/10 C. Evans, J. Hardin, D. Stoebel. Se-lect-ing between-sample RN
 A-Seq nor-mal-iza-tion meth-ods
@@ -860,7 +864,7 @@ Underfull \hbox (badness 1762) in paragraph at lines 252--256
 pack-age for re-mov-ing batch ef-fects
  []
 
-[23]
+
 Underfull \hbox (badness 1917) in paragraph at lines 300--304
 []\T1/phv/m/n/10 C. Sidrauski1, A. McGeachy, N. In-go-lia, P. Wal-ter. The smal
 l molecule IS-RIB re-verses the ef-fects
@@ -872,7 +876,7 @@ Underfull \hbox (badness 2617) in paragraph at lines 300--304
 e as-sem-bly. \T1/phv/m/sl/10 eLife \T1/phv/m/n/10 (2015). Avail-able from:
  []
 
-
+[25]
 Underfull \hbox (badness 5460) in paragraph at lines 312--316
 []\T1/phv/m/n/10 M. Hal-l-i-day, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . Par-tia
 l restora-tion of pro-tein syn-the-sis rates by the small molecule IS-RIB
@@ -885,73 +889,84 @@ ty. \T1/phv/m/sl/10 Cell Death Dis \T1/phv/b/n/10 6 \T1/phv/m/n/10 (2015). Avai
 l-able from:
  []
 
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 362--365
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--358
 []\T1/phv/m/n/10 Manuscript code. $\T1/cmtt/m/n/10 https : / / github . com / X
 PRESSyourself / xpressyourself _ manuscript / tree / master /
  []
 
-) [25]
-<figures/xpresspipe_supplement1.png, id=101, 794.97pt x 614.295pt>
+[26]) [27]
+<figures/xpresspipe_supplement1.png, id=107, 794.97pt x 614.295pt>
 File: figures/xpresspipe_supplement1.png Graphic file (type png)
 <use figures/xpresspipe_supplement1.png>
 Package pdftex.def Info: figures/xpresspipe_supplement1.png  used on input line
- 369.
-(pdftex.def)             Requested size: 455.24408pt x 351.79211pt.
-<figures/xpresspipe_supplement2.png, id=102, 588.5187pt x 472.6458pt>
+ 425.
+(pdftex.def)             Requested size: 512.1496pt x 395.76262pt.
+<figures/xpresspipe_supplement2.png, id=108, 588.5187pt x 472.6458pt>
 File: figures/xpresspipe_supplement2.png Graphic file (type png)
 <use figures/xpresspipe_supplement2.png>
 Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
- 376.
+ 432.
 (pdftex.def)             Requested size: 455.24408pt x 365.61877pt.
-<figures/xpresspipe_supplement3.png, id=103, 483.7272pt x 555.7563pt>
+<figures/xpresspipe_supplement3.png, id=109, 500.5902pt x 773.7708pt>
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 383.
-(pdftex.def)             Requested size: 455.24408pt x 523.03853pt.
-<figures/xpresspipe_supplement4.png, id=104, 516.9714pt x 513.5988pt>
+ 439.
+(pdftex.def)             Requested size: 455.24408pt x 703.7075pt.
+
+
+LaTeX Warning: Float too large for page by 96.84137pt on input line 442.
+
+<figures/xpresspipe_supplement4.png, id=110, 439.1607pt x 564.1878pt>
 File: figures/xpresspipe_supplement4.png Graphic file (type png)
 <use figures/xpresspipe_supplement4.png>
 Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
- 390.
-(pdftex.def)             Requested size: 512.1496pt x 508.84056pt.
-<figures/xpresspipe_supplement5.png, id=105, 555.9972pt x 668.4975pt>
+ 446.
+(pdftex.def)             Requested size: 455.24408pt x 584.84753pt.
+<figures/xpresspipe_supplement5.png, id=111, 485.8953pt x 494.0859pt>
 File: figures/xpresspipe_supplement5.png Graphic file (type png)
 <use figures/xpresspipe_supplement5.png>
 Package pdftex.def Info: figures/xpresspipe_supplement5.png  used on input line
- 397.
+ 453.
+(pdftex.def)             Requested size: 512.1496pt x 520.79584pt.
+<figures/xpresspipe_supplement6.png, id=112, 555.9972pt x 668.4975pt>
+File: figures/xpresspipe_supplement6.png Graphic file (type png)
+<use figures/xpresspipe_supplement6.png>
+Package pdftex.def Info: figures/xpresspipe_supplement6.png  used on input line
+ 460.
 (pdftex.def)             Requested size: 512.1496pt x 615.8412pt.
- [26 <./figures/xpresspipe_supplement1.png>] [27 <./figures/xpresspipe_suppleme
-nt2.png>] [28 <./figures/xpresspipe_supplement3.png>] [29 <./figures/xpresspipe
-_supplement4.png>] [30 <./figures/xpresspipe_supplement5.png>]
-(./xpressyourself_vPLOSCompBio.aux) ) 
+[28 <./figures/xpresspipe_supplement1.png>] [29 <./figures/xpresspipe_supplemen
+t2.png>] [30 <./figures/xpresspipe_supplement3.png>] [31 <./figures/xpresspipe_
+supplement4.png>] [32 <./figures/xpresspipe_supplement5.png>] [33 <./figures/xp
+resspipe_supplement6.png>] (./xpressyourself_vPLOSCompBio.aux) ) 
 Here is how much of TeX's memory you used:
- 6157 strings out of 492649
- 91894 string characters out of 6129622
- 189935 words of memory out of 5000000
- 9916 multiletter control sequences out of 15000+600000
+ 6164 strings out of 492649
+ 92101 string characters out of 6129622
+ 192935 words of memory out of 5000000
+ 9922 multiletter control sequences out of 15000+600000
  40474 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,1954b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/
-enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/en
-c/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7
-.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself_vPLOSCompBio.pdf (30 pages, 2748026 bytes).
+ 42i,10n,40p,2084b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/tex
+live/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texli
+ve/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
+ublic/cm-super/sftt1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw
+/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvet
+ic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr
+o8a.pfb>
+Output written on xpressyourself_vPLOSCompBio.pdf (33 pages, 3645204 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 179 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

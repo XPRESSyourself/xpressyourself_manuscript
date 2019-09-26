@@ -13,7 +13,7 @@ matplotlib.rcParams['font.sans-serif'] = 'Arial'
 import seaborn as sns
 %matplotlib inline
 
-from xpressplot import count_table, convert_names
+from xpressplot import count_table, convert_names, rpm
 
 import plotly
 import plotly.offline as py
@@ -27,6 +27,9 @@ def make_figure4(
     tcga_data,
     file_list,
     title):
+
+    data = rpm(data)
+    tcga_data = rpm(tcga_data)
 
     fig, axes = plt.subplots(
         nrows = 2,
@@ -86,8 +89,9 @@ def make_figure4(
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
+        axes[ax_y, ax_x].tick_params(axis='both', labelsize=32)
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.8, fontsize=20) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
         file_number += 1 # Plot counter
@@ -96,15 +100,15 @@ def make_figure4(
     # Create shared row/column titles
     cols = file_list[:4]
     for ax, col in zip(axes[0], cols):
-        ax.set_xlabel(col, fontsize=24)
+        ax.set_xlabel(col, fontsize=26)
         ax.xaxis.set_label_position('top')
 
     for ax in axes[:,0]:
-        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=16)
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=32)
 
     cols = file_list[4:8]
     for ax, col in zip(axes[1], cols):
-        ax.set_xlabel(col, fontsize=24)
+        ax.set_xlabel(col, fontsize=26)
         ax.xaxis.set_label_position('top')
 
     fig.savefig(
@@ -121,6 +125,9 @@ def make_figure4S(
     file_number,
     axes,
     name):
+
+    data = rpm(data)
+    tcga_data = rpm(tcga_data)
 
     # Get data as array-like for samples being compared
     data_c1 = data.copy()
@@ -164,8 +171,9 @@ def make_figure4S(
     rho = '{:.3f}'.format(round(rho, 3))
 
     # Plot data
+    axes[ax_y, ax_x].tick_params(axis='both', labelsize=32)
     axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-    axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+    axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.8, fontsize=20) # Format titles
     axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
     axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
 
@@ -175,7 +183,8 @@ def make_figure4S(
     axes[ax_y, ax_x].set_xlabel(name, fontsize=12)
     axes[ax_y, ax_x].xaxis.set_label_position('top')
 
-    axes[ax_y, ax_x].set_ylabel('log$_1$$_0$(counts)', fontsize=10)
+    if ax_x == 0:
+        axes[ax_y, ax_x].set_ylabel('log$_1$$_0$(counts)', fontsize=32)
 
     return axes
 
@@ -225,6 +234,8 @@ def interactive_scatter(
     merged_best.head()
     merged_best.columns.tolist()[0]
 
+    merged_best = rpm(merged_best)
+
     merged_best = convert_names(
         merged_best,
         gtf_file)
@@ -261,11 +272,6 @@ def interactive_scatter(
     merged_best_c.loc[(~merged_best_c['color'].str.contains('coding')) & (~merged_best_c['color'].str.contains('pseudogene')), 'color'] = 'other'
     merged_best_c.index = merged_best_c['genes']
     del merged_best_c.index.name
-
-    merged_best_c.head()
-
-    set(merged_best_c.color.tolist())
-
 
     labels = {
         sample_id: 'TCGA processed',
@@ -484,7 +490,8 @@ def run_comp(pseudogenes=False):
         figsize = (20, 20),
         subplot_kw = {
             'facecolor':'none'},
-        sharex=True, sharey=True) # Create shared axis for cleanliness
+        sharex=True,
+        sharey=True) # Create shared axis for cleanliness
     plt.subplots_adjust(
         bottom = 0.1)
     plt.yticks([0,1,2,3,4,5,6]) # Limit axis labels to ints

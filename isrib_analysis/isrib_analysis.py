@@ -33,6 +33,100 @@ def name_map(
 
     return data_sum
 
+# Make supplemental figure 4
+def make_supplement4(
+    data,
+    original_data,
+    title):
+
+    fig, axes = plt.subplots(
+        nrows = 2,
+        ncols = 2,
+        figsize = (20, 20),
+        subplot_kw = {
+            'facecolor':'none'},
+        sharey=True,
+        sharex=True) # Create shared axis for cleanliness
+    plt.subplots_adjust(
+        bottom = 0.1)
+    plt.yticks([0,1,2,3,4,5]) # Limit axis labels to ints
+    plt.xticks([0,1,2,3,4,5])
+
+    x = 0
+    file_number = 0
+    file_list = [
+        'ribo_untr_a',
+        'ribo_tm_a',
+        'untr_a_hek',
+        'tm_a_hek'] # Designate sample order
+
+    for y in range(4):
+
+        # Get data as array-like for samples being compared
+        data_c1 = data.copy()
+        data_c2 = original_data.copy()
+
+        sample_a = data_c1[file_list[file_number]].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c2[file_list[file_number]].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
+        # Determine subplot location
+        if file_number in [0,1]:
+            ax_x = file_number % 2
+            ax_y = 0
+        elif file_number in [2,3]:
+            ax_x = file_number % 2
+            ax_y = 1
+        else:
+            print('oops')
+
+        # Plot data
+        axes[ax_y, ax_x].tick_params(axis='both', labelsize=32)
+        axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=5,c='grey')
+
+        genes = ['EIF3C','NOMO2','KCNQ2','RPL39','TUBA1A']
+        colors = ['red','blue','green','purple','orange']
+        for x in range(5):
+
+            s1 = (data_c1 + 1).at[genes[x], file_list[file_number]]
+            s2 = (data_c2 + 1).at[genes[x], file_list[file_number]]
+
+            axes[ax_y, ax_x].scatter(np.log10(s1), np.log10(s2), s=100,c=colors[x])
+
+        axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.0457, xmax=1) # Create axis lines
+        axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.0457, ymax=1)
+        file_number += 1 # Plot counter
+
+
+    # Create shared row/column titles
+    for ax in axes[:,0]:
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=32)
+
+    cols = ['Untreated','Tm']
+    for ax, col in zip(axes[0], cols):
+        ax.set_xlabel(col, fontsize=40)
+        ax.xaxis.set_label_position('top')
+
+    rows = ['Ribo-seq','RNA-seq']
+    for ax, rows in zip(axes[:,1], rows):
+        ax.set_ylabel(rows, fontsize=40, labelpad=40, rotation=270)
+        ax.yaxis.set_label_position('right')
+
+    for ax in axes[1]:
+        ax.set_xlabel('log$_1$$_0$(counts)', fontsize=32)
+        ax.xaxis.set_label_position('bottom')
+
+    fig.savefig(
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title),
+        dpi = 600,
+        bbox_inches = 'tight')
+
 # Make figure 2B
 def make_figure2B(
     data,
@@ -44,11 +138,13 @@ def make_figure2B(
         ncols = 2,
         figsize = (20, 20),
         subplot_kw = {
-            'facecolor':'none'}) # Create shared axis for cleanliness
+            'facecolor':'none'},
+        sharey=True) # Create shared axis for cleanliness
     plt.subplots_adjust(
         bottom = 0.1)
     plt.yticks([0,1,2,3,4,5]) # Limit axis labels to ints
     plt.xticks([0,1,2,3,4,5])
+    plt.axis('equal')
 
     x = 0
     file_number = 0
@@ -91,9 +187,9 @@ def make_figure2B(
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
-        axes[ax_y, ax_x].tick_params(size=20)
+        axes[ax_y, ax_x].tick_params(axis='both', labelsize=32)
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=28) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=32) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.0457, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.0457, ymax=1)
         file_number += 1 # Plot counter
@@ -102,15 +198,15 @@ def make_figure2B(
 
     # Create shared row/column titles
     for ax in axes[:,0]:
-        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=24)
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=32)
 
     cols = ['RPF Tm RepA','mRNA ISRIB RepB']
     for ax, col in zip(axes[0], cols):
-        ax.set_xlabel(col, fontsize=28)
+        ax.set_xlabel(col, fontsize=40)
         ax.xaxis.set_label_position('top')
     cols = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)']
     for ax, col in zip(axes[1], cols):
-        ax.set_xlabel(col, fontsize=28, labelpad=30)
+        ax.set_xlabel(col, fontsize=32, labelpad=30)
         ax.xaxis.set_label_position('top')
 
     fig.savefig(
@@ -173,7 +269,7 @@ def make_figure2B_supplement(
                 height=1000,
                 title=str(x))
 
-            py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/' + str(title)[:-4] + '.html')
+            py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/interactive_' + str(x) + '.html')
 
         # Get data as array-like for samples being compared
         data_c1 = data.copy()
@@ -217,8 +313,9 @@ def make_figure2B_supplement(
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
+        axes[ax_y, ax_x].tick_params(axis='both', labelsize=32)
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.8, fontsize=20) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=0.88)
         file_number += 1 # Plot counter
@@ -229,19 +326,19 @@ def make_figure2B_supplement(
 
     cols = ['RPF RepA','RPF RepB','mRNA RepA','mRNA RepB']
     for ax, col in zip(axes[0], cols):
-        ax.set_xlabel(col, fontsize=24)
+        ax.set_xlabel(col, fontsize=40)
         ax.xaxis.set_label_position('top')
 
     for ax in axes[3]:
-        ax.set_xlabel('log$_1$$_0$(counts)', fontsize=16)
+        ax.set_xlabel('log$_1$$_0$(counts)', fontsize=32)
         ax.xaxis.set_label_position('bottom')
 
     for ax in axes[:,0]:
-        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=16)
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=32)
 
     rows = ['Untreated','Tm','Tm + ISRIB','ISRIB']
     for ax, rows in zip(axes[:,3], rows):
-        ax.set_ylabel(rows, fontsize=24, labelpad=40, rotation=270)
+        ax.set_ylabel(rows, fontsize=40, labelpad=40, rotation=270)
         ax.yaxis.set_label_position('right')
 
     fig.savefig(
@@ -254,6 +351,9 @@ def make_figure2CD(
     data,
     original_data,
     title):
+
+    data_t = np.log10(data + 1)
+    original_data_t = np.log10(original_data + 1)
 
     file_list = [
         'ribo_untr_a',
@@ -273,9 +373,8 @@ def make_figure2CD(
         'isrib_a_hek',
         'isrib_b_hek'] # Designate sample order
 
+    # Run Spearman on raw counts
     spear_list = []
-    pear_list = []
-
     for x in file_list:
 
         # Get data as array-like for samples being compared
@@ -296,11 +395,28 @@ def make_figure2CD(
         rho, spear_p_value = stats.spearmanr(sample_a, sample_b)
         spear_list.append(rho)
 
+    # Run Pearson on log transformed data
+    pear_list = []
+    for x in file_list:
+
+        # Get data as array-like for samples being compared
+        data_c1 = data_t.copy()
+        data_c2 = original_data_t.copy()
+
+        sample_a = data_c1[x].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c2[x].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
         r, pear_p_value = stats.pearsonr(sample_a, sample_b)
         pear_list.append(r)
 
     spear_list_reps = []
-    pear_list_reps = []
     file_number = 0
     for x in range(int(len(file_list)/2)):
 
@@ -322,6 +438,26 @@ def make_figure2CD(
         # Run Spearman R linreg for non-normal data
         rho, spear_p_value = stats.spearmanr(sample_a, sample_b)
         spear_list_reps.append(rho)
+
+
+    pear_list_reps = []
+    file_number = 0
+    for x in range(int(len(file_list)/2)):
+
+        # Get data as array-like for samples being compared
+        data_c1 = data_t.copy()
+
+        sample_a = data_c1[file_list[file_number]].values.tolist()
+        sample_a = [x + 1 for x in sample_a]
+        sample_a = np.array(sample_a).astype(np.float)
+        sample_a = np.ndarray.tolist(sample_a)
+
+        sample_b = data_c1[file_list[file_number+1]].values.tolist()
+        sample_b = [x + 1 for x in sample_b]
+        sample_b = np.array(sample_b).astype(np.float)
+        sample_b = np.ndarray.tolist(sample_b)
+
+        file_number += 2
 
         r, pear_p_value = stats.pearsonr(sample_a, sample_b)
         pear_list_reps.append(r)
@@ -349,22 +485,22 @@ def make_figure2CD(
             df.loc[counter] = [float(y), str(n)]
             counter += 1
 
-    df1 = df.loc[df['Type'].str.contains('Spearman')]
-    df1['Type'] = df1['Type'].str.replace(r'Spearman ', '')
-    df1.columns = ['Value', 'Spearman']
-    ax1 = sns.violinplot(x="Value", y="Spearman", data=df1)
+    df1 = df.loc[df['Type'].str.contains('Replicates')]
+    df1['Type'] = df1['Type'].str.split(' ').str[0]
+    df1.columns = ['Coefficient Value', 'Replicates']
+    ax1 = sns.violinplot(x="Coefficient Value", y="Replicates", data=df1)
     plt.savefig(
-        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/spearman_' + str(title),
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/replicates_' + str(title),
         dpi = 1800,
         bbox_inches = 'tight')
     plt.close()
 
-    df2 = df.loc[df['Type'].str.contains('Pearson')]
-    df2['Type'] = df2['Type'].str.replace(r'Pearson ', '')
-    df2.columns = ['Value', 'Pearson']
-    ax2 = sns.violinplot(x="Value", y="Pearson", data=df2)
+    df2 = df.loc[df['Type'].str.contains('Method')]
+    df2['Type'] = df2['Type'].str.split(' ').str[0]
+    df2.columns = ['Coefficient Value', 'Method Comparison']
+    ax2 = sns.violinplot(x="Coefficient Value", y="Method Comparison", data=df2)
     plt.savefig(
-        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/pearsan_' + str(title),
+        '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/method_' + str(title),
         dpi = 1800,
         bbox_inches = 'tight')
     plt.close()
@@ -427,9 +563,9 @@ def make_figure2A(
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
-        axes[ax_y, ax_x].tick_params(size=20)
+        axes[ax_y, ax_x].tick_params(axis='both', labelsize=32)
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=24) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=32) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.0457, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.0457, ymax=1)
         file_number += 1 # Plot counter
@@ -439,15 +575,15 @@ def make_figure2A(
     # Create shared row/column titles
 
     for ax in axes[:,0]:
-        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=24)
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=32)
 
     cols = ['RPF Tm','mRNA ISRIB']
     for ax, col in zip(axes[0], cols):
-        ax.set_xlabel(col, fontsize=28)
+        ax.set_xlabel(col, fontsize=40)
         ax.xaxis.set_label_position('top')
     cols = ['log$_1$$_0$(counts)','log$_1$$_0$(counts)']
     for ax, col in zip(axes[1], cols):
-        ax.set_xlabel(col, fontsize=28, labelpad=30)
+        ax.set_xlabel(col, fontsize=32, labelpad=30)
         ax.xaxis.set_label_position('top')
 
     fig.savefig(
@@ -528,8 +664,9 @@ def make_figure2A_supplement(
         rho = '{:.3f}'.format(round(rho, 3))
 
         # Plot data
+        axes[ax_y, ax_x].tick_params(axis='both', labelsize=32)
         axes[ax_y, ax_x].scatter(np.log10(sample_a), np.log10(sample_b), s=1,c='black')
-        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.9, fontsize=16) # Format titles
+        axes[ax_y, ax_x].set_title(r"$\rho$" + ' = ' + str(rho) + '\nP ' + p_val, y=0.1, x=0.8, fontsize=20) # Format titles
         axes[ax_y, ax_x].axhline(0, ls='-', color='black', xmin=0.05, xmax=1) # Create axis lines
         axes[ax_y, ax_x].axvline(0, ls='-', color='black', ymin=0.05, ymax=1)
         file_number += 1 # Plot counter
@@ -539,16 +676,16 @@ def make_figure2A_supplement(
     # Create shared row/column titles
 
     for ax in axes[:,0]:
-        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=16)
+        ax.set_ylabel('log$_1$$_0$(counts)', fontsize=32)
 
     cols = ['RPF Untreated','mRNA Untreated','RPF Tm','mRNA Tm']
     for ax, col in zip(axes[0], cols):
-        ax.set_xlabel(col, fontsize=24)
+        ax.set_xlabel(col, fontsize=32)
         ax.xaxis.set_label_position('top')
 
     cols = ['RPF Tm + ISRIB','mRNA Tm + ISRIB','RPF ISRIB','mRNA ISRIB']
     for ax, col in zip(axes[1], cols):
-        ax.set_xlabel(col, fontsize=24)
+        ax.set_xlabel(col, fontsize=32)
         ax.xaxis.set_label_position('top')
 
     fig.savefig(
@@ -670,16 +807,16 @@ data_rpm.shape
 original_rpm.shape
 
 # Make dataframes for each dataset for matching genes
-data_genes = data_threshold.index.tolist()
-original_genes = original.index.tolist()
+data_genes = data_rpm.index.tolist()
+original_genes = original_rpm.index.tolist()
 len(data_genes)
 len(original_genes)
 
 common_genes = list(set(data_genes).intersection(original_genes))
 len(common_genes)
 
-data_common = data_threshold.reindex(index = common_genes)
-original_common = original.reindex(index = common_genes)
+data_common = data_rpm.reindex(index = common_genes)
+original_common = original_rpm.reindex(index = common_genes)
 
 
 """
@@ -751,15 +888,15 @@ FIGURE 2A
 """
 # Run correlations between sample alignments
 make_figure2A(
-    data_threshold,
+    data_rpm,
     'internal_correlations_summary_htseq_protein_truncated_v96.png')
 
 make_figure2A_supplement(
-    data_threshold,
+    data_rpm,
     'internal_correlations_summary_htseq_protein_truncated_v96_all.png')
 
 make_figure2A_supplement(
-    original,
+    original_rpm,
     'internal_correlations_summary_original.png')
 
 
@@ -772,14 +909,16 @@ def cycle_fig2b(file, original):
     data = get_data(file, sample_suffix='__Aligned')
 
     data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
+    data_rpm = rpm(data_threshold)
+    data_genes = data_rpm.index.tolist()
 
-    data_genes = data_threshold.index.tolist()
-    original_genes = original.index.tolist()
+    original_rpm = rpm(original)
+    original_genes = original_rpm.index.tolist()
 
     common_genes = list(set(data_genes).intersection(original_genes))
 
-    data_common = data_threshold.reindex(index = common_genes)
-    original_common = original.reindex(index = common_genes)
+    data_common = data_rpm.reindex(index = common_genes)
+    original_common = original_rpm.reindex(index = common_genes)
 
     make_figure2B_supplement(
         data_common,
@@ -791,11 +930,9 @@ def cycle_fig2b(file, original):
 #'isrib_comp_v96_normal_count_table.tsv',
 #'isrib_comp_v96_longest_truncated_count_table.tsv',
 file_list = [
-
     'isrib_comp_v72_normal_count_table.tsv',
     'isrib_comp_v72_longest_truncated_count_table.tsv',
-    'isrib_comp_v72_truncated_count_table.tsv',
-]
+    'isrib_comp_v72_truncated_count_table.tsv']
 
 file_list = ['/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/' + str(f) for f in file_list]
 
@@ -813,7 +950,18 @@ make_figure2B_supplement(
     original_common,
     'external_correlations_summary_htseq_protein_truncated_v96_all.png')
 
+make_figure2B_supplement(
+    data_common,
+    original_common,
+    '',
+    interactive=True)
+
 make_figure2CD(
     data_common,
     original_common,
     'spearman_pearson_correlations_htseq_protein_truncated_v96.png')
+
+make_supplement4(
+    data_common,
+    original_common,
+    'highlight_pseudogene_comparison_isrib.png')
