@@ -300,6 +300,14 @@ down_strict_2 = merged_data.loc[
     & (merged_data_split['tm_ribo_log2FC'] <= -0.9) \
     & (merged_data_split['tm_ribo_padj'] <= 0.1)]
 
+
+merged_data.loc[set(down_strict_L)]
+
+
+
+merged_data_split.loc[set(down_strict_L)]
+
+
 # All hits have at least 50 counts per RNA
 # Thresholds were designed to maximize
 down_strict_L = down_strict_1.index.tolist() + down_strict_2.index.tolist()

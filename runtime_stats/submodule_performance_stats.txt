@@ -1,0 +1,36 @@
+Start curate: Wed Sep 25 18:09:03 MDT 2019
+End curate: Wed Sep 25 18:46:58 MDT 2019
+===================
+Start truncate: Wed Sep 25 18:46:58 MDT 2019
+End truncate: Wed Sep 25 18:50:08 MDT 2019
+===================
+Start trim: Wed Sep 25 18:50:08 MDT 2019
+End trim: Wed Sep 25 18:54:56 MDT 2019
+===================
+Start align: Wed Sep 25 18:54:56 MDT 2019
+End align: Wed Sep 25 19:27:11 MDT 2019
+===================
+Start count: Wed Sep 25 19:27:11 MDT 2019
+End count: Wed Sep 25 21:58:47 MDT 2019
+===================
+Start diffex: Wed Sep 25 21:58:47 MDT 2019
+End diffex: Wed Sep 25 22:05:57 MDT 2019
+===================
+Start readDistribution: Wed Sep 25 22:05:57 MDT 2019
+End readDistribution: Wed Sep 25 22:09:03 MDT 2019
+===================
+Start Metagene: Wed Sep 25 22:09:03 MDT 2019
+End Metagene: Wed Sep 25 22:15:37 MDT 2019
+===================
+Start Gene Coverage: Wed Sep 25 22:15:37 MDT 2019
+End Gene Coverage: Wed Sep 25 22:22:03 MDT 2019
+===================
+Start Periodicity: Wed Sep 25 22:22:03 MDT 2019
+End Periodicity: Wed Sep 25 22:30:56 MDT 2019
+===================
+Start Complexity: Wed Sep 25 22:30:56 MDT 2019
+End Complexity: Wed Sep 25 22:35:49 MDT 2019
+===================
+Start rRNA probe: Wed Sep 25 22:35:49 MDT 2019
+End rRNA probe: Wed Sep 25 22:36:38 MDT 2019
+===================

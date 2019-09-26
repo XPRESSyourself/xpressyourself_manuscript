@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself_vPLOSCompBio"] 1569460327 "xpressyourself_vPLOSCompBio.aux" "xpressyourself_vPLOSCompBio.bbl" "xpressyourself_vPLOSCompBio" 1569460333
+["bibtex xpressyourself_vPLOSCompBio"] 1569521971 "xpressyourself_vPLOSCompBio.aux" "xpressyourself_vPLOSCompBio.bbl" "xpressyourself_vPLOSCompBio" 1569521976
   "./Science.bst" 1563395597 26972 4362b992ec425b3d8aaa11ba5ecf54a8 ""
-  "manubib.bib" 1569438908 33324 6725fb1b13b296375cdb2586226ea7bd ""
-  "xpressyourself_vPLOSCompBio.aux" 1569460332 18163 03aad267817d0bc932995f767292ff33 ""
+  "manubib.bib" 1569521956 35664 cede5e9e18840fdf434473b747b8f46e ""
+  "xpressyourself_vPLOSCompBio.aux" 1569521976 18587 407cd18fc5cbc2dea581384fd0727af2 ""
   (generated)
-  "xpressyourself_vPLOSCompBio.blg"
   "xpressyourself_vPLOSCompBio.bbl"
-["pdflatex"] 1569460327 "xpressyourself_vPLOSCompBio.tex" "xpressyourself_vPLOSCompBio.pdf" "xpressyourself_vPLOSCompBio" 1569460333
+  "xpressyourself_vPLOSCompBio.blg"
+["pdflatex"] 1569521971 "xpressyourself_vPLOSCompBio.tex" "xpressyourself_vPLOSCompBio.pdf" "xpressyourself_vPLOSCompBio" 1569521976
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -111,10 +111,10 @@
   "figures/xpresspipe_supplement4.png" 1569447257 435966 1935082ba1eec9d04f1e339591fe872f ""
   "figures/xpresspipe_supplement5.png" 1569448995 774027 0463729eab541017ab2e94c478f3102a ""
   "figures/xpresspipe_supplement6.png" 1563253267 321557 e7604b5ca977b2b59960147bd42ae5a0 ""
-  "xpressyourself_vPLOSCompBio.aux" 1569460332 18163 03aad267817d0bc932995f767292ff33 ""
-  "xpressyourself_vPLOSCompBio.bbl" 1569460327 16054 60ad356abae6784ab8d16c9994b492ce "bibtex xpressyourself_vPLOSCompBio"
-  "xpressyourself_vPLOSCompBio.tex" 1569460321 57889 b0d61fd127787b578862c3ff9635a3f6 ""
+  "xpressyourself_vPLOSCompBio.aux" 1569521976 18587 407cd18fc5cbc2dea581384fd0727af2 ""
+  "xpressyourself_vPLOSCompBio.bbl" 1569521971 17896 3afbbe9e5a4882fe6b380469160eddf2 "bibtex xpressyourself_vPLOSCompBio"
+  "xpressyourself_vPLOSCompBio.tex" 1569521958 58718 fd225cf057569a7e36efb22a864e9698 ""
   (generated)
-  "xpressyourself_vPLOSCompBio.log"
   "xpressyourself_vPLOSCompBio.pdf"
   "xpressyourself_vPLOSCompBio.aux"
+  "xpressyourself_vPLOSCompBio.log"

@@ -130,7 +130,7 @@ Ribosome profiling allows scientists to explore the process of how proteins, the
 %Ribosome Profiling, RNA-Seq, Standardized, Automated, Analysis, GTF Truncation, rRNA depletion, Intron-agnostic Gene Coverage, Transcriptome-wide Metagene Assessment
 
 \section*{Introduction}
-High-throughput sequencing data has revolutionized biomedical and biological research. One such application of this consequential technology is ribosome profiling, which, coupled with bulk RNA-Seq, measures translation efficiency, translation pausing, novel protein translation products, and more. \cite{ingolia_science, riboseq_overview, ingolia_meth}. Though ribosome profiling has matured, there remains an abundance of biases and peculiarities associated with each analytical method or tool, which are often obscured to a user. Very few labs have the tools to separate the biological signals in ribosome profiling data from inherent biases of the experimental measurements, and these tools are not readily accessible by the community. This is a critical time in the rapidly expanding influence of ribosome-footprint profiling. For too long, the bioinformatic know-how of this incredibly powerful technique has been limited to a small handful of labs. As more and more ribosome profiling studies are performed, more and more labs will lack the ability to analyze their data with ease and fidelity. Few if any extant pipelines or toolkits offer a thorough set of integrated tools for assessing standard quality control metrics or performing proper reference curation and reducing systematic biases across any organism, particularly with ribosome profiling data \cite{galaxy, ribogalaxy, nextflow_pipeline, dnanexus_pipeline, riboviz}. \par
+High-throughput sequencing data has revolutionized biomedical and biological research. One such application of this consequential technology is ribosome profiling, which, coupled with bulk RNA-Seq, measures translation efficiency, translation pausing, novel protein translation products, and more. \cite{ingolia_science, riboseq_overview, ingolia_meth}. Though ribosome profiling has matured, there remains an abundance of biases and peculiarities associated with each analytical method or tool, which are often obscured to a user \cite{gerashchenko_nar, analysis_biases, riboseq_biases, riboseq_biases2, riboseq_biases3}. Classically, many ribosome profiling studies have used bowtie \cite{bowtie} for alignment, which is inappropriate as it is unable to map reads across splice junctions \cite{analysis_biases}. Very few labs have the tools to separate the biological signals in ribosome profiling data from inherent biases of the experimental measurements, and these tools are not readily accessible by the community. This is a critical time in the rapidly expanding influence of ribosome-footprint profiling. For too long, the bioinformatic know-how of this incredibly powerful technique has been limited to a small handful of labs. As more and more ribosome profiling studies are performed, more and more labs will lack the ability to analyze their data with ease and fidelity. Few if any extant pipelines or toolkits offer a thorough set of integrated tools for assessing standard quality control metrics or performing proper reference curation and reducing systematic biases across any organism, particularly with ribosome profiling data \cite{galaxy, ribogalaxy, nextflow_pipeline, dnanexus_pipeline, riboviz} (as of time of writing, \cite{ribogalaxy} is currently offline). In fact, other another publication \cite{pausepred} have pointed to this lack of transparency and consistency in methodologies for analyzing ribosome profiling data.\par
 
 For example, the pile-up of ribosomes at the $5'$- and $3'$- ends of coding regions within a transcript is a systematic biological signal arising from the slower kinetics of ribosome initiation and termination compared to translation elongation and is often not relevant to measurements of translation regulation \cite{gerashchenko_nar, artieri_gr, hussman_plosg}. These pile-ups can dramatically skew ribosome footprint quantification and measurements of translational efficiency. Experts recommend excluding these pile-up-prone regions when quantifying ribosome profiling alignments \cite{ingolia_meth, weinberg_reports}; however, no publicly available computational tools currently exist to facilitate these automated adjustments to reference transcripts. In addition, downstream data visualization methods presently available are not optimized or even able to quantify and compare only those transcriptional regions relevant to translational regulation. \par
 
@@ -142,7 +142,7 @@ Finally, the most broadly relevant aspect of our update and streamlining of ribo
 
 \section*{Design and Implementation}
 \subsection*{Architecture and Organization}
-XPRESSyourself is currently partitioned into two software packages, XPRESSpipe and XPRESSplot. XPRESSpipe contains automated pipelines tailored for ribosome profiling, single-end RNA-Seq, and paired-end RNA-Seq datasets. Automated pipelines handle pre-processing, alignment, and quantification of sequencing reads, after which it will perform essential quality control analyses of each sequence library. Individual sub-modules can be run automatically through a pipeline or manually step-by-step. Modules optimize available computational resources to deliver results as quickly as possible. XPRESSplot is available as a Python library and provides an array of analytical methods specifically for sequence data, but tractable to other data types. An overview of the design of XPRESSpipe is provided in Figure \ref{fig:outputs}. More details can be found in each package's documentation \cite{xpresspipe_docs, xpressplot_docs}. The software is designed such that updating and testing of a new module, or updating dependency usage, are facile tasks for a trained bioinformatician. For a comparison of how XPRESSyourself compares to other available software packages available at time of writing, we refer the reader to Figure \ref{fig:supplement1} \cite{galaxy, ribogalaxy, pausepred, anota2seq, riboprofiling, riborex, mqc, shoelaces, supertranscripts, systempiper, orfik, comet_1, comet_2, riboseqr, deeptools, picard, rose, rust, xtail, ribodiff, ribotaper, ribomap_1, ribomap_2, plastid, riboviz}.\par
+XPRESSyourself is currently partitioned into two software packages, XPRESSpipe and XPRESSplot. XPRESSpipe contains automated pipelines tailored for ribosome profiling, single-end RNA-Seq, and paired-end RNA-Seq datasets. Automated pipelines handle pre-processing, alignment, and quantification of sequencing reads, after which it will perform essential quality control analyses of each sequence library. Individual sub-modules can be run automatically through a pipeline or manually step-by-step. Modules optimize available computational resources to deliver results as quickly as possible. XPRESSplot is available as a Python library and provides an array of analytical methods specifically for sequence data, but tractable to other data types. An overview of the design of XPRESSpipe is provided in Figure \ref{fig:outputs}. More details can be found in each package's documentation \cite{xpresspipe_docs, xpressplot_docs}. The software is designed such that updating and testing of a new module, or updating dependency usage, are facile tasks for a trained bioinformatician. For a comparison of how XPRESSyourself compares to other available software packages available at time of writing, we refer the reader to Figure \ref{fig:supplement1} \cite{galaxy, ribogalaxy, pausepred, anota2seq, riboprofiling, riborex, mqc, shoelaces, supertranscripts, systempiper, orfik, comet_1, comet_2, riboseqr, deeptools, picard, rose, rust, xtail, ribodiff, ribotaper, ribomap_1, ribomap_2, plastid, riboviz, ribostreamr}.\par
 
 XPRESSyourself aims to make ribosome profiling and sequence analysis as easy and accessible as possible to all users. As such, an integrated command builder for reference curation and sample analysis can be run by executing \texttt{xpresspipe build}. This command builder will walk the user through potential considerations based on their library preparation method and build the appropriate command for execution on their personal computer or a supercomputing cluster. Information concerning future updates to each software package can be found in the appropriate documentation resources \cite{xpresspipe_docs, xpressplot_docs} or their respective \texttt{versions} tab on their homepages \cite{xpressyourself}.\\
 
@@ -157,7 +157,7 @@ XPRESSyourself aims to make ribosome profiling and sequence analysis as easy and
 The first step of RNA-Seq alignment is curating an organism reference to which the alignment software will map sequence reads. XPRESSpipe uses STAR \cite{star} for mapping reads as it has been shown consistently to be the best performing read aligner for RNA-Seq data \cite{alignment_benchmark}. The appropriate reference files are automatically curated by providing the appropriate GTF file saved as \texttt{transcripts.gtf} and the directory path to the genomic FASTA file(s). Additional modifications to the GTF file required for ribosome profiling or desired for RNA-Seq are discussed in the next section.\\
 
 \subsection*{GTF Modification}
-For ribosome profiling, frequent read pile-ups are observed at the $5'$- and $3'$- ends of an open reading frame which are largely uninformative as to the translational efficiency of the gene \cite{gerashchenko_nar}. Therefore, the $5'$- and $3'$- ends of each transcript's total coding region should be truncated as to be excluded from consideration during read quantification \cite{ingolia_meth, weinberg_reports}. By providing the \texttt{-{}-truncate} argument during reference curation, the $5'$- and $3'$- ends of each coding region will be recursively trimmed until the specified amounts are removed from coding space. These values are set to the defaults of 45 nt for $5'$- truncation and 15 nt for $3'$- truncation, as is the convention within the ribosome profiling field \cite{ingolia_meth}, but these amounts can be modified. This file should be used to process ribosome footprint libraries, along with their corresponding bulk RNA-Seq libraries. If generating a GTF file for use solely with general bulk RNA-Seq datasets, this file should not be truncated. \par
+For ribosome profiling, frequent read pile-ups are observed at the $5'$- and $3'$- ends of an open reading frame which are largely uninformative as to the translational efficiency of the gene \cite{gerashchenko_nar}. While these pile-ups can be indicative of true translation dynamics \cite{tuller_alt}, more recently it has become generally accepted that these regions should be ignored when quantifying reads and calculating translation efficiency \cite{ingolia_meth, weinberg_reports}. By providing the \texttt{-{}-truncate} argument during reference curation, the $5'$- and $3'$- ends of each coding region will be recursively trimmed until the specified amounts are removed from coding space. These values are set to the defaults of 45 nt for $5'$- truncation and 15 nt for $3'$- truncation, as is the convention within the ribosome profiling field \cite{ingolia_meth}, but these amounts can be modified. This file should be used to process ribosome footprint libraries, along with their corresponding bulk RNA-Seq libraries. If generating a GTF file for use solely with general bulk RNA-Seq datasets, this file should not be truncated. \par
 
 Additionally, parameters that can be provided during this step to retain only protein-coding genes records. As ribosomal RNAs and other non-coding RNAs can be highly abundant in RNA-Seq experiments, it is often recommended to not include these sequences for quantification. This acts as a read masking step to exclude non-protein coding transcripts from downstream analyses. Parameters can also be provided to retain only the Ensembl canonical transcript record. This can be useful for some tools that penalize reads that overlap multiple isoforms of the same gene. If using HTSeq with default XPRESSpipe parameters or Cufflinks to quantify reads, this is not necessary as they do not penalize a read mapping to multiple isoforms of the same gene or are capable of handling quantification of different isoforms of a gene \cite{htseq, cufflinks}.\\
 
@@ -269,11 +269,11 @@ XPRESSpipe functions can be computationally intensive, and thus, super-computing
 \end{tabular}
 \end{table*}
 
-To provide the user with a example of the time each sub-module, we include a table breaking down the time it took for each individual sub-module to process this same data. However, this method repeats some index generation multiple times that the pipeline version will perform once, thus speeding up overall processing time for a pipeline run (Table \ref{tab:submodulebreakdown}).\\
+To provide the user with a example of the time each sub-module, we include a table breaking down the time it took for each individual sub-module to process one ribo-seq and one bulk RNA-seq sample from the same dataset (21.4 GB total input). However, this method repeats some index generation multiple times that the pipeline version will perform once, thus speeding up overall processing time for a pipeline run (Table \ref{tab:submodulebreakdown}).\\
 
 \begin{table*}[h]
     \centering
-\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.}}
+\captionof{table}{\textbf{XPRESSpipe sub-module statistics for subset of dataset GSE65778.}}
 \begin{tabular}{p{5cm}p{5cm}p{3cm}}
 \textbf{Metric} & \textbf{Command} & \textbf{Value} \\
   \hline
@@ -285,25 +285,27 @@ To provide the user with a example of the time each sub-module, we include a tab
   \hline
   Alignment and Post-processing & \texttt{align} & 00h 35m 06s \\
   \hline
-  Quantification & \texttt{count} &  \\
+  Quantification & \texttt{count} & 00h 31m 36s \\
   \hline
-  Differential Expression & \texttt{diffxpress} &  \\
+  Differential Expression (9 comparisons) & \texttt{diffxpress} & 00h 07m 10s \\
   \hline
-  Read Distributions & \texttt{readDistribution} &  \\
+  Read Distributions & \texttt{readDistribution} & 00h 03m 06s \\
   \hline
-  Metagene Analysis & \texttt{metagene} &  \\
+  Metagene Analysis & \texttt{metagene} & 00h 06m 34s \\
   \hline
-  Gene Coverage (1 gene) & \texttt{geneCoverage} &  \\
+  Gene Coverage (1 gene) & \texttt{geneCoverage} & 00h 06m 26s \\
   \hline
-  Periodicity & \texttt{periodicity} &  \\
+  Periodicity & \texttt{periodicity} & 00h 08m 53s \\
   \hline
-  Library Complexity & \texttt{complexity} &  \\
+  Library Complexity & \texttt{complexity} & 00h 07m 53s \\
   \hline
-  rRNA probe & \texttt{rrnaProbe} &  \\
- \hline
- Allocated CPUs & & 16 \\
- \hline
- Allocated Memory per Node & & 64GB \\
+  rRNA probe & \texttt{rrnaProbe} & 00h 00m 49s \\
+  \hline
+  Pipeline & \texttt{riboseq} &  \\
+  \hline
+  Allocated CPUs & & 16 \\
+  \hline
+  Allocated Memory per Node & & 64GB \\
  \label{tab:submodulebreakdown}
 \end{tabular}
 \end{table*}
