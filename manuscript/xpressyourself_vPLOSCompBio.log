@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 SEP 2019 19:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 SEP 2019 19:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -654,9 +654,9 @@ Overfull \hbox (10.31903pt too wide) in paragraph at lines 221--221
 
 [12] [13 <./figures/xpresspipe_figure2.png>] [14 <./figures/xpresspipe_figure3.
 png>]
-Overfull \hbox (10.64465pt too wide) in paragraph at lines 225--226
-\T1/phv/m/n/10 anal-y-sis and re-analysis of ribosome-profiling ex-per-i-ments 
-in the pur-suit of bi-o-log-i-cal in-sights and hy-poth-e-sis gen-er-a-tion. 
+Overfull \hbox (12.86635pt too wide) in paragraph at lines 225--226
+\T1/phv/m/n/10 com-par-i-son demon-strates the util-ity of XPRESSpipe for rapid
+, user-friendly anal-y-sis and re-analysis of ribosome-profiling
  []
 
 
@@ -749,13 +749,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
-(./xpressyourself_vPLOSCompBio.bbl
+[20] (./xpressyourself_vPLOSCompBio.bbl
 Underfull \hbox (badness 7888) in paragraph at lines 4--8
 []\T1/phv/m/n/10 N. In-go-lia, S. Ghaem-maghami, J. New-man, J. Weiss-man. Geno
 me-wide anal-y-sis in vivo of
  []
 
-[20]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 58--62
 []\T1/phv/m/n/10 D. Wein-berg, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . Im-proved
  Ribosome-Footprint and mRNA Mea-sure-ments Pro-vide In-sights
@@ -768,7 +768,7 @@ v/m/sl/10 Cell Rep \T1/phv/b/n/10 14\T1/phv/m/n/10 , 1787 (2016). Avail-able fr
 om:
  []
 
-[21]
+
 Underfull \hbox (badness 3601) in paragraph at lines 64--67
 []\T1/phv/m/n/10 J. Robin-son, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . In-te-gra
 -tive Ge-nomics Viewer. \T1/phv/m/sl/10 Nat Biotech-nol \T1/phv/b/n/10 29\T1/ph
@@ -807,7 +807,7 @@ Underfull \hbox (badness 1102) in paragraph at lines 148--151
 Tools: a flex-i-ble plat-form for ex-plor-ing
  []
 
-
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 181--184
 []\T1/phv/m/n/10 H. Wang, J. Mc-Manus, C. Kings-ford. Isoform-level ri-bo-some 
 oc-cu-pancy es-ti-ma-tion
@@ -819,7 +819,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--184
 Bioin-for-mat-ics \T1/phv/b/n/10 32 \T1/phv/m/n/10 (2016). Avail-able from:
  []
 
-[23]
+
 Underfull \hbox (badness 6542) in paragraph at lines 186--190
 []\T1/phv/m/n/10 P. Speal-man, H. Wang, G. May, C. Kings-ford, C. Mc-Manus. Ex-
 plor-ing Ri-bo-some Po-si-tion-ing
@@ -943,11 +943,11 @@ resspipe_supplement6.png>] (./xpressyourself_vPLOSCompBio.aux) )
 Here is how much of TeX's memory you used:
  6164 strings out of 492649
  92101 string characters out of 6129622
- 192935 words of memory out of 5000000
+ 189935 words of memory out of 5000000
  9922 multiletter control sequences out of 15000+600000
  40474 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,2084b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,40p,2379b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/tex
 live/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texli
 ve/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-d
@@ -963,7 +963,7 @@ ublic/cm-super/sftt1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw
 /helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvet
 ic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr
 o8a.pfb>
-Output written on xpressyourself_vPLOSCompBio.pdf (33 pages, 3645204 bytes).
+Output written on xpressyourself_vPLOSCompBio.pdf (33 pages, 3645377 bytes).
 PDF statistics:
  179 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
