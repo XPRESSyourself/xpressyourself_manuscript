@@ -35,45 +35,46 @@ Warning--entry type for "riboseqr" isn't style-file defined
 --line 798 of file manubib.bib
 Warning--entry type for "picard" isn't style-file defined
 --line 803 of file manubib.bib
-You've used 81 entries,
+Warning--I didn't find a database entry for "xpressyourself_manuscript"
+You've used 87 entries,
             2310 wiz_defined-function locations,
-            1137 strings with 21974 characters,
-and the built_in function-call counts, 15221 in all, are:
-= -- 1459
-> -- 755
+            1164 strings with 23405 characters,
+and the built_in function-call counts, 16410 in all, are:
+= -- 1578
+> -- 823
 < -- 0
-+ -- 385
-- -- 185
-* -- 1104
-:= -- 2361
-add.period$ -- 148
-call.type$ -- 81
++ -- 419
+- -- 202
+* -- 1198
+:= -- 2562
+add.period$ -- 160
+call.type$ -- 87
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 81
-duplicate$ -- 944
-empty$ -- 1383
-format.name$ -- 250
-if$ -- 3487
+cite$ -- 87
+duplicate$ -- 1019
+empty$ -- 1476
+format.name$ -- 273
+if$ -- 3750
 int.to.chr$ -- 0
-int.to.str$ -- 81
-missing$ -- 64
-newline$ -- 246
-num.names$ -- 66
-pop$ -- 358
+int.to.str$ -- 87
+missing$ -- 70
+newline$ -- 264
+num.names$ -- 72
+pop$ -- 378
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 456
+skip$ -- 485
 stack$ -- 0
 substring$ -- 199
-swap$ -- 213
+swap$ -- 234
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 82
-width$ -- 83
-write$ -- 749
-(There were 16 warnings)
+while$ -- 88
+width$ -- 89
+write$ -- 809
+(There were 17 warnings)

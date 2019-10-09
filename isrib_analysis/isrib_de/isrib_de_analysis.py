@@ -507,6 +507,9 @@ plt.savefig('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isri
 tmisrib_fc = merged_data_split.loc[(merged_data_split['tmisrib_ribo_log2FC'] >= 1) | (merged_data_split['tmisrib_ribo_log2FC'] <= -1)].index.tolist()
 tmisrib_te = merged_data.loc[merged_data['tmisrib_padj'] < 0.1].index.tolist()
 tmisrib_common = list(set(tmisrib_fc).intersection(tmisrib_te))
+
+merged_data.loc[tmisrib_common]
+
 ingolia_tmisrib = [
     'AK310228',
     'AK310228',

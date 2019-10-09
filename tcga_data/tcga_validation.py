@@ -333,7 +333,7 @@ xpresspipe = pd.read_csv(x_file, sep='\t', index_col=0)
 
 xpresspipe.columns = xpresspipe.columns.to_series().map(x_samples)
 
-
+xpresspipe = rpm(xpresspipe)
 
 xpresspipe.head()
 
@@ -354,6 +354,8 @@ tcga.columns = tcga.columns.to_series().map(di2)
 tcga.index = tcga.index.str.split('.').str[0]
 tcga = tcga.loc[:,~tcga.columns.duplicated(keep=False)]
 tcga.shape
+
+tcga = rpm(tcga)
 tcga.head()
 """
 GET COMMON SAMPLES AND GENES
