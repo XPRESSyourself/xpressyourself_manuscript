@@ -10,27 +10,26 @@
 \citation{ingolia_meth,weinberg_reports}
 \citation{igv}
 \citation{costello_npjsba,funari_science}
-\citation{xpressyourself_manuscript}
-\citation{xpresspipe_docs,xpressplot_docs}
 \citation{galaxy,ribogalaxy,pausepred,anota2seq,riboprofiling,riborex,mqc,shoelaces,supertranscripts,systempiper,orfik,comet_1,comet_2,riboseqr,deeptools,picard,rose,rust,xtail,ribodiff,ribotaper,ribomap_1,ribomap_2,plastid,riboviz,ribostreamr,scikit_ribo,spectre}
 \citation{xpresspipe_docs,xpressplot_docs}
 \citation{xpressyourself}
 \citation{star}
-\citation{alignment_benchmark}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Workflow schematic of the inputs, outputs, and organization of XPRESSpipe.} Representation of the general steps performed by XPRESSpipe with data and log outputs. Steps in parentheses are optional to the user. Input and output file types are in parentheses for each input or output block. Main script(s) used for a given step are in yellow blocks. Green block indicates input sequence file(s). Pink blocks indicate reference input files and curated reference. Orange blocks indicate output files. Blue blocks indicate general quality control and log file outputs.\relax }}{6}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:outputs}{{1}{6}{\textbf {Workflow schematic of the inputs, outputs, and organization of XPRESSpipe.} Representation of the general steps performed by XPRESSpipe with data and log outputs. Steps in parentheses are optional to the user. Input and output file types are in parentheses for each input or output block. Main script(s) used for a given step are in yellow blocks. Green block indicates input sequence file(s). Pink blocks indicate reference input files and curated reference. Orange blocks indicate output files. Blue blocks indicate general quality control and log file outputs.\relax }{}{}}
+\citation{alignment_benchmark,alignment_benchmark2}
 \citation{gerashchenko_nar}
 \citation{tuller_alt}
 \citation{ingolia_meth,weinberg_reports}
 \citation{ingolia_meth}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Workflow schematic of the inputs, outputs, and organization of XPRESSpipe.} Representation of the general steps performed by XPRESSpipe with data and log outputs. Steps in parentheses are optional to the user. Input and output file types are in parentheses for each input or output block. Main script(s) used for a given step are in yellow blocks. The green block indicates input sequence file(s). Pink blocks indicate reference input files and curated reference. Orange blocks indicate output files. Blue blocks indicate general quality control and log file outputs.\relax }}{6}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:outputs}{{1}{6}{\textbf {Workflow schematic of the inputs, outputs, and organization of XPRESSpipe.} Representation of the general steps performed by XPRESSpipe with data and log outputs. Steps in parentheses are optional to the user. Input and output file types are in parentheses for each input or output block. Main script(s) used for a given step are in yellow blocks. The green block indicates input sequence file(s). Pink blocks indicate reference input files and curated reference. Orange blocks indicate output files. Blue blocks indicate general quality control and log file outputs.\relax }{}{}}
 \citation{htseq,cufflinks}
 \citation{umi,umitools}
-\citation{star,baruzzo_natmeth}
+\citation{star,alignment_benchmark,alignment_benchmark2}
 \citation{umi}
 \citation{htseq,count_benchmark}
 \citation{tcga}
 \citation{cufflinks,count_benchmark}
+\citation{ribomap_1,ribomap_2}
 \citation{evans_briefbio}
 \citation{sva}
 \citation{ingolia_meth,fp_range}
@@ -49,20 +48,25 @@
 \citation{isrib_activation,isrib_structure,isrib_riboseq,isrib_neuroprotective,isrib_neuroprotective2,isrib_neuroprotective3,isrib_neuroprotective4}
 \citation{isrib_riboseq}
 \citation{tophat2}
-\citation{alignment_benchmark,star}
+\citation{alignment_benchmark,alignment_benchmark2,star}
 \citation{alignment_benchmark}
 \citation{alignment_benchmark}
+\citation{deseq1}
 \citation{isrib_riboseq}
 \citation{isrib_riboseq}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Representative comparisons between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Representative comparisons of biological replicate read counts processed by XPRESSpipe. B) Representative comparisons of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. C) Boxplot summaries of Spearman $\rho $ and Pearson r values for biological replicate comparisons. D) Boxplot summaries of Spearman $\rho $ and Pearson r values for between method processing. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho $ values reported in A and B are Spearman correlation coefficients using raw count data. Pearson correlation coefficients were calculated using log\textsubscript  {10}(rpm(counts) + 1) transformed data. XPRESSpipe-processed read alignments were quantified to \textit  {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }}{13}}
-\newlabel{fig:figure2}{{2}{13}{\textbf {Representative comparisons between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Representative comparisons of biological replicate read counts processed by XPRESSpipe. B) Representative comparisons of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. C) Boxplot summaries of Spearman $\rho $ and Pearson r values for biological replicate comparisons. D) Boxplot summaries of Spearman $\rho $ and Pearson r values for between method processing. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho $ values reported in A and B are Spearman correlation coefficients using raw count data. Pearson correlation coefficients were calculated using log\textsubscript {10}(rpm(counts) + 1) transformed data. XPRESSpipe-processed read alignments were quantified to \textit {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Analysis of previously published ISR TE data using XPRESSpipe.} A-C) log\textsubscript  {2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript  {2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit  {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }}{14}}
-\newlabel{fig:figure3}{{3}{14}{\textbf {Analysis of previously published ISR TE data using XPRESSpipe.} A-C) log\textsubscript {2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript {2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }{}{}}
 \citation{isrib_neuroprotective,isrib_neuroprotective2,isrib_neuroprotective3,isrib_neuroprotective4}
 \citation{genecards,ncbi,uniprot}
 \citation{circligase_bias}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Representative comparisons between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Representative comparisons of biological replicate read counts processed by XPRESSpipe. B) Representative comparisons of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. C) Boxplot summaries of Spearman $\rho $ and Pearson r values for biological replicate comparisons. D) Boxplot summaries of Spearman $\rho $ and Pearson r values for between method processing. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho $ values reported in A and B are Spearman correlation coefficients using RPM-normalized count data. Pearson correlation coefficients were calculated using log\textsubscript  {10}(rpm(counts) + 1) transformed data. XPRESSpipe-processed read alignments were quantified to \textit  {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }}{13}}
+\newlabel{fig:figure2}{{2}{13}{\textbf {Representative comparisons between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Representative comparisons of biological replicate read counts processed by XPRESSpipe. B) Representative comparisons of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. C) Boxplot summaries of Spearman $\rho $ and Pearson r values for biological replicate comparisons. D) Boxplot summaries of Spearman $\rho $ and Pearson r values for between method processing. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho $ values reported in A and B are Spearman correlation coefficients using RPM-normalized count data. Pearson correlation coefficients were calculated using log\textsubscript {10}(rpm(counts) + 1) transformed data. XPRESSpipe-processed read alignments were quantified to \textit {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Analysis of previously published ISR TE data using XPRESSpipe.} A-C) log\textsubscript  {2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript  {2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit  {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }}{14}}
+\newlabel{fig:figure3}{{3}{14}{\textbf {Analysis of previously published ISR TE data using XPRESSpipe.} A-C) log\textsubscript {2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript {2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit {Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.\relax }{}{}}
+\citation{deseq2}
+\citation{deseq2}
 \citation{deseq2}
 \citation{aws}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Translationally down-regulated genes during acute Tm treatment with recovered regulation during Tm + ISRIB treatment.} Gene names succeeded by an asterisk indicate these genes were identified in the original data when re-analyzed with DESeq2 \cite  {deseq2}. Gene names succeeded by an ampersand indicate genes with strong neurological phenotypes.\relax }}{16}}
+\newlabel{tab:targets}{{1}{16}{\textbf {Translationally down-regulated genes during acute Tm treatment with recovered regulation during Tm + ISRIB treatment.} Gene names succeeded by an asterisk indicate these genes were identified in the original data when re-analyzed with DESeq2 \cite {deseq2}. Gene names succeeded by an ampersand indicate genes with strong neurological phenotypes.\relax }{}{}}
 \citation{xpressyourself}
 \citation{xpressyourself}
 \citation{readthedocs}
@@ -71,19 +75,17 @@
 \citation{manuscript}
 \citation{isrib_geo}
 \citation{tcga_data}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Translationally down-regulated genes during acute Tm treatment with recovered regulation during Tm + ISRIB treatment.}\relax }}{17}}
-\newlabel{tab:targets}{{1}{17}{\textbf {Translationally down-regulated genes during acute Tm treatment with recovered regulation during Tm + ISRIB treatment.}\relax }{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {XPRESSpipe sub-module statistics for dataset GSE65778.}\relax }}{18}}
-\newlabel{tab:chpc_performance}{{2}{18}{\textbf {XPRESSpipe sub-module statistics for dataset GSE65778.}\relax }{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {XPRESSpipe sub-module statistics for dataset GSE65778.}\relax }}{17}}
+\newlabel{tab:chpc_performance}{{2}{17}{\textbf {XPRESSpipe sub-module statistics for dataset GSE65778.}\relax }{}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Software Description}\relax }}{19}}
 \citation{tcga}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Author ORCIDs}\relax }}{20}}
 \bibdata{manubib}
 \bibcite{ingolia_science}{1}
 \bibcite{riboseq_overview}{2}
 \bibcite{ingolia_meth}{3}
 \bibcite{gerashchenko_nar}{4}
 \bibcite{analysis_biases}{5}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Author ORCIDs}\relax }}{21}}
 \bibcite{riboseq_biases}{6}
 \bibcite{riboseq_biases2}{7}
 \bibcite{riboseq_biases3}{8}
@@ -104,42 +106,42 @@
 \bibcite{igv}{23}
 \bibcite{costello_npjsba}{24}
 \bibcite{funari_science}{25}
-\bibcite{xpresspipe_docs}{26}
-\bibcite{xpressplot_docs}{27}
-\bibcite{pausepred}{28}
-\bibcite{anota2seq}{29}
-\bibcite{riboprofiling}{30}
-\bibcite{riborex}{31}
-\bibcite{mqc}{32}
-\bibcite{shoelaces}{33}
-\bibcite{supertranscripts}{34}
-\bibcite{systempiper}{35}
-\bibcite{orfik}{36}
-\bibcite{comet_1}{37}
-\bibcite{comet_2}{38}
-\bibcite{riboseqr}{39}
-\bibcite{deeptools}{40}
-\bibcite{picard}{41}
-\bibcite{rose}{42}
-\bibcite{rust}{43}
-\bibcite{xtail}{44}
-\bibcite{ribodiff}{45}
-\bibcite{ribotaper}{46}
-\bibcite{ribomap_1}{47}
-\bibcite{ribomap_2}{48}
-\bibcite{plastid}{49}
-\bibcite{ribostreamr}{50}
-\bibcite{scikit_ribo}{51}
-\bibcite{spectre}{52}
+\bibcite{pausepred}{26}
+\bibcite{anota2seq}{27}
+\bibcite{riboprofiling}{28}
+\bibcite{riborex}{29}
+\bibcite{mqc}{30}
+\bibcite{shoelaces}{31}
+\bibcite{supertranscripts}{32}
+\bibcite{systempiper}{33}
+\bibcite{orfik}{34}
+\bibcite{comet_1}{35}
+\bibcite{comet_2}{36}
+\bibcite{riboseqr}{37}
+\bibcite{deeptools}{38}
+\bibcite{picard}{39}
+\bibcite{rose}{40}
+\bibcite{rust}{41}
+\bibcite{xtail}{42}
+\bibcite{ribodiff}{43}
+\bibcite{ribotaper}{44}
+\bibcite{ribomap_1}{45}
+\bibcite{ribomap_2}{46}
+\bibcite{plastid}{47}
+\bibcite{ribostreamr}{48}
+\bibcite{scikit_ribo}{49}
+\bibcite{spectre}{50}
+\bibcite{xpresspipe_docs}{51}
+\bibcite{xpressplot_docs}{52}
 \bibcite{xpressyourself}{53}
 \bibcite{star}{54}
 \bibcite{alignment_benchmark}{55}
-\bibcite{tuller_alt}{56}
-\bibcite{htseq}{57}
-\bibcite{cufflinks}{58}
-\bibcite{umi}{59}
-\bibcite{umitools}{60}
-\bibcite{baruzzo_natmeth}{61}
+\bibcite{alignment_benchmark2}{56}
+\bibcite{tuller_alt}{57}
+\bibcite{htseq}{58}
+\bibcite{cufflinks}{59}
+\bibcite{umi}{60}
+\bibcite{umitools}{61}
 \bibcite{count_benchmark}{62}
 \bibcite{tcga}{63}
 \bibcite{evans_briefbio}{64}
@@ -157,15 +159,16 @@
 \bibcite{isrib_neuroprotective3}{76}
 \bibcite{isrib_neuroprotective4}{77}
 \bibcite{tophat2}{78}
-\bibcite{genecards}{79}
-\bibcite{ncbi}{80}
-\bibcite{uniprot}{81}
-\bibcite{circligase_bias}{82}
-\bibcite{aws}{83}
-\bibcite{readthedocs}{84}
-\bibcite{manuscript}{85}
-\bibcite{isrib_geo}{86}
-\bibcite{tcga_data}{87}
+\bibcite{deseq1}{79}
+\bibcite{genecards}{80}
+\bibcite{ncbi}{81}
+\bibcite{uniprot}{82}
+\bibcite{circligase_bias}{83}
+\bibcite{aws}{84}
+\bibcite{readthedocs}{85}
+\bibcite{manuscript}{86}
+\bibcite{isrib_geo}{87}
+\bibcite{tcga_data}{88}
 \bibstyle{Science}
 \@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces \textbf  {Comparison between XPRESSyourself and other available software packages for ribosome profiling data analysis.} Black boxes indicate full functionality, blue boxes indicate partial functionality, grey boxes indicate incomplete or outdated functionality, and white boxes indicate no functionality for the specified task. Rankings were compiled using the tools' documentation and manuscript. If a function was not clearly described in either, a white box was given.\relax }}{29}}
 \newlabel{fig:supplement1}{{S1}{29}{\textbf {Comparison between XPRESSyourself and other available software packages for ribosome profiling data analysis.} Black boxes indicate full functionality, blue boxes indicate partial functionality, grey boxes indicate incomplete or outdated functionality, and white boxes indicate no functionality for the specified task. Rankings were compiled using the tools' documentation and manuscript. If a function was not clearly described in either, a white box was given.\relax }{}{}}

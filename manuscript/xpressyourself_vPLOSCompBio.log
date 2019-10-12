@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 OCT 2019 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 OCT 2019 14:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -492,13 +492,6 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count116
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 94.
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--96
-
- []
-
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 104.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -523,121 +516,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--122
 
  []
 
-
-Overfull \hbox (14.8465pt too wide) in paragraph at lines 124--126
-\T1/phv/m/n/10 reg-u-lated. How-ever, com-pu-ta-tional meth-ods for an-a-lyz-in
-g this data type are in-com-plete. We de-vel-oped XPRESSy-our-self,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--126
-
- []
-
 [2]
-Overfull \hbox (9.4372pt too wide) in paragraph at lines 134--134
-[]\T1/phv/m/n/10 To ad-dress these de-fi-cien-cies in the pub-lic ri-bo-some pr
-o-fil-ing com-pu-ta-tional toolkit, we de-vel-oped XPRESSy-our-self,
- []
-
-
-Overfull \hbox (0.70502pt too wide) in paragraph at lines 134--134
-\T1/phv/m/n/10 anal-y-sis. XPRESSy-our-self im-ple-ments the com-plete suite of
- tools nec-es-sary for ribosome-profiling and bulk RNA-Seq
+Overfull \hbox (3.77432pt too wide) in paragraph at lines 132--132
+\T1/phv/m/n/10 au-to-mated ad-just-ments to ref-er-ence tran-scripts. Cu-rat-in
+g ref-er-ences for this abil-ity re-quires ad-vanced im-ple-men-ta-tions
  []
 
 [3]
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 138.
-
-
-LaTeX Warning: Citation `xpressyourself_manuscript' on page 4 undefined on inpu
-t line 138.
-
-
-Overfull \hbox (10.15459pt too wide) in paragraph at lines 138--139
-\T1/phv/m/n/10 us-ing the com-plete and up-to-date bench-marked method-ol-ogy p
-ro-vided within XPRESSy-our-self. With XPRESSy-our-self,
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 141.
 [4]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 145.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 144.
 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
-<figures/xpresspipe_figure1.png, id=24, 570.6921pt x 528.2937pt>
+<figures/xpresspipe_figure1.png, id=23, 570.6921pt x 528.2937pt>
 File: figures/xpresspipe_figure1.png Graphic file (type png)
 <use figures/xpresspipe_figure1.png>
-Package pdftex.def Info: figures/xpresspipe_figure1.png  used on input line 149
+Package pdftex.def Info: figures/xpresspipe_figure1.png  used on input line 150
 .
 (pdftex.def)             Requested size: 455.24408pt x 421.41832pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 150.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 151.
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 [5] [6 <./figures/xpresspipe_figure1.png>]
-Overfull \hbox (6.72699pt too wide) in paragraph at lines 160--161
+Overfull \hbox (6.72699pt too wide) in paragraph at lines 161--162
 \T1/phv/m/n/10 ri-bo-so-mal RNAs and other non-coding RNAs can be highly abun-d
 ant in RNA-Seq ex-per-i-ments, it is of-ten rec-om-mended
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
 [7]
-Overfull \hbox (17.86546pt too wide) in paragraph at lines 171--172
+Overfull \hbox (17.86546pt too wide) in paragraph at lines 172--173
 \T1/phv/m/n/10 pack-age. For nor-mal-iza-tions cor-rect-ing for tran-script len
 gth, the ap-pro-pri-ate GTF must be pro-vided. Sam-ple nor-mal-iza-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 [8]
-Overfull \hbox (2.0948pt too wide) in paragraph at lines 176--176
+Overfull \hbox (2.0948pt too wide) in paragraph at lines 177--177
 \T1/phv/b/n/10 Library Com-plex-ity\T1/phv/m/n/10 . Mea-sur-ing li-brary com-pl
 ex-ity is an ef-fec-tive method for an-a-lyz-ing the ro-bust-ness of a se-quenc
 -ing
  []
 
-[9]
-Overfull \hbox (2.90518pt too wide) in paragraph at lines 184--185
+
+Overfull \hbox (2.90518pt too wide) in paragraph at lines 185--186
 \T1/phv/m/n/10 com-pli-cated dur-ing the prepa-ra-tion of ribosome-footprint pr
 o-fil-ing li-braries: poly(A) se-lec-tion is ir-rel-e-vant, and kit-based
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
 [10]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 197.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 198.
 
-Overfull \hbox (2.50743pt too wide) in paragraph at lines 197--197
+Overfull \hbox (2.50743pt too wide) in paragraph at lines 198--198
 []\T1/phv/m/n/10 To show-case the util-ity of XPRESSpipe in an-a-lyz-ing ri-bo-
 some pro-fil-ing and se-quenc-ing datasets, we re-processed
  []
@@ -646,118 +610,108 @@ some pro-fil-ing and se-quenc-ing datasets, we re-processed
 <figures/xpresspipe_figure2.png, id=51, 589.2414pt x 534.798pt>
 File: figures/xpresspipe_figure2.png Graphic file (type png)
 <use figures/xpresspipe_figure2.png>
-Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 207
+Package pdftex.def Info: figures/xpresspipe_figure2.png  used on input line 208
 .
 (pdftex.def)             Requested size: 412.56496pt x 374.45396pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 208.
+(Font)              <9> on input line 209.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 208.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 209.
 <figures/xpresspipe_figure3.png, id=52, 555.2745pt x 537.9297pt>
 File: figures/xpresspipe_figure3.png Graphic file (type png)
 <use figures/xpresspipe_figure3.png>
-Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 214
+Package pdftex.def Info: figures/xpresspipe_figure3.png  used on input line 215
 .
 (pdftex.def)             Requested size: 512.1496pt x 496.16539pt.
 
-Overfull \hbox (4.32617pt too wide) in paragraph at lines 219--219
+Overfull \hbox (4.32617pt too wide) in paragraph at lines 220--220
 \T1/phv/m/n/10 high-lighted in pur-ple) [9]. Of note, the fold-change in ri-bo-
 some oc-cu-pancy of ATF4 (6.83) from XPRESSpipe-processed
  []
 
 
-Overfull \hbox (4.7591pt too wide) in paragraph at lines 219--219
+Overfull \hbox (4.7591pt too wide) in paragraph at lines 220--220
 \T1/phv/m/n/10 study [9], such as ATF5, PPP1R15A, and DDIT3 also demon-strated 
 com-pa-ra-ble in-creases in their ri-bo-some oc-cu-pancy
  []
 
 [12] [13 <./figures/xpresspipe_figure2.png>] [14 <./figures/xpresspipe_figure3.
 png>]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 [15]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 225.
+               Default added (so using `!tbp') on input line 226.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
 [16]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (20.15698pt too wide) in paragraph at lines 299--299
+Overfull \hbox (20.15698pt too wide) in paragraph at lines 300--300
 []\T1/phv/m/n/10 Although RNA-Seq tech-nolo-gies are quite ad-vanced, stan-dard
 -ized com-pu-ta-tional pro-to-cols are much less es-tab-lished
  []
 
-
-Overfull \hbox (1.57664pt too wide) in paragraph at lines 299--299
-\T1/phv/m/n/10 re-li-able, high-quality se-quenc-ing study. XPRESSpipe han-dles
- these is-sues through on-going cu-ra-tion of bench-marked
- []
-
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 307.
+               Default added (so using `!tbp') on input line 308.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--359
+Underfull \hbox (badness 10000) in paragraph at lines 329--360
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 367--368
-
- []
-
-
-Overfull \hbox (27.0935pt too wide) in paragraph at lines 370--371
+Overfull \hbox (27.0935pt too wide) in paragraph at lines 371--372
 \T1/phv/m/n/10 J.A.B. re-ceived sup-port from the Na-tional In-sti-tute of Di-a
 -betes and Di-ges-tive and Kid-ney Dis-eases (NIDDK) Inter-disciplinary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 375.
+               Default added (so using `!tbp') on input line 376.
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--402
 
  []
 
-(./xpressyourself_vPLOSCompBio.bbl
+[20] (./xpressyourself_vPLOSCompBio.bbl
 Underfull \hbox (badness 7888) in paragraph at lines 4--8
 []\T1/phv/m/n/10 N. In-go-lia, S. Ghaem-maghami, J. New-man, J. Weiss-man. Geno
 me-wide anal-y-sis in vivo of
@@ -821,109 +775,109 @@ v/m/n/10 , 24 (2011). Avail-able from:
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 140--144
+Underfull \hbox (badness 2384) in paragraph at lines 134--138
 []\T1/phv/m/n/10 R. Ku-mari, A. Michel, P. Bara-nov. PausePred and Rfeet: webto
 ols for in-fer-ring ri-bo-some pauses
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 140--144
+Underfull \hbox (badness 6893) in paragraph at lines 134--138
 \T1/phv/m/n/10 and vi-su-al-iz-ing foot-print den-sity from ri-bo-some pro-fil-
 ing data. \T1/phv/m/sl/10 RNA \T1/phv/b/n/10 24 \T1/phv/m/n/10 (2018). Avail-ab
 le from:
  []
 
 [23]
-Underfull \hbox (badness 4543) in paragraph at lines 193--197
+Underfull \hbox (badness 4543) in paragraph at lines 187--191
 []\T1/phv/m/n/10 T. Mar-tin, I. Yet, P. Tsai, J. Bell. coMET: vi-su-al-i-sa-tio
 n of re-gional epigenome-wide as-so-ci-a-tion
  []
 
 
-Underfull \hbox (badness 7558) in paragraph at lines 193--197
+Underfull \hbox (badness 7558) in paragraph at lines 187--191
 \T1/phv/m/n/10 scan re-sults and DNA co-methylation pat-terns. \T1/phv/m/sl/10 
 BMC Bioin-for-mat-ics \T1/phv/b/n/10 16 \T1/phv/m/n/10 (2015). Avail-able from:
 
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 203--206
+Underfull \hbox (badness 1102) in paragraph at lines 197--200
 []\T1/phv/m/n/10 F. Ramírez, F. Dün-dar, S. Diehl, B. Grün-ing, T. Manke. deep-
 Tools: a flex-i-ble plat-form for ex-plor-ing
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 236--239
+Underfull \hbox (badness 10000) in paragraph at lines 230--233
 []\T1/phv/m/n/10 H. Wang, J. Mc-Manus, C. Kings-ford. Isoform-level ri-bo-some 
 oc-cu-pancy es-ti-ma-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--239
+Underfull \hbox (badness 10000) in paragraph at lines 230--233
 \T1/phv/m/n/10 guided by tran-script abun-dance with Ri-bomap. \T1/phv/m/sl/10 
 Bioin-for-mat-ics \T1/phv/b/n/10 32 \T1/phv/m/n/10 (2016). Avail-able from:
  []
 
 
-Underfull \hbox (badness 6542) in paragraph at lines 241--245
+Underfull \hbox (badness 6542) in paragraph at lines 235--239
 []\T1/phv/m/n/10 P. Speal-man, H. Wang, G. May, C. Kings-ford, C. Mc-Manus. Ex-
 plor-ing Ri-bo-some Po-si-tion-ing
  []
 
 
-Underfull \hbox (badness 2653) in paragraph at lines 241--245
+Underfull \hbox (badness 2653) in paragraph at lines 235--239
 \T1/phv/m/n/10 on Trans-lat-ing Tran-scripts with Ri-bo-some Pro-fil-ing. \T1/p
 hv/m/sl/10 Meth-ods Mol Biol \T1/phv/b/n/10 1358 \T1/phv/m/n/10 (2016). Avail-a
 ble from:
  []
 
 [25]
-Underfull \hbox (badness 6708) in paragraph at lines 299--303
+Underfull \hbox (badness 6708) in paragraph at lines 305--309
 []\T1/phv/m/n/10 Y. Fu, P. Wu, T. Beane, P. Zamore, Z. Weng. Elim-i-na-tion of 
 PCR du-pli-cates in RNA-seq
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 299--303
+Underfull \hbox (badness 2875) in paragraph at lines 305--309
 \T1/phv/m/n/10 and small RNA-seq us-ing unique molec-u-lar iden-ti-fiers. \T1/p
 hv/m/sl/10 BMC Ge-nomics \T1/phv/b/n/10 19 \T1/phv/m/n/10 (2018). Avail-able fr
 om:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--328
+Underfull \hbox (badness 10000) in paragraph at lines 325--329
 []\T1/phv/m/n/10 C. Evans, J. Hardin, D. Stoebel. Se-lect-ing between-sample RN
 A-Seq nor-mal-iza-tion meth-ods
  []
 
 
-Underfull \hbox (badness 5147) in paragraph at lines 324--328
+Underfull \hbox (badness 5147) in paragraph at lines 325--329
 \T1/phv/m/n/10 from the per-spec-tive of their as-sump-tions. \T1/phv/m/sl/10 B
 rief Bioin-form \T1/phv/b/n/10 19\T1/phv/m/n/10 , 776^^U792 (2018). Avail-able 
 from:
  []
 
 
-Underfull \hbox (badness 1762) in paragraph at lines 330--334
+Underfull \hbox (badness 1762) in paragraph at lines 331--335
 []\T1/phv/m/n/10 J. Leek, W. John-son, H. Parker, A. Jaffe, J. Storey. The sva 
 pack-age for re-mov-ing batch ef-fects
  []
 
 [26]
-Underfull \hbox (badness 5460) in paragraph at lines 384--388
+Underfull \hbox (badness 5460) in paragraph at lines 385--389
 []\T1/phv/m/n/10 M. Hal-l-i-day, \T1/phv/m/sl/10 et al.\T1/phv/m/n/10 . Par-tia
 l restora-tion of pro-tein syn-the-sis rates by the small molecule IS-RIB
  []
 
 
-Underfull \hbox (badness 5637) in paragraph at lines 384--388
+Underfull \hbox (badness 5637) in paragraph at lines 385--389
 \T1/phv/m/n/10 pre-vents neu-rode-gen-er-a-tion with-out pan-cre-atic tox-i-c-i
 ty. \T1/phv/m/sl/10 Cell Death Dis \T1/phv/b/n/10 6 \T1/phv/m/n/10 (2015). Avai
 l-able from:
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 427--430
+Underfull \hbox (badness 10000) in paragraph at lines 433--436
 []\T1/phv/m/n/10 Manuscript code. $\T1/cmtt/m/n/10 https : / / github . com / X
 PRESSyourself / xpressyourself _ manuscript / tree / master /
  []
@@ -933,81 +887,77 @@ PRESSyourself / xpressyourself _ manuscript / tree / master /
 File: figures/xpresspipe_supplement1.png Graphic file (type png)
 <use figures/xpresspipe_supplement1.png>
 Package pdftex.def Info: figures/xpresspipe_supplement1.png  used on input line
- 410.
+ 411.
 (pdftex.def)             Requested size: 512.1496pt x 300.83682pt.
 <figures/xpresspipe_supplement2.png, id=111, 588.5187pt x 472.6458pt>
 File: figures/xpresspipe_supplement2.png Graphic file (type png)
 <use figures/xpresspipe_supplement2.png>
 Package pdftex.def Info: figures/xpresspipe_supplement2.png  used on input line
- 417.
+ 418.
 (pdftex.def)             Requested size: 455.24408pt x 365.61877pt.
 <figures/xpresspipe_supplement3.png, id=112, 500.5902pt x 773.7708pt>
 File: figures/xpresspipe_supplement3.png Graphic file (type png)
 <use figures/xpresspipe_supplement3.png>
 Package pdftex.def Info: figures/xpresspipe_supplement3.png  used on input line
- 424.
+ 425.
 (pdftex.def)             Requested size: 455.24408pt x 703.7075pt.
 
 
-LaTeX Warning: Float too large for page by 96.84137pt on input line 427.
+LaTeX Warning: Float too large for page by 96.84137pt on input line 428.
 
 <figures/xpresspipe_supplement4.png, id=113, 439.1607pt x 564.1878pt>
 File: figures/xpresspipe_supplement4.png Graphic file (type png)
 <use figures/xpresspipe_supplement4.png>
 Package pdftex.def Info: figures/xpresspipe_supplement4.png  used on input line
- 431.
+ 432.
 (pdftex.def)             Requested size: 455.24408pt x 584.84753pt.
 <figures/xpresspipe_supplement5.png, id=114, 485.8953pt x 494.0859pt>
 File: figures/xpresspipe_supplement5.png Graphic file (type png)
 <use figures/xpresspipe_supplement5.png>
 Package pdftex.def Info: figures/xpresspipe_supplement5.png  used on input line
- 438.
+ 439.
 (pdftex.def)             Requested size: 512.1496pt x 520.79584pt.
 <figures/xpresspipe_supplement6.png, id=115, 555.9972pt x 668.4975pt>
 File: figures/xpresspipe_supplement6.png Graphic file (type png)
 <use figures/xpresspipe_supplement6.png>
 Package pdftex.def Info: figures/xpresspipe_supplement6.png  used on input line
- 445.
+ 446.
 (pdftex.def)             Requested size: 512.1496pt x 615.8412pt.
-<figures/xpresspipe_supplement7.png, id=116, 578.16pt x 569.4876pt>
+<figures/xpresspipe_supplement7.png, id=116, 578.6418pt x 632.1216pt>
 File: figures/xpresspipe_supplement7.png Graphic file (type png)
 <use figures/xpresspipe_supplement7.png>
 Package pdftex.def Info: figures/xpresspipe_supplement7.png  used on input line
- 452.
-(pdftex.def)             Requested size: 512.1496pt x 504.49615pt.
+ 453.
+(pdftex.def)             Requested size: 512.1496pt x 559.49028pt.
 [29 <./figures/xpresspipe_supplement1.png>] [30 <./figures/xpresspipe_supplemen
 t2.png>] [31 <./figures/xpresspipe_supplement3.png>] [32 <./figures/xpresspipe_
 supplement4.png>] [33 <./figures/xpresspipe_supplement5.png>] [34 <./figures/xp
 resspipe_supplement6.png>] [35 <./figures/xpresspipe_supplement7.png>]
-(./xpressyourself_vPLOSCompBio.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./xpressyourself_vPLOSCompBio.aux) ) 
 Here is how much of TeX's memory you used:
- 6183 strings out of 492649
- 92468 string characters out of 6129622
- 193935 words of memory out of 5000000
- 9940 multiletter control sequences out of 15000+600000
- 40474 words of font info for 50 fonts, out of 8000000 for 9000
+ 6182 strings out of 492649
+ 92437 string characters out of 6129622
+ 190935 words of memory out of 5000000
+ 9939 multiletter control sequences out of 15000+600000
+ 40348 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,40p,2666b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw
-/helvetic/uhvro8a.pfb>
-Output written on xpressyourself_vPLOSCompBio.pdf (35 pages, 3948256 bytes).
+ 42i,14n,40p,2681b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/
+enc/dvips/base/8r.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-su
+per/cm-super-t1.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on xpressyourself_vPLOSCompBio.pdf (35 pages, 3978120 bytes).
 PDF statistics:
  191 PDF objects out of 1000 (max. 8388607)
  120 compressed objects within 2 object streams

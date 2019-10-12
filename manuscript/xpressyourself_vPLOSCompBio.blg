@@ -4,77 +4,76 @@ The top-level auxiliary file: xpressyourself_vPLOSCompBio.aux
 The style file: Science.bst
 Database file #1: manubib.bib
 Warning--entry type for "dnanexus_pipeline" isn't style-file defined
---line 493 of file manubib.bib
+--line 501 of file manubib.bib
 Warning--entry type for "nextflow_pipeline" isn't style-file defined
---line 497 of file manubib.bib
+--line 505 of file manubib.bib
 Warning--entry type for "aws" isn't style-file defined
---line 609 of file manubib.bib
+--line 617 of file manubib.bib
 Warning--entry type for "manuscript" isn't style-file defined
---line 613 of file manubib.bib
+--line 621 of file manubib.bib
 Warning--entry type for "tcga" isn't style-file defined
---line 618 of file manubib.bib
+--line 626 of file manubib.bib
 Warning--entry type for "xpressyourself" isn't style-file defined
---line 630 of file manubib.bib
-Warning--entry type for "genecards" isn't style-file defined
 --line 638 of file manubib.bib
+Warning--entry type for "genecards" isn't style-file defined
+--line 646 of file manubib.bib
 Warning--entry type for "uniprot" isn't style-file defined
---line 643 of file manubib.bib
+--line 651 of file manubib.bib
 Warning--entry type for "ncbi" isn't style-file defined
---line 648 of file manubib.bib
+--line 656 of file manubib.bib
 Warning--entry type for "isrib_geo" isn't style-file defined
---line 663 of file manubib.bib
-Warning--entry type for "tcga_data" isn't style-file defined
---line 667 of file manubib.bib
-Warning--entry type for "xpresspipe_docs" isn't style-file defined
 --line 671 of file manubib.bib
-Warning--entry type for "xpressplot_docs" isn't style-file defined
+Warning--entry type for "tcga_data" isn't style-file defined
 --line 675 of file manubib.bib
+Warning--entry type for "xpresspipe_docs" isn't style-file defined
+--line 679 of file manubib.bib
+Warning--entry type for "xpressplot_docs" isn't style-file defined
+--line 683 of file manubib.bib
 Warning--entry type for "orfik" isn't style-file defined
---line 776 of file manubib.bib
+--line 784 of file manubib.bib
 Warning--entry type for "riboseqr" isn't style-file defined
---line 798 of file manubib.bib
+--line 806 of file manubib.bib
 Warning--entry type for "picard" isn't style-file defined
---line 803 of file manubib.bib
-Warning--I didn't find a database entry for "xpressyourself_manuscript"
-You've used 87 entries,
+--line 811 of file manubib.bib
+You've used 88 entries,
             2310 wiz_defined-function locations,
-            1164 strings with 23405 characters,
-and the built_in function-call counts, 16410 in all, are:
-= -- 1578
-> -- 823
+            1170 strings with 23693 characters,
+and the built_in function-call counts, 16489 in all, are:
+= -- 1588
+> -- 835
 < -- 0
-+ -- 419
-- -- 202
-* -- 1198
-:= -- 2562
-add.period$ -- 160
-call.type$ -- 87
++ -- 425
+- -- 205
+* -- 1200
+:= -- 2583
+add.period$ -- 162
+call.type$ -- 88
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 87
-duplicate$ -- 1019
-empty$ -- 1476
-format.name$ -- 273
-if$ -- 3750
+cite$ -- 88
+duplicate$ -- 1029
+empty$ -- 1479
+format.name$ -- 277
+if$ -- 3762
 int.to.chr$ -- 0
-int.to.str$ -- 87
-missing$ -- 70
-newline$ -- 264
-num.names$ -- 72
-pop$ -- 378
+int.to.str$ -- 88
+missing$ -- 71
+newline$ -- 267
+num.names$ -- 73
+pop$ -- 383
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 485
+skip$ -- 481
 stack$ -- 0
-substring$ -- 199
-swap$ -- 234
+substring$ -- 171
+swap$ -- 236
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
 while$ -- 88
-width$ -- 89
-write$ -- 809
-(There were 17 warnings)
+width$ -- 90
+write$ -- 819
+(There were 16 warnings)

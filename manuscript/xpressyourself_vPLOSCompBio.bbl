@@ -130,12 +130,6 @@ V.~Funari, S.~Canosa. The Importance of Bioinformatics in NGS: Breaking the
   Bottleneck in Data Interpretation. {\it Science\/} {\bf 344}, 653 (2014).
   Available from: https://doi.org/10.1126/science.344.6184.653-c.
 
-\bibitem{xpresspipe_docs}
-XPRESSpipe documentation. \url{https://xpresspipe.readthedocs.io/en/latest/}.
-
-\bibitem{xpressplot_docs}
-XPRESSplot documentation. \url{https://xpressplot.readthedocs.io/en/latest/}.
-
 \bibitem{pausepred}
 R.~Kumari, A.~Michel, P.~Baranov. PausePred and Rfeet: webtools for inferring
   ribosome pauses and visualizing footprint density from ribosome profiling
@@ -267,6 +261,12 @@ S.~Chun, C.~Rodriquez, P.~Todd, R.~Mills. SPECtre: a spectral coherence-­based
   sequence data. {\it BMC Bioinformatics\/} {\bf 17} (2016). Available from:
   https://doi.org/https://doi.org/10.1186/s12859-016-1355-4.
 
+\bibitem{xpresspipe_docs}
+XPRESSpipe documentation. \url{https://xpresspipe.readthedocs.io/en/latest/}.
+
+\bibitem{xpressplot_docs}
+XPRESSplot documentation. \url{https://xpressplot.readthedocs.io/en/latest/}.
+
 \bibitem{xpressyourself}
 XPRESSyourself. \url{https://github.com/XPRESSyourself/}.
 
@@ -279,6 +279,12 @@ A.~Dobin, {\it et~al.\/}. STAR: ultrafast universal RNA-seq aligner. {\it
 G.~Baruzzo, {\it et~al.\/}. Simulation-based comprehensive benchmarking of
   RNA-seq aligners. {\it Nat Methods\/} {\bf 14}, 135 (2017). Available from:
   https://doi.org/10.1038/nmeth.4106.
+
+\bibitem{alignment_benchmark2}
+I.~Raplee, A.~Evsikov, C.~M. de~Evsikova. Aligning the Aligners: Comparison of
+  RNA Sequencing Data Alignment and Gene Expression Quantification Tools for
+  Clinical Breast Cancer Research. {\it J Pers Med\/} {\bf 9} (2019). Available
+  from: https://doi.org/10.3390/jpm9020018.
 
 \bibitem{tuller_alt}
 T.~Tuller, H.~Zur. Multiple roles of the coding sequence 5' end in gene
@@ -306,11 +312,6 @@ T.~Smith, A.~Heger, I.~Sudbery. UMI-tools: Modelling sequencing errors in
   Unique Molecular Identifiers to improve quantification accuracy. {\it Genome
   Res\/} {\bf 27} (2017). Available from:
   https://doi.org/10.1101/gr.209601.116.
-
-\bibitem{baruzzo_natmeth}
-G.~Baruzzo, {\it et~al.\/}. Simulation-based comprehensive benchmarking of
-  RNA-seq aligners. {\it Nat Methods\/} {\bf 14}, 135–139 (2017). Available
-  from: https://doi.org/10.1038/nmeth.4106.
 
 \bibitem{count_benchmark}
 C.~Robert, M.~Watson. Errors in RNA-Seq quantification affect genes of
@@ -401,6 +402,11 @@ Y.~Sekine, {\it et~al.\/}. Stress responses. Mutations in a translation
 D.~Kim, {\it et~al.\/}. TopHat2: accurate alignment of transcriptomes in the
   presence of insertions, deletions and gene fusions. {\it Genome Biol\/} {\bf
   14} (2013). Available from: https://doi.org/10.1186/gb-2013-14-4-r36.
+
+\bibitem{deseq1}
+S.~Anders, W.~Huber. Differential expression analysis for sequence count data.
+  {\it Genome Biol\/} {\bf 11} (2010). Available from:
+  https://doi.org/10.1186/gb-2010-11-10-r106.
 
 \bibitem{genecards}
 GeneCards. \url{https://www.genecards.org/}. Accessed 27 June 2019.
