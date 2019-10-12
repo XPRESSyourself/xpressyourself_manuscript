@@ -1,0 +1,5 @@
+Sample	Replicate	Condition	Type
+ribo_isrib_a	A	ISRIB	RPF
+ribo_isrib_b	B	ISRIB	RPF
+ribo_untr_a	A	UNTR	RPF
+ribo_untr_b	B	UNTR	RPF

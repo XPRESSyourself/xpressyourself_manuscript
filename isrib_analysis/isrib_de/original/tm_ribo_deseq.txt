@@ -1,0 +1,5 @@
+Sample	Replicate	Condition	Type
+ribo_tm_a	A	TM	RPF
+ribo_tm_b	B	TM	RPF
+ribo_untr_a	A	UNTR	RPF
+ribo_untr_b	B	UNTR	RPF

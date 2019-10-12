@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 OCT 2019 16:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 OCT 2019 16:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -925,12 +925,12 @@ PRESSyourself / xpressyourself _ manuscript / tree / master /
  []
 
 ) [28]
-<figures/xpresspipe_supplement1.png, id=110, 794.97pt x 614.295pt>
+<figures/xpresspipe_supplement1.png, id=110, 641.0349pt x 376.5267pt>
 File: figures/xpresspipe_supplement1.png Graphic file (type png)
 <use figures/xpresspipe_supplement1.png>
 Package pdftex.def Info: figures/xpresspipe_supplement1.png  used on input line
  410.
-(pdftex.def)             Requested size: 512.1496pt x 395.76262pt.
+(pdftex.def)             Requested size: 512.1496pt x 300.83682pt.
 <figures/xpresspipe_supplement2.png, id=111, 588.5187pt x 472.6458pt>
 File: figures/xpresspipe_supplement2.png Graphic file (type png)
 <use figures/xpresspipe_supplement2.png>
@@ -976,7 +976,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  6177 strings out of 492649
  92270 string characters out of 6129622
- 189935 words of memory out of 5000000
+ 190935 words of memory out of 5000000
  9935 multiletter control sequences out of 15000+600000
  40474 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -995,7 +995,7 @@ ist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2018/texmf-dis
 t/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
 urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself_vPLOSCompBio.pdf (34 pages, 3650609 bytes).
+Output written on xpressyourself_vPLOSCompBio.pdf (34 pages, 3640927 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  115 compressed objects within 2 object streams

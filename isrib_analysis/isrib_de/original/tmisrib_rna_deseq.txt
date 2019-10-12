@@ -1,0 +1,5 @@
+Sample	Replicate	Condition	Type
+tmisrib_a_hek	A	TMISRIB	RNA
+tmisrib_b_hek	B	TMISRIB	RNA
+untr_a_hek	A	UNTR	RNA
+untr_b_hek	B	UNTR	RNA
