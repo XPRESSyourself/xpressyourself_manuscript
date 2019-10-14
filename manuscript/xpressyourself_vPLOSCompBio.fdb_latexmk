@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself_vPLOSCompBio"] 1570912181 "xpressyourself_vPLOSCompBio.aux" "xpressyourself_vPLOSCompBio.bbl" "xpressyourself_vPLOSCompBio" 1570912223
+["bibtex xpressyourself_vPLOSCompBio"] 1571087795 "xpressyourself_vPLOSCompBio.aux" "xpressyourself_vPLOSCompBio.bbl" "xpressyourself_vPLOSCompBio" 1571088285
   "./Science.bst" 1563395597 26972 4362b992ec425b3d8aaa11ba5ecf54a8 ""
   "manubib.bib" 1570910620 38107 7983abad162226b932fff473c66264de ""
-  "xpressyourself_vPLOSCompBio.aux" 1570912223 20081 d8c6847d91bfaef3fc01477fe05f84c3 ""
+  "xpressyourself_vPLOSCompBio.aux" 1571088284 20208 8244a2ed7a7e7a699c2034398904dc22 ""
   (generated)
-  "xpressyourself_vPLOSCompBio.bbl"
   "xpressyourself_vPLOSCompBio.blg"
-["pdflatex"] 1570912217 "xpressyourself_vPLOSCompBio.tex" "xpressyourself_vPLOSCompBio.pdf" "xpressyourself_vPLOSCompBio" 1570912223
+  "xpressyourself_vPLOSCompBio.bbl"
+["pdflatex"] 1571088278 "xpressyourself_vPLOSCompBio.tex" "xpressyourself_vPLOSCompBio.pdf" "xpressyourself_vPLOSCompBio" 1571088285
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -17,6 +17,7 @@
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm" 1480098688 4964 f223217e5e1f85fa3742fb0480aba9e8 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvro8t.tfm" 1480098688 7292 d408122871055bbc541d7280c154e210 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1480098696 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ectt0900.tfm" 1480098696 1536 ae7aab2f8a4bc9edfce2899f53ba88c3 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1480098696 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1480098701 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1480098701 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -39,6 +40,7 @@
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1480098733 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1480098733 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1480098733 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb" 1480098737 170827 2e4b634de7b58578eae1dc93e51dfe48 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb" 1480098737 169201 9ebf99020dde51a5086e186761a34e8f ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1480098746 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb" 1480098746 44648 23115b2a545ebfe2c526c3ca99db8b95 ""
@@ -104,7 +106,7 @@
   "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "figures/xpresspipe_figure1.png" 1569357213 304223 e97dbdcdbf01abf7d34356c17d24c350 ""
-  "figures/xpresspipe_figure2.png" 1569442159 544290 3df19013a8c79eba2f5c36b49a1ca73b ""
+  "figures/xpresspipe_figure2.png" 1570913197 426122 0908eb60575c19d144ec5a7417fa654c ""
   "figures/xpresspipe_figure3.png" 1569366823 695943 0095ff08794eda495f7856005bec5476 ""
   "figures/xpresspipe_supplement1.png" 1570834609 43765 d2192266bfaa3de546cc68969ab76a02 ""
   "figures/xpresspipe_supplement2.png" 1563253040 186772 dda3e5b6f0ccdea8c8317c230a20b152 ""
@@ -113,10 +115,10 @@
   "figures/xpresspipe_supplement5.png" 1569448995 774027 0463729eab541017ab2e94c478f3102a ""
   "figures/xpresspipe_supplement6.png" 1563253267 321557 e7604b5ca977b2b59960147bd42ae5a0 ""
   "figures/xpresspipe_supplement7.png" 1570905614 398203 a6c1cd735d60b6a66c4884ea02610101 ""
-  "xpressyourself_vPLOSCompBio.aux" 1570912223 20081 d8c6847d91bfaef3fc01477fe05f84c3 ""
-  "xpressyourself_vPLOSCompBio.bbl" 1570912181 19745 cec75eb5f3ec35ffcd658e15a17fbe36 "bibtex xpressyourself_vPLOSCompBio"
-  "xpressyourself_vPLOSCompBio.tex" 1570912217 60840 aeef97051f42a350d613d54dfa8f251c ""
+  "xpressyourself_vPLOSCompBio.aux" 1571088284 20208 8244a2ed7a7e7a699c2034398904dc22 ""
+  "xpressyourself_vPLOSCompBio.bbl" 1571087795 19745 cec75eb5f3ec35ffcd658e15a17fbe36 "bibtex xpressyourself_vPLOSCompBio"
+  "xpressyourself_vPLOSCompBio.tex" 1571088278 60937 b624d33c6e7a0fc627198fb1fa1d69fb ""
   (generated)
-  "xpressyourself_vPLOSCompBio.log"
   "xpressyourself_vPLOSCompBio.aux"
   "xpressyourself_vPLOSCompBio.pdf"
+  "xpressyourself_vPLOSCompBio.log"

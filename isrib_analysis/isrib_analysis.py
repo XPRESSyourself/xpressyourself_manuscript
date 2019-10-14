@@ -1,3 +1,27 @@
+"""
+XPRESSpipe
+An alignment and analysis pipeline for RNAseq data
+alias: xpresspipe
+
+Copyright (C) 2019  Jordan A. Berg
+jordan <dot> berg <at> biochem <dot> utah <dot> edu
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+from __future__ import print_function
+
+"""Import dependencies
+"""
 import os
 import sys
 import pandas as pd
@@ -18,13 +42,12 @@ import plotly
 import plotly.offline as py
 import plotly_express as px
 
+
+"""Collapse technical replicates and rename samples
 """
-FUNCTIONS
-"""
-# Collapse technical replicates and rename samples
 def name_map(
-    data,
-    map):
+        data,
+        map):
 
     name_dict = pd.Series(map.ingolia_name.values,index=map.Run).to_dict()
     data_c = data.copy()
@@ -33,12 +56,14 @@ def name_map(
 
     return data_sum
 
-# Make supplemental figure 4
-def make_supplement4(
+"""Make supplemental figure 4
+"""
+def make_pseudogene_analysis(
     data,
     original_data,
     title):
 
+    # Init plotting space
     fig, axes = plt.subplots(
         nrows = 2,
         ncols = 2,
@@ -128,10 +153,10 @@ def make_supplement4(
         bbox_inches = 'tight')
 
 # Make figure 2B
-def make_figure2B(
-    data,
-    original_data,
-    title):
+def make_external_correlations(
+        data,
+        original_data,
+        title):
 
     fig, axes = plt.subplots(
         nrows = 2,
@@ -214,11 +239,11 @@ def make_figure2B(
         dpi = 600,
         bbox_inches = 'tight')
 
-def make_figure2B_supplement(
-    data,
-    original_data,
-    title,
-    interactive=False):
+def make_external_correlations_supplement(
+        data,
+        original_data,
+        title,
+        interactive=False):
 
     fig, axes = plt.subplots(
         nrows = 4,
@@ -269,7 +294,7 @@ def make_figure2B_supplement(
                 height=1000,
                 title=str(x))
 
-            py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/interactive_' + str(x) + '.html')
+            py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/plots/interactive/interactive' + str(x) + '.html')
 
         # Get data as array-like for samples being compared
         data_c1 = data.copy()
@@ -347,10 +372,10 @@ def make_figure2B_supplement(
         bbox_inches = 'tight')
 
 
-def make_figure2CD(
-    data,
-    original_data,
-    title):
+def make_spearman_pearson_correlations(
+        data,
+        original_data,
+        title):
 
     data_t = np.log10(data + 1)
     original_data_t = np.log10(original_data + 1)
@@ -505,10 +530,11 @@ def make_figure2CD(
         bbox_inches = 'tight')
     plt.close()
 
-# Make Figure 2A
-def make_figure2A(
-    data,
-    title):
+"""Make Figure 2A
+"""
+def make_internal_correlations(
+        data,
+        title):
 
     fig, axes = plt.subplots(
         nrows = 2,
@@ -591,9 +617,9 @@ def make_figure2A(
         dpi = 600,
         bbox_inches = 'tight')
 
-def make_figure2A_supplement(
-    data,
-    title):
+def make_internal_correlations_supplement(
+        data,
+        title):
 
     fig, axes = plt.subplots(
         nrows = 2,
@@ -694,7 +720,9 @@ def make_figure2A_supplement(
         bbox_inches = 'tight')
 
 # Read in gene dictionary
-def make_ref(ref_file, gene_list):
+def make_ref(
+        ref_file,
+        gene_list):
 
     df = pd.read_csv(
         str(ref_file) ,
@@ -711,8 +739,12 @@ def make_ref(ref_file, gene_list):
 
     return df_genes
 
-# Read in single-pass XPRESSpipe processed read data quantified with HTSeq using non-de-deuplicated alignments
-def get_data(file, sample_suffix='_1_Aligned'):
+"""Read in single-pass XPRESSpipe processed read data quantified with HTSeq using non-de-deuplicated alignments
+"""
+def get_data(
+        file,
+        sample_suffix='_1_Aligned'):
+
     data = pd.read_csv(
         file,
         sep = '\t',
@@ -738,9 +770,32 @@ def get_data(file, sample_suffix='_1_Aligned'):
 
     return data
 
-
+"""Run correlations between sample alignments
 """
-READ IN DATA
+def cycle_external_correlations_supplement(
+        file,
+        original):
+
+    data = get_data(file, sample_suffix='__Aligned')
+
+    data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
+    data_rpm = rpm(data_threshold)
+    data_genes = data_rpm.index.tolist()
+
+    original_rpm = rpm(original)
+    original_genes = original_rpm.index.tolist()
+
+    common_genes = list(set(data_genes).intersection(original_genes))
+
+    data_common = data_rpm.reindex(index = common_genes)
+    original_common = original_rpm.reindex(index = common_genes)
+
+    make_external_correlations_supplement(
+        data_common,
+        original_common,
+        str(file.split('/')[-1][:-4]) + '_external_correlations_summary_htseq_all.png')
+
+"""Read in data
 """
 # Input file is protein coding only and truncated, not parsed for longest transcript only
 file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/isrib_comp_v96_truncated_count_table.tsv'
@@ -753,8 +808,13 @@ data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_he
 
 data_rpm = rpm(data_threshold)
 
-# Export for DESeq2
-data_threshold_deseq.to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isribxpresspipe_thresholded_counts.tsv',sep='\t')
+"""Export for DESeq2
+"""
+deseq_directory = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/xpresspipe_data_deseq2/'
+
+data_threshold_deseq.to_csv(
+    deseq_directory + 'ISRIBxpresspipe_thresholded_counts.tsv',
+    sep='\t')
 
 untr_mrna = ['untr_a_hek', 'untr_b_hek']
 untr_ribo = ['ribo_untr_a', 'ribo_untr_b']
@@ -765,21 +825,37 @@ tmisrib_ribo = ['ribo_tmisrib_a', 'ribo_tmisrib_b']
 isrib_mrna = ['isrib_a_hek', 'isrib_b_hek']
 isrib_ribo = ['ribo_isrib_a', 'ribo_isrib_b']
 
-data_threshold_deseq[untr_ribo + tm_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold_deseq[untr_ribo + tmisrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold_deseq[untr_ribo + isrib_ribo].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ribo_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + tm_ribo].to_csv(
+    deseq_directory + 'tm_ribo_counts.tsv',
+    sep='\t')
+data_threshold_deseq[untr_ribo + tmisrib_ribo].to_csv(
+    deseq_directory + 'tmisrib_ribo_counts.tsv',
+    sep='\t')
+data_threshold_deseq[untr_ribo + isrib_ribo].to_csv(
+    deseq_directory + 'isrib_ribo_counts.tsv',
+    sep='\t')
 
-data_threshold_deseq[untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold_deseq[untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold_deseq[untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_rna_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_mrna + tm_mrna].to_csv(
+    deseq_directory + 'tm_rna_counts.tsv',
+    sep='\t')
+data_threshold_deseq[untr_mrna + tmisrib_mrna].to_csv(
+    deseq_directory + 'tmisrib_rna_counts.tsv',
+    sep='\t')
+data_threshold_deseq[untr_mrna + isrib_mrna].to_csv(
+    deseq_directory + 'isrib_rna_counts.tsv',
+    sep='\t')
 
-data_threshold_deseq[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tm_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold_deseq[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/tmisrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
-data_threshold_deseq[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv('/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/isrib_ISRIBxpresspipe_processed_counts.tsv',sep='\t')
+data_threshold_deseq[untr_ribo + tm_ribo + untr_mrna + tm_mrna].to_csv(
+    deseq_directory + 'tm_counts.tsv',
+    sep='\t')
+data_threshold_deseq[untr_ribo + tmisrib_ribo + untr_mrna + tmisrib_mrna].to_csv(
+    deseq_directory + 'tmisrib_counts.tsv',
+    sep='\t')
+data_threshold_deseq[untr_ribo + isrib_ribo + untr_mrna + isrib_mrna].to_csv(
+    deseq_directory + 'isrib_counts.tsv',
+    sep='\t')
 
-
-"""
-READ IN ORIGINAL DATA
+"""Read in original data
 """
 # Read in original raw counts from Elife supplement table
 original = pd.read_csv(
@@ -792,9 +868,7 @@ original = original.drop('size', axis = 1)
 original = original.groupby(level=0).sum() # Combine duplicate named genes
 original_rpm = rpm(original)
 
-
-"""
-GET COMMON GENE SET BETWEEN DATASETS
+"""Get common genes between datasets
 """
 # Clean NaNs
 data_rpm.shape
@@ -818,9 +892,7 @@ len(common_genes)
 data_common = data_rpm.reindex(index = common_genes)
 original_common = original_rpm.reindex(index = common_genes)
 
-
-"""
-Over-representation analysis
+"""Over-representation analysis
 TopHat2 is .48% more likely to align a read that should be counted as ambiguous
 https://www.nature.com/articles/nmeth.4106, supplementary table 5
 """
@@ -881,55 +953,27 @@ print('# Reads overcounted: ' + str(int(round(overcounts))))
 print('Overcount rate: ' + str(overcount_rate * 100) + '%')
 print('TopHat2 vs STAR overcount ambiguous rate increase: ' + tophat_overcount_rate)
 
-
-
-"""
-FIGURE 2A
+"""Internal correlations
 """
 # Run correlations between sample alignments
-make_figure2A(
+make_internal_correlations(
     data_rpm,
     'internal_correlations_summary_htseq_protein_truncated_v96.png')
 
-make_figure2A_supplement(
+make_internal_correlations_supplement(
     data_rpm,
     'internal_correlations_summary_htseq_protein_truncated_v96_all.png')
 
-make_figure2A_supplement(
+make_internal_correlations_supplement(
     original_rpm,
-    'internal_correlations_summary_original.png')
+    'internal_correlations_summary_ingolia.png')
 
-
+"""External correlations
 """
-FIGURE 2B
-"""
-# Run correlations between sample alignments
-def cycle_fig2b(file, original):
-
-    data = get_data(file, sample_suffix='__Aligned')
-
-    data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
-    data_rpm = rpm(data_threshold)
-    data_genes = data_rpm.index.tolist()
-
-    original_rpm = rpm(original)
-    original_genes = original_rpm.index.tolist()
-
-    common_genes = list(set(data_genes).intersection(original_genes))
-
-    data_common = data_rpm.reindex(index = common_genes)
-    original_common = original_rpm.reindex(index = common_genes)
-
-    make_figure2B_supplement(
-        data_common,
-        original_common,
-        str(file.split('/')[-1][:-4]) + '_external_correlations_summary_htseq_all.png')
-
-
-#'isrib_comp_v96_truncated_count_table.tsv',
-#'isrib_comp_v96_normal_count_table.tsv',
-#'isrib_comp_v96_longest_truncated_count_table.tsv',
 file_list = [
+    'isrib_comp_v96_truncated_count_table.tsv',
+    'isrib_comp_v96_normal_count_table.tsv',
+    'isrib_comp_v96_longest_truncated_count_table.tsv',
     'isrib_comp_v72_normal_count_table.tsv',
     'isrib_comp_v72_longest_truncated_count_table.tsv',
     'isrib_comp_v72_truncated_count_table.tsv']
@@ -938,30 +982,30 @@ file_list = ['/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isr
 
 for file in file_list:
 
-    cycle_fig2b(file, original)
+    cycle_external_correlations_supplement(file, original)
 
-make_figure2B(
+make_external_correlations(
     data_common,
     original_common,
     'external_correlations_summary_htseq_protein_truncated_v96.png')
 
-make_figure2B_supplement(
+make_external_correlations_supplement(
     data_common,
     original_common,
     'external_correlations_summary_htseq_protein_truncated_v96_all.png')
 
-make_figure2B_supplement(
+make_external_correlations_supplement(
     data_common,
     original_common,
     '',
     interactive=True)
 
-make_figure2CD(
+make_spearman_pearson_correlations(
     data_common,
     original_common,
     'spearman_pearson_correlations_htseq_protein_truncated_v96.png')
 
-make_supplement4(
+make_pseudogene_analysis(
     data_common,
     original_common,
     'highlight_pseudogene_comparison_isrib.png')

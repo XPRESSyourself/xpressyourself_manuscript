@@ -1,5 +1,26 @@
 """
-IMPORT DEPENDENCIES
+XPRESSpipe
+An alignment and analysis pipeline for RNAseq data
+alias: xpresspipe
+
+Copyright (C) 2019  Jordan A. Berg
+jordan <dot> berg <at> biochem <dot> utah <dot> edu
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+from __future__ import print_function
+
+"""Import dependencies
 """
 import os
 import sys
@@ -19,17 +40,12 @@ import plotly
 import plotly.offline as py
 import plotly_express as px
 
-"""
-FUNCTIONS
-"""
+
 def make_figure4(
     data,
     tcga_data,
     file_list,
     title):
-
-    data = rpm(data)
-    tcga_data = rpm(tcga_data)
 
     fig, axes = plt.subplots(
         nrows = 2,
@@ -126,9 +142,6 @@ def make_figure4S(
     axes,
     name):
 
-    data = rpm(data)
-    tcga_data = rpm(tcga_data)
-
     # Get data as array-like for samples being compared
     data_c1 = data.copy()
     data_c2 = tcga_data.copy()
@@ -204,6 +217,9 @@ def interactive_scatter(
         index_col=0)
 
     del best_counts.index.name
+
+    best_counts = rpm(best_counts)
+
     best_counts.columns = [title]
     best_counts.index = best_counts.index.str.split('.').str[0]
     best_counts = best_counts.dropna()
@@ -233,8 +249,6 @@ def interactive_scatter(
     merged_best = pd.concat([counts_common, tcga_v22_common], axis=1, sort=False)
     merged_best.head()
     merged_best.columns.tolist()[0]
-
-    merged_best = rpm(merged_best)
 
     merged_best = convert_names(
         merged_best,
@@ -302,8 +316,7 @@ def interactive_scatter(
     py.offline.plot(sc, filename='/Users/jordan/Desktop/xpressyourself_manuscript/supplemental_files/' + str(title) + '.html')
 
 
-"""
-IMPORT METADATA
+"""Import metadata
 """
 meta = '~/Desktop/xpressyourself_manuscript/tcga_data/gdc_sample_sheet.2019-06-21.tsv'
 meta = pd.read_csv(meta, sep='\t')
@@ -332,13 +345,12 @@ x_file = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/xpresspipe/t
 xpresspipe = pd.read_csv(x_file, sep='\t', index_col=0)
 
 xpresspipe.columns = xpresspipe.columns.to_series().map(x_samples)
-
+xpresspipe.shape
 xpresspipe = rpm(xpresspipe)
 
 xpresspipe.head()
 
-"""
-IMPORT TCGA GENERATED DATA
+"""Import TCGA-generated data
 """
 directory2 = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_counts/'
 file_list2 = []
@@ -357,8 +369,8 @@ tcga.shape
 
 tcga = rpm(tcga)
 tcga.head()
-"""
-GET COMMON SAMPLES AND GENES
+
+"""Get common samples and genes
 """
 gtf = pd.read_csv(
     '~/Desktop/reference/Homo_sapiens.GRCh38.96.gtf',
@@ -368,6 +380,7 @@ gtf = pd.read_csv(
     low_memory=False)
 gtf.shape
 
+# Get list of non-pseudogenes
 non_pseudo = gtf.loc[~gtf[8].str.contains('pseudogene')]
 non_pseudo = non_pseudo.loc[non_pseudo[2] == 'gene']
 non_pseudo.shape
@@ -375,6 +388,8 @@ non_pseudo['names'] = non_pseudo[8].str.split('\";').str[0].str.lstrip('gene_id 
 non_pseudo.head()
 
 non_pseudo_genes = non_pseudo['names'].tolist()
+
+# Get common gene names
 xpresspipe_genes = xpresspipe.index.tolist()
 tcga_genes = tcga.index.tolist()
 len(non_pseudo_genes)
@@ -511,6 +526,8 @@ def run_comp(pseudogenes=False):
             index_col=0)
 
         del counts.index.name
+        counts = rpm(counts)
+
         counts.columns = [str(x[0])]
         counts.index = counts.index.str.split('.').str[0]
         counts = counts.dropna()

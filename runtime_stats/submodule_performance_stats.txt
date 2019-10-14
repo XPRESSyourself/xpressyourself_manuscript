@@ -1,36 +1,101 @@
-Start curate: Wed Sep 25 18:09:03 MDT 2019
-End curate: Wed Sep 25 18:46:58 MDT 2019
-===================
-Start truncate: Wed Sep 25 18:46:58 MDT 2019
-End truncate: Wed Sep 25 18:50:08 MDT 2019
-===================
-Start trim: Wed Sep 25 18:50:08 MDT 2019
-End trim: Wed Sep 25 18:54:56 MDT 2019
-===================
-Start align: Wed Sep 25 18:54:56 MDT 2019
-End align: Wed Sep 25 19:27:11 MDT 2019
-===================
-Start count: Wed Sep 25 19:27:11 MDT 2019
-End count: Wed Sep 25 21:58:47 MDT 2019
-===================
-Start diffex: Wed Sep 25 21:58:47 MDT 2019
-End diffex: Wed Sep 25 22:05:57 MDT 2019
-===================
-Start readDistribution: Wed Sep 25 22:05:57 MDT 2019
-End readDistribution: Wed Sep 25 22:09:03 MDT 2019
-===================
-Start Metagene: Wed Sep 25 22:09:03 MDT 2019
-End Metagene: Wed Sep 25 22:15:37 MDT 2019
-===================
-Start Gene Coverage: Wed Sep 25 22:15:37 MDT 2019
-End Gene Coverage: Wed Sep 25 22:22:03 MDT 2019
-===================
-Start Periodicity: Wed Sep 25 22:22:03 MDT 2019
-End Periodicity: Wed Sep 25 22:30:56 MDT 2019
-===================
-Start Complexity: Wed Sep 25 22:30:56 MDT 2019
-End Complexity: Wed Sep 25 22:35:49 MDT 2019
-===================
-Start rRNA probe: Wed Sep 25 22:35:49 MDT 2019
-End rRNA probe: Wed Sep 25 22:36:38 MDT 2019
-===================
+Submodule performance:
+
+Command being timed: "xpresspipe makeReference -o /scratch/general/lustre/u0690617/references/h
+User time (seconds): 30547.44
+System time (seconds): 516.13
+Percent of CPU this job got: 1392%
+Elapsed (wall clock) time (h:mm:ss or m:ss): 37:10.15
+Average shared text size (kbytes): 0
+Average unshared data size (kbytes): 0
+Average stack size (kbytes): 0
+Average total size (kbytes): 0
+Maximum resident set size (kbytes): 34032532
+Average resident set size (kbytes): 0
+Major (requiring I/O) page faults: 3535
+Minor (reclaiming a frame) page faults: 193394432
+Voluntary context switches: 164650
+Involuntary context switches: 480956
+Swaps: 0
+File system inputs: 52116216
+File system outputs: 149007712
+Socket messages sent: 0
+Socket messages received: 0
+Signals delivered: 0
+Page size (bytes): 4096
+Exit status: 0
+
+
+
+Command being timed: "xpresspipe modifyGTF -g /scratch/general/lustre/u0690617/references/human
+User time (seconds): 2269.10
+System time (seconds): 105.77
+Percent of CPU this job got: 1212%
+Elapsed (wall clock) time (h:mm:ss or m:ss): 3:15.86
+Average shared text size (kbytes): 0
+Average unshared data size (kbytes): 0
+Average stack size (kbytes): 0
+Average total size (kbytes): 0
+Maximum resident set size (kbytes): 3247640
+Average resident set size (kbytes): 0
+Major (requiring I/O) page faults: 1
+Minor (reclaiming a frame) page faults: 12017771
+Voluntary context switches: 2273429
+Involuntary context switches: 124754
+Swaps: 0
+File system inputs: 2483160
+File system outputs: 2370936
+Socket messages sent: 0
+Socket messages received: 0
+Signals delivered: 0
+Page size (bytes): 4096
+
+
+
+Command being timed: "xpresspipe modifyGTF -g /scratch/general/lustre/u0690617/references/human
+User time (seconds): 2072.89
+System time (seconds): 118.26
+Percent of CPU this job got: 1089%
+Elapsed (wall clock) time (h:mm:ss or m:ss): 3:21.02
+Average shared text size (kbytes): 0
+Average unshared data size (kbytes): 0
+Average stack size (kbytes): 0
+Average total size (kbytes): 0
+Maximum resident set size (kbytes): 3247528
+Average resident set size (kbytes): 0
+Major (requiring I/O) page faults: 0
+Minor (reclaiming a frame) page faults: 13424796
+Voluntary context switches: 2342346
+Involuntary context switches: 330849
+Swaps: 0
+File system inputs: 0
+File system outputs: 2127600
+Socket messages sent: 0
+Socket messages received: 0
+Signals delivered: 0
+Page size (bytes): 4096
+Exit status: 0
+
+
+Command being timed: "xpresspipe trim -i /scratch/general/lustre/u0690617/7559123/input -o /scr
+User time (seconds): 9091.31
+System time (seconds): 1862.74
+Percent of CPU this job got: 904%
+Elapsed (wall clock) time (h:mm:ss or m:ss): 20:10.78
+Average shared text size (kbytes): 0
+Average unshared data size (kbytes): 0
+Average stack size (kbytes): 0
+Average total size (kbytes): 0
+Maximum resident set size (kbytes): 449416
+Average resident set size (kbytes): 0
+Major (requiring I/O) page faults: 11
+Minor (reclaiming a frame) page faults: 67134113
+Voluntary context switches: 56871233
+Involuntary context switches: 922296
+Swaps: 0
+File system inputs: 517283664
+File system outputs: 452294112
+Socket messages sent: 0
+Socket messages received: 0
+Signals delivered: 0
+Page size (bytes): 4096
+Exit status: 0

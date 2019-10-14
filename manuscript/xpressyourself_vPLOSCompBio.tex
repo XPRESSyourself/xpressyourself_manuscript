@@ -251,45 +251,50 @@ XPRESSpipe functions can be computationally intensive, and thus, super-computing
 
 \begin{table*}[h]
     \centering
-\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.}}
-\begin{tabular}{p{7cm}p{3.5cm}p{2.5cm}}
-\textbf{Metric} & \textbf{Command} & \textbf{Value} \\
+\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.} \texttt{geneCoverage} module performed on high-coverage gene.}
+\begin{tabular}{p{5cm}p{3.5cm}p{2.7cm}p{1.8cm}}
+\textbf{Process} & \textbf{Command} & \textbf{Wallclock Time} & \textbf{Max RAM}\\
   \hline
-  Curate STAR reference & \texttt{curateReference} & 00h 37m 38s \\
+  Curate STAR reference & \texttt{curateReference} & 00h 37m 10.15s & 34.03gb \\
   \hline
-  Curate longest canonical transcript (optional) & \texttt{modifyGTF -l} & 01h 13m 48s \\
+  Truncate GTF & \texttt{modifyGTF -t} & 00h 03m 15.86s & 03.25gb \\
   \hline
-  Truncate GTF & \texttt{modifyGTF -t} & 00h 03m 08s \\
+  Read Pre-processing & \texttt{trim} & 00h 20m 10.78s & 00.45gb \\
   \hline
-  Read Pre-processing & \texttt{trim} & 00h 18m 59s \\
+  Alignment and Post-processing & \texttt{align} &  & \\
   \hline
-  Alignment and Post-processing & \texttt{align} & 07h 08m 58s \\
+  Quantification & \texttt{count -c htseq} &  & \\
   \hline
-  Quantification & \texttt{count} & 04h 22m 10s \\
+  Isoform Abundance & \texttt{count -c cufflinks} &  & \\
   \hline
-  Differential Expression (9 comparisons) & \texttt{diffxpress} & 00h 07m 12s \\
+  Differential Expression (n=9) & \texttt{diffxpress} &  & \\
   \hline
-  Read Distributions & \texttt{readDistribution} & 00h 01m 47s \\
+  Read Distributions & \texttt{readDistribution} &  & \\
   \hline
-  Metagene Analysis & \texttt{metagene} & 00h 35m 42s \\
+  Metagene Analysis & \texttt{metagene} &  & \\
   \hline
-  Gene Coverage (1 high-coverage gene) & \texttt{geneCoverage} & 03h 18m 15s \\
+  Gene Coverage (n=1) & \texttt{geneCoverage} &  & \\
   \hline
-  Periodicity & \texttt{periodicity} & 01h 06m 33s \\
+  Periodicity & \texttt{periodicity} &  & \\
   \hline
-  Library Complexity & \texttt{complexity} & 00h 58m 08s \\
+  Library Complexity & \texttt{complexity} &  & \\
   \hline
-  rRNA probe & \texttt{rrnaProbe} & 00h 00m 39s \\
+  rRNA probe & \texttt{rrnaProbe} &  & \\
   \hline
-  Pipeline & \texttt{riboseq} &  \\
+  Pipeline & \texttt{riboseq} & & \\
   \hline
-  Total Raw Input & & 257 GB \\
+  & & & \\
   \hline
-  Total Output & & 500 GB \\
   \hline
-  Allocated CPUs & & 16 \\
+  \textbf{Attribute} & & & \textbf{Value}\\
   \hline
-  Allocated Memory & & 64GB \\
+  Total Raw Input & & & 257 GB \\
+  \hline
+  Total Output & & & 500 GB \\
+  \hline
+  Allocated CPUs & & & 16 \\
+  \hline
+  Allocated Memory & & & 64GB \\
  \label{tab:chpc_performance}
 \end{tabular}
 \end{table*}
