@@ -9,15 +9,15 @@ DIR=$PROJ/tcga_comp
 REF_79=$PROJ/tcga_comp/ref_79
 GTF_79=$PROJ/tcga_comp/ref_79/transcripts.gtf
 GTF_79L=$PROJ/tcga_comp/ref_79/transcripts_L.gtf
-REF_96=$PROJ/tcga_comp/ref_96
-GTF_96=$PROJ/tcga_comp/ref_96/transcripts.gtf
-GTF_96L=$PROJ/tcga_comp/ref_96/transcripts_L.gtf
+REF_98=$PROJ/tcga_comp/ref_98
+GTF_98=$PROJ/tcga_comp/ref_98/transcripts.gtf
+GTF_98L=$PROJ/tcga_comp/ref_98/transcripts_L.gtf
 FILE_DIR=$PROJ/tcga_comp/files
 
 
 # Prep references
 xpresspipe curateReference -o $REF_79 -f $REF_79 -g $GTF_79 -l --sjdbOverhang 100
-xpresspipe curateReference -o $REF_96 -f $REF_96 -g $GTF_96 -l --sjdbOverhang 100
+xpresspipe curateReference -o $REF_98 -f $REF_98 -g $GTF_98 -l --sjdbOverhang 100
 
 
 # Trim strict
@@ -28,18 +28,18 @@ mkdir $DIR/v79_strictTrim_normalGTF_uniqueOnly;
 mkdir $DIR/v79_strictTrim_normalGTF_multimappers
 mkdir $DIR/v79_strictTrim_longestGTF_uniqueonly
 mkdir $DIR/v79_strictTrim_longestGTF_multimappers
-mkdir $DIR/v96_strictTrim_normalGTF_uniqueOnly
-mkdir $DIR/v96_strictTrim_normalGTF_multimappers
-mkdir $DIR/v96_strictTrim_longestGTF_uniqueonly
-mkdir $DIR/v96_strictTrim_longestGTF_multimappers
+mkdir $DIR/v98_strictTrim_normalGTF_uniqueOnly
+mkdir $DIR/v98_strictTrim_normalGTF_multimappers
+mkdir $DIR/v98_strictTrim_longestGTF_uniqueonly
+mkdir $DIR/v98_strictTrim_longestGTF_multimappers
 mkdir $DIR/v79_looseTrim_normalGTF_uniqueOnly
 mkdir $DIR/v79_looseTrim_normalGTF_multimappers
 mkdir $DIR/v79_looseTrim_longestGTF_uniqueonly
 mkdir $DIR/v79_looseTrim_longestGTF_multimappers
-mkdir $DIR/v96_looseTrim_normalGTF_uniqueOnly
-mkdir $DIR/v96_looseTrim_normalGTF_multimappers
-mkdir $DIR/v96_looseTrim_longestGTF_uniqueonly
-mkdir $DIR/v96_looseTrim_longestGTF_multimappers
+mkdir $DIR/v98_looseTrim_normalGTF_uniqueOnly
+mkdir $DIR/v98_looseTrim_normalGTF_multimappers
+mkdir $DIR/v98_looseTrim_longestGTF_uniqueonly
+mkdir $DIR/v98_looseTrim_longestGTF_multimappers
 
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
@@ -104,16 +104,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim strict
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Unique only -- strict
-# Quant v96 whole GTF
+# Quant v98 whole GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_strictTrim_normalGTF_uniqueOnly \
-  -e v96_strictTrim_normalGTF_uniqueOnly \
-  -r $REF_96 \
-  -g $GTF_96 \
+  -o $DIR/v98_strictTrim_normalGTF_uniqueOnly \
+  -e v98_strictTrim_normalGTF_uniqueOnly \
+  -r $REF_98 \
+  -g $GTF_98 \
   --sjdbOverhang 100 \
   -a None None \
   -c htseq \
@@ -121,16 +121,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim strict
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Unique only -- strict
-# Quant v96 whole GTF
+# Quant v98 whole GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_strictTrim_normalGTF_multimappers \
-  -e v96_strictTrim_normalGTF_multimappers \
-  -r $REF_96 \
-  -g $GTF_96 \
+  -o $DIR/v98_strictTrim_normalGTF_multimappers \
+  -e v98_strictTrim_normalGTF_multimappers \
+  -r $REF_98 \
+  -g $GTF_98 \
   --allow_multimappers \
   --sjdbOverhang 100 \
   -a None None \
@@ -139,16 +139,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim strict
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Multimappers allowed
-# Quant v96 longest GTF
+# Quant v98 longest GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_strictTrim_longestGTF_uniqueonly \
-  -e v96_strictTrim_longestGTF_uniqueonly \
-  -r $REF_96 \
-  -g $GTF_96L \
+  -o $DIR/v98_strictTrim_longestGTF_uniqueonly \
+  -e v98_strictTrim_longestGTF_uniqueonly \
+  -r $REF_98 \
+  -g $GTF_98L \
   --sjdbOverhang 100 \
   -a None None \
   -c htseq \
@@ -156,16 +156,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim strict
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Multimappers allowed
-# Quant v96 longest GTF
+# Quant v98 longest GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_strictTrim_longestGTF_multimappers \
-  -e v96_strictTrim_longestGTF_multimappers \
-  -r $REF_96 \
-  -g $GTF_96L \
+  -o $DIR/v98_strictTrim_longestGTF_multimappers \
+  -e v98_strictTrim_longestGTF_multimappers \
+  -r $REF_98 \
+  -g $GTF_98L \
   --allow_multimappers \
   --sjdbOverhang 100 \
   -a None None \
@@ -252,16 +252,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim loose
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Unique only -- strict
-# Quant v96 whole GTF
+# Quant v98 whole GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_looseTrim_normalGTF_uniqueOnly \
-  -e v96_looseTrim_normalGTF_uniqueOnly \
-  -r $REF_96 \
-  -g $GTF_96 \
+  -o $DIR/v98_looseTrim_normalGTF_uniqueOnly \
+  -e v98_looseTrim_normalGTF_uniqueOnly \
+  -r $REF_98 \
+  -g $GTF_98 \
   -q 10 \
   --sjdbOverhang 100 \
   -a None None \
@@ -270,16 +270,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim loose
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Unique only -- strict
-# Quant v96 whole GTF
+# Quant v98 whole GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_looseTrim_normalGTF_multimappers \
-  -e v96_looseTrim_normalGTF_multimappers \
-  -r $REF_96 \
-  -g $GTF_96 \
+  -o $DIR/v98_looseTrim_normalGTF_multimappers \
+  -e v98_looseTrim_normalGTF_multimappers \
+  -r $REF_98 \
+  -g $GTF_98 \
   --allow_multimappers \
   -q 10 \
   --sjdbOverhang 100 \
@@ -289,16 +289,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim loose
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Multimappers allowed
-# Quant v96 longest GTF
+# Quant v98 longest GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_looseTrim_longestGTF_uniqueonly \
-  -e v96_looseTrim_longestGTF_uniqueonly \
-  -r $REF_96 \
-  -g $GTF_96L \
+  -o $DIR/v98_looseTrim_longestGTF_uniqueonly \
+  -e v98_looseTrim_longestGTF_uniqueonly \
+  -r $REF_98 \
+  -g $GTF_98L \
   -q 10 \
   --sjdbOverhang 100 \
   -a None None \
@@ -307,16 +307,16 @@ srun -n 1 -c 16 xpresspipe peRNAseq \
 
 
 # Trim loose
-# Index v96, GTF and fasta
+# Index v98, GTF and fasta
 # Multimappers allowed
-# Quant v96 longest GTF
+# Quant v98 longest GTF
 
 srun -n 1 -c 16 xpresspipe peRNAseq \
   -i $FILE_DIR \
-  -o $DIR/v96_looseTrim_longestGTF_multimappers \
-  -e v96_looseTrim_longestGTF_multimappers \
-  -r $REF_96 \
-  -g $GTF_96L \
+  -o $DIR/v98_looseTrim_longestGTF_multimappers \
+  -e v98_looseTrim_longestGTF_multimappers \
+  -r $REF_98 \
+  -g $GTF_98L \
   -q 10 \
   --allow_multimappers \
   --sjdbOverhang 100 \
@@ -333,15 +333,15 @@ mv $DIR/v79_strictTrim_normalGTF_uniqueOnly/counts/* $DIR
 mv $DIR/v79_strictTrim_normalGTF_multimappers/counts/* $DIR
 mv $DIR/v79_strictTrim_longestGTF_uniqueonly/counts/* $DIR
 mv $DIR/v79_strictTrim_longestGTF_multimappers/counts/* $DIR
-mv $DIR/v96_strictTrim_normalGTF_uniqueOnly/counts/* $DIR
-mv $DIR/v96_strictTrim_normalGTF_multimappers/counts/* $DIR
-mv $DIR/v96_strictTrim_longestGTF_uniqueonly/counts/* $DIR
-mv $DIR/v96_strictTrim_longestGTF_multimappers/counts/* $DIR
+mv $DIR/v98_strictTrim_normalGTF_uniqueOnly/counts/* $DIR
+mv $DIR/v98_strictTrim_normalGTF_multimappers/counts/* $DIR
+mv $DIR/v98_strictTrim_longestGTF_uniqueonly/counts/* $DIR
+mv $DIR/v98_strictTrim_longestGTF_multimappers/counts/* $DIR
 mv $DIR/v79_looseTrim_normalGTF_uniqueOnly/counts/* $DIR
 mv $DIR/v79_looseTrim_normalGTF_multimappers/counts/* $DIR
 mv $DIR/v79_looseTrim_longestGTF_uniqueonly/counts/* $DIR
 mv $DIR/v79_looseTrim_longestGTF_multimappers/counts/* $DIR
-mv $DIR/v96_looseTrim_normalGTF_uniqueOnly/counts/* $DIR
-mv $DIR/v96_looseTrim_normalGTF_multimappers/counts/* $DIR
-mv $DIR/v96_looseTrim_longestGTF_uniqueonly/counts/* $DIR
-mv $DIR/v96_looseTrim_longestGTF_multimappers/counts/* $DIR
+mv $DIR/v98_looseTrim_normalGTF_uniqueOnly/counts/* $DIR
+mv $DIR/v98_looseTrim_normalGTF_multimappers/counts/* $DIR
+mv $DIR/v98_looseTrim_longestGTF_uniqueonly/counts/* $DIR
+mv $DIR/v98_looseTrim_longestGTF_multimappers/counts/* $DIR

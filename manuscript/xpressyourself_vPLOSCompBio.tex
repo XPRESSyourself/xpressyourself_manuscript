@@ -206,14 +206,14 @@ Another potential contributor to this divergence is that the alignment and quant
 \begin{figure*}
 \centering
   \includegraphics[width=145mm]{figures/xpresspipe_figure2.png}
-  \caption{\textbf{Representative comparisons between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Representative comparisons of biological replicate read counts processed by XPRESSpipe. B) Representative comparisons of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. C) Boxplot summaries of Spearman $\rho$ and Pearson r values for biological replicate comparisons. D) Boxplot summaries of Spearman $\rho$ and Pearson r values for between method processing. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported in A and B are Spearman correlation coefficients using RPM-normalized count data. Pearson correlation coefficients were calculated using log\textsubscript{10}(rpm(counts) + 1) transformed data. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
+  \caption{\textbf{Representative comparisons between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Representative comparisons of biological replicate read counts processed by XPRESSpipe. B) Representative comparisons of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. C) Boxplot summaries of Spearman $\rho$ and Pearson r values for biological replicate comparisons. D) Boxplot summaries of Spearman $\rho$ and Pearson r values for between method processing. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported in A and B are Spearman correlation coefficients using RPM-normalized count data. Pearson correlation coefficients were calculated using log\textsubscript{10}(rpm(counts) + 1) transformed data. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v98 using a protein-coding only, truncated GTF.}
   \label{fig:figure2}
 \end{figure*}
 
 \begin{figure*}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_figure3.png}
-  \caption{\textbf{Analysis of previously published ISR TE data using XPRESSpipe.} A-C) log\textsubscript{2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript{2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
+  \caption{\textbf{Analysis of previously published ISR TE data using XPRESSpipe.} A-C) log\textsubscript{2}(Fold Change) for each drug condition compared to untreated for the ribosome profiling and RNA-Seq data. Purple, ISR canonical targets highlighted in the original study. Green, genes with uORFs affected by ISR as highlighted in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. Black, genes with statistically significant changes in TE. Grey, all genes. Changes in ribo-seq and mRNA-Seq were calculated using DESeq2. TE was calculated using DESeq2. Points falling outside of the plotted range are not included. D) Changes in log\textsubscript{2}(TE) for each drug condition compared to untreated control. Grey, all genes. Purple, ISR targets identified in the original study. Orange, genes fitting a strict thresholding paradigm to identify genes that display a 2-fold or greater increase in TE in Tm + ISRIB treatment compared to Tm treatment. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v98 using a protein-coding only, truncated GTF.}
   \label{fig:figure3}
 \end{figure*}
 
@@ -251,21 +251,21 @@ XPRESSpipe functions can be computationally intensive, and thus, super-computing
 
 \begin{table*}[h]
     \centering
-\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.} \texttt{geneCoverage} module performed on high-coverage gene.}
+\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.} \texttt{geneCoverage} module performed on high-coverage gene. While some memory footprints are large in this test case, steps will scale based on available user resources.}
 \begin{tabular}{p{5cm}p{3.5cm}p{2.7cm}p{1.8cm}}
 \textbf{Process} & \textbf{Command} & \textbf{Wallclock Time} & \textbf{Max RAM}\\
   \hline
-  Curate STAR reference & \texttt{curateReference} & 00h 37m 10.15s & 34.03gb \\
+  Curate STAR reference & \texttt{curateReference} & 00h 37m 10s & 34.03gb \\
   \hline
-  Truncate GTF & \texttt{modifyGTF -t} & 00h 03m 15.86s & 03.25gb \\
+  Truncate GTF & \texttt{modifyGTF -t} & 00h 03m 16s & 03.25gb \\
   \hline
-  Read Pre-processing & \texttt{trim} & 00h 20m 10.78s & 00.45gb \\
+  Read Pre-processing & \texttt{trim} & 00h 20m 11s & 00.45gb \\
   \hline
-  Alignment and Post-processing & \texttt{align} &  & \\
+  Alignment and Post-processing & \texttt{align} & 07h 49m 55s & 38.00gb \\
   \hline
-  Quantification & \texttt{count -c htseq} &  & \\
+  Read Quantification & \texttt{count -c htseq} & 04h 25m 15s & 0.16gb \\
   \hline
-  Isoform Abundance & \texttt{count -c cufflinks} &  & \\
+  Isoform Abundance & \texttt{count -c cufflinks} & 01h 15m 44s & 2.36gb \\
   \hline
   Differential Expression (n=9) & \texttt{diffxpress} &  & \\
   \hline
@@ -273,11 +273,11 @@ XPRESSpipe functions can be computationally intensive, and thus, super-computing
   \hline
   Metagene Analysis & \texttt{metagene} &  & \\
   \hline
-  Gene Coverage (n=1) & \texttt{geneCoverage} &  & \\
+  Gene Coverage (n=1) & \texttt{geneCoverage} & 03h 29m 28s & 19.22gb \\
   \hline
-  Periodicity & \texttt{periodicity} &  & \\
+  Periodicity & \texttt{periodicity} & 01h 08m 22s & 54.16gb \\
   \hline
-  Library Complexity & \texttt{complexity} &  & \\
+  Library Complexity & \texttt{complexity} & 00h 58m 49s & 0.77gb \\
   \hline
   rRNA probe & \texttt{rrnaProbe} &  & \\
   \hline
@@ -428,7 +428,7 @@ The authors wish to thank Michael T. Howard for helpful discussions concerning r
 \begin{figure}
 \centering
   \includegraphics[width=160mm]{figures/xpresspipe_supplement3.png}
-  \caption{\textbf{Comparison between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Comparison of biological replicate read counts processed by XPRESSpipe. B) Comparison of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using a protein-coding only, truncated GTF.}
+  \caption{\textbf{Comparison between processed data produced by XPRESSpipe and original study.} Genes were eliminated from analysis if any RNA-Seq sample for that gene had fewer than 10 counts. A) Comparison of biological replicate read counts processed by XPRESSpipe. B) Comparison of read counts per gene between count data from the original study and the same raw data processed and quantified by XPRESSpipe. RPF, ribosome-protected fragments. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v98 using a protein-coding only, truncated GTF.}
   \label{fig:supplement3}
 \end{figure}
 
@@ -442,7 +442,7 @@ The authors wish to thank Michael T. Howard for helpful discussions concerning r
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_supplement5.png}
-  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data quantifying with same reference version reveals negligible improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38 v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients.}
+  \caption{\textbf{Original ISRIB count data plotted against XPRESSpipe-processed data quantified using same reference version reveals mild improvement in comparability between the analytical regimes.} Original samples were processed using Ensembl human build GRCh38v72, as in the original manuscript, and compared with the original count data provided with the manuscript. XPRESSpipe-prepared counts were thresholded similarly as the original data (each gene needed to have at least 10 counts across all mRNA samples). RepA, biological replicate A. RepB, biological replicate B. RPF, ribosome-protected footprint. Tm, tunicamycin. All $\rho$ values reported are Spearman correlation coefficients.}
   \label{fig:supplement5}
 \end{figure}
 

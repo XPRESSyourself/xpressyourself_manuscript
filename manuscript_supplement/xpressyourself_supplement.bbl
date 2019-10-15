@@ -8,9 +8,6 @@ Manuscript code.
   \url{https://github.com/XPRESSyourself/xpressyourself_manuscript/tree/master/supplemental_files}.
   Available from: https://doi.org/DOI: 10.5281/zenodo.3337599.
 
-\bibitem{aws}
-Amazon Web Services. \url{https://aws.amazon.com}.
-
 \bibitem{fastp}
 S.~Chen, Y.~Zhou, Y.~Chen, J.~Gu. fastp: an ultra-fast all-in-one FASTQ
   preprocessor. {\it Bioinformatics\/} {\bf 34} (2018). Available from:
@@ -147,6 +144,10 @@ C.~Sidrauski1, A.~McGeachy, N.~Ingolia, P.~Walter. The small molecule ISRIB
   reverses the effects of eIF2{\~a} phosphorylation on translation and stress
   granule assembly. {\it eLife\/}  (2015). Available from:
   https://doi.org/10.7554/eLife.05033.
+
+\bibitem{matvenn}
+K.~Tretyakov. matplotlib-venn.
+  \url{https://github.com/konstantint/matplotlib-venn}.
 
 \bibitem{igv}
 J.~Robinson, {\it et~al.\/}. Integrative Genomics Viewer. {\it Nat

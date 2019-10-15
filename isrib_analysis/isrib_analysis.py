@@ -757,7 +757,7 @@ def get_data(
     # $ gzip -d Homo_sapiens.GRCh38.96.gtf.gz
     data = convert_names(
         data,
-        '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf')
+        '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.98.gtf')
     data.columns = data.columns.str.replace(str(sample_suffix), '')
     data.shape
 
@@ -776,7 +776,10 @@ def cycle_external_correlations_supplement(
         file,
         original):
 
-    data = get_data(file, sample_suffix='__Aligned')
+    try:
+        data = get_data(file, sample_suffix='_1_Aligned')
+    except:
+        data = get_data(file, sample_suffix='__Aligned')
 
     data_threshold = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 10] # Apply threshold to data
     data_rpm = rpm(data_threshold)
@@ -798,8 +801,8 @@ def cycle_external_correlations_supplement(
 """Read in data
 """
 # Input file is protein coding only and truncated, not parsed for longest transcript only
-file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/isrib_comp_v96_truncated_count_table.tsv'
-data = get_data(file, sample_suffix='__Aligned')
+file = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_comp_test/isrib_comp_v98_truncated_count_table.tsv'
+data = get_data(file, sample_suffix='_1_Aligned')
 
 # Clean up data
 data_threshold_deseq = data.loc[data[['untr_a_hek', 'untr_b_hek', 'tm_a_hek', 'tm_b_hek', 'tmisrib_a_hek', 'tmisrib_b_hek', 'isrib_a_hek', 'isrib_b_hek']].min(axis=1) >= 25] # Apply threshold to data
@@ -958,11 +961,11 @@ print('TopHat2 vs STAR overcount ambiguous rate increase: ' + tophat_overcount_r
 # Run correlations between sample alignments
 make_internal_correlations(
     data_rpm,
-    'internal_correlations_summary_htseq_protein_truncated_v96.png')
+    'internal_correlations_summary_htseq_protein_truncated_v98.png')
 
 make_internal_correlations_supplement(
     data_rpm,
-    'internal_correlations_summary_htseq_protein_truncated_v96_all.png')
+    'internal_correlations_summary_htseq_protein_truncated_v98_all.png')
 
 make_internal_correlations_supplement(
     original_rpm,
@@ -971,9 +974,9 @@ make_internal_correlations_supplement(
 """External correlations
 """
 file_list = [
-    'isrib_comp_v96_truncated_count_table.tsv',
-    'isrib_comp_v96_normal_count_table.tsv',
-    'isrib_comp_v96_longest_truncated_count_table.tsv',
+    'isrib_comp_v98_truncated_count_table.tsv',
+    'isrib_comp_v98_normal_count_table.tsv',
+    'isrib_comp_v98_longest_truncated_count_table.tsv',
     'isrib_comp_v72_normal_count_table.tsv',
     'isrib_comp_v72_longest_truncated_count_table.tsv',
     'isrib_comp_v72_truncated_count_table.tsv']
@@ -987,12 +990,12 @@ for file in file_list:
 make_external_correlations(
     data_common,
     original_common,
-    'external_correlations_summary_htseq_protein_truncated_v96.png')
+    'external_correlations_summary_htseq_protein_truncated_v98.png')
 
 make_external_correlations_supplement(
     data_common,
     original_common,
-    'external_correlations_summary_htseq_protein_truncated_v96_all.png')
+    'external_correlations_summary_htseq_protein_truncated_v98_all.png')
 
 make_external_correlations_supplement(
     data_common,
@@ -1003,7 +1006,7 @@ make_external_correlations_supplement(
 make_spearman_pearson_correlations(
     data_common,
     original_common,
-    'spearman_pearson_correlations_htseq_protein_truncated_v96.png')
+    'spearman_pearson_correlations_htseq_protein_truncated_v98.png')
 
 make_pseudogene_analysis(
     data_common,

@@ -523,6 +523,8 @@ def venn_plot(
         dpi=dpi,
         bbox_inches='tight')
 
+    plt.close()
+
 
 """Import XPRESSpipe counts data for any checking
 """
@@ -659,7 +661,9 @@ te_plot(
 
 """Comparing outputs
 """
-#XPRESSpipe vs Original w/ DESeq1
+
+"""XPRESSpipe vs Original w/ DESeq1
+"""
 # Tm
 tm_fc_XP = merged_data_split_XP.loc[(merged_data_split_XP['tm_ribo_log2FC'] >= 1) | (merged_data_split_XP['tm_ribo_log2FC'] <= -1)].index.tolist()
 tm_te_XP = merged_data_XP.loc[merged_data_XP['tm_padj'] < 0.1].index.tolist()
@@ -711,7 +715,8 @@ venn_plot(
         output_name='isrib_deseq2XP_venn.png',
         dpi=3600)
 
-# Original data DESeq2 vs Original data DESeq1
+"""Original data DESeq2 vs Original data DESeq1
+"""
 dir_og2 = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/original_data_deseq2/'
 
 merged_data_OG2, merged_data_split_OG2, check_data_OG2 = parse_de_data(
@@ -769,7 +774,8 @@ venn_plot(
         output_name='isrib_deseq2OG_venn.png',
         dpi=3600)
 
-# XPRESSpipe DESeq2 vs Original w/ DESeq2
+"""XPRESSpipe DESeq2 vs Original w/ DESeq2
+"""
 # Tm
 venn_plot(
         directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
@@ -780,31 +786,31 @@ venn_plot(
         label_B='Original paper',
         color_A='#d95f02',
         color_B='#7570b3',
-        output_name='tm_deseq2OG_venn.png',
+        output_name='tm_deseq2both_venn.png',
         dpi=3600)
 
 # Tm + ISRIB
 venn_plot(
         directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
         figure_title='Tm + ISRIB',
-        gene_list_A=tmisrib_common_og2,
-        gene_list_B=ingolia_tmisrib,
-        label_A='DESeq2',
-        label_B='DESeq1',
+        gene_list_A=tmisrib_common_XP,
+        gene_list_B=tmisrib_common_og2,
+        label_A='This paper',
+        label_B='Original paper',
         color_A='#d95f02',
         color_B='#7570b3',
-        output_name='tm_isrib_deseq2OG_venn.png',
+        output_name='tm_isrib_deseq2both_venn.png',
         dpi=3600)
 
 # ISRIB
 venn_plot(
         directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
         figure_title='ISRIB',
-        gene_list_A=isrib_common_og2,
-        gene_list_B=ingolia_isrib,
-        label_A='DESeq2',
-        label_B='DESeq1',
+        gene_list_A=isrib_common_XP,
+        gene_list_B=isrib_common_og2,
+        label_A='This paper',
+        label_B='Original paper',
         color_A='#d95f02',
         color_B='#7570b3',
-        output_name='isrib_deseq2OG_venn.png',
+        output_name='isrib_deseq2both_venn.png',
         dpi=3600)

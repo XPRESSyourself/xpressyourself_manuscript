@@ -119,8 +119,8 @@ echo "End Complexity: $(date)" >> $LOG
 echo "===================" >> $LOG
 
 
-# rRNA probe
+# rRNA probe -- using pipeline output
 echo "Start rRNA probe: $(date)" >> $LOG
-/usr/bin/time -v xpresspipe rrnaProbe -i $SCRDIR/output/fastqc -o $SCRDIR/output
+/usr/bin/time -v xpresspipe rrnaProbe -i /scratch/general/lustre/u0690617/7559239/output/fastqc -o /scratch/general/lustre/u0690617/7559239/output
 echo "End rRNA probe: $(date)" >> $LOG
 echo "===================" >> $LOG
