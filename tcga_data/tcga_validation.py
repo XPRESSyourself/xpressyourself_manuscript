@@ -341,7 +341,7 @@ x_samples = {
     'G17207':'TCGA-06-0156-01A',
     }
 
-x_file = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/xpresspipe/tcga_validation_count_table_28jun19.tsv'
+x_file = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/xpresspipe/tcga_validation_count_table_17nov19_v98.tsv'
 xpresspipe = pd.read_csv(x_file, sep='\t', index_col=0)
 
 xpresspipe.columns = xpresspipe.columns.to_series().map(x_samples)
@@ -373,7 +373,7 @@ tcga.head()
 """Get common samples and genes
 """
 gtf = pd.read_csv(
-    '~/Desktop/reference/Homo_sapiens.GRCh38.96.gtf',
+    '~/Desktop/reference/Homo_sapiens.GRCh38.98.gtf',
     sep='\t',
     comment='#',
     header=None,
@@ -486,14 +486,14 @@ def run_comp(pseudogenes=False):
         'v79_looseTrim_longestGTF_uniqueonly_count_table',
         'v79_strictTrim_longestGTF_multimappers_count_table',
         'v79_strictTrim_longestGTF_uniqueonly_count_table',
-        'v96_looseTrim_normalGTF_multimappers_count_table',
-        'v96_looseTrim_normalGTF_uniqueOnly_count_table',
-        'v96_strictTrim_normalGTF_multimappers_count_table',
-        'v96_strictTrim_normalGTF_uniqueOnly_count_table',
-        'v96_looseTrim_longestGTF_multimappers_count_table',
-        'v96_looseTrim_longestGTF_uniqueonly_count_table',
-        'v96_strictTrim_longestGTF_multimappers_count_table',
-        'v96_strictTrim_longestGTF_uniqueonly_count_table',
+        'v98_looseTrim_normalGTF_multimappers_count_table',
+        'v98_looseTrim_normalGTF_uniqueOnly_count_table',
+        'v98_strictTrim_normalGTF_multimappers_count_table',
+        'v98_strictTrim_normalGTF_uniqueOnly_count_table',
+        'v98_looseTrim_longestGTF_multimappers_count_table',
+        'v98_looseTrim_longestGTF_uniqueonly_count_table',
+        'v98_strictTrim_longestGTF_multimappers_count_table',
+        'v98_strictTrim_longestGTF_uniqueonly_count_table',
 
     ]
 
@@ -589,8 +589,8 @@ interactive_scatter(best_file1, best_name1, 'TCGA-06-0132-01A', gtf_file1, setti
 best_name1 = 'v79_looseTrim_normalGTF_multimappers_nopseudo'
 interactive_scatter(best_file1, best_name1, 'TCGA-06-0132-01A', gtf_file1, settings1, supplement_list=non_pseudo_genes)
 
-best_file2 = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v96_looseTrim_normalGTF_multimappers_count_table.tsv'
-best_name2 = 'v96_looseTrim_normalGTF_multimappers'
-gtf_file2 = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.96.gtf'
-settings2 = 'GTFv96, PHRED>=10, normalGTF, allow multimappers'
+best_file2 = '/Users/jordan/Desktop/xpressyourself_manuscript/tcga_data/tcga_comp/v98_looseTrim_normalGTF_multimappers_count_table.tsv'
+best_name2 = 'v98_looseTrim_normalGTF_multimappers'
+gtf_file2 = '/Users/jordan/Desktop/reference/Homo_sapiens.GRCh38.98.gtf'
+settings2 = 'GTFv98, PHRED>=10, normalGTF, allow multimappers'
 interactive_scatter(best_file2, best_name2, 'TCGA-06-0132-01A', gtf_file2, settings2)

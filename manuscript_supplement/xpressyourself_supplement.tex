@@ -97,7 +97,7 @@
 } \\
 
 \subsection*{Benchmarking Against TCGA Data}
-To further validate the design, reliability, and versatility of the XPRESSpipe pipeline, we processed raw TCGA sequence data using XPRESSpipe and compared the output count values to those publicly available through TCGA \cite{tcga}. Spearman $\rho$ values for the selected samples ranged from 0.984-0.986 (Figure \ref{fig:figure4}), indicating XPRESSpipe performs with similar accuracy to the TCGA RNA-Seq processing standards. \par
+To further validate the design, reliability, and versatility of the XPRESSpipe pipeline, we processed raw TCGA sequence data using XPRESSpipe and compared the output count values to those publicly available through TCGA \cite{tcga}. Spearman $\rho$ values for the selected samples ranged from 0.979-0.980 (Figure \ref{fig:figure4}), indicating XPRESSpipe performs with similar accuracy to the TCGA RNA-Seq processing standards. \par
 
 The differences in reported counts can be accounted for by a couple of key differences. For instance, the XPRESSpipe-processed files are aligned to the \textit{Homo sapiens} GRChv96 reference transcriptome, while the original count data are aligned to the GRChv79 reference transcriptome. The use of a different transcriptome reference can result in variance in the final quantified data for several genes (Figure \ref{fig:supplement5}). For example, in the four years between these versions, significant advances have been made in our understanding of transcribed regions of the human genome. Between versions 95 and 96 alone (version 95 published 24 Nov 2018, version 96 published 13 Mar 2019), at least 32,259 records were added (quantified simply by the difference in line numbers between the files, although in addition other records have been removed or modified). \par
 
@@ -114,7 +114,7 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_supplement5.png}
-  \caption{\textbf{Sample RNA-Seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All $\rho$ values reported are Spearman correlation coefficients.}
+  \caption{\textbf{Sample RNA-Seq count data compared between TCGA count data and various conformations of the XPRESSpipe pipeline.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data. The x-axis data for the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data for the plot enclosed in green used XPRESSpipe default settings and the most current reference transcriptome at the time of writing. All $\rho$ values reported are Spearman correlation coefficients.}
   \label{fig:supplement5}
 \end{figure}
 
@@ -128,7 +128,7 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_supplement7.png}
-  \caption{\textbf{Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data in the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data in the plot enclosed in green used XPRESSpipe default settings and a current reference transcriptome. All $\rho$ values reported are Spearman correlation coefficients.}
+  \caption{\textbf{Removal of pseudogenes counts improve comparability between analytical regimes.} An overview of how different conformations of the XPRESSpipe peRNAseq pipeline compared to the published TCGA sample TCGA-06-0132-01A count data with pseudogenes collapsed. The x-axis data for the plot enclosed in maroon most closely mirrors the settings used in the published TCGA RNA-Seq pipeline. The x-axis data for the plot enclosed in green used XPRESSpipe default settings and a current reference transcriptome. All $\rho$ values reported are Spearman correlation coefficients.}
   \label{fig:supplement7}
 \end{figure}
 
