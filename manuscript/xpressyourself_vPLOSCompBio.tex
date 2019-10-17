@@ -255,29 +255,29 @@ XPRESSpipe functions can be computationally intensive, and thus, super-computing
 \begin{tabular}{p{5cm}p{3.5cm}p{2.7cm}p{1.8cm}}
 \textbf{Process} & \textbf{Command} & \textbf{Wallclock Time} & \textbf{Max RAM}\\
   \hline
-  Curate STAR reference & \texttt{curateReference} & 00h 37m 10s & 34.03gb \\
+  Curate STAR reference & \texttt{curateReference} & 00h 34m 01s & 34.03gb \\
   \hline
-  Truncate GTF & \texttt{modifyGTF -t} & 00h 03m 16s & 03.25gb \\
+  Truncate GTF & \texttt{modifyGTF -t} & 00h 02m 45s & 03.25gb \\
   \hline
-  Read Pre-processing & \texttt{trim} & 00h 20m 11s & 00.45gb \\
+  Read Pre-processing & \texttt{trim} & 00h 18m 21s & 00.48gb \\
   \hline
-  Alignment and Post-processing & \texttt{align} & 07h 49m 55s & 38.00gb \\
+  Alignment and Post-processing & \texttt{align} & 06h 16m 18s & 38.00gb \\
   \hline
-  Read Quantification & \texttt{count -c htseq} & 04h 25m 15s & 0.16gb \\
+  Read Quantification & \texttt{count -c htseq} & 04h 13m 04s & 0.16gb \\
   \hline
-  Isoform Abundance & \texttt{count -c cufflinks} & 01h 15m 44s & 2.36gb \\
+  Isoform Abundance & \texttt{count -c cufflinks} & 01h 09m 32s & 2.36gb \\
   \hline
-  Differential Expression (n=9) & \texttt{diffxpress} &  & \\
+  Differential Expression (n=9) & \texttt{diffxpress} & 00h 07m 50s & 0.65gb \\
   \hline
   Read Distributions & \texttt{readDistribution} &  & \\
   \hline
   Metagene Analysis & \texttt{metagene} &  & \\
   \hline
-  Gene Coverage (n=1) & \texttt{geneCoverage} & 03h 29m 28s & 19.22gb \\
+  Gene Coverage (n=1) & \texttt{geneCoverage} & 03h 49m 03s & 19.22gb \\
   \hline
-  Periodicity & \texttt{periodicity} & 01h 08m 22s & 54.16gb \\
+  Periodicity & \texttt{periodicity} & 01h 00m 57s & 61.89gb \\
   \hline
-  Library Complexity & \texttt{complexity} & 00h 58m 49s & 0.77gb \\
+  Library Complexity & \texttt{complexity} & 00h 48m 46s & 1.98gb \\
   \hline
   rRNA probe & \texttt{rrnaProbe} &  & \\
   \hline
@@ -292,7 +292,7 @@ XPRESSpipe functions can be computationally intensive, and thus, super-computing
   \hline
   Total Output & & & 500 GB \\
   \hline
-  Allocated CPUs & & & 16 \\
+  Allocated CPUs & & & 20 \\
   \hline
   Allocated Memory & & & 64GB \\
  \label{tab:chpc_performance}

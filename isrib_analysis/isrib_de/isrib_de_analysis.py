@@ -670,16 +670,16 @@ tm_te_XP = merged_data_XP.loc[merged_data_XP['tm_padj'] < 0.1].index.tolist()
 tm_common_XP = list(set(tm_fc_XP).intersection(tm_te_XP))
 
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='Tm',
-        gene_list_A=tm_common_XP,
-        gene_list_B=ingolia_tm,
-        label_A='This paper',
-        label_B='Original paper',
-        color_A='#d95f02',
-        color_B='#1b9e77',
-        output_name='tm_deseq2XP_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='Tm',
+    gene_list_A=tm_common_XP,
+    gene_list_B=ingolia_tm,
+    label_A='This paper',
+    label_B='Original paper',
+    color_A='#d95f02',
+    color_B='#1b9e77',
+    output_name='tm_deseq2XP_venn.png',
+    dpi=3600)
 
 # Tm + ISRIB
 tmisrib_fc_XP = merged_data_split_XP.loc[(merged_data_split_XP['tmisrib_ribo_log2FC'] >= 1) | (merged_data_split_XP['tmisrib_ribo_log2FC'] <= -1)].index.tolist()
@@ -687,16 +687,16 @@ tmisrib_te_XP = merged_data_XP.loc[merged_data_XP['tmisrib_padj'] < 0.1].index.t
 tmisrib_common_XP = list(set(tmisrib_fc_XP).intersection(tmisrib_te_XP))
 
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='Tm + ISRIB',
-        gene_list_A=tmisrib_common_XP,
-        gene_list_B=ingolia_tmisrib,
-        label_A='This paper',
-        label_B='Original paper',
-        color_A='#d95f02',
-        color_B='#1b9e77',
-        output_name='tm_isrib_deseq2XP_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='Tm + ISRIB',
+    gene_list_A=tmisrib_common_XP,
+    gene_list_B=ingolia_tmisrib,
+    label_A='This paper',
+    label_B='Original paper',
+    color_A='#d95f02',
+    color_B='#1b9e77',
+    output_name='tm_isrib_deseq2XP_venn.png',
+    dpi=3600)
 
 # ISRIB
 isrib_fc_XP = merged_data_split_XP.loc[(merged_data_split_XP['isrib_ribo_log2FC'] >= 1) | (merged_data_split_XP['isrib_ribo_log2FC'] <= -1)].index.tolist()
@@ -704,24 +704,24 @@ isrib_te_XP = merged_data_XP.loc[merged_data_XP['isrib_padj'] < 0.1].index.tolis
 isrib_common_XP = list(set(isrib_fc_XP).intersection(isrib_te_XP))
 
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='ISRIB',
-        gene_list_A=isrib_common_XP,
-        gene_list_B=ingolia_isrib,
-        label_A='This paper',
-        label_B='Original paper',
-        color_A='#d95f02',
-        color_B='#1b9e77',
-        output_name='isrib_deseq2XP_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='ISRIB',
+    gene_list_A=isrib_common_XP,
+    gene_list_B=ingolia_isrib,
+    label_A='This paper',
+    label_B='Original paper',
+    color_A='#d95f02',
+    color_B='#1b9e77',
+    output_name='isrib_deseq2XP_venn.png',
+    dpi=3600)
 
 """Original data DESeq2 vs Original data DESeq1
 """
 dir_og2 = '/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/original_data_deseq2/'
 
 merged_data_OG2, merged_data_split_OG2, check_data_OG2 = parse_de_data(
-        directory=dir_og2,
-        check_file='ingolia_counts_deduplicated.txt')
+    directory=dir_og2,
+    check_file='ingolia_counts_deduplicated.txt')
 
 # Tm
 tm_fc_og2 = merged_data_split_OG2.loc[(merged_data_split_OG2['tm_ribo_log2FC'] >= 1) | (merged_data_split_OG2['tm_ribo_log2FC'] <= -1)].index.tolist()
@@ -729,16 +729,16 @@ tm_te_og2 = merged_data_OG2.loc[merged_data_OG2['tm_padj'] < 0.1].index.tolist()
 tm_common_og2 = list(set(tm_fc_og2).intersection(tm_te_og2))
 
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='Tm',
-        gene_list_A=tm_common_og2,
-        gene_list_B=ingolia_tm,
-        label_A='DESeq2',
-        label_B='DESeq1',
-        color_A='#7570b3',
-        color_B='#1b9e77',
-        output_name='tm_deseq2OG_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='Tm',
+    gene_list_A=tm_common_og2,
+    gene_list_B=ingolia_tm,
+    label_A='DESeq2',
+    label_B='DESeq1',
+    color_A='#7570b3',
+    color_B='#1b9e77',
+    output_name='tm_deseq2OG_venn.png',
+    dpi=3600)
 
 # Tm + ISRIB
 tmisrib_fc_og2 = merged_data_split_OG2.loc[(merged_data_split_OG2['tmisrib_ribo_log2FC'] >= 1) | (merged_data_split_OG2['tmisrib_ribo_log2FC'] <= -1)].index.tolist()
@@ -746,16 +746,16 @@ tmisrib_te_og2 = merged_data_OG2.loc[merged_data_OG2['tmisrib_padj'] < 0.1].inde
 tmisrib_common_og2 = list(set(tmisrib_fc_og2).intersection(tmisrib_te_og2))
 
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='Tm + ISRIB',
-        gene_list_A=tmisrib_common_og2,
-        gene_list_B=ingolia_tmisrib,
-        label_A='DESeq2',
-        label_B='DESeq1',
-        color_A='#7570b3',
-        color_B='#1b9e77',
-        output_name='tm_isrib_deseq2OG_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='Tm + ISRIB',
+    gene_list_A=tmisrib_common_og2,
+    gene_list_B=ingolia_tmisrib,
+    label_A='DESeq2',
+    label_B='DESeq1',
+    color_A='#7570b3',
+    color_B='#1b9e77',
+    output_name='tm_isrib_deseq2OG_venn.png',
+    dpi=3600)
 
 # ISRIB
 isrib_fc_og2 = merged_data_split_OG2.loc[(merged_data_split_OG2['isrib_ribo_log2FC'] >= 1) | (merged_data_split_OG2['isrib_ribo_log2FC'] <= -1)].index.tolist()
@@ -763,54 +763,54 @@ isrib_te_og2 = merged_data_OG2.loc[merged_data_OG2['isrib_padj'] < 0.1].index.to
 isrib_common_og2 = list(set(isrib_fc_og2).intersection(isrib_te_og2))
 
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='ISRIB',
-        gene_list_A=isrib_common_og2,
-        gene_list_B=ingolia_isrib,
-        label_A='DESeq2',
-        label_B='DESeq1',
-        color_A='#7570b3',
-        color_B='#1b9e77',
-        output_name='isrib_deseq2OG_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='ISRIB',
+    gene_list_A=isrib_common_og2,
+    gene_list_B=ingolia_isrib,
+    label_A='DESeq2',
+    label_B='DESeq1',
+    color_A='#7570b3',
+    color_B='#1b9e77',
+    output_name='isrib_deseq2OG_venn.png',
+    dpi=3600)
 
 """XPRESSpipe DESeq2 vs Original w/ DESeq2
 """
 # Tm
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='Tm',
-        gene_list_A=tm_common_XP,
-        gene_list_B=tm_common_og2,
-        label_A='This paper',
-        label_B='Original paper',
-        color_A='#d95f02',
-        color_B='#7570b3',
-        output_name='tm_deseq2both_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='Tm',
+    gene_list_A=tm_common_XP,
+    gene_list_B=tm_common_og2,
+    label_A='This paper',
+    label_B='Original paper',
+    color_A='#d95f02',
+    color_B='#7570b3',
+    output_name='tm_deseq2both_venn.png',
+    dpi=3600)
 
 # Tm + ISRIB
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='Tm + ISRIB',
-        gene_list_A=tmisrib_common_XP,
-        gene_list_B=tmisrib_common_og2,
-        label_A='This paper',
-        label_B='Original paper',
-        color_A='#d95f02',
-        color_B='#7570b3',
-        output_name='tm_isrib_deseq2both_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='Tm + ISRIB',
+    gene_list_A=tmisrib_common_XP,
+    gene_list_B=tmisrib_common_og2,
+    label_A='This paper',
+    label_B='Original paper',
+    color_A='#d95f02',
+    color_B='#7570b3',
+    output_name='tm_isrib_deseq2both_venn.png',
+    dpi=3600)
 
 # ISRIB
 venn_plot(
-        directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
-        figure_title='ISRIB',
-        gene_list_A=isrib_common_XP,
-        gene_list_B=isrib_common_og2,
-        label_A='This paper',
-        label_B='Original paper',
-        color_A='#d95f02',
-        color_B='#7570b3',
-        output_name='isrib_deseq2both_venn.png',
-        dpi=3600)
+    directory='/Users/jordan/Desktop/xpressyourself_manuscript/isrib_analysis/isrib_de/plots/',
+    figure_title='ISRIB',
+    gene_list_A=isrib_common_XP,
+    gene_list_B=isrib_common_og2,
+    label_A='This paper',
+    label_B='Original paper',
+    color_A='#d95f02',
+    color_B='#7570b3',
+    output_name='isrib_deseq2both_venn.png',
+    dpi=3600)
