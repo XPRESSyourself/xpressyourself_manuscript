@@ -423,7 +423,7 @@ xpresspipe_common = xpresspipe_common.reindex(sorted(xpresspipe_common.columns),
 tcga_common = tcga_common.reindex(sorted(tcga_common.columns), axis=1)
 
 """
-PLOT FIGURE 4
+PLOT SUPPLEMENTAL FIGURE 8
 """
 sample_list = ['TCGA-06-0125-02A',
              'TCGA-06-0132-01A',
