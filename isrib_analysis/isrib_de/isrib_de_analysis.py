@@ -587,7 +587,7 @@ down_strict_1_XP = merged_data_XP.loc[
     & ((merged_data_split_XP['tm_ribo_padj'] <= 0.1))]
 
 down_strict_2_XP = merged_data_XP.loc[
-    (merged_data_XP['tm_log2FC'] - merged_data_XP['tmisrib_log2FC'] <= -0.58) \
+    (merged_data_XP['tm_log2FC'] - merged_data_XP['tmisrib_log2FC'] <= -1) \
     & (merged_data_split_XP['tm_ribo_log2FC'] <= -0.9) \
     & (merged_data_split_XP['tm_ribo_padj'] <= 0.1)]
 
@@ -596,8 +596,7 @@ down_strict_XP = down_strict_1_XP.index.tolist() + down_strict_2_XP.index.tolist
 # Sanity check count data
 print(check_data_XP.loc[down_strict_XP].min().min())
 
-
-merged_data_XP.loc[down_strict_XP]
+merged_data_XP.loc[down_strict_1_XP]
 # Considering alpha-debt of dataset decay (https://doi.org/10.1101/801696)
 # Number of PubMed citations for ISRIB paper == 199, but in random sample of 20 (~10%), only 2 used for some sort of re-analysis. Will assume a 1/10 use-rate.
 n = 199 * (2/20)
