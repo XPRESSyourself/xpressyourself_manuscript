@@ -35,45 +35,45 @@ Warning--entry type for "riboseqr" isn't style-file defined
 --line 806 of file manubib.bib
 Warning--entry type for "picard" isn't style-file defined
 --line 811 of file manubib.bib
-You've used 88 entries,
+You've used 90 entries,
             2310 wiz_defined-function locations,
-            1170 strings with 23693 characters,
-and the built_in function-call counts, 16489 in all, are:
-= -- 1588
-> -- 835
+            1184 strings with 24330 characters,
+and the built_in function-call counts, 16826 in all, are:
+= -- 1624
+> -- 843
 < -- 0
-+ -- 425
-- -- 205
-* -- 1200
-:= -- 2583
-add.period$ -- 162
-call.type$ -- 88
++ -- 429
+- -- 207
+* -- 1228
+:= -- 2643
+add.period$ -- 166
+call.type$ -- 90
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 88
-duplicate$ -- 1029
-empty$ -- 1479
-format.name$ -- 277
-if$ -- 3762
+cite$ -- 90
+duplicate$ -- 1056
+empty$ -- 1512
+format.name$ -- 281
+if$ -- 3837
 int.to.chr$ -- 0
-int.to.str$ -- 88
-missing$ -- 71
-newline$ -- 267
-num.names$ -- 73
-pop$ -- 383
+int.to.str$ -- 90
+missing$ -- 73
+newline$ -- 273
+num.names$ -- 75
+pop$ -- 384
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 481
+skip$ -- 487
 stack$ -- 0
 substring$ -- 171
-swap$ -- 236
+swap$ -- 245
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 88
-width$ -- 90
-write$ -- 819
+while$ -- 90
+width$ -- 92
+write$ -- 839
 (There were 16 warnings)

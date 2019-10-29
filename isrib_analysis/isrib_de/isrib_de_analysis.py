@@ -209,6 +209,7 @@ def rp_plot(
     data_fig[[y_fc, x_fc]] = data_fig[[y_fc, x_fc]].replace([np.inf, -np.inf], np.nan)
     data_fig = data_fig.dropna(subset=[y_fc, x_fc])
 
+
     # Initialize plotting space
     fig, ax = plt.subplots(1,1, figsize=(7,7))
     plt.grid(False)
@@ -594,6 +595,18 @@ down_strict_XP = down_strict_1_XP.index.tolist() + down_strict_2_XP.index.tolist
 
 # Sanity check count data
 print(check_data_XP.loc[down_strict_XP].min().min())
+
+
+merged_data_XP.loc[down_strict_XP]
+# Considering alpha-debt of dataset decay (https://doi.org/10.1101/801696)
+# Number of PubMed citations for ISRIB paper == 199, but in random sample of 20 (~10%), only 2 used for some sort of re-analysis. Will assume a 1/10 use-rate.
+n = 199 * (2/20)
+alpha = 0.05
+from math import ceil
+for x in range(0, ceil(n)):
+    alpha = alpha / 2
+alpha
+
 
 # Make ribo-seq vs rna-seq plots with hightlights
 # Tm

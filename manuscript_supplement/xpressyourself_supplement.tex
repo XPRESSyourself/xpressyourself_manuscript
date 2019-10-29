@@ -99,7 +99,7 @@
 \subsection*{Benchmarking Against TCGA Data}
 To further validate the design, reliability, and versatility of the XPRESSpipe pipeline, we processed raw TCGA sequence data using XPRESSpipe and compared the output count values to those publicly available through TCGA \cite{tcga}. Spearman $\rho$ values for the selected samples ranged from 0.979-0.980 (Figure \ref{fig:figure4}), indicating XPRESSpipe performs with similar accuracy to the TCGA RNA-Seq processing standards. \par
 
-The differences in reported counts can be accounted for by a couple of key differences. For instance, the XPRESSpipe-processed files are aligned to the \textit{Homo sapiens} GRChv96 reference transcriptome, while the original count data are aligned to the GRChv79 reference transcriptome. The use of a different transcriptome reference can result in variance in the final quantified data for several genes (Figure \ref{fig:supplement5}). For example, in the four years between these versions, significant advances have been made in our understanding of transcribed regions of the human genome. Between versions 95 and 96 alone (version 95 published 24 Nov 2018, version 96 published 13 Mar 2019), at least 32,259 records were added (quantified simply by the difference in line numbers between the files, although in addition other records have been removed or modified). \par
+The differences in reported counts can be accounted for by a couple of key differences. For instance, the XPRESSpipe-processed files are aligned to the \textit{Homo sapiens} GRChv98 reference transcriptome, while the original count data are aligned to the GRChv79 reference transcriptome. The use of a different transcriptome reference can result in variance in the final quantified data for several genes (Figure \ref{fig:supplement5}). For example, in the four and a half years between these versions, significant advances have been made in our understanding of transcribed regions of the human genome.\par
 
 Another source of dissimilarity in data processing appears to arise if an Ensembl canonical transcripts-only reference is used during quantification. TCGA-processed data used an un-modified transcriptome reference file (all transcripts); therefore, the use of this modified (Ensembl canonical transcripts only) GTF will produce varied quantification for some genes as quantifications are constrained to a single transcript version of a given gene and a read will not be quantified if mapping to an exon not used by the canonical transcript. Even using XPRESSpipe settings closest to the TCGA pipeline and using the same genome and transcriptome version resulted in some variation (Figure \ref{fig:supplement5}, plot enclosed in maroon). By performing a more detailed analysis of these differences, it is clear that virtually all genes exhibiting variance between the processing methods are pseudogenes, with the TCGA pipeline accepting and quantifying more pseudogenes at the time of initial analysis of this dataset. This can be indicative of the difficulty surrounding the recognition of these reads as multi-mapping to both the original gene and pseudogene (Figure \ref{fig:supplement6}, \ref{fig:supplement7}, \ref{fig:supplement8}; interactive plots accompanying Figure \ref{fig:supplement8} can be accessed at \cite{manuscript}. \\
 
@@ -107,7 +107,7 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 \begin{figure*}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_figure4.png}
-  \caption{\textbf{Pipeline validation using publicly available TCGA count data.} Correlations were calculated between publicly available count data from TCGA samples and the count data processed by XPRESSpipe. Pseudogenes were excluded from the analysis. All reported $\rho$ values are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v96 using an unmodified GTF.}
+  \caption{\textbf{Pipeline validation using publicly available TCGA count data.} Correlations were calculated between publicly available count data from TCGA samples and the count data processed by XPRESSpipe. Pseudogenes were excluded from the analysis. All reported $\rho$ values are Spearman correlation coefficients. XPRESSpipe-processed read alignments were quantified to \textit{Homo sapiens} build CRCh38v98 using an unmodified GTF.}
   \label{fig:figure4}
 \end{figure*}
 
@@ -135,7 +135,7 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 \begin{figure}
 \centering
   \includegraphics[width=180mm]{figures/xpresspipe_supplement8.png}
-  \caption{\textbf{Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v96. Purple points, protein-coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.}
+  \caption{\textbf{Pseudogenes counts are over-represented in TCGA-processed data.} An overview of gene-type distributions between transcriptome reference versions. The plots above used GRCh38v79 and the bottom plot used GRCh38v98. Purple points, protein-coding genes. Orange points, pseudogenes. Green points, other gene records. All plots represent sample TCGA-06-0132-01A and were processed the same way except for transcriptome reference used during read quantification.}
   \label{fig:supplement8}
 \end{figure}
 
@@ -148,7 +148,7 @@ Another source of dissimilarity in data processing appears to arise if an Ensemb
 Methods described in this manuscript apply to the software packages at the time of writing. To obtain the most current methods, please refer to the documentation or source code for a given module.\\
 
 \subsection*{Software Dependencies}
-A list of dependencies required for XPRESSpipe at the time of writing is listed in Table \ref{Tab:software_pipe}. Dependencies for XPRESSplot at the time of writing are listed in Table \ref{Tab:software_plot}.\\
+A list of dependencies required for XPRESSpipe at the time of writing is listed in Table \ref{Tab:software_pipe}. Dependencies for XPRESSplot at the time of writing are listed in Table \ref{Tab:software_plot}. These are subject to change as these tools continue to evolve.\\
 
 % Software dependencies table
 \begin{table*}[h]
@@ -160,6 +160,8 @@ A list of dependencies required for XPRESSpipe at the time of writing is listed 
  Python & Primary language & \\
  \hline
  R & Language used for some statistical modules & \\
+ \hline
+ Julia & Language used for file parsing features & \\
  \hline
  fastp & Read pre-processing & \cite{fastp} \\
  \hline
@@ -296,13 +298,40 @@ Generally, two inputs are required for all functions within XPRESSplot:
 Usage of all xpressplot functionalities can be found in the documentation \cite{xpressplot_docs}.\\
 
 \subsection*{GTF Modification}
-To parallelize GTF modification, a GTF file is split into approximately proportional chunks equal to the specified number of threads. To avoid an incomplete gene record being included in a chunk and being inappropriately processed, a given chunk endpoint is determined by calculating the size of the GTF, dividing by the number of threads, and advancing to that endpoint, then advancing line by line until the last line of the gene record encountered at the endpoint. This is performed for each subsequent chunk. If creating the last chunk, the end of the chunk is the last line of the GTF record. \par
+To parallelize GTF modification, a GTF file is split into approximately proportional chunks equal to the specified number of threads. To avoid an incomplete gene record being included in a chunk and being inappropriately processed, a given chunk endpoint is determined by calculating the size of the GTF, dividing by the number of threads, and advancing to that endpoint, then advancing line by line until the last line of the gene record encountered at the endpoint. This is performed for each subsequent chunk. If creating the last chunk, the end of the chunk is the last line of the GTF record. These steps are taken to ensure all transcripts are considered for a given transcript.\par
 
 Ensembl canonical transcripts are determined according to the Ensembl glossary definition of a canonical transcript \cite{ensembl_canon}. For cases where a tie exists between equal priority transcripts, the longest is chosen. When there are multiple transcripts that tie for equal priority and longest length, the first listed record is retained. Exon or CDS lengths are calculated by taking the sum of each exon or CDS, not including intron or other space in the calculation. \par
 
 Protein-coding records are retained by performing a simple string search for the ``protein\_coding" annotation in the attribute column of a GTF file. \par
 
-Truncation of records is performed by identifying the $5'$- and $3'$- end of each transcript and modifying the given coordinates to reflect the given truncation amounts. Suggested truncation amounts are 45 nt from the $5'$- end and 15 nt from the $3'$- end, both of which are set as the default truncation amount parameters for the function and do not need to be modified unless the user desires \cite{ingolia_meth}. As a given CDS portion of a given exon may be less than a truncation amount, the function will perform a strand-aware recursive search CDS by CDS per transcript until the full truncation amount has been fully removed for each end. Any record smaller than the sum of the $5'$- and $3'$- truncation amounts is removed entirely from the output file. \\
+Truncation of records is performed by identifying the $5'$- and $3'$- end of each transcript and modifying the given coordinates to reflect the given truncation amounts. Suggested truncation amounts are 45 nt from the $5'$- end and 15 nt from the $3'$- end, both of which are set as the default truncation amount parameters for the function and do not need to be modified unless the user desires \cite{ingolia_meth}. As a given CDS portion of a given exon may be less than a truncation amount, the function will perform a strand-aware recursive search CDS by CDS per transcript until the full truncation amount has been fully removed for each end. Any record smaller than the sum of the $5'$- and $3'$- truncation amounts is removed entirely from the output file. We include a table exploring the necessity of this truncation paradigm in Table \ref{tab:truncation}.\\
+
+\begin{table*}[!]
+    \centering
+\captionof{table}{\textbf{Survey of GTF $5'$ CDS records requiring recursive truncation across selected model organisms.} Statistics were compiled using Ensembl v97 for most cases, with the exception of \textit{Arabidopsis thaliana}, which used v44. \# represents ``number of". CDS represents coding sequence of gene.}
+\begin{tabular}{p{6cm}p{3.3cm}p{3.3cm}p{3.3cm}}
+ \textbf{Organism} & \textbf{\# CDSs requiring recursive truncation} & \textbf{\# of transcripts total in organism} & \textbf{Percentage of recursive-requiring CDSs to total transcripts} \\
+ \hline
+ \textit{Arabidopsis thaliana} & 4,428 & 54,013 & 8.20\% \\
+ \hline
+ \textit{Caenorhabditis elegans} & 5,048 & 61,451 & 8.21\% \\
+ \hline
+ \textit{Danio rerio} & 8,987 & 59,876 & 15.01\% \\
+ \hline
+ \textit{Drosophila melanogaster} & 4,262 & 34,793 & 12.25\% \\
+ \hline
+ \textit{Homo sapiens} & 21,718 & 226,788 & 9.58\% \\
+ \hline
+ \textit{Mus musculus} & 12,779 & 142,333 & 8.98\% \\
+ \hline
+ \textit{Rattus norvegicus} & 5,002 & 41,078 & 12.18\% \\
+ \hline
+ \textit{Saccharomyces cerevisiae} & 160 & 7,127 & 2.24\% \\
+ \hline
+ \textit{Xenopus tropicalis} & 3,854 & 24,197 & 15.93\% \\
+ \label{tab:truncation}
+\end{tabular}
+\end{table*}
 
 \subsection*{Flattened GTF Records}
 Flattened transcriptome references are created via a modified version of the annotation curation module available in riboWaltz \cite{ribowaltz}. Vectorized expressions in Pandas \cite{pandas} are performed to quickly parse out pertinent meta-information for each transcript for the given analysis. Intermediate files are created for retrieval by each process when parallelizing analysis of each alignment file. This allows for fast processing of each BAM file, where the bottleneck in speed arises from the decompression and import of the binary alignment data. Flat files are automatically destroyed after sub-module completion. \\
@@ -328,7 +357,7 @@ Equations 1-4 reflect the design of the normalization functions within XPRESSplo
 Summary plots are created using Pandas \cite{pandas} and Matplotlib \cite{matplotlib}. Kernel density plots for library complexity analyses are created using NumPy \cite{numpy1, numpy2} and SciPy's \texttt{gaussian\_kde} function \cite{scipy}.\\
 
 \subsection*{Metagene Estimation}
-Metagene calculations are performed by determining the meta-transcript coordinate \textit{M} for each read alignment within a transcriptome-aligned BAM file (automatically output by STAR within XPRESSpipe). Let \textit{L\textsubscript{e}} be the first mapped position of the read (strand agnostic and in reference to exon space to the $5'$-end) and \textit{r} be the length of the mapped read. Let \textit{$\ell$\textsubscript{e}} be the cumulative length of all exons for the given transcript. The subscripted \textit{e} indicates the coordinate is relative to the exon space (intronic ranges within a transcript do not contribute to total space calculation). Extreme outliers (i.e., top and bottom 0.5\% of transcripts ordered by their read abundances) are removed from analysis as they will inappropriately skew the meta-profile for the majority (99\%) of transcripts. Required inputs are a transcriptome-aligned BAM file and a GTF reference file, which is flattened for downstream processing. For each mapped coordinate, the metagene position is calculated as:
+Metagene calculations are performed by determining the meta-transcript coordinate \textit{M} for each read alignment within a transcriptome-aligned BAM file (automatically output by STAR within XPRESSpipe). Let \textit{L\textsubscript{e}} be the first mapped position of the read (strand agnostic and in reference to exon space to the $5'$-end) and \textit{r} be the length of the mapped read. Let \textit{$\ell$\textsubscript{e}} be the cumulative length of all exons for the given transcript. The subscripted \textit{e} indicates the coordinate is relative to the exon space (intronic ranges within a transcript do not contribute to total space calculation). Extreme outliers (i.e., top and bottom 0.5\% of transcripts ordered by their read abundances) are removed from analysis as they will inappropriately skew the meta-profile for the majority (99\%) of transcripts. Similar methods are employed for metagene calculation across CDSs, where metagene coordinates are corrected for non-coding space of an exon. Required inputs are a transcriptome-aligned BAM file and a GTF reference file, which is flattened for downstream processing. For each mapped coordinate, the metagene position is calculated as:
 \begin{equation}
 \textit{M} = \frac{(L\textsubscript{e}\ +\ \frac{1}{2}r)\ \cdot\ 100}{\textit{$\ell$\textsubscript{e}}}
 \end{equation}
@@ -378,7 +407,7 @@ Raw data and processed TCGA count data was obtained from the TCGA Portal \cite{t
 
 
 \subsection*{Cost Analysis}
-Cost analysis was performed by assessing run logs from the high-performance computing cluster and using published AWS prices \cite{aws_ec2, aws_s3} to calculate the relative cost for a comparable run.\\
+Cost analysis was performed by assessing run logs from the high-performance computing cluster and using published AWS prices \cite{aws_ec2, aws_s3} to calculate the relative cost for a comparable run. Sub-module statistics were compiled by running each step of the pipeline with the command \texttt{/usr/bin/time -v}.\\
 
 \bibliography{manubib}
 \bibliographystyle{Science}

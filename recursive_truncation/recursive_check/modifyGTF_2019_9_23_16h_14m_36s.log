@@ -1,0 +1,22 @@
+You are using the current version of XPRESSpipe...
+======================
+User commands summary:
+======================
+XPRESSpipe version: 0.2.4-beta
+cmd: modifyGTF
+gtf: /Users/jordan/Desktop/recursive_check/Saccharomyces_cerevisiae.R64-1-1.97.gtf
+longest_transcript: False
+protein_coding: True
+truncate: True
+truncate_5prime: 45
+truncate_3prime: 15
+max_processors: None
+path: /Users/jordan/scripts/XPRESSyourself/XPRESSpipe/xpresspipe/
+log_loc: /Users/jordan/Desktop/recursive_check/
+experiment: modifyGTF_2019_9_23_16h_14m_36s
+log:  >> /Users/jordan/Desktop/recursive_check/modifyGTF_2019_9_23_16h_14m_36s.log 2>&1
+log_file: /Users/jordan/Desktop/recursive_check/modifyGTF_2019_9_23_16h_14m_36s.log
+=====================
+End commands summary
+=====================
+

@@ -70,12 +70,6 @@ X.~Gao, {\it et~al.\/}. Quantitative profiling of initiating ribosomes in vivo.
   {\it Nat Methods\/} {\bf 12} (2015). Available from:
   https://doi.org/https://doi.org/10.1038/nmeth.3208.
 
-\bibitem{bowtie}
-B.~Langmead, C.~Trapnell, M.~Pop, S.~Salzberg. Ultrafast and memory-efficient
-  alignment of short DNA sequences to the human genome. {\it Genome Biol\/}
-  {\bf 10} (2009). Available from:
-  https://doi.org/https://doi.org/10.1186/gb-2009-10-3-r25.
-
 \bibitem{galaxy}
 E.~Afgan, {\it et~al.\/}. The Galaxy platform for accessible, reproducible and
   collaborative biomedical analyses: 2018 update. {\it Nucleic Acids Res.\/}
@@ -403,36 +397,51 @@ D.~Kim, {\it et~al.\/}. TopHat2: accurate alignment of transcriptomes in the
   presence of insertions, deletions and gene fusions. {\it Genome Biol\/} {\bf
   14} (2013). Available from: https://doi.org/10.1186/gb-2013-14-4-r36.
 
+\bibitem{manuscript}
+Manuscript code.
+  \url{https://github.com/XPRESSyourself/xpressyourself_manuscript/tree/master/supplemental_files}.
+  Available from: https://doi.org/DOI: 10.5281/zenodo.3337599.
+
 \bibitem{deseq1}
 S.~Anders, W.~Huber. Differential expression analysis for sequence count data.
   {\it Genome Biol\/} {\bf 11} (2010). Available from:
   https://doi.org/10.1186/gb-2010-11-10-r106.
 
 \bibitem{genecards}
-GeneCards. \url{https://www.genecards.org/}. Accessed 27 June 2019.
+GeneCards. \url{https://www.genecards.org/}. Accessed 20 October 2019.
 
 \bibitem{ncbi}
 National Center for Biotechnology Information.
-  \url{https://www.ncbi.nlm.nih.gov/gene/}. Accessed 27 June 2019.
+  \url{https://www.ncbi.nlm.nih.gov/gene/}. Accessed 20 October 2019.
 
 \bibitem{uniprot}
-UniProt. \url{https://www.uniprot.org/uniprot/}. Accessed 27 June 2019.
+UniProt. \url{https://www.uniprot.org/uniprot/}. Accessed 20 October 2019.
 
 \bibitem{circligase_bias}
 R.~Tunney, {\it et~al.\/}. Accurate design of translational output by a neural
   network model of ribosome distribution. {\it Nat Struct Mol Biol\/} {\bf 25},
   577 (2018). Available from: https://doi.org/10.1038/s41594-018-0080-2.
 
+\bibitem{ndufa11}
+I.~Berger, {\it et~al.\/}. Mitochondrial complex I deficiency caused by a
+  deleterious NDUFA11 mutation. {\it Ann Neurol\/} {\bf 63} (2008). Available
+  from: https://doi.org/https://doi.org/10.1002/ana.21332.
+
+\bibitem{tkt}
+L.~Mitschke, {\it et~al.\/}. The crystal structure of human transketolase and
+  new insights into its mode of action. {\it J Biol Chem\/} {\bf 285} (2010).
+  Available from: https://doi.org/https://doi.org/10.1074/jbc.M110.149955.
+
+\bibitem{tkt_disease}
+L.~Boyle, {\it et~al.\/}. The crystal structure of human transketolase and new
+  insights into its mode of action. {\it Am J Hum Genet\/} {\bf 98} (2016).
+  Available from: https://doi.org/https://doi.org/10.1016/j.ajhg.2016.03.030.
+
 \bibitem{aws}
 Amazon Web Services. \url{https://aws.amazon.com}.
 
 \bibitem{readthedocs}
 Read the Docs. \url{https://readthedocs.org/}.
-
-\bibitem{manuscript}
-Manuscript code.
-  \url{https://github.com/XPRESSyourself/xpressyourself_manuscript/tree/master/supplemental_files}.
-  Available from: https://doi.org/DOI: 10.5281/zenodo.3337599.
 
 \bibitem{isrib_geo}
 Ribosome Profiling GEO Accession.

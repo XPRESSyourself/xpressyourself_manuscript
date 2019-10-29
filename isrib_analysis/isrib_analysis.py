@@ -58,7 +58,7 @@ def name_map(
 
 """Make supplemental figure 4
 """
-def make_pseudogene_analysis(
+def make_paralogs_analysis(
     data,
     original_data,
     title):
@@ -950,11 +950,49 @@ rna_above = rna_log.loc[rna_log['original'] > ((rna_log['xpresspipe'] * m) + b)]
 print(rna_above.shape)
 rna_above['diff'] = 10**rna_above['original'] - 10**rna_above['xpresspipe']
 overcounts = rna_above['diff'].sum()
+
+rna_above['diff'].index.tolist()
+
+
+plt.scatter(rna_log['xpresspipe'].loc[rna_above['diff'].index.tolist()].values, rna_log['original'].loc[rna_above['diff'].index.tolist()], s=5)
+x, y = [0, 4.9], [0.18, 5.03]
+plt.plot(x, y, c='red')
+
+len(rna_above['diff'].index.tolist())
+
 overcount_rate = overcounts / rna_start_reads
 print('RNA_Untr_A')
 print('# Reads overcounted: ' + str(int(round(overcounts))))
 print('Overcount rate: ' + str(overcount_rate * 100) + '%')
 print('TopHat2 vs STAR overcount ambiguous rate increase: ' + tophat_overcount_rate)
+
+# Some further analysis
+len(rpf_above['diff'].index.tolist())
+len(rna_above['diff'].index.tolist())
+
+common_above = list(set(rpf_above['diff'].index.tolist()).intersection(rna_above['diff'].index.tolist()))
+len(common_above)
+
+from urllib.request import Request, urlopen
+
+target = "important paralog"
+counter = 0
+gene_number = 0
+for gene in common_above:
+
+    gene_number += 1
+
+    url = "https://www.genecards.org/cgi-bin/carddisp.pl?gene=" + gene
+    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    page = webpage.decode('utf-8').splitlines()
+
+    if any(target in s for s in page) == True:
+        counter += 1
+        print(gene_number)
+
+print(counter)
+print(len(common_above))
 
 """Internal correlations
 """
@@ -1008,7 +1046,7 @@ make_spearman_pearson_correlations(
     original_common,
     'spearman_pearson_correlations_htseq_protein_truncated_v98.png')
 
-make_pseudogene_analysis(
+make_paralogs_analysis(
     data_common,
     original_common,
-    'highlight_pseudogene_comparison_isrib.png')
+    'highlight_paralogs_comparison_isrib.png')

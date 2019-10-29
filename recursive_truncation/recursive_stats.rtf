@@ -1,0 +1,421 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\margl1440\margr1440\vieww15400\viewh19280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Using Ensembl v97 for all \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 xpresspipe modifyGTF -g Arabidopsis_thaliana.TAIR10.44.gtf -p -t\
+
+\f0\fs24 \cf0 \CocoaLigature1 Currently these stats are only for CDSs that hit in exon 1 and count 3\'92 stuff too?\
+Estimates are actually 1.5x higher than previous if you don\'92t count those that hit exon 1 only and only count the 5\'92 recursive events\
+
+\f1\fs22 \cf2 \CocoaLigature0 awk '$3=="transcript"' Homo_sapiens.GRCh38.97.gtf | wc -l\
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Human (Homo sapiens) \'97 
+\f1\fs22 \cf2 \CocoaLigature0 226788 transcripts total
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 2906 records removed from reference chunk for being too short.\
+1591 transcripts requiring recursive truncation.\
+2738 records removed from reference chunk for being too short.\
+1673 transcripts requiring recursive truncation.\
+2830 records removed from reference chunk for being too short.\
+1552 transcripts requiring recursive truncation.\
+3240 records removed from reference chunk for being too short.\
+1621 transcripts requiring recursive truncation.\
+3004 records removed from reference chunk for being too short.\
+1600 transcripts requiring recursive truncation.\
+3209 records removed from reference chunk for being too short.\
+1758 transcripts requiring recursive truncation.\
+3704 records removed from reference chunk for being too short.\
+1709 transcripts requiring recursive truncation.\
+3124 records removed from reference chunk for being too short.\
+1725 transcripts requiring recursive truncation.\
+3277 records removed from reference chunk for being too short.\
+1837 transcripts requiring recursive truncation.\
+3853 records removed from reference chunk for being too short.\
+1874 transcripts requiring recursive truncation.\
+3666 records removed from reference chunk for being too short.\
+1835 transcripts requiring recursive truncation.\
+4556 records removed from reference chunk for being too short.\
+2943 transcripts requiring recursive truncation.\
+\
+(1591 + 1673 + 1552 + 1621 + 1600 + 1758 + 1709 + 1725 + 1837 + 1874 + 1835 + 2943) / 226788 = 9.58%\
+\
+\
+Mouse (Mus musculus) \'97 142333 transcripts total\
+1667 records removed from reference chunk for being too short.\
+967 transcripts requiring recursive truncation.\
+1898 records removed from reference chunk for being too short.\
+1162 transcripts requiring recursive truncation.\
+1484 records removed from reference chunk for being too short.\
+937 transcripts requiring recursive truncation.\
+1941 records removed from reference chunk for being too short.\
+1070 transcripts requiring recursive truncation.\
+1781 records removed from reference chunk for being too short.\
+1002 transcripts requiring recursive truncation.\
+1864 records removed from reference chunk for being too short.\
+1074 transcripts requiring recursive truncation.\
+1900 records removed from reference chunk for being too short.\
+1134 transcripts requiring recursive truncation.\
+1945 records removed from reference chunk for being too short.\
+1089 transcripts requiring recursive truncation.\
+2258 records removed from reference chunk for being too short.\
+1305 transcripts requiring recursive truncation.\
+1498 records removed from reference chunk for being too short.\
+991 transcripts requiring recursive truncation.\
+1650 records removed from reference chunk for being too short.\
+963 transcripts requiring recursive truncation.\
+1878 records removed from reference chunk for being too short.\
+1085 transcripts requiring recursive truncation.\
+(967 + 1162 + 937 + 1070 + 1002 + 1074 + 1134 + 1089 + 1305 + 991 + 963 + 1085) / 142333 = 6.04%\
+\
+\
+Zebrafish (Danio rerio) \'97 59876 transcripts total\
+875 records removed from reference chunk for being too short.\
+714 transcripts requiring recursive truncation.\
+950 records removed from reference chunk for being too short.\
+718 transcripts requiring recursive truncation.\
+1174 records removed from reference chunk for being too short.\
+990 transcripts requiring recursive truncation.\
+896 records removed from reference chunk for being too short.\
+762 transcripts requiring recursive truncation.\
+963 records removed from reference chunk for being too short.\
+722 transcripts requiring recursive truncation.\
+824 records removed from reference chunk for being too short.\
+638 transcripts requiring recursive truncation.\
+1002 records removed from reference chunk for being too short.\
+766 transcripts requiring recursive truncation.\
+848 records removed from reference chunk for being too short.\
+696 transcripts requiring recursive truncation.\
+1007 records removed from reference chunk for being too short.\
+761 transcripts requiring recursive truncation.\
+829 records removed from reference chunk for being too short.\
+672 transcripts requiring recursive truncation.\
+931 records removed from reference chunk for being too short.\
+758 transcripts requiring recursive truncation.\
+1004 records removed from reference chunk for being too short.\
+790 transcripts requiring recursive truncation.\
+(714 + 718 + 990 + 762 + 722 + 638 + 766 + 696 + 761 + 672 + 758 + 790) / 59876 = 15.01&\
+\
+Yeast (Saccharomyces cerevisiae) \'97 7127 transcripts total \
+20 records removed from reference chunk for being too short.\
+20 transcripts requiring recursive truncation.\
+16 records removed from reference chunk for being too short.\
+16 transcripts requiring recursive truncation.\
+9 records removed from reference chunk for being too short.\
+9 transcripts requiring recursive truncation.\
+15 records removed from reference chunk for being too short.\
+15 transcripts requiring recursive truncation.\
+10 records removed from reference chunk for being too short.\
+10 transcripts requiring recursive truncation.\
+15 records removed from reference chunk for being too short.\
+10 transcripts requiring recursive truncation.\
+13 records removed from reference chunk for being too short.\
+13 transcripts requiring recursive truncation.\
+9 records removed from reference chunk for being too short.\
+9 transcripts requiring recursive truncation.\
+17 records removed from reference chunk for being too short.\
+17 transcripts requiring recursive truncation.\
+13 records removed from reference chunk for being too short.\
+13 transcripts requiring recursive truncation.\
+11 records removed from reference chunk for being too short.\
+11 transcripts requiring recursive truncation.\
+17 records removed from reference chunk for being too short.\
+17 transcripts requiring recursive truncation.\
+(20 + 16 + 9 + 15 + 10 + 10 + 13 + 9 + 17 + 13 + 11 + 17) / 7127 = 2.22%\
+\
+\
+Fruit Fly (Drosophila melanogaster)\
+408 records removed from reference chunk for being too short.\
+339 transcripts requiring recursive truncation.\
+438 records removed from reference chunk for being too short.\
+384 transcripts requiring recursive truncation.\
+487 records removed from reference chunk for being too short.\
+389 transcripts requiring recursive truncation.\
+395 records removed from reference chunk for being too short.\
+341 transcripts requiring recursive truncation.\
+470 records removed from reference chunk for being too short.\
+378 transcripts requiring recursive truncation.\
+390 records removed from reference chunk for being too short.\
+352 transcripts requiring recursive truncation.\
+371 records removed from reference chunk for being too short.\
+308 transcripts requiring recursive truncation.\
+410 records removed from reference chunk for being too short.\
+337 transcripts requiring recursive truncation.\
+357 records removed from reference chunk for being too short.\
+318 transcripts requiring recursive truncation.\
+385 records removed from reference chunk for being too short.\
+330 transcripts requiring recursive truncation.\
+385 records removed from reference chunk for being too short.\
+335 transcripts requiring recursive truncation.\
+501 records removed from reference chunk for being too short.\
+451 transcripts requiring recursive truncation.\
+(339 + 384 + 389 + 341 + 378 + 352 + 308 + 337 + 318 + 330 + 335 + 451) / 34793 = 12.25%\
+\
+\
+Rat (Rattus norvegicus) \'97 \
+563 records removed from reference chunk for being too short.\
+397 transcripts requiring recursive truncation.\
+481 records removed from reference chunk for being too short.\
+370 transcripts requiring recursive truncation.\
+551 records removed from reference chunk for being too short.\
+447 transcripts requiring recursive truncation.\
+535 records removed from reference chunk for being too short.\
+424 transcripts requiring recursive truncation.\
+614 records removed from reference chunk for being too short.\
+496 transcripts requiring recursive truncation.\
+575 records removed from reference chunk for being too short.\
+452 transcripts requiring recursive truncation.\
+535 records removed from reference chunk for being too short.\
+417 transcripts requiring recursive truncation.\
+591 records removed from reference chunk for being too short.\
+479 transcripts requiring recursive truncation.\
+467 records removed from reference chunk for being too short.\
+350 transcripts requiring recursive truncation.\
+511 records removed from reference chunk for being too short.\
+398 transcripts requiring recursive truncation.\
+497 records removed from reference chunk for being too short.\
+388 transcripts requiring recursive truncation.\
+593 records removed from reference chunk for being too short.\
+384 transcripts requiring recursive truncation.\
+(397 + 370 + 447 + 424 + 496 + 452 + 417 + 479 + 350 + 398 + 388 + 384) / 41078 = 12.18% \
+\
+\
+Frog (Xenopus tropicalis) \'97 \
+389 records removed from reference chunk for being too short.\
+325 transcripts requiring recursive truncation.\
+370 records removed from reference chunk for being too short.\
+309 transcripts requiring recursive truncation.\
+394 records removed from reference chunk for being too short.\
+317 transcripts requiring recursive truncation.\
+396 records removed from reference chunk for being too short.\
+313 transcripts requiring recursive truncation.\
+381 records removed from reference chunk for being too short.\
+309 transcripts requiring recursive truncation.\
+412 records removed from reference chunk for being too short.\
+335 transcripts requiring recursive truncation.\
+421 records removed from reference chunk for being too short.\
+343 transcripts requiring recursive truncation.\
+381 records removed from reference chunk for being too short.\
+311 transcripts requiring recursive truncation.\
+435 records removed from reference chunk for being too short.\
+353 transcripts requiring recursive truncation.\
+406 records removed from reference chunk for being too short.\
+304 transcripts requiring recursive truncation.\
+389 records removed from reference chunk for being too short.\
+305 transcripts requiring recursive truncation.\
+439 records removed from reference chunk for being too short.\
+330 transcripts requiring recursive truncation.\
+(325 + 309 + 317 + 313 + 309 + 335 + 343 + 311 + 353 + 304 + 305 + 330) / 24197 = 15.93%\
+\
+\
+Thale cress (Arabidopsis thaliana) \'97 54013 transcripts total\
+440 records removed from reference chunk for being too short.\
+348 transcripts requiring recursive truncation.\
+485 records removed from reference chunk for being too short.\
+385 transcripts requiring recursive truncation.\
+459 records removed from reference chunk for being too short.\
+352 transcripts requiring recursive truncation.\
+482 records removed from reference chunk for being too short.\
+371 transcripts requiring recursive truncation.\
+459 records removed from reference chunk for being too short.\
+391 transcripts requiring recursive truncation.\
+423 records removed from reference chunk for being too short.\
+327 transcripts requiring recursive truncation.\
+490 records removed from reference chunk for being too short.\
+381 transcripts requiring recursive truncation.\
+469 records removed from reference chunk for being too short.\
+364 transcripts requiring recursive truncation.\
+505 records removed from reference chunk for being too short.\
+384 transcripts requiring recursive truncation.\
+516 records removed from reference chunk for being too short.\
+384 transcripts requiring recursive truncation.\
+422 records removed from reference chunk for being too short.\
+333 transcripts requiring recursive truncation.\
+543 records removed from reference chunk for being too short.\
+408 transcripts requiring recursive truncation.\
+(348 + 385 + 352 + 371 + 391 + 327 + 381 + 364 + 384 + 384 + 333 + 408) / 54013 = 8.20% \
+\
+\
+\
+C. Elegans \'97 \
+253 records removed from reference chunk for being too short.\
+198 transcripts requiring recursive truncation.\
+473 records removed from reference chunk for being too short.\
+399 transcripts requiring recursive truncation.\
+471 records removed from reference chunk for being too short.\
+391 transcripts requiring recursive truncation.\
+577 records removed from reference chunk for being too short.\
+444 transcripts requiring recursive truncation.\
+512 records removed from reference chunk for being too short.\
+430 transcripts requiring recursive truncation.\
+609 records removed from reference chunk for being too short.\
+487 transcripts requiring recursive truncation.\
+492 records removed from reference chunk for being too short.\
+395 transcripts requiring recursive truncation.\
+588 records removed from reference chunk for being too short.\
+487 transcripts requiring recursive truncation.\
+627 records removed from reference chunk for being too short.\
+437 transcripts requiring recursive truncation.\
+514 records removed from reference chunk for being too short.\
+412 transcripts requiring recursive truncation.\
+607 records removed from reference chunk for being too short.\
+506 transcripts requiring recursive truncation.\
+595 records removed from reference chunk for being too short.\
+462 transcripts requiring recursive truncation.\
+(198 + 399 + 391 + 444 + 430 + 487 + 395 + 487 + 437 + 412 + 506 + 462) / 61451 = 8.21% \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+Some examples of overflow CDSs:\
+\
+These are just a sample of the ones over 35 bp, canonical transcripts\
+\
+\
+43\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                              7771384\
+4                                              7771385\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000049245"; gene_version "13"; ...\
+Name: 2, dtype: object\
+gene_id "ENSG00000049245"; gene_version "13"; transcript_id "ENST00000054666"; transcript_version "11"; exon_number "1"; gene_name "VAMP3"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "VAMP3-201"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS88"; protein_id "ENSP00000054666"; protein_version "6"; tag "basic"; transcript_support_level "1 (assigned to previous version 10)";\
+42\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                              1013574\
+4                                              1013576\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000187608"; gene_version "10"; ...\
+Name: 186, dtype: object\
+gene_id "ENSG00000187608"; gene_version "10"; transcript_id "ENST00000649529"; transcript_version "1"; exon_number "1"; gene_name "ISG15"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "ISG15-203"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS6"; protein_id "ENSP00000496832"; protein_version "1"; tag "basic";\
+36\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             13715606\
+4                                             13715614\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000116731"; gene_version "22"; ...\
+Name: 114, dtype: object\
+gene_id "ENSG00000116731"; gene_version "22"; transcript_id "ENST00000235372"; transcript_version "11"; exon_number "2"; gene_name "PRDM2"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "PRDM2-201"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS150"; protein_id "ENSP00000235372"; protein_version "6"; tag "basic"; transcript_support_level "1";\
+40\
+0                                                    1\
+1                                               havana\
+2                                                  CDS\
+3                                              1280662\
+4                                              1280666\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000162572"; gene_version "20"; ...\
+Name: 441, dtype: object\
+gene_id "ENSG00000162572"; gene_version "20"; transcript_id "ENST00000379116"; transcript_version "9"; exon_number "1"; gene_name "SCNN1D"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "SCNN1D-205"; transcript_source "havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS44037"; protein_id "ENSP00000368411"; protein_version "5"; tag "basic"; transcript_support_level "5";\
+42\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             46248406\
+4                                             46248408\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000085999"; gene_version "13"; ...\
+Name: 303, dtype: object\
+gene_id "ENSG00000085999"; gene_version "13"; transcript_id "ENST00000371975"; transcript_version "9"; exon_number "1"; gene_name "RAD54L"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "RAD54L-201"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS532"; protein_id "ENSP00000361043"; protein_version "4"; tag "basic"; transcript_support_level "1 (assigned to previous version 8)";\
+37\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             10399118\
+4                                             10399125\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000142657"; gene_version "21"; ...\
+Name: 722, dtype: object\
+gene_id "ENSG00000142657"; gene_version "21"; transcript_id "ENST00000270776"; transcript_version "13"; exon_number "1"; gene_name "PGD"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "PGD-201"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS113"; protein_id "ENSP00000270776"; protein_version "8"; tag "basic"; transcript_support_level "1 (assigned to previous version 12)";\
+41\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             32073048\
+4                                             32073051\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000121775"; gene_version "18"; ...\
+Name: 735, dtype: object\
+gene_id "ENSG00000121775"; gene_version "18"; transcript_id "ENST00000336294"; transcript_version "10"; exon_number "1"; gene_name "TMEM39B"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "TMEM39B-201"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS351"; protein_id "ENSP00000338165"; protein_version "5"; tag "basic"; transcript_support_level "1 (assigned to previous version 9)";\
+41\
+41\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             32108131\
+4                                             32108134\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000025800"; gene_version "14"; ...\
+Name: 758, dtype: object\
+gene_id "ENSG00000025800"; gene_version "14"; transcript_id "ENST00000373625"; transcript_version "8"; exon_number "1"; gene_name "KPNA6"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "KPNA6-201"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS352"; protein_id "ENSP00000362728"; protein_version "3"; tag "basic"; transcript_support_level "1 (assigned to previous version 7)";\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             44775597\
+4                                             44775600\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000142937"; gene_version "12"; ...\
+Name: 744, dtype: object\
+gene_id "ENSG00000142937"; gene_version "12"; transcript_id "ENST00000396651"; transcript_version "8"; exon_number "1"; gene_name "RPS8"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "RPS8-202"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS513"; protein_id "ENSP00000379888"; protein_version "3"; tag "basic"; transcript_support_level "1 (assigned to previous version 7)";\
+42\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             32222442\
+4                                             32222444\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000084623"; gene_version "11"; ...\
+Name: 883, dtype: object\
+gene_id "ENSG00000084623"; gene_version "11"; transcript_id "ENST00000373586"; transcript_version "1"; exon_number "1"; gene_name "EIF3I"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "EIF3I-202"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS357"; protein_id "ENSP00000362688"; protein_version "1"; tag "basic"; transcript_support_level "1";\
+39\
+0                                                    1\
+1                                       ensembl_havana\
+2                                                  CDS\
+3                                             23691824\
+4                                             23691829\
+5                                                    .\
+6                                                    +\
+7                                                    0\
+8    gene_id "ENSG00000142676"; gene_version "14"; ...\
+Name: 1165, dtype: object\
+gene_id "ENSG00000142676"; gene_version "14"; transcript_id "ENST00000643754"; transcript_version "2"; exon_number "1"; gene_name "RPL11"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "RPL11-206"; transcript_source "ensembl_havana"; transcript_biotype "protein_coding"; tag "CCDS"; ccds_id "CCDS238"; protein_id "ENSP00000496250"; protein_version "1"; tag "basic";}
