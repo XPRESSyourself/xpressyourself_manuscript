@@ -159,10 +159,11 @@ Database of Genotypes and Phenotypes. \url{https://www.ncbi.nlm.nih.gov/gap/}.
 
 \bibitem{aws_ec2}
 Amazon Web Services EC2 Computing.
-  \url{https://aws.amazon.com/ec2/pricing/on-demand/}. Accessed 18 July 2019.
+  \url{https://aws.amazon.com/ec2/pricing/on-demand/}. Accessed 29 October
+  2019.
 
 \bibitem{aws_s3}
 Amazon Web Services S3 Storage. \url{https://aws.amazon.com/s3/pricing/}.
-  Accessed 18 July 2019.
+  Accessed 29 October 2019.
 
 \end{thebibliography}

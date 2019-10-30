@@ -249,7 +249,7 @@ While at this stage speculative, it is interesting that the processing of these 
 \end{table*}
 
 \subsection*{Cost Analysis and Performance}
-XPRESSpipe functions can be computationally intensive. Super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) \cite{aws} can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} summarizes the runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files that were aligned to \textit{Homo sapiens}; thus it acts as a high-end estimate of the time required to process data with XPRESSpipe. For a comparable dataset, cost to use an AWS computational node with similar specifications for the above elapsed time would be approximately 13.33 USD using an Amazon EC2 On-Demand m5.4xlarge node (however, significantly reduced rates are available if using Spot instances or by using the free tier) and storage cost would amount to around 11.5 USD/month on Amazon S3 storage (storage costs could be reduced as much of the intermediate data may not be relevent for certain users; however, raw input data should always be archived by the user). \\
+XPRESSpipe functions can be computationally intensive. Super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) \cite{aws} can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} summarizes the runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files that were aligned to \textit{Homo sapiens}; thus it acts as a high-end estimate of the time required to process data with XPRESSpipe. For a comparable dataset, cost to use an AWS computational node with similar specifications for the above elapsed time would be approximately 44.39 USD using an Amazon EC2 On-Demand m5.12xlarge node (however, significantly reduced rates are available if using Spot instances or by using the free tier; also, while relatively slower, one could use a m5.4xlarge node at about a third the rate as the m5.12xlarge) and storage cost would amount to around 17.41 USD/month for all input and output data on Amazon S3 storage (storage costs could be reduced as much of the intermediate data may not be relevent for certain users; however, raw input data should always be archived by the user). \\
 
 \begin{table*}[h]
     \centering
@@ -283,7 +283,7 @@ XPRESSpipe functions can be computationally intensive. Super-computing resources
   \hline
   rRNA probe & \texttt{rrnaProbe} & 00h 00m 55s & 00.15 GB \\
   \hline
-  Pipeline & \texttt{riboseq} &  & \\
+  Pipeline & \texttt{riboseq} & 19h 16m 08s & 61.89 GB \\
   \hline
   & & & \\
   \hline

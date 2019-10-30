@@ -30,7 +30,7 @@ Warning--entry type for "matvenn" isn't style-file defined
 Warning--empty journal in seaborn
 You've used 38 entries,
             2310 wiz_defined-function locations,
-            928 strings with 11921 characters,
+            928 strings with 11924 characters,
 and the built_in function-call counts, 6885 in all, are:
 = -- 615
 > -- 281

@@ -8,53 +8,53 @@ Warning--entry type for "dnanexus_pipeline" isn't style-file defined
 Warning--entry type for "nextflow_pipeline" isn't style-file defined
 --line 505 of file manubib.bib
 Warning--entry type for "aws" isn't style-file defined
---line 617 of file manubib.bib
+--line 616 of file manubib.bib
 Warning--entry type for "manuscript" isn't style-file defined
---line 621 of file manubib.bib
+--line 620 of file manubib.bib
 Warning--entry type for "tcga" isn't style-file defined
---line 626 of file manubib.bib
+--line 625 of file manubib.bib
 Warning--entry type for "xpressyourself" isn't style-file defined
---line 638 of file manubib.bib
+--line 637 of file manubib.bib
 Warning--entry type for "genecards" isn't style-file defined
---line 646 of file manubib.bib
+--line 645 of file manubib.bib
 Warning--entry type for "uniprot" isn't style-file defined
---line 651 of file manubib.bib
+--line 650 of file manubib.bib
 Warning--entry type for "ncbi" isn't style-file defined
---line 656 of file manubib.bib
+--line 655 of file manubib.bib
 Warning--entry type for "isrib_geo" isn't style-file defined
---line 671 of file manubib.bib
+--line 670 of file manubib.bib
 Warning--entry type for "tcga_data" isn't style-file defined
---line 675 of file manubib.bib
+--line 674 of file manubib.bib
 Warning--entry type for "xpresspipe_docs" isn't style-file defined
---line 679 of file manubib.bib
+--line 678 of file manubib.bib
 Warning--entry type for "xpressplot_docs" isn't style-file defined
---line 683 of file manubib.bib
+--line 682 of file manubib.bib
 Warning--entry type for "orfik" isn't style-file defined
---line 784 of file manubib.bib
+--line 783 of file manubib.bib
 Warning--entry type for "riboseqr" isn't style-file defined
---line 806 of file manubib.bib
+--line 805 of file manubib.bib
 Warning--entry type for "picard" isn't style-file defined
---line 811 of file manubib.bib
+--line 810 of file manubib.bib
 You've used 90 entries,
             2310 wiz_defined-function locations,
-            1184 strings with 24330 characters,
-and the built_in function-call counts, 16826 in all, are:
-= -- 1624
+            1181 strings with 24323 characters,
+and the built_in function-call counts, 16780 in all, are:
+= -- 1620
 > -- 843
 < -- 0
 + -- 429
 - -- 207
-* -- 1228
-:= -- 2643
+* -- 1223
+:= -- 2639
 add.period$ -- 166
 call.type$ -- 90
 change.case$ -- 0
 chr.to.int$ -- 0
 cite$ -- 90
-duplicate$ -- 1056
-empty$ -- 1512
+duplicate$ -- 1055
+empty$ -- 1507
 format.name$ -- 281
-if$ -- 3837
+if$ -- 3824
 int.to.chr$ -- 0
 int.to.str$ -- 90
 missing$ -- 73
@@ -64,16 +64,16 @@ pop$ -- 384
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 487
+skip$ -- 484
 stack$ -- 0
-substring$ -- 171
+substring$ -- 161
 swap$ -- 245
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 90
+while$ -- 89
 width$ -- 92
 write$ -- 839
 (There were 16 warnings)

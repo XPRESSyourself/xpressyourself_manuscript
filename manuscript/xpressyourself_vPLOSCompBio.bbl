@@ -336,7 +336,7 @@ C.~Wu, B.~Zinshteyn, K.~Wehner, R.~Green. High-Resolution Ribosome Profiling
 \bibitem{dupradar}
 S.~Sayols, D.~Scherzinger, H.~Klein. dupRadar: a Bioconductor package for the
   assessment of PCR artifacts in RNA-Seq data. {\it BMC Bioinformatics\/} {\bf
-  17}, 428 (2016). Available from: https://doi.org/10.1186/s12859-016-1276-2.
+  17} (2016). Available from: https://doi.org/10.1186/s12859-016-1276-2.
 
 \bibitem{ribowaltz}
 F.~Lauria, {\it et~al.\/}. riboWaltz: Optimization of ribosome P-site
