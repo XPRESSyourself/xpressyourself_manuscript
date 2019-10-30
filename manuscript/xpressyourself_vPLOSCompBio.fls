@@ -77,6 +77,8 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
@@ -114,6 +116,7 @@ INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
@@ -128,6 +131,8 @@ OUTPUT xpressyourself_vPLOSCompBio.pdf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
