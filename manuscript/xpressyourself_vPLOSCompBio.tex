@@ -251,41 +251,41 @@ While at this stage speculative, it is interesting that the processing of these 
 \end{table*}
 
 \subsection*{Cost Analysis and Performance}
-XPRESSpipe functions can be computationally intensive. Super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) \cite{aws} can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} summarizes the runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files that were aligned to \textit{Homo sapiens}; thus it acts as a high-end estimate of the time required to process data with XPRESSpipe. For a comparable dataset, cost to use an AWS computational node with similar specifications for the above elapsed time would be approximately 44.39 USD using an Amazon EC2 On-Demand m5.12xlarge node (however, significantly reduced rates are available if using Spot instances or by using the free tier; also, while relatively slower, one could use a m5.4xlarge node at about a third the rate as the m5.12xlarge) and storage cost would amount to around 17.41 USD/month for all input and output data on Amazon S3 storage (storage costs could be reduced as much of the intermediate data may not be relevent for certain users; however, raw input data should always be archived by the user). \\
+XPRESSpipe functions can be computationally intensive. Super-computing resources are recommended, especially when handling large datasets or when aligning to larger, more complex genomes. Many universities provide super-computing resources to their affiliates; however, in cases where these resources are not available, servers such as Amazon Web Services (AWS) \cite{aws} can be used to process sequencing data using XPRESSpipe. Table \ref{tab:chpc_performance} summarizes the runtime statistics for the ISRIB dataset used in this study. The ISRIB ribosome profiling dataset contained a total of 32 raw sequence files that were aligned to \textit{Homo sapiens}; thus it acts as a high-end estimate of the time required to process data with XPRESSpipe. For a comparable dataset, cost to use an AWS computational node with similar specifications for the specified pipeline elapsed time in Table \ref{tab:chpc_performance} would be approximately 25.76 USD using an Amazon EC2 On-Demand m5.8xlarge (however, significantly reduced rates are available if using Spot instances or by using the free tier) and storage cost would amount to around 17.41 USD/month for all input and output data on Amazon S3 storage (storage costs could be reduced as much of the intermediate data may not be relevent for certain users; however, raw input data should always be archived by the user).\\
 
 \begin{table*}[h]
     \centering
-\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.} \texttt{geneCoverage} module performed on high-coverage gene. While some memory footprints are large in this test case, steps will scale based on available user resources. Input raw FASTQ files were uncompressed. The \texttt{metagene} and \texttt{geneCoverage} sub-modules used a conservative BAM file multiprocessing limit to avoid out-of-memory errors.}
-\begin{tabular}{p{5cm}p{3.5cm}p{2.7cm}p{1.8cm}}
+\captionof{table}{\textbf{XPRESSpipe sub-module statistics for dataset GSE65778.} \texttt{geneCoverage} module performed on high-coverage gene. While some memory footprints are large in this test case, steps will scale based on available user resources. Input raw FASTQ files were uncompressed. The \texttt{metagene} and \texttt{geneCoverage} sub-modules used a conservative BAM file multiprocessing limit to avoid out-of-memory errors. XPRESSpipe v0.3.1 was used to generate these statistics.}
+\begin{tabular}{p{4.8cm}p{3.7cm}p{2.7cm}p{1.8cm}}
 \textbf{Process} & \textbf{Command} & \textbf{Wallclock Time} & \textbf{Max RAM}\\
   \hline
-  Curate STAR reference & \texttt{curateReference} & 00h 34m 01s & 34.03 GB \\
+  Curate STAR reference & \texttt{curateReference} & 00h 38m 34s & 34.03 GB \\
   \hline
-  Truncate GTF & \texttt{modifyGTF -t} & 00h 02m 45s & 03.25 GB \\
+  Truncate GTF & \texttt{modifyGTF -t} & 00h 03m 40s & 03.27 GB \\
   \hline
-  Read Pre-processing & \texttt{trim} & 00h 18m 21s & 00.48 GB \\
+  Read Pre-processing & \texttt{trim} & 00h 08m 50s & 00.48 GB \\
   \hline
-  Alignment and Post-processing & \texttt{align} & 06h 16m 18s & 38.00 GB \\
+  Alignment / Post-processing & \texttt{align} & 07h 57m 44s & 38.03 GB \\
   \hline
-  Read Quantification & \texttt{count -c htseq} & 04h 13m 04s & 00.16 GB \\
+  Read Quantification & \texttt{count -c htseq} & 03h 13m 04s & 00.16 GB \\
   \hline
-  Isoform Abundance & \texttt{count -c cufflinks} & 01h 09m 32s & 02.36 GB \\
+  Isoform Abundance & \texttt{count -c cufflinks} & 00h 56m 44s & 02.36 GB \\
   \hline
   Differential Expression (n=9) & \texttt{diffxpress} & 00h 07m 50s & 00.65 GB \\
   \hline
-  Read Distributions & \texttt{readDistribution} & 00h 06m 19s & 00.28 GB \\
+  Read Distributions & \texttt{readDistribution} & 00h 05m 00s & 00.28 GB \\
   \hline
-  Metagene Analysis & \texttt{metagene} & 01h 34m 09s & 35.52 GB \\
+  Metagene Analysis & \texttt{metagene} & 01h 45m 35s & 35.52 GB \\
   \hline
-  Gene Coverage (n=1) & \texttt{geneCoverage} & 03h 49m 03s & 19.22 GB \\
+  Gene Coverage (n=1) & \texttt{geneCoverage} & 01h 24m 00s & 19.32 GB \\
   \hline
-  Periodicity & \texttt{periodicity} & 01h 00m 57s & 61.89 GB \\
+  Periodicity & \texttt{periodicity} & 01h 08m 22s & 54.16 GB \\
   \hline
-  Library Complexity & \texttt{complexity} & 00h 48m 46s & 01.98 GB \\
+  Library Complexity & \texttt{complexity} & 01h 02m 57s & 01.52 GB \\
   \hline
   rRNA probe & \texttt{rrnaProbe} & 00h 00m 55s & 00.15 GB \\
   \hline
-  Pipeline & \texttt{riboseq} & 19h 16m 08s & 61.89 GB \\
+  Pipeline & \texttt{riboseq} & 16h 46m 19s & 54.16 GB \\
   \hline
   & & & \\
   \hline
@@ -296,7 +296,7 @@ XPRESSpipe functions can be computationally intensive. Super-computing resources
   \hline
   Total Output & & & 500 GB \\
   \hline
-  Allocated CPUs & & & 20 \\
+  Allocated Virtual CPUs & & & 32 \\
   \hline
   Allocated Memory & & & 64 GB \\
  \label{tab:chpc_performance}
