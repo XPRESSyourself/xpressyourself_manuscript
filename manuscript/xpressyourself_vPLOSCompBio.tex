@@ -20,7 +20,7 @@
 \usepackage{multicol}
 \setlength{\columnsep}{0.5cm}
 \usepackage{titlesec}
-\usepackage{lineno}
+%\usepackage{lineno}
 
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}
@@ -75,8 +75,9 @@
 %%%%%%%%%%%%%%%%% START OF DOCUMENT %%%%%%%%%%%%%%%%
 
 \begin{document}
-\modulolinenumbers[1]
-\linenumbers
+%\modulolinenumbers[1]
+%\linenumbers
+
 % Double-space the manuscript.
 \baselineskip24pt
 
@@ -326,7 +327,7 @@ With the adoption of this flexible pipeline, the field of high-throughput sequen
  \hline
  Operating Systems & macOS, Linux, centOS \\
  \hline
- Programming Languages & Python, R \\
+ Programming Languages & Python, R, Julia \\
  \hline
  Other Requirements & Anaconda \\
  \hline
@@ -374,38 +375,38 @@ Protected TCGA data were obtained through dbGaP project number 21674 and utilize
 \section*{Consent for Publication}
 Protected TCGA data were obtained through dbGaP project number 21674 and utilized according to the associated policies and guidelines.\\
 
-\section*{Competing Interests}
-The authors declare that they have no competing interests.\\
+%\section*{Competing Interests}
+%The authors declare that they have no competing interests.\\
 
-\section*{Funding}
-J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher. J.T.M. received support as an HHMI Fellow of the Jane Coffin Childs Memorial Fund for Medical Research. A.J.B received support from the National Cancer Institute (NCI) Predoctoral to Postdoctoral Fellow Transition Award, K00CA212445. This work was supported by NIDDK fellowship 1T32DK11096601 (to J.A.B.) and NIH grant R35GM13185 (to J.R.). The computational resources used were partially funded by the NIH Shared Instrumentation Grant 1S10OD021644-01A1.\\
+%\section*{Funding}
+%J.A.B. received support from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) Inter-disciplinary Training Grant T32 Program in Computational Approaches to Diabetes and Metabolism Research, 1T32DK11096601 to Wendy W. Chapman and Simon J. Fisher. J.T.M. received support as an HHMI Fellow of the Jane Coffin Childs Memorial Fund for Medical Research. A.J.B received support from the National Cancer Institute (NCI) Predoctoral to Postdoctoral Fellow Transition Award, K00CA212445. This work was supported by NIDDK fellowship 1T32DK11096601 (to J.A.B.) and NIH grant R35GM13185 (to J.R.). The computational resources used were partially funded by the NIH Shared Instrumentation Grant 1S10OD021644-01A1.\\
 
-\section*{Contributions}
-J.A.B. conceptualized and administered the project; performed all investigation, analysis, visualization, and data curation; provisioned resources; and wrote the original draft of this manuscript. J.A.B., J.R.B., J.T.M., and J.G. and developed the methodology. J.A.B. and J.R.B. designed and wrote the software. J.A.B., J.T.M., A.J.B., and Y.O. performed software validation. J.A.B. and J.R. acquired funding. J.R., A.R.Q., and J.G. supervised the study. All authors reviewed and edited this manuscript.\\
+%\section*{Contributions}
+%J.A.B. conceptualized and administered the project; performed all investigation, analysis, visualization, and data curation; provisioned resources; and wrote the original draft of this manuscript. J.A.B., J.R.B., J.T.M., and J.G. and developed the methodology. J.A.B. and J.R.B. designed and wrote the software. J.A.B., J.T.M., A.J.B., and Y.O. performed software validation. J.A.B. and J.R. acquired funding. J.R., A.R.Q., and J.G. supervised the study. All authors reviewed and edited this manuscript.\\
 
-\begin{table*}[!]
-    \centering
-\captionof{table}{\textbf{Author ORCIDs}}
-\begin{tabular}{p{1.5cm}p{4cm}}
- \textbf{Author} & \textbf{ORCID}\\
- \hline
- J.A.B. & 0000-0002-5096-0558 \\
- \hline
- J.R.B. & 0000-0001-5470-8299 \\
- \hline
- J.T.M. & 0000-0002-3017-8665 \\
- \hline
- Y.O. & 0000-0001-9523-1044 \\
- \hline
- A.J.B. & 0000-0003-2273-8922 \\
- \hline
- A.R.Q. & 0000-0003-1756-0859 \\
- \hline
- J.G. & 0000-0001-7568-6789 \\
- \hline
- J.R. & 0000-0002-2710-9765 \\
-\end{tabular}
-\end{table*}
+%\begin{table*}[!]
+%    \centering
+%\captionof{table}{\textbf{Author ORCIDs}}
+%\begin{tabular}{p{1.5cm}p{4cm}}
+% \textbf{Author} & \textbf{ORCID}\\
+% \hline
+% J.A.B. & 0000-0002-5096-0558 \\
+% \hline
+% J.R.B. & 0000-0001-5470-8299 \\
+% \hline
+% J.T.M. & 0000-0002-3017-8665 \\
+% \hline
+% Y.O. & 0000-0001-9523-1044 \\
+% \hline
+% A.J.B. & 0000-0003-2273-8922 \\
+% \hline
+% A.R.Q. & 0000-0003-1756-0859 \\
+% \hline
+% J.G. & 0000-0001-7568-6789 \\
+% \hline
+% J.R. & 0000-0002-2710-9765 \\
+%\end{tabular}
+%\end{table*}
 
 \section*{Acknowledgments}
 The authors wish to thank Michael T. Howard for helpful discussions concerning ribosome profiling and sequencing analysis. The authors also wish to thank Mark E. Wadsworth, Ryan Miller, and Michael J. Cormier for helpful discussions on pipeline design. They also wish to thank T. Cameron Waller for helpful discussions related to pipeline design and biological analysis. The support and resources from the Center for High-Performance Computing at the University of Utah are gratefully acknowledged. The results published here are in whole or part based upon data generated by the TCGA Research Network \cite{tcga}.\\

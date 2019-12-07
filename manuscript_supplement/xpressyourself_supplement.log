@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 OCT 2019 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 OCT 2019 13:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -377,43 +377,25 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen125
 \titlewidthfirst=\dimen126
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count102
-\output=\toks20
-\linenoprevgraf=\count103
-\linenumbersep=\dimen127
-\linenumberwidth=\dimen128
-\c@linenumber=\count104
-\c@pagewiselinenumber=\count105
-\c@LN@truepage=\count106
-\c@internallinenumber=\count107
-\c@internallinenumbers=\count108
-\quotelinenumbersep=\dimen129
-\bframerule=\dimen130
-\bframesep=\dimen131
-\bframebox=\box55
-LaTeX Info: Redefining \\ on input line 3056.
-)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count109
-\lst@gtempboxa=\box56
-\lst@token=\toks21
-\lst@length=\count110
-\lst@currlwidth=\dimen132
-\lst@column=\count111
-\lst@pos=\count112
-\lst@lostspace=\dimen133
-\lst@width=\dimen134
-\lst@newlines=\count113
-\lst@lineno=\count114
-\lst@maxwidth=\dimen135
+\lst@mode=\count102
+\lst@gtempboxa=\box55
+\lst@token=\toks20
+\lst@length=\count103
+\lst@currlwidth=\dimen127
+\lst@column=\count104
+\lst@pos=\count105
+\lst@lostspace=\dimen128
+\lst@width=\dimen129
+\lst@newlines=\count106
+\lst@lineno=\count107
+\lst@maxwidth=\dimen130
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count115
-\lst@skipnumbers=\count116
-\lst@framebox=\box57
+\c@lstnumber=\count108
+\lst@skipnumbers=\count109
+\lst@framebox=\box56
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -460,17 +442,17 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen136
-\scratchbox=\box58
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen137
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count110
+\scratchdimen=\dimen131
+\scratchbox=\box57
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen132
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -507,26 +489,26 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count123
+\c@lstlisting=\count116
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 98.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 99.
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--100
+Underfull \hbox (badness 10000) in paragraph at lines 96--101
 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 101.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 102.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 102.
+(Font)              <7> on input line 103.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 102.
+(Font)              <5> on input line 103.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 105.
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
@@ -534,39 +516,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
 File: figures/xpresspipe_supplement8.png Graphic file (type png)
 <use figures/xpresspipe_supplement8.png>
 Package pdftex.def Info: figures/xpresspipe_supplement8.png  used on input line
- 111.
+ 112.
 (pdftex.def)             Requested size: 512.1496pt x 301.56578pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 112.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 113.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 112.
+(Font)              <9> on input line 113.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 112.
+(Font)              <6> on input line 113.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 112.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 113.
 <figures/xpresspipe_supplement9.png, id=2, 430.4883pt x 437.2335pt>
 File: figures/xpresspipe_supplement9.png Graphic file (type png)
 <use figures/xpresspipe_supplement9.png>
 Package pdftex.def Info: figures/xpresspipe_supplement9.png  used on input line
- 118.
+ 119.
 (pdftex.def)             Requested size: 512.1496pt x 520.23425pt.
 <figures/xpresspipe_supplement10.png, id=3, 451.4466pt x 258.2448pt>
 File: figures/xpresspipe_supplement10.png Graphic file (type png)
 <use figures/xpresspipe_supplement10.png>
 Package pdftex.def Info: figures/xpresspipe_supplement10.png  used on input lin
-e 125.
+e 126.
 (pdftex.def)             Requested size: 512.1496pt x 292.97171pt.
 <figures/xpresspipe_supplement11.png, id=4, 428.0793pt x 432.8973pt>
 File: figures/xpresspipe_supplement11.png Graphic file (type png)
 <use figures/xpresspipe_supplement11.png>
 Package pdftex.def Info: figures/xpresspipe_supplement11.png  used on input lin
-e 132.
+e 133.
 (pdftex.def)             Requested size: 512.1496pt x 517.92848pt.
 <figures/xpresspipe_supplement12.png, id=5, 378.213pt x 349.0641pt>
 File: figures/xpresspipe_supplement12.png Graphic file (type png)
 <use figures/xpresspipe_supplement12.png>
 Package pdftex.def Info: figures/xpresspipe_supplement12.png  used on input lin
-e 139.
+e 140.
 (pdftex.def)             Requested size: 512.1496pt x 472.70757pt.
 [1
 
@@ -575,24 +557,24 @@ e 139.
 supplement9.png (PNG copy)>] [4 <./figures/xpresspipe_supplement10.png (PNG cop
 y)>] [5 <./figures/xpresspipe_supplement11.png (PNG copy)>] [6 <./figures/xpres
 spipe_supplement12.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 
-Overfull \hbox (4.11082pt too wide) in paragraph at lines 196--196
+Overfull \hbox (4.11082pt too wide) in paragraph at lines 197--197
 []\T1/phv/m/n/10 GenomicAlignments| 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 240.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 241.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -605,131 +587,131 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) [8]
-Overfull \hbox (13.99133pt too wide) in paragraph at lines 282--282
+Overfull \hbox (13.99133pt too wide) in paragraph at lines 283--283
 []\T1/phv/m/n/10 Further anal-y-ses, such as ad-di-tional gene cov-er-age pro-f
 iles, dif-fer-en-tial ex-pres-sion anal-y-sis, and batch nor-mal-iza-tion,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
 
-Overfull \hbox (3.50488pt too wide) in paragraph at lines 307--307
+Overfull \hbox (3.50488pt too wide) in paragraph at lines 308--308
 []\T1/phv/m/n/10 Ensembl canon-i-cal tran-scripts are de-ter-mined ac-cord-ing 
 to the En-sembl glos-sary def-i-ni-tion of a canon-i-cal tran-script
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 313.
+               Default added (so using `!tbp') on input line 314.
 
 
-Underfull \hbox (badness 5681) in paragraph at lines 317--317
+Underfull \hbox (badness 5681) in paragraph at lines 318--318
 []\T1/phv/b/n/10 # CDSs re-quir-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--317
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
 \T1/phv/b/n/10 re-cur-sive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--317
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
 []\T1/phv/b/n/10 # of tran-scripts
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 []\T1/phv/b/n/10 Percentage of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 \T1/phv/b/n/10 recursive-requiring
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 \T1/phv/b/n/10 CDSs to to-tal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
 [10]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 347.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 348.
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
 
-Overfull \hbox (2.88306pt too wide) in paragraph at lines 373--374
+Overfull \hbox (2.88306pt too wide) in paragraph at lines 374--375
 \T1/phv/m/n/10 transcriptome-aligned BAM files (as out-put by STAR within XPRES
 Spipe) and the path and file name of the ap-pro-pri-ate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
 
 [13]
-Overfull \hbox (11.814pt too wide) in paragraph at lines 401--401
+Overfull \hbox (11.814pt too wide) in paragraph at lines 402--402
 \T1/phv/m/n/10 ver-sion 98. Read align-ments were quan-ti-fied us-ing an XPRESS
 pipe-modified GTF file that con-tained only protein-coding
  []
 
 
-Overfull \hbox (8.85461pt too wide) in paragraph at lines 403--403
+Overfull \hbox (8.85461pt too wide) in paragraph at lines 404--404
 \T1/phv/m/n/10 com-par-isons. Cor-re-la-tion be-tween meth-ods or repli-cates w
 ere cal-cu-lated us-ing a Spear-man rank cor-re-la-tion co-ef-fi-cient,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
-[14]
-Overfull \hbox (22.26959pt too wide) in paragraph at lines 410--411
+
+Overfull \hbox (22.26959pt too wide) in paragraph at lines 411--412
 \T1/phv/m/n/10 or repli-cates were cal-cu-lated us-ing a Spear-man rank cor-re-
 la-tion co-ef-fi-cient, per-formed us-ing the \T1/cmtt/m/n/10 scipy.stats.spear
 man()
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
@@ -791,13 +773,13 @@ v/m/n/10 , 24 (2011). Avail-able from:
 
 [17]) [18] (./xpressyourself_supplement.aux) ) 
 Here is how much of TeX's memory you used:
- 6707 strings out of 492649
- 97552 string characters out of 6129622
- 205166 words of memory out of 5000000
- 10464 multiletter control sequences out of 15000+600000
- 41852 words of font info for 47 fonts, out of 8000000 for 9000
+ 6504 strings out of 492649
+ 94489 string characters out of 6129622
+ 201935 words of memory out of 5000000
+ 10266 multiletter control sequences out of 15000+600000
+ 38962 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,47p,1486b,1694s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,47p,1486b,1672s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-di
 st/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist
 /fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/pu
@@ -815,7 +797,7 @@ cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt0
 0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
 /usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/lo
 cal/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on xpressyourself_supplement.pdf (18 pages, 2522629 bytes).
+Output written on xpressyourself_supplement.pdf (18 pages, 2520855 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  88 compressed objects within 1 object stream

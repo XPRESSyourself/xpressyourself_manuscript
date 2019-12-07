@@ -596,7 +596,10 @@ down_strict_XP = down_strict_1_XP.index.tolist() + down_strict_2_XP.index.tolist
 # Sanity check count data
 print(check_data_XP.loc[down_strict_XP].min().min())
 
-merged_data_XP.loc[down_strict_1_XP]
+merged_data_XP.loc[down_strict_XP][['tm_log2FC', 'tm_padj', 'tmisrib_log2FC', 'tmisrib_padj']]
+
+2**.51
+
 # Considering alpha-debt of dataset decay (https://doi.org/10.1101/801696)
 # Number of PubMed citations for ISRIB paper == 199, but in random sample of 20 (~10%), only 2 used for some sort of re-analysis. Will assume a 1/10 use-rate.
 n = 199 * (2/20)

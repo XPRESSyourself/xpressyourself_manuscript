@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex xpressyourself_supplement"] 1572394706 "xpressyourself_supplement.aux" "xpressyourself_supplement.bbl" "xpressyourself_supplement" 1572543931
+["bibtex xpressyourself_supplement"] 1572394706 "xpressyourself_supplement.aux" "xpressyourself_supplement.bbl" "xpressyourself_supplement" 1572549470
   "./Science.bst" 1565026930 26972 4362b992ec425b3d8aaa11ba5ecf54a8 ""
   "manubib.bib" 1572393630 38113 b6063054461016b706bc4c9ca4323206 ""
-  "xpressyourself_supplement.aux" 1572395538 9440 1211693320bbcc6fa1ad0b9f8e9dbd10 ""
+  "xpressyourself_supplement.aux" 1572549470 9440 1211693320bbcc6fa1ad0b9f8e9dbd10 ""
   (generated)
-  "xpressyourself_supplement.bbl"
   "xpressyourself_supplement.blg"
-["pdflatex"] 1572395537 "xpressyourself_supplement.tex" "xpressyourself_supplement.pdf" "xpressyourself_supplement" 1572543931
+  "xpressyourself_supplement.bbl"
+["pdflatex"] 1572549469 "xpressyourself_supplement.tex" "xpressyourself_supplement.pdf" "xpressyourself_supplement" 1572549470
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -83,7 +83,6 @@
   "/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty" 1480098831 12949 81e4e808884a8f0e276b69410e234656 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/hyphenat/hyphenat.sty" 1480098831 5798 0437b031e663035b68539cf7ac7c8eeb ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1480098833 678 4792914a8f45be57bb98413425e4c7af ""
-  "/usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty" 1480098833 151738 8cd767481920f0eb785302dacfc87057 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg" 1480098833 1827 d72ad54409ca5c1068a1939c63441bd2 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty" 1480098833 80336 ff90c926c3d7bfdaa3d80ca57123b0bb ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty" 1480098833 93445 48e5be20ba2d0a2ca5c4ce7e292a4bbc ""
@@ -106,10 +105,10 @@
   "figures/xpresspipe_supplement12.png" 1572132626 269817 c0cc8a9e1732e2192e475aa19e474f44 ""
   "figures/xpresspipe_supplement8.png" 1572132657 436973 6fbfc47aa04614f0e7c40b37cf156f92 ""
   "figures/xpresspipe_supplement9.png" 1572132647 623180 b55b03da3358fb32246a203adec6bd9e ""
-  "xpressyourself_supplement.aux" 1572395538 9440 1211693320bbcc6fa1ad0b9f8e9dbd10 ""
+  "xpressyourself_supplement.aux" 1572549470 9440 1211693320bbcc6fa1ad0b9f8e9dbd10 ""
   "xpressyourself_supplement.bbl" 1572394706 6475 c4a2628d5a73db59d6ba548d24185fe1 "bibtex xpressyourself_supplement"
-  "xpressyourself_supplement.tex" 1572543931 29751 8a74cef1c70cfe8a7c6dd7c0af25f0ea ""
+  "xpressyourself_supplement.tex" 1572549469 29755 01b35e6b7519c4726272510328c5c088 ""
   (generated)
   "xpressyourself_supplement.aux"
-  "xpressyourself_supplement.log"
   "xpressyourself_supplement.pdf"
+  "xpressyourself_supplement.log"
